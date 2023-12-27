@@ -1,0 +1,24 @@
+#+TITLE: Category Theory in Programming
+* Table of Contents                                       :TOC_5_gh:noexport:
+- [[#introduction][Introduction]]
+- [[#license][License]]
+- [[#getting-started][Getting Started]]
+- [[#contributing][Contributing]]
+
+* Introduction
+This repository contains a tutorial on Category Theory in Programming using the
+Racket programming language. The tutorial aims to provide a hands-on approach to
+understanding fundamental category theory concepts and their practical applications
+in programming.
+
+* License
+This tutorial is released under the MIT License. See the LICENSE file for more details.
+
+* Getting Started
+To get started with the tutorial, navigate to the `scribblings' directory and
+open the Scribble files for each chapter. The `examples' directory contains
+Racket code examples corresponding to the tutorial content.
+
+* Contributing
+Contributions are welcome! If you find errors, have suggestions, or want to
+expand the tutorial, please open an issue or submit a pull request.
