@@ -66,9 +66,9 @@ as the central focus. Nevertheless, classic @tech{category} names will still be
 given precedence and used whenever applicable in this tutorial.
 }
 
-In traditional @tech{category theory}, a distinction is often made between
-@tech{objects} and @tech{identity morphisms}. However, in this tutorial, we adopt
-a unique perspective by using @tech{identity morphisms} to directly represent @tech{objects}.
+In traditional @tech{category theory}, a distinction is often made between @tech{objects}
+and @tech{identity morphisms}. However, in this tutorial, we adopt a unique
+perspective by using @tech{identity morphisms} to directly represent @tech{objects}.
 There is no strict demarcation between @tech{objects} and their associated
 @tech{identity morphisms}; they are treated interchangeably (@math{a = id.a}).
 
@@ -85,11 +85,17 @@ Informally, a @deftech{diagram} comprises various @tech{objects} connected by
 various @tech{morphisms}. When the @tech{morphisms} with the same @tech{domain}
 and @tech{codomain} are the same one, the @tech{diagram} is a @deftech{commutative diagram}.
 
+@margin-note{
+A @deftech{commutative square} is a @tech{commutative diagram} that has the shape
+of a square.
+}
+
 @tech{Commutative diagrams} serve as a powerful language for expressing equations.
+The equation @math{k∘f = g∘h} is pictured as a @tech{commutative square} like this:
 
-@image["assets/images/intro-comm-diag.svg"]
+@image["assets/images/intro-comm-sqr.svg"]{k∘f = g∘h}
 
-@subsection{Semicategory (Non-Unital Category)}
+@subsection{Semicategory}
 
 @margin-note{
 See more in @hyperlink["https://ncatlab.org/nlab/show/semicategory"]{nLab}.
@@ -98,7 +104,7 @@ See more in @hyperlink["https://ncatlab.org/nlab/show/semicategory"]{nLab}.
 @deftech{Semicategories} (@deftech{non-unital categories}) are similar to
 @tech{categories} but omit the @tech{identity morphism} requirement.
 
-@subsection{One-Object Category (OOC)}
+@subsection{One-Object Category}
 
 @margin-note{
 A @deftech{monoid} (@deftech{monoidal set}) @math{(S, *, e)} is a @tech{set}
@@ -123,8 +129,8 @@ on @tech{monoids}.
 
 @section{Mapping Category to Programming}
 
-In this section, we'll explore how @tech{category theory} concepts can be mapped to
-practical programming constructs.
+In this section, we'll explore how @tech{category theory} concepts can be mapped
+to practical programming constructs.
 
 Just as @racket[car], @racket[cdr], and @racket[cons] provide an abstraction for
 @tech[#:doc rkt-scrbl]{pairs} in Racket, we'll introduce the notions of
@@ -148,8 +154,8 @@ and the single @tech{object} @tech{*} is @code{0} (as the @tech{identity morphis
 
 @racketblock[
 (code:comment2 "Category of Natural Numbers")
-(define (dom m) *)
-(define (cod m) *)
+(define (dom _) *)
+(define (cod _) *)
 (define (∘ . m*) (apply + m*))
 
 (define (morphism=? m . m*) (apply = m m*))
@@ -163,9 +169,9 @@ and the single @tech{object} @tech{*} is @code{0} (as the @tech{identity morphis
 (define h 3)
 
 (code:comment2 "Existence of composition")
-(morphism=? (cod f) (dom g))
-(morphism=? (dom (∘ g f)) (dom f))
-(morphism=? (cod (∘ g f)) (cod g))
+(morphism=? * (cod f) (dom g))
+(morphism=? * (dom (∘ g f)) (dom f))
+(morphism=? * (cod (∘ g f)) (cod g))
 
 (code:comment2 "Associativity of composition")
 (morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
@@ -184,13 +190,13 @@ where @tech{*} is @racket[null] and morphisms are @tech[#:doc rkt-scrbl]{lists}:
 
 @racketblock[
 (code:comment2 "Category of Lists")
-(define (dom m) *)
-(define (cod m) *)
+(define (dom _) *)
+(define (cod _) *)
 (define (∘ . m*) (apply append m*))
 
 (define morphism=?
   (case-lambda
-    [(m) #t]
+    [(_) #t]
     [(m1 m2) (equal? m1 m2)]
     [(m1 m2 . m*) (and (morphism=? m1 m2) (apply morphism=? m*))]))
 
@@ -203,9 +209,9 @@ where @tech{*} is @racket[null] and morphisms are @tech[#:doc rkt-scrbl]{lists}:
 (define h '(A B C))
 
 (code:comment2 "Existence of composition")
-(morphism=? (cod f) (dom g))
-(morphism=? (dom (∘ g f)) (dom f))
-(morphism=? (cod (∘ g f)) (cod g))
+(morphism=? * (cod f) (dom g))
+(morphism=? * (dom (∘ g f)) (dom f))
+(morphism=? * (cod (∘ g f)) (cod g))
 
 (code:comment2 "Associativity of composition")
 (morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
@@ -225,9 +231,9 @@ your task is to complete the implementation:
 
 @racketblock[
 (code:comment2 "Category of Strings")
-(define (dom m) *)
-(define (cod m) *)
-(define (∘ . m*) ???)
+(define (dom _) *)
+(define (cod _) *)
+(define (∘ . m*) ???) (code:comment "TODO")
 
 (define (morphism=? m . m*) (apply string=? m m*))
 
@@ -240,9 +246,9 @@ your task is to complete the implementation:
 (define h "ABC")
 
 (code:comment2 "Existence of composition")
-(morphism=? (cod f) (dom g))
-(morphism=? (dom (∘ g f)) (dom f))
-(morphism=? (cod (∘ g f)) (cod g))
+(morphism=? * (cod f) (dom g))
+(morphism=? * (dom (∘ g f)) (dom f))
+(morphism=? * (cod (∘ g f)) (cod g))
 
 (code:comment2 "Associativity of composition")
 (morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
@@ -260,8 +266,9 @@ your task is to complete the implementation:
 The @tech{category} of @tech[#:doc math-scrbl #:key "matrix"]{matrices} is a
 fascinating example that brings together linear algebra and @tech{category theory}.
 In this @tech{category}, each @math{m × n} @tech[#:doc math-scrbl]{matrix} is
-considered a @tech{morphism}, its @tech{domain} is the n-order identity @tech[#:doc math-scrbl]{matrix},
-and its @tech{codomain} is the m-order identity @tech[#:doc math-scrbl]{matrix}:
+considered a @tech{morphism}, its @tech{domain} is the n-order identity
+@tech[#:doc math-scrbl]{matrix}, and its @tech{codomain} is the m-order identity
+@tech[#:doc math-scrbl]{matrix}:
 
 @racketblock[
 (require math/matrix)
@@ -273,7 +280,7 @@ and its @tech{codomain} is the m-order identity @tech[#:doc math-scrbl]{matrix}:
 
 (define morphism=?
   (case-lambda
-    [(m) #t]
+    [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
     [(m1 m2 . m*) (and (morphism=? m1 m2) (apply morphism=? m*))]))
 
@@ -284,15 +291,15 @@ and its @tech{codomain} is the m-order identity @tech[#:doc math-scrbl]{matrix}:
 (define d (identity-matrix 4))
 
 (code:comment2 "Morphisms")
-(define (proc m n) (random 1 9))
-(define f (build-matrix 2 1 proc))
-(define g (build-matrix 3 2 proc))
-(define h (build-matrix 4 3 proc))
+(define (rand m n) (random 1 9))
+(define f (build-matrix 2 1 rand))
+(define g (build-matrix 3 2 rand))
+(define h (build-matrix 4 3 rand))
 
 (code:comment2 "Existence of composition")
-(morphism=? (cod f) (dom g))
-(morphism=? (dom (∘ g f)) (dom f))
-(morphism=? (cod (∘ g f)) (cod g))
+(morphism=? b (cod f) (dom g))
+(morphism=? a (dom (∘ g f)) (dom f))
+(morphism=? c (cod (∘ g f)) (cod g))
 
 (code:comment2 "Associativity of composition")
 (morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
@@ -307,8 +314,8 @@ and its @tech{codomain} is the m-order identity @tech[#:doc math-scrbl]{matrix}:
 @subsubsection{Binary Relation Category}
 
 @margin-note{
-A @deftech{preordered set} @math{(S, <=)} is a @tech{set} @math{S} equipped with a
-binary relation @math{<=} that is reflexive and transitive.
+A @deftech{preordered set} @math{(S, <=)} is a @tech{set} @math{S} equipped with
+a binary relation @math{<=} that is reflexive and transitive.
 }
 
 A @tech{preordered set} @math{(S, <=)} can be viewed as a @tech{category} where
@@ -326,7 +333,7 @@ A @tech{preordered set} @math{(S, <=)} can be viewed as a @tech{category} where
 
 (define morphism=?
   (case-lambda
-    [(m) #t]
+    [(_) #t]
     [(m1 m2) (equal? m1 m2)]
     [(m1 m2 . m*) (and (morphism=? m1 m2) (apply morphism=? m*))]))
 
@@ -342,9 +349,9 @@ A @tech{preordered set} @math{(S, <=)} can be viewed as a @tech{category} where
 (define h '(c . d))
 
 (code:comment2 "Existence of composition")
-(morphism=? (cod f) (dom g))
-(morphism=? (dom (∘ g f)) (dom f))
-(morphism=? (cod (∘ g f)) (cod g))
+(morphism=? b (cod f) (dom g))
+(morphism=? a (dom (∘ g f)) (dom f))
+(morphism=? c (cod (∘ g f)) (cod g))
 
 (code:comment2 "Associativity of composition")
 (morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
@@ -370,7 +377,7 @@ The @tech{category} of procedures is perhaps the most important @tech{category}
 in programming. As the name suggests, this @tech{category} has procedures
 (also known as functions in functional programming) as its @tech{morphisms},
 so it resembles the @tech{category} of @tech{sets}
-(with mathematical @tech{functions} as @tech{morphisms}) in category theory.
+(with mathematical @tech{functions} as @tech{morphisms}) in @tech{category theory}.
 
 However, this @tech{category} is not a strict @tech{category} that follows the
 @tech{composition rules}, unlike the examples we introduced above. It has some defects.
@@ -383,8 +390,8 @@ Racket is an untyped language, it allows any procedure to be composed, such as
 Therefore, this @tech{category} can be regarded as an @tech{OOC}:
 
 @racketblock[
-(define (dom m) (∘))
-(define (cod m) (∘))
+(define (dom _) (∘))
+(define (cod _) (∘))
 (define ∘ compose)
 ]
 
@@ -396,8 +403,8 @@ For Racket, it cannot even be sure that @math{g∘f = g∘f} !
 @subsection{Constructions on Categories}
 
 This section involves the creation of new categories using existing ones.
-These constructions provide a way to extend our understanding of categories and
-explore various relationships between them.
+These constructions provide a way to extend our understanding of @tech{categories}
+and explore various relationships between them.
 
 @subsubsection{Dual Category}
 
@@ -406,11 +413,11 @@ The @tech{dual} of a @tech{category} is the reverse version of the given
 
 @image["assets/images/intro-¬cat.svg"]
 
-A @tech{category} can be viewed as a directed graph that adheres to the
+A @tech{category} @math{𝒞} can be viewed as a directed graph that adheres to the
 @tech{composition rules}. If we reverse all the arrows in the directed graph,
 the resulting new directed graph still adheres to the @tech{composition rules},
-so this new directed graph is also a @tech{category}. The new @tech{category} is
-the @deftech{dual} of the original @tech{category}.
+so this new directed graph is also a @tech{category} denoted @math{𝒞^op}.
+@math{𝒞^op} is the @deftech{dual} of @math{𝒞}.
 
 @racketblock[
 (define (¬dom m) (cod m))
@@ -425,8 +432,8 @@ In this context, @tech{product} refers to the @tech{cartesian product},
 which is the @tech{product object} in the @tech{category} of @tech{sets}.
 }
 
-The @deftech{product category} combines the given @tech{categories} to form a new
-@tech{category}.
+The @deftech{product category} combines the given @tech{categories} to form a
+new @tech{category}.
 
 @image["assets/images/intro-prod-cat.svg"]
 
@@ -446,7 +453,7 @@ we create a @tech{product category} by taking the @tech{product} of
 
 (define morphismℳ=?
   (case-lambda
-    [(m) #t]
+    [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
     [(m1 m2 . m*) (and (morphismℳ=? m1 m2) (apply morphismℳ=? m*))]))
 
@@ -457,10 +464,10 @@ we create a @tech{product category} by taking the @tech{product} of
 (define d0 (identity-matrix 4))
 
 (code:comment2 "Morphisms in ℳ")
-(define (proc m n) (random 1 9))
-(define f0 (build-matrix 2 1 proc))
-(define g0 (build-matrix 3 2 proc))
-(define h0 (build-matrix 4 1 proc))
+(define (rand m n) (random 1 9))
+(define f0 (build-matrix 2 1 rand))
+(define g0 (build-matrix 3 2 rand))
+(define h0 (build-matrix 4 3 rand))
 
 
 (code:comment2 "Category of Binary Relations (ℛ)")
@@ -474,7 +481,7 @@ we create a @tech{product category} by taking the @tech{product} of
 
 (define morphismℛ=?
   (case-lambda
-    [(r) #t]
+    [(_) #t]
     [(r1 r2) (equal? r1 r2)]
     [(r1 r2 . r*) (and (morphismℛ=? r1 r2) (apply morphismℛ=? r*))]))
 
@@ -515,9 +522,9 @@ we create a @tech{product category} by taking the @tech{product} of
 (define h (list h0 h1))
 
 (code:comment2 "Existence of composition")
-(morphism=? (cod f) (dom g))
-(morphism=? (dom (∘ g f)) (dom f))
-(morphism=? (cod (∘ g f)) (cod g))
+(morphism=? b (cod f) (dom g))
+(morphism=? a (dom (∘ g f)) (dom f))
+(morphism=? c (cod (∘ g f)) (cod g))
 
 (code:comment2 "Associativity of composition")
 (morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
@@ -529,7 +536,9 @@ we create a @tech{product category} by taking the @tech{product} of
 (morphism=? f (∘ f (dom f)) (∘ (cod f) f))
 ]
 
-@subsubsection{Slice Category}
+@subsubsection{Arrow Category}
+
+@subsubsection{(Co)Slice Category}
 
 @subsubsection{Subcategory}
 
