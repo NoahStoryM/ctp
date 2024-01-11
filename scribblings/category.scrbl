@@ -389,13 +389,22 @@ Therefore, this @tech{category} can be regarded as an @tech{OOC}:
 ]
 
 Another defect is that we cannot compare whether two procedures have the same
-functionality, which means we cannot define @code{morphism=?}, and have to rely on
-the programmer to judge whether the behavior of two procedures is same. For Racket,
-it cannot even be sure that @math{g∘f = g∘f} !
+functionality, which means we cannot @racket[define] @code{morphism=?}, and have
+to rely on the programmer to judge whether the behavior of two procedures is same.
+For Racket, it cannot even be sure that @math{g∘f = g∘f} !
 
 @subsection{Constructions on Categories}
 
+This section involves the creation of new categories using existing ones.
+These constructions provide a way to extend our understanding of categories and
+explore various relationships between them.
+
 @subsubsection{Dual Category}
+
+The @tech{dual} of a @tech{category} is the reverse version of the given
+@tech{category}.
+
+@image["assets/images/intro-¬cat.svg"]
 
 A @tech{category} can be viewed as a directed graph that adheres to the
 @tech{composition rules}. If we reverse all the arrows in the directed graph,
@@ -403,13 +412,124 @@ the resulting new directed graph still adheres to the @tech{composition rules},
 so this new directed graph is also a @tech{category}. The new @tech{category} is
 the @deftech{dual} of the original @tech{category}.
 
-@image["assets/images/intro-¬cat.svg"]
-
 @racketblock[
 (define (¬dom m) (cod m))
 (define (¬cod m) (dom m))
 (define (¬∘ . m*) (apply ∘ (reverse m*)))
 ]
+
+@subsubsection{Product Category}
+
+@margin-note{
+In this context, @tech{product} refers to the @tech{cartesian product},
+which is the @tech{product object} in the @tech{category} of @tech{sets}.
+}
+
+The @deftech{product category} combines the given @tech{categories} to form a new
+@tech{category}.
+
+@image["assets/images/intro-prod-cat.svg"]
+
+Let's illustrate this concept with a Racket code example
+(@racket[list] is used here as @tech{cartesian product}). In the following code,
+we create a @tech{product category} by taking the @tech{product} of
+@secref["Matrix_Category"] and @secref["Binary_Relation_Category"].
+
+
+@racketblock[
+(require math/matrix)
+
+(code:comment2 "Category of Matrics (ℳ)")
+(define (domℳ m) (identity-matrix (matrix-num-cols m)))
+(define (codℳ m) (identity-matrix (matrix-num-rows m)))
+(define (∘ℳ m . m*) (apply matrix* m m*))
+
+(define morphismℳ=?
+  (case-lambda
+    [(m) #t]
+    [(m1 m2) (matrix= m1 m2)]
+    [(m1 m2 . m*) (and (morphismℳ=? m1 m2) (apply morphismℳ=? m*))]))
+
+(code:comment2 "Objects in ℳ")
+(define a0 (identity-matrix 1))
+(define b0 (identity-matrix 2))
+(define c0 (identity-matrix 3))
+(define d0 (identity-matrix 4))
+
+(code:comment2 "Morphisms in ℳ")
+(define (proc m n) (random 1 9))
+(define f0 (build-matrix 2 1 proc))
+(define g0 (build-matrix 3 2 proc))
+(define h0 (build-matrix 4 1 proc))
+
+
+(code:comment2 "Category of Binary Relations (ℛ)")
+(define (domℛ r) (define o (car r)) (cons o o))
+(define (codℛ r) (define o (cdr r)) (cons o o))
+(define ∘ℛ
+  (case-lambda
+    [(r) r]
+    [(r1 r2) (match* (r1 r2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
+    [(r1 r2 . r*) (apply ∘ℛ (∘ℛ r1 r2) r*)]))
+
+(define morphismℛ=?
+  (case-lambda
+    [(r) #t]
+    [(r1 r2) (equal? r1 r2)]
+    [(r1 r2 . r*) (and (morphismℛ=? r1 r2) (apply morphismℛ=? r*))]))
+
+(code:comment2 "Objects in ℛ")
+(define a1 '(a . a))
+(define b1 '(b . b))
+(define c1 '(c . c))
+(define d1 '(d . d))
+
+(code:comment2 "Morphisms in ℛ")
+(define f1 '(a . b))
+(define g1 '(b . c))
+(define h1 '(c . d))
+
+
+(code:comment2 "Product Category (ℳ × ℛ)")
+(define (dom p) (match p [`(,m ,r) `(,(domℳ m) ,(domℛ r))]))
+(define (cod p) (match p [`(,m ,r) `(,(codℳ m) ,(codℛ r))]))
+(define (∘ p . p*)
+  (define m* (map car  (cons p p*)))
+  (define r* (map cadr (cons p p*)))
+  (list (apply ∘ℳ m*) (apply ∘ℛ r*)))
+
+(define (morphism=? p . p*)
+  (define m* (map car  (cons p p*)))
+  (define r* (map cadr (cons p p*)))
+  (and (apply morphismℳ=? m*) (apply morphismℛ=? r*)))
+
+(code:comment2 "Objects in ℳ × ℛ")
+(define a (list a0 a1))
+(define b (list b0 b1))
+(define c (list c0 c1))
+(define d (list d0 d1))
+
+(code:comment2 "Morphisms in ℳ × ℛ")
+(define f (list f0 f1))
+(define g (list g0 g1))
+(define h (list h0 h1))
+
+(code:comment2 "Existence of composition")
+(morphism=? (cod f) (dom g))
+(morphism=? (dom (∘ g f)) (dom f))
+(morphism=? (cod (∘ g f)) (cod g))
+
+(code:comment2 "Associativity of composition")
+(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
+
+(code:comment2 "Existence of identity")
+(morphism=? a (dom a) (cod a))
+
+(code:comment2 "Identity and composition")
+(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
+]
+
+@subsubsection{Slice Category}
 
 @subsubsection{Subcategory}
 
