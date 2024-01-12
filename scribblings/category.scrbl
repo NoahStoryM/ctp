@@ -273,7 +273,7 @@ considered a @tech{morphism}, its @tech{domain} is the n-order identity
 @racketblock[
 (require math/matrix)
 
-(code:comment2 "Category of Matrics")
+(code:comment2 "Category of Matrices")
 (define (dom m) (identity-matrix (matrix-num-cols m)))
 (define (cod m) (identity-matrix (matrix-num-rows m)))
 (define (∘ m . m*) (apply matrix* m m*))
@@ -446,7 +446,7 @@ we create a @tech{product category} by taking the @tech{product} of
 @racketblock[
 (require math/matrix)
 
-(code:comment2 "Category of Matrics (ℳ)")
+(code:comment2 "Category of Matrices ℳ")
 (define (domℳ m) (identity-matrix (matrix-num-cols m)))
 (define (codℳ m) (identity-matrix (matrix-num-rows m)))
 (define (∘ℳ m . m*) (apply matrix* m m*))
@@ -470,7 +470,7 @@ we create a @tech{product category} by taking the @tech{product} of
 (define h0 (build-matrix 4 3 rand))
 
 
-(code:comment2 "Category of Binary Relations (ℛ)")
+(code:comment2 "Category of Binary Relations ℛ")
 (define (domℛ r) (define o (car r)) (cons o o))
 (define (codℛ r) (define o (cdr r)) (cons o o))
 (define ∘ℛ
@@ -497,7 +497,7 @@ we create a @tech{product category} by taking the @tech{product} of
 (define h1 '(c . d))
 
 
-(code:comment2 "Product Category (ℳ × ℛ)")
+(code:comment2 "Product Category ℳ × ℛ")
 (define (dom p) (match p [`(,m ,r) `(,(domℳ m) ,(domℛ r))]))
 (define (cod p) (match p [`(,m ,r) `(,(codℳ m) ,(codℛ r))]))
 (define (∘ p . p*)
@@ -545,7 +545,7 @@ we create a @tech{product category} by taking the @tech{product} of
 @racketblock[
 (require math/matrix)
 
-(code:comment2 "Category of Matrics (ℳ)")
+(code:comment2 "Category of Matrices ℳ")
 (define (domℳ m) (identity-matrix (matrix-num-cols m)))
 (define (codℳ m) (identity-matrix (matrix-num-rows m)))
 (define (∘ℳ m . m*) (apply matrix* m m*))
@@ -582,7 +582,7 @@ we create a @tech{product category} by taking the @tech{product} of
 (define n0 (build-matrix 8 6 rand))
 
 
-(code:comment2 "Arrow Category (Arr(ℳ))")
+(code:comment2 "Arrow Category Arr(ℳ)")
 (define (dom s)
   (match s
     [`((,j ,p) (,q ,i))
