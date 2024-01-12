@@ -550,6 +550,17 @@ racket/base
 (morphism=? f (∘ f (dom f)) (∘ (cod f) f))
 ]
 
+@bold{Exercise}: @racket[define] @code{dom×}, @code{cod×}, @code{∘×},
+and @code{morphism×=?} so that we can @racket[define] @tech{category}
+@math{ℳ × ℛ} in this way:
+
+@racketblock[
+(define dom (dom× domℳ domℛ))
+(define cod (cod× codℳ codℛ))
+(define ∘ (∘× ∘ℳ ∘ℛ))
+(define morphism=? (morphism×=? morphismℳ=? morphismℛ=?))
+]
+
 @subsubsection{Arrow Category}
 
 @image["assets/images/intro-arr-cat_1.svg"]
