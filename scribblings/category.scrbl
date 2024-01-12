@@ -152,7 +152,9 @@ The @tech{category} of natural @tech[#:doc rkt-scrbl]{numbers} is an example of
 @tech{OOC}. In this case, @tech{morphisms} are natural @tech[#:doc rkt-scrbl]{numbers},
 and the single @tech{object} @tech{*} is @code{0} (as the @tech{identity morphism}):
 
-@racketblock[
+@racketmod[
+racket/base
+
 (code:comment2 "Category of Natural Numbers")
 (define (dom _) *)
 (define (cod _) *)
@@ -188,7 +190,9 @@ and the single @tech{object} @tech{*} is @code{0} (as the @tech{identity morphis
 The @tech{category} of @tech[#:doc rkt-scrbl]{lists} is also an @tech{OOC},
 where @tech{*} is @racket[null] and morphisms are @tech[#:doc rkt-scrbl]{lists}:
 
-@racketblock[
+@racketmod[
+racket/base
+
 (code:comment2 "Category of Lists")
 (define (dom _) *)
 (define (cod _) *)
@@ -229,7 +233,9 @@ As an exercise, consider the @tech{category} of @tech[#:doc rkt-scrbl]{strings},
 which is also an @tech{OOC}. Here's a skeleton code for the @tech{category} and
 your task is to complete the implementation:
 
-@racketblock[
+@racketmod[
+racket/base
+
 (code:comment2 "Category of Strings")
 (define (dom _) *)
 (define (cod _) *)
@@ -270,7 +276,9 @@ considered a @tech{morphism}, its @tech{domain} is the n-order identity
 @tech[#:doc math-scrbl]{matrix}, and its @tech{codomain} is the m-order identity
 @tech[#:doc math-scrbl]{matrix}:
 
-@racketblock[
+@racketmod[
+racket/base
+
 (require math/matrix)
 
 (code:comment2 "Category of Matrices")
@@ -321,7 +329,11 @@ a binary relation @math{<=} that is reflexive and transitive.
 A @tech{preordered set} @math{(S, <=)} can be viewed as a @tech{category} where
 @tech{morphisms} are binary relations on its underlying @tech{set} @math{S}:
 
-@racketblock[
+@racketmod[
+racket/base
+
+(require racket/match)
+
 (code:comment2 "Category of Binary Relations")
 (define (dom m) (define o (car m)) (cons o o))
 (define (cod m) (define o (cdr m)) (cons o o))
@@ -443,8 +455,10 @@ we create a @tech{product category} by taking the @tech{product} of
 @secref["Matrix_Category"] and @secref["Binary_Relation_Category"].
 
 
-@racketblock[
-(require math/matrix)
+@racketmod[
+racket/base
+
+(require racket/match math/matrix)
 
 (code:comment2 "Category of Matrices ℳ")
 (define (domℳ m) (identity-matrix (matrix-num-cols m)))
@@ -542,8 +556,10 @@ we create a @tech{product category} by taking the @tech{product} of
 @image["assets/images/intro-arr-cat_2.svg"]
 @image["assets/images/intro-arr-cat_3.svg"]
 
-@racketblock[
-(require math/matrix)
+@racketmod[
+racket/base
+
+(require racket/match math/matrix)
 
 (code:comment2 "Category of Matrices ℳ")
 (define (domℳ m) (identity-matrix (matrix-num-cols m)))
