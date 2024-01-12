@@ -160,6 +160,7 @@ racket/base
 (define (cod _) *)
 (define (∘ . m*) (apply + m*))
 
+(define (morphism? m) (exact-nonnegative-integer? m))
 (define (morphism=? m . m*) (apply = m m*))
 
 (code:comment2 "Objects")
@@ -198,6 +199,7 @@ racket/base
 (define (cod _) *)
 (define (∘ . m*) (apply append m*))
 
+(define (morphism? m) (list? m))
 (define morphism=?
   (case-lambda
     [(_) #t]
@@ -241,6 +243,7 @@ racket/base
 (define (cod _) *)
 (define (∘ . m*) ???) (code:comment "TODO")
 
+(define (morphism? m) (string? m))
 (define (morphism=? m . m*) (apply string=? m m*))
 
 (code:comment2 "Objects")
@@ -286,6 +289,7 @@ racket/base
 (define (cod m) (identity-matrix (matrix-num-rows m)))
 (define (∘ m . m*) (apply matrix* m m*))
 
+(define (morphism? m) (matrix? m))
 (define morphism=?
   (case-lambda
     [(_) #t]
@@ -343,6 +347,7 @@ racket/base
     [(m1 m2) (match* (m1 m2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
     [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
 
+(define (morphism? m) (pair? m))
 (define morphism=?
   (case-lambda
     [(_) #t]
@@ -465,6 +470,7 @@ racket/base
 (define (codℳ m) (identity-matrix (matrix-num-rows m)))
 (define (∘ℳ m . m*) (apply matrix* m m*))
 
+(define (morphismℳ? m) (matrix? m))
 (define morphismℳ=?
   (case-lambda
     [(_) #t]
@@ -493,6 +499,7 @@ racket/base
     [(r1 r2) (match* (r1 r2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
     [(r1 r2 . r*) (apply ∘ℛ (∘ℛ r1 r2) r*)]))
 
+(define (morphismℛ? r) (pair? r))
 (define morphismℛ=?
   (case-lambda
     [(_) #t]
@@ -519,6 +526,10 @@ racket/base
   (define r* (map cadr (cons p p*)))
   (list (apply ∘ℳ m*) (apply ∘ℛ r*)))
 
+(define (morphism? p)
+  (and (list? p)
+       (morphismℳ? (car  p))
+       (morphismℛ? (cadr p))))
 (define (morphism=? p . p*)
   (define m* (map car  (cons p p*)))
   (define r* (map cadr (cons p p*)))
@@ -551,13 +562,14 @@ racket/base
 ]
 
 @bold{Exercise}: @racket[define] @code{dom×}, @code{cod×}, @code{∘×},
-and @code{morphism×=?} so that we can @racket[define] @tech{category}
-@math{ℳ × ℛ} in this way:
+@code{morphism×?} and @code{morphism×=?} so that we can @racket[define]
+@tech{category} @math{ℳ × ℛ} in this way:
 
 @racketblock[
 (define dom (dom× domℳ domℛ))
 (define cod (cod× codℳ codℛ))
 (define ∘ (∘× ∘ℳ ∘ℛ))
+(define morphism? (morphism×? morphismℳ? morphismℛ?))
 (define morphism=? (morphism×=? morphismℳ=? morphismℛ=?))
 ]
 
@@ -577,6 +589,7 @@ racket/base
 (define (codℳ m) (identity-matrix (matrix-num-rows m)))
 (define (∘ℳ m . m*) (apply matrix* m m*))
 
+(define (morphismℳ? m) (matrix? m))
 (define morphismℳ=?
   (case-lambda
     [(_) #t]
@@ -632,6 +645,13 @@ racket/base
         `((,(∘ℳ l j) ,p) (,r ,(∘ℳ k i)))])]
     [(s1 s2 . s*) (apply ∘ (∘ s1 s2) s*)]))
 
+(define (morphism? s)
+  (match s
+    [`((,j ,p) (,q ,i))
+     (and (morphismℳ? j)
+          (morphismℳ? p)
+          (morphismℳ? q)
+          (morphismℳ? i))]))
 (define morphism=?
   (case-lambda
     [(_) #t]
