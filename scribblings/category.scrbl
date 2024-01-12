@@ -538,6 +538,10 @@ we create a @tech{product category} by taking the @tech{product} of
 
 @subsubsection{Arrow Category}
 
+@image["assets/images/intro-arr-cat_1.svg"]
+@image["assets/images/intro-arr-cat_2.svg"]
+@image["assets/images/intro-arr-cat_3.svg"]
+
 @racketblock[
 (require math/matrix)
 
