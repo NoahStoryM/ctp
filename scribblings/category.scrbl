@@ -102,7 +102,8 @@ If there is a @tech{morphism} @math{l} making @math{f = lâˆ˜h} and @math{g = kâˆ
 then @math{l} is a @deftech{lift} (@deftech{diagonal fill-in} or @deftech{filler})
 in the @tech{commutative square}:
 
-@image["assets/images/intro-lift.svg"]
+@image["assets/images/intro-lift_1.svg"]
+@image["assets/images/intro-lift_2.svg"]
 
 @subsection{Semicategory}
 
