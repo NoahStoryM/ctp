@@ -22,10 +22,12 @@ of a mathematical structure.
 
 @subsection{Category}
 
-Think of a @deftech{category} @math{𝒞} as a directed graph, where @deftech{objects}
-are nodes, and @deftech{morphisms} are arrows connecting these nodes. The key
-distinguishing features of a @tech{category} are the @deftech{identity morphisms}
-and the @deftech{composition} of @tech{morphisms}, governed by @deftech{composition rules}:
+A @deftech{category} @math{𝒞} consists of a collection @math{𝒞_0} of @deftech{objects}
+and a collection @math{𝒞_1} of @deftech{morphisms}. Think of @math{𝒞} as a
+directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
+connecting these nodes. The key distinguishing features of a @tech{category} are
+the @deftech{identity morphisms} and the @deftech{composition} of @tech{morphisms},
+governed by @deftech{composition rules}:
 
 @image["assets/images/intro-cat.svg"]
 
@@ -48,12 +50,12 @@ and the @deftech{composition} of @tech{morphisms}, governed by @deftech{composit
 
         Every @tech{object} has an associated @tech{identity morphism}.
         For @tech{object} @math{a} in @math{𝒞}, its @tech{identity morphism}
-        is denoted as @math{id.a}, and @math{a = dom(id.a) = cod(id.a)}.
+        is denoted as @math{id_a} or @math{1_a}, and @math{a = dom(id_a) = cod(id_a)}.
 
         @image["assets/images/C-3.svg"]}
   @item{@tech{Composition} and @tech{identity morphisms}
 
-        For @tech{morphism} @math{f: a -> b} in @math{𝒞}, @math{f = f∘id.a = id.b∘f}.
+        For @tech{morphism} @math{f: a -> b} in @math{𝒞}, @math{f = f∘id_a = id_b∘f}.
 
         @image["assets/images/C-4.svg"]}
   ]
@@ -70,7 +72,7 @@ In traditional @tech{category theory}, a distinction is often made between @tech
 and @tech{identity morphisms}. However, in this tutorial, we adopt a unique
 perspective by using @tech{identity morphisms} to directly represent @tech{objects}.
 There is no strict demarcation between @tech{objects} and their associated
-@tech{identity morphisms}; they are treated interchangeably (@math{a = id.a}).
+@tech{identity morphisms}; they are treated interchangeably (@math{a = id_a}).
 
 One common misconception among beginners in @tech{category theory} is the assumption
 that @tech{morphisms} must represent traditional mappings, transformations, or
@@ -651,7 +653,9 @@ racket/base
      (and (morphismℳ? j)
           (morphismℳ? p)
           (morphismℳ? q)
-          (morphismℳ? i))]))
+          (morphismℳ? i)
+          (morphismℳ=? (∘ℳ j p) (∘ℳ q i)))]
+    [_ #f]))
 (define morphism=?
   (case-lambda
     [(_) #t]
@@ -662,7 +666,8 @@ racket/base
         (and (morphismℳ=? n j)
              (morphismℳ=? r p)
              (morphismℳ=? s q)
-             (morphismℳ=? m i))])]
+             (morphismℳ=? m i))]
+       [(_ _) #f])]
     [(s1 s2 . s*) (and (morphism=? s1 s2) (apply morphism=? s*))]))
 
 (code:comment2 "Objects in Arr(ℳ)")

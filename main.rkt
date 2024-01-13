@@ -6,12 +6,19 @@
 
 
 ;; Procedure Category
-(define ∘ compose)
+(define ∘ (procedure-rename compose '∘))
+(define ·
+  (let ([α->αid (λ (α) (α values))])
+    (case-lambda
+      [() values]
+      [(α) α]
+      [(α . α*)
+       (define αid (apply ∘ (map α->αid α*)))
+       (define composed (λ (f) (∘ (α f) αid)))
+       composed])))
 
 
 ;; Product Category
-(define × list)
-
 (define (dom× . dom*) (define (dom m*) (map call dom* m*)) dom)
 (define (cod× . cod*) (define (cod m*) (map call cod* m*)) cod)
 (define (∘× . ∘*)
@@ -22,6 +29,7 @@
       (apply ∘ m*)))
   ∘)
 
+(define (morphism× . m*) m*)
 (define (morphism×? . morphism?*)
   (define (morphism? . m*)
     (andmap call morphism?* m*))
