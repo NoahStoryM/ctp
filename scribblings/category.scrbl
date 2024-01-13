@@ -25,11 +25,12 @@ of a mathematical structure.
 A @deftech{category} @math{𝒞} consists of a collection @math{𝒞_0} of @deftech{objects}
 and a collection @math{𝒞_1} of @deftech{morphisms}. Think of @math{𝒞} as a
 directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
-connecting these nodes. The key distinguishing features of a @tech{category} are
-the @deftech{identity morphisms} and the @deftech{composition} of @tech{morphisms},
-governed by @deftech{composition rules}:
+connecting these nodes.
 
 @image["assets/images/intro-cat.svg"]
+
+The key distinguishing features of a @tech{category} are the @deftech{identity morphisms}
+and the @deftech{composition} of @tech{morphisms}, governed by @deftech{composition rules}:
 
 @itemlist[
   #:style 'ordered
@@ -411,8 +412,8 @@ From the computing science point of view, @tech{category theory} is a strongly
 typed language, stronger than any programming language. This is because of the
 @tech{composition rule}: @math{g∘f} exists if and only if @math{cod(f) = dom(g)}.
 Racket is an untyped language, it allows any procedure to be composed, such as
-@code{(compose car +)}, but such a procedure will only report an error when applied.
-Therefore, this @tech{category} can be regarded as an @tech{OOC}:
+@code{(compose car +)}, but such a procedure will only @racket[raise] an error
+when applied. Therefore, this @tech{category} can be regarded as an @tech{OOC}:
 
 @racketblock[
 (define (dom _) (∘))
@@ -721,3 +722,5 @@ racket/base
 @subsubsection{Split}
 
 @subsubsection{Iso}
+
+@subsubsection{Initial and Terminal}
