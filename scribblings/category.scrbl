@@ -240,7 +240,7 @@ racket/base
 
 @subsubsection{String Category}
 
-As an exercise, consider the @tech{category} of @tech[#:doc rkt-scrbl]{strings},
+@bold{Exercise}: consider the @tech{category} of @tech[#:doc rkt-scrbl]{strings},
 which is also an @tech{OOC}. Here's a skeleton code for the @tech{category} and
 your task is to complete the implementation:
 
@@ -468,7 +468,6 @@ Let's illustrate this concept with a Racket code example
 we create a @tech{product category} by taking the @tech{product} of
 @secref["Matrix_Category"] and @secref["Binary_Relation_Category"].
 
-
 @racketmod[
 racket/base
 
@@ -584,8 +583,31 @@ racket/base
 
 @subsubsection{Arrow Category}
 
+Given a @tech{category} @math{𝒞}, the @deftech{arrow category} @math{Arr(𝒞)} is
+constructed by takeing its @tech{morphisms} as @tech{objects} and @tech{commutative squares}
+as @tech{morphisms}.
+
+For example, here are @code{3} @tech{commutative squares} in @math{𝒞}:
+
 @image["assets/images/intro-arr-cat_1.svg"]
+
+@margin-note{
+The proof is left as an exercise.
+}
+
+Then, we get some new @tech{commutative squares} by @tech{composition}:
+
 @image["assets/images/intro-arr-cat_2.svg"]
+
+Finally, using nodes to represent @tech{morphisms}, and using arrows to represent
+@tech{commutative diagrams}, we get a directed graph that obeys the @tech{composition rules},
+which is the @tech{arrow category} @math{Arr(𝒞)}:
+
+@margin-note{
+Although we name arrows using pairs here, note that they are not pairs, but
+@tech{commutative diagrams}.
+}
+
 @image["assets/images/intro-arr-cat_3.svg"]
 
 @racketmod[
