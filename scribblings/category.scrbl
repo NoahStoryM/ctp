@@ -97,6 +97,12 @@ The equation @math{k∘f = g∘h} is pictured as a @tech{commutative square} lik
 
 @image["assets/images/intro-comm-sqr.svg"]{k∘f = g∘h}
 
+If there is a @tech{morphism} @math{l} making @math{f = l∘h} and @math{g = k∘l},
+then @math{l} is a @deftech{lift} (@deftech{diagonal fill-in} or @deftech{filler})
+in the @tech{commutative square}:
+
+@image["assets/images/intro-lift.svg"]
+
 @subsection{Semicategory}
 
 @margin-note{
