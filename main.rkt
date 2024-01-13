@@ -93,3 +93,26 @@
       [(s1 s2 . s*) (and (morphism=? s1 s2) (apply morphism=? s*))]))
 
   (values dom cod ∘ morphism? morphism=?))
+
+
+;; TODO Slice Category 𝒞/x
+#;(define (Sli dom𝒞 cod𝒞 ∘𝒞 morphism𝒞? morphism𝒞=?)
+    (define (𝒞/_ x)
+      (define dom)
+      (define cod)
+      (define ∘)
+      (define morphism?)
+      (define morphism=?)
+      (values dom cod ∘ morphism? morphism=?))
+    𝒞/_)
+
+;; TODO Coslice Category x/𝒞
+#;(define (Cos dom𝒞 cod𝒞 ∘𝒞 morphism𝒞? morphism𝒞=?)
+    (define (_/𝒞 x)
+      (define dom)
+      (define cod)
+      (define ∘)
+      (define morphism?)
+      (define morphism=?)
+      (values dom cod ∘ morphism? morphism=?))
+    _/𝒞)

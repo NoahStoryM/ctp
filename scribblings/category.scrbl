@@ -87,12 +87,22 @@ Informally, a @deftech{diagram} comprises various @tech{objects} connected by
 various @tech{morphisms}. When the @tech{morphisms} with the same @tech{domain}
 and @tech{codomain} are the same one, the @tech{diagram} is a @deftech{commutative diagram}.
 
+@tech{Commutative diagrams} serve as a powerful language for expressing equations.
+
+@margin-note{
+A @deftech{commutative triangle} is a @tech{commutative diagram} that has the shape
+of a triangle.
+}
+
+The equation @math{h = g∘f} is pictured as a @tech{commutative triangle} like this:
+
+@image["assets/images/intro-comm-tri.svg"]{h = g∘f}
+
 @margin-note{
 A @deftech{commutative square} is a @tech{commutative diagram} that has the shape
 of a square.
 }
 
-@tech{Commutative diagrams} serve as a powerful language for expressing equations.
 The equation @math{k∘f = g∘h} is pictured as a @tech{commutative square} like this:
 
 @image["assets/images/intro-comm-sqr.svg"]{k∘f = g∘h}
@@ -725,18 +735,103 @@ racket/base
 (morphism=? f (∘ f (dom f)) (∘ (cod f) f))
 ]
 
-@bold{Exercise}: @racket[define] @code{Arr} so that we can @racket[define]
-@tech{category} @math{Arr(ℳ)} in this way:
+@bold{Exercise}: @racket[define] @code{Arr} so that we can @racket[define] the
+@tech{arrow category} @math{Arr(ℳ)} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ morphism? morphism=?)
   (Arr domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?))
 ]
 
+@subsubsection{(Co)Slice Category}
+
+A @deftech{slice category} (@deftech{over category}) @math{𝒞/c} is a construction
+that allows us to study a @tech{category} @math{𝒞} through the lens of a fixed
+@tech{object} @math{c} in @math{𝒞}. Intuitively, @math{𝒞/c} consists of all
+the @tech{objects} and @tech{morphisms} in @math{𝒞} that are "over" @math{c}.
+
+@math{𝒞/c} is constructed by takeing @math{𝒞}'s @tech{morphisms} end to @math{c}
+as @tech{objects}, and @tech{commutative triangles} end to @math{c} as @tech{morphisms}.
+
+For example, here are @code{3} @tech{commutative triangles} end to @math{c_1}
+in @math{𝒞}:
+
+@image["assets/images/intro-over-cat_1.svg"]
+
+@margin-note{
+The proof is left as an exercise.
+}
+
+Then, we get some new @tech{commutative triangles} by @tech{composition}:
+
+@image["assets/images/intro-over-cat_2.svg"]
+
+Finally, using nodes to represent @tech{morphisms} end to @math{c_1}, and using
+arrows to represent @tech{commutative triangles} end to @math{c_1}, we get a
+directed graph that obeys the @tech{composition rules}, which is the
+@tech{slice category} @math{𝒞/c_1}:
+
+@margin-note{
+Although we name arrows using @tech{morphisms} here, note that they are not
+@tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
+}
+
+@image["assets/images/intro-over-cat_3.svg"]
+
+The @tech{dual} notion of a @tech{slice category} @math{𝒞/c} is a @deftech{coslice category}
+(@deftech{under category}) @math{c/𝒞}, which consists of all the @tech{objects}
+and @tech{morphisms} in @math{𝒞} that are "under" @math{c}.
+
+@math{c/𝒞} is constructed by takeing @math{𝒞}'s @tech{morphisms} start from @math{c}
+as @tech{objects}, and @tech{commutative triangles} start from @math{c} as @tech{morphisms}.
+
+For example, here are @code{3} @tech{commutative triangles} start from @math{c_0}
+in @math{𝒞}:
+
+@image["assets/images/intro-under-cat_1.svg"]
+
+@margin-note{
+The proof is left as an exercise.
+}
+
+Then, we get some new @tech{commutative triangles} by @tech{composition}:
+
+@image["assets/images/intro-under-cat_2.svg"]
+
+Finally, using nodes to represent @tech{morphisms} start from @math{c_0}, and using
+arrows to represent @tech{commutative triangles} start from @math{c_0}, we get a
+directed graph that obeys the @tech{composition rules}, which is the
+@tech{coslice category} @math{c_0/𝒞}:
+
+@margin-note{
+Although we name arrows using @tech{morphisms} here, note that they are not
+@tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
+}
+
+@image["assets/images/intro-under-cat_3.svg"]
+
+@bold{Exercise}: referencing the example code of the @tech{arrow category}
+@math{Arr(ℳ)}, implement the (co)@tech{slice category} @math{ℳ/m} (@math{m/ℳ}).
+
+@bold{Exercise}: @racket[define] (¬)@code{Sli} so that we can @racket[define]
+the (co)@tech{slice category} @math{ℳ/m} (@math{m/ℳ}) in this way:
+
+@racketblock[
+(define-values (dom cod ∘ morphism? morphism=?)
+  ((Sli domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?) m))
+]
+
+@bold{Exercise}: prove that @math{ℳ^op/m = (m/ℳ)^op}.
+
+@bold{Exercise}: @racket[define] the @tech{coslice category} through the use of
+@tech{dual} and the @tech{slice category}.
+
+@bold{Exercise}: @racket[define] @code{¬Sli} through the use of @tech{dual} and
+@code{Sli}.
+
+
 @(void
 #|
-
-@subsubsection{(Co)Slice Category}
 
 @subsubsection{Subcategory}
 
