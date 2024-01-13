@@ -31,8 +31,10 @@
 
 (define (morphism× . m*) m*)
 (define (morphism×? . morphism?*)
+  (define n (length morphism?*))
   (define (morphism? . m*)
-    (andmap call morphism?* m*))
+    (and (list? m*) (= n (length m*))
+         (andmap call morphism?* m*)))
   morphism?)
 (define (morphism×=? . morphism=?*)
   (define (morphism=? . m**)

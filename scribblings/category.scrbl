@@ -529,7 +529,7 @@ racket/base
   (list (apply ∘ℳ m*) (apply ∘ℛ r*)))
 
 (define (morphism? p)
-  (and (list? p)
+  (and (list? p) (= 2 (length p))
        (morphismℳ? (car  p))
        (morphismℛ? (cadr p))))
 (define (morphism=? p . p*)
