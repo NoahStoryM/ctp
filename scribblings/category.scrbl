@@ -16,16 +16,15 @@ the Racket programming language.
 
 In the realm of mathematics, @tech{category theory} serves as a powerful and
 abstract tool for understanding relationships and compositions within various
-mathematical structures. At its core, a @tech{category} consists of @tech{objects}
-and @tech{morphisms}, forming a conceptual framework that generalizes the notion
+mathematical structures. At its core, a @deftech{category} @math{𝒞} consists of
+a collection @math{𝒞_0} of @deftech{objects} and a collection @math{𝒞_1} of
+@deftech{morphisms}, forming a conceptual framework that generalizes the notion
 of a mathematical structure.
 
 @subsection{Category}
 
-A @deftech{category} @math{𝒞} consists of a collection @math{𝒞_0} of @deftech{objects}
-and a collection @math{𝒞_1} of @deftech{morphisms}. Think of @math{𝒞} as a
-directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
-connecting these nodes.
+Think of a @tech{category} @math{𝒞} as a directed graph, where @tech{objects}
+are nodes, and @tech{morphisms} are arrows connecting these nodes.
 
 @image["assets/images/intro-cat.svg"]
 
@@ -56,7 +55,7 @@ and the @deftech{composition} of @tech{morphisms}, governed by @deftech{composit
         @image["assets/images/C-3.svg"]}
   @item{@tech{Composition} and @tech{identity morphisms}
 
-        For @tech{morphism} @math{f: a -> b} in @math{𝒞}, @math{f = f∘id_a = id_b∘f}.
+        For @tech{morphism} @math{f: a → b} in @math{𝒞}, @math{f = f∘id_a = id_b∘f}.
 
         @image["assets/images/C-4.svg"]}
   ]
@@ -148,8 +147,8 @@ Just as @racket[car], @racket[cdr], and @racket[cons] provide an abstraction for
 (representing @deftech{domain}, @deftech{codomain}, and @deftech{compose})
 to abstract over @tech{categories}.
 
-We stipulate that @code{(∘ m)} returns @code{m} and @code{(∘)} returns @tech{*}
-in Racket.
+We stipulate that @code{(∘)} returns @tech{*}, @code{(∘ m)} returns @code{m},
+and @code{(morphism=? m)} returns @code{#t} in Racket.
 
 @subsection{Category Examples}
 
@@ -712,6 +711,9 @@ racket/base
   (Arr domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?))
 ]
 
+@(void
+#|
+
 @subsubsection{(Co)Slice Category}
 
 @subsubsection{Subcategory}
@@ -725,3 +727,6 @@ racket/base
 @subsubsection{Iso}
 
 @subsubsection{Initial and Terminal}
+
+|#
+)
