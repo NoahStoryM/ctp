@@ -335,11 +335,11 @@ racket/base
 @subsubsection{Binary Relation Category}
 
 @margin-note{
-A @deftech{preordered set} @math{(S, <=)} is a @tech{set} @math{S} equipped with
-a binary relation @math{<=} that is reflexive and transitive.
+A @deftech{preordered set} @math{(S, ≤)} is a @tech{set} @math{S} equipped with
+a binary relation @math{≤} that is reflexive and transitive.
 }
 
-A @tech{preordered set} @math{(S, <=)} can be viewed as a @tech{category} where
+A @tech{preordered set} @math{(S, ≤)} can be viewed as a @tech{category} where
 @tech{morphisms} are binary relations on its underlying @tech{set} @math{S}:
 
 @racketmod[
@@ -391,7 +391,7 @@ racket/base
 
 @margin-note{
 A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set}
-@math{(S, <=)} for which @math{<=} is antisymmetric.
+@math{(S, ≤)} for which @math{≤} is antisymmetric.
 }
 
 A @tech{poset} can also be viewed as a @tech{category}. It is left as an exercise
