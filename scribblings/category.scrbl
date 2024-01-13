@@ -696,6 +696,14 @@ racket/base
 (morphism=? f (∘ f (dom f)) (∘ (cod f) f))
 ]
 
+@bold{Exercise}: @racket[define] @code{Arr} so that we can @racket[define]
+@tech{category} @math{Arr(ℳ)} in this way:
+
+@racketblock[
+(define-values (dom cod ∘ morphism? morphism=?)
+  (Arr domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?))
+]
+
 @subsubsection{(Co)Slice Category}
 
 @subsubsection{Subcategory}
