@@ -443,7 +443,7 @@ A @tech{category} @math{𝒞} can be viewed as a directed graph that adheres to 
 @tech{composition rules}. If we reverse all the arrows in the directed graph,
 the resulting new directed graph still adheres to the @tech{composition rules},
 so this new directed graph is also a @tech{category} denoted @math{𝒞^op}.
-@math{𝒞^op} is the @deftech{dual} of @math{𝒞}.
+@math{𝒞^op} is the @deftech{dual} of @math{𝒞}, and @math{(𝒞^op)^op = 𝒞}.
 
 @racketblock[
 (define (¬dom m) (cod m))
@@ -600,12 +600,12 @@ Then, we get some new @tech{commutative squares} by @tech{composition}:
 @image["assets/images/intro-arr-cat_2.svg"]
 
 Finally, using nodes to represent @tech{morphisms}, and using arrows to represent
-@tech{commutative diagrams}, we get a directed graph that obeys the @tech{composition rules},
+@tech{commutative squares}, we get a directed graph that obeys the @tech{composition rules},
 which is the @tech{arrow category} @math{Arr(𝒞)}:
 
 @margin-note{
 Although we name arrows using pairs here, note that they are not pairs, but
-@tech{commutative diagrams}.
+@tech{commutative squares}.
 }
 
 @image["assets/images/intro-arr-cat_3.svg"]
