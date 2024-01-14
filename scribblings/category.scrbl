@@ -250,44 +250,8 @@ racket/base
 
 @subsubsection{String Category}
 
-@bold{Exercise}: consider the @tech{category} of @tech[#:doc rkt-scrbl]{strings},
-which is also an @tech{OOC}. Here's a skeleton code for the @tech{category} and
-your task is to complete the implementation:
-
-@racketmod[
-racket/base
-
-(code:comment2 "Category of Strings")
-(define (dom _) *)
-(define (cod _) *)
-(define (∘ . m*) ???) (code:comment "TODO")
-
-(define (morphism? m) (string? m))
-(define (morphism=? m . m*) (apply string=? m m*))
-
-(code:comment2 "Objects")
-(define * (∘))
-
-(code:comment2 "Morphisms")
-(define f "123")
-(define g "abc")
-(define h "ABC")
-
-(code:comment2 "Existence of composition")
-(morphism=? * (cod f) (dom g))
-(morphism=? * (dom (∘ g f)) (dom f))
-(morphism=? * (cod (∘ g f)) (cod g))
-
-(code:comment2 "Associativity of composition")
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
-
-(code:comment2 "Existence of identity")
-(morphism=? * (dom *) (cod *))
-
-(code:comment2 "Identity and composition")
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
-]
-
+@bold{Exercise}: referencing the example code above, implement the @tech{category}
+of @tech[#:doc rkt-scrbl]{strings}, which is also an @tech{OOC}.
 
 @subsubsection{Matrix Category}
 
@@ -404,8 +368,7 @@ A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set}
 @math{(S, ≤)} for which @math{≤} is antisymmetric.
 }
 
-A @tech{poset} can also be viewed as a @tech{category}. It is left as an exercise
-for further exploration.
+@bold{Exercise}: view a @tech{poset} as a @tech{category} and implement it.
 
 @subsubsection{Procedure Category}
 
@@ -456,16 +419,19 @@ so this new directed graph is also a @tech{category} denoted @math{𝒞^op}.
 @math{𝒞^op} is the @deftech{dual} of @math{𝒞}, and @math{(𝒞^op)^op = 𝒞}.
 
 @racketblock[
-(define (¬dom m) (cod m))
-(define (¬cod m) (dom m))
-(define (¬∘ . m*) (apply ∘ (reverse m*)))
+(define (¬ dom𝒞 cod𝒞 ∘𝒞)
+  (define (dom m) (cod𝒞 m))
+  (define (cod m) (dom𝒞 m))
+  (define (∘ . m*) (apply ∘𝒞 (reverse m*)))
+  (values dom cod ∘))
 ]
 
 @subsubsection{Product Category}
 
 @margin-note{
-In this context, @tech{product} refers to the @tech{cartesian product},
-which is the @tech{product object} in the @tech{category} of @tech{sets}.
+In this context, @tech[#:key "cartesian product"]{product} refers to the
+@deftech{cartesian product}, which is the @tech{product object} in the
+@tech{category} of @tech{sets}.
 }
 
 The @deftech{product category} combines the given @tech{categories} to form a
@@ -475,8 +441,8 @@ new @tech{category}.
 
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
-we create a @tech{product category} by taking the @tech{product} of
-@secref["Matrix_Category"] and @secref["Binary_Relation_Category"].
+we create a @tech{product category} by taking the @tech[#:key "cartesian product"]{product}
+of @secref["Matrix_Category"] and @secref["Binary_Relation_Category"].
 
 @racketmod[
 racket/base
@@ -778,6 +744,17 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 
 @image["assets/images/intro-over-cat_3.svg"]
 
+@bold{Exercise}: referencing the example code of the @tech{arrow category}
+@math{Arr(ℳ)}, implement the @tech{slice category} @math{ℳ/m}.
+
+@bold{Exercise}: @racket[define] @code{Sli} so that we can @racket[define]
+the @tech{slice category} @math{ℳ/m} in this way:
+
+@racketblock[
+(define-values (dom cod ∘ morphism? morphism=?)
+  ((Sli domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?) m))
+]
+
 The @tech{dual} notion of a @tech{slice category} @math{𝒞/c} is a @deftech{coslice category}
 (@deftech{under category}) @math{c/𝒞}, which consists of all the @tech{objects}
 and @tech{morphisms} in @math{𝒞} that are "under" @math{c}.
@@ -811,24 +788,19 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 @image["assets/images/intro-under-cat_3.svg"]
 
 @bold{Exercise}: referencing the example code of the @tech{arrow category}
-@math{Arr(ℳ)}, implement the (co)@tech{slice category} @math{ℳ/m} (@math{m/ℳ}).
+@math{Arr(ℳ)}, implement the @tech{coslice category} @math{m/ℳ}.
 
-@bold{Exercise}: @racket[define] (¬)@code{Sli} so that we can @racket[define]
-the (co)@tech{slice category} @math{ℳ/m} (@math{m/ℳ}) in this way:
+@bold{Exercise}: @racket[define] @code{¬Sli} so that we can @racket[define]
+the @tech{coslice category} @math{m/ℳ} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ morphism? morphism=?)
-  ((Sli domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?) m))
+  ((¬Sli domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?) m))
 ]
 
 @bold{Exercise}: prove that @math{ℳ^op/m = (m/ℳ)^op}.
 
-@bold{Exercise}: @racket[define] the @tech{coslice category} through the use of
-@tech{dual} and the @tech{slice category}.
-
-@bold{Exercise}: @racket[define] @code{¬Sli} through the use of @tech{dual} and
-@code{Sli}.
-
+@bold{Exercise}: @racket[define] @code{¬Sli} through the use of @code{¬} and @code{Sli}.
 
 @(void
 #|
