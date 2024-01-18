@@ -5,7 +5,7 @@
                      math/matrix)
           "ctp-utils.rkt")
 
-@title[#:tag "Cat"]{Category}
+@title{Category}
 
 Welcome to the first chapter of our @secref{CTP} tutorial!
 In this chapter, we'll explore the foundational concepts of @tech{category theory}
@@ -21,7 +21,7 @@ a collection @math{𝒞_0} of @deftech{objects} and a collection @math{𝒞_1} o
 @deftech{morphisms}, forming a conceptual framework that generalizes the notion
 of a mathematical structure.
 
-@subsection{Category}
+@subsection{Basic Category}
 
 Think of a @tech{category} @math{𝒞} as a directed graph, where @tech{objects}
 are nodes, and @tech{morphisms} are arrows connecting these nodes.
@@ -95,21 +95,23 @@ and @tech{codomain} are the same one, the @tech{diagram} is a @deftech{commutati
 
 @tech{Commutative diagrams} serve as a powerful language for expressing equations.
 
-@margin-note{
+@subsubsection{commutative triangle}
+
 A @deftech{commutative triangle} is a @tech{commutative diagram} that has the shape
 of a triangle.
-}
 
-The equation @math{h = g∘f} is pictured as a @tech{commutative triangle} like this:
+The equation @math{h = g∘f} can be pictured as a @tech{commutative triangle}
+like this:
 
 @image["assets/images/intro-comm-tri.svg"]{h = g∘f}
 
-@margin-note{
+@subsubsection{commutative square}
+
 A @deftech{commutative square} is a @tech{commutative diagram} that has the shape
 of a square.
-}
 
-The equation @math{k∘f = g∘h} is pictured as a @tech{commutative square} like this:
+The equation @math{k∘f = g∘h} can be pictured as a @tech{commutative square}
+like this:
 
 @image["assets/images/intro-comm-sqr.svg"]{k∘f = g∘h}
 
@@ -119,15 +121,6 @@ in the @tech{commutative square}:
 
 @image["assets/images/intro-lift_1.svg"]
 @image["assets/images/intro-lift_2.svg"]
-
-@subsection{Semicategory}
-
-@margin-note{
-See more in @hyperlink["https://ncatlab.org/nlab/show/semicategory"]{nLab}.
-}
-
-@deftech{Semicategories} (@deftech{non-unital categories}) are similar to
-@tech{categories} but omit the @tech{identity morphism} requirement.
 
 @subsection{One-Object Category}
 
@@ -151,6 +144,43 @@ The @tech{monoid} structure becomes evident when we consider the @tech{identity 
 as the @tech{monoid} @tech{identity element} and the @tech{composition} operation
 as the @tech{monoid} operation. Thus, @tech{OOCs} provide a categorical perspective
 on @tech{monoids}.
+
+@subsection{Subcategory}
+
+Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
+of @math{𝒞} if and only if:
+
+@itemlist[
+  #:style 'ordered
+  @item{@math{𝒟_0 ⊆ 𝒞_0} and @math{𝒟_1 ⊆ 𝒞_1}.}
+  @item{If the @tech{object} @math{a} is in @math{𝒟}, then so is @math{id_a}.}
+  @item{If the @tech{morphism} @math{f} is in @math{𝒟}, then so are @math{dom(f)} and @math{cod(f)}.}
+  @item{If the @tech{composable pair} @math{(f, g)} is in @math{𝒟}, then so is @math{g∘f}.}
+  ]
+
+@subsubsection{full subcategory}
+
+A @deftech{full subcategory} arises when we selectively remove certain @tech{objects}
+from a @tech{category} @math{𝒞} along with the @tech{morphisms} whose @tech{domains}
+or @tech{codomains} involve these @tech{objects}. The resulting @tech{subcategory}
+@math{𝒟}, retains all the @tech{morphisms} from @math{𝒞} that have not been
+affected by the removal of @tech{objects}.
+
+@subsubsection{wide subcategory}
+
+A @deftech{wide subcategory} is a @tech{subcategory} that includes all @tech{objects}
+from the original @tech{category}. Formally, if @math{𝒟} is a @tech{wide subcategory}
+of @math{𝒞}, then every @tech{object} in @math{𝒞} is also an @tech{object} in @math{𝒟}.
+
+@subsection{Semicategory}
+
+@margin-note{
+See more in @hyperlink["https://ncatlab.org/nlab/show/semicategory"]{nLab}.
+}
+
+@deftech{Semicategories} (@deftech{non-unital categories}) are similar to
+@tech{categories} but omit the @tech{identity morphism} requirement.
+
 
 @section{Mapping Category to Programming}
 
