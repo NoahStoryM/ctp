@@ -36,13 +36,19 @@ and the @deftech{composition} of @tech{morphisms}, governed by @deftech{composit
   @item{Existence of @tech{composition}
 
         For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, @math{g∘f} is defined
-        if and only if @math{(g, f)} is a @deftech{composable pair}: @math{cod(f) = dom(g)}.
-        When @math{g∘f} is defined, @math{dom(g∘f) = dom(f)} and @math{cod(g∘f) = cod(g)}.
+        if and only if @math{cod(f) = dom(g)}. When @math{g∘f} is defined,
+        @math{dom(g∘f) = dom(f)} and @math{cod(g∘f) = cod(g)}.
 
         @image["assets/images/C-1.svg"]}
   @item{Associativity of @tech{composition}
 
-        For @tech{composable pairs} @math{(g, f)} and @math{(h, g)} in @math{𝒞},
+        @margin-note{
+        Note that a @deftech{composable pair} consists of not only a pair of
+        @tech{morphisms}, but also the @tech{domain} and @tech{codomain} of them.
+        See more in @hyperlink["https://ncatlab.org/nlab/show/composable%20pair"]{nLab}.
+        }
+
+        For @tech{composable pairs} @math{(f, g)} and @math{(g, h)} in @math{𝒞},
         @math{(h∘g)∘f = h∘(g∘f)}, denoted as @math{h∘g∘f}.
 
         @image["assets/images/C-2.svg"]}
