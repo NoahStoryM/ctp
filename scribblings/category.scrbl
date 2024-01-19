@@ -421,7 +421,7 @@ From the computing science point of view, @tech{category theory} is a strongly
 typed language, stronger than any programming language. This is because of the
 @tech{composition rule}: @math{g∘f} exists if and only if @math{cod(f) = dom(g)}.
 Racket is an untyped language, it allows any procedure to be composed, such as
-@code{(compose car +)}, but such a procedure will only @racket[raise] an error
+@code{(compose car +)}, but such a procedure will only @racket[raise] an @racket[exn]
 when applied. Therefore, this @tech{category} can be regarded as an @tech{OOC}:
 
 @racketblock[
@@ -556,15 +556,15 @@ racket/base
   (and (apply morphismℳ=? m*) (apply morphismℛ=? r*)))
 
 (code:comment2 "Objects in ℳ × ℛ")
-(define a (list a0 a1)) (code:comment "(a0 a1)")
-(define b (list b0 b1)) (code:comment "(b0 b1)")
-(define c (list c0 c1)) (code:comment "(c0 c1)")
-(define d (list d0 d1)) (code:comment "(d0 d1)")
+(define a (list a0 a1)) (code:comment "(a0, a1)")
+(define b (list b0 b1)) (code:comment "(b0, b1)")
+(define c (list c0 c1)) (code:comment "(c0, c1)")
+(define d (list d0 d1)) (code:comment "(d0, d1)")
 
 (code:comment2 "Morphisms in ℳ × ℛ")
-(define f (list f0 f1)) (code:comment "(f0 f1)")
-(define g (list g0 g1)) (code:comment "(g0 g1)")
-(define h (list h0 h1)) (code:comment "(h0 h1)")
+(define f (list f0 f1)) (code:comment "(f0, f1)")
+(define g (list g0 g1)) (code:comment "(g0, g1)")
+(define h (list h0 h1)) (code:comment "(h0, h1)")
 
 (code:comment2 "Existence of composition")
 (morphism=? b (cod f) (dom g))
@@ -718,9 +718,9 @@ racket/base
 (define d `((,h0 ,s0) (,s0 ,g0))) (code:comment "s0")
 
 (code:comment2 "Morphisms in Arr(ℳ)")
-(define f `((,j0 ,p0) (,q0 ,i0))) (code:comment "(i0 j0)")
-(define g `((,l0 ,q0) (,r0 ,k0))) (code:comment "(k0 l0)")
-(define h `((,n0 ,r0) (,s0 ,m0))) (code:comment "(m0 n0)")
+(define f `((,j0 ,p0) (,q0 ,i0))) (code:comment "(i0, j0)")
+(define g `((,l0 ,q0) (,r0 ,k0))) (code:comment "(k0, l0)")
+(define h `((,n0 ,r0) (,s0 ,m0))) (code:comment "(m0, n0)")
 
 (code:comment2 "Existence of composition")
 (morphism=? b (cod f) (dom g))
@@ -836,7 +836,7 @@ the @tech{coslice category} @math{m/ℳ} in this way:
 
 @bold{Exercise}: prove that @math{ℳ^op/m = (m/ℳ)^op}.
 
-@bold{Exercise}: @racket[define] @code{¬Sli} through the use of @code{¬} and @code{Sli}.
+@bold{Exercise}: @racket[define] @code{¬Sli} by using @code{¬} and @code{Sli}.
 
 @(void
 #|
