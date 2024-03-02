@@ -47,6 +47,7 @@ applicability of @tech{category theory} in the realm of programming!
 @local-table-of-contents[]
 
 @include-section["category.scrbl"]
+@include-section["categorical_definition.scrbl"]
 @;; include-section["functor.scrbl"]
 @;; include-section["natural_transformations.scrbl"]
 @;; include-section["n-category.scrbl"]
