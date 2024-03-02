@@ -95,7 +95,7 @@ and @tech{codomain} are the same one, the @tech{diagram} is a @deftech{commutati
 
 @tech{Commutative diagrams} serve as a powerful language for expressing equations.
 
-@subsubsection{commutative triangle}
+@subsubsection{Commutative Triangle}
 
 A @deftech{commutative triangle} is a @tech{commutative diagram} that has the shape
 of a triangle.
@@ -105,7 +105,7 @@ like this:
 
 @image["assets/images/comm-tri.svg"]{h = g∘f}
 
-@subsubsection{commutative square}
+@subsubsection{Commutative Square}
 
 A @deftech{commutative square} is a @tech{commutative diagram} that has the shape
 of a square.
@@ -158,7 +158,7 @@ of @math{𝒞} if and only if:
   @item{If the @tech{composable pair} @math{(f, g)} is in @math{𝒟}, then so is @math{g∘f}.}
   ]
 
-@subsubsection{full subcategory}
+@subsubsection{Full Subcategory}
 
 A @deftech{full subcategory} arises when we selectively remove certain @tech{objects}
 from a @tech{category} @math{𝒞} along with the @tech{morphisms} whose @tech{domains}
@@ -166,7 +166,7 @@ or @tech{codomains} involve these @tech{objects}. The resulting @tech{subcategor
 @math{𝒟}, retains all the @tech{morphisms} from @math{𝒞} that have not been
 affected by the removal of @tech{objects}.
 
-@subsubsection{wide subcategory}
+@subsubsection{Wide Subcategory}
 
 A @deftech{wide subcategory} is a @tech{subcategory} that includes all @tech{objects}
 from the original @tech{category}. Formally, if @math{𝒟} is a @tech{wide subcategory}
@@ -840,21 +840,3 @@ the @tech{coslice category} @math{m/ℳ} in this way:
 @bold{Exercise}: prove that @math{ℳ^op/m = (m/ℳ)^op}.
 
 @bold{Exercise}: @racket[define] @code{¬Sli} by using @code{¬} and @code{Sli}.
-
-@(void
-#|
-
-@subsubsection{Subcategory}
-
-@subsection{Special Morphisms}
-
-@subsubsection{Monic and Epic}
-
-@subsubsection{Split}
-
-@subsubsection{Iso}
-
-@subsubsection{Initial and Terminal}
-
-|#
-)
