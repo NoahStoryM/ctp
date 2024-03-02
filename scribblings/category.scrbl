@@ -622,8 +622,8 @@ Although we name arrows using pairs here, note that they are not pairs, but
 
 @image["assets/images/arr-cat_3.svg"]
 
-In the following example code, we construct an @tech{arrow category} of the
-@secref["Matrix_Category"]:
+In the following code, we create an @tech{arrow category} to which
+@secref["Matrix_Category"] gives rise:
 
 @racketmod[
 racket/base
