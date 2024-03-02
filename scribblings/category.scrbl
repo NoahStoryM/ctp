@@ -26,7 +26,7 @@ of a mathematical structure.
 Think of a @tech{category} @math{𝒞} as a directed graph, where @tech{objects}
 are nodes, and @tech{morphisms} are arrows connecting these nodes.
 
-@image["assets/images/intro-cat.svg"]
+@image["assets/images/cat.svg"]
 
 The key distinguishing features of a @tech{category} are the @deftech{identity morphisms}
 and the @deftech{composition} of @tech{morphisms}, governed by @deftech{composition rules}:
@@ -103,7 +103,7 @@ of a triangle.
 The equation @math{h = g∘f} can be pictured as a @tech{commutative triangle}
 like this:
 
-@image["assets/images/intro-comm-tri.svg"]{h = g∘f}
+@image["assets/images/comm-tri.svg"]{h = g∘f}
 
 @subsubsection{commutative square}
 
@@ -113,14 +113,14 @@ of a square.
 The equation @math{k∘f = g∘h} can be pictured as a @tech{commutative square}
 like this:
 
-@image["assets/images/intro-comm-sqr.svg"]{k∘f = g∘h}
+@image["assets/images/comm-sqr.svg"]{k∘f = g∘h}
 
 If there is a @tech{morphism} @math{l} making @math{f = l∘h} and @math{g = k∘l},
 then @math{l} is a @deftech{lift} (@deftech{diagonal fill-in} or @deftech{filler})
 in the @tech{commutative square}:
 
-@image["assets/images/intro-lift_1.svg"]
-@image["assets/images/intro-lift_2.svg"]
+@image["assets/images/lift_1.svg"]
+@image["assets/images/lift_2.svg"]
 
 @subsection{One-Object Category}
 
@@ -134,7 +134,7 @@ A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}
 In @tech{OOC}, there is only a single @tech{object}, usually denoted by @deftech{*},
 and @tech{morphisms} are defined within the context of @tech{*}.
 
-@image["assets/images/intro-ooc.svg"]
+@image["assets/images/ooc.svg"]
 
 @margin-note{
 @tech{categories} are sometimes called @deftech{monoidoids}.
@@ -446,7 +446,7 @@ and explore various relationships between them.
 The @tech{dual} of a @tech{category} is the reverse version of the given
 @tech{category}.
 
-@image["assets/images/intro-¬cat.svg"]
+@image["assets/images/¬cat.svg"]
 
 A @tech{category} @math{𝒞} can be viewed as a directed graph that adheres to the
 @tech{composition rules}. If we reverse all the arrows in the directed graph,
@@ -473,7 +473,7 @@ In this context, @tech[#:key "cartesian product"]{product} refers to the
 The @deftech{product category} combines the given @tech{categories} to form a
 new @tech{category}.
 
-@image["assets/images/intro-prod-cat.svg"]
+@image["assets/images/prod-cat.svg"]
 
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
@@ -601,7 +601,7 @@ as @tech{morphisms}.
 
 For example, here are @code{3} @tech{commutative squares} in @math{𝒞}:
 
-@image["assets/images/intro-arr-cat_1.svg"]
+@image["assets/images/arr-cat_1.svg"]
 
 @margin-note{
 The proof is left as an exercise.
@@ -609,7 +609,7 @@ The proof is left as an exercise.
 
 Then, we get some new @tech{commutative squares} by @tech{composition}:
 
-@image["assets/images/intro-arr-cat_2.svg"]
+@image["assets/images/arr-cat_2.svg"]
 
 Finally, using nodes to represent @tech{morphisms}, and using arrows to represent
 @tech{commutative squares}, we get a directed graph that obeys the @tech{composition rules},
@@ -620,7 +620,7 @@ Although we name arrows using pairs here, note that they are not pairs, but
 @tech{commutative squares}.
 }
 
-@image["assets/images/intro-arr-cat_3.svg"]
+@image["assets/images/arr-cat_3.svg"]
 
 @racketmod[
 racket/base
@@ -758,7 +758,7 @@ as @tech{objects}, and @tech{commutative triangles} end to @math{c} as @tech{mor
 For example, here are @code{3} @tech{commutative triangles} end to @math{c_1}
 in @math{𝒞}:
 
-@image["assets/images/intro-over-cat_1.svg"]
+@image["assets/images/over-cat_1.svg"]
 
 @margin-note{
 The proof is left as an exercise.
@@ -766,7 +766,7 @@ The proof is left as an exercise.
 
 Then, we get some new @tech{commutative triangles} by @tech{composition}:
 
-@image["assets/images/intro-over-cat_2.svg"]
+@image["assets/images/over-cat_2.svg"]
 
 Finally, using nodes to represent @tech{morphisms} end to @math{c_1}, and using
 arrows to represent @tech{commutative triangles} end to @math{c_1}, we get a
@@ -778,7 +778,7 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 @tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
 }
 
-@image["assets/images/intro-over-cat_3.svg"]
+@image["assets/images/over-cat_3.svg"]
 
 @bold{Exercise}: referencing the example code of the @tech{arrow category}
 @math{Arr(ℳ)}, implement the @tech{slice category} @math{ℳ/m}.
@@ -801,7 +801,7 @@ as @tech{objects}, and @tech{commutative triangles} start from @math{c} as @tech
 For example, here are @code{3} @tech{commutative triangles} start from @math{c_0}
 in @math{𝒞}:
 
-@image["assets/images/intro-under-cat_1.svg"]
+@image["assets/images/under-cat_1.svg"]
 
 @margin-note{
 The proof is left as an exercise.
@@ -809,7 +809,7 @@ The proof is left as an exercise.
 
 Then, we get some new @tech{commutative triangles} by @tech{composition}:
 
-@image["assets/images/intro-under-cat_2.svg"]
+@image["assets/images/under-cat_2.svg"]
 
 Finally, using nodes to represent @tech{morphisms} start from @math{c_0}, and using
 arrows to represent @tech{commutative triangles} start from @math{c_0}, we get a
@@ -821,7 +821,7 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 }
 
-@image["assets/images/intro-under-cat_3.svg"]
+@image["assets/images/under-cat_3.svg"]
 
 @bold{Exercise}: referencing the example code of the @tech{arrow category}
 @math{Arr(ℳ)}, implement the @tech{coslice category} @math{m/ℳ}.
