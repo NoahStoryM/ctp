@@ -74,18 +74,18 @@ as the central focus. Nevertheless, classic @tech{category} names will still be
 given precedence and used whenever applicable in this tutorial.
 }
 
-In traditional @tech{category theory}, a distinction is often made between @tech{objects}
-and @tech{identity morphisms}. However, in this tutorial, we adopt a unique
-perspective by using @tech{identity morphisms} to directly represent @tech{objects}.
-There is no strict demarcation between @tech{objects} and their associated
-@tech{identity morphisms}; they are treated interchangeably (@math{a = id_a}).
+In traditional @tech{category theory}, a distinction is often made between
+@tech{objects} and @tech{identity morphisms}. However, in this tutorial, we adopt
+a unique perspective by using @tech{identity morphisms} to directly represent
+@tech{objects}. There is no strict demarcation between @tech{objects} and their
+associated @tech{identity morphisms}; they are treated interchangeably (@math{a = id_a}).
 
 One common misconception among beginners in @tech{category theory} is the assumption
 that @tech{morphisms} must represent traditional mappings, transformations, or
 relations. In reality, @tech{morphisms} in @tech{category theory} can be incredibly
 diverse. They can represent not only traditional mappings but also entities like
-@tech[#:doc rkt-scrbl]{numbers}, @tech[#:doc rkt-scrbl]{strings}, or
-@tech[#:doc rkt-scrbl]{lists}, as long as they adhere to the @tech{composition rules}.
+@tech/refer{numbers}, @tech/refer{strings}, or @tech/refer{lists}, as long as they
+adhere to the @tech{composition rules}.
 
 @subsection{Commutative Diagram}
 
@@ -187,8 +187,8 @@ See more in @hyperlink["https://ncatlab.org/nlab/show/semicategory"]{nLab}.
 In this section, we'll explore how @tech{category theory} concepts can be mapped
 to practical programming constructs.
 
-Just as @racket[car], @racket[cdr], and @racket[cons] provide an abstraction for
-@tech[#:doc rkt-scrbl]{pairs} in Racket, we'll introduce the notions of
+Just as @racket[car], @racket[cdr], and @racket[cons] provide an abstraction
+for @tech/refer{pairs} in Racket, we'll introduce the notions of
 @deftech{dom}, @deftech{cod}, and @deftech{∘}
 (representing @deftech{domain}, @deftech{codomain}, and @deftech{compose})
 to abstract over @tech{categories}.
@@ -203,144 +203,33 @@ Let's see how these abstractions can be applied to create and manipulate
 
 @subsubsection{Natural Number Category}
 
-The @tech{category} of natural @tech[#:doc rkt-scrbl]{numbers} is an example of
-@tech{OOC}. In this case, @tech{morphisms} are natural @tech[#:doc rkt-scrbl]{numbers},
-and the single @tech{object} @tech{*} is @code{0} (as the @tech{identity morphism}):
+The @tech{category} of natural @tech/refer{numbers} is an example of @tech{OOC}.
+In this case, @tech{morphisms} are natural @tech/refer{numbers}, and the single
+@tech{object} @tech{*} is @code{0} (as the @tech{identity morphism}):
 
-@racketmod[
-racket/base
-
-(code:comment2 "Category of Natural Numbers")
-(define (dom _) *)
-(define (cod _) *)
-(define (∘ . m*) (apply + m*))
-
-(define (morphism? m) (exact-nonnegative-integer? m))
-(define (morphism=? m . m*) (apply = m m*))
-
-(code:comment2 "Objects")
-(define * (∘))
-
-(code:comment2 "Morphisms")
-(define f 1)
-(define g 2)
-(define h 3)
-
-(code:comment2 "Existence of composition")
-(morphism=? * (cod f) (dom g))
-(morphism=? * (dom (∘ g f)) (dom f))
-(morphism=? * (cod (∘ g f)) (cod g))
-
-(code:comment2 "Associativity of composition")
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
-
-(code:comment2 "Existence of identity")
-(morphism=? * (dom *) (cod *))
-
-(code:comment2 "Identity and composition")
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
-]
+@racketfile{code/cat-of-nn.rkt}
 
 @subsubsection{List Category}
 
-The @tech{category} of @tech[#:doc rkt-scrbl]{lists} is also an @tech{OOC},
-where @tech{*} is @racket[null] and morphisms are @tech[#:doc rkt-scrbl]{lists}:
+The @tech{category} of @tech/refer{lists} is also an @tech{OOC}, where @tech{*}
+is @racket[null] and morphisms are @tech/refer{lists}:
 
-@racketmod[
-racket/base
-
-(code:comment2 "Category of Lists")
-(define (dom _) *)
-(define (cod _) *)
-(define (∘ . m*) (apply append m*))
-
-(define (morphism? m) (list? m))
-(define morphism=?
-  (case-lambda
-    [(_) #t]
-    [(m1 m2) (equal? m1 m2)]
-    [(m1 m2 . m*) (and (morphism=? m1 m2) (apply morphism=? m*))]))
-
-(code:comment2 "Objects")
-(define * (∘))
-
-(code:comment2 "Morphisms")
-(define f '(1 2 3))
-(define g '(a b c))
-(define h '(A B C))
-
-(code:comment2 "Existence of composition")
-(morphism=? * (cod f) (dom g))
-(morphism=? * (dom (∘ g f)) (dom f))
-(morphism=? * (cod (∘ g f)) (cod g))
-
-(code:comment2 "Associativity of composition")
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
-
-(code:comment2 "Existence of identity")
-(morphism=? * (dom *) (cod *))
-
-(code:comment2 "Identity and composition")
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
-]
+@racketfile{code/cat-of-ls.rkt}
 
 @subsubsection{String Category}
 
 @bold{Exercise}: referencing the example code above, implement the @tech{category}
-of @tech[#:doc rkt-scrbl]{strings}, which is also an @tech{OOC}.
+of @tech/refer{strings}, which is also an @tech{OOC}.
 
 @subsubsection{Matrix Category}
 
-The @tech{category} of @tech[#:doc math-scrbl #:key "matrix"]{matrices} is a
-fascinating example that brings together linear algebra and @tech{category theory}.
-In this @tech{category}, each @math{m × n} @tech[#:doc math-scrbl]{matrix} is
-considered a @tech{morphism}, its @tech{domain} is the n-order identity
-@tech[#:doc math-scrbl]{matrix}, and its @tech{codomain} is the m-order identity
-@tech[#:doc math-scrbl]{matrix}:
+The @tech{category} of @tech/math[#:key "matrix"]{matrices} is a fascinating
+example that brings together linear algebra and @tech{category theory}. In this
+@tech{category}, each @math{m × n} @tech/math{matrix} is considered a @tech{morphism},
+its @tech{domain} is the n-order identity @tech/math{matrix}, and its @tech{codomain}
+is the m-order identity @tech/math{matrix}:
 
-@racketmod[
-racket/base
-
-(require math/matrix)
-
-(code:comment2 "Category of Matrices")
-(define (dom m) (identity-matrix (matrix-num-cols m)))
-(define (cod m) (identity-matrix (matrix-num-rows m)))
-(define (∘ m . m*) (apply matrix* m m*))
-
-(define (morphism? m) (matrix? m))
-(define morphism=?
-  (case-lambda
-    [(_) #t]
-    [(m1 m2) (matrix= m1 m2)]
-    [(m1 m2 . m*) (and (morphism=? m1 m2) (apply morphism=? m*))]))
-
-(code:comment2 "Objects")
-(define a (identity-matrix 1))
-(define b (identity-matrix 2))
-(define c (identity-matrix 3))
-(define d (identity-matrix 4))
-
-(code:comment2 "Morphisms")
-(define (rand m n) (random 1 9))
-(define f (build-matrix 2 1 rand))
-(define g (build-matrix 3 2 rand))
-(define h (build-matrix 4 3 rand))
-
-(code:comment2 "Existence of composition")
-(morphism=? b (cod f) (dom g))
-(morphism=? a (dom (∘ g f)) (dom f))
-(morphism=? c (cod (∘ g f)) (cod g))
-
-(code:comment2 "Associativity of composition")
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
-
-(code:comment2 "Existence of identity")
-(morphism=? a (dom a) (cod a))
-
-(code:comment2 "Identity and composition")
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
-]
+@racketfile{code/cat-of-mat.rkt}
 
 @subsubsection{Binary Relation Category}
 
@@ -352,52 +241,7 @@ a binary relation @math{≤} that is reflexive and transitive.
 A @tech{preordered set} @math{(S, ≤)} can be viewed as a @tech{category} where
 @tech{morphisms} are binary relations on its underlying @tech{set} @math{S}:
 
-@racketmod[
-racket/base
-
-(require racket/match)
-
-(code:comment2 "Category of Binary Relations")
-(define (dom m) (define o (car m)) (cons o o))
-(define (cod m) (define o (cdr m)) (cons o o))
-(define ∘
-  (case-lambda
-    [(m) m]
-    [(m1 m2) (match* (m1 m2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
-    [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
-
-(define (morphism? m) (pair? m))
-(define morphism=?
-  (case-lambda
-    [(_) #t]
-    [(m1 m2) (equal? m1 m2)]
-    [(m1 m2 . m*) (and (morphism=? m1 m2) (apply morphism=? m*))]))
-
-(code:comment2 "Objects")
-(define a '(a . a))
-(define b '(b . b))
-(define c '(c . c))
-(define d '(d . d))
-
-(code:comment2 "Morphisms")
-(define f '(a . b))
-(define g '(b . c))
-(define h '(c . d))
-
-(code:comment2 "Existence of composition")
-(morphism=? b (cod f) (dom g))
-(morphism=? a (dom (∘ g f)) (dom f))
-(morphism=? c (cod (∘ g f)) (cod g))
-
-(code:comment2 "Associativity of composition")
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
-
-(code:comment2 "Existence of identity")
-(morphism=? a (dom a) (cod a))
-
-(code:comment2 "Identity and composition")
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
-]
+@racketfile{code/cat-of-br.rkt}
 
 @margin-note{
 A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set}
@@ -480,106 +324,7 @@ Let's illustrate this concept with a Racket code example
 we create a @tech{product category} by taking the @tech[#:key "cartesian product"]{product}
 of @secref["Matrix_Category"] and @secref["Binary_Relation_Category"].
 
-@racketmod[
-racket/base
-
-(require racket/match math/matrix)
-
-(code:comment2 "Category of Matrices ℳ")
-(define (domℳ m) (identity-matrix (matrix-num-cols m)))
-(define (codℳ m) (identity-matrix (matrix-num-rows m)))
-(define (∘ℳ m . m*) (apply matrix* m m*))
-
-(define (morphismℳ? m) (matrix? m))
-(define morphismℳ=?
-  (case-lambda
-    [(_) #t]
-    [(m1 m2) (matrix= m1 m2)]
-    [(m1 m2 . m*) (and (morphismℳ=? m1 m2) (apply morphismℳ=? m*))]))
-
-(code:comment2 "Objects in ℳ")
-(define a0 (identity-matrix 1))
-(define b0 (identity-matrix 2))
-(define c0 (identity-matrix 3))
-(define d0 (identity-matrix 4))
-
-(code:comment2 "Morphisms in ℳ")
-(define (rand m n) (random 1 9))
-(define f0 (build-matrix 2 1 rand))
-(define g0 (build-matrix 3 2 rand))
-(define h0 (build-matrix 4 3 rand))
-
-
-(code:comment2 "Category of Binary Relations ℛ")
-(define (domℛ r) (define o (car r)) (cons o o))
-(define (codℛ r) (define o (cdr r)) (cons o o))
-(define ∘ℛ
-  (case-lambda
-    [(r) r]
-    [(r1 r2) (match* (r1 r2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
-    [(r1 r2 . r*) (apply ∘ℛ (∘ℛ r1 r2) r*)]))
-
-(define (morphismℛ? r) (pair? r))
-(define morphismℛ=?
-  (case-lambda
-    [(_) #t]
-    [(r1 r2) (equal? r1 r2)]
-    [(r1 r2 . r*) (and (morphismℛ=? r1 r2) (apply morphismℛ=? r*))]))
-
-(code:comment2 "Objects in ℛ")
-(define a1 '(a . a))
-(define b1 '(b . b))
-(define c1 '(c . c))
-(define d1 '(d . d))
-
-(code:comment2 "Morphisms in ℛ")
-(define f1 '(a . b))
-(define g1 '(b . c))
-(define h1 '(c . d))
-
-
-(code:comment2 "Product Category ℳ × ℛ")
-(define (dom p) (match p [`(,m ,r) `(,(domℳ m) ,(domℛ r))]))
-(define (cod p) (match p [`(,m ,r) `(,(codℳ m) ,(codℛ r))]))
-(define (∘ p . p*)
-  (define m* (map car  (cons p p*)))
-  (define r* (map cadr (cons p p*)))
-  (list (apply ∘ℳ m*) (apply ∘ℛ r*)))
-
-(define (morphism? p)
-  (and (list? p) (= 2 (length p))
-       (morphismℳ? (car  p))
-       (morphismℛ? (cadr p))))
-(define (morphism=? p . p*)
-  (define m* (map car  (cons p p*)))
-  (define r* (map cadr (cons p p*)))
-  (and (apply morphismℳ=? m*) (apply morphismℛ=? r*)))
-
-(code:comment2 "Objects in ℳ × ℛ")
-(define a (list a0 a1)) (code:comment "(a0, a1)")
-(define b (list b0 b1)) (code:comment "(b0, b1)")
-(define c (list c0 c1)) (code:comment "(c0, c1)")
-(define d (list d0 d1)) (code:comment "(d0, d1)")
-
-(code:comment2 "Morphisms in ℳ × ℛ")
-(define f (list f0 f1)) (code:comment "(f0, f1)")
-(define g (list g0 g1)) (code:comment "(g0, g1)")
-(define h (list h0 h1)) (code:comment "(h0, h1)")
-
-(code:comment2 "Existence of composition")
-(morphism=? b (cod f) (dom g))
-(morphism=? a (dom (∘ g f)) (dom f))
-(morphism=? c (cod (∘ g f)) (cod g))
-
-(code:comment2 "Associativity of composition")
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
-
-(code:comment2 "Existence of identity")
-(morphism=? a (dom a) (cod a))
-
-(code:comment2 "Identity and composition")
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
-]
+@racketfile{code/prod-cat.rkt}
 
 @bold{Exercise}: @racket[define] @code{dom×}, @code{cod×}, @code{∘×},
 @code{morphism×?} and @code{morphism×=?} so that we can @racket[define]
@@ -625,120 +370,7 @@ Although we name arrows using pairs here, note that they are not pairs, but
 In the following code, we create an @tech{arrow category} to which
 @secref["Matrix_Category"] gives rise:
 
-@racketmod[
-racket/base
-
-(require racket/match math/matrix)
-
-(code:comment2 "Category of Matrices ℳ")
-(define (domℳ m) (identity-matrix (matrix-num-cols m)))
-(define (codℳ m) (identity-matrix (matrix-num-rows m)))
-(define (∘ℳ m . m*) (apply matrix* m m*))
-
-(define (morphismℳ? m) (matrix? m))
-(define morphismℳ=?
-  (case-lambda
-    [(_) #t]
-    [(m1 m2) (matrix= m1 m2)]
-    [(m1 m2 . m*) (and (morphismℳ=? m1 m2) (apply morphismℳ=? m*))]))
-
-(code:comment2 "Objects in ℳ")
-(define a0 (identity-matrix 1))
-(define b0 (identity-matrix 2))
-(define c0 (identity-matrix 3))
-(define d0 (identity-matrix 4))
-(define e0 (identity-matrix 5))
-(define f0 (identity-matrix 6))
-(define g0 (identity-matrix 7))
-(define h0 (identity-matrix 8))
-
-(code:comment2 "Morphisms in ℳ")
-(define (rand m n) (random 1 9))
-
-(define p0 (build-matrix 2 1 rand))
-(define q0 (build-matrix 4 3 rand))
-(define r0 (build-matrix 6 5 rand))
-(define s0 (build-matrix 8 7 rand))
-
-(define i0 (build-matrix 3 1 rand))
-(define j0 (build-matrix 4 2 rand))
-(define k0 (build-matrix 5 3 rand))
-(define l0 (build-matrix 6 4 rand))
-(define m0 (build-matrix 7 5 rand))
-(define n0 (build-matrix 8 6 rand))
-
-
-(code:comment2 "Arrow Category Arr(ℳ)")
-(define (dom s)
-  (match s
-    [`((,j ,p) (,q ,i))
-     (define a (domℳ i))
-     (define b (domℳ j))
-     `((,b ,p) (,p ,a))]))
-(define (cod s)
-  (match s
-    [`((,j ,p) (,q ,i))
-     (define c (codℳ i))
-     (define d (codℳ j))
-     `((,d ,q) (,q ,c))]))
-(define ∘
-  (case-lambda
-    [(s) s]
-    [(s1 s2)
-     (match* (s1 s2)
-       [(`((,l ,q) (,r ,k))
-         `((,j ,p) (,q ,i)))
-        `((,(∘ℳ l j) ,p) (,r ,(∘ℳ k i)))])]
-    [(s1 s2 . s*) (apply ∘ (∘ s1 s2) s*)]))
-
-(define (morphism? s)
-  (match s
-    [`((,j ,p) (,q ,i))
-     (and (morphismℳ? j)
-          (morphismℳ? p)
-          (morphismℳ? q)
-          (morphismℳ? i)
-          (morphismℳ=? (∘ℳ j p) (∘ℳ q i)))]
-    [_ #f]))
-(define morphism=?
-  (case-lambda
-    [(_) #t]
-    [(s1 s2)
-     (match* (s1 s2)
-       [(`((,n ,r) (,s ,m))
-         `((,j ,p) (,q ,i)))
-        (and (morphismℳ=? n j)
-             (morphismℳ=? r p)
-             (morphismℳ=? s q)
-             (morphismℳ=? m i))]
-       [(_ _) #f])]
-    [(s1 s2 . s*) (and (morphism=? s1 s2) (apply morphism=? s*))]))
-
-(code:comment2 "Objects in Arr(ℳ)")
-(define a `((,b0 ,p0) (,p0 ,a0))) (code:comment "p0")
-(define b `((,d0 ,q0) (,q0 ,c0))) (code:comment "q0")
-(define c `((,f0 ,r0) (,r0 ,e0))) (code:comment "r0")
-(define d `((,h0 ,s0) (,s0 ,g0))) (code:comment "s0")
-
-(code:comment2 "Morphisms in Arr(ℳ)")
-(define f `((,j0 ,p0) (,q0 ,i0))) (code:comment "(i0, j0)")
-(define g `((,l0 ,q0) (,r0 ,k0))) (code:comment "(k0, l0)")
-(define h `((,n0 ,r0) (,s0 ,m0))) (code:comment "(m0, n0)")
-
-(code:comment2 "Existence of composition")
-(morphism=? b (cod f) (dom g))
-(morphism=? a (dom (∘ g f)) (dom f))
-(morphism=? c (cod (∘ g f)) (cod g))
-
-(code:comment2 "Associativity of composition")
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
-
-(code:comment2 "Existence of identity")
-(morphism=? a (dom a) (cod a))
-
-(code:comment2 "Identity and composition")
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
-]
+@racketfile{code/arr-cat.rkt}
 
 @bold{Exercise}: @racket[define] @code{Arr} so that we can @racket[define] the
 @tech{arrow category} @math{Arr(ℳ)} in this way:
