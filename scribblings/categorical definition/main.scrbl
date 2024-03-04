@@ -2,7 +2,7 @@
 
 @(require (for-label racket/base
                      math/matrix)
-          "ctp-utils.rkt")
+          "../ctp-utils.rkt")
 
 @title{Categorical Definition}
 
@@ -43,7 +43,7 @@ For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if
 @math{g} is called a @deftech{split epimorphism}, and @math{f∘g} is called a
 @deftech{split idempotent}.
 
-@image["assets/images/split.svg"]
+@image["scribblings/categorical definition/images/split.svg"]
 
 In this case, @math{f} is a @deftech{right inverse} of @math{g}, and @math{g} is
 a @deftech{left inverse} of @math{f}. @math{a} is called a @deftech{retract} of

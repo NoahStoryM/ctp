@@ -1,6 +1,6 @@
 #lang racket/base
 
-(require "../../private/utils.rkt")
+(require "../../../private/utils.rkt")
 
 ;; Product Category
 (define (dom× . dom*) (define (dom m*) (map call dom* m*)) dom)

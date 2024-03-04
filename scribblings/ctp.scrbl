@@ -20,7 +20,6 @@ further exploration of @tech{category theory}:
   @item{@hyperlink["https://ncatlab.org/nlab/show/HomePage"]{nLab}}
   @item{@hyperlink["https://www.youtube.com/@TheCatsters"]{TheCatsters YouTube Channel}}
   ]
-
 }
 
 @deftech{Category theory} provides a formal and abstract framework for understanding
@@ -46,13 +45,13 @@ applicability of @tech{category theory} in the realm of programming!
 
 @local-table-of-contents[]
 
-@include-section["category.scrbl"]
-@include-section["categorical_definition.scrbl"]
-@;; include-section["functor.scrbl"]
-@;; include-section["natural_transformations.scrbl"]
-@;; include-section["n-category.scrbl"]
-@;; include-section["co-limit.scrbl"]
-@;; include-section["ccc&λ.scrbl"]
-@;; include-section["adjunction.scrbl"]
-@;; include-section["co-monad.scrbl"]
-@;; include-section["monoidal_category.scrbl"]
+@include-section[(file "category/main.scrbl")]
+@include-section[(file "categorical definition/main.scrbl")]
+@;; include-section[(file "functor/main.scrbl")]
+@;; include-section[(file "natural transformations/main.scrbl")]
+@;; include-section[(file "n-category/main.scrbl")]
+@;; include-section[(file "co-limit/main.scrbl")]
+@;; include-section[(file "ccc&λ/main.scrbl")]
+@;; include-section[(file "adjunction/main.scrbl")]
+@;; include-section[(file "co-monad/main.scrbl")]
+@;; include-section[(file "monoidal category/main.scrbl")]

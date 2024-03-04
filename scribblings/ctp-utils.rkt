@@ -24,14 +24,14 @@
                 #:tag-prefixes [prefixes   #f]
                 #:indirect?    [indirect?  #f]
                 .
-                tx)
+                alt)
          (apply tech
                 #:key          key
                 #:normalize?   normalize?
                 #:doc          module-path
                 #:tag-prefixes prefixes
                 #:indirect?    indirect?
-                tx)))]))
+                alt)))]))
 
 (define-tech tech/guide '(lib "scribblings/guide/guide.scrbl"))
 (define-tech tech/refer '(lib "scribblings/reference/reference.scrbl"))
