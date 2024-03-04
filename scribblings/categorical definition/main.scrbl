@@ -39,9 +39,11 @@ The proof is left as an exercise.
 }
 
 For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if
-@math{g∘f = id_a}, then @math{f} is called a @deftech{split monomorphism},
-@math{g} is called a @deftech{split epimorphism}, and @math{f∘g} is called a
-@deftech{split idempotent}.
+@math{g∘f = id_a}, then @math{f} is a @deftech{split monomorphism}
+(@math{f} is a @deftech{split mono} or @math{f} is @deftech{split monic}),
+@math{g} is a @deftech{split epimorphism}
+(@math{g} is a @deftech{split epi} or @math{g} is @deftech{split epic}),
+and @math{f∘g} is a @deftech{split idempotent}.
 
 @image["scribblings/categorical definition/images/split.svg"]
 
