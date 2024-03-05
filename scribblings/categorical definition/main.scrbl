@@ -19,10 +19,14 @@ we define properties categorically.
 For a @tech{morphism} @math{f}, it is an @deftech{endomorphism} if and only if
 @math{dom(f) = cod(f)}.
 
+@image["scribblings/categorical definition/images/endo.svg"]
+
 @subsection{Idempotent}
 
 For an @tech{endomorphism} @math{f}, it is an @deftech{idempotent} if and only if
 @math{f = f∘f}.
+
+@image["scribblings/categorical definition/images/idem.svg"]
 
 @section{Split Morphism}
 
