@@ -81,7 +81,26 @@ Examples in @secref["Matrix_Category"]:
 
 @section{Isomorphism}
 
+For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if
+@math{g∘f = id_a} and @math{f∘g = id_b}, then @math{f} and @math{g} both are
+@deftech{isomorphisms} (@math{f} and @math{g} both are @deftech{invertible}).
+@math{a} and @math{b} are said to be @deftech{isomorphic} (@math{a ≅ b}) if and
+only if there exists an @tech{isomorphism} between them.
+
+@image["scribblings/categorical definition/images/iso.svg"]
+
+In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f^{-1}},
+and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g^{-1}}.
+
+@bold{Exercise}: prove that every @tech{object} is @tech{isomorphic} to itself.
+
+@bold{Exercise}: prove that for @tech{isomorphism} @math{f}, @math{f = (f^{-1})^{-1}}
+
 @subsection{Automorphism}
+
+An @deftech{automorphism} is an @tech{invertible} @tech{endomorphism}.
+
+@image["scribblings/categorical definition/images/auto.svg"]
 
 @subsection{Groupoid}
 
