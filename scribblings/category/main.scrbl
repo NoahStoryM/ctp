@@ -24,7 +24,8 @@ of a mathematical structure.
 @subsection{Basic Category}
 
 Think of a @tech{category} @math{𝒞} as a directed graph, where @tech{objects}
-are nodes, and @tech{morphisms} are arrows connecting these nodes.
+are nodes, and @tech{morphisms} are arrows connecting these nodes. For @tech{morphism}
+@math{f: a → b} in @math{𝒞}, @math{dom(f) = a} and @math{cod(f) = b}.
 
 @image["scribblings/category/images/cat.svg"]
 
