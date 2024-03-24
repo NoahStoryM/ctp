@@ -89,12 +89,12 @@ only if there exists an @tech{isomorphism} between them.
 
 @image["scribblings/categorical definition/images/iso.svg"]
 
-In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f^{-1}},
-and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g^{-1}}.
+In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f^{–1}},
+and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g^{–1}}.
 
 @bold{Exercise}: prove that every @tech{object} is @tech{isomorphic} to itself.
 
-@bold{Exercise}: prove that for @tech{isomorphism} @math{f}, @math{f = (f^{-1})^{-1}}
+@bold{Exercise}: prove that for @tech{isomorphism} @math{f}, @math{f = (f^{–1})^{–1}}
 
 @subsection{Automorphism}
 
