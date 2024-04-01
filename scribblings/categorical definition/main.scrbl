@@ -104,7 +104,17 @@ An @deftech{automorphism} is an @tech{invertible} @tech{endomorphism}.
 
 @subsection{Groupoid}
 
-@subsubsection{Group}
+A @deftech{groupoid} is equivalently a @tech{category} in which all @tech{morphisms}
+are @tech{isomorphisms}.
+
+@subsubsection{One-Object Groupoid}
+
+@margin-note{
+A @deftech{group} is a @tech{monoid} in which every @tech{element} has a unique
+@tech{inverse}.
+}
+
+A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
 
 @subsection{Representable Subcategory}
 
