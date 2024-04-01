@@ -82,7 +82,7 @@ Examples in @secref["Matrix_Category"]:
 @section{Isomorphism}
 
 For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if
-@math{g∘f = id_a} and @math{f∘g = id_b}, then @math{f} and @math{g} both are
+@math{g∘f = id_a} and @math{f∘g = id_b}, then @math{f} and @math{g} are both
 @deftech{isomorphisms} (@math{f} and @math{g} both are @deftech{invertible}).
 @math{a} and @math{b} are said to be @deftech{isomorphic} (@math{a ≅ b}) if and
 only if there exists an @tech{isomorphism} between them.
