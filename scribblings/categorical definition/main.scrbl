@@ -81,16 +81,16 @@ Examples in @secref["Matrix_Category"]:
 
 @section{Isomorphism}
 
-For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if
-@math{g∘f = id_a} and @math{f∘g = id_b}, then @math{f} and @math{g} are both
-@deftech{isomorphisms} (@math{f} and @math{g} are both @deftech{invertible}).
-@math{a} and @math{b} are said to be @deftech{isomorphic} (@math{a ≅ b}) if and
-only if there exists an @tech{isomorphism} between them.
+For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if @math{g∘f = id_a}
+and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphisms}
+(@math{f} and @math{g} are both @deftech{isos} or @math{f} and @math{g} are both @deftech{invertible}).
 
 @image["scribblings/categorical definition/images/iso.svg"]
 
 In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f^{–1}},
 and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g^{–1}}.
+@math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a ≅ b}) if and
+only if there exists an @tech{isomorphism} between them.
 
 Examples in @secref["Binary_Relation_Category"]:
 
