@@ -83,7 +83,7 @@ Examples in @secref["Matrix_Category"]:
 
 For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if
 @math{g∘f = id_a} and @math{f∘g = id_b}, then @math{f} and @math{g} are both
-@deftech{isomorphisms} (@math{f} and @math{g} both are @deftech{invertible}).
+@deftech{isomorphisms} (@math{f} and @math{g} are both @deftech{invertible}).
 @math{a} and @math{b} are said to be @deftech{isomorphic} (@math{a ≅ b}) if and
 only if there exists an @tech{isomorphism} between them.
 
@@ -92,9 +92,25 @@ only if there exists an @tech{isomorphism} between them.
 In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f^{–1}},
 and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g^{–1}}.
 
+Examples in @secref["Binary_Relation_Category"]:
+
+@racketblock[
+(code:comment2 "Objects")
+(define a '(a . a))
+(define b '(b . b))
+
+(code:comment2 "Morphisms")
+(define f '(a . b))
+(define g '(b . a))
+
+(code:comment2 "a ≅ b")
+(morphism=? a (∘ g f))
+(morphism=? b (∘ f g))
+]
+
 @bold{Exercise}: prove that every @tech{object} is @tech{isomorphic} to itself.
 
-@bold{Exercise}: prove that for @tech{isomorphism} @math{f}, @math{f = (f^{–1})^{–1}}
+@bold{Exercise}: prove that for @tech{isomorphism} @math{f}, @math{f = (f^{–1})^{–1}}.
 
 @subsection{Automorphism}
 
@@ -118,13 +134,17 @@ A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
 
 @subsection{Representative Subcategory}
 
+A @deftech{representative subcategory} is a @tech{subcategory} @math{𝒟} of a
+@tech{category} @math{𝒞} that every @tech{object} of @math{𝒞} is @tech{isomorphic}
+to some @tech{object} of @math{𝒟}.
+
 @section{Monomorphism and Epimorphism}
 
 variable element
 
-exercise: proof split epi and mono is iso
+@bold{Exercise}: proof that split epi and mono is iso.
 
-exercise: proof split mono and epi is iso
+@bold{Exercise}: proof that split mono and epi is iso.
 
 @section{Terminal Object and Initial Object}
 
