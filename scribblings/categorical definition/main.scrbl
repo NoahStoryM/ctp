@@ -116,7 +116,7 @@ A @deftech{group} is a @tech{monoid} in which every @tech{element} has a unique
 
 A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
 
-@subsection{Representable Subcategory}
+@subsection{Representative Subcategory}
 
 @section{Monomorphism and Epimorphism}
 
