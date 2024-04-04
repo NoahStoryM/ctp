@@ -140,11 +140,22 @@ to some @tech{object} of @math{𝒟}.
 
 @section{Monomorphism and Epimorphism}
 
-variable element
+A @deftech{monomorphism} @math{m} is defined as a @deftech{left cancellable}
+@tech{morphism}, where for all @tech{morphisms} @math{a} and @math{b}, if @math{m∘a = m∘b},
+then @math{a = b}.
 
-@bold{Exercise}: proof that split epi and mono is iso.
+Conversely, an @deftech{epimorphism} @math{e} is defined as a @deftech{right cancellable}
+@tech{morphism}, where for all @tech{morphisms} @math{x} and @math{y}, if @math{x∘e = y∘e},
+then @math{x = y}.
 
-@bold{Exercise}: proof that split mono and epi is iso.
+@bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an @tech{epimorphism}
+in @math{𝒞^op}.
+
+@bold{Exercise}: Prove that a @tech{morphism} is an @tech{isomorphism} if and
+only if it is both a @tech{monomorphism} and a @tech{split epimorphism}.
+
+@bold{Exercise}: Prove that a @tech{morphism} is an @tech{isomorphism} if and
+only if it is both an @tech{epimorphism} and a @tech{split monomorphism}.
 
 @section{Terminal Object and Initial Object}
 
