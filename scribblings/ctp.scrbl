@@ -3,10 +3,9 @@
 @title[#:tag "CTP"]{Category Theory in Programming}
 @author[@author+email["Noah Ma" "noahstorym@gmail.com"]]
 
-Welcome to the @secref{CTP} tutorial! In the world of
-programming, the application of abstract mathematical concepts can often lead to
-powerful and elegant solutions. One such area of mathematics that has found
-its way into the programming landscape is @tech{category theory}.
+Welcome to the @secref{CTP} tutorial! In programming, applying abstract mathematical
+concepts often leads to powerful and elegant solutions. One such area of mathematics
+that has found its way into the programming landscape is @tech{category theory}.
 
 @margin-note{
 In addition to this tutorial, you may find the following resources helpful for
@@ -22,10 +21,10 @@ further exploration of @tech{category theory}:
   ]
 }
 
-@deftech{Category theory} provides a formal and abstract framework for understanding
-mathematical structures and relationships between them. While it might seem
-esoteric at first, its principles can significantly enhance our ability to
-reason about and design software. This tutorial aims to bridge the gap between
+@deftech{Category theory} offers a formal, abstract framework to understand
+mathematical structures and their interrelations. While it might seem esoteric
+at first, its principles can significantly enhance our ability to reason about
+and design software. This tutorial aims to bridge the gap between
 @tech{category theory} and practical programming, using the Racket programming
 language as our tool of choice.
 
