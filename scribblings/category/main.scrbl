@@ -95,6 +95,13 @@ Remember, while it may seem that @tech{objects} take a secondary role, their
 presence as @tech{identity morphisms} is essential for facilitating the dynamic
 interplay of @tech{morphisms}, which are the focal point of our study.
 
+We've laid the groundwork for understanding the fundamental principles of
+@tech{category theory}. If you're eager to see how these abstract concepts
+translate into practical programming examples, feel free to jump to
+@secref{Mapping_Category_to_Programming}. There, we'll explore how the ideas of
+@tech{objects}, @tech{morphisms}, and @tech{compositions} come to life in the
+Racket programming environment, providing concrete examples.
+
 @subsection{Commutative Diagram}
 
 Informally, a @deftech{diagram} comprises various @tech{objects} connected by
