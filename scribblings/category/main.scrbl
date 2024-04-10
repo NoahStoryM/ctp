@@ -79,10 +79,13 @@ transformations, operations, or even concrete entities like @tech/refer{numbers}
 
 @margin-note{
 In traditional @tech{category theory}, @tech{categories} are often named after
-their @tech{objects}. In this tutorial, we intentionally use @tech{morphisms} to
-label @tech{categories}. This approach emphasizes the role of @tech{morphisms}
-as the central focus. Nevertheless, classic @tech{category} names will still be
-given precedence and used whenever applicable in this tutorial.
+their @tech{objects}.
+
+In this tutorial, we intentionally use @tech{morphisms} to label @tech{categories}.
+This approach emphasizes the role of @tech{morphisms} as the central focus.
+
+Nevertheless, classic @tech{category} names will still be given precedence and
+used whenever applicable in this tutorial.
 }
 
 In traditional @tech{category theory}, a distinction is often made between
