@@ -19,14 +19,14 @@ we define properties categorically.
 For a @tech{morphism} @math{f}, it is an @deftech{endomorphism} if and only if
 @math{dom(f) = cod(f)}.
 
-@image["scribblings/categorical definition/images/endo.svg"]
+@image["scribblings/categorical definition/images/endo.svg"]{[picture] endo.svg}
 
 @subsection{Idempotent}
 
 For an @tech{endomorphism} @math{f}, it is an @deftech{idempotent} if and only if
 @math{f = f∘f}.
 
-@image["scribblings/categorical definition/images/idem.svg"]
+@image["scribblings/categorical definition/images/idem.svg"]{[picture] idem.svg}
 
 @section{Split Morphism}
 
@@ -49,7 +49,7 @@ For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if
 (@math{g} is a @deftech{split epi} or @math{g} is @deftech{split epic}),
 and @math{f∘g} is a @deftech{split idempotent}.
 
-@image["scribblings/categorical definition/images/split.svg"]
+@image["scribblings/categorical definition/images/split.svg"]{[picture] split.svg}
 
 In this case, @math{f} is a @deftech{right inverse} of @math{g}, and @math{g} is
 a @deftech{left inverse} of @math{f}. @math{a} is called a @deftech{retract} of
@@ -85,7 +85,7 @@ For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if 
 and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphisms}
 (@math{f} and @math{g} are both @deftech{isos} or @math{f} and @math{g} are both @deftech{invertible}).
 
-@image["scribblings/categorical definition/images/iso.svg"]
+@image["scribblings/categorical definition/images/iso.svg"]{[picture] iso.svg}
 
 In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f^{–1}},
 and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g^{–1}}.
@@ -116,7 +116,7 @@ Examples in @secref["Binary_Relation_Category"]:
 
 An @deftech{automorphism} is an @tech{invertible} @tech{endomorphism}.
 
-@image["scribblings/categorical definition/images/auto.svg"]
+@image["scribblings/categorical definition/images/auto.svg"]{[picture] auto.svg}
 
 @subsection{Groupoid}
 

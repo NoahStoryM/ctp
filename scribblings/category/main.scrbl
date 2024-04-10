@@ -7,40 +7,50 @@
 
 @title{Category}
 
-Welcome to the first chapter of our @secref{CTP} tutorial!
-In this chapter, we'll explore the foundational concepts of @tech{category theory}
-and demonstrate how to map these abstract ideas into practical constructs using
-the Racket programming language.
+Welcome to the first chapter of our @secref{CTP} tutorial! Here, we delve into
+the foundational concepts of @tech{category theory}, focusing on @tech{morphisms}
+as the central entities of study. This chapter sets the stage for understanding
+how these entities interact within the structured universe of categories, using
+Racket programming language as our exploration tool.
 
 @section{Definitions}
 
-In the realm of mathematics, @tech{category theory} serves as a powerful and
-abstract tool for understanding relationships and compositions within various
-mathematical structures. At its core, a @deftech{category} @math{𝒞} consists of
-a collection @math{𝒞_0} of @deftech{objects} and a collection @math{𝒞_1} of
-@deftech{morphisms}, forming a conceptual framework that generalizes the notion
-of a mathematical structure.
+In the abstract world of mathematics, @tech{category theory} offers a unified
+framework for analyzing and synthesizing concepts across different fields. Central
+to our exploration are @tech{morphisms}, which we consider not merely as
+connections or processes but as entities in their own right.
 
 @subsection{Basic Category}
 
-Think of a @tech{category} @math{𝒞} as a directed graph, where @tech{objects}
-are nodes, and @tech{morphisms} are arrows connecting these nodes. For @tech{morphism}
-@math{f: a → b} in @math{𝒞}, @math{dom(f) = a} and @math{cod(f) = b}.
+A @deftech{category} @math{𝒞} is defined by 2 collections: @math{𝒞_0} of
+@deftech{objects} and @math{𝒞_1} of @deftech{morphisms}. Think of @math{𝒞} as a
+directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
+connecting these nodes.
 
-@image["scribblings/category/images/cat.svg"]
+For @tech{morphism} @math{f: a → b} in @math{𝒞}, its starting points (@deftech{domain})
+is @math{a}, and its ending point (@deftech{codomain}) is @math{b}:
+@math{dom(f) = a} and @math{cod(f) = b}.
 
-The key distinguishing features of a @tech{category} are the @deftech{identity morphisms}
-and the @deftech{composition} of @tech{morphisms}, governed by @deftech{composition rules}:
+@image["scribblings/category/images/cat.svg"]{[picture] cat.svg}
+
+Our approach to @tech{category theory} places @tech{morphisms} at the core,
+viewing a @tech{category} not just as a network of @tech{objects} linked by
+@tech{morphisms}, but as a universe where @tech{morphisms} themselves are the
+primary focus. In this universe, @tech{objects} serve more as structural markers
+than active participants, and @tech{morphisms} are entities that can represent
+transformations, operations, or even concrete entities like @tech/refer{numbers},
+@tech/refer{lists}, and @tech/refer{strings}, as long as they adhere to the
+@deftech{composition rules}:
 
 @itemlist[
   #:style 'ordered
-  @item{Existence of @tech{composition}
+  @item{Existence of @deftech{composition}
 
-        For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, @math{g∘f} is defined
-        if and only if @math{cod(f) = dom(g)}. When @math{g∘f} is defined,
-        @math{dom(g∘f) = dom(f)} and @math{cod(g∘f) = cod(g)}.
+        For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, a @tech{composition}
+        @math{g∘f} is defined if and only if @math{cod(f) = dom(g)}. When @math{g∘f}
+        is defined, @math{dom(g∘f) = dom(f)} and @math{cod(g∘f) = cod(g)}.
 
-        @image["scribblings/category/images/C-1.svg"]}
+        @image["scribblings/category/images/C-1.svg"]{[picture] C-1.svg}}
   @item{Associativity of @tech{composition}
 
         @margin-note{
@@ -52,19 +62,19 @@ and the @deftech{composition} of @tech{morphisms}, governed by @deftech{composit
         For @tech{composable pairs} @math{(f, g)} and @math{(g, h)} in @math{𝒞},
         @math{(h∘g)∘f = h∘(g∘f)}, denoted as @math{h∘g∘f}.
 
-        @image["scribblings/category/images/C-2.svg"]}
-  @item{Existence of @tech{identity morphisms}
+        @image["scribblings/category/images/C-2.svg"]{[picture] C-2.svg}}
+  @item{Existence of @deftech{identity morphisms}
 
         Every @tech{object} has an associated @tech{identity morphism}.
         For @tech{object} @math{a} in @math{𝒞}, its @tech{identity morphism}
         is denoted as @math{id_a} or @math{1_a}, and @math{a = dom(id_a) = cod(id_a)}.
 
-        @image["scribblings/category/images/C-3.svg"]}
+        @image["scribblings/category/images/C-3.svg"]{[picture] C-3.svg}}
   @item{@tech{Composition} and @tech{identity morphisms}
 
         For @tech{morphism} @math{f: a → b} in @math{𝒞}, @math{f = f∘id_a = id_b∘f}.
 
-        @image["scribblings/category/images/C-4.svg"]}
+        @image["scribblings/category/images/C-4.svg"]{[picture] C-4.svg}}
   ]
 
 @margin-note{
@@ -81,12 +91,9 @@ a unique perspective by using @tech{identity morphisms} to directly represent
 @tech{objects}. There is no strict demarcation between @tech{objects} and their
 associated @tech{identity morphisms}; they are treated interchangeably (@math{a = id_a}).
 
-One common misconception among beginners in @tech{category theory} is the assumption
-that @tech{morphisms} must represent traditional mappings, transformations, or
-relations. In reality, @tech{morphisms} in @tech{category theory} can be incredibly
-diverse. They can represent not only traditional mappings but also entities like
-@tech/refer{numbers}, @tech/refer{strings}, or @tech/refer{lists}, as long as they
-adhere to the @tech{composition rules}.
+Remember, while it may seem that @tech{objects} take a secondary role, their
+presence as @tech{identity morphisms} is essential for facilitating the dynamic
+interplay of @tech{morphisms}, which are the focal point of our study.
 
 @subsection{Commutative Diagram}
 
@@ -104,7 +111,7 @@ of a triangle.
 The equation @math{h = g∘f} can be pictured as a @tech{commutative triangle}
 like this:
 
-@image["scribblings/category/images/comm-tri.svg"]{h = g∘f}
+@image["scribblings/category/images/comm-tri.svg"]{[picture] comm-tri.svg}
 
 @subsubsection{Commutative Square}
 
@@ -114,14 +121,14 @@ of a square.
 The equation @math{k∘f = g∘h} can be pictured as a @tech{commutative square}
 like this:
 
-@image["scribblings/category/images/comm-sqr.svg"]{k∘f = g∘h}
+@image["scribblings/category/images/comm-sqr.svg"]{[picture] comm-sqr.svg}
 
 If there is a @tech{morphism} @math{l} making @math{f = l∘h} and @math{g = k∘l},
 then @math{l} is a @deftech{lift} (@deftech{diagonal fill-in} or @deftech{filler})
 in the @tech{commutative square}:
 
-@image["scribblings/category/images/lift_1.svg"]
-@image["scribblings/category/images/lift_2.svg"]
+@image["scribblings/category/images/lift_1.svg"]{[picture] lift_1.svg}
+@image["scribblings/category/images/lift_2.svg"]{[picture] lift_2.svg}
 
 @subsection{One-Object Category}
 
@@ -135,7 +142,7 @@ A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}
 In @tech{OOC}, there is only a single @tech{object}, usually denoted by @deftech{*},
 and @tech{morphisms} are defined within the context of @tech{*}.
 
-@image["scribblings/category/images/ooc.svg"]
+@image["scribblings/category/images/ooc.svg"]{[picture] ooc.svg}
 
 @margin-note{
 @tech{categories} are sometimes called @deftech{monoidoids}.
@@ -191,7 +198,7 @@ to practical programming constructs.
 Just as @racket[car], @racket[cdr], and @racket[cons] provide an abstraction
 for @tech/refer{pairs} in Racket, we'll introduce the notions of
 @deftech{dom}, @deftech{cod}, and @deftech{∘}
-(representing @deftech{domain}, @deftech{codomain}, and @deftech{compose})
+(representing @tech{domain}, @tech{codomain}, and @deftech{compose})
 to abstract over @tech{categories}.
 
 We stipulate that @code{(∘)} returns @tech{*}, @code{(∘ m)} returns @code{m},
@@ -291,7 +298,7 @@ and explore various relationships between them.
 The @tech{dual} of a @tech{category} is the reverse version of the given
 @tech{category}.
 
-@image["scribblings/category/images/¬cat.svg"]
+@image["scribblings/category/images/¬cat.svg"]{[picture] ¬cat.svg}
 
 A @tech{category} @math{𝒞} can be viewed as a directed graph that adheres to the
 @tech{composition rules}. If we reverse all the arrows in the directed graph,
@@ -318,7 +325,7 @@ In this context, @tech[#:key "cartesian product"]{product} refers to the
 The @deftech{product category} combines the given @tech{categories} to form a
 new @tech{category}.
 
-@image["scribblings/category/images/prod-cat.svg"]
+@image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
 
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
@@ -347,7 +354,7 @@ as @tech{morphisms}.
 
 For example, here are @code{3} @tech{commutative squares} in @math{𝒞}:
 
-@image["scribblings/category/images/arr-cat_1.svg"]
+@image["scribblings/category/images/arr-cat_1.svg"]{[picture] arr-cat_1.svg}
 
 @margin-note{
 The proof is left as an exercise.
@@ -355,7 +362,7 @@ The proof is left as an exercise.
 
 Then, we get some new @tech{commutative squares} by @tech{composition}:
 
-@image["scribblings/category/images/arr-cat_2.svg"]
+@image["scribblings/category/images/arr-cat_2.svg"]{[picture] arr-cat_2.svg}
 
 Finally, using nodes to represent @tech{morphisms}, and using arrows to represent
 @tech{commutative squares}, we get a directed graph that obeys the @tech{composition rules},
@@ -366,7 +373,7 @@ Although we name arrows using pairs here, note that they are not pairs, but
 @tech{commutative squares}.
 }
 
-@image["scribblings/category/images/arr-cat_3.svg"]
+@image["scribblings/category/images/arr-cat_3.svg"]{[picture] arr-cat_3.svg}
 
 In the following code, we create an @tech{arrow category} to which
 @secref["Matrix_Category"] gives rise:
@@ -394,7 +401,7 @@ as @tech{objects}, and @tech{commutative triangles} end to @math{c} as @tech{mor
 For example, here are @code{3} @tech{commutative triangles} end to @math{c_1}
 in @math{𝒞}:
 
-@image["scribblings/category/images/over-cat_1.svg"]
+@image["scribblings/category/images/over-cat_1.svg"]{[picture] over-cat_1.svg}
 
 @margin-note{
 The proof is left as an exercise.
@@ -402,7 +409,7 @@ The proof is left as an exercise.
 
 Then, we get some new @tech{commutative triangles} by @tech{composition}:
 
-@image["scribblings/category/images/over-cat_2.svg"]
+@image["scribblings/category/images/over-cat_2.svg"]{[picture] over-cat_2.svg}
 
 Finally, using nodes to represent @tech{morphisms} end to @math{c_1}, and using
 arrows to represent @tech{commutative triangles} end to @math{c_1}, we get a
@@ -414,7 +421,7 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 @tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
 }
 
-@image["scribblings/category/images/over-cat_3.svg"]
+@image["scribblings/category/images/over-cat_3.svg"]{[picture] over-cat_3.svg}
 
 @bold{Exercise}: referencing the example code of the @tech{arrow category}
 @math{Arr(ℳ)}, implement the @tech{slice category} @math{ℳ/m}.
@@ -437,7 +444,7 @@ as @tech{objects}, and @tech{commutative triangles} start from @math{c} as @tech
 For example, here are @code{3} @tech{commutative triangles} start from @math{c_0}
 in @math{𝒞}:
 
-@image["scribblings/category/images/under-cat_1.svg"]
+@image["scribblings/category/images/under-cat_1.svg"]{[picture] under-cat_1.svg}
 
 @margin-note{
 The proof is left as an exercise.
@@ -445,7 +452,7 @@ The proof is left as an exercise.
 
 Then, we get some new @tech{commutative triangles} by @tech{composition}:
 
-@image["scribblings/category/images/under-cat_2.svg"]
+@image["scribblings/category/images/under-cat_2.svg"]{[picture] under-cat_2.svg}
 
 Finally, using nodes to represent @tech{morphisms} start from @math{c_0}, and using
 arrows to represent @tech{commutative triangles} start from @math{c_0}, we get a
@@ -457,7 +464,7 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 }
 
-@image["scribblings/category/images/under-cat_3.svg"]
+@image["scribblings/category/images/under-cat_3.svg"]{[picture] under-cat_3.svg}
 
 @bold{Exercise}: referencing the example code of the @tech{arrow category}
 @math{Arr(ℳ)}, implement the @tech{coslice category} @math{m/ℳ}.
