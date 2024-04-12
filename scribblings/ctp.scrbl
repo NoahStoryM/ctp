@@ -3,9 +3,11 @@
 @title[#:tag "CTP"]{Category Theory in Programming}
 @author[@author+email["Noah Ma" "noahstorym@gmail.com"]]
 
-Welcome to the @secref{CTP} tutorial! In programming, applying abstract mathematical
-concepts often leads to powerful and elegant solutions. One such area of mathematics
-that has found its way into the programming landscape is @tech{category theory}.
+
+Welcome to @secref{CTP}, a journey into the conceptual world where mathematics
+meets software development. This tutorial is designed for Racket programmers who
+are curious about the underlying structures and principles that shape our understanding
+of both mathematical and computational systems.
 
 @margin-note{
 In addition to this tutorial, you may find the following resources helpful for
@@ -21,25 +23,44 @@ further exploration of @tech{category theory}:
   ]
 }
 
-@deftech{Category theory} offers a formal, abstract framework to understand
-mathematical structures and their interrelations. While it might seem esoteric
-at first, its principles can significantly enhance our ability to reason about
-and design software. This tutorial aims to bridge the gap between
-@tech{category theory} and practical programming, using the Racket programming
-language as our tool of choice.
+@deftech{Category theory}, a branch of mathematics that deals with abstract
+structures and relationships, may seem esoteric at first glance. However, its
+principles are deeply intertwined with the concepts and patterns we encounter in
+programming. Through this tutorial, we aim to bridge the gap between these two
+worlds, offering a unique perspective that enriches the programmer’s toolkit with
+new ways of thinking and problem-solving.
 
-Through hands-on examples and clear explanations, we will explore fundamental
-concepts like @tech{objects}, @tech{morphisms}, @tech{categories}, @tech{functors},
+In the following chapters, we will explore the core concepts of @tech{category theory}
+— @tech{objects}, @tech{morphisms}, @tech{categories}, @tech{functors},
 @tech{natural transformations}, @tech{Yoneda Lemma}, @tech{2-categories} & @tech{2-morphisms},
 (co)@tech{limits}, @tech{cartesion closed categories} & @tech{typed lambda},
-@tech{adjunctions}, (co)@tech{monads}, @tech{monoidal categories}, and more.
-Each concept will be accompanied by Racket code, illustrating how these abstract
-ideas find concrete expression in programming.
+@tech{adjunctions}, (co)@tech{monads}, @tech{monoidal categories}, and more —
+and how these can be represented and utilized within the Racket programming language.
+The goal is not to exhaustively cover @tech{category theory} or to transform you
+into a @tech{category} theorist. Instead, we will focus on mapping these abstract
+concepts into programming constructs, providing a foundation that you, the reader,
+can build upon and apply in your work.
 
-Whether you're a seasoned Racket programmer or someone new to both Racket and
-@tech{category theory}, this tutorial is designed to provide valuable insights
-and practical knowledge. Let's embark on a journey to discover the beauty and
-applicability of @tech{category theory} in the realm of programming!
+Why study @tech{category theory} as a programmer? The answer lies in the power of
+abstraction and generalization that @tech{category theory} offers. It allows us
+to see beyond the specifics of a particular programming language or problem,
+revealing the underlying structures that are common across different domains.
+This tutorial aims to open a door to this broader perspective, enriching your
+approach to programming and problem-solving.
+
+As you embark on this journey, keep in mind that the true value of understanding
+@tech{category theory} in the context of programming is not merely in acquiring
+new knowledge but in developing a new way of thinking about problems and solutions.
+We encourage you to approach the material with an open mind and to explore how
+the concepts presented here can be applied or extended in your programming endeavors.
+
+@secref{CTP} is an invitation to explore, to question, and to discover. It is a
+starting point for a deeper inquiry into the vast and fascinating intersection of
+mathematics and programming. We hope this tutorial will inspire you to delve
+further into both fields, exploring new ideas and forging connections that will
+enhance your work as a programmer.
+
+Let the journey begin.
 
 
 @local-table-of-contents[]
