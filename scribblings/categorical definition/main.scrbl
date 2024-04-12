@@ -152,11 +152,38 @@ then @math{x = y}.
 in @math{𝒞^op}.
 
 @bold{Exercise}: Prove that a @tech{morphism} is an @tech{isomorphism} if and
-only if it is both a @tech{monomorphism} and a @tech{split epimorphism}.
+only if it is both a @tech{monomorphism} and a @tech{split epimorphism}
+(or both an @tech{epimorphism} and a @tech{split monomorphism}).
 
-@bold{Exercise}: Prove that a @tech{morphism} is an @tech{isomorphism} if and
-only if it is both an @tech{epimorphism} and a @tech{split monomorphism}.
+@section{Initial Object and Terminal Object}
 
-@section{Terminal Object and Initial Object}
+An @deftech{initial object} in a @tech{category} @math{𝒞} is an @tech{object}
+from which there exists exactly one @tech{morphism} to every other @tech{object}
+in @math{𝒞}. It serves as a universal starting point within @math{𝒞}.
+The @tech{object} @deftech{0} is @deftech{initial} in @math{𝒞} if and only if
+for every other @tech{object} @math{a} in @math{𝒞}, there is a unique @tech{morphism}
+@math{!_a: 0→a}.
+
+Conversely, a @deftech{terminal object} in a @tech{category} @math{𝒞} is an
+@tech{object} to which there exists exactly one @tech{morphism} from every other
+@tech{object} in @math{𝒞}. It serves as a universal ending point within @math{𝒞}.
+The @tech{object} @deftech{1} is @deftech{terminal} in @math{𝒞} if and only if
+for every other @tech{object} @math{a} in @math{𝒞}, there is a unique @tech{morphism}
+@math{⟨⟩_a: a→1}.
+
+@image["scribblings/categorical definition/images/0→1_1.svg"]{[picture] 0→1_1.svg}
+@image["scribblings/categorical definition/images/0→1_2.svg"]{[picture] 0→1_2.svg}
+
+If @tech{initial objects} are also @tech{terminal objects}, they are called
+@deftech{zero objects}.
+
+@bold{Exercise}: Prove that an @tech{initial object} in @math{𝒞} is also a
+@tech{terminal object} in @math{𝒞^op}.
+
+@bold{Exercise}: Prove that @tech{initial objects} (or @tech{terminal objects})
+are @tech{isomorphic} to each other.
+
+@bold{Exercise}: Think about the relationships between @math{0/𝒞}, @math{𝒞/1},
+and @math{𝒞}.
 
 @subsection{Global Element}
