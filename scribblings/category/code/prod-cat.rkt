@@ -67,9 +67,9 @@
   (and (list? p) (= 2 (length p))
        (morphismℳ? (car  p))
        (morphismℛ? (cadr p))))
-(define (morphism=? p . p*)
-  (define m* (map car  (cons p p*)))
-  (define r* (map cadr (cons p p*)))
+(define (morphism=? . p*)
+  (define m* (map car  p*))
+  (define r* (map cadr p*))
   (and (apply morphismℳ=? m*) (apply morphismℛ=? r*)))
 
 ;; Objects in ℳ × ℛ
