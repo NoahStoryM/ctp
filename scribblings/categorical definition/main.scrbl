@@ -174,12 +174,14 @@ for every other @tech{object} @math{a} in @math{𝒞}, there is a unique @tech{m
 @image["scribblings/categorical definition/images/0→1_1.svg"]{[picture] 0→1_1.svg}
 @image["scribblings/categorical definition/images/0→1_2.svg"]{[picture] 0→1_2.svg}
 
-If a @tech{object} is both an @tech{initial object} and a @tech{terminal object},
-it is called a @deftech{zero object} (@deftech{null object} or @deftech{biterminator}).
-A @tech{category} with a @tech{zero object} is called a @deftech{pointed category}.
+@bold{Exercise}: Prove that @math{!_1=⟨⟩_0}.
 
 @bold{Exercise}: Prove that an @tech{initial object} in @math{𝒞} is also a
 @tech{terminal object} in @math{𝒞^op}.
+
+If a @tech{object} is both an @tech{initial object} and a @tech{terminal object},
+it is called a @deftech{zero object} (@deftech{null object} or @deftech{biterminator}).
+A @tech{category} with a @tech{zero object} is called a @deftech{pointed category}.
 
 @bold{Exercise}: Prove that @tech{initial objects} (or @tech{terminal objects})
 are @tech{isomorphic} to each other.
