@@ -109,7 +109,8 @@ Racket programming environment, providing concrete examples.
 
 Informally, a @deftech{diagram} comprises various @tech{objects} connected by
 various @tech{morphisms}. When the @tech{morphisms} with the same @tech{domain}
-and @tech{codomain} are the same one, the @tech{diagram} is a @deftech{commutative diagram}.
+and @tech{codomain} are the same one, the @tech{diagram} is a
+@deftech{@deftech{commutative} diagram}.
 
 @tech{Commutative diagrams} serve as a powerful language for expressing equations.
 
@@ -149,7 +150,7 @@ A @deftech{monoid} (@deftech{monoidal set}) @math{(S, *, e)} is a @tech{set}
 }
 
 A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}.
-In @tech{OOC}, there is only a single @tech{object}, usually denoted by @deftech{*},
+In @tech{OOC}, there is only a single @tech{object}, usually denoted as @deftech{*},
 and @tech{morphisms} are defined within the context of @tech{*}.
 
 @image["scribblings/category/images/ooc.svg"]{[picture] ooc.svg}
@@ -178,17 +179,18 @@ of @math{𝒞} if and only if:
 
 @subsubsection{Full Subcategory}
 
-A @deftech{full subcategory} arises when we selectively remove certain @tech{objects}
-from a @tech{category} @math{𝒞} along with the @tech{morphisms} whose @tech{domains}
-or @tech{codomains} involve these @tech{objects}. The resulting @tech{subcategory}
-@math{𝒟}, retains all the @tech{morphisms} from @math{𝒞} that have not been
-affected by the removal of @tech{objects}.
+A @deftech{@deftech{full} subcategory} arises when we selectively remove certain
+@tech{objects} from a @tech{category} @math{𝒞} along with the @tech{morphisms}
+whose @tech{domains} or @tech{codomains} involve these @tech{objects}. The
+resulting @tech{subcategory} @math{𝒟}, retains all the @tech{morphisms} from
+@math{𝒞} that have not been affected by the removal of @tech{objects}.
 
 @subsubsection{Wide Subcategory}
 
-A @deftech{wide subcategory} is a @tech{subcategory} that includes all @tech{objects}
-from the original @tech{category}. Formally, if @math{𝒟} is a @tech{wide subcategory}
-of @math{𝒞}, then every @tech{object} in @math{𝒞} is also an @tech{object} in @math{𝒟}.
+A @deftech{@deftech{wide} subcategory} is a @tech{subcategory} that includes all
+@tech{objects} from the original @tech{category}. Formally, if @math{𝒟} is a
+@tech{wide subcategory} of @math{𝒞}, then every @tech{object} in @math{𝒞} is also
+an @tech{object} in @math{𝒟}.
 
 @subsection{Semicategory}
 
@@ -313,7 +315,7 @@ The @tech{dual} of a @tech{category} is the reverse version of the given
 A @tech{category} @math{𝒞} can be viewed as a directed graph that adheres to the
 @tech{composition rules}. If we reverse all the arrows in the directed graph,
 the resulting new directed graph still adheres to the @tech{composition rules},
-so this new directed graph is also a @tech{category} denoted @math{𝒞^op}.
+so this new directed graph is also a @tech{category}, denoted as @math{𝒞^op}.
 @math{𝒞^op} is the @deftech{dual} of @math{𝒞}, and @math{(𝒞^op)^op = 𝒞}.
 
 @racketblock[

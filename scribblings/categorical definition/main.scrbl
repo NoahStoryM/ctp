@@ -134,8 +134,8 @@ A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
 
 @subsection{Representative Subcategory}
 
-A @deftech{representative subcategory} is a @tech{subcategory} @math{𝒟} of a
-@tech{category} @math{𝒞} that every @tech{object} of @math{𝒞} is @tech{isomorphic}
+A @deftech{@deftech{representative} subcategory} is a @tech{subcategory} @math{𝒟}
+of a @tech{category} @math{𝒞} that every @tech{object} of @math{𝒞} is @tech{isomorphic}
 to some @tech{object} of @math{𝒟}.
 
 @section{Monomorphism and Epimorphism}
@@ -157,19 +157,19 @@ only if it is both a @tech{monomorphism} and a @tech{split epimorphism}
 
 @section{Initial Object and Terminal Object}
 
-An @deftech{initial object} in a @tech{category} @math{𝒞} is an @tech{object}
-from which there exists exactly one @tech{morphism} to every other @tech{object}
-in @math{𝒞}. It serves as a universal starting point within @math{𝒞}.
-The @tech{object} @deftech{0} is @deftech{initial} in @math{𝒞} if and only if
-for every other @tech{object} @math{a} in @math{𝒞}, there is a unique @tech{morphism}
-@math{!_a: 0→a}.
+An @deftech{@deftech{initial} object} @deftech{0} in a @tech{category} @math{𝒞}
+is an @tech{object} from which there exists exactly one @tech{morphism} to every
+other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{!_a: 0 → a}.
 
-Conversely, a @deftech{terminal object} in a @tech{category} @math{𝒞} is an
-@tech{object} to which there exists exactly one @tech{morphism} from every other
-@tech{object} in @math{𝒞}. It serves as a universal ending point within @math{𝒞}.
-The @tech{object} @deftech{1} is @deftech{terminal} in @math{𝒞} if and only if
-for every other @tech{object} @math{a} in @math{𝒞}, there is a unique @tech{morphism}
-@math{⟨⟩_a: a→1}.
+@bold{Exercise}: Prove that the empty @tech{set} @math{{}} is the unique
+@tech{initial object} in the @tech{category} of @tech{sets}.
+
+Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{category}
+@math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism} from
+every other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{⟨⟩_a: a → 1}.
+
+@bold{Exercise}: Prove that any singleton @tech{set} @math{{*}} is a
+@tech{terminal object} in the @tech{category} of @tech{sets}.
 
 @image["scribblings/categorical definition/images/0→1_1.svg"]{[picture] 0→1_1.svg}
 @image["scribblings/categorical definition/images/0→1_2.svg"]{[picture] 0→1_2.svg}
@@ -179,14 +179,14 @@ for every other @tech{object} @math{a} in @math{𝒞}, there is a unique @tech{m
 @bold{Exercise}: Prove that an @tech{initial object} in @math{𝒞} is also a
 @tech{terminal object} in @math{𝒞^op}.
 
-If a @tech{object} is both an @tech{initial object} and a @tech{terminal object},
-it is called a @deftech{zero object} (@deftech{null object} or @deftech{biterminator}).
-A @tech{category} with a @tech{zero object} is called a @deftech{pointed category}.
-
 @bold{Exercise}: Prove that @tech{initial objects} (or @tech{terminal objects})
 are @tech{isomorphic} to each other.
 
 @bold{Exercise}: Think about the relationships between @math{0/𝒞}, @math{𝒞/1},
 and @math{𝒞}.
+
+If an @tech{object} is both an @tech{initial object} and a @tech{terminal object},
+it is called a @deftech{zero object} (@deftech{null object} or @deftech{biterminator}).
+A @tech{category} with a @tech{zero object} is called a @deftech{pointed category}.
 
 @subsection{Global Element}
