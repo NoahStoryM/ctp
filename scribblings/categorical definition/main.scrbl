@@ -16,15 +16,13 @@ we define properties categorically.
 
 @section{Endomorphism}
 
-For a @tech{morphism} @math{f}, it is an @deftech{endomorphism} if and only if
-@math{dom(f) = cod(f)}.
+For a @tech{morphism} @math{f}, it is an @deftech{endomorphism} iff @math{dom(f) = cod(f)}.
 
 @image["scribblings/categorical definition/images/endo.svg"]{[picture] endo.svg}
 
 @subsection{Idempotent}
 
-For an @tech{endomorphism} @math{f}, it is an @deftech{idempotent} if and only if
-@math{f = f∘f}.
+For an @tech{endomorphism} @math{f}, it is an @deftech{idempotent} iff @math{f = f∘f}.
 
 @image["scribblings/categorical definition/images/idem.svg"]{[picture] idem.svg}
 
@@ -89,8 +87,8 @@ and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphis
 
 In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f^{–1}},
 and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g^{–1}}.
-@math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a ≅ b}) if and
-only if there exists an @tech{isomorphism} between them.
+@math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a ≅ b}) iff
+there exists an @tech{isomorphism} between them.
 
 Examples in @secref["Binary_Relation_Category"]:
 
@@ -151,8 +149,8 @@ then @math{x = y}.
 @bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an @tech{epimorphism}
 in @math{𝒞^op}.
 
-@bold{Exercise}: Prove that a @tech{morphism} is an @tech{isomorphism} if and
-only if it is both a @tech{monomorphism} and a @tech{split epimorphism}
+@bold{Exercise}: Prove that a @tech{morphism} is an @tech{isomorphism} iff it is
+both a @tech{monomorphism} and a @tech{split epimorphism}
 (or both an @tech{epimorphism} and a @tech{split monomorphism}).
 
 @section{Initial Object and Terminal Object}

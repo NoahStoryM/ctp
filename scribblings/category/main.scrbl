@@ -47,7 +47,7 @@ transformations, operations, or even concrete entities like @tech/refer{numbers}
   @item{Existence of @deftech{composition}
 
         For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, a @tech{composition}
-        @math{g∘f} is defined if and only if @math{cod(f) = dom(g)}. When @math{g∘f}
+        @math{g∘f} is defined iff @math{cod(f) = dom(g)}. When @math{g∘f}
         is defined, @math{dom(g∘f) = dom(f)} and @math{cod(g∘f) = cod(g)}.
 
         @image["scribblings/category/images/C-1.svg"]{[picture] C-1.svg}}
@@ -167,7 +167,7 @@ on @tech{monoids}.
 @subsection{Subcategory}
 
 Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
-of @math{𝒞} if and only if:
+of @math{𝒞} iff:
 
 @itemlist[
   #:style 'ordered
@@ -283,7 +283,7 @@ However, this @tech{category} is not a strict @tech{category} that follows the
 
 From the computing science point of view, @tech{category theory} is a strongly
 typed language, stronger than any programming language. This is because of the
-@tech{composition rule}: @math{g∘f} exists if and only if @math{cod(f) = dom(g)}.
+@tech{composition rule}: @math{g∘f} exists iff @math{cod(f) = dom(g)}.
 Racket is an untyped language, it allows any procedure to be composed, such as
 @code{(compose car +)}, but such a procedure will only @racket[raise] an @racket[exn]
 when applied. Therefore, this @tech{category} can be regarded as an @tech{OOC}:
