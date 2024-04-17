@@ -155,14 +155,14 @@ both a @tech{monomorphism} and a @tech{split epimorphism}
 
 @section{Initial Object and Terminal Object}
 
-An @deftech{@deftech{initial} object} @deftech{0} in a @tech{category} @math{𝒞}
+An @deftech{@deftech{initial} object} @math{0} in a @tech{category} @math{𝒞}
 is an @tech{object} from which there exists exactly one @tech{morphism} to every
 other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{!_a: 0 → a}.
 
 @bold{Exercise}: Prove that the empty @tech{set} @math{{}} is the unique
 @tech{initial object} in the @tech{category} of @tech{sets}.
 
-Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{category}
+Conversely, a @deftech{@deftech{terminal} object} @math{1} in a @tech{category}
 @math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism} from
 every other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{⟨⟩_a: a → 1}.
 

@@ -150,8 +150,8 @@ A @deftech{monoid} (@deftech{monoidal set}) @math{(S, *, e)} is a @tech{set}
 }
 
 A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}.
-In @tech{OOC}, there is only a single @tech{object}, usually denoted as @deftech{*},
-and @tech{morphisms} are defined within the context of @tech{*}.
+In @tech{OOC}, there is only a single @tech{object}, usually denoted as @math{*},
+and @tech{morphisms} are defined within the context of @math{*}.
 
 @image["scribblings/category/images/ooc.svg"]{[picture] ooc.svg}
 
@@ -213,7 +213,7 @@ for @tech/refer{pairs} in Racket, we'll introduce the notions of
 (representing @tech{domain}, @tech{codomain}, and @deftech{compose})
 to abstract over @tech{categories}.
 
-We stipulate that @code{(∘)} returns @tech{*}, @code{(∘ m)} returns @code{m},
+We stipulate that @code{(∘)} returns @math{*}, @code{(∘ m)} returns @code{m},
 and @code{(morphism=? m)} returns @code{#t} in Racket.
 
 @subsection{Category Examples}
@@ -225,13 +225,13 @@ Let's see how these abstractions can be applied to create and manipulate
 
 The @tech{category} of natural @tech/refer{numbers} is an example of @tech{OOC}.
 In this case, @tech{morphisms} are natural @tech/refer{numbers}, and the single
-@tech{object} @tech{*} is @code{0} (as the @tech{identity morphism}):
+@tech{object} @math{*} is @code{0} (as the @tech{identity morphism}):
 
 @racketfile{category/code/cat-of-nn.rkt}
 
 @subsubsection{List Category}
 
-The @tech{category} of @tech/refer{lists} is also an @tech{OOC}, where @tech{*}
+The @tech{category} of @tech/refer{lists} is also an @tech{OOC}, where @math{*}
 is @racket[null] and morphisms are @tech/refer{lists}:
 
 @racketfile{category/code/cat-of-ls.rkt}
