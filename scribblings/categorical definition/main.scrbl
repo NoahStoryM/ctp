@@ -188,3 +188,14 @@ it is called a @deftech{zero object} (@deftech{null object} or @deftech{bitermin
 A @tech{category} with a @tech{zero object} is called a @deftech{pointed category}.
 
 @subsection{Global Element}
+
+If there is a @tech{terminal object} @math{1} in @math{𝒞}, a @deftech{global element}
+of another @tech{object} @math{a} in @math{𝒞} is a @tech{morphism} @math{1 → a}.
+
+The @tech{morphisms} @math{1 → a} can be thought of as pointing to @tech{elements}
+of the @tech{object} @math{a} in a way generalize the notion of @tech{elements}
+of @tech{sets}.
+
+@image["scribblings/categorical definition/images/global-elem_1.svg"]{[picture] global-elem_1.svg}
+@image["scribblings/categorical definition/images/global-elem_2.svg"]{[picture] global-elem_2.svg}
+@image["scribblings/categorical definition/images/global-elem_3.svg"]{[picture] global-elem_3.svg}

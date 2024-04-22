@@ -22,6 +22,15 @@ connections or processes but as entities in their own right.
 
 @subsection{Basic Category}
 
+@margin-note{
+This tutorial focuses on @deftech{@deftech{small} categories} and does not cover
+@deftech{@deftech{large} categories}. For more information on @tech{small} and
+@tech{large} @tech{categories}, please refer to
+@hyperlink["https://ncatlab.org/nlab/show/small+category"]{Small Category}
+and
+@hyperlink["https://ncatlab.org/nlab/show/large+category"]{Large Category}.
+}
+
 A @deftech{category} @math{𝒞} is defined by 2 collections: @math{𝒞_0} of
 @deftech{objects} and @math{𝒞_1} of @deftech{morphisms}. Think of @math{𝒞} as a
 directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
