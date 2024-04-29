@@ -344,6 +344,8 @@ new @tech{category}.
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
 
+@bold{Exercise}: prove that @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
+
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
 we create a @tech{product category} by taking the @tech[#:key "cartesian product"]{product}
@@ -391,6 +393,8 @@ Although we name arrows using pairs here, note that they are not pairs, but
 }
 
 @image["scribblings/category/images/arr-cat_3.svg"]{[picture] arr-cat_3.svg}
+
+@bold{Exercise}: prove that @math{(k_0∘i_0, l_0∘j_0) = (k_0, l_0)∘(i_0, j_0)}.
 
 In the following code, we create an @tech{arrow category} to which
 @secref["Matrix_Category"] gives rise:
