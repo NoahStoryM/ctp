@@ -149,24 +149,24 @@ A @deftech{monomorphism} @math{m} is defined as a @deftech{left cancellable}
 @tech{morphism}, where for all @tech{morphisms} @math{a} and @math{b}, if @math{m∘a = m∘b},
 then @math{a = b}.
 
+Conversely, an @deftech{epimorphism} @math{e} is defined as a @deftech{right cancellable}
+@tech{morphism}, where for all @tech{morphisms} @math{x} and @math{y}, if @math{x∘e = y∘e},
+then @math{x = y}.
+
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
 if @math{cod(f) = dom(g)}, then @math{g∘f} is also a @tech{monomorphism}.
 
 @bold{Exercise}: Prove that if @math{g∘f} is a @tech{monomorphism}, then @math{f}
 is also a @tech{monomorphism}.
 
-Conversely, an @deftech{epimorphism} @math{e} is defined as a @deftech{right cancellable}
-@tech{morphism}, where for all @tech{morphisms} @math{x} and @math{y}, if @math{x∘e = y∘e},
-then @math{x = y}.
+@bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an @tech{epimorphism}
+in @math{𝒞^op}.
 
 @bold{Exercise}: Prove that for @tech{epimorphisms} @math{f} and @math{g},
 if @math{cod(f) = dom(g)}, then @math{g∘f} is also an @tech{epimorphism}.
 
 @bold{Exercise}: Prove that if @math{g∘f} is an @tech{epimorphism}, then @math{g}
 is also an @tech{epimorphism}.
-
-@bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an @tech{epimorphism}
-in @math{𝒞^op}.
 
 @bold{Exercise}: Prove that a @tech{morphism} is an @tech{isomorphism} iff it is
 both a @tech{monomorphism} and a @tech{split epimorphism}
