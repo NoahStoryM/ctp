@@ -189,13 +189,43 @@ A @tech{category} with a @tech{zero object} is called a @deftech{pointed categor
 
 @subsection{Global Element}
 
-If there is a @tech{terminal object} @math{1} in @math{𝒞}, a @deftech{global element}
-of another @tech{object} @math{a} in @math{𝒞} is a @tech{morphism} @math{1 → a}.
+If a @tech{terminal object} @math{1} exists within a @tech{category} @math{𝒞}, a
+@deftech{global element} of another @tech{object} @math{a} in @math{𝒞} is defined
+as a @tech{morphism} @math{1 → a}.
 
-The @tech{morphisms} @math{1 → a} can be thought of as pointing to @tech{elements}
-of the @tech{object} @math{a} in a way generalize the notion of @tech{elements}
-of @tech{sets}.
+Although a @tech{category} is fundamentally composed of @tech{objects} and
+@tech{morphisms}, @tech{objects} within some @tech{categories} possess some
+inherent structures. The beauty of @tech{category theory} lies in our ability to
+consistently identify special @tech{morphisms} that reveal and represent these
+structures. This perspective not only deepens our understanding of tangible
+structures but also inspires us to perceive connections and patterns beyond the
+obvious structural definitions.
+
+Consider the @tech{category} of @tech{sets} as an example. We understand that
+@tech{sets} contain @tech{elements}. However, the definition of @tech{categories}
+does not talk about the internal structure of their @tech{objects}. Therefore, we
+must adopt a different viewpoint, characterizing @tech{elements} through
+@tech{morphisms} instead.
 
 @image["scribblings/categorical definition/images/global-elem_1.svg"]{[picture] global-elem_1.svg}
 @image["scribblings/categorical definition/images/global-elem_2.svg"]{[picture] global-elem_2.svg}
 @image["scribblings/categorical definition/images/global-elem_3.svg"]{[picture] global-elem_3.svg}
+
+In further exploring the @tech{category} of @tech{sets}, let's consider a
+@tech{function} @math{f: A → B}. Traditionally, we apply @math{f} to an @tech{element}
+@math{x} in @math{A}, denoted as @math{f(x)}. In @tech{category theory}, we can
+express this application using @tech{morphisms}. Let @math{x} be a @tech{global element}
+of @math{A}, then the application of @math{f} to @math{x} is represented by the
+@tech{composition} of @math{f} with @math{x}, written as @math{f∘x}.
+
+Thus, the notation @math{f(x)} is sometimes used in @tech{category theory} to
+denote the @tech{composition} @math{f∘x}, where @math{x} is interpreted as a
+@tech{morphism} rather than an @tech{element}. This viewpoint aligns with the
+idea that @tech{morphisms} in a @tech{category} can be thought of as @tech{elements},
+and an application is a special case of @tech{morphism} @tech{composition}.
+
+This approach to viewing @tech{elements} requires only the presence of a
+@tech{terminal object} in the @tech{category}. In this context, the @tech{morphisms}
+@math{1 → a} can be seen as the @tech{elements} of the @tech{object} @math{a},
+thereby generalizing the concept of @tech{elements} of @tech{sets} in a broader
+and more abstract manner.
