@@ -164,10 +164,6 @@ and @tech{morphisms} are defined within the context of @math{*}.
 
 @image["scribblings/category/images/ooc.svg"]{[picture] ooc.svg}
 
-@margin-note{
-@tech{categories} are sometimes called @deftech{monoidoids}.
-}
-
 The @tech{monoid} structure becomes evident when we consider the @tech{identity morphism}
 as the @tech{monoid} @tech{identity element} and the @tech{composition} operation
 as the @tech{monoid} operation. Thus, @tech{OOCs} provide a categorical perspective

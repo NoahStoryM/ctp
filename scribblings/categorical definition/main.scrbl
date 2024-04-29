@@ -118,6 +118,10 @@ An @deftech{automorphism} is an @tech{invertible} @tech{endomorphism}.
 
 @subsection{Groupoid}
 
+@margin-note{
+@tech{Categories} are sometimes called @deftech{monoidoids}.
+}
+
 A @deftech{groupoid} is equivalently a @tech{category} in which all @tech{morphisms}
 are @tech{isomorphisms}.
 
