@@ -42,9 +42,9 @@ The proof is left as an exercise.
 
 For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if
 @math{g∘f = id_a}, then @math{f} is a @deftech{split monomorphism}
-(@math{f} is a @deftech{split mono} or @math{f} is @deftech{split monic}),
+(@math{f} is a @deftech{split mono}, or @math{f} is @deftech{split monic}),
 @math{g} is a @deftech{split epimorphism}
-(@math{g} is a @deftech{split epi} or @math{g} is @deftech{split epic}),
+(@math{g} is a @deftech{split epi}, or @math{g} is @deftech{split epic}),
 and @math{f∘g} is a @deftech{split idempotent}.
 
 @image["scribblings/categorical definition/images/split.svg"]{[picture] split.svg}
@@ -52,7 +52,7 @@ and @math{f∘g} is a @deftech{split idempotent}.
 In this case, @math{f} is a @deftech{right inverse} of @math{g}, and @math{g} is
 a @deftech{left inverse} of @math{f}. @math{a} is called a @deftech{retract} of
 @math{b}, @math{f} is called a @deftech{section} of @math{g}, @math{g} is called
-a @deftech{cosection} (@deftech{retraction}) of @math{f} or a @tech{retraction}
+a @deftech{cosection} (@deftech{retraction}) of @math{f}, or a @tech{retraction}
 of @math{b} onto @math{a}.
 
 Examples in @secref["Matrix_Category"]:
@@ -81,7 +81,7 @@ Examples in @secref["Matrix_Category"]:
 
 For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if @math{g∘f = id_a}
 and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphisms}
-(@math{f} and @math{g} are both @deftech{isos} or @math{f} and @math{g} are both @deftech{invertible}).
+(@math{f} and @math{g} are both @deftech{isos}, or @math{f} and @math{g} are both @deftech{isic} or @deftech{invertible}).
 
 @image["scribblings/categorical definition/images/iso.svg"]{[picture] iso.svg}
 
@@ -111,7 +111,7 @@ Examples in @secref["Binary_Relation_Category"]:
 @bold{Exercise}: prove that for @tech{isomorphism} @math{f}, @math{f = (f^{–1})^{–1}}.
 
 @bold{Exercise}: prove that for @tech{isomorphisms} @math{f} and @math{g},
-if @math{cod(f) = dom(g)}, then @math{(g∘f)^{-1} = f^{-1}∘g^{-1}}.
+if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)^{-1} = f^{-1}∘g^{-1}}.
 
 @subsection{Automorphism}
 
@@ -146,15 +146,15 @@ to some @tech{object} of @math{𝒟}.
 @section{Monomorphism and Epimorphism}
 
 A @deftech{monomorphism} @math{m} is defined as a @deftech{left cancellable}
-@tech{morphism}, where for all @tech{morphisms} @math{a} and @math{b}, if @math{m∘a = m∘b},
-then @math{a = b}.
+@tech{morphism}, where for all @tech{composable pairs} @math{(a, m)} and @math{(b, m)},
+if @math{m∘a = m∘b}, then @math{a = b}.
 
 Conversely, an @deftech{epimorphism} @math{e} is defined as a @deftech{right cancellable}
-@tech{morphism}, where for all @tech{morphisms} @math{x} and @math{y}, if @math{x∘e = y∘e},
-then @math{x = y}.
+@tech{morphism}, where for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)},
+if @math{x∘e = y∘e}, then @math{x = y}.
 
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
-if @math{cod(f) = dom(g)}, then @math{g∘f} is also a @tech{monomorphism}.
+if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a @tech{monomorphism}.
 
 @bold{Exercise}: Prove that if @math{g∘f} is a @tech{monomorphism}, then @math{f}
 is also a @tech{monomorphism}.
@@ -163,7 +163,7 @@ is also a @tech{monomorphism}.
 in @math{𝒞^op}.
 
 @bold{Exercise}: Prove that for @tech{epimorphisms} @math{f} and @math{g},
-if @math{cod(f) = dom(g)}, then @math{g∘f} is also an @tech{epimorphism}.
+if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also an @tech{epimorphism}.
 
 @bold{Exercise}: Prove that if @math{g∘f} is an @tech{epimorphism}, then @math{g}
 is also an @tech{epimorphism}.
