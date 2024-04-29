@@ -5,9 +5,9 @@
                      math/matrix)
           "../ctp-utils.rkt")
 
-@title{Category}
+@title[#:tag "_Category_"]{Category}
 
-Welcome to the first chapter of our @secref{CTP} tutorial! Here, we delve into
+Welcome to the first chapter of our @secref{_CTP_} tutorial! Here, we delve into
 the foundational concepts of @tech{category theory}, focusing on @tech{morphisms}
 as the central entities of study. This chapter sets the stage for understanding
 how these entities interact within the structured universe of categories, using
@@ -20,7 +20,7 @@ framework for analyzing and synthesizing concepts across different fields. Centr
 to our exploration are @tech{morphisms}, which we consider not merely as
 connections or processes but as entities in their own right.
 
-@subsection{Basic Category}
+@subsection{Category}
 
 @margin-note{
 This tutorial focuses on @deftech{@deftech{small} categories} and does not cover

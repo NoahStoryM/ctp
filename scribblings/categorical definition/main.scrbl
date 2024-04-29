@@ -4,7 +4,7 @@
                      math/matrix)
           "../ctp-utils.rkt")
 
-@title{Categorical Definition}
+@title[#:tag "_Category Definition_"]{Categorical Definition}
 
 In this chapter, we explore the fundamental idea of defining properties a
 @tech{category} may have solely through @tech{objects} and @tech{morphisms} in it.

@@ -1,10 +1,10 @@
 #lang scribble/manual
 
-@title[#:tag "CTP"]{Category Theory in Programming}
+@title[#:tag "_CTP_"]{Category Theory in Programming}
 @author[@author+email["Noah Ma" "noahstorym@gmail.com"]]
 
 
-Welcome to @secref{CTP}, a journey into the conceptual world where mathematics
+Welcome to @secref{_CTP_}, a journey into the conceptual world where mathematics
 meets software development. This tutorial is designed for Racket programmers who
 are curious about the underlying structures and principles that shape our understanding
 of both mathematical and computational systems.
@@ -54,7 +54,7 @@ new knowledge but in developing a new way of thinking about problems and solutio
 We encourage you to approach the material with an open mind and to explore how
 the concepts presented here can be applied or extended in your programming endeavors.
 
-@secref{CTP} is an invitation to explore, to question, and to discover. It is a
+@secref{_CTP_} is an invitation to explore, to question, and to discover. It is a
 starting point for a deeper inquiry into the vast and fascinating intersection of
 mathematics and programming. We hope this tutorial will inspire you to delve
 further into both fields, exploring new ideas and forging connections that will
@@ -67,7 +67,7 @@ Let the journey begin.
 
 @include-section[(file "category/main.scrbl")]
 @include-section[(file "categorical definition/main.scrbl")]
-@;; include-section[(file "functor/main.scrbl")]
+@include-section[(file "functor/main.scrbl")]
 @;; include-section[(file "natural transformations/main.scrbl")]
 @;; include-section[(file "n-category/main.scrbl")]
 @;; include-section[(file "co-limit/main.scrbl")]
