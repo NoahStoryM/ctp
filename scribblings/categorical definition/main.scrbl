@@ -111,7 +111,7 @@ Examples in @secref["Binary_Relation_Category"]:
 @bold{Exercise}: prove that for @tech{isomorphism} @math{f}, @math{f = (f^{–1})^{–1}}.
 
 @bold{Exercise}: prove that for @tech{isomorphisms} @math{f} and @math{g},
-if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)^{-1} = f^{-1}∘g^{-1}}.
+if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)^{–1} = f^{–1}∘g^{–1}}.
 
 @subsection{Automorphism}
 
