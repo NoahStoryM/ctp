@@ -62,11 +62,9 @@ enhance your work as a programmer.
 
 Let the journey begin.
 
-
 @local-table-of-contents[]
 
 @include-section[(file "category/main.scrbl")]
-@include-section[(file "categorical definition/main.scrbl")]
 @include-section[(file "functor/main.scrbl")]
 @;; include-section[(file "natural transformations/main.scrbl")]
 @;; include-section[(file "n-category/main.scrbl")]

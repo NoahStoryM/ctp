@@ -5,3 +5,4 @@
 
 @title[#:tag "_Functor_"]{Functor}
 
+@local-table-of-contents[]
