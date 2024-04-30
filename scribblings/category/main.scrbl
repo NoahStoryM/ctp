@@ -743,9 +743,11 @@ of @math{A}, then the application of @math{f} to @math{x} is represented by the
 
 Thus, the notation @math{f(x)} is sometimes used in @tech{category theory} to
 denote the @tech{composition} @math{f∘x}, where @math{x} is interpreted as a
-@tech{morphism} rather than an @tech{element}. This viewpoint aligns with the
-idea that @tech{morphisms} in a @tech{category} can be thought of as @tech{elements},
-and an application is a special case of @tech{morphism} @tech{composition}.
+@tech{morphism} rather than an @tech{element}. In this context, an arbitrary
+@tech{morphism} @math{x: a → b} is called a @deftech{variable element} of @math{b},
+parametrized by @math{a}. This viewpoint aligns with the idea that @tech{morphisms}
+in a @tech{category} can be thought of as @tech{elements}, and an application is
+a special case of @tech{morphism} @tech{composition}.
 
 This approach to viewing @tech{elements} requires only the presence of a
 @tech{terminal object} in the @tech{category}. In this context, the @tech{morphisms}
