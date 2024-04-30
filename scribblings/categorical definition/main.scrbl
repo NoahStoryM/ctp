@@ -42,9 +42,9 @@ The proof is left as an exercise.
 
 For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if
 @math{g∘f = id_a}, then @math{f} is a @deftech{split monomorphism}
-(@math{f} is a @deftech{split mono}, or @math{f} is @deftech{split monic}),
+(often abbreviated as @deftech{split mono}, or called be @deftech{split monic}),
 @math{g} is a @deftech{split epimorphism}
-(@math{g} is a @deftech{split epi}, or @math{g} is @deftech{split epic}),
+(often abbreviated as @deftech{split epi}, or called be @deftech{split epic}),
 and @math{f∘g} is a @deftech{split idempotent}.
 
 @image["scribblings/categorical definition/images/split.svg"]{[picture] split.svg}
@@ -81,7 +81,7 @@ Examples in @secref["Matrix_Category"]:
 
 For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if @math{g∘f = id_a}
 and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphisms}
-(@math{f} and @math{g} are both @deftech{isos}, or @math{f} and @math{g} are both @deftech{isic} or @deftech{invertible}).
+(often abbreviated as @deftech{iso}, or called be @deftech{isic} or @deftech{invertible}).
 
 @image["scribblings/categorical definition/images/iso.svg"]{[picture] iso.svg}
 
@@ -145,13 +145,20 @@ to some @tech{object} of @math{𝒟}.
 
 @section{Monomorphism and Epimorphism}
 
-A @deftech{monomorphism} @math{m} is defined as a @deftech{left cancellable}
-@tech{morphism}, where for all @tech{composable pairs} @math{(a, m)} and @math{(b, m)},
-if @math{m∘a = m∘b}, then @math{a = b}.
+A @deftech{monomorphism} (often abbreviated as @deftech{mono}, or called be @deftech{monic})
+@math{m} is defined as a @deftech{left cancellable} @tech{morphism}. This property
+means that for all @tech{composable pairs} @math{(a, m)} and @math{(b, m)}, if
+@math{m∘a = m∘b}, then it must follow that @math{a = b}. Such a condition ensures
+that no two different @tech{morphisms}, when composed with @math{m} on the right,
+result in the same @tech{morphism}, thereby establishing the @tech{injective}
+nature of @math{m}.
 
-Conversely, an @deftech{epimorphism} @math{e} is defined as a @deftech{right cancellable}
-@tech{morphism}, where for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)},
-if @math{x∘e = y∘e}, then @math{x = y}.
+Conversely, an @deftech{epimorphism} (often referred to as @deftech{epi}, or called be @deftech{epic})
+@math{e} is defined as a @deftech{right cancellable} @tech{morphism}. This property
+means that for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)}, if
+@math{x∘e = y∘e}, then it must follow that @math{x = y}. Such a condition ensures
+that @math{e} reaches all possible endpoints in the target @tech{object} without
+duplication, thereby establishing the @tech{surjective} nature of @math{e}.
 
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a @tech{monomorphism}.
