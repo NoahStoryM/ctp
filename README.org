@@ -1,0 +1,35 @@
+#+TITLE: Category Theory in Programming
+* Table of Contents                                       :TOC_5_gh:noexport:
+- [[#introduction][Introduction]]
+- [[#license][License]]
+- [[#getting-started][Getting Started]]
+- [[#contributing][Contributing]]
+
+* Introduction
+This repository contains a tutorial on Category Theory in Programming using the
+Racket programming language. The tutorial aims to provide a hands-on approach to
+understanding fundamental category theory concepts and their practical applications
+in programming.
+
+* License
+This tutorial is released under the MIT License. See the LICENSE file for more details.
+
+* Getting Started
+To get started with the tutorial, run the following command to install `ctp':
+
+#+begin_src sh
+  $ git clone https://github.com/NoahStoryM/ctp
+  $ cd ctp
+  $ raco pkg install
+#+end_src
+
+After compilation, open `doc/ctp/index.html' with a browser.
+
+If you want to recompile `ctp', you can run the following command:
+#+begin_src sh
+  $ raco setup --doc-index ctp
+#+end_src
+
+* Contributing
+Contributions are welcome! If you find errors, have suggestions, or want to
+expand the tutorial, please open an issue or submit a pull request.
