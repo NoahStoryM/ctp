@@ -38,7 +38,7 @@ A @deftech{category} @math{𝒞} is defined by 2 collections: @math{𝒞_0} of
 directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
 connecting these nodes.
 
-For @tech{morphism} @math{f: a → b} in @math{𝒞}, its starting points (@deftech{domain})
+For a @tech{morphism} @math{f: a → b} in @math{𝒞}, its starting points (@deftech{domain})
 is @math{a}, and its ending point (@deftech{codomain}) is @math{b}:
 @math{dom(f) = a} and @math{cod(f) = b}.
 
@@ -77,13 +77,13 @@ transformations, operations, or even concrete entities like @tech/refer{numbers}
   @item{Existence of @deftech{identity morphisms}
 
         Every @tech{object} has an associated @tech{identity morphism}.
-        For @tech{object} @math{a} in @math{𝒞}, its @tech{identity morphism}
+        For an @tech{object} @math{a} in @math{𝒞}, its @tech{identity morphism}
         is denoted as @math{id_a} or @math{1_a}, and @math{a = dom(id_a) = cod(id_a)}.
 
         @image["scribblings/category/images/C-3.svg"]{[picture] C-3.svg}}
   @item{@tech{Composition} and @tech{identity morphisms}
 
-        For @tech{morphism} @math{f: a → b} in @math{𝒞}, @math{f = f∘id_a = id_b∘f}.
+        For a @tech{morphism} @math{f: a → b} in @math{𝒞}, @math{f = f∘id_a = id_b∘f}.
 
         @image["scribblings/category/images/C-4.svg"]{[picture] C-4.svg}}
   ]
@@ -605,7 +605,7 @@ Examples in the @secref["Category_of_Binary_Relation"]:
 
 @bold{Exercise}: prove that every @tech{object} is @tech{isomorphic} to itself.
 
-@bold{Exercise}: prove that for @tech{isomorphism} @math{f}, @math{f = (f^{–1})^{–1}}.
+@bold{Exercise}: prove that for a @tech{isomorphism} @math{f}, @math{f = (f^{–1})^{–1}}.
 
 @bold{Exercise}: prove that for @tech{isomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)^{–1} = f^{–1}∘g^{–1}}.
@@ -657,6 +657,11 @@ means that for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)}, if
 that @math{e} reaches all possible endpoints in the target @tech{object} without
 duplication, thereby establishing the @tech{surjective} nature of @math{e}.
 
+For a @tech{morphism} @math{f: a → b}, if @math{f} is @tech{monic}, it's
+conventionally denoted as @math{f: a ↣ b}; if @math{f} is @tech{epic}, it's
+conventionally denoted as @math{f: a ↠ b}; if @math{f} is both @tech{monic} and
+@tech{epic}, it's conventionally denoted as @math{f: a ⤖ b}.
+
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a @tech{monomorphism}.
 
@@ -673,8 +678,7 @@ if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also an @tech
 is also an @tech{epimorphism}.
 
 @bold{Exercise}: Prove that a @tech{morphism} is an @tech{isomorphism} iff it is
-both a @tech{monomorphism} and a @tech{split epimorphism}
-(or both an @tech{epimorphism} and a @tech{split monomorphism}).
+both @tech{monic} and @tech{split epic} (or both @tech{split monic} and @tech{epic}).
 
 @subsection{Initial Object and Terminal Object}
 
