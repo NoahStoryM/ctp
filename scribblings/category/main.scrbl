@@ -302,18 +302,19 @@ This section involves the creation of new categories using existing ones.
 These constructions provide a way to extend our understanding of @tech{categories}
 and explore various relationships between them.
 
-@subsubsection{Dual Category}
+@subsubsection{Opposite Category}
 
-The @tech{dual} of a @tech{category} is the reverse version of the given
-@tech{category}.
+The @deftech{dual} of a @tech{category} @math{𝒞} is the reverse version of @math{𝒞},
+denoted as @deftech{opposite category} @math{𝒞^op}.
 
 @image["scribblings/category/images/¬cat.svg"]{[picture] ¬cat.svg}
 
 A @tech{category} @math{𝒞} can be viewed as a directed graph that adheres to the
 @tech{composition rules}. If we reverse all the arrows in the directed graph,
 the resulting new directed graph still adheres to the @tech{composition rules},
-so this new directed graph is also a @tech{category}, denoted as @math{𝒞^op}.
-@math{𝒞^op} is the @deftech{dual} of @math{𝒞}, and @math{(𝒞^op)^op = 𝒞}.
+so this new directed graph is also a @tech{category} @math{𝒞^op}.
+
+@bold{Exercise}: prove that @math{(𝒞^op)^op = 𝒞}.
 
 @racketblock[
 (define (¬ dom𝒞 cod𝒞 ∘𝒞)
