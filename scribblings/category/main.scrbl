@@ -387,7 +387,7 @@ Although we name arrows using pairs here, note that they are not pairs, but
 
 @image["scribblings/category/images/arr-cat_3.svg"]{[picture] arr-cat_3.svg}
 
-@bold{Exercise}: prove that @math{(k_0∘i_0, l_0∘j_0) = (k_0, l_0)∘(i_0, j_0)}.
+@bold{Exercise}: prove that @math{(k∘i, l∘j) = (k, l)∘(i, j)}.
 
 In the following code, we create an @tech{arrow category} to which the
 @secref["Category_of_Matrices"] gives rise:
