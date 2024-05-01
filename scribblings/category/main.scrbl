@@ -327,12 +327,12 @@ so this new directed graph is also a @tech{category} @math{𝒞^op}.
 @subsubsection{Product Category}
 
 @margin-note{
-In this context, @tech[#:key "cartesian product"]{product} refers to the
-@deftech{cartesian product}, which is the @tech{product object} in the
+In this context, @tech[#:key "cartesian product"]{products} refer to
+@deftech{cartesian products}, which are @tech{product objects} in the
 @tech{category} of @tech{sets}.
 }
 
-The @deftech{product category} combines the given @tech{categories} to form a
+A @deftech{product category} combines the given @tech{categories} to form a
 new @tech{category}.
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
