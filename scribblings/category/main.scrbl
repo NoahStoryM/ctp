@@ -663,22 +663,24 @@ conventionally denoted as @math{f: a ↠ b}; if @math{f} is both @tech{monic} an
 @tech{epic}, it's conventionally denoted as @math{f: a ⤖ b}.
 
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
-if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a @tech{monomorphism}.
+if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
+@tech{monomorphism}.
 
 @bold{Exercise}: Prove that if @math{g∘f} is a @tech{monomorphism}, then @math{f}
 is also a @tech{monomorphism}.
 
-@bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an @tech{epimorphism}
-in @math{𝒞^op}.
+@bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an
+@tech{epimorphism} in @math{𝒞^op}.
 
 @bold{Exercise}: Prove that for @tech{epimorphisms} @math{f} and @math{g},
-if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also an @tech{epimorphism}.
+if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also an
+@tech{epimorphism}.
 
 @bold{Exercise}: Prove that if @math{g∘f} is an @tech{epimorphism}, then @math{g}
 is also an @tech{epimorphism}.
 
-@bold{Exercise}: Prove that a @tech{morphism} is an @tech{isomorphism} iff it is
-both @tech{monic} and @tech{split epic} (or both @tech{split monic} and @tech{epic}).
+@bold{Exercise}: Prove that a @tech{morphism} is @tech{invertible} iff it is both
+@tech{monic} and @tech{split epic} (or is both @tech{split monic} and @tech{epic}).
 
 @subsection{Initial Object and Terminal Object}
 
