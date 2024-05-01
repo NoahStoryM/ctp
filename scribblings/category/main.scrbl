@@ -228,7 +228,7 @@ and @code{(morphism=? m)} returns @code{#t} in Racket.
 Let's see how these abstractions can be applied to create and manipulate
 @tech{categories} in the context of programming.
 
-@subsubsection{Natural Number Category}
+@subsubsection{Category of Natural Number}
 
 The @tech{category} of natural @tech/refer{numbers} is an example of @tech{OOC}.
 In this case, @tech{morphisms} are natural @tech/refer{numbers}, and the single
@@ -236,19 +236,19 @@ In this case, @tech{morphisms} are natural @tech/refer{numbers}, and the single
 
 @racketfile{category/code/cat-of-nn.rkt}
 
-@subsubsection{List Category}
+@subsubsection{Category of List}
 
 The @tech{category} of @tech/refer{lists} is also an @tech{OOC}, where @math{*}
 is @racket[null] and morphisms are @tech/refer{lists}:
 
 @racketfile{category/code/cat-of-ls.rkt}
 
-@subsubsection{String Category}
+@subsubsection{Category of String}
 
 @bold{Exercise}: referencing the example code above, implement the @tech{category}
 of @tech/refer{strings}, which is also an @tech{OOC}.
 
-@subsubsection{Matrix Category}
+@subsubsection{Category of Matrices}
 
 The @tech{category} of @tech/math[#:key "matrix"]{matrices} is a fascinating
 example that brings together linear algebra and @tech{category theory}. In this
@@ -258,7 +258,7 @@ is the m-order identity @tech/math{matrix}:
 
 @racketfile{category/code/cat-of-mat.rkt}
 
-@subsubsection{Binary Relation Category}
+@subsubsection{Category of Binary Relation}
 
 @margin-note{
 A @deftech{preordered set} @math{(S, ≤)} is a @tech{set} @math{S} equipped with
@@ -277,7 +277,7 @@ A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set}
 
 @bold{Exercise}: view a @tech{poset} as a @tech{category} and implement it.
 
-@subsubsection{Procedure Category}
+@subsubsection{Category of Procedure}
 
 The @tech{category} of procedures is perhaps the most important @tech{category}
 in programming. As the name suggests, this @tech{category} has procedures
@@ -351,7 +351,7 @@ new @tech{category}.
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
 we create a @tech{product category} by taking the @tech[#:key "cartesian product"]{product}
-of @secref["Matrix_Category"] and @secref["Binary_Relation_Category"].
+of the @secref["Category_of_Matrices"] and the @secref["Category_of_Binary_Relation"].
 
 @racketfile{category/code/prod-cat.rkt}
 
@@ -398,8 +398,8 @@ Although we name arrows using pairs here, note that they are not pairs, but
 
 @bold{Exercise}: prove that @math{(k_0∘i_0, l_0∘j_0) = (k_0, l_0)∘(i_0, j_0)}.
 
-In the following code, we create an @tech{arrow category} to which
-@secref["Matrix_Category"] gives rise:
+In the following code, we create an @tech{arrow category} to which the
+@secref["Category_of_Matrices"] gives rise:
 
 @racketfile{category/code/arr-cat.rkt}
 
@@ -552,7 +552,7 @@ a @deftech{left inverse} of @math{f}. @math{a} is called a @deftech{retract} of
 a @deftech{cosection} (@deftech{retraction}) of @math{f}, or a @tech{retraction}
 of @math{b} onto @math{a}.
 
-Examples in @secref["Matrix_Category"]:
+Examples in the @secref["Category_of_Matrices"]:
 
 @racketblock[
 (code:comment2 "Objects")
@@ -587,7 +587,7 @@ and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a ≅ b}) iff
 there exists an @tech{isomorphism} between them.
 
-Examples in @secref["Binary_Relation_Category"]:
+Examples in the @secref["Category_of_Binary_Relation"]:
 
 @racketblock[
 (code:comment2 "Objects")
