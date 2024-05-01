@@ -199,16 +199,6 @@ A @deftech{@deftech{wide} subcategory} is a @tech{subcategory} that includes all
 @tech{wide subcategory} of @math{𝒞}, then every @tech{object} in @math{𝒞} is also
 an @tech{object} in @math{𝒟}.
 
-@subsection{Semicategory}
-
-@margin-note{
-See more in @hyperlink["https://ncatlab.org/nlab/show/semicategory"]{nLab}.
-}
-
-@deftech{Semicategories} (@deftech{non-unital categories}) are similar to
-@tech{categories} but omit the @tech{identity morphism} requirement.
-
-
 @section{Mapping Category to Programming}
 
 In this section, we'll explore how @tech{category theory} concepts can be mapped
