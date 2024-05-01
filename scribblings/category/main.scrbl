@@ -298,7 +298,7 @@ For Racket, it cannot even be sure that @math{g∘f = g∘f} !
 
 @subsection{Constructions on Categories}
 
-This section involves the creation of new @deftech{categories} using existing ones.
+This section involves the creation of new @tech{categories} using existing ones.
 These constructions provide a way to extend our understanding of @tech{categories}
 and explore various relationships between them.
 
