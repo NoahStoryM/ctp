@@ -332,8 +332,8 @@ In this context, @tech[#:key "cartesian product"]{products} refer to
 @tech{category} of @tech{sets}.
 }
 
-A @deftech{product category} combines the given @tech{categories} to form a
-new @tech{category}.
+A @deftech{product category} @math{𝒞 × 𝒟} combines the given @tech{categories}
+@math{𝒞} and @math{𝒟} to form a new @tech{category}.
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
 
