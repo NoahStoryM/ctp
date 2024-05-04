@@ -731,6 +731,12 @@ must adopt a different viewpoint, characterizing @tech{elements} through
 @image["scribblings/category/images/global-elem_2.svg"]{[picture] global-elem_2.svg}
 @image["scribblings/category/images/global-elem_3.svg"]{[picture] global-elem_3.svg}
 
+This approach to viewing @tech{elements} requires only the presence of a
+@tech{terminal object} in the @tech{category}. In this context, a @tech{morphisms}
+@math{1 → a} can be seen as an @tech{elements} of the @tech{object} @math{a},
+thereby generalizing the concept of @tech{elements} of @tech{sets} in a broader
+and more abstract manner.
+
 In further exploring the @tech{category} of @tech{sets}, let's consider a
 @tech{function} @math{f: A → B}. Traditionally, we apply @math{f} to an @tech{element}
 @math{x} in @math{A}, denoted as @math{f(x)}. In @tech{category theory}, we can
@@ -745,9 +751,3 @@ denote the @tech{composition} @math{f∘x}, where @math{x} is interpreted as a
 parametrized by @math{a}. This viewpoint aligns with the idea that @tech{morphisms}
 in a @tech{category} can be thought of as @tech{elements}, and an application is
 a special case of @tech{morphism} @tech{composition}.
-
-This approach to viewing @tech{elements} requires only the presence of a
-@tech{terminal object} in the @tech{category}. In this context, the @tech{morphisms}
-@math{1 → a} can be seen as the @tech{elements} of the @tech{object} @math{a},
-thereby generalizing the concept of @tech{elements} of @tech{sets} in a broader
-and more abstract manner.
