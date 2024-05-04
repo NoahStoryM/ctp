@@ -742,12 +742,11 @@ In further exploring the @tech{category} of @tech{sets}, let's consider a
 @math{x} in @math{A}, denoted as @math{f(x)}. In @tech{category theory}, we can
 express this application using @tech{morphisms}. Let @math{x} be a @tech{global element}
 of @math{A}, then the application of @math{f} to @math{x} is represented by the
-@tech{composition} of @math{f} with @math{x}, written as @math{f∘x}.
-
-Thus, the notation @math{f(x)} is sometimes used in @tech{category theory} to
-denote the @tech{composition} @math{f∘x}, where @math{x} is interpreted as a
-@tech{morphism} rather than an @tech{element}. In this context, an arbitrary
-@tech{morphism} @math{x: a → b} is called a @deftech{variable element} of @math{b},
-parametrized by @math{a}. This viewpoint aligns with the idea that @tech{morphisms}
-in a @tech{category} can be thought of as @tech{elements}, and an application is
-a special case of @tech{morphism} @tech{composition}.
+@tech{composition} of @math{f} with @math{x}, written as @math{f∘x}. Thus, the
+notation @math{f(x)} is sometimes used in @tech{category theory} to denote the
+@tech{composition} @math{f∘x}, where @math{x} is interpreted as a @tech{morphism}
+rather than an @tech{element}. In this context, an arbitrary @tech{morphism}
+@math{x: a → b} is called a @deftech{variable element} of @math{b}, parametrized
+by @math{a}. This viewpoint aligns with the idea that @tech{morphisms} in a
+@tech{category} can be thought of as @tech{elements}, and an application is a
+special case of @tech{morphism} @tech{composition}.
