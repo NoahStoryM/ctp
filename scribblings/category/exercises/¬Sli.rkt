@@ -7,7 +7,8 @@
 ;; Coslice Category c/𝒞
 #;(define (¬Sli dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
     ;; ¬𝒞
-    (define-values (dom¬𝒞 cod¬𝒞 ∘¬𝒞 ?¬𝒞 =¬𝒞) (¬ dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
+    (define-values (dom¬𝒞 cod¬𝒞 ∘¬𝒞 ?¬𝒞 =¬𝒞)
+      (¬ dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
 
     ;; reverse commutative triangle
     (define (~ t)
