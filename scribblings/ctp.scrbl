@@ -62,7 +62,7 @@ enhance your work as a programmer.
 
 Let the journey begin.
 
-@local-table-of-contents[]
+@table-of-contents[]
 
 @include-section[(file "category/main.scrbl")]
 @include-section[(file "functor/main.scrbl")]
@@ -73,3 +73,7 @@ Let the journey begin.
 @;; include-section[(file "adjunction/main.scrbl")]
 @;; include-section[(file "co-monad/main.scrbl")]
 @;; include-section[(file "monoidal category/main.scrbl")]
+
+@include-section[(file "appendix.scrbl")]
+
+@index-section{}
