@@ -37,11 +37,11 @@ and
 A @deftech{category} @math{𝒞} is defined by 2 collections: @math{𝒞_0} of
 @deftech{object}s and @math{𝒞_1} of @deftech{morphism}s. Think of @math{𝒞} as a
 directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
-connecting these nodes.
+(@deftech{→}) connecting these nodes.
 
-For a @tech{morphism} @math{f: a @deftech{→} b} in @math{𝒞}, its starting
-points (@deftech{domain}) is @math{a}, and its ending point (@deftech{codomain})
-is @math{b}: @math{dom(f) = a} and @math{cod(f) = b}.
+For a @tech{morphism} @math{f: a → b} in @math{𝒞}, its starting points
+(@deftech{domain}) is @math{a}, and its ending point (@deftech{codomain}) is
+@math{b}: @math{dom(f) = a} and @math{cod(f) = b}.
 
 @image["scribblings/category/images/cat.svg"]{[picture] cat.svg}
 
@@ -368,7 +368,7 @@ Given a @tech{category} @math{𝒞}, the @deftech{arrow category} @math{Arr(𝒞
 constructed by takeing its @tech{morphisms} as @tech{objects} and @tech{commutative squares}
 as @tech{morphisms}.
 
-For example, here are 3 @tech{commutative squares} in @math{𝒞}:
+For example, here are three @tech{commutative squares} in @math{𝒞}:
 
 @image["scribblings/category/images/arr-cat_1.svg"]{[picture] arr-cat_1.svg}
 
@@ -416,7 +416,7 @@ the @tech{objects} and @tech{morphisms} in @math{𝒞} that are "over" @math{c}.
 @math{𝒞/c} is constructed by takeing @math{𝒞}'s @tech{morphisms} end to @math{c}
 as @tech{objects}, and @tech{commutative triangles} end to @math{c} as @tech{morphisms}.
 
-For example, here are 3 @tech{commutative triangles} end to @math{c_1}
+For example, here are three @tech{commutative triangles} end to @math{c_1}
 in @math{𝒞}:
 
 @image["scribblings/category/images/over-cat_1.svg"]{[picture] over-cat_1.svg}
@@ -459,7 +459,7 @@ and @tech{morphisms} in @math{𝒞} that are "under" @math{c}.
 @math{c/𝒞} is constructed by takeing @math{𝒞}'s @tech{morphisms} start from @math{c}
 as @tech{objects}, and @tech{commutative triangles} start from @math{c} as @tech{morphisms}.
 
-For example, here are 3 @tech{commutative triangles} start from @math{c_0}
+For example, here are three @tech{commutative triangles} start from @math{c_0}
 in @math{𝒞}:
 
 @image["scribblings/category/images/under-cat_1.svg"]{[picture] under-cat_1.svg}
@@ -652,11 +652,16 @@ means that for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)}, if
 that @math{e} reaches all possible endpoints in the target @tech{object} without
 duplication, thereby establishing the @tech{surjective} nature of @math{e}.
 
+@margin-note{
+In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms} from
+two classes @math{ℰ} and @math{ℳ}, not just @tech{monomorphisms} and @tech{epimorphisms}.
+@deftech{⤖} is used to denote @tech{morphisms} from @math{ℰ ∩ ℳ}.
+}
+
 For a @tech{morphism} @math{f: a → b}, if @math{f} is @tech{monic}, it's
-conventionally denoted as @math{f: a @deftech{↣} b}; if @math{f} is
-@tech{epic}, it's conventionally denoted as @math{f: a @deftech{↠} b};
-if @math{f} is both @tech{monic} and @tech{epic}, it's conventionally denoted as
-@math{f: a @deftech{⤖} b}.
+conventionally denoted as @math{f: a ↣ b}; if @math{f} is @tech{epic}, it's
+conventionally denoted as @math{f: a ↠ b}; if @math{f} is both @tech{monic} and
+@tech{epic}, it's conventionally denoted as @math{f: a ⤖ b}.
 
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
