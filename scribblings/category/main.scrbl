@@ -308,7 +308,7 @@ and explore various relationships between them.
 The @deftech{dual} of a @tech{category} @math{𝒞} is the reverse version of @math{𝒞},
 denoted as @deftech{opposite category} @math{𝒞^op}.
 
-@image["scribblings/category/images/¬cat.svg"]{[picture] ¬cat.svg}
+@image["scribblings/category/images/op-cat.svg"]{[picture] op-cat.svg}
 
 A @tech{category} @math{𝒞} can be viewed as a directed graph that adheres to the
 @tech{composition rules}. If we reverse all the arrows in the directed graph,
