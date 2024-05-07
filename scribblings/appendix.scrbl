@@ -7,10 +7,6 @@
 @title{Appendix}
 @defmodule[ctp]
 
-@defproc[(morphism? [m any/c]) boolean?]{
-Returns @code{#t} if @code{m} is a @tech{morphism}, @code{#f} otherwise.
-}
-
 @defproc[(dom [m morphism?]) morphism?]{
 Is the @tech{dom} in the @secref["Category_of_Procedures"].
 }
