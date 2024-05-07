@@ -348,15 +348,17 @@ of the @secref["Category_of_Matrices"] and the @secref["Category_of_Binary_Relat
 @racketfile{category/code/prod-cat.rkt}
 
 @bold{Exercise}: @racket[define] @code{dom×}, @code{cod×}, @code{∘×}, @code{?×}
-and @code{=×} so that we can @racket[define] @tech{category} @math{ℳ × ℛ} in
-this way:
+and @code{=×} so that we can @racket[define] the @tech{product category}
+@math{ℳ × ℛ} in this way:
 
 @racketblock[
-(define dom (dom× domℳ domℛ))
-(define cod (cod× codℳ codℛ))
-(define ∘ (∘× ∘ℳ ∘ℛ))
-(define ? (?× ?ℳ ?ℛ))
-(define = (=× =ℳ =ℛ))
+(define-values (dom cod ∘ ? =)
+  (values
+   (dom× domℳ domℛ)
+   (cod× codℳ codℛ)
+   (∘× ∘ℳ ∘ℛ)
+   (?× ?ℳ ?ℛ)
+   (=× =ℳ =ℛ)))
 ]
 
 @subsubsection{Arrow Category}
