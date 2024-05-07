@@ -1,6 +1,6 @@
 #lang racket/base
 
-(require racket/match math/matrix "Sli.rkt")
+(require ctp racket/match math/matrix)
 
 ;; Category of Matrices ℳ
 (define (domℳ m) (identity-matrix (matrix-num-cols m)))

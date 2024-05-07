@@ -1,6 +1,7 @@
 #lang scribble/manual
 
-@(require (for-label racket/base
+@(require (for-label ctp
+                     racket/base
                      racket/match
                      math/matrix)
           "../ctp-utils.rkt")
