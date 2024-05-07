@@ -5,7 +5,7 @@
 (provide Sli)
 
 ;; Slice Category 𝒞/c
-(define ((Sli dom𝒞 cod𝒞 ∘𝒞 morphism𝒞? morphism𝒞=?) c)
+(define ((Sli dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞) c)
   (define (dom t)
     (match t
       [`((,p) (,q ,f))
@@ -25,27 +25,24 @@
            `((,p) (,q ,f)))
           `((,p) (,r ,(∘𝒞 g f)))])]
       [(t1 t2 . t*) (apply ∘ (∘ t1 t2) t*)]))
-
-  (define (morphism? t)
+  (define (? t)
     (match t
       [`((,p) (,q ,f))
-       (and (morphism𝒞? p)
-            (morphism𝒞? q)
-            (morphism𝒞? f)
-            (morphism𝒞=? c (cod𝒞 p) (cod𝒞 q))
-            (morphism𝒞=? p (∘𝒞 q f)))]
+       (and (?𝒞 p)
+            (?𝒞 q) (?𝒞 f)
+            (=𝒞 c (cod𝒞 p) (cod𝒞 q))
+            (=𝒞 p (∘𝒞 q f)))]
       [_ #f]))
-  (define morphism=?
+  (define =
     (case-lambda
       [(_) #t]
       [(t1 t2)
        (match* (t1 t2)
          [(`((,r) (,s ,h))
            `((,p) (,q ,f)))
-          (and (morphism𝒞=? r p)
-               (morphism𝒞=? s q)
-               (morphism𝒞=? h f))]
+          (and (=𝒞 r p)
+               (=𝒞 s q) (=𝒞 h f))]
          [(_ _) #f])]
-      [(t1 t2 . t*) (and (morphism=? t1 t2) (apply morphism=? t*))]))
+      [(t1 t2 . t*) (and (= t1 t2) (apply = t*))]))
 
-  (values dom cod ∘ morphism? morphism=?))
+  (values dom cod ∘ ? =))

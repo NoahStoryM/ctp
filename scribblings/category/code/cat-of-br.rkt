@@ -10,13 +10,12 @@
     [(m) m]
     [(m1 m2) (match* (m1 m2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
     [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
-
-(define (morphism? m) (pair? m))
-(define morphism=?
+(define (? m) (pair? m))
+(define =
   (case-lambda
     [(_) #t]
     [(m1 m2) (equal? m1 m2)]
-    [(m1 m2 . m*) (and (morphism=? m1 m2) (apply morphism=? m*))]))
+    [(m1 m2 . m*) (and (= m1 m2) (apply = m*))]))
 
 ;; Objects
 (define a '(a . a))
@@ -30,15 +29,15 @@
 (define h '(c . d))
 
 ;; Existence of composition
-(morphism=? b (cod f) (dom g))
-(morphism=? a (dom (∘ g f)) (dom f))
-(morphism=? c (cod (∘ g f)) (cod g))
+(= b (cod f) (dom g))
+(= a (dom (∘ g f)) (dom f))
+(= c (cod (∘ g f)) (cod g))
 
 ;; Associativity of composition
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
+(= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
 
 ;; Existence of identity
-(morphism=? a (dom a) (cod a))
+(= a (dom a) (cod a))
 
 ;; Identity and composition
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
+(= f (∘ f (dom f)) (∘ (cod f) f))

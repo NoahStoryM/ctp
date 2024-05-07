@@ -6,13 +6,12 @@
 (define (domℳ m) (identity-matrix (matrix-num-cols m)))
 (define (codℳ m) (identity-matrix (matrix-num-rows m)))
 (define (∘ℳ m . m*) (apply matrix* m m*))
-
-(define (morphismℳ? m) (matrix? m))
-(define morphismℳ=?
+(define (?ℳ m) (matrix? m))
+(define =ℳ
   (case-lambda
     [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
-    [(m1 m2 . m*) (and (morphismℳ=? m1 m2) (apply morphismℳ=? m*))]))
+    [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m*))]))
 
 ;; Objects in ℳ
 (define a0 (identity-matrix 1))
@@ -35,13 +34,12 @@
     [(r) r]
     [(r1 r2) (match* (r1 r2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
     [(r1 r2 . r*) (apply ∘ℛ (∘ℛ r1 r2) r*)]))
-
-(define (morphismℛ? r) (pair? r))
-(define morphismℛ=?
+(define (?ℛ r) (pair? r))
+(define =ℛ
   (case-lambda
     [(_) #t]
     [(r1 r2) (equal? r1 r2)]
-    [(r1 r2 . r*) (and (morphismℛ=? r1 r2) (apply morphismℛ=? r*))]))
+    [(r1 r2 . r*) (and (=ℛ r1 r2) (apply =ℛ r*))]))
 
 ;; Objects in ℛ
 (define a1 '(a . a))
@@ -62,15 +60,14 @@
   (define m* (map car  (cons p p*)))
   (define r* (map cadr (cons p p*)))
   (list (apply ∘ℳ m*) (apply ∘ℛ r*)))
-
-(define (morphism? p)
+(define (? p)
   (and (list? p) (= 2 (length p))
-       (morphismℳ? (car  p))
-       (morphismℛ? (cadr p))))
-(define (morphism=? . p*)
+       (?ℳ (car  p))
+       (?ℛ (cadr p))))
+(define (= . p*)
   (define m* (map car  p*))
   (define r* (map cadr p*))
-  (and (apply morphismℳ=? m*) (apply morphismℛ=? r*)))
+  (and (apply =ℳ m*) (apply =ℛ r*)))
 
 ;; Objects in ℳ × ℛ
 (define a (list a0 a1)) ; (a0, a1)
@@ -84,15 +81,15 @@
 (define h (list h0 h1)) ; (h0, h1)
 
 ;; Existence of composition
-(morphism=? b (cod f) (dom g))
-(morphism=? a (dom (∘ g f)) (dom f))
-(morphism=? c (cod (∘ g f)) (cod g))
+(= b (cod f) (dom g))
+(= a (dom (∘ g f)) (dom f))
+(= c (cod (∘ g f)) (cod g))
 
 ;; Associativity of composition
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
+(= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
 
 ;; Existence of identity
-(morphism=? a (dom a) (cod a))
+(= a (dom a) (cod a))
 
 ;; Identity and composition
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
+(= f (∘ f (dom f)) (∘ (cod f) f))

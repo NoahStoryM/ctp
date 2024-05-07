@@ -5,7 +5,7 @@
 (provide Arr)
 
 ;; Arrow Category Arr(𝒞)
-(define (Arr dom𝒞 cod𝒞 ∘𝒞 morphism𝒞? morphism𝒞=?)
+(define (Arr dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
   (define (dom s)
     (match s
       [`((,j ,p) (,q ,i))
@@ -27,28 +27,23 @@
            `((,j ,p) (,q ,i)))
           `((,(∘𝒞 l j) ,p) (,r ,(∘𝒞 k i)))])]
       [(s1 s2 . s*) (apply ∘ (∘ s1 s2) s*)]))
-
-  (define (morphism? s)
+  (define (? s)
     (match s
       [`((,j ,p) (,q ,i))
-       (and (morphism𝒞? j)
-            (morphism𝒞? p)
-            (morphism𝒞? q)
-            (morphism𝒞? i)
-            (morphism𝒞=? (∘𝒞 j p) (∘𝒞 q i)))]
+       (and (?𝒞 j) (?𝒞 p)
+            (?𝒞 q) (?𝒞 i)
+            (=𝒞 (∘𝒞 j p) (∘𝒞 q i)))]
       [_ #f]))
-  (define morphism=?
+  (define =
     (case-lambda
       [(_) #t]
       [(s1 s2)
        (match* (s1 s2)
          [(`((,n ,r) (,s ,m))
            `((,j ,p) (,q ,i)))
-          (and (morphism𝒞=? n j)
-               (morphism𝒞=? r p)
-               (morphism𝒞=? s q)
-               (morphism𝒞=? m i))]
+          (and (=𝒞 n j) (=𝒞 r p)
+               (=𝒞 s q) (=𝒞 m i))]
          [(_ _) #f])]
-      [(s1 s2 . s*) (and (morphism=? s1 s2) (apply morphism=? s*))]))
+      [(s1 s2 . s*) (and (= s1 s2) (apply = s*))]))
 
-  (values dom cod ∘ morphism? morphism=?))
+  (values dom cod ∘ ? =))

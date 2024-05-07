@@ -3,6 +3,7 @@
 (require "../../../private/utils.rkt")
 
 ;; Product Category
+(define (× . m*) m*)
 (define (dom× . dom*) (define (dom m*) (map call dom* m*)) dom)
 (define (cod× . cod*) (define (cod m*) (map call cod* m*)) cod)
 (define (∘× . ∘*)
@@ -12,18 +13,16 @@
       (define m* (map (λ (m*) (list-ref m* i)) m**))
       (apply ∘ m*)))
   ∘)
-
-(define (morphism× . m*) m*)
-(define (morphism×? . morphism?*)
-  (define n (length morphism?*))
-  (define (morphism? . m*)
+(define (?× . ?*)
+  (define n (length ?*))
+  (define (? . m*)
     (and (list? m*) (= n (length m*))
-         (andmap call morphism?* m*)))
-  morphism?)
-(define (morphism×=? . morphism=?*)
-  (define (morphism=? . m**)
-    (for/and ([morphism=? (in-list morphism=?*)]
+         (andmap call ?* m*)))
+  ?)
+(define (=× . =*)
+  (define (= . m**)
+    (for/and ([= (in-list =*)]
               [i (in-naturals)])
       (define m* (map (λ (m*) (list-ref m* i)) m**))
-      (apply morphism=? m*)))
-  morphism=?)
+      (apply = m*)))
+  =)

@@ -4,6 +4,5 @@
 (define (dom _) (∘))
 (define (cod _) (∘))
 (define (∘ . m*) (apply string-append m*))
-
-(define (morphism? m) (string? m))
-(define (morphism=? m . m*) (apply string=? m m*))
+(define (? m) (string? m))
+(define (= m . m*) (apply string=? m m*))

@@ -10,15 +10,14 @@
     [(m) m]
     [(m1 m2) (match* (m1 m2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
     [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
-
-(define (morphism? m)
+(define (? m)
   (match m
     [`(,a . ,b)
      (and (real? a) (real? b)
           (<= a b))]
     [_ #f]))
-(define morphism=?
+(define =
   (case-lambda
     [(_) #t]
     [(m1 m2) (equal? m1 m2)]
-    [(m1 m2 . m*) (and (morphism=? m1 m2) (apply morphism=? m*))]))
+    [(m1 m2 . m*) (and (= m1 m2) (apply = m*))]))

@@ -4,13 +4,12 @@
 (define (dom _) *)
 (define (cod _) *)
 (define (∘ . m*) (apply append m*))
-
-(define (morphism? m) (list? m))
-(define morphism=?
+(define (? m) (list? m))
+(define =
   (case-lambda
     [(_) #t]
     [(m1 m2) (equal? m1 m2)]
-    [(m1 m2 . m*) (and (morphism=? m1 m2) (apply morphism=? m*))]))
+    [(m1 m2 . m*) (and (= m1 m2) (apply = m*))]))
 
 ;; Objects
 (define * (∘))
@@ -21,15 +20,15 @@
 (define h '(A B C))
 
 ;; Existence of composition
-(morphism=? * (cod f) (dom g))
-(morphism=? * (dom (∘ g f)) (dom f))
-(morphism=? * (cod (∘ g f)) (cod g))
+(= * (cod f) (dom g))
+(= * (dom (∘ g f)) (dom f))
+(= * (cod (∘ g f)) (cod g))
 
 ;; Associativity of composition
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
+(= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
 
 ;; Existence of identity
-(morphism=? * (dom *) (cod *))
+(= * (dom *) (cod *))
 
 ;; Identity and composition
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
+(= f (∘ f (dom f)) (∘ (cod f) f))

@@ -6,13 +6,12 @@
 (define (dom m) (identity-matrix (matrix-num-cols m)))
 (define (cod m) (identity-matrix (matrix-num-rows m)))
 (define (∘ m . m*) (apply matrix* m m*))
-
-(define (morphism? m) (matrix? m))
-(define morphism=?
+(define (? m) (matrix? m))
+(define =
   (case-lambda
     [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
-    [(m1 m2 . m*) (and (morphism=? m1 m2) (apply morphism=? m*))]))
+    [(m1 m2 . m*) (and (= m1 m2) (apply = m*))]))
 
 ;; Objects
 (define a (identity-matrix 1))
@@ -27,15 +26,15 @@
 (define h (build-matrix 4 3 rand))
 
 ;; Existence of composition
-(morphism=? b (cod f) (dom g))
-(morphism=? a (dom (∘ g f)) (dom f))
-(morphism=? c (cod (∘ g f)) (cod g))
+(= b (cod f) (dom g))
+(= a (dom (∘ g f)) (dom f))
+(= c (cod (∘ g f)) (cod g))
 
 ;; Associativity of composition
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
+(= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
 
 ;; Existence of identity
-(morphism=? a (dom a) (cod a))
+(= a (dom a) (cod a))
 
 ;; Identity and composition
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
+(= f (∘ f (dom f)) (∘ (cod f) f))

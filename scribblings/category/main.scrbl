@@ -204,14 +204,14 @@ an @tech{object} in @math{𝒟}.
 In this section, we'll explore how @tech{category theory} concepts can be mapped
 to practical programming constructs.
 
-Just as @racket[car], @racket[cdr], and @racket[cons] provide an abstraction
-for @tech/refer{pairs} in Racket, we'll introduce the notions of
-@deftech{dom}, @deftech{cod}, and @deftech{∘}
-(representing @tech{domain}, @tech{codomain}, and @deftech{compose})
+Just as @racket[car], @racket[cdr], @racket[cons], @racket[pair?], and @racket[equal?]
+provide an abstraction for @tech/refer{pairs} in Racket, we'll introduce the notions
+of @deftech{dom}, @deftech{cod}, @deftech{∘}, @deftech{?} and @deftech{=}
+(representing @tech{domain}, @tech{codomain}, @deftech{compose}, @deftech{predicate}, and @deftech{equal})
 to abstract over @tech{categories}.
 
 We stipulate that @code{(∘)} returns @math{*}, @code{(∘ m)} returns @code{m},
-and @code{(morphism=? m)} returns @code{#t} in Racket.
+and @code{(= m)} returns @code{#t} in Racket.
 
 @subsection{Category Examples}
 
@@ -282,18 +282,19 @@ From the computing science point of view, @tech{category theory} is a strongly
 typed language, stronger than any programming language. This is because of the
 @tech{composition rule}: @math{g∘f} exists iff @math{cod(f) = dom(g)}.
 Racket is an untyped language, it allows any procedure to be composed, such as
-@code{(compose car +)}, but such a procedure will only @racket[raise] an @racket[exn]
+@code{(∘ car +)}, but such a procedure will only @racket[raise] an @racket[exn]
 when applied. Therefore, this @tech{category} can be regarded as an @tech{OOC}:
 
 @racketblock[
 (define (dom _) (∘))
 (define (cod _) (∘))
 (define ∘ compose)
+(define ? procedure?)
 ]
 
 Another defect is that we cannot compare whether two procedures have the same
-functionality, which means we cannot @racket[define] @code{morphism=?}, and have
-to rely on the programmer to judge whether the behavior of two procedures is same.
+functionality, which means we cannot @racket[define] @code{=}, and have to rely
+on the programmer to judge whether the behavior of two procedures is same.
 For Racket, it cannot even be sure that @math{g∘f = g∘f} !
 
 @subsection{Constructions on Categories}
@@ -316,12 +317,12 @@ so this new directed graph is also a @tech{category} @math{𝒞^op}.
 
 @bold{Exercise}: prove that @math{(𝒞^op)^op = 𝒞}.
 
+@bold{Exercise}: @racket[define] @code{¬} so that we can @racket[define] the
+@tech{opposite category} @math{𝒞^op} in this way:
+
 @racketblock[
-(define (¬ dom𝒞 cod𝒞 ∘𝒞)
-  (define (dom m) (cod𝒞 m))
-  (define (cod m) (dom𝒞 m))
-  (define (∘ . m*) (apply ∘𝒞 (reverse m*)))
-  (values dom cod ∘))
+(define-values (dom cod ∘ ? =)
+  (¬ dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
 ]
 
 @subsubsection{Product Category}
@@ -346,16 +347,16 @@ of the @secref["Category_of_Matrices"] and the @secref["Category_of_Binary_Relat
 
 @racketfile{category/code/prod-cat.rkt}
 
-@bold{Exercise}: @racket[define] @code{dom×}, @code{cod×}, @code{∘×},
-@code{morphism×?} and @code{morphism×=?} so that we can @racket[define]
-@tech{category} @math{ℳ × ℛ} in this way:
+@bold{Exercise}: @racket[define] @code{dom×}, @code{cod×}, @code{∘×}, @code{?×}
+and @code{=×} so that we can @racket[define] @tech{category} @math{ℳ × ℛ} in
+this way:
 
 @racketblock[
 (define dom (dom× domℳ domℛ))
 (define cod (cod× codℳ codℛ))
 (define ∘ (∘× ∘ℳ ∘ℛ))
-(define morphism? (morphism×? morphismℳ? morphismℛ?))
-(define morphism=? (morphism×=? morphismℳ=? morphismℛ=?))
+(define ? (?× ?ℳ ?ℛ))
+(define = (=× =ℳ =ℛ))
 ]
 
 @subsubsection{Arrow Category}
@@ -398,8 +399,8 @@ In the following code, we create an @tech{arrow category} to which the
 @tech{arrow category} @math{Arr(ℳ)} in this way:
 
 @racketblock[
-(define-values (dom cod ∘ morphism? morphism=?)
-  (Arr domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?))
+(define-values (dom cod ∘ ? =)
+  (Arr domℳ codℳ ∘ℳ ?ℳ =ℳ))
 ]
 
 @subsubsection{(Co)Slice Category}
@@ -444,8 +445,8 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 the @tech{slice category} @math{ℳ/m} in this way:
 
 @racketblock[
-(define-values (dom cod ∘ morphism? morphism=?)
-  ((Sli domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?) m))
+(define-values (dom cod ∘ ? =)
+  ((Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
 ]
 
 The @tech{dual} notion of a @tech{slice category} @math{𝒞/c} is a @deftech{coslice category}
@@ -487,8 +488,8 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 the @tech{coslice category} @math{m/ℳ} in this way:
 
 @racketblock[
-(define-values (dom cod ∘ morphism? morphism=?)
-  ((¬Sli domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?) m))
+(define-values (dom cod ∘ ? =)
+  ((¬Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
 ]
 
 @bold{Exercise}: prove that @math{ℳ^op/m = (m/ℳ)^op}.
@@ -556,13 +557,13 @@ Examples in the @secref["Category_of_Matrices"]:
 (define f∘g (∘ f g))                     (code:comment "split idempotent")
 
 (code:comment2 "g∘f is the identity morphism of a")
-(morphism=? a (∘ g f))
+(= a (∘ g f))
 
 (code:comment2 "f∘g is an endomorphism of b")
-(morphism=? b (dom f∘g) (cod f∘g))
+(= b (dom f∘g) (cod f∘g))
 
 (code:comment2 "f∘g is an idempotent")
-(morphism=? f∘g (∘ f∘g f∘g))
+(= f∘g (∘ f∘g f∘g))
 ]
 
 @subsection{Isomorphism}
@@ -590,8 +591,8 @@ Examples in the @secref["Category_of_Binary_Relations"]:
 (define g '(b . a))
 
 (code:comment2 "a ≅ b")
-(morphism=? a (∘ g f))
-(morphism=? b (∘ f g))
+(= a (∘ g f))
+(= b (∘ f g))
 ]
 
 @bold{Exercise}: prove that every @tech{object} is @tech{isomorphic} to itself.

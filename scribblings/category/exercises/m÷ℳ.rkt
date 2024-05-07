@@ -6,13 +6,12 @@
 (define (domℳ m) (identity-matrix (matrix-num-cols m)))
 (define (codℳ m) (identity-matrix (matrix-num-rows m)))
 (define (∘ℳ m . m*) (apply matrix* m m*))
-
-(define (morphismℳ? m) (matrix? m))
-(define morphismℳ=?
+(define (?ℳ m) (matrix? m))
+(define =ℳ
   (case-lambda
     [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
-    [(m1 m2 . m*) (and (morphismℳ=? m1 m2) (apply morphismℳ=? m*))]))
+    [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m*))]))
 
 ;; Objects in ℳ
 (define a0 (identity-matrix 1))
@@ -36,8 +35,8 @@
 
 
 ;; Coslice Category m/ℳ
-(define-values (dom cod ∘ morphism? morphism=?)
-  ((¬Sli domℳ codℳ ∘ℳ morphismℳ? morphismℳ=?) m))
+(define-values (dom cod ∘ ? =)
+  ((¬Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
 
 ;; Objects in m/ℳ
 (define a `((,a0 ,p0) (,p0))) ; p0
@@ -51,15 +50,15 @@
 (define h `((,h0 ,r0) (,s0))) ; h0
 
 ;; Existence of composition
-(morphism=? b (cod f) (dom g))
-(morphism=? a (dom (∘ g f)) (dom f))
-(morphism=? c (cod (∘ g f)) (cod g))
+(= b (cod f) (dom g))
+(= a (dom (∘ g f)) (dom f))
+(= c (cod (∘ g f)) (cod g))
 
 ;; Associativity of composition
-(morphism=? (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
+(= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
 
 ;; Existence of identity
-(morphism=? a (dom a) (cod a))
+(= a (dom a) (cod a))
 
 ;; Identity and composition
-(morphism=? f (∘ f (dom f)) (∘ (cod f) f))
+(= f (∘ f (dom f)) (∘ (cod f) f))
