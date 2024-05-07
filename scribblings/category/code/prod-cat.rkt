@@ -54,12 +54,13 @@
 
 
 ;; Product Category ℳ × ℛ
-(define (dom p) (match p [`(,m ,r) `(,(domℳ m) ,(domℛ r))]))
-(define (cod p) (match p [`(,m ,r) `(,(codℳ m) ,(codℛ r))]))
+(define (× . m*) m*)
+(define (dom p) (match p [`(,m ,r) (× (domℳ m) (domℛ r))]))
+(define (cod p) (match p [`(,m ,r) (× (codℳ m) (codℛ r))]))
 (define (∘ p . p*)
   (define m* (map car  (cons p p*)))
   (define r* (map cadr (cons p p*)))
-  (list (apply ∘ℳ m*) (apply ∘ℛ r*)))
+  (× (apply ∘ℳ m*) (apply ∘ℛ r*)))
 (define (? p)
   (and (list? p) (= 2 (length p))
        (?ℳ (car  p))
@@ -70,15 +71,15 @@
   (and (apply =ℳ m*) (apply =ℛ r*)))
 
 ;; Objects in ℳ × ℛ
-(define a (list a0 a1)) ; (a0, a1)
-(define b (list b0 b1)) ; (b0, b1)
-(define c (list c0 c1)) ; (c0, c1)
-(define d (list d0 d1)) ; (d0, d1)
+(define a (× a0 a1)) ; (a0, a1)
+(define b (× b0 b1)) ; (b0, b1)
+(define c (× c0 c1)) ; (c0, c1)
+(define d (× d0 d1)) ; (d0, d1)
 
 ;; Morphisms in ℳ × ℛ
-(define f (list f0 f1)) ; (f0, f1)
-(define g (list g0 g1)) ; (g0, g1)
-(define h (list h0 h1)) ; (h0, h1)
+(define f (× f0 f1)) ; (f0, f1)
+(define g (× g0 g1)) ; (g0, g1)
+(define h (× h0 h1)) ; (h0, h1)
 
 ;; Existence of composition
 (= b (cod f) (dom g))
