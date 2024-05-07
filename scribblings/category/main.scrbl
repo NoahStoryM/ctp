@@ -25,8 +25,8 @@ connections or processes but as entities in their own right.
 @subsection{Category}
 
 @margin-note{
-This tutorial focuses on @deftech{@deftech{small} categories} and does not cover
-@deftech{@deftech{large} categories}. For more information on @tech{small} and
+This tutorial focuses on @deftech{@deftech{small} categorie}s and does not cover
+@deftech{@deftech{large} categorie}s. For more information on @tech{small} and
 @tech{large} @tech{categories}, please refer to
 @hyperlink["https://ncatlab.org/nlab/show/small+category"]{Small Category}
 and
@@ -34,13 +34,13 @@ and
 }
 
 A @deftech{category} @math{𝒞} is defined by 2 collections: @math{𝒞_0} of
-@deftech{objects} and @math{𝒞_1} of @deftech{morphisms}. Think of @math{𝒞} as a
+@deftech{object}s and @math{𝒞_1} of @deftech{morphism}s. Think of @math{𝒞} as a
 directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
 connecting these nodes.
 
-For a @tech{morphism} @math{f: a → b} in @math{𝒞}, its starting points (@deftech{domain})
-is @math{a}, and its ending point (@deftech{codomain}) is @math{b}:
-@math{dom(f) = a} and @math{cod(f) = b}.
+For a @tech{morphism} @math{f: a @deftech{→} b} in @math{𝒞}, its starting
+points (@deftech{domain}) is @math{a}, and its ending point (@deftech{codomain})
+is @math{b}: @math{dom(f) = a} and @math{cod(f) = b}.
 
 @image["scribblings/category/images/cat.svg"]{[picture] cat.svg}
 
@@ -74,7 +74,7 @@ transformations, operations, or even concrete entities like @tech/refer{numbers}
         @math{(h∘g)∘f = h∘(g∘f)}, denoted as @math{h∘g∘f}.
 
         @image["scribblings/category/images/C-2.svg"]{[picture] C-2.svg}}
-  @item{Existence of @deftech{identity morphisms}
+  @item{Existence of @deftech{identity morphism}s
 
         Every @tech{object} has an associated @tech{identity morphism}.
         For an @tech{object} @math{a} in @math{𝒞}, its @tech{identity morphism}
@@ -161,8 +161,8 @@ A @deftech{monoid} (@deftech{monoidal set}) @math{(S, *, e)} is a @tech{set}
 }
 
 A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}.
-In @tech{OOC}, there is only a single @tech{object}, usually denoted as @math{*},
-and @tech{morphisms} are defined within the context of @math{*}.
+In @tech{OOC}, there is only a single @tech{object}, usually denoted as @deftech{*},
+and @tech{morphisms} are defined within the context of @tech{*}.
 
 @image["scribblings/category/images/ooc.svg"]{[picture] ooc.svg}
 
@@ -210,7 +210,7 @@ of @deftech{dom}, @deftech{cod}, @deftech{∘}, @deftech{?} and @deftech{=}
 (representing @tech{domain}, @tech{codomain}, @deftech{compose}, @deftech{predicate}, and @deftech{equal})
 to abstract over @tech{categories}.
 
-We stipulate that @code{(∘)} returns @math{*}, @code{(∘ m)} returns @code{m},
+We stipulate that @code{(∘)} returns @tech{*}, @code{(∘ m)} returns @code{m},
 and @code{(= m)} returns @code{#t} in Racket.
 
 @subsection{Category Examples}
@@ -293,7 +293,7 @@ when applied. Therefore, this @tech{category} can be regarded as an @tech{OOC}:
 ]
 
 Another defect is that we cannot compare whether two procedures have the same
-functionality, which means we cannot @racket[define] @code{=}, and have to rely
+functionality, which means we cannot @racket[define] @tech{=}, and have to rely
 on the programmer to judge whether the behavior of two procedures is same.
 For Racket, it cannot even be sure that @math{g∘f = g∘f} !
 
@@ -317,7 +317,7 @@ so this new directed graph is also a @tech{category} @math{𝒞^op}.
 
 @bold{Exercise}: prove that @math{(𝒞^op)^op = 𝒞}.
 
-@bold{Exercise}: @racket[define] @code{¬} so that we can @racket[define] the
+@bold{Exercise}: @racket[define] @deftech{¬} so that we can @racket[define] the
 @tech{opposite category} @math{𝒞^op} in this way:
 
 @racketblock[
@@ -329,7 +329,7 @@ so this new directed graph is also a @tech{category} @math{𝒞^op}.
 
 @margin-note{
 In this context, @tech[#:key "cartesian product"]{products} refer to
-@deftech{cartesian products}, which are @tech{product objects} in the
+@deftech{cartesian product}s, which are @tech{product objects} in the
 @tech{category} of @tech{sets}.
 }
 
@@ -347,9 +347,9 @@ of the @secref["Category_of_Matrices"] and the @secref["Category_of_Binary_Relat
 
 @racketfile{category/code/prod-cat.rkt}
 
-@bold{Exercise}: @racket[define] @code{dom×}, @code{cod×}, @code{∘×}, @code{?×}
-and @code{=×} so that we can @racket[define] the @tech{product category}
-@math{ℳ × ℛ} in this way:
+@bold{Exercise}: @racket[define] @deftech{dom×}, @deftech{cod×}, @deftech{∘×},
+@deftech{?×} and @deftech{=×} so that we can @racket[define] the
+@tech{product category} @math{ℳ × ℛ} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
@@ -367,7 +367,7 @@ Given a @tech{category} @math{𝒞}, the @deftech{arrow category} @math{Arr(𝒞
 constructed by takeing its @tech{morphisms} as @tech{objects} and @tech{commutative squares}
 as @tech{morphisms}.
 
-For example, here are @code{3} @tech{commutative squares} in @math{𝒞}:
+For example, here are 3 @tech{commutative squares} in @math{𝒞}:
 
 @image["scribblings/category/images/arr-cat_1.svg"]{[picture] arr-cat_1.svg}
 
@@ -397,7 +397,7 @@ In the following code, we create an @tech{arrow category} to which the
 
 @racketfile{category/code/arr-cat.rkt}
 
-@bold{Exercise}: @racket[define] @code{Arr} so that we can @racket[define] the
+@bold{Exercise}: @racket[define] @deftech{Arr} so that we can @racket[define] the
 @tech{arrow category} @math{Arr(ℳ)} in this way:
 
 @racketblock[
@@ -415,7 +415,7 @@ the @tech{objects} and @tech{morphisms} in @math{𝒞} that are "over" @math{c}.
 @math{𝒞/c} is constructed by takeing @math{𝒞}'s @tech{morphisms} end to @math{c}
 as @tech{objects}, and @tech{commutative triangles} end to @math{c} as @tech{morphisms}.
 
-For example, here are @code{3} @tech{commutative triangles} end to @math{c_1}
+For example, here are 3 @tech{commutative triangles} end to @math{c_1}
 in @math{𝒞}:
 
 @image["scribblings/category/images/over-cat_1.svg"]{[picture] over-cat_1.svg}
@@ -443,7 +443,7 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 @bold{Exercise}: referencing the example code of the @tech{arrow category}
 @math{Arr(ℳ)}, implement the @tech{slice category} @math{ℳ/m}.
 
-@bold{Exercise}: @racket[define] @code{Sli} so that we can @racket[define]
+@bold{Exercise}: @racket[define] @deftech{Sli} so that we can @racket[define]
 the @tech{slice category} @math{ℳ/m} in this way:
 
 @racketblock[
@@ -458,7 +458,7 @@ and @tech{morphisms} in @math{𝒞} that are "under" @math{c}.
 @math{c/𝒞} is constructed by takeing @math{𝒞}'s @tech{morphisms} start from @math{c}
 as @tech{objects}, and @tech{commutative triangles} start from @math{c} as @tech{morphisms}.
 
-For example, here are @code{3} @tech{commutative triangles} start from @math{c_0}
+For example, here are 3 @tech{commutative triangles} start from @math{c_0}
 in @math{𝒞}:
 
 @image["scribblings/category/images/under-cat_1.svg"]{[picture] under-cat_1.svg}
@@ -486,7 +486,7 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 @bold{Exercise}: referencing the example code of the @tech{arrow category}
 @math{Arr(ℳ)}, implement the @tech{coslice category} @math{m/ℳ}.
 
-@bold{Exercise}: @racket[define] @code{¬Sli} so that we can @racket[define]
+@bold{Exercise}: @racket[define] @deftech{¬Sli} so that we can @racket[define]
 the @tech{coslice category} @math{m/ℳ} in this way:
 
 @racketblock[
@@ -496,7 +496,7 @@ the @tech{coslice category} @math{m/ℳ} in this way:
 
 @bold{Exercise}: prove that @math{ℳ^op/m = (m/ℳ)^op}.
 
-@bold{Exercise}: @racket[define] @code{¬Sli} by using @code{¬} and @code{Sli}.
+@bold{Exercise}: @racket[define] @tech{¬Sli} by using @tech{¬} and @tech{Sli}.
 
 @section{Categorical Definitions}
 
@@ -571,7 +571,7 @@ Examples in the @secref["Category_of_Matrices"]:
 @subsection{Isomorphism}
 
 For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if @math{g∘f = id_a}
-and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphisms}
+and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphism}s
 (often abbreviated as @deftech{iso}, or called be @deftech{isic} or @deftech{invertible}).
 
 @image["scribblings/category/images/iso.svg"]{[picture] iso.svg}
@@ -619,7 +619,7 @@ to some @tech{object} of @math{𝒟}.
 @subsection{Groupoid}
 
 @margin-note{
-@tech{Categories} are sometimes called @deftech{monoidoids}.
+@tech{Categories} are sometimes called @deftech{monoidoid}s.
 }
 
 A @deftech{groupoid} is equivalently a @tech{category} in which all @tech{morphisms}
@@ -652,9 +652,10 @@ that @math{e} reaches all possible endpoints in the target @tech{object} without
 duplication, thereby establishing the @tech{surjective} nature of @math{e}.
 
 For a @tech{morphism} @math{f: a → b}, if @math{f} is @tech{monic}, it's
-conventionally denoted as @math{f: a ↣ b}; if @math{f} is @tech{epic}, it's
-conventionally denoted as @math{f: a ↠ b}; if @math{f} is both @tech{monic} and
-@tech{epic}, it's conventionally denoted as @math{f: a ⤖ b}.
+conventionally denoted as @math{f: a @deftech{↣} b}; if @math{f} is
+@tech{epic}, it's conventionally denoted as @math{f: a @deftech{↠} b};
+if @math{f} is both @tech{monic} and @tech{epic}, it's conventionally denoted as
+@math{f: a @deftech{⤖} b}.
 
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
@@ -678,18 +679,18 @@ is also an @tech{epimorphism}.
 
 @subsection{Initial Object and Terminal Object}
 
-An @deftech{@deftech{initial} object} @math{0} in a @tech{category} @math{𝒞}
+An @deftech{@deftech{initial} object} @deftech{0} in a @tech{category} @math{𝒞}
 is an @tech{object} from which there exists exactly one @tech{morphism} to every
-other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{!_a: 0 → a}.
+other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@deftech{!}_a: 0 → a}.
 
-@bold{Exercise}: Prove that the empty @tech{set} @math{{}} is the unique
+@bold{Exercise}: Prove that the @deftech{empty set} @deftech{{}} is the unique
 @tech{initial object} in the @tech{category} of @tech{sets}.
 
-Conversely, a @deftech{@deftech{terminal} object} @math{1} in a @tech{category}
+Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{category}
 @math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism} from
-every other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{⟨⟩_a: a → 1}.
+every other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@deftech{⟨⟩}_a: a → 1}.
 
-@bold{Exercise}: Prove that any singleton @tech{set} @math{{*}} is a
+@bold{Exercise}: Prove that any @deftech{singleton set} @deftech{{*}} is a
 @tech{terminal object} in the @tech{category} of @tech{sets}.
 
 @image["scribblings/category/images/0→1_1.svg"]{[picture] 0→1_1.svg}
@@ -712,7 +713,7 @@ A @tech{category} with a @tech{zero object} is called a @deftech{pointed categor
 
 @subsubsection{Global Element}
 
-If a @tech{terminal object} @math{1} exists within a @tech{category} @math{𝒞}, a
+If a @tech{terminal object} @tech{1} exists within a @tech{category} @math{𝒞}, a
 @deftech{global element} of another @tech{object} @math{a} in @math{𝒞} is defined
 as a @tech{morphism} @math{1 → a}.
 
