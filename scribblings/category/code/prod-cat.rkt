@@ -2,6 +2,8 @@
 
 (require racket/match math/matrix)
 
+(define (rand m n) (random 1 9))
+
 ;; Category of Matrices ℳ
 (define (domℳ m) (identity-matrix (matrix-num-cols m)))
 (define (codℳ m) (identity-matrix (matrix-num-rows m)))
@@ -20,7 +22,6 @@
 (define d0 (identity-matrix 4))
 
 ;; Morphisms in ℳ
-(define (rand m n) (random 1 9))
 (define f0 (build-matrix 2 1 rand))
 (define g0 (build-matrix 3 2 rand))
 (define h0 (build-matrix 4 3 rand))
