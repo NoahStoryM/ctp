@@ -19,11 +19,11 @@ Is the @tech{cod} in the @secref["Category_of_Procedures"].
 Is the @tech{∘} in the @secref["Category_of_Procedures"].
 }
 
-@defproc[(? [m any/c]) boolean?]{
+@defproc[(? [v any/c]) boolean?]{
 Is the @tech{?} in the @secref["Category_of_Procedures"].
 }
 
-@defproc[(× [m any/c] ...) any]{
+@defproc[(× [v any/c] ...) any]{
 An alias for @racket[values].
 }
 
