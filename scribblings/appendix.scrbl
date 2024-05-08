@@ -23,6 +23,10 @@ Is the @tech{∘} in the @secref["Category_of_Procedures"].
 Is the @tech{?} in the @secref["Category_of_Procedures"].
 }
 
+@defproc[(× [m any/c] ...) any]{
+An alias for @racket[values].
+}
+
 @defproc[(· [m morphism?] ...) morphism?]{
 Is the @tech{·} in the @secref["Category_of_Procedures"].
 }
@@ -34,10 +38,6 @@ Is the @tech{·} in the @secref["Category_of_Procedures"].
             [= procedure?])
          (values procedure? procedure? procedure? procedure? procedure?)]{
 See @tech{¬}.
-}
-
-@defproc[(× [m any/c] ...) list?]{
-An alias for @racket[list].
 }
 
 @defproc[(dom× [dom procedure?] ...) procedure?]{

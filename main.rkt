@@ -10,6 +10,7 @@
 (define (cod _) values)
 (define ∘ compose)
 (define ? procedure?)
+(define × values)
 (define ·
   (let ([α->αid (λ (α) (α values))])
     (case-λ
@@ -26,7 +27,6 @@
   (values cod𝒞 dom𝒞 ∘ ?𝒞 =𝒞))
 
 ;; Product Category
-(define (× . m*) m*)
 (define (dom× . dom*) (define (dom m*) (map call dom* m*)) dom)
 (define (cod× . cod*) (define (cod m*) (map call cod* m*)) cod)
 (define (∘× . ∘*)

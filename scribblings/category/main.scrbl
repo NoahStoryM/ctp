@@ -685,12 +685,20 @@ is also an @tech{epimorphism}.
 
 @subsection{Initial Object and Terminal Object}
 
+@margin-note{
+@tech{0} serves as the @tech{identity element} for @tech{+}.
+}
+
 An @deftech{@deftech{initial} object} @deftech{0} in a @tech{category} @math{𝒞}
 is an @tech{object} from which there exists exactly one @tech{morphism} to every
 other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@deftech{!}_a: 0 → a}.
 
 @bold{Exercise}: Prove that the @deftech{empty set} @deftech{{}} is the unique
 @tech{initial object} in the @tech{category} of @tech{sets}.
+
+@margin-note{
+@tech{1} serves as the @tech{identity element} for @tech{×}.
+}
 
 Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{category}
 @math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism} from

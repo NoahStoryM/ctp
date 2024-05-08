@@ -22,8 +22,8 @@
 ;; Associativity of composition
 (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
 
-;; Existence of identity
+;; Existence of identity morphisms
 (= * (dom *) (cod *))
 
-;; Identity and composition
+;; Composition and identity morphisms
 (= f (∘ f (dom f)) (∘ (cod f) f))
