@@ -5,7 +5,9 @@
                      syntax/parse
                      (only-in racket/file file->string)))
 
-(provide (except-out (all-defined-out) main))
+(provide (except-out (all-defined-out) main)
+         (rename-out [superscript ^]
+                     [subscript   _]))
 
 (define-syntax (racketfile stx)
   (syntax-parse stx

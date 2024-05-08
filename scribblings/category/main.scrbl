@@ -577,8 +577,8 @@ and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphis
 
 @image["scribblings/category/images/iso.svg"]{[picture] iso.svg}
 
-In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f^{–1}},
-and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g^{–1}}.
+In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f@^{–1}},
+and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a ≅ b}) iff
 there exists an @tech{isomorphism} between them.
 
@@ -600,10 +600,10 @@ Examples in the @secref["Category_of_Binary_Relations"]:
 
 @bold{Exercise}: prove that every @tech{object} is @tech{isomorphic} to itself.
 
-@bold{Exercise}: prove that for a @tech{isomorphism} @math{f}, @math{f = (f^{–1})^{–1}}.
+@bold{Exercise}: prove that for a @tech{isomorphism} @math{f}, @math{f = (f@^{–1})@^{–1}}.
 
 @bold{Exercise}: prove that for @tech{isomorphisms} @math{f} and @math{g},
-if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)^{–1} = f^{–1}∘g^{–1}}.
+if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{–1}∘g@^{–1}}.
 
 @subsubsection{Automorphism}
 
