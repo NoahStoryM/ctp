@@ -6,13 +6,13 @@
 (provide (all-defined-out))
 
 ;; Procedure Category
-(define (dom _) (∘))
-(define (cod _) (∘))
-(define ∘ (procedure-rename compose '∘))
-(define ? (procedure-rename procedure? '?))
+(define (dom _) values)
+(define (cod _) values)
+(define ∘ compose)
+(define ? procedure?)
 (define ·
   (let ([α->αid (λ (α) (α values))])
-    (case-lambda
+    (case-λ
       [() values]
       [(α) α]
       [(α . α*)
@@ -22,13 +22,8 @@
 
 ;; Opposite Category
 (define (¬ dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
-  (define (dom m) (cod𝒞 m))
-  (define (cod m) (dom𝒞 m))
   (define (∘ . m*) (apply ∘𝒞 (reverse m*)))
-  (define (? m) (?𝒞 *))
-  (define (= . m*) (apply =𝒞 m*))
-
-  (values dom cod ∘ ? =))
+  (values cod𝒞 dom𝒞 ∘ ?𝒞 =𝒞))
 
 ;; Product Category
 (define (× . m*) m*)
@@ -70,7 +65,7 @@
        (define d (cod𝒞 j))
        `((,d ,q) (,q ,c))]))
   (define ∘
-    (case-lambda
+    (case-λ
       [(s) s]
       [(s1 s2)
        (match* (s1 s2)
@@ -86,7 +81,7 @@
             (=𝒞 (∘𝒞 j p) (∘𝒞 q i)))]
       [_ #f]))
   (define =
-    (case-lambda
+    (case-λ
       [(_) #t]
       [(s1 s2)
        (match* (s1 s2)
@@ -112,7 +107,7 @@
        (define b (cod𝒞 f))
        `((,q) (,q ,b))]))
   (define ∘
-    (case-lambda
+    (case-λ
       [(t) t]
       [(t1 t2)
        (match* (t1 t2)
@@ -129,7 +124,7 @@
             (=𝒞 p (∘𝒞 q f)))]
       [_ #f]))
   (define =
-    (case-lambda
+    (case-λ
       [(_) #t]
       [(t1 t2)
        (match* (t1 t2)
@@ -183,7 +178,7 @@
        (define b (cod𝒞 f))
        `((,b ,q) (,q))]))
   (define ∘
-    (case-lambda
+    (case-λ
       [(t) t]
       [(t1 t2)
        (match* (t1 t2)
@@ -200,7 +195,7 @@
             (=𝒞 (∘𝒞 f p) q))]
       [_ #f]))
   (define =
-    (case-lambda
+    (case-λ
       [(_) #t]
       [(t1 t2)
        (match* (t1 t2)
