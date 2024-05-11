@@ -230,7 +230,7 @@ In this case, @tech{morphisms} are natural @tech/refer{numbers}, and the single
 @subsubsection{Category of Lists}
 
 The @tech{category} of @tech/refer{lists} is also an @tech{OOC}, where @math{*}
-is @racket[null] and morphisms are @tech/refer{lists}:
+is @racket[null] and @tech{morphisms} are @tech/refer{lists}:
 
 @racketfile{category/code/cat-of-ls.rkt}
 
