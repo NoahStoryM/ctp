@@ -642,15 +642,15 @@ A @deftech{monomorphism} (often abbreviated as @deftech{mono}, or called be @def
 means that for all @tech{composable pairs} @math{(a, m)} and @math{(b, m)}, if
 @math{m∘a = m∘b}, then it must follow that @math{a = b}. Such a condition ensures
 that no two different @tech{morphisms}, when composed with @math{m} on the right,
-result in the same @tech{morphism}, thereby establishing the @tech{injective}
-nature of @math{m}.
+result in the same @tech{morphism}, thereby establishing the injective nature of
+@math{m}.
 
 Conversely, an @deftech{epimorphism} (often referred to as @deftech{epi}, or called be @deftech{epic})
 @math{e} is defined as a @deftech{right cancellable} @tech{morphism}. This property
 means that for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)}, if
 @math{x∘e = y∘e}, then it must follow that @math{x = y}. Such a condition ensures
 that @math{e} reaches all possible endpoints in the target @tech{object} without
-duplication, thereby establishing the @tech{surjective} nature of @math{e}.
+duplication, thereby establishing the surjective nature of @math{e}.
 
 @margin-note{
 In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms} from
