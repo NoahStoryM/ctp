@@ -37,9 +37,9 @@ and
 A @deftech{category} @math{𝒞} is defined by 2 collections: @math{𝒞_0} of
 @deftech{object}s and @math{𝒞_1} of @deftech{morphism}s. Think of @math{𝒞} as a
 directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
-(@deftech{→}) connecting these nodes.
+connecting these nodes.
 
-For a @tech{morphism} @math{f: a → b} in @math{𝒞}, its starting points
+For a @tech{morphism} @math{f: a @deftech{→} b} in @math{𝒞}, its starting points
 (@deftech{domain}) is @math{a}, and its ending point (@deftech{codomain}) is
 @math{b}: @math{dom(f) = a} and @math{cod(f) = b}.
 
