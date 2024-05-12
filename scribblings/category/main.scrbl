@@ -750,8 +750,8 @@ must adopt a different viewpoint, characterizing @tech{elements} through
 @image["scribblings/category/images/global-elem_3.svg"]{[picture] global-elem_3.svg}
 
 This approach to viewing @tech{elements} requires only the presence of a
-@tech{terminal object} in the @tech{category}. In this context, a @tech{morphisms}
-@math{1 → a} can be seen as an @tech{elements} of the @tech{object} @math{a},
+@tech{terminal object} in the @tech{category}. In this context, the @tech{morphisms}
+@math{1 → a} can be seen as the @tech{elements} of the @tech{object} @math{a},
 thereby generalizing the concept of @tech{elements} of @tech{sets} in a broader
 and more abstract manner.
 
