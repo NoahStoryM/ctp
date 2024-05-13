@@ -1,6 +1,8 @@
 #lang scribble/manual
 
-@(require (for-label (only-meta-in 0 typed/racket/base/no-check))
+@(require (for-label ctp
+                     (only-meta-in 0 typed/racket/base/no-check)
+                     math/matrix)
           "../ctp-utils.rkt")
 
 @title[#:tag "_Functor_"]{Functor}
