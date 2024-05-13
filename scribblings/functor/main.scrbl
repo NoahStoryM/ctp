@@ -41,7 +41,7 @@ a @deftech{functor} @math{F: 𝒞 → 𝒟} is similarly defined by 2 @tech{func
         @image["scribblings/functor/images/F-2.svg"]{[picture] F-2.svg}}
   @item{Preservation of @tech{composition}
 
-        if @math{(f, g)} is a @tech{composable pair} in @math{𝒞}, then @math{(F(f), F(g))}
+        If @math{(f, g)} is a @tech{composable pair} in @math{𝒞}, then @math{(F(f), F(g))}
         is a @tech{composable pair} in @math{𝒟}, and @math{F(g∘f) = F(g)∘F(f)}.
 
         @image["scribblings/functor/images/F-3.svg"]{[picture] F-3.svg}}
