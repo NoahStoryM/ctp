@@ -1,6 +1,6 @@
 #lang scribble/manual
 
-@(require (for-label racket/base)
+@(require (for-label (only-meta-in 0 typed/racket/base/no-check))
           "../ctp-utils.rkt")
 
 @title[#:tag "_Functor_"]{Functor}
@@ -29,18 +29,22 @@ a @deftech{functor} @math{F: 𝒞 → 𝒟} is similarly defined by 2 @tech{func
   @item{Preservation of @tech{domain} and @tech{codomain}
 
         For any @tech{morphism} @math{f: a → b} of @math{𝒞}, there is a @tech{morphism}
-        @math{F_1(f): F_0(a) → F_0(b)} in @math{𝒟}.
+        @math{F(f): F(a) → F(b)} in @math{𝒟}.
 
         @image["scribblings/functor/images/F-1.svg"]{[picture] F-1.svg}}
   @item{Preservation of @tech{identity morphisms}
 
-        For any @tech{object} @math{a} of @math{𝒞}, @math{F_1(id_a) = id@_{F@_{0}(a)}}.
+        For any @tech{object} @math{a} of @math{𝒞}, @math{F(id_a) = id@_{F(a)}}.
 
         @image["scribblings/functor/images/F-2.svg"]{[picture] F-2.svg}}
   @item{Preservation of @tech{composition}
 
-        if @math{(f, g)} is a @tech{composable pair} in @math{𝒞}, then @math{(F_1(f), F_1(g))}
-        is a @tech{composable pair} in @math{𝒟}, and @math{F_1(g∘f) = F_1(g)∘F_1(f)}.
+        if @math{(f, g)} is a @tech{composable pair} in @math{𝒞}, then @math{(F(f), F(g))}
+        is a @tech{composable pair} in @math{𝒟}, and @math{F(g∘f) = F(g)∘F(f)}.
 
         @image["scribblings/functor/images/F-3.svg"]{[picture] F-3.svg}}
   ]
+
+@racketfile{functor/code/ℒ→𝒩.rkt}
+
+@bold{Exercise}: Prove the associativity law of @tech{functor} @tech{composition}.
