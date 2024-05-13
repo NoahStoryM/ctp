@@ -45,6 +45,6 @@ a @deftech{functor} @math{F: 𝒞 → 𝒟} is similarly defined by 2 @tech{func
         @image["scribblings/functor/images/F-3.svg"]{[picture] F-3.svg}}
   ]
 
-@racketfile{functor/code/ℒ→𝒩.rkt}
+@racketfile{functor/code/ℳ→ℛ.rkt}
 
 @bold{Exercise}: Prove the associativity law of @tech{functor} @tech{composition}.
