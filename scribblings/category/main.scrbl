@@ -221,70 +221,77 @@ Let's see how these abstractions can be applied to create and manipulate
 
 @subsubsection{Category of Natural Numbers}
 
-The @tech{category} of natural @tech/refer{numbers} is an example of @tech{OOC}.
-In this case, @tech{morphisms} are natural @tech/refer{numbers}, and the single
-@tech{object} @math{*} is @code{0} (as the @tech{identity morphism}):
+The @tech{category} of natural @tech/refer{numbers}, denoted as @deftech{𝐍𝐚𝐭},
+is an example of @tech{OOC}. In this @tech{category}, @tech{morphisms} are natural
+@tech/refer{numbers}, and the single @tech{object}, represented by @math{*}, is
+@code{0}. Remember that @tech{objects} serve as @tech{identity morphisms}.
 
 @racketfile{category/code/cat-of-nn.rkt}
 
 @subsubsection{Category of Lists}
 
-The @tech{category} of @tech/refer{lists} is also an @tech{OOC}, where @math{*}
-is @racket[null] and @tech{morphisms} are @tech/refer{lists}:
+The @tech{category} of @tech/refer{lists}, denoted as @deftech{𝐋𝐢𝐬𝐭}, is also an
+@tech{OOC}. In this @tech{category}, the single @tech{object} @math{*} is
+@racket[null], and the @tech{morphisms} are @tech/refer{lists}:
 
 @racketfile{category/code/cat-of-ls.rkt}
 
 @subsubsection{Category of Strings}
 
-@bold{Exercise}: referencing the example code above, implement the @tech{category}
-of @tech/refer{strings}, which is also an @tech{OOC}.
+The @tech{category} of @tech/refer{strings}, denoted as @deftech{𝐒𝐭𝐫}, is also
+an @tech{OOC}.
+
+@bold{Exercise}: Using the example code provided above as a reference, implement
+@tech{𝐒𝐭𝐫}.
 
 @subsubsection{Category of Matrices}
 
-The @tech{category} of @tech/math[#:key "matrix"]{matrices} is a fascinating
-example that brings together linear algebra and @tech{category theory}. In this
-@tech{category}, each @math{m × n} @tech/math{matrix} is considered a @tech{morphism},
-its @tech{domain} is the n-order identity @tech/math{matrix}, and its @tech{codomain}
-is the m-order identity @tech/math{matrix}:
+The @tech{category} of @tech/math[#:key "matrix"]{matrices}, denoted as @deftech{𝐌𝐚𝐭𝐫},
+is a fascinating example that combines linear algebra with @tech{category theory}.
+In this @tech{category}, each @math{m × n} @tech/math{matrix} is considered a
+@tech{morphism}, its @tech{domain} is the n-order identity @tech/math{matrix},
+and its @tech{codomain} is the m-order identity @tech/math{matrix}:
 
 @racketfile{category/code/cat-of-mat.rkt}
 
 @subsubsection{Category of Binary Relations}
 
 @margin-note{
-A @deftech{preordered set} @math{(S, ≤)} is a @tech{set} @math{S} equipped with
-a binary relation @math{≤} that is reflexive and transitive.
+A @deftech{preordered set}, @math{(S, ≤)}, is a @tech{set} @math{S} equipped with
+a @deftech{binary relation} @math{≤} that is reflexive and transitive.
 }
 
-A @tech{preordered set} @math{(S, ≤)} can be viewed as a @tech{category} where
-@tech{morphisms} are binary relations on its underlying @tech{set} @math{S}:
+A @tech{preordered set}, @math{(S, ≤)}, can be viewed as a @tech{category}, denoted
+as @deftech{𝐑𝐞𝐥}, where @tech{morphisms} are @tech{binary relations} on its underlying
+@tech{set} @math{S}:
 
 @racketfile{category/code/cat-of-br.rkt}
 
 @margin-note{
 A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set}
-@math{(S, ≤)} for which @math{≤} is antisymmetric.
+, @math{(S, ≤)}, for which @math{≤} is antisymmetric.
 }
 
 @bold{Exercise}: view a @tech{poset} as a @tech{category} and implement it.
 
 @subsubsection{Category of Procedures}
 
-The @tech{category} of procedures is perhaps the most important @tech{category}
-in programming. As the name suggests, this @tech{category} has procedures
-(also known as functions in functional programming) as its @tech{morphisms},
-so it resembles the @tech{category} of @tech{sets}
-(with mathematical @tech{functions} as @tech{morphisms}) in @tech{category theory}.
+The @tech{category} of procedures, denoted as @deftech{𝐏𝐫𝐨𝐜}, is perhaps the most
+important @tech{category} in programming. As the name suggests, this @tech{category}
+has procedures (also known as functions in functional programming) as its
+@tech{morphisms}. It resembles the @tech{category} of @tech{sets}, denoted as
+@deftech{𝐒𝐞𝐭}, which has mathematical @tech{functions} as @tech{morphisms} in
+@tech{category theory}.
 
-However, this @tech{category} is not a strict @tech{category} that follows the
-@tech{composition rules}, unlike the examples we introduced above. It has some defects.
+However, this @tech{category} does not strict follow the @tech{composition rules},
+unlike the examples we introduced earlier. It has some notable defects.
 
-From the computing science point of view, @tech{category theory} is a strongly
-typed language, stronger than any programming language. This is because of the
+From the computing science perspective, @tech{category theory} is a strongly
+typed language, stronger than any programming language. This is due to the
 @tech{composition rule}: @math{g∘f} exists iff @math{cod(f) = dom(g)}.
-Racket is an untyped language, it allows any procedure to be composed, such as
+Racket, being an untyped language, allows any procedure to be composed, such as
 @code{(∘ car +)}, but such a procedure will only @racket[raise] an @racket[exn]
-when applied. Therefore, this @tech{category} can be regarded as an @tech{OOC}:
+when applied. Therefore, @tech{𝐏𝐫𝐨𝐜} can be regarded as an @tech{OOC}:
 
 @racketblock[
 (define (dom _) (∘))
@@ -295,7 +302,7 @@ when applied. Therefore, this @tech{category} can be regarded as an @tech{OOC}:
 
 Another defect is that we cannot compare whether two procedures have the same
 functionality, which means we cannot @racket[define] @tech{=}, and have to rely
-on the programmer to judge whether the behavior of two procedures is same.
+on the programmer to judge whether the behavior of two procedures is the same.
 For Racket, it cannot even be sure that @math{g∘f = g∘f} !
 
 @subsection{Constructions on Categories}
@@ -344,7 +351,7 @@ A @deftech{product category} @math{𝒞 × 𝒟} combines the given @tech{catego
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
 we create a @tech{product category} by taking the @tech[#:key "cartesian product"]{product}
-of the @secref["Category_of_Matrices"] and the @secref["Category_of_Binary_Relations"].
+of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐑𝐞𝐥}.
 
 @racketfile{category/code/prod-cat.rkt}
 
@@ -393,8 +400,8 @@ Although we name arrows using pairs here, note that they are not pairs, but
 
 @bold{Exercise}: prove that @math{(k∘i, l∘j) = (k, l)∘(i, j)}.
 
-In the following code, we create an @tech{arrow category} to which the
-@secref["Category_of_Matrices"] gives rise:
+In the following code, we create an @tech{arrow category} to which @tech{𝐌𝐚𝐭𝐫}
+gives rise:
 
 @racketfile{category/code/arr-cat.rkt}
 
@@ -547,7 +554,7 @@ a @deftech{left inverse} of @math{f}. @math{a} is called a @deftech{retract} of
 a @deftech{cosection} (@deftech{retraction}) of @math{f}, or a @tech{retraction}
 of @math{b} onto @math{a}.
 
-Examples in the @secref["Category_of_Matrices"]:
+Examples in @tech{𝐌𝐚𝐭𝐫}:
 
 @racketblock[
 (code:comment2 "Objects")
@@ -582,7 +589,7 @@ and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a ≅ b}) iff
 there exists an @tech{isomorphism} between them.
 
-Examples in the @secref["Category_of_Binary_Relations"]:
+Examples in @tech{𝐑𝐞𝐥}:
 
 @racketblock[
 (code:comment2 "Objects")

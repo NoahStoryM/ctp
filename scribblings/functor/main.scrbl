@@ -7,7 +7,17 @@
 
 @title[#:tag "_Functor_"]{Functor}
 
-@;; 本章节我们介绍函子，使用过程范畴表示函数范畴和范畴范畴。为了提升可读性，会使用 typed/racket 的语法形式。
+In this chapter, we introduce the concept of @tech{functors}. @tech{Functors}
+play a crucial role in @tech{category theory} by mapping @tech{objects} and
+@tech{morphisms} between @tech{categories} while preserving their structural
+properties. To enhance readability and provide a clear understanding of how
+@tech{functors} can be applied in programming, we will use the syntax of Typed
+Racket.
+
+Specifically, we will use @code{#lang typed/racket/base/no-check} instead of
+@code{#lang racket/base}. This choice allows us to leverage the benefits of
+Typed Racket, such as type annotations, which improve code clarity and help
+illustrate the functorial properties more effectively.
 
 @local-table-of-contents[]
 
@@ -24,19 +34,20 @@ if @math{f} is a @tech{morphism} in @math{𝒞}, @math{F(f) = F_1(f)}.
 
 A @tech{category} @math{𝒞} is defined by 2 collections @math{𝒞_0} and @math{𝒞_1},
 a @deftech{functor} @math{F: 𝒞 → 𝒟} is similarly defined by 2 @tech{functions}
-@math{F_0: 𝒞_0 → 𝒟_0} and @math{F_1: 𝒞_1 → 𝒟_1} for which
+@math{F_0: 𝒞_0 → 𝒟_0} and @math{F_1: 𝒞_1 → 𝒟_1}, which must satisfy the following
+properties:
 
 @itemlist[
   #:style 'ordered
   @item{Preservation of @tech{domain} and @tech{codomain}
 
-        For any @tech{morphism} @math{f: a → b} of @math{𝒞}, there is a @tech{morphism}
+        For any @tech{morphism} @math{f: a → b} in @math{𝒞}, there is a @tech{morphism}
         @math{F(f): F(a) → F(b)} in @math{𝒟}.
 
         @image["scribblings/functor/images/F-1.svg"]{[picture] F-1.svg}}
   @item{Preservation of @tech{identity morphisms}
 
-        For any @tech{object} @math{a} of @math{𝒞}, @math{F(id_a) = id@_{F(a)}}.
+        For any @tech{object} @math{a} in @math{𝒞}, @math{F(id_a) = id@_{F(a)}}.
 
         @image["scribblings/functor/images/F-2.svg"]{[picture] F-2.svg}}
   @item{Preservation of @tech{composition}
@@ -47,6 +58,9 @@ a @deftech{functor} @math{F: 𝒞 → 𝒟} is similarly defined by 2 @tech{func
         @image["scribblings/functor/images/F-3.svg"]{[picture] F-3.svg}}
   ]
 
+The following example illustrates how to implement @tech{functors} in Racket:
+
 @racketfile{functor/code/ℳ→ℛ.rkt}
 
-@bold{Exercise}: Prove the associativity law of @tech{functor} @tech{composition}.
+@bold{Exercise}: Prove that @tech{functors} can be composed and that this
+@tech{composition} is associative.
