@@ -8,19 +8,19 @@
 @defmodule[ctp]
 
 @defproc[(dom [m morphism?]) morphism?]{
-Is the @tech{dom} in the @secref["Category_of_Procedures"].
+Is the @tech{dom} in @tech{𝐏𝐫𝐨𝐜}.
 }
 
 @defproc[(cod [m morphism?]) morphism?]{
-Is the @tech{cod} in the @secref["Category_of_Procedures"].
+Is the @tech{cod} in @tech{𝐏𝐫𝐨𝐜}.
 }
 
 @defproc[(∘ [m morphism?] ...) morphism?]{
-Is the @tech{∘} in the @secref["Category_of_Procedures"].
+Is the @tech{∘} in @tech{𝐏𝐫𝐨𝐜}.
 }
 
 @defproc[(? [v any/c]) boolean?]{
-Is the @tech{?} in the @secref["Category_of_Procedures"].
+Is the @tech{?} in @tech{𝐏𝐫𝐨𝐜}.
 }
 
 @defproc[(× [v any/c] ...) any]{
@@ -28,7 +28,7 @@ An alias for @racket[values].
 }
 
 @defproc[(· [m morphism?] ...) morphism?]{
-Is the @tech{·} in the @secref["Category_of_Procedures"].
+Is the @tech{·} in @tech{𝐏𝐫𝐨𝐜}.
 }
 
 @defproc[(¬ [dom procedure?]
