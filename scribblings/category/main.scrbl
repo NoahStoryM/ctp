@@ -222,7 +222,7 @@ Let's see how these abstractions can be applied to create and manipulate
 @subsubsection{Category of Natural Numbers}
 
 The @tech{category} of natural @tech/refer{numbers}, denoted as @deftech{𝐍𝐚𝐭},
-is an example of @tech{OOC}. In this @tech{category}, @tech{morphisms} are natural
+is an example of @tech{OOC}. In @tech{𝐍𝐚𝐭}, @tech{morphisms} are natural
 @tech/refer{numbers}, and the single @tech{object}, represented by @math{*}, is
 @code{0}. Remember that @tech{objects} serve as @tech{identity morphisms}.
 
@@ -231,8 +231,8 @@ is an example of @tech{OOC}. In this @tech{category}, @tech{morphisms} are natur
 @subsubsection{Category of Lists}
 
 The @tech{category} of @tech/refer{lists}, denoted as @deftech{𝐋𝐢𝐬𝐭}, is also an
-@tech{OOC}. In this @tech{category}, the single @tech{object} @math{*} is
-@racket[null], and the @tech{morphisms} are @tech/refer{lists}:
+@tech{OOC}. In @tech{𝐋𝐢𝐬𝐭}, the single @tech{object} @math{*} is @racket[null],
+and the @tech{morphisms} are @tech/refer{lists}:
 
 @racketfile{category/code/cat-of-ls.rkt}
 
@@ -248,9 +248,9 @@ an @tech{OOC}.
 
 The @tech{category} of @tech/math[#:key "matrix"]{matrices}, denoted as @deftech{𝐌𝐚𝐭𝐫},
 is a fascinating example that combines linear algebra with @tech{category theory}.
-In this @tech{category}, each @math{m × n} @tech/math{matrix} is considered a
-@tech{morphism}, its @tech{domain} is the n-order identity @tech/math{matrix},
-and its @tech{codomain} is the m-order identity @tech/math{matrix}:
+In @tech{𝐌𝐚𝐭𝐫}, each @math{m × n} @tech/math{matrix} is considered a @tech{morphism},
+its @tech{domain} is the n-order identity @tech/math{matrix}, and its @tech{codomain}
+is the m-order identity @tech/math{matrix}:
 
 @racketfile{category/code/cat-of-mat.rkt}
 
@@ -277,13 +277,13 @@ A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set}
 @subsubsection{Category of Procedures}
 
 The @tech{category} of procedures, denoted as @deftech{𝐏𝐫𝐨𝐜}, is perhaps the most
-important @tech{category} in programming. As the name suggests, this @tech{category}
-has procedures (also known as functions in functional programming) as its
+important @tech{category} in programming. As the name suggests, @tech{𝐏𝐫𝐨𝐜} has
+procedures (also known as functions in functional programming) as its
 @tech{morphisms}. It resembles the @tech{category} of @tech{sets}, denoted as
 @deftech{𝐒𝐞𝐭}, which has mathematical @tech{functions} as @tech{morphisms} in
 @tech{category theory}.
 
-However, this @tech{category} does not strict follow the @tech{composition rules},
+However, @tech{𝐏𝐫𝐨𝐜} does not strict follow the @tech{composition rules},
 unlike the examples we introduced earlier. It has some notable defects.
 
 From the computing science perspective, @tech{category theory} is a strongly
