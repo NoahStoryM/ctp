@@ -153,6 +153,20 @@ in the @tech{commutative square}:
 @image["scribblings/category/images/lift_1.svg"]{[picture] lift_1.svg}
 @image["scribblings/category/images/lift_2.svg"]{[picture] lift_2.svg}
 
+@subsection{Discrete Category}
+
+@margin-note{
+A @deftech{function} between two @tech{sets} can be viewed as a @tech{functor}
+between two @tech{discrete categories}.
+}
+
+A @deftech{discrete category} is a @tech{category} where the only @tech{morphisms}
+are the @tech{identity morphisms}. In other words, every @tech{object} is only
+connected to itself via its @tech{identity morphism}. This means that a
+@tech{discrete category} can be viewed as a @tech{category} version of a
+@deftech{set}: the @tech{objects} of the @tech{discrete category} correspond to
+the @deftech{elements} of the @tech{set}.
+
 @subsection{One-Object Category}
 
 @margin-note{
@@ -221,10 +235,14 @@ Let's see how these abstractions can be applied to create and manipulate
 
 @subsubsection{Category of Natural Numbers}
 
+@margin-note{
+Remember that @tech{objects} serve as @tech{identity morphisms}.
+}
+
 The @tech{category} of natural @tech/refer{numbers}, denoted as @deftech{𝐍𝐚𝐭},
 is an example of @tech{OOC}. In @tech{𝐍𝐚𝐭}, @tech{morphisms} are natural
 @tech/refer{numbers}, and the single @tech{object}, represented by @tech{*}, is
-@code{0}. Remember that @tech{objects} serve as @tech{identity morphisms}.
+@code{0}:
 
 @racketfile{category/code/cat-of-nn.rkt}
 
@@ -268,11 +286,24 @@ as @deftech{𝐑𝐞𝐥}, where @tech{morphisms} are @tech{binary relations} on
 @racketfile{category/code/cat-of-br.rkt}
 
 @margin-note{
-A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set}
-, @math{(S, ≤)}, for which @math{≤} is antisymmetric.
+A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
+@math{(S, ≤)}, for which @math{≤} is antisymmetric.
 }
 
 @bold{Exercise}: view a @tech{poset} as a @tech{category} and implement it.
+
+@subsubsection{Category of Pointed Sets}
+
+@margin-note{
+A @deftech{pointed set}, @math{(S, *)}, is a @tech{set} @math{S} equipped with
+a distinguished @tech{element} @math{*}, often called the @deftech{base point}.
+}
+
+The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭*}, where
+@tech{morphisms} are @tech{functions} that preserve the @tech{base points} of
+@tech{pointed sets}:
+
+@racketfile{category/code/cat-of-ps.rkt}
 
 @subsubsection{Category of Procedures}
 
@@ -761,6 +792,8 @@ This approach to viewing @tech{elements} requires only the presence of a
 @math{1 → a} can be seen as the @tech{elements} of the @tech{object} @math{a},
 thereby generalizing the concept of @tech{elements} of @tech{sets} in a broader
 and more abstract manner.
+
+@bold{Exercise}: Prove that @tech{𝐒𝐞𝐭*} is the @tech{coslice category} @math{1/𝐒𝐞𝐭}.
 
 In further exploring the @tech{category} of @tech{sets}, let's consider a
 @tech{function} @math{f: A → B}. Traditionally, we apply @math{f} to an @tech{element}
