@@ -569,7 +569,7 @@ We can see from the names that:
 The proof is left as an exercise.
 }
 
-For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if
+For @tech{morphisms} @math{f: a ↣ b} and @math{g: b ↠ a} in @math{𝒞}, if
 @math{g∘f = id_a}, then @math{f} is a @deftech{split monomorphism}
 (often abbreviated as @deftech{split mono}, or called be @deftech{split monic}),
 @math{g} is a @deftech{split epimorphism}
