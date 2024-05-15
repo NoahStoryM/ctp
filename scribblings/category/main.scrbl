@@ -616,8 +616,8 @@ and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphis
 
 In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f@^{–1}},
 and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g@^{–1}}.
-@math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a ≅ b}) iff
-there exists an @tech{isomorphism} between them.
+@math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
+iff there exists an @tech{isomorphism} between them.
 
 Examples in @tech{𝐑𝐞𝐥}:
 
