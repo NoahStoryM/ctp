@@ -244,7 +244,7 @@ is an example of @tech{OOC}. In @tech{𝐍𝐚𝐭}, @tech{morphisms} are natura
 @tech/refer{numbers}, and the single @tech{object}, represented by @tech{*}, is
 @code{0}:
 
-@racketfile{category/code/cat-of-nn.rkt}
+@racketfile{category/code/𝐍𝐚𝐭.rkt}
 
 @subsubsection{Category of Lists}
 
@@ -252,7 +252,7 @@ The @tech{category} of @tech/refer{lists}, denoted as @deftech{𝐋𝐢𝐬𝐭}
 @tech{OOC}. In @tech{𝐋𝐢𝐬𝐭}, the single @tech{object} @tech{*} is @racket[null],
 and the @tech{morphisms} are @tech/refer{lists}:
 
-@racketfile{category/code/cat-of-ls.rkt}
+@racketfile{category/code/𝐋𝐢𝐬𝐭.rkt}
 
 @subsubsection{Category of Strings}
 
@@ -270,7 +270,7 @@ In @tech{𝐌𝐚𝐭𝐫}, each @math{m × n} @tech/math{matrix} is considered 
 its @tech{domain} is the n-order identity @tech/math{matrix}, and its @tech{codomain}
 is the m-order identity @tech/math{matrix}:
 
-@racketfile{category/code/cat-of-mat.rkt}
+@racketfile{category/code/𝐌𝐚𝐭𝐫.rkt}
 
 @subsubsection{Category of Binary Relations}
 
@@ -283,7 +283,7 @@ A @tech{preordered set}, @math{(S, ≤)}, can be viewed as a @tech{category}, de
 as @deftech{𝐑𝐞𝐥}, where @tech{morphisms} are @tech{binary relations} on its underlying
 @tech{set} @math{S}:
 
-@racketfile{category/code/cat-of-br.rkt}
+@racketfile{category/code/𝐑𝐞𝐥.rkt}
 
 @margin-note{
 A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
@@ -303,7 +303,7 @@ The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭*}, 
 @tech{morphisms} are @tech{functions} preserving the @tech{base points} of
 @tech{pointed sets}:
 
-@racketfile{category/code/cat-of-ps.rkt}
+@racketfile{category/code/𝐒𝐞𝐭*.rkt}
 
 @subsubsection{Category of Procedures}
 
