@@ -221,7 +221,7 @@ to practical programming constructs.
 
 Just as @racket[car], @racket[cdr], @racket[cons], @racket[pair?], and @racket[equal?]
 provide an abstraction for @tech/refer{pairs} in Racket, we'll introduce the notions
-of @deftech{dom}, @deftech{cod}, @deftech{∘}, @deftech{?} and @deftech{=}
+of @deftech{dom}, @deftech{cod}, @deftech{∘}, @deftech{?}, and @deftech{=}
 (representing @tech{domain}, @tech{codomain}, @deftech{compose}, @deftech{predicate}, and @deftech{equal})
 to abstract over @tech{categories}.
 
