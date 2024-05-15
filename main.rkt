@@ -5,21 +5,28 @@
 
 (provide (all-defined-out))
 
+(define (make-· dom𝒞 cod𝒞 ∘𝒟)
+  (define ·
+    (case-λ
+      [() values]
+      [(α) α]
+      [(α . α*)
+       (define composed
+         (λ (f)
+           (define a (dom𝒞 f))
+           (define (α->αdom α) (α a))
+           (define αdom* (apply ∘𝒟 (map α->αdom α*)))
+           (∘𝒟 (α f) αdom*)))
+       composed]))
+  ·)
+
 ;; Procedure Category
 (define (dom _) values)
 (define (cod _) values)
 (define ∘ compose)
 (define ? procedure?)
 (define × values)
-(define ·
-  (let ([α->αid (λ (α) (α values))])
-    (case-λ
-      [() values]
-      [(α) α]
-      [(α . α*)
-       (define αid (apply ∘ (map α->αid α*)))
-       (define composed (λ (f) (∘ (α f) αid)))
-       composed])))
+(define · (make-· dom cod ∘))
 
 ;; Opposite Category
 (define (¬ dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
