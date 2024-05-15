@@ -258,7 +258,7 @@ is the m-order identity @tech/math{matrix}:
 
 @margin-note{
 A @deftech{preordered set}, @math{(S, ≤)}, is a @tech{set} @math{S} equipped with
-a @deftech{binary relation} @math{≤} that is reflexive and transitive.
+a @deftech{binary relation} operator @math{≤} that is reflexive and transitive.
 }
 
 A @tech{preordered set}, @math{(S, ≤)}, can be viewed as a @tech{category}, denoted
