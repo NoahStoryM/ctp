@@ -311,8 +311,7 @@ The @tech{category} of procedures, denoted as @deftech{𝐏𝐫𝐨𝐜}, is per
 important @tech{category} in programming. As the name suggests, @tech{𝐏𝐫𝐨𝐜} has
 procedures (also known as functions in functional programming) as its
 @tech{morphisms}. It resembles the @tech{category} of @tech{sets}, denoted as
-@deftech{𝐒𝐞𝐭}, which has mathematical @tech{functions} as @tech{morphisms} in
-@tech{category theory}.
+@deftech{𝐒𝐞𝐭}, where @tech{morphisms} are mathematical @tech{functions}.
 
 However, @tech{𝐏𝐫𝐨𝐜} does not strict follow the @tech{composition rules},
 unlike the examples we introduced earlier. It has some notable defects.
