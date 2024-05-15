@@ -383,7 +383,7 @@ Let's illustrate this concept with a Racket code example
 we create a @tech{product category} by taking the @tech[#:key "cartesian product"]{product}
 of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐑𝐞𝐥}.
 
-@racketfile{category/code/prod-cat.rkt}
+@racketfile{category/code/𝐌𝐚𝐭𝐫×𝐑𝐞𝐥.rkt}
 
 @bold{Exercise}: @racket[define] @deftech{dom×}, @deftech{cod×}, @deftech{∘×},
 @deftech{?×} and @deftech{=×} so that we can @racket[define] the
@@ -433,7 +433,7 @@ Although we name arrows using pairs here, note that they are not pairs, but
 In the following code, we create an @tech{arrow category} to which @tech{𝐌𝐚𝐭𝐫}
 gives rise:
 
-@racketfile{category/code/arr-cat.rkt}
+@racketfile{category/code/Arr_𝐌𝐚𝐭𝐫.rkt}
 
 @bold{Exercise}: @racket[define] @deftech{Arr} so that we can @racket[define] the
 @tech{arrow category} @math{Arr(ℳ)} in this way:
