@@ -300,7 +300,7 @@ a distinguished @tech{element} @math{*}, often called the @deftech{base point}.
 }
 
 The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭*}, where
-@tech{morphisms} are @tech{functions} that preserve the @tech{base points} of
+@tech{morphisms} are @tech{functions} preserving the @tech{base points} of
 @tech{pointed sets}:
 
 @racketfile{category/code/cat-of-ps.rkt}
