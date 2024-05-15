@@ -333,7 +333,7 @@ when applied. Therefore, @tech{𝐏𝐫𝐨𝐜} can be regarded as an @tech{OOC
 Another defect is that we cannot compare whether two procedures have the same
 functionality, which means we cannot @racket[define] @tech{=}, and have to rely
 on the programmer to judge whether the behavior of two procedures is the same.
-For Racket, it cannot even be sure that @math{g∘f = g∘f} !
+For Racket, it cannot even be sure that @math{g∘f = g∘f}!
 
 @subsection{Constructions on Categories}
 
@@ -367,8 +367,7 @@ so this new directed graph is also a @tech{category} @math{𝒞^op}.
 
 @margin-note{
 In this context, @tech[#:key "cartesian product"]{products} refer to
-@deftech{cartesian product}s, which are @tech{product objects} in the
-@tech{category} of @tech{sets}.
+@deftech{cartesian product}s, which are @tech{product objects} in @tech{𝐒𝐞𝐭}.
 }
 
 A @deftech{product category} @math{𝒞 × 𝒟} combines the given @tech{categories}
@@ -731,7 +730,7 @@ is an @tech{object} from which there exists exactly one @tech{morphism} to every
 other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@deftech{!}_a: 0 → a}.
 
 @bold{Exercise}: Prove that the @deftech{empty set} @deftech{{}} is the unique
-@tech{initial object} in the @tech{category} of @tech{sets}.
+@tech{initial object} in @tech{𝐒𝐞𝐭}.
 
 @margin-note{
 @tech{1} serves as the @tech{identity element} for @tech{×}.
@@ -742,7 +741,7 @@ Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{categor
 every other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@deftech{⟨⟩}_a: a → 1}.
 
 @bold{Exercise}: Prove that any @deftech{singleton set} @deftech{{*}} is a
-@tech{terminal object} in the @tech{category} of @tech{sets}.
+@tech{terminal object} in @tech{𝐒𝐞𝐭}.
 
 @image["scribblings/category/images/0→1_1.svg"]{[picture] 0→1_1.svg}
 @image["scribblings/category/images/0→1_2.svg"]{[picture] 0→1_2.svg}
@@ -776,11 +775,10 @@ structures. This perspective not only deepens our understanding of tangible
 structures but also inspires us to perceive connections and patterns beyond the
 obvious structural definitions.
 
-Consider the @tech{category} of @tech{sets} as an example. We understand that
-@tech{sets} contain @tech{elements}. However, the definition of @tech{categories}
-does not talk about the internal structure of their @tech{objects}. Therefore, we
-must adopt a different viewpoint, characterizing @tech{elements} through
-@tech{morphisms} instead.
+Consider @tech{𝐒𝐞𝐭} as an example. We understand that @tech{sets} contain
+@tech{elements}. However, the definition of @tech{categories} does not talk about
+the internal structure of their @tech{objects}. Therefore, we must adopt a
+different viewpoint, characterizing @tech{elements} through @tech{morphisms} instead.
 
 @image["scribblings/category/images/global-elem_1.svg"]{[picture] global-elem_1.svg}
 @image["scribblings/category/images/global-elem_2.svg"]{[picture] global-elem_2.svg}
@@ -794,16 +792,16 @@ and more abstract manner.
 
 @bold{Exercise}: Prove that @tech{𝐒𝐞𝐭*} is the @tech{coslice category} @math{1/𝐒𝐞𝐭}.
 
-In further exploring the @tech{category} of @tech{sets}, let's consider a
-@tech{function} @math{f: A → B}. Traditionally, we apply @math{f} to an @tech{element}
-@math{x} in @math{A}, denoted as @math{f(x)}. In @tech{category theory}, we can
-express this application using @tech{morphisms}. Let @math{x} be a @tech{global element}
-of @math{A}, then the application of @math{f} to @math{x} is represented by the
-@tech{composition} of @math{f} with @math{x}, written as @math{f∘x}. Thus, the
-notation @math{f(x)} is sometimes used in @tech{category theory} to denote the
-@tech{composition} @math{f∘x}, where @math{x} is interpreted as a @tech{morphism}
-rather than an @tech{element}. In this context, an arbitrary @tech{morphism}
-@math{x: a → b} is called a @deftech{variable element} of @math{b}, parametrized
-by @math{a}. This viewpoint aligns with the idea that @tech{morphisms} in a
-@tech{category} can be thought of as @tech{elements}, and an application is a
-special case of @tech{morphism} @tech{composition}.
+In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math{f: A → B}.
+Traditionally, we apply @math{f} to an @tech{element} @math{x} in @math{A},
+denoted as @math{f(x)}. In @tech{category theory}, we can express this application
+using @tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A}, then
+the application of @math{f} to @math{x} is represented by the @tech{composition}
+of @math{f} with @math{x}, written as @math{f∘x}. Thus, the notation @math{f(x)}
+is sometimes used in @tech{category theory} to denote the @tech{composition}
+@math{f∘x}, where @math{x} is interpreted as a @tech{morphism} rather than an
+@tech{element}. In this context, an arbitrary @tech{morphism} @math{x: a → b} is
+called a @deftech{variable element} of @math{b}, parametrized by @math{a}. This
+viewpoint aligns with the idea that @tech{morphisms} in a @tech{category} can be
+thought of as @tech{elements}, and an application is a special case of @tech{morphism}
+@tech{composition}.
