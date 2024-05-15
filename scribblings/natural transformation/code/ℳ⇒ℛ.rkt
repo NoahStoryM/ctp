@@ -57,8 +57,8 @@
 (define (H m) (cons (number->symbol (matrix-num-cols m)) (number->symbol (matrix-num-rows m))))
 
 ;; Natural Transformations from F to G
-(: α (case→ (→ ℳ ℛ) (∀ ([a : ℳ] [b : ℳ]) (→ (→ℳ a b) (→ℛ (F a) (G b))))))
-(: β (case→ (→ ℳ ℛ) (∀ ([a : ℳ] [b : ℳ]) (→ (→ℳ a b) (→ℛ (G a) (H b))))))
+(: α (∀ ([a : ℳ] [b : ℳ]) (→ (→ℳ a b) (→ℛ (F a) (G b)))))
+(: β (∀ ([a : ℳ] [b : ℳ]) (→ (→ℳ a b) (→ℛ (G a) (H b)))))
 (define (α m) (cons                 (matrix-num-cols m)  (number->string (matrix-num-rows m))))
 (define (β m) (cons (number->string (matrix-num-cols m)) (number->symbol (matrix-num-rows m))))
 
