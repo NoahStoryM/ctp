@@ -13,7 +13,7 @@
   (case-lambda
     [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
-    [(m1 m2 . m*) (and (= m1 m2) (apply = m*))]))
+    [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 ;; Objects
 (define a (identity-matrix 1))

@@ -13,7 +13,7 @@
   (case-lambda
     [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
-    [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m*))]))
+    [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m2 m*))]))
 
 ;; Objects in ℳ
 (define a0 (identity-matrix 1))
@@ -78,7 +78,7 @@
         (and (=ℳ n j) (=ℳ r p)
              (=ℳ s q) (=ℳ m i))]
        [(_ _) #f])]
-    [(s1 s2 . s*) (and (= s1 s2) (apply = s*))]))
+    [(s1 s2 . s*) (and (= s1 s2) (apply = s2 s*))]))
 
 ;; Objects in Arr(ℳ)
 (define a `((,b0 ,p0) (,p0 ,a0))) ; p0

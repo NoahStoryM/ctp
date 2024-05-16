@@ -20,4 +20,4 @@
   (case-lambda
     [(_) #t]
     [(m1 m2) (equal? m1 m2)]
-    [(m1 m2 . m*) (and (= m1 m2) (apply = m*))]))
+    [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))

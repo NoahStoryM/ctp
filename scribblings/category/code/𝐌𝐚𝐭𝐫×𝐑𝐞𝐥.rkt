@@ -13,7 +13,7 @@
   (case-lambda
     [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
-    [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m*))]))
+    [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m2 m*))]))
 
 ;; Objects in ℳ
 (define a0 (identity-matrix 1))
@@ -40,7 +40,7 @@
   (case-lambda
     [(_) #t]
     [(r1 r2) (equal? r1 r2)]
-    [(r1 r2 . r*) (and (=ℛ r1 r2) (apply =ℛ r*))]))
+    [(r1 r2 . r*) (and (=ℛ r1 r2) (apply =ℛ r2 r*))]))
 
 ;; Objects in ℛ
 (define a1 '(a . a))
