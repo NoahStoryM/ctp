@@ -729,6 +729,9 @@ An @deftech{@deftech{initial} object} @deftech{0} in a @tech{category} @math{�
 is an @tech{object} from which there exists exactly one @tech{morphism} to every
 other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@deftech{!}_a: 0 → a}.
 
+@bold{Exercise}: Prove that if @math{a} and @math{b} are @tech{initial objects}
+in @math{𝒞}, then @math{a ≅ b}.
+
 @bold{Exercise}: Prove that the @deftech{empty set} @deftech{{}} is the unique
 @tech{initial object} in @tech{𝐒𝐞𝐭}.
 
@@ -739,6 +742,9 @@ other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@deftech{!
 Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{category}
 @math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism} from
 every other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@deftech{⟨⟩}_a: a → 1}.
+
+@bold{Exercise}: Prove that if @math{a} and @math{b} are @tech{terminal objects}
+in @math{𝒞}, then @math{a ≅ b}.
 
 @bold{Exercise}: Prove that any @deftech{singleton set} @deftech{{*}} is a
 @tech{terminal object} in @tech{𝐒𝐞𝐭}.
