@@ -27,7 +27,7 @@ Is the @tech{∘} in @tech{𝐏𝐫𝐨𝐜}.
 Is the @tech{?} in @tech{𝐏𝐫𝐨𝐜}.
 }
 
-@defproc[(= [m morphism?] ...) boolean?]{
+@defproc[(= [m0 morphism?] [m1 morphism?] ...) boolean?]{
 Is the @tech{=} in @tech{𝐏𝐫𝐨𝐜}.
 }
 
