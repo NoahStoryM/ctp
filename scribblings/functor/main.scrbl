@@ -1,7 +1,7 @@
 #lang scribble/manual
 
 @(require (for-label ctp
-                     (only-meta-in 0 typed/racket/base/no-check)
+                     (only-meta-in 0 (except-in typed/racket/base/no-check =))
                      math/matrix)
           "../ctp-utils.rkt")
 

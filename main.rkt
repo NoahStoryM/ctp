@@ -3,7 +3,7 @@
 (require racket/match
          "private/utils.rkt")
 
-(provide (all-defined-out))
+(provide (except-out (all-defined-out) make-composition))
 
 (define (make-· dom𝒞 cod𝒞 ∘𝒟)
   (define ·
@@ -20,13 +20,41 @@
        composed]))
   ·)
 
-;; Procedure Category
+(struct composition (procedure* body)
+  #:constructor-name make-composition
+  #:property prop:procedure
+  (struct-field-index body))
+
+;; Category of Procedures
 (define (dom _) values)
 (define (cod _) values)
-(define ∘ compose)
-(define ? procedure?)
-(define × values)
-(define · (make-· dom cod ∘))
+(define ∘
+  (case-lambda
+    [() values]
+    [(m) m]
+    [m*
+     (define procedure**
+       (for/list ([m (in-list m*)])
+         (cond
+           [(eq? values m) '()]
+           [(composition? m) (composition-procedure* m)]
+           [else (list m)])))
+     (define procedure* (apply append procedure**))
+     (define body (apply compose procedure*))
+     (case (length procedure*)
+       [(0 1) body]
+       [else (make-composition procedure* body)])]))
+(define (? m) (procedure? m))
+(define =
+  (case-lambda
+    [(_) #t]
+    [(m1 m2)
+     (or (eq? m1 m2)
+         (and (composition? m1)
+              (composition? m2)
+              (equal? (composition-procedure* m1)
+                      (composition-procedure* m2))))]
+    [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 ;; Opposite Category
 (define (¬ dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)

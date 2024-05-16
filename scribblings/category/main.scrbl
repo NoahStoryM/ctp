@@ -1,7 +1,7 @@
 #lang scribble/manual
 
 @(require (for-label ctp
-                     racket/base
+                     (except-in racket/base =)
                      racket/match
                      math/matrix)
           "../ctp-utils.rkt")
@@ -313,9 +313,6 @@ procedures (also known as functions in functional programming) as its
 @tech{morphisms}. It resembles the @tech{category} of @tech{sets}, denoted as
 @deftech{𝐒𝐞𝐭}, where @tech{morphisms} are mathematical @tech{functions}.
 
-However, @tech{𝐏𝐫𝐨𝐜} does not strict follow the @tech{composition rules},
-unlike the examples we introduced earlier. It has some notable defects.
-
 From the computing science perspective, @tech{category theory} is a strongly
 typed language, stronger than any programming language. This is due to the
 @tech{composition rule}: @math{g∘f} exists iff @math{cod(f) = dom(g)}.
@@ -323,17 +320,7 @@ Racket, being an untyped language, allows any procedure to be composed, such as
 @code{(∘ car +)}, but such a procedure will only @racket[raise] an @racket[exn]
 when applied. Therefore, @tech{𝐏𝐫𝐨𝐜} can be regarded as an @tech{OOC}:
 
-@racketblock[
-(define (dom _) (∘))
-(define (cod _) (∘))
-(define ∘ compose)
-(define ? procedure?)
-]
-
-Another defect is that we cannot compare whether two procedures have the same
-functionality, which means we cannot @racket[define] @tech{=}, and have to rely
-on the programmer to judge whether the behavior of two procedures is the same.
-For Racket, it cannot even be sure that @math{g∘f = g∘f}!
+@racketfile{category/code/𝐏𝐫𝐨𝐜.rkt}
 
 @subsection{Constructions on Categories}
 

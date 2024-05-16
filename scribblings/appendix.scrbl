@@ -1,11 +1,15 @@
 #lang scribble/manual
 
 @(require (for-label ctp
-                     racket/base
+                     (except-in racket/base =)
                      racket/contract))
 
 @title{Appendix}
 @defmodule[ctp]
+
+@defstruct*[composition ([procedure* (listof procedure?)] [body procedure?])]{
+A structure type for procedures created by @racket[∘].
+}
 
 @defproc[(dom [m morphism?]) morphism?]{
 Is the @tech{dom} in @tech{𝐏𝐫𝐨𝐜}.
@@ -21,6 +25,10 @@ Is the @tech{∘} in @tech{𝐏𝐫𝐨𝐜}.
 
 @defproc[(? [v any/c]) boolean?]{
 Is the @tech{?} in @tech{𝐏𝐫𝐨𝐜}.
+}
+
+@defproc[(= [m morphism?] ...) boolean?]{
+Is the @tech{=} in @tech{𝐏𝐫𝐨𝐜}.
 }
 
 @defproc[(× [v any/c] ...) any]{
