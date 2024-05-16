@@ -40,9 +40,9 @@
 (define * values)
 
 ;; Morphisms
-(define f +)
-(define g list)
-(define h string)
+(define f number->string)
+(define g string->list)
+(define h list->vector)
 
 ;; Existence of composition
 (= * (cod f) (dom g))
