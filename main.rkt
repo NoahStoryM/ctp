@@ -45,7 +45,7 @@
          (cond
            [(eq? values m) '()]
            [(horizontal-composition? m) (composition-procedure* m)]
-           #;[(vertical-composition? m) ] ; TODO Godement calculus
+           #;[(vertical-composition? m) ] ; TODO Interchange Law
            [else (list m)])))
      (define procedure* (apply append procedure**))
      (define body (apply compose procedure*))
@@ -62,7 +62,7 @@
               (horizontal-composition? m2)
               (equal? (composition-procedure* m1)
                       (composition-procedure* m2)))
-         #;(and ;; TODO Godement calculus
+         #;(and ;; TODO Interchange Law
             (vertical-composition? m1)
             (vertical-composition? m2)))]
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
