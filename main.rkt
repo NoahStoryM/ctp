@@ -3,7 +3,18 @@
 (require racket/match
          "private/utils.rkt")
 
-(provide (except-out (all-defined-out) make-composition))
+(provide (except-out (all-defined-out)
+                     make-horizontal-composition
+                     make-vertical-composition))
+
+(struct composition (procedure* body)
+  #:property prop:procedure
+  (struct-field-index body))
+
+(struct horizontal-composition composition ()
+  #:constructor-name make-horizontal-composition)
+(struct vertical-composition composition ()
+  #:constructor-name make-vertical-composition)
 
 (define (make-· dom𝒞 cod𝒞 ∘𝒟)
   (define ·
@@ -11,6 +22,7 @@
       [() values]
       [(α) α]
       [(α . α*)
+       ;; TODO vertical-composition
        (define composed
          (λ (f)
            (define a (dom𝒞 f))
@@ -19,11 +31,6 @@
            (∘𝒟 (α f) αdom*)))
        composed]))
   ·)
-
-(struct composition (procedure* body)
-  #:constructor-name make-composition
-  #:property prop:procedure
-  (struct-field-index body))
 
 ;; Category of Procedures
 (define (dom _) values)
@@ -37,23 +44,27 @@
        (for/list ([m (in-list m*)])
          (cond
            [(eq? values m) '()]
-           [(composition? m) (composition-procedure* m)]
+           [(horizontal-composition? m) (composition-procedure* m)]
+           #;[(vertical-composition? m) ] ; TODO Godement calculus
            [else (list m)])))
      (define procedure* (apply append procedure**))
      (define body (apply compose procedure*))
      (case (length procedure*)
        [(0 1) body]
-       [else (make-composition procedure* body)])]))
+       [else (make-horizontal-composition procedure* body)])]))
 (define (? m) (procedure? m))
 (define =
   (case-λ
     [(_) #t]
     [(m1 m2)
      (or (eq? m1 m2)
-         (and (composition? m1)
-              (composition? m2)
+         (and (horizontal-composition? m1)
+              (horizontal-composition? m2)
               (equal? (composition-procedure* m1)
-                      (composition-procedure* m2))))]
+                      (composition-procedure* m2)))
+         #;(and ;; TODO Godement calculus
+            (vertical-composition? m1)
+            (vertical-composition? m2)))]
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 ;; Opposite Category
