@@ -32,6 +32,8 @@
        composed]))
   ·)
 
+(define × values)
+
 ;; Category of Procedures
 (define (dom _) values)
 (define (cod _) values)
