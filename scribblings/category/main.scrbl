@@ -313,6 +313,13 @@ procedures (also known as functions in functional programming) as its
 @tech{morphisms}. It resembles the @tech{category} of @tech{sets}, denoted as
 @deftech{𝐒𝐞𝐭}, where @tech{morphisms} are mathematical @tech{functions}.
 
+An important point to consider in @tech{𝐏𝐫𝐨𝐜} is the equality of @tech{morphisms}.
+In @tech{𝐒𝐞𝐭}, two @tech{functions} are considered @tech{equal} if they produce
+the same output for every input. However, in @tech{𝐏𝐫𝐨𝐜}, determining whether two
+procedures are @tech{equal} (i.e., produce the same output for every possible input)
+is undecidable in general. As a result, we must rely on the programmer's judgment
+to ascertain whether the behavior of two procedures is same.
+
 From the computing science perspective, @tech{category theory} is a strongly
 typed language, stronger than any programming language. This is due to the
 @tech{composition rule}: @math{g∘f} exists iff @math{cod(f) = dom(g)}.
