@@ -793,7 +793,7 @@ and more abstract manner.
 @bold{Exercise}: Prove that @tech{𝐒𝐞𝐭*} is the @tech{coslice category} @math{1/𝐒𝐞𝐭}.
 
 In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math{f: A → B}.
-Traditionally, we apply @math{f} to an @tech{element} @math{x} in @math{A},
+Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},
 denoted as @math{f(x)}. In @tech{category theory}, we can express this application
 using @tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A}, then
 the application of @math{f} to @math{x} is represented by the @tech{composition}
