@@ -32,8 +32,8 @@ For convenience, if @math{a} is an @tech{object} in @math{𝒞}, @math{F(a) = F_
 if @math{f} is a @tech{morphism} in @math{𝒞}, @math{F(f) = F_1(f)}.
 }
 
-Similar to how a @tech{category} @math{𝒞} is defined by 2 collections @math{𝒞_0}
-and @math{𝒞_1}, a @deftech{functor} @math{F: 𝒞 → 𝒟} is also defined by 2
+Similar to how a @tech{category} @math{𝒞} is defined by two collections @math{𝒞_0}
+and @math{𝒞_1}, a @deftech{functor} @math{F: 𝒞 → 𝒟} is also defined by two
 @tech{functions} @math{F_0: 𝒞_0 → 𝒟_0} and @math{F_1: 𝒞_1 → 𝒟_1}. These
 @tech{functions} must satisfy the following properties:
 

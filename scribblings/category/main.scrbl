@@ -34,7 +34,7 @@ and
 @hyperlink["https://ncatlab.org/nlab/show/large+category"]{Large Category}.
 }
 
-A @deftech{category} @math{𝒞} is defined by 2 collections: @math{𝒞_0} of
+A @deftech{category} @math{𝒞} is defined by two collections: @math{𝒞_0} of
 @deftech{object}s and @math{𝒞_1} of @deftech{morphism}s. Think of @math{𝒞} as a
 directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
 connecting these nodes.
@@ -693,14 +693,14 @@ duplication, thereby establishing the surjective nature of @math{e}.
 
 @margin-note{
 In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms} from
-two classes @math{ℰ} and @math{ℳ}, not just @tech{monomorphisms} and @tech{epimorphisms}.
-@deftech{⤖} is used to denote @tech{morphisms} from @math{ℰ ∩ ℳ}.
+two distinct classes @math{ℰ} and @math{ℳ}, rather than exclusively representing
+@tech{monomorphisms} and @tech{epimorphisms}. Additionally, @deftech{⤖} indicates
+@tech{morphisms} from @math{ℰ ∩ ℳ}.
 }
 
-For a @tech{morphism} @math{f: a → b}, if @math{f} is @tech{monic}, it's
-conventionally denoted as @math{f: a ↣ b}; if @math{f} is @tech{epic}, it's
-conventionally denoted as @math{f: a ↠ b}; if @math{f} is both @tech{monic} and
-@tech{epic}, it's conventionally denoted as @math{f: a ⤖ b}.
+For a @tech{morphism} @math{f: a → b}, the notation changes based on its properties:
+@math{f: a ↣ b} if @math{f} is @tech{monic}, @math{f: a ↠ b} if @math{f} is @tech{epic},
+and @math{f: a ⤖ b} if @math{f} is both @tech{monic} and @tech{epic}.
 
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
