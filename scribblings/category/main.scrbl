@@ -318,7 +318,7 @@ In @tech{𝐒𝐞𝐭}, two @tech{functions} are considered @tech{equal} if they
 the same output for every input. However, in @tech{𝐏𝐫𝐨𝐜}, determining whether two
 procedures are @tech{equal} (i.e., produce the same output for every possible input)
 is undecidable in general. As a result, we must rely on the programmer's judgment
-to ascertain whether the behavior of two procedures is same.
+to ascertain whether the behavior of two procedures is the same.
 
 From the computing science perspective, @tech{category theory} is a strongly
 typed language, stronger than any programming language. This is due to the
