@@ -612,6 +612,13 @@ and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
 iff there exists an @tech{isomorphism} between them.
 
+@tech{Isomorphisms} are crucial because they imply that the @tech{objects} they
+connect can be interchanged in any context within the @tech{category}. This means
+that if @math{a ≅ b}, then any property, specifically any @tech{commutative diagram}
+involving @math{a}, also holds for @math{b}. In essence, we can substitute @math{b}
+for @math{a} in a @tech{commutative diagram} without affecting the commutativity
+of the @tech{diagram}.
+
 Examples in @tech{𝐑𝐞𝐥}:
 
 @racketblock[
