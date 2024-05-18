@@ -616,9 +616,9 @@ iff there exists an @tech{isomorphism} between them.
 connect can be interchanged in any context within the @tech{category}. This means
 that if @math{a ≅ b}, then any property, specifically any @tech{commutative diagram}
 involving @math{a}, also holds for @math{b}. In essence, we can substitute @math{b}
-for @math{a} in a @tech{commutative diagram} without affecting the commutativity
-of the @tech{diagram}. This property makes @tech{isomorphisms} a weak concept of
-@tech{identity morphisms}.
+for @math{a} in any @tech{commutative diagram} without affecting the
+@tech[#:key "commutative"]{commutativity} of the @tech{diagram}. This property
+makes @tech{isomorphisms} a weak concept of @tech{identity morphisms}.
 
 Examples in @tech{𝐑𝐞𝐥}:
 
