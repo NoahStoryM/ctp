@@ -605,7 +605,8 @@ For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if 
 and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphism}s
 (often abbreviated as @deftech{iso}, or called be @deftech{isic} or @deftech{invertible}).
 
-@image["scribblings/category/images/iso.svg"]{[picture] iso.svg}
+@image["scribblings/category/images/iso_1.svg"]{[picture] iso_1.svg}
+@image["scribblings/category/images/iso_2.svg"]{[picture] iso_2.svg}
 
 In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f@^{–1}},
 and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g@^{–1}}.
