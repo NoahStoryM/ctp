@@ -62,5 +62,5 @@ The following example illustrates how to implement @tech{functors} in Racket:
 
 @racketfile{functor/code/𝐌𝐚𝐭𝐫→𝐑𝐞𝐥.rkt}
 
-@bold{Exercise}: Prove that @tech{functors} can be composed and that this
-@tech{composition} is associative.
+@bold{Exercise}: Prove that @tech{functors} can be @tech[#:key "compose"]{composed}
+and that this @tech{composition} is @tech{associative}.

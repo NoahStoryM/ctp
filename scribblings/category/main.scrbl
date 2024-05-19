@@ -63,7 +63,7 @@ transformations, operations, or even concrete entities like @tech/refer{numbers}
         is defined, @math{dom(g∘f) = dom(f)} and @math{cod(g∘f) = cod(g)}.
 
         @image["scribblings/category/images/C-1.svg"]{[picture] C-1.svg}}
-  @item{Associativity of @tech{composition}
+  @item{@tech[#:key "associative"]{Associativity} of @tech{composition}
 
         @margin-note{
         Note that a @deftech{composable pair} consists of not only a pair of
@@ -72,7 +72,8 @@ transformations, operations, or even concrete entities like @tech/refer{numbers}
         }
 
         For @tech{composable pairs} @math{(f, g)} and @math{(g, h)} in @math{𝒞},
-        @math{(h∘g)∘f = h∘(g∘f)}, denoted as @math{h∘g∘f}.
+        @tech{composition} is @deftech{associative}: @math{(h∘g)∘f = h∘(g∘f)},
+        denoted as @math{h∘g∘f}.
 
         @image["scribblings/category/images/C-2.svg"]{[picture] C-2.svg}}
   @item{Existence of @deftech{identity morphism}s
@@ -171,7 +172,7 @@ the @deftech{elements} of the @tech{set}.
 
 @margin-note{
 A @deftech{monoid} (@deftech{monoidal set}) @math{(S, *, e)} is a @tech{set}
-@math{S} equipped with an associative binary operation @math{*} and an
+@math{S} equipped with an @tech{associative} binary operation @math{*} and an
 @deftech{identity element} @math{e}.
 }
 
@@ -307,25 +308,25 @@ The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭*}, 
 
 @subsubsection{Category of Procedures}
 
-The @tech{category} of procedures, denoted as @deftech{𝐏𝐫𝐨𝐜}, is perhaps the most
-important @tech{category} in programming. As the name suggests, @tech{𝐏𝐫𝐨𝐜} has
-procedures (also known as functions in functional programming) as its
-@tech{morphisms}. It resembles the @tech{category} of @tech{sets}, denoted as
+The @tech{category} of @tech{procedures}, denoted as @deftech{𝐏𝐫𝐨𝐜}, is perhaps the
+most important @tech{category} in programming. As the name suggests, @tech{𝐏𝐫𝐨𝐜} has
+@deftech{procedures} (also known as @tech[#:key "procedure"]{functions} in functional programming)
+as its @tech{morphisms}. It resembles the @tech{category} of @tech{sets}, denoted as
 @deftech{𝐒𝐞𝐭}, where @tech{morphisms} are mathematical @tech{functions}.
 
 An important point to consider in @tech{𝐏𝐫𝐨𝐜} is the equality of @tech{morphisms}.
 In @tech{𝐒𝐞𝐭}, two @tech{functions} are considered @tech{equal} if they produce
 the same output for every input. However, in @tech{𝐏𝐫𝐨𝐜}, determining whether two
-procedures are @tech{equal} (i.e., produce the same output for every possible input)
+@tech{procedures} are @tech{equal} (i.e., produce the same output for every possible input)
 is undecidable in general. As a result, we must rely on the programmer's judgment
-to ascertain whether the behavior of two procedures is the same.
+to ascertain whether the behavior of two @tech{procedures} is the same.
 
 From the computing science perspective, @tech{category theory} is a strongly
 typed language, stronger than any programming language. This is due to the
-@tech{composition rule}: @math{g∘f} exists iff @math{cod(f) = dom(g)}.
-Racket, being an untyped language, allows any procedure to be composed, such as
-@code{(∘ car +)}, but such a procedure will only @racket[raise] an @racket[exn]
-when applied. Therefore, @tech{𝐏𝐫𝐨𝐜} can be regarded as an @tech{OOC}:
+@tech{composition rule}: @math{g∘f} exists iff @math{cod(f) = dom(g)}. Racket, being
+an untyped language, allows any @tech{procedure} to be @tech[#:key "compose"]{composed},
+such as @code{(∘ car +)}, but such a @tech{procedure} will only @racket[raise] an
+@racket[exn] when applied. Therefore, @tech{𝐏𝐫𝐨𝐜} can be regarded as an @tech{OOC}:
 
 @racketfile{category/code/𝐏𝐫𝐨𝐜.rkt}
 
@@ -680,16 +681,16 @@ A @deftech{monomorphism} (often abbreviated as @deftech{mono}, or called be @def
 @math{m} is defined as a @deftech{left cancellable} @tech{morphism}. This property
 means that for all @tech{composable pairs} @math{(a, m)} and @math{(b, m)}, if
 @math{m∘a = m∘b}, then it must follow that @math{a = b}. Such a condition ensures
-that no two different @tech{morphisms}, when composed with @math{m} on the right,
-result in the same @tech{morphism}, thereby establishing the injective nature of
-@math{m}.
+that no two different @tech{morphisms}, when @tech[#:key "compose"]{composed} with
+@math{m} on the right, result in the same @tech{morphism}, thereby establishing
+the @deftech{injective} nature of @math{m}.
 
 Conversely, an @deftech{epimorphism} (often referred to as @deftech{epi}, or called be @deftech{epic})
 @math{e} is defined as a @deftech{right cancellable} @tech{morphism}. This property
 means that for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)}, if
 @math{x∘e = y∘e}, then it must follow that @math{x = y}. Such a condition ensures
 that @math{e} reaches all possible endpoints in the target @tech{object} without
-duplication, thereby establishing the surjective nature of @math{e}.
+duplication, thereby establishing the @deftech{surjective} nature of @math{e}.
 
 @margin-note{
 In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms} from
@@ -776,13 +777,13 @@ If a @tech{terminal object} @tech{1} exists within a @tech{category} @math{𝒞}
 @deftech{global element} of another @tech{object} @math{a} in @math{𝒞} is defined
 as a @tech{morphism} @math{1 → a}.
 
-Although a @tech{category} is fundamentally composed of @tech{objects} and
-@tech{morphisms}, @tech{objects} within some @tech{categories} possess some
-inherent structures. The beauty of @tech{category theory} lies in our ability to
-consistently identify special @tech{morphisms} that reveal and represent these
-structures. This perspective not only deepens our understanding of tangible
-structures but also inspires us to perceive connections and patterns beyond the
-obvious structural definitions.
+Although a @tech{category} is fundamentally @tech[#:key "compose"]{composed} of
+@tech{objects} and @tech{morphisms}, @tech{objects} within some @tech{categories}
+possess some inherent structures. The beauty of @tech{category theory} lies in
+our ability to consistently identify special @tech{morphisms} that reveal and
+represent these structures. This perspective not only deepens our understanding
+of tangible structures but also inspires us to perceive connections and patterns
+beyond the obvious structural definitions.
 
 Consider @tech{𝐒𝐞𝐭} as an example. We understand that @tech{sets} contain
 @tech{elements}. However, the definition of @tech{categories} does not talk about

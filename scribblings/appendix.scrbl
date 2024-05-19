@@ -8,7 +8,7 @@
 @defmodule[ctp]
 
 @defstruct*[composition ([procedure* (listof procedure?)] [body procedure?])]{
-A structure type for procedures created by @racket[∘].
+A structure type for @tech{procedures} created by @racket[∘].
 }
 
 @defproc[(dom [m morphism?]) morphism?]{
