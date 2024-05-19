@@ -35,9 +35,9 @@ and
 }
 
 A @deftech{category} @math{𝒞} is defined by two collections: @math{𝒞_0} of
-@deftech{object}s and @math{𝒞_1} of @deftech{morphism}s. Think of @math{𝒞} as a
-directed graph, where @tech{objects} are nodes, and @tech{morphisms} are arrows
-connecting these nodes.
+@deftech{object}s (@deftech{0-cell}s) and @math{𝒞_1} of @deftech{morphism}s
+(@deftech{1-cell}s). Think of @math{𝒞} as a directed graph, where @tech{objects}
+are nodes, and @tech{morphisms} are arrows connecting these nodes.
 
 For a @tech{morphism} @math{f: a @deftech{→} b} in @math{𝒞}, its starting points
 (@deftech{domain}) is @math{a}, and its ending point (@deftech{codomain}) is
