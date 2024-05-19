@@ -36,11 +36,12 @@ and
 
 A @deftech{category} @math{𝒞} is defined by two collections: @math{𝒞_0} of
 @deftech{object}s (@deftech{0-cell}s) and @math{𝒞_1} of @deftech{morphism}s
-(@deftech{1-cell}s). Think of @math{𝒞} as a directed graph, where @tech{objects}
-are nodes, and @tech{morphisms} are arrows connecting these nodes.
+(@deftech{1-cell}s). Think of @math{𝒞} as a @deftech{directed graph}, where
+@tech{objects} are @deftech{node}s, and @tech{morphisms} are @deftech{arrow}s
+connecting these @tech{nodes}.
 
-For a @tech{morphism} @math{f: a @deftech{→} b} in @math{𝒞}, its starting points
-(@deftech{domain}) is @math{a}, and its ending point (@deftech{codomain}) is
+For a @tech{morphism} @math{f: a @deftech{→} b} in @math{𝒞}, its @deftech{domain}
+(@deftech{source}) is @math{a}, and its @deftech{codomain} (@deftech{target}) is
 @math{b}: @math{dom(f) = a} and @math{cod(f) = b}.
 
 @image["scribblings/category/images/cat.svg"]{[picture] cat.svg}
@@ -343,10 +344,10 @@ denoted as @deftech{opposite category} @math{𝒞^op}.
 
 @image["scribblings/category/images/op-cat.svg"]{[picture] op-cat.svg}
 
-A @tech{category} @math{𝒞} can be viewed as a directed graph that adheres to the
-@tech{composition rules}. If we reverse all the arrows in the directed graph,
-the resulting new directed graph still adheres to the @tech{composition rules},
-so this new directed graph is also a @tech{category} @math{𝒞^op}.
+A @tech{category} @math{𝒞} can be viewed as a @tech{directed graph} that adheres
+to the @tech{composition rules}. If we reverse all the arrows in the @tech{directed graph},
+the resulting new @tech{directed graph} still adheres to the @tech{composition rules},
+so this new @tech{directed graph} is also a @tech{category} @math{𝒞^op}.
 
 @bold{Exercise}: Prove that @math{(𝒞^op)^op = 𝒞}.
 
@@ -411,9 +412,9 @@ Then, we get some new @tech{commutative squares} by @tech{composition}:
 
 @image["scribblings/category/images/arr-cat_2.svg"]{[picture] arr-cat_2.svg}
 
-Finally, using nodes to represent @tech{morphisms}, and using arrows to represent
-@tech{commutative squares}, we get a directed graph that obeys the @tech{composition rules},
-which is the @tech{arrow category} @math{Arr(𝒞)}:
+Finally, using @tech{nodes} to represent @tech{morphisms}, and using @tech{arrows}
+to represent @tech{commutative squares}, we get a @tech{directed graph} that obeys
+the @tech{composition rules}, which is the @tech{arrow category} @math{Arr(𝒞)}:
 
 @margin-note{
 Although we name arrows using pairs here, note that they are not pairs, but
@@ -460,10 +461,10 @@ Then, we get some new @tech{commutative triangles} by @tech{composition}:
 
 @image["scribblings/category/images/over-cat_2.svg"]{[picture] over-cat_2.svg}
 
-Finally, using nodes to represent @tech{morphisms} end to @math{c_1}, and using
-arrows to represent @tech{commutative triangles} end to @math{c_1}, we get a
-directed graph that obeys the @tech{composition rules}, which is the
-@tech{slice category} @math{𝒞/c_1}:
+Finally, using @tech{nodes} to represent @tech{morphisms} end to @math{c_1}, and
+using @tech{arrows} to represent @tech{commutative triangles} end to @math{c_1},
+we get a @tech{directed graph} that obeys the @tech{composition rules}, which is
+the @tech{slice category} @math{𝒞/c_1}:
 
 @margin-note{
 Although we name arrows using @tech{morphisms} here, note that they are not
@@ -503,10 +504,10 @@ Then, we get some new @tech{commutative triangles} by @tech{composition}:
 
 @image["scribblings/category/images/under-cat_2.svg"]{[picture] under-cat_2.svg}
 
-Finally, using nodes to represent @tech{morphisms} start from @math{c_0}, and using
-arrows to represent @tech{commutative triangles} start from @math{c_0}, we get a
-directed graph that obeys the @tech{composition rules}, which is the
-@tech{coslice category} @math{c_0/𝒞}:
+Finally, using @tech{nodes} to represent @tech{morphisms} start from @math{c_0},
+and using @tech{arrows} to represent @tech{commutative triangles} start from @math{c_0},
+we get a @tech{directed graph} that obeys the @tech{composition rules}, which is
+the @tech{coslice category} @math{c_0/𝒞}:
 
 @margin-note{
 Although we name arrows using @tech{morphisms} here, note that they are not
