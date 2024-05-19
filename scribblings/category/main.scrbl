@@ -665,8 +665,8 @@ to some @tech{object} of @math{𝒟}.
 @tech{Categories} are sometimes called @deftech{monoidoid}s.
 }
 
-A @deftech{groupoid} is equivalently a @tech{category} in which all @tech{morphisms}
-are @tech{isomorphisms}.
+A @deftech{groupoid} is a @tech{category} in which all @tech{morphisms} are
+@tech{isomorphisms}.
 
 @subsubsection{One-Object Groupoid}
 
