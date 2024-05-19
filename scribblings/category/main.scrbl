@@ -314,10 +314,10 @@ most important @tech{category} in programming. As the name suggests, @tech{𝐏�
 as its @tech{morphisms}. It resembles the @tech{category} of @tech{sets}, denoted as
 @deftech{𝐒𝐞𝐭}, where @tech{morphisms} are mathematical @tech{functions}.
 
-An important point to consider in @tech{𝐏𝐫𝐨𝐜} is the equality of @tech{morphisms}.
-In @tech{𝐒𝐞𝐭}, two @tech{functions} are considered @tech{equal} if they produce
-the same output for every input. However, in @tech{𝐏𝐫𝐨𝐜}, determining whether two
-@tech{procedures} are @tech{equal} (i.e., produce the same output for every possible input)
+An important point to consider in @tech{𝐏𝐫𝐨𝐜} is the @tech[#:key "equal"]{equality}
+of @tech{morphisms}. In @tech{𝐒𝐞𝐭}, two @tech{functions} are considered @tech{equal}
+if they produce the same output for every input. However, in @tech{𝐏𝐫𝐨𝐜}, determining
+whether two @tech{procedures} are @tech{equal} (i.e., produce the same output for every possible input)
 is undecidable in general. As a result, we must rely on the programmer's judgment
 to ascertain whether the behavior of two @tech{procedures} is the same.
 
