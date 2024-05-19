@@ -345,9 +345,10 @@ denoted as @deftech{opposite category} @math{𝒞^op}.
 @image["scribblings/category/images/op-cat.svg"]{[picture] op-cat.svg}
 
 A @tech{category} @math{𝒞} can be viewed as a @tech{directed graph} that adheres
-to the @tech{composition rules}. If we reverse all the arrows in the @tech{directed graph},
-the resulting new @tech{directed graph} still adheres to the @tech{composition rules},
-so this new @tech{directed graph} is also a @tech{category} @math{𝒞^op}.
+to the @tech{composition rules}. If we reverse all the @tech{arrows} in the
+@tech{directed graph}, the resulting new @tech{directed graph} still adheres to
+the @tech{composition rules}, so this new @tech{directed graph} is also a
+@tech{category} @math{𝒞^op}.
 
 @bold{Exercise}: Prove that @math{(𝒞^op)^op = 𝒞}.
 
@@ -417,8 +418,8 @@ to represent @tech{commutative squares}, we get a @tech{directed graph} that obe
 the @tech{composition rules}, which is the @tech{arrow category} @math{Arr(𝒞)}:
 
 @margin-note{
-Although we name arrows using pairs here, note that they are not pairs, but
-@tech{commutative squares}.
+Although we name @tech{arrows} using pairs here, note that they are not pairs,
+but @tech{commutative squares}.
 }
 
 @image["scribblings/category/images/arr-cat_3.svg"]{[picture] arr-cat_3.svg}
@@ -467,8 +468,8 @@ we get a @tech{directed graph} that obeys the @tech{composition rules}, which is
 the @tech{slice category} @math{𝒞/c_1}:
 
 @margin-note{
-Although we name arrows using @tech{morphisms} here, note that they are not
-@tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
+Although we name @tech{arrows} using @tech{morphisms} here, note that they are
+not @tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
 }
 
 @image["scribblings/category/images/over-cat_3.svg"]{[picture] over-cat_3.svg}
@@ -510,8 +511,8 @@ we get a @tech{directed graph} that obeys the @tech{composition rules}, which is
 the @tech{coslice category} @math{c_0/𝒞}:
 
 @margin-note{
-Although we name arrows using @tech{morphisms} here, note that they are not
-@tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
+Although we name @tech{arrows} using @tech{morphisms} here, note that they are
+not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 }
 
 @image["scribblings/category/images/under-cat_3.svg"]{[picture] under-cat_3.svg}
