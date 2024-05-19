@@ -291,7 +291,7 @@ A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
 @math{(S, ≤)}, for which @math{≤} is antisymmetric.
 }
 
-@bold{Exercise}: view a @tech{poset} as a @tech{category} and implement it.
+@bold{Exercise}: View a @tech{poset} as a @tech{category} and implement it.
 
 @subsubsection{Category of Pointed Sets}
 
@@ -348,10 +348,10 @@ A @tech{category} @math{𝒞} can be viewed as a directed graph that adheres to 
 the resulting new directed graph still adheres to the @tech{composition rules},
 so this new directed graph is also a @tech{category} @math{𝒞^op}.
 
-@bold{Exercise}: prove that @math{(𝒞^op)^op = 𝒞}.
+@bold{Exercise}: Prove that @math{(𝒞^op)^op = 𝒞}.
 
-@bold{Exercise}: @racket[define] @deftech{¬} so that we can @racket[define] the
-@tech{opposite category} @math{𝒞^op} in this way:
+@bold{Exercise}: Try to @racket[define] @deftech{¬} so that we can @racket[define]
+the @tech{opposite category} @math{𝒞^op} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
@@ -370,7 +370,7 @@ A @deftech{product category} @math{𝒞 × 𝒟} combines the given @tech{catego
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
 
-@bold{Exercise}: prove that @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
+@bold{Exercise}: Prove that @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
 
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
@@ -379,7 +379,7 @@ of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐑𝐞𝐥}.
 
 @racketfile{category/code/𝐌𝐚𝐭𝐫×𝐑𝐞𝐥.rkt}
 
-@bold{Exercise}: @racket[define] @deftech{dom×}, @deftech{cod×}, @deftech{∘×},
+@bold{Exercise}: Try to @racket[define] @deftech{dom×}, @deftech{cod×}, @deftech{∘×},
 @deftech{?×} and @deftech{=×} so that we can @racket[define] the
 @tech{product category} @math{ℳ × ℛ} in this way:
 
@@ -422,15 +422,15 @@ Although we name arrows using pairs here, note that they are not pairs, but
 
 @image["scribblings/category/images/arr-cat_3.svg"]{[picture] arr-cat_3.svg}
 
-@bold{Exercise}: prove that @math{(k∘i, l∘j) = (k, l)∘(i, j)}.
+@bold{Exercise}: Prove that @math{(k∘i, l∘j) = (k, l)∘(i, j)}.
 
 In the following code, we create an @tech{arrow category} to which @tech{𝐌𝐚𝐭𝐫}
 gives rise:
 
 @racketfile{category/code/Arr_𝐌𝐚𝐭𝐫.rkt}
 
-@bold{Exercise}: @racket[define] @deftech{Arr} so that we can @racket[define] the
-@tech{arrow category} @math{Arr(ℳ)} in this way:
+@bold{Exercise}: Try to @racket[define] @deftech{Arr} so that we can @racket[define]
+the @tech{arrow category} @math{Arr(ℳ)} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
@@ -472,10 +472,10 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 
 @image["scribblings/category/images/over-cat_3.svg"]{[picture] over-cat_3.svg}
 
-@bold{Exercise}: referencing the example code of the @tech{arrow category}
+@bold{Exercise}: Referencing the example code of the @tech{arrow category}
 @math{Arr(ℳ)}, implement the @tech{slice category} @math{ℳ/m}.
 
-@bold{Exercise}: @racket[define] @deftech{Sli} so that we can @racket[define]
+@bold{Exercise}: Try to @racket[define] @deftech{Sli} so that we can @racket[define]
 the @tech{slice category} @math{ℳ/m} in this way:
 
 @racketblock[
@@ -515,10 +515,10 @@ Although we name arrows using @tech{morphisms} here, note that they are not
 
 @image["scribblings/category/images/under-cat_3.svg"]{[picture] under-cat_3.svg}
 
-@bold{Exercise}: referencing the example code of the @tech{arrow category}
+@bold{Exercise}: Referencing the example code of the @tech{arrow category}
 @math{Arr(ℳ)}, implement the @tech{coslice category} @math{m/ℳ}.
 
-@bold{Exercise}: @racket[define] @deftech{¬Sli} so that we can @racket[define]
+@bold{Exercise}: Try to @racket[define] @deftech{¬Sli} so that we can @racket[define]
 the @tech{coslice category} @math{m/ℳ} in this way:
 
 @racketblock[
@@ -526,9 +526,9 @@ the @tech{coslice category} @math{m/ℳ} in this way:
   ((¬Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
 ]
 
-@bold{Exercise}: prove that @math{ℳ^op/m = (m/ℳ)^op}.
+@bold{Exercise}: Prove that @math{ℳ^op/m = (m/ℳ)^op}.
 
-@bold{Exercise}: @racket[define] @tech{¬Sli} by using @tech{¬} and @tech{Sli}.
+@bold{Exercise}: Try to @racket[define] @tech{¬Sli} by using @tech{¬} and @tech{Sli}.
 
 @section{Categorical Definitions}
 
@@ -638,11 +638,11 @@ Examples in @tech{𝐑𝐞𝐥}:
 (= b (∘ f g))
 ]
 
-@bold{Exercise}: prove that every @tech{object} is @tech{isomorphic} to itself.
+@bold{Exercise}: Prove that every @tech{object} is @tech{isomorphic} to itself.
 
-@bold{Exercise}: prove that for a @tech{isomorphism} @math{f}, @math{f = (f@^{–1})@^{–1}}.
+@bold{Exercise}: Prove that for a @tech{isomorphism} @math{f}, @math{f = (f@^{–1})@^{–1}}.
 
-@bold{Exercise}: prove that for @tech{isomorphisms} @math{f} and @math{g},
+@bold{Exercise}: Prove that for @tech{isomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{–1}∘g@^{–1}}.
 
 @subsubsection{Automorphism}
