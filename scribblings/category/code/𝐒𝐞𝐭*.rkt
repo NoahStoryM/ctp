@@ -1,8 +1,10 @@
 #lang racket/base
 
+(define (kv->e kv) (cons kv kv))
+
 ;; Category of Pointed Sets
-(define (dom m) (make-immutable-hash (map (λ (k) (cons k k)) (hash-keys   m))))
-(define (cod m) (make-immutable-hash (map (λ (v) (cons v v)) (hash-values m))))
+(define (dom m) (make-immutable-hash (map kv->e (hash-keys   m))))
+(define (cod m) (make-immutable-hash (map kv->e (hash-values m))))
 (define ∘
   (case-lambda
     [(m) m]
