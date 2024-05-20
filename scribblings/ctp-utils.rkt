@@ -5,9 +5,7 @@
                      syntax/parse
                      (only-in racket/file file->string)))
 
-(provide (except-out (all-defined-out) main)
-         (rename-out [superscript ^]
-                     [subscript   _]))
+(provide (except-out (all-defined-out) main))
 
 (define-syntax (racketfile stx)
   (syntax-parse stx
@@ -38,6 +36,9 @@
 (define-tech tech/guide '(lib "scribblings/guide/guide.scrbl"))
 (define-tech tech/refer '(lib "scribblings/reference/reference.scrbl"))
 (define-tech tech/math  '(lib "math/scribblings/math.scrbl"))
+
+(define ^ (compose superscript math))
+(define _ (compose subscript   math))
 
 (define main (λ ([argv (current-command-line-arguments)]) (values)))
 (module+ main (call-with-values main exit))
