@@ -6,6 +6,14 @@
 (define (rand m n) (random 1 9))
 
 ;; Category of Matrices ℳ
+(: ℳ (case→ (→ ℳ ℳ) (∀ ([a : ℳ] [b : ℳ]) (→ (→ℳ a b) (→ℳ a b)))))
+(: domℳ (∀ ([a : ℳ] [b : ℳ]) (→ (→ℳ a b) a)))
+(: codℳ (∀ ([a : ℳ] [b : ℳ]) (→ (→ℳ a b) b)))
+(: ∘ℳ (∀ ([a : ℳ] [b : ℳ] [c : ℳ] ... [z : ℳ]) (→ (→ℳ a b) (→ℳ b c) ... (→ℳ a z))))
+(: ?ℳ (pred (∀ ([a : ℳ] [b : ℳ]) (→ℳ a b))))
+(: =ℳ (∀ ([a : ℳ] [b : ℳ] [c : ℳ] [d : ℳ] ...) (→ (→ℳ a b) (→ℳ c d) ... Boolean)))
+
+(define (ℳ m) m)
 (define (domℳ m) (identity-matrix (matrix-num-cols m)))
 (define (codℳ m) (identity-matrix (matrix-num-rows m)))
 (define (∘ℳ m . m*) (apply matrix* m m*))
@@ -17,6 +25,14 @@
     [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m2 m*))]))
 
 ;; Category of Binary Relations ℛ
+(: ℛ (case→ (→ ℛ ℛ) (∀ ([a : ℛ] [b : ℛ]) (→ (→ℛ a b) (→ℛ a b)))))
+(: domℛ (∀ ([a : ℛ] [b : ℛ]) (→ (→ℛ a b) a)))
+(: codℛ (∀ ([a : ℛ] [b : ℛ]) (→ (→ℛ a b) b)))
+(: ∘ℛ (∀ ([a : ℛ] [b : ℛ] [c : ℛ] ... [z : ℛ]) (→ (→ℛ a b) (→ℛ b c) ... (→ℛ a z))))
+(: ?ℛ (pred (∀ ([a : ℛ] [b : ℛ]) (→ℛ a b))))
+(: =ℛ (∀ ([a : ℛ] [b : ℛ] [c : ℛ] [d : ℛ] ...) (→ (→ℛ a b) (→ℛ c d) ... Boolean)))
+
+(define (ℛ r) r)
 (define (domℛ r) (define o (car r)) (cons o o))
 (define (codℛ r) (define o (cdr r)) (cons o o))
 (define ∘ℛ
