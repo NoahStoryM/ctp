@@ -117,3 +117,25 @@ using @tech{=} or just use it as pseudocode.
 (code:comment2 "Composition and identity morphisms")
 (= F (∘ F (dom F)) (∘ (cod F) F))
 ]
+
+@subsection{Forgetful Functor}
+
+@subsection{Free Functor}
+
+@subsubsection{The Map-Lifting Property}
+
+@subsubsection{Universal Mapping Property}
+
+@section{𝐒𝐞𝐭-Valued Functor}
+
+@subsection{Powerset Functor}
+
+@subsection{Hom Functor}
+
+@subsubsection{Covariant Hom Functor}
+
+@subsubsection{Contravariant Hom Functor}
+
+@subsubsection{Two-Variable Hom Functor}
+
+@subsection{Representable Functor}
