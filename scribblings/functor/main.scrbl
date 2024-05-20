@@ -64,3 +64,51 @@ The following example illustrates how to implement @tech{functors} in Racket:
 
 @bold{Exercise}: Prove that @tech{functors} can be @tech[#:key "compose"]{composed}
 and that this @tech{composition} is @tech{associative}.
+
+@subsection{Category of Categories}
+
+The @tech{category} of @tech{categories}, denoted as @deftech{𝐂𝐚𝐭}, forms a
+higher-level structure where @tech{objects} are @tech{categories} and @tech{morphisms}
+are @tech{functors} between those @tech{categories}.
+
+In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
+@tech{𝐒𝐞𝐭} and @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functions}
+and @tech{functors} as @tech{procedures}. Note that since the task of comparing
+@tech{procedure} functionality can only be done by the programmer, we will avoid
+using @tech{=} or just use it as pseudocode.
+
+@racketblock[
+(code:comment2 "Category of Categories")
+(: dom (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭]) (→ (→𝐂𝐚𝐭 𝒜 ℬ) 𝒜)))
+(: cod (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭]) (→ (→𝐂𝐚𝐭 𝒜 ℬ) ℬ)))
+(: ∘ (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭] [𝒞 : 𝐂𝐚𝐭] ... [𝒵 : 𝐂𝐚𝐭])
+        (→ (→𝐂𝐚𝐭 𝒜 ℬ) (→𝐂𝐚𝐭 ℬ 𝒞) ... (→𝐂𝐚𝐭 𝒜 𝒵))))
+(: ? (pred (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭]) (→𝐂𝐚𝐭 𝒜 ℬ))))
+(: = (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭] [𝒞 : 𝐂𝐚𝐭] [𝒟 : 𝐂𝐚𝐭] ...)
+        (→ (→𝐂𝐚𝐭 𝒜 ℬ) (→𝐂𝐚𝐭 𝒞 𝒟) ... Boolean)))
+
+(code:comment "Categories")
+(: 𝒜 𝐂𝐚𝐭) (code:comment "(case→ (→ 𝒜 𝒜) (∀ ([a : 𝒜] [b : 𝒜]) (→ (→𝒜 a b) (→𝒜 a b))))")
+(: ℬ 𝐂𝐚𝐭) (code:comment "(case→ (→ ℬ ℬ) (∀ ([a : ℬ] [b : ℬ]) (→ (→ℬ a b) (→ℬ a b))))")
+(: 𝒞 𝐂𝐚𝐭) (code:comment "(case→ (→ 𝒞 𝒞) (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 a b) (→𝒞 a b))))")
+(: 𝒟 𝐂𝐚𝐭) (code:comment "(case→ (→ 𝒟 𝒟) (∀ ([a : 𝒟] [b : 𝒟]) (→ (→𝒟 a b) (→𝒟 a b))))")
+
+(code:comment2 "Functors")
+(: F (→𝐂𝐚𝐭 𝒜 ℬ)) (code:comment "(case→ (→ 𝒜 ℬ) (∀ ([a : 𝒜] [b : 𝒜]) (→ (→𝒜 a b) (→ℬ (F a) (F b)))))")
+(: G (→𝐂𝐚𝐭 ℬ 𝒞)) (code:comment "(case→ (→ ℬ 𝒞) (∀ ([a : ℬ] [b : ℬ]) (→ (→ℬ a b) (→𝒞 (G a) (G b)))))")
+(: H (→𝐂𝐚𝐭 𝒞 𝒟)) (code:comment "(case→ (→ 𝒞 𝒟) (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 a b) (→𝒟 (H a) (H b)))))")
+
+(code:comment2 "Existence of composition")
+(= ℬ (cod F) (dom G))
+(= 𝒜 (dom (∘ G F)) (dom F))
+(= 𝒞 (cod (∘ G F)) (cod G))
+
+(code:comment2 "Associativity of composition")
+(= (∘ H G F) (∘ (∘ H G) F) (∘ H (∘ G F)))
+
+(code:comment2 "Existence of identity morphisms")
+(= 𝒜 (dom 𝒜) (cod 𝒜))
+
+(code:comment2 "Composition and identity morphisms")
+(= F (∘ F (dom F)) (∘ (cod F) F))
+]
