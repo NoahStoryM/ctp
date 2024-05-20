@@ -11,7 +11,7 @@
        (define v1 (hash-ref m1 v2))
        (values k2 v1))]
     [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
-(define (? m) (and (hash-equal-always? m) (eq? '* (hash-ref m '* #f))))
+(define (? m) (and (hash? m) (hash-equal-always? m) (eq? '* (hash-ref m '* #f))))
 (define =
   (case-lambda
     [(_) #t]
