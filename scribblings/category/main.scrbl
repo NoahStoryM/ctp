@@ -69,7 +69,7 @@ transformations, operations, or even concrete entities like @tech/refer{numbers}
         @margin-note{
         Note that a @deftech{composable pair} consists of not only a pair of
         @tech{morphisms}, but also the @tech{domains} and @tech{codomains} of them.
-        See more in @hyperlink["https://ncatlab.org/nlab/show/composable%20pair"]{nLab}.
+        See more in @hyperlink["https://ncatlab.org/nlab/show/composable+pair"]{nLab}.
         }
 
         For @tech{composable pairs} @math{(f, g)} and @math{(g, h)} in @math{𝒞},
