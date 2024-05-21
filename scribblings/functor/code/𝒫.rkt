@@ -5,7 +5,7 @@
 (: combine (→ Any Any Any))
 (define combine (λ (v _) v))
 
-(: 𝒫 (→ 𝒮 (𝒫 𝒮)))
+(: 𝒫 (→ 𝒮 𝒮))
 (define (𝒫 s)
   (for/fold ([𝒫s (hash s s)])
             ([(v _) (in-hash s)])
