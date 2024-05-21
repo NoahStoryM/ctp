@@ -146,3 +146,17 @@ using @racket[=] or just use it as pseudocode.
 ]
 
 @subsection{Representable Functor}
+
+@subsection{Cayley Representation}
+
+@racketblock[
+(: 𝒞/- (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 a b) (→𝐂𝐚𝐭 (𝒞/- a) (𝒞/- b)))))
+(define (𝒞/- f)
+  (: 𝒞/f (∀ ([x : 𝒞/a] [y : 𝒞/a]) (→ (→𝒞/a x y) (→𝒞/b (𝒞/f x) (𝒞/f y)))))
+  (define (𝒞/f t)
+    (match t
+      [`((,x) (,y ,g))
+       `((,(∘𝒞 f x)) (,(∘𝒞 f y) ,g))]))
+  𝒞/f)
+]
+
