@@ -130,6 +130,8 @@ using @racket[=] or just use it as pseudocode.
 
 @subsection{Powerset Functor}
 
+@racketfile{functor/code/𝒫.rkt}
+
 @subsection{Hom Functor}
 
 @subsubsection{Covariant Hom Functor}
