@@ -41,7 +41,7 @@
     [(m1 m2) (equal? m1 m2)]
     [(m1 m2 . m*) (and (=𝒮 m1 m2) (apply =𝒮 m2 m*))]))
 
-;; Powerset Functor
+;; Powerset Functors
 (: 𝒫^* (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 b a) (→𝒮 (𝒫^* a) (𝒫^* b)))))
 (define (𝒫^* f)
   (define b (dom𝒮 f))
