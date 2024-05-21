@@ -82,7 +82,7 @@ In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} 
 @tech{𝐒𝐞𝐭} and @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functions}
 and @tech{functors} as @tech{procedures}. Note that since the task of comparing
 @tech{procedure} functionality can only be done by the programmer, we will avoid
-using @tech{=} or just use it as pseudocode.
+using @racket[=] or just use it as pseudocode.
 
 @racketblock[
 (code:comment2 "Category of Categories")
