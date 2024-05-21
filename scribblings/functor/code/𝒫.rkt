@@ -53,9 +53,9 @@
       (define b0
         (for/fold ([res #hash()])
                   ([(eb _) (in-hash b)])
-          (define ea (hash-ref f eb #f))
-          (if (and (hash-has-key? f  eb)
-                   (hash-has-key? a0 ea))
+          (if (and (hash-has-key? f eb)
+                   (let ([ea (hash-ref f eb)])
+                     (hash-has-key? a0 ea)))
               (hash-set res eb eb)
               res)))
       (values a0 b0)))
