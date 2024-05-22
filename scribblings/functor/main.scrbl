@@ -147,6 +147,8 @@ using @racket[=] or just use it as pseudocode.
 
 @subsubsection{Two-Variable Hom Functor}
 
+@image["scribblings/functor/images/Hom.svg"]{[picture] Hom.svg}
+
 @racketblock[
 (: Hom𝒞 (∀ ([b : 𝒞] [a : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→ (→𝒞 a x) (→𝒞 b y)))))
 (define ((Hom𝒞 i j) f) (∘𝒞 j f i))
