@@ -1,6 +1,6 @@
 #lang racket/base
 
-(require ctp racket/match math/matrix)
+(require ctp math/matrix)
 
 ;; Category of Matrices ℳ
 (define (domℳ m) (identity-matrix (matrix-num-cols m)))
