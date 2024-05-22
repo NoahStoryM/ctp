@@ -56,8 +56,8 @@
 
 ;; Product Category ℳ × ℛ
 (define (× . m*) m*)
-(define (dom p) (match p [`(,m ,r) (× (domℳ m) (domℛ r))]))
-(define (cod p) (match p [`(,m ,r) (× (codℳ m) (codℛ r))]))
+(define dom (match-λ [`(,m ,r) (× (domℳ m) (domℛ r))]))
+(define cod (match-λ [`(,m ,r) (× (codℳ m) (codℛ r))]))
 (define (∘ p . p*)
   (define m* (map car  (cons p p*)))
   (define r* (map cadr (cons p p*)))

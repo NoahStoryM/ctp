@@ -10,8 +10,8 @@
     [(m) m]
     [(m1 m2) (match* (m1 m2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
     [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
-(define (? m)
-  (match m
+(define ?
+  (match-λ
     [`(,a . ,b)
      (and (real? a) (real? b)
           (<= a b))]

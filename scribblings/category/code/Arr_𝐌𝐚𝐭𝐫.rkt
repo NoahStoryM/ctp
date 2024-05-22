@@ -40,14 +40,14 @@
 
 
 ;; Arrow Category Arr(ℳ)
-(define (dom s)
-  (match s
+(define dom
+  (match-λ
     [`((,j ,p) (,q ,i))
      (define a (domℳ i))
      (define b (domℳ j))
      `((,b ,p) (,p ,a))]))
-(define (cod s)
-  (match s
+(define cod
+  (match-λ
     [`((,j ,p) (,q ,i))
      (define c (codℳ i))
      (define d (codℳ j))
@@ -61,8 +61,8 @@
          `((,j ,p) (,q ,i)))
         `((,(∘ℳ l j) ,p) (,r ,(∘ℳ k i)))])]
     [(s1 s2 . s*) (apply ∘ (∘ s1 s2) s*)]))
-(define (? s)
-  (match s
+(define ?
+  (match-λ
     [`((,j ,p) (,q ,i))
      (and (?ℳ j) (?ℳ p)
           (?ℳ q) (?ℳ i)

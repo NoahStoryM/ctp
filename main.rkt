@@ -100,14 +100,14 @@
 
 ;; Arrow Category Arr(𝒞)
 (define (Arr dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
-  (define (dom s)
-    (match s
+  (define dom
+    (match-λ
       [`((,j ,p) (,q ,i))
        (define a (dom𝒞 i))
        (define b (dom𝒞 j))
        `((,b ,p) (,p ,a))]))
-  (define (cod s)
-    (match s
+  (define cod
+    (match-λ
       [`((,j ,p) (,q ,i))
        (define c (cod𝒞 i))
        (define d (cod𝒞 j))
@@ -121,8 +121,8 @@
            `((,j ,p) (,q ,i)))
           `((,(∘𝒞 l j) ,p) (,r ,(∘𝒞 k i)))])]
       [(s1 s2 . s*) (apply ∘ (∘ s1 s2) s*)]))
-  (define (? s)
-    (match s
+  (define ?
+    (match-λ
       [`((,j ,p) (,q ,i))
        (and (?𝒞 j) (?𝒞 p)
             (?𝒞 q) (?𝒞 i)
@@ -144,13 +144,13 @@
 
 ;; Slice Category 𝒞/c
 (define ((Sli dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞) c)
-  (define (dom t)
-    (match t
+  (define dom
+    (match-λ
       [`((,p) (,q ,f))
        (define a (dom𝒞 f))
        `((,p) (,p ,a))]))
-  (define (cod t)
-    (match t
+  (define cod
+    (match-λ
       [`((,p) (,q ,f))
        (define b (cod𝒞 f))
        `((,q) (,q ,b))]))
@@ -163,8 +163,8 @@
            `((,p) (,q ,f)))
           `((,p) (,r ,(∘𝒞 g f)))])]
       [(t1 t2 . t*) (apply ∘ (∘ t1 t2) t*)]))
-  (define (? t)
-    (match t
+  (define ?
+    (match-λ
       [`((,p) (,q ,f))
        (and (?𝒞 p)
             (?𝒞 q) (?𝒞 f)
@@ -215,13 +215,13 @@
       (values dom cod ∘ ? =)))
 
 (define ((¬Sli dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞) c)
-  (define (dom t)
-    (match t
+  (define dom
+    (match-λ
       [`((,f ,p) (,q))
        (define a (dom𝒞 f))
        `((,a ,p) (,p))]))
-  (define (cod t)
-    (match t
+  (define cod
+    (match-λ
       [`((,f ,p) (,q))
        (define b (cod𝒞 f))
        `((,b ,q) (,q))]))
@@ -234,8 +234,8 @@
            `((,f ,p) (,q)))
           `((,(∘𝒞 g f) ,p) (,r))])]
       [(t1 t2 . t*) (apply ∘ (∘ t1 t2) t*)]))
-  (define (? t)
-    (match t
+  (define ?
+    (match-λ
       [`((,f ,p) (,q))
        (and (?𝒞 f) (?𝒞 p)
             (?𝒞 q)
