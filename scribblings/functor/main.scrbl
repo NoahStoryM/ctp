@@ -149,6 +149,8 @@ using @racket[=] or just use it as pseudocode.
 
 @subsection{Cayley Representation}
 
+@image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
+
 @racketblock[
 (: 𝒞/- (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 a b) (→𝐂𝐚𝐭 (𝒞/- a) (𝒞/- b)))))
 (define (𝒞/- f)
@@ -159,4 +161,3 @@ using @racket[=] or just use it as pseudocode.
        `((,(∘𝒞 f x)) (,(∘𝒞 f y) ,g))]))
   𝒞/f)
 ]
-
