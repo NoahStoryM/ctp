@@ -6,13 +6,13 @@
 (define (dom m) (define o (car m)) (cons o o))
 (define (cod m) (define o (cdr m)) (cons o o))
 (define ∘
-  (case-lambda
+  (case-λ
     [(m) m]
     [(m1 m2) (match* (m1 m2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
     [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
 (define (? m) (pair? m))
 (define =
-  (case-lambda
+  (case-λ
     [(_) #t]
     [(m1 m2) (equal? m1 m2)]
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))

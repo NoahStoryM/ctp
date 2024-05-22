@@ -1,7 +1,6 @@
 #lang racket/base
 
-(provide (except-out (all-defined-out) main)
-         (rename-out [case-lambda case-λ]))
+(provide (except-out (all-defined-out) main))
 
 (define call (λ (f m) (f m)))
 

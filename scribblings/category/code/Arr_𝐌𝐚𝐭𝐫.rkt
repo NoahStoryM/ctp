@@ -10,7 +10,7 @@
 (define (∘ℳ m . m*) (apply matrix* m m*))
 (define (?ℳ m) (matrix? m))
 (define =ℳ
-  (case-lambda
+  (case-λ
     [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
     [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m2 m*))]))
@@ -53,7 +53,7 @@
      (define d (codℳ j))
      `((,d ,q) (,q ,c))]))
 (define ∘
-  (case-lambda
+  (case-λ
     [(s) s]
     [(s1 s2)
      (match* (s1 s2)
@@ -69,7 +69,7 @@
           (=ℳ (∘ℳ j p) (∘ℳ q i)))]
     [_ #f]))
 (define =
-  (case-lambda
+  (case-λ
     [(_) #t]
     [(s1 s2)
      (match* (s1 s2)

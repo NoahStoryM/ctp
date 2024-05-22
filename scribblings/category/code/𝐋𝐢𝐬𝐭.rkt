@@ -6,7 +6,7 @@
 (define (∘ . m*) (apply append m*))
 (define (? m) (list? m))
 (define =
-  (case-lambda
+  (case-λ
     [(_) #t]
     [(m1 m2) (equal? m1 m2)]
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))

@@ -8,7 +8,7 @@
 (define (∘ℳ m . m*) (apply matrix* m m*))
 (define (?ℳ m) (matrix? m))
 (define =ℳ
-  (case-lambda
+  (case-λ
     [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
     [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m2 m*))]))

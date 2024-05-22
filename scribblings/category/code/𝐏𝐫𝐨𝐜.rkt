@@ -9,7 +9,7 @@
 (define (dom _) *)
 (define (cod _) *)
 (define ∘
-  (case-lambda
+  (case-λ
     [() *]
     [(m) m]
     [m*
@@ -26,7 +26,7 @@
        [else (make-composition procedure* body)])]))
 (define (? m) (procedure? m))
 (define =
-  (case-lambda
+  (case-λ
     [(_) #t]
     [(m1 m2)
      (or (eq? m1 m2)

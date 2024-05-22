@@ -6,7 +6,7 @@
 (define (dom m) (make-immutable-hash (map kv->e (hash-keys   m))))
 (define (cod m) (make-immutable-hash (map kv->e (hash-values m))))
 (define ∘
-  (case-lambda
+  (case-λ
     [(m) m]
     [(m1 m2)
      (for/hash ([(k2 v2) (in-hash m2)])
@@ -15,7 +15,7 @@
     [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
 (define (? m) (and (hash? m) (hash-equal? m) (eq? '* (hash-ref m '* #f))))
 (define =
-  (case-lambda
+  (case-λ
     [(_) #t]
     [(m1 m2) (equal? m1 m2)]
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))

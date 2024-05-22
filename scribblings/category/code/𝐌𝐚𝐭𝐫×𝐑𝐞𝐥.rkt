@@ -10,7 +10,7 @@
 (define (∘ℳ m . m*) (apply matrix* m m*))
 (define (?ℳ m) (matrix? m))
 (define =ℳ
-  (case-lambda
+  (case-λ
     [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
     [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m2 m*))]))
@@ -31,13 +31,13 @@
 (define (domℛ r) (define o (car r)) (cons o o))
 (define (codℛ r) (define o (cdr r)) (cons o o))
 (define ∘ℛ
-  (case-lambda
+  (case-λ
     [(r) r]
     [(r1 r2) (match* (r1 r2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
     [(r1 r2 . r*) (apply ∘ℛ (∘ℛ r1 r2) r*)]))
 (define (?ℛ r) (pair? r))
 (define =ℛ
-  (case-lambda
+  (case-λ
     [(_) #t]
     [(r1 r2) (equal? r1 r2)]
     [(r1 r2 . r*) (and (=ℛ r1 r2) (apply =ℛ r2 r*))]))

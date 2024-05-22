@@ -10,7 +10,7 @@
 (define (∘ m . m*) (apply matrix* m m*))
 (define (? m) (matrix? m))
 (define =
-  (case-lambda
+  (case-λ
     [(_) #t]
     [(m1 m2) (matrix= m1 m2)]
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
