@@ -120,6 +120,13 @@ using @racket[=] or just use it as pseudocode.
 
 @subsection{Forgetful Functor}
 
+@image["scribblings/functor/images/U.svg"]{[picture] U.svg}
+
+@racketblock[
+(: U (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭]) (→ (→𝐂𝐚𝐭 𝒜 ℬ) (→𝐒𝐞𝐭 (U 𝒜) (U ℬ)))))
+(define ((U F) a) (F a))
+]
+
 @subsection{Free Functor}
 
 @subsubsection{The Map-Lifting Property}
@@ -142,7 +149,7 @@ using @racket[=] or just use it as pseudocode.
 
 @racketblock[
 (: Hom𝒞 (∀ ([b : 𝒞] [a : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→ (→𝒞 a x) (→𝒞 b y)))))
-(define (Hom𝒞 i j) (λ (f) (∘𝒞 j f i)))
+(define ((Hom𝒞 i j) f) (∘𝒞 j f i))
 ]
 
 @subsection{Representable Functor}
@@ -161,3 +168,5 @@ using @racket[=] or just use it as pseudocode.
        `((,(∘𝒞 f x)) (,(∘𝒞 f y) ,g))]))
   𝒞/f)
 ]
+
+@image["scribblings/functor/images/Cayley.svg"]{[picture] Cayley.svg}
