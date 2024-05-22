@@ -141,7 +141,7 @@ using @racket[=] or just use it as pseudocode.
 @subsubsection{Two-Variable Hom Functor}
 
 @racketblock[
-(: Hom𝒞 (∀ ([b : 𝒞] [a : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (Values (→𝒞 b a) (→𝒞 x y)) (→ (→𝒞 a x) (→𝒞 b y)))))
+(: Hom𝒞 (∀ ([b : 𝒞] [a : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→ (→𝒞 a x) (→𝒞 b y)))))
 (define (Hom𝒞 i j) (λ (f) (∘𝒞 j f i)))
 ]
 
