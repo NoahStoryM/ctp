@@ -57,13 +57,27 @@ a @tech{covariant functor} from @math{𝒞@^{op}} to @math{𝒟}. See more in
         For any @tech{object} @math{a} in @math{𝒞}, @math{F(id_a) = id@_{F(a)}}.
 
         @image["scribblings/functor/images/F-2.svg"]{[picture] F-2.svg}}
-  @item{Preservation of @tech{composition}
+  @item{Preservation of @tech{composable pairs}
 
         If @math{(f, g)} is a @tech{composable pair} in @math{𝒞}, then @math{(F(f), F(g))}
         is a @tech{composable pair} in @math{𝒟}, and @math{F(g∘f) = F(g)∘F(f)}.
 
         @image["scribblings/functor/images/F-3.svg"]{[picture] F-3.svg}}
   ]
+
+Let @math{𝒞_2} be the collection of @tech{composable pairs} in @math{𝒞}. We can
+describe @math{𝒞} with the following @tech{diagram}:
+
+@image["scribblings/functor/images/cat.svg"]{[picture] cat.svg}
+
+To illustrate the @tech{functor} @math{F}, consider a @tech{function}
+@math{F_2: 𝒞_2 → 𝒟_2}. This allows us to describe @tech{F} with the following
+@tech{diagram}:
+
+@image["scribblings/functor/images/functor.svg"]{[picture] functor.svg}
+
+We can see that each similarly labeled square in the @tech{diagram} is a
+@tech{commutative square}, where @math{F_2(f, g) = (F_1(f), F_1(g))}.
 
 The following example illustrates how to implement @tech{functors} in Racket:
 
@@ -118,6 +132,8 @@ using @racket[=] or just use it as pseudocode.
 (= F (∘ F (dom F)) (∘ (cod F) F))
 ]
 
+@section{Universal Mapping Property}
+
 @subsection{Forgetful Functor}
 
 @image["scribblings/functor/images/U.svg"]{[picture] U.svg}
@@ -129,9 +145,9 @@ using @racket[=] or just use it as pseudocode.
 
 @subsection{Free Functor}
 
-@subsubsection{The Map-Lifting Property}
+@subsection{Free Category}
 
-@subsubsection{Universal Mapping Property}
+@subsubsection{Free Monoid}
 
 @section{𝐒𝐞𝐭-Valued Functor}
 

@@ -71,5 +71,5 @@
 (=ℳ    a  (domℳ    a)  (codℳ    a))
 (=ℛ (F a) (domℛ (F a)) (codℛ (F a)))
 
-;; Preservation of composition
+;; Preservation of composable pairs
 (=ℛ (∘ℛ (F g) (F f)) (F (∘ℳ g f)))

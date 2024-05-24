@@ -136,7 +136,7 @@
 (=𝒮      a  (dom𝒮      a)  (cod𝒮      a))
 (=𝒮 (𝒫_! a) (dom𝒮 (𝒫_! a)) (cod𝒮 (𝒫_! a)))
 
-;; Preservation of composition
+;; Preservation of composable pairs
 (=𝒮 (∘𝒮 (𝒫^* f) (𝒫^* g)) (𝒫^* (∘𝒮 g f)))
 
 (=𝒮 (∘𝒮 (𝒫_* g) (𝒫_* f)) (𝒫_* (∘𝒮 g f)))
