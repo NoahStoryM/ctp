@@ -157,29 +157,25 @@ in the @tech{commutative square}:
 
 @subsection{Discrete Category}
 
-@margin-note{
-A @deftech{function} between two @tech{sets} can be viewed as a @tech{functor}
-between two @tech{discrete categories}.
-}
-
 A @deftech{discrete category} is a @tech{category} where the only @tech{morphisms}
 are the @tech{identity morphisms}. In other words, every @tech{object} is only
 connected to itself via its @tech{identity morphism}. This means that a
 @tech{discrete category} can be viewed as a @tech{category} version of a
 @deftech{set}: the @tech{objects} of the @tech{discrete category} correspond to
-the @deftech{elements} of the @tech{set}.
+the @deftech{elements} of the @tech{set}. A @deftech{function} between two
+@tech{sets} can be viewed as a @tech{functor} between two @tech{discrete categories}.
 
 @subsection{One-Object Category}
 
 @margin-note{
-A @deftech{monoid} (@deftech{monoidal set}) @math{(S, *, e)} is a @tech{set}
-@math{S} equipped with an @tech{associative} binary operation @math{*} and an
-@deftech{identity element} @math{e}.
+A @deftech{monoid} (@deftech{monoidal set}) @math{(S, ∘, s)} is a @tech{set}
+@math{S} equipped with an @tech{associative} binary operation @math{∘} and an
+@deftech{identity element} @math{s}.
 }
 
 A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}.
-In @tech{OOC}, there is only a single @tech{object}, usually denoted as @deftech{*},
-and @tech{morphisms} are defined within the context of @tech{*}.
+In @tech{OOC}, there is only a single @tech{object}, usually denoted as @deftech{∗},
+and @tech{morphisms} are defined within the context of @tech{∗}.
 
 @image["scribblings/category/images/ooc.svg"]{[picture] ooc.svg}
 
@@ -227,7 +223,7 @@ of @deftech{dom}, @deftech{cod}, @deftech{∘}, @deftech{?}, and @deftech{=}
 (representing @tech{domain}, @tech{codomain}, @deftech{compose}, @deftech{predicate}, and @deftech{equal})
 to abstract over @tech{categories}.
 
-We stipulate that @code{(∘)} returns @tech{*}, @code{(∘ m)} returns @code{m},
+We stipulate that @code{(∘)} returns @tech{∗}, @code{(∘ m)} returns @code{m},
 and @code{(= m)} returns @code{#t} in Racket.
 
 @subsection{Category Examples}
@@ -243,7 +239,7 @@ Remember that @tech{objects} serve as @tech{identity morphisms}.
 
 The @tech{category} of natural @tech/refer{numbers}, denoted as @deftech{𝐍𝐚𝐭},
 is an example of @tech{OOC}. In @tech{𝐍𝐚𝐭}, @tech{morphisms} are natural
-@tech/refer{numbers}, and the single @tech{object}, represented by @tech{*}, is
+@tech/refer{numbers}, and the single @tech{object}, represented by @tech{∗}, is
 @code{0}:
 
 @racketfile{category/code/𝐍𝐚𝐭.rkt}
@@ -251,7 +247,7 @@ is an example of @tech{OOC}. In @tech{𝐍𝐚𝐭}, @tech{morphisms} are natura
 @subsubsection{Category of Lists}
 
 The @tech{category} of @tech/refer{lists}, denoted as @deftech{𝐋𝐢𝐬𝐭}, is also an
-@tech{OOC}. In @tech{𝐋𝐢𝐬𝐭}, the single @tech{object} @tech{*} is @racket[null],
+@tech{OOC}. In @tech{𝐋𝐢𝐬𝐭}, the single @tech{object} @tech{∗} is @racket[null],
 and the @tech{morphisms} are @tech/refer{lists}:
 
 @racketfile{category/code/𝐋𝐢𝐬𝐭.rkt}
@@ -297,15 +293,15 @@ A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
 @subsubsection{Category of Pointed Sets}
 
 @margin-note{
-A @deftech{pointed set}, @math{(S, *)}, is a @tech{set} @math{S} equipped with
-a distinguished @tech{element} @math{*}, often called the @deftech{base point}.
+A @deftech{pointed set}, @math{(S, s)}, is a @tech{set} @math{S} equipped with
+a distinguished @tech{element} @math{s}, often called the @deftech{base point}.
 }
 
-The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭*}, where
+The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭∗}, where
 @tech{morphisms} are @tech{functions} preserving the @tech{base points} of
 @tech{pointed sets}:
 
-@racketfile{category/code/𝐒𝐞𝐭*.rkt}
+@racketfile{category/code/𝐒𝐞𝐭∗.rkt}
 
 @subsubsection{Category of Procedures}
 
@@ -752,7 +748,7 @@ every other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@def
 @bold{Exercise}: Prove that if @math{a} and @math{b} are @tech{terminal objects}
 in @math{𝒞}, then @math{a ≅ b}.
 
-@bold{Exercise}: Prove that any @deftech{singleton set} @deftech{{*}} is a
+@bold{Exercise}: Prove that any @deftech{singleton set} @deftech{{∗}} is a
 @tech{terminal object} in @tech{𝐒𝐞𝐭}.
 
 @image["scribblings/category/images/0→1_1.svg"]{[picture] 0→1_1.svg}
@@ -802,7 +798,7 @@ This approach to viewing @tech{elements} requires only the presence of a
 thereby generalizing the concept of @tech{elements} of @tech{sets} in a broader
 and more abstract manner.
 
-@bold{Exercise}: Prove that @tech{𝐒𝐞𝐭*} is the @tech{coslice category} @math{1/𝐒𝐞𝐭}.
+@bold{Exercise}: Prove that @tech{𝐒𝐞𝐭∗} is the @tech{coslice category} @math{1/𝐒𝐞𝐭}.
 
 In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math{f: A → B}.
 Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},

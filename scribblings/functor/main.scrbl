@@ -71,13 +71,18 @@ describe @math{𝒞} with the following @tech{diagram}:
 @image["scribblings/functor/images/cat.svg"]{[picture] cat.svg}
 
 To illustrate the @tech{functor} @math{F}, consider a @tech{function}
-@math{F_2: 𝒞_2 → 𝒟_2}. This allows us to describe @tech{F} with the following
+@math{F_2: 𝒞_2 → 𝒟_2}. This allows us to describe @math{F} with the following
 @tech{diagram}:
 
 @image["scribblings/functor/images/functor.svg"]{[picture] functor.svg}
 
+@margin-note{
+The proof is left as an exercise.
+}
+
 We can see that each similarly labeled square in the @tech{diagram} is a
-@tech{commutative square}, where @math{F_2(f, g) = (F_1(f), F_1(g))}.
+@tech{commutative square}. Additionally, the @tech{commutative squares} show the
+properties of @tech{functors}.
 
 The following example illustrates how to implement @tech{functors} in Racket:
 
@@ -90,7 +95,7 @@ and that this @tech{composition} is @tech{associative}.
 
 The @tech{category} of @tech{categories}, denoted as @deftech{𝐂𝐚𝐭}, forms a
 higher-level structure where @tech{objects} are @tech{categories} and @tech{morphisms}
-are @tech{functors} between those @tech{categories}.
+are @tech{functors} between them.
 
 In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
 @tech{𝐒𝐞𝐭} and @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functions}
@@ -102,9 +107,9 @@ using @racket[=] or just use it as pseudocode.
 (code:comment2 "Category of Categories")
 (: dom (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭]) (→ (→𝐂𝐚𝐭 𝒜 ℬ) 𝒜)))
 (: cod (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭]) (→ (→𝐂𝐚𝐭 𝒜 ℬ) ℬ)))
-(: ∘ (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭] [𝒞 : 𝐂𝐚𝐭] ... [𝒵 : 𝐂𝐚𝐭]) (→ (→𝐂𝐚𝐭 𝒜 ℬ) (→𝐂𝐚𝐭 ℬ 𝒞) ... (→𝐂𝐚𝐭 𝒜 𝒵))))
+(: ∘ (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭] [𝒞 : 𝐂𝐚𝐭] ... [𝒵 : 𝐂𝐚𝐭]) (→ (× (→𝐂𝐚𝐭 𝒜 ℬ) (→𝐂𝐚𝐭 ℬ 𝒞) ...) (→𝐂𝐚𝐭 𝒜 𝒵))))
 (: ? (pred (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭]) (→𝐂𝐚𝐭 𝒜 ℬ))))
-(: = (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭] [𝒞 : 𝐂𝐚𝐭] [𝒟 : 𝐂𝐚𝐭] ...) (→ (→𝐂𝐚𝐭 𝒜 ℬ) (→𝐂𝐚𝐭 𝒞 𝒟) ... Boolean)))
+(: = (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭] [𝒞 : 𝐂𝐚𝐭] [𝒟 : 𝐂𝐚𝐭] ...) (→ (× (→𝐂𝐚𝐭 𝒜 ℬ) (→𝐂𝐚𝐭 𝒞 𝒟) ...) Boolean)))
 
 (code:comment "Categories")
 (: 𝒜 𝐂𝐚𝐭) (code:comment# "(∀ ([a : 𝒜] [b : 𝒜]) (→ (→𝒜 a b) (→𝒜 a b)))")
@@ -132,22 +137,64 @@ using @racket[=] or just use it as pseudocode.
 (= F (∘ F (dom F)) (∘ (cod F) F))
 ]
 
-@section{Universal Mapping Property}
+Although we have given specific @secref{Category_Examples}, these examples are
+just one way to implement the corresponding concepts. We can @racket[define]
+these concepts in other ways as well. These different implementations of the same
+concept can be seen as @tech{isomorphic} @tech{objects} in @tech{𝐂𝐚𝐭}.
+
+Therefore, in the following sections, when we discuss specific @tech{categories},
+their definitions might differ from the Racket code in the previous sections.
+For instance, in the @secref{Category_of_Pointed_Sets}, the @tech{morphisms} of
+@tech{𝐒𝐞𝐭∗} were defined as @racket[hash] tables, but essentially they are mappings
+preserve @tech{base points} and might be defined as @tech{procedures} in later
+sections.
+
+@subsubsection{Category of Monoids}
+
+@margin-note{
+A @deftech{monoidal homomorphism} @math{f: (A, ∘, a) → (B, ·, b)} is a
+@tech{function} that preserves the @tech{monoid} structure:
+@math{f(x∘y) = f(x)·f(y)} and @math{f(a) = b}.
+}
+
+The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where @tech{objects}
+are @tech{monoids} and @tech{morphisms} are @tech{monoidal homomorphisms}.
+@tech{𝐌𝐨𝐧} can be viewed as the @tech{category} of @tech{OOCs}, and
+@tech{monoidal homomorphisms} can be viewed as @tech{functors} between @tech{OOCs}.
 
 @subsection{Forgetful Functor}
 
+A @deftech{forgetful functor} (@deftech{underlying functor}) is a type of
+@tech{functor} that forgets some or all of the structure of the @tech{objects}
+and the structure-preserving @tech{functions} in its @tech{domain} @tech{category}.
+
+For example, if we forget @tech{morphisms} in a @tech{category}, then we get a
+@tech{set}. Extending this idea, we get a @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝐒𝐞𝐭},
+which forgets @math{𝒞_1} and @math{F_1}, but preserves @math{𝒞_0} and @math{F_0}:
+@math{U_0(𝒞) = 𝒞_0} and @math{U_1(F) = F_0}.
+
 @image["scribblings/functor/images/U.svg"]{[picture] U.svg}
+
+Here's how we can @racket[define] @math{U} in Racket:
 
 @racketblock[
 (: U (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭]) (→ (→𝐂𝐚𝐭 𝒜 ℬ) (→𝐒𝐞𝐭 (U 𝒜) (U ℬ)))))
-(define ((U F) a) (F a))
+(define (U F) (λ (a) (F a)))
 ]
+
+@bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐌𝐨𝐧}
+to @tech{𝐒𝐞𝐭∗}.
+
+@bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐒𝐞𝐭∗}
+to @tech{𝐒𝐞𝐭}.
 
 @subsection{Free Functor}
 
-@subsection{Free Category}
-
 @subsubsection{Free Monoid}
+
+@subsubsection{Free Category}
+
+@subsubsection{Universal Mapping Property}
 
 @section{𝐒𝐞𝐭-Valued Functor}
 
@@ -166,25 +213,44 @@ using @racket[=] or just use it as pseudocode.
 @image["scribblings/functor/images/Hom.svg"]{[picture] Hom.svg}
 
 @racketblock[
-(: Hom𝒞 (∀ ([b : 𝒞] [a : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→ (→𝒞 a x) (→𝒞 b y)))))
-(define ((Hom𝒞 i j) f) (∘𝒞 j f i))
+(: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→ (→𝒞 a x) (→𝒞 b y)))))
+(define (Hom𝒞 i j) (λ (f) (∘𝒞 j f i)))
 ]
 
 @subsection{Representable Functor}
 
-@subsection{Cayley Representation}
+@subsection{Cayley's Theory}
+
+Cayley representation of @math{𝒞}:
 
 @image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
 
 @racketblock[
-(: 𝒞/- (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 a b) (→𝐂𝐚𝐭 (𝒞/- a) (𝒞/- b)))))
+(: 𝒞/- (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 a b) (→𝐂𝐚𝐭 𝒞/a 𝒞/b))))
 (define (𝒞/- f)
-  (: 𝒞/f (∀ ([x : 𝒞/a] [y : 𝒞/a]) (→ (→𝒞/a x y) (→𝒞/b (𝒞/f x) (𝒞/f y)))))
-  (define (𝒞/f t)
-    (match t
+  (: 𝒞/f (∀ ([x : 𝒞/a] [y : 𝒞/a]) (→ (→𝒞/a x y) (→𝒞/b (∘𝒞 f x) (∘𝒞 f y)))))
+  (define 𝒞/f
+    (match-λ
       [`((,x) (,y ,g))
        `((,(∘𝒞 f x)) (,(∘𝒞 f y) ,g))]))
   𝒞/f)
 ]
 
-@image["scribblings/functor/images/Cayley.svg"]{[picture] Cayley.svg}
+@image["scribblings/functor/images/H1.svg"]{[picture] H1.svg}
+
+Cayley representation of @math{𝒞^op}:
+
+@image["scribblings/functor/images/-÷𝒞.svg"]{[picture] -÷𝒞.svg}
+
+@racketblock[
+(: -/𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→𝐂𝐚𝐭 a/𝒞 b/𝒞))))
+(define (-/𝒞 f)
+  (: f/𝒞 (∀ ([x : b/𝒞] [y : b/𝒞]) (→ (→b/𝒞 x y) (→a/𝒞 (∘𝒞 x f) (∘𝒞 y f)))))
+  (define f/𝒞
+    (match-λ
+      [`((,g ,x) (,y))
+       `((,g ,(∘𝒞 x f)) (,(∘𝒞 y f)))]))
+  f/𝒞)
+]
+
+@image["scribblings/functor/images/H0.svg"]{[picture] H0.svg}
