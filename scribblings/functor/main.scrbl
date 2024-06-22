@@ -234,7 +234,11 @@ Cayley representation of @math{𝒞}:
       [`((,x) (,y ,z))
        `((,(∘𝒞 g x)) (,(∘𝒞 g y) ,z))]))
   𝒞/g)
+]
 
+@image["scribblings/functor/images/H1.svg"]{[picture] H1.svg}
+
+@racketblock[
 (: U (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝐂𝐚𝐭 𝒞/b 𝒞/c) (→𝐒𝐞𝐭 (H b) (H c)))))
 (define (U 𝒞/g)
   (: Hg (∀ ([a : 𝒞]) (→ (→𝒞 a b) (→𝒞 a c))))
@@ -247,8 +251,6 @@ Cayley representation of @math{𝒞}:
 (: H (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐒𝐞𝐭 (H b) (H c)))))
 (define (H g) (λ (f) (∘𝒞 g f)))
 ]
-
-@image["scribblings/functor/images/H1.svg"]{[picture] H1.svg}
 
 Cayley representation of @math{𝒞^op}:
 
@@ -263,7 +265,11 @@ Cayley representation of @math{𝒞^op}:
       [`((,z ,x) (,y))
        `((,z ,(∘𝒞 x f)) (,(∘𝒞 y f)))]))
   f/𝒞)
+]
 
+@image["scribblings/functor/images/H0.svg"]{[picture] H0.svg}
+
+@racketblock[
 (: U (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝐂𝐚𝐭 b/𝒞 a/𝒞) (→𝐒𝐞𝐭 (H b) (H a)))))
 (define (U f/𝒞)
   (: Hf (∀ ([c : 𝒞]) (→ (→𝒞 b c) (→𝒞 a c))))
@@ -276,5 +282,3 @@ Cayley representation of @math{𝒞^op}:
 (: H (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐒𝐞𝐭 (H b) (H a)))))
 (define (H f) (λ (g) (∘𝒞 g f)))
 ]
-
-@image["scribblings/functor/images/H0.svg"]{[picture] H0.svg}
