@@ -226,14 +226,26 @@ Cayley representation of @math{𝒞}:
 @image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
 
 @racketblock[
-(: 𝒞/- (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 a b) (→𝐂𝐚𝐭 𝒞/a 𝒞/b))))
-(define (𝒞/- f)
-  (: 𝒞/f (∀ ([x : 𝒞/a] [y : 𝒞/a]) (→ (→𝒞/a x y) (→𝒞/b (∘𝒞 f x) (∘𝒞 f y)))))
-  (define 𝒞/f
+(: 𝒞/- (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐂𝐚𝐭 𝒞/b 𝒞/c))))
+(define (𝒞/- g)
+  (: 𝒞/g (∀ ([x : 𝒞/b] [y : 𝒞/b]) (→ (→𝒞/b x y) (→𝒞/c (∘𝒞 f x) (∘𝒞 f y)))))
+  (define 𝒞/g
     (match-λ
-      [`((,x) (,y ,g))
-       `((,(∘𝒞 f x)) (,(∘𝒞 f y) ,g))]))
-  𝒞/f)
+      [`((,x) (,y ,z))
+       `((,(∘𝒞 g x)) (,(∘𝒞 g y) ,z))]))
+  𝒞/g)
+
+(: U (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝐂𝐚𝐭 𝒞/b 𝒞/c) (→𝐒𝐞𝐭 (H b) (H c)))))
+(define (U 𝒞/g)
+  (: Hg (∀ ([a : 𝒞]) (→ (→𝒞 a b) (→𝒞 a c))))
+  (define (Hg f)
+    (define b (cod𝒞 f))
+    (define g (caar (𝒞/g `((,b) (,b ,b)))))
+    (∘𝒞 g f))
+  Hg)
+
+(: H (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐒𝐞𝐭 (H b) (H c)))))
+(define (H g) (λ (f) (∘𝒞 g f)))
 ]
 
 @image["scribblings/functor/images/H1.svg"]{[picture] H1.svg}
@@ -243,14 +255,26 @@ Cayley representation of @math{𝒞^op}:
 @image["scribblings/functor/images/-÷𝒞.svg"]{[picture] -÷𝒞.svg}
 
 @racketblock[
-(: -/𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→𝐂𝐚𝐭 a/𝒞 b/𝒞))))
+(: -/𝒞 (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐂𝐚𝐭 b/𝒞 a/𝒞))))
 (define (-/𝒞 f)
   (: f/𝒞 (∀ ([x : b/𝒞] [y : b/𝒞]) (→ (→b/𝒞 x y) (→a/𝒞 (∘𝒞 x f) (∘𝒞 y f)))))
   (define f/𝒞
     (match-λ
-      [`((,g ,x) (,y))
-       `((,g ,(∘𝒞 x f)) (,(∘𝒞 y f)))]))
+      [`((,z ,x) (,y))
+       `((,z ,(∘𝒞 x f)) (,(∘𝒞 y f)))]))
   f/𝒞)
+
+(: U (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝐂𝐚𝐭 b/𝒞 a/𝒞) (→𝐒𝐞𝐭 (H b) (H a)))))
+(define (U f/𝒞)
+  (: Hf (∀ ([c : 𝒞]) (→ (→𝒞 b c) (→𝒞 a c))))
+  (define (Hf g)
+    (define b (dom𝒞 g))
+    (define f (caadr (f/𝒞 `((,b ,b) (,b)))))
+    (∘𝒞 g f))
+  Hf)
+
+(: H (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐒𝐞𝐭 (H b) (H a)))))
+(define (H f) (λ (g) (∘𝒞 g f)))
 ]
 
 @image["scribblings/functor/images/H0.svg"]{[picture] H0.svg}
