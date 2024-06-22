@@ -223,6 +223,11 @@ to @tech{𝐒𝐞𝐭}.
 
 Cayley representation of @math{𝒞}:
 
+@racketblock[
+(: H (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐒𝐞𝐭 (H b) (H c)))))
+(define (H g) (λ (f) (∘𝒞 g f)))
+]
+
 @image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
 
 @racketblock[
@@ -247,12 +252,24 @@ Cayley representation of @math{𝒞}:
     (define g (caar (𝒞/g `((,b) (,b ,b)))))
     (∘𝒞 g f))
   Hg)
+]
 
-(: H (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐒𝐞𝐭 (H b) (H c)))))
-(define (H g) (λ (f) (∘𝒞 g f)))
+@racketblock[
+(: G (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝐒𝐞𝐭 (H b) (H c)) (→𝒞 b c))))
+(define (G Hg)
+  (define Hb (dom𝐒𝐞𝐭 Hg))
+  (define f (get-an-element Hb))
+  (define b (cod𝒞 f))
+  (define g (Hg b))
+  g)
 ]
 
 Cayley representation of @math{𝒞^op}:
+
+@racketblock[
+(: H (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐒𝐞𝐭 (H b) (H a)))))
+(define (H f) (λ (g) (∘𝒞 g f)))
+]
 
 @image["scribblings/functor/images/-÷𝒞.svg"]{[picture] -÷𝒞.svg}
 
@@ -278,7 +295,14 @@ Cayley representation of @math{𝒞^op}:
     (define f (caadr (f/𝒞 `((,b ,b) (,b)))))
     (∘𝒞 g f))
   Hf)
+]
 
-(: H (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐒𝐞𝐭 (H b) (H a)))))
-(define (H f) (λ (g) (∘𝒞 g f)))
+@racketblock[
+(: G (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝐒𝐞𝐭 (H b) (H a)) (→𝒞 a b))))
+(define (G Hf)
+  (define Hb (dom𝐒𝐞𝐭 Hf))
+  (define g (get-an-element Hb))
+  (define b (dom𝒞 g))
+  (define f (Hf b))
+  f)
 ]
