@@ -16,7 +16,7 @@
      (define procedure**
        (for/list ([m (in-list m*)])
          (cond
-           [(eq? * m) '()]
+           [(eq? ∗ m) '()]
            [(composition? m) (composition-procedure* m)]
            [else (list m)])))
      (define procedure* (apply append procedure**))
