@@ -189,14 +189,6 @@ to @tech{𝐒𝐞𝐭∗}.
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐒𝐞𝐭∗}
 to @tech{𝐒𝐞𝐭}.
 
-@subsection{Free Functor}
-
-@subsubsection{Free Monoid}
-
-@subsubsection{Free Category}
-
-@subsubsection{Universal Mapping Property}
-
 @section{𝐒𝐞𝐭-Valued Functor}
 
 @subsection{Powerset Functor}
