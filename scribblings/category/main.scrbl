@@ -549,6 +549,51 @@ For an @tech{endomorphism} @math{f}, it is an @deftech{idempotent} iff @math{f =
 
 @image["scribblings/category/images/idem.svg"]{[picture] idem.svg}
 
+@subsection{Monomorphism and Epimorphism}
+
+A @deftech{monomorphism} (often abbreviated as @deftech{mono}, or called be @deftech{monic})
+@math{m} is defined as a @deftech{left cancellable} @tech{morphism}. This property
+means that for all @tech{composable pairs} @math{(a, m)} and @math{(b, m)}, if
+@math{m∘a = m∘b}, then it must follow that @math{a = b}. Such a condition ensures
+that no two different @tech{morphisms}, when @tech[#:key "compose"]{composed} with
+@math{m} on the right, result in the same @tech{morphism}, thereby establishing
+the @deftech{injective} nature of @math{m}.
+
+Conversely, an @deftech{epimorphism} (often referred to as @deftech{epi}, or called be @deftech{epic})
+@math{e} is defined as a @deftech{right cancellable} @tech{morphism}. This property
+means that for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)}, if
+@math{x∘e = y∘e}, then it must follow that @math{x = y}. Such a condition ensures
+that @math{e} reaches all possible endpoints in the target @tech{object} without
+duplication, thereby establishing the @deftech{surjective} nature of @math{e}.
+
+@bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an
+@tech{epimorphism} in @math{𝒞^op}.
+
+@margin-note{
+In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms} from
+two distinct classes @math{ℰ} and @math{ℳ}, rather than exclusively representing
+@tech{monomorphisms} and @tech{epimorphisms}. Additionally, @deftech{⤖} indicates
+@tech{morphisms} from @math{ℰ ∩ ℳ}.
+}
+
+For a @tech{morphism} @math{f: a → b}, the notation changes based on its properties:
+@math{f: a ↣ b} if @math{f} is @tech{monic}, @math{f: a ↠ b} if @math{f} is @tech{epic},
+and @math{f: a ⤖ b} if @math{f} is both @tech{monic} and @tech{epic}.
+
+@bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
+if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
+@tech{monomorphism}.
+
+@bold{Exercise}: Prove that if @math{g∘f} is a @tech{monomorphism}, then @math{f}
+is also a @tech{monomorphism}.
+
+@bold{Exercise}: Prove that for @tech{epimorphisms} @math{f} and @math{g},
+if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also an
+@tech{epimorphism}.
+
+@bold{Exercise}: Prove that if @math{g∘f} is an @tech{epimorphism}, then @math{g}
+is also an @tech{epimorphism}.
+
 @subsection{Split Morphism}
 
 @margin-note{
@@ -645,6 +690,9 @@ Examples in @tech{𝐑𝐞𝐥}:
 @bold{Exercise}: Prove that for @tech{isomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{–1}∘g@^{–1}}.
 
+@bold{Exercise}: Prove that a @tech{morphism} is @tech{invertible} iff it is both
+@tech{monic} and @tech{split epic} (or is both @tech{split monic} and @tech{epic}).
+
 @subsubsection{Automorphism}
 
 An @deftech{automorphism} is an @tech{invertible} @tech{endomorphism}.
@@ -674,54 +722,6 @@ A @deftech{group} is a @tech{monoid} in which every @tech{element} has a unique
 }
 
 A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
-
-@subsection{Monomorphism and Epimorphism}
-
-A @deftech{monomorphism} (often abbreviated as @deftech{mono}, or called be @deftech{monic})
-@math{m} is defined as a @deftech{left cancellable} @tech{morphism}. This property
-means that for all @tech{composable pairs} @math{(a, m)} and @math{(b, m)}, if
-@math{m∘a = m∘b}, then it must follow that @math{a = b}. Such a condition ensures
-that no two different @tech{morphisms}, when @tech[#:key "compose"]{composed} with
-@math{m} on the right, result in the same @tech{morphism}, thereby establishing
-the @deftech{injective} nature of @math{m}.
-
-Conversely, an @deftech{epimorphism} (often referred to as @deftech{epi}, or called be @deftech{epic})
-@math{e} is defined as a @deftech{right cancellable} @tech{morphism}. This property
-means that for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)}, if
-@math{x∘e = y∘e}, then it must follow that @math{x = y}. Such a condition ensures
-that @math{e} reaches all possible endpoints in the target @tech{object} without
-duplication, thereby establishing the @deftech{surjective} nature of @math{e}.
-
-@margin-note{
-In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms} from
-two distinct classes @math{ℰ} and @math{ℳ}, rather than exclusively representing
-@tech{monomorphisms} and @tech{epimorphisms}. Additionally, @deftech{⤖} indicates
-@tech{morphisms} from @math{ℰ ∩ ℳ}.
-}
-
-For a @tech{morphism} @math{f: a → b}, the notation changes based on its properties:
-@math{f: a ↣ b} if @math{f} is @tech{monic}, @math{f: a ↠ b} if @math{f} is @tech{epic},
-and @math{f: a ⤖ b} if @math{f} is both @tech{monic} and @tech{epic}.
-
-@bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
-if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
-@tech{monomorphism}.
-
-@bold{Exercise}: Prove that if @math{g∘f} is a @tech{monomorphism}, then @math{f}
-is also a @tech{monomorphism}.
-
-@bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an
-@tech{epimorphism} in @math{𝒞^op}.
-
-@bold{Exercise}: Prove that for @tech{epimorphisms} @math{f} and @math{g},
-if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also an
-@tech{epimorphism}.
-
-@bold{Exercise}: Prove that if @math{g∘f} is an @tech{epimorphism}, then @math{g}
-is also an @tech{epimorphism}.
-
-@bold{Exercise}: Prove that a @tech{morphism} is @tech{invertible} iff it is both
-@tech{monic} and @tech{split epic} (or is both @tech{split monic} and @tech{epic}).
 
 @subsection{Initial Object and Terminal Object}
 
