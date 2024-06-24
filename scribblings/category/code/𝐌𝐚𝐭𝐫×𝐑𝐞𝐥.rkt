@@ -16,15 +16,15 @@
     [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m2 m*))]))
 
 ;; Objects in ℳ
-(define a0 (identity-matrix 1))
-(define b0 (identity-matrix 2))
-(define c0 (identity-matrix 3))
-(define d0 (identity-matrix 4))
+(define a0 (identity-matrix 1)) (?ℳ a0)
+(define b0 (identity-matrix 2)) (?ℳ b0)
+(define c0 (identity-matrix 3)) (?ℳ c0)
+(define d0 (identity-matrix 4)) (?ℳ d0)
 
 ;; Morphisms in ℳ
-(define f0 (build-matrix 2 1 rand))
-(define g0 (build-matrix 3 2 rand))
-(define h0 (build-matrix 4 3 rand))
+(define f0 (build-matrix 2 1 rand)) (?ℳ f0)
+(define g0 (build-matrix 3 2 rand)) (?ℳ g0)
+(define h0 (build-matrix 4 3 rand)) (?ℳ h0)
 
 
 ;; Category of Binary Relations ℛ
@@ -43,15 +43,15 @@
     [(r1 r2 . r*) (and (=ℛ r1 r2) (apply =ℛ r2 r*))]))
 
 ;; Objects in ℛ
-(define a1 '(a . a))
-(define b1 '(b . b))
-(define c1 '(c . c))
-(define d1 '(d . d))
+(define a1 '(a . a)) (?ℛ a1)
+(define b1 '(b . b)) (?ℛ b1)
+(define c1 '(c . c)) (?ℛ c1)
+(define d1 '(d . d)) (?ℛ d1)
 
 ;; Morphisms in ℛ
-(define f1 '(a . b))
-(define g1 '(b . c))
-(define h1 '(c . d))
+(define f1 '(a . b)) (?ℛ f1)
+(define g1 '(b . c)) (?ℛ g1)
+(define h1 '(c . d)) (?ℛ h1)
 
 
 ;; Product Category ℳ × ℛ
@@ -72,15 +72,15 @@
   (and (apply =ℳ m*) (apply =ℛ r*)))
 
 ;; Objects in ℳ × ℛ
-(define a (× a0 a1)) ; (a0, a1)
-(define b (× b0 b1)) ; (b0, b1)
-(define c (× c0 c1)) ; (c0, c1)
-(define d (× d0 d1)) ; (d0, d1)
+(define a (× a0 a1)) (? a) ; (a0, a1)
+(define b (× b0 b1)) (? b) ; (b0, b1)
+(define c (× c0 c1)) (? c) ; (c0, c1)
+(define d (× d0 d1)) (? d) ; (d0, d1)
 
 ;; Morphisms in ℳ × ℛ
-(define f (× f0 f1)) ; (f0, f1)
-(define g (× g0 g1)) ; (g0, g1)
-(define h (× h0 h1)) ; (h0, h1)
+(define f (× f0 f1)) (? f) ; (f0, f1)
+(define g (× g0 g1)) (? g) ; (g0, g1)
+(define h (× h0 h1)) (? h) ; (h0, h1)
 
 ;; Existence of composition
 (= b (cod f) (dom g))

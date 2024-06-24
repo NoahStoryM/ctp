@@ -18,15 +18,15 @@
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 ;; Objects
-(define a '(a . a))
-(define b '(b . b))
-(define c '(c . c))
-(define d '(d . d))
+(define a '(a . a)) (? a)
+(define b '(b . b)) (? b)
+(define c '(c . c)) (? c)
+(define d '(d . d)) (? d)
 
 ;; Morphisms
-(define f '(a . b))
-(define g '(b . c))
-(define h '(c . d))
+(define f '(a . b)) (? f)
+(define g '(b . c)) (? g)
+(define h '(c . d)) (? h)
 
 ;; Existence of composition
 (= b (cod f) (dom g))

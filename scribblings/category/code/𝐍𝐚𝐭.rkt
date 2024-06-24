@@ -7,12 +7,12 @@
 (define (? m) (exact-nonnegative-integer? m))
 
 ;; Objects
-(define ∗ (∘))
+(define ∗ (∘)) (? ∗)
 
 ;; Morphisms
-(define f 1)
-(define g 2)
-(define h 3)
+(define f 1) (? f)
+(define g 2) (? g)
+(define h 3) (? h)
 
 ;; Existence of composition
 (= ∗ (cod f) (dom g))

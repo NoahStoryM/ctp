@@ -14,24 +14,25 @@
     [(m1 m2 . m*) (and (=ℳ m1 m2) (apply =ℳ m2 m*))]))
 
 ;; Objects in ℳ
-(define a1 (identity-matrix 1))
-(define b1 (identity-matrix 2))
-(define c1 (identity-matrix 3))
-(define d1 (identity-matrix 4))
+(define a1 (identity-matrix 1)) (?ℳ a1)
+(define b1 (identity-matrix 2)) (?ℳ b1)
+(define c1 (identity-matrix 3)) (?ℳ c1)
+(define d1 (identity-matrix 4)) (?ℳ d1)
 
-(define m  (identity-matrix 5))
+(define m  (identity-matrix 5)) (?ℳ m)
 
 ;; Morphisms in ℳ
 (define (rand m n) (random 1 9))
 
-(define p1 (build-matrix 5 1 rand))
-(define q1 (build-matrix 5 2 rand))
-(define r1 (build-matrix 5 3 rand))
-(define s1 (build-matrix 5 4 rand))
+(define f1 (build-matrix 2 1 rand)) (?ℳ f1)
+(define g1 (build-matrix 3 2 rand)) (?ℳ g1)
+(define h1 (build-matrix 4 3 rand)) (?ℳ h1)
 
-(define f1 (build-matrix 2 1 rand))
-(define g1 (build-matrix 3 2 rand))
-(define h1 (build-matrix 4 3 rand))
+(define s1 (build-matrix 5 4 rand)) (?ℳ s1)
+
+(define r1 (∘ℳ s1 h1))       (?ℳ r1)
+(define q1 (∘ℳ s1 h1 g1))    (?ℳ q1)
+(define p1 (∘ℳ s1 h1 g1 f1)) (?ℳ p1)
 
 
 ;; Slice Category ℳ/m
@@ -39,15 +40,15 @@
   ((Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
 
 ;; Objects in ℳ/m
-(define a `((,p1) (,p1 ,a1))) ; p1
-(define b `((,q1) (,q1 ,b1))) ; q1
-(define c `((,r1) (,r1 ,c1))) ; r1
-(define d `((,s1) (,s1 ,d1))) ; s1
+(define a `((,p1) (,p1 ,a1))) (? a) ; p1
+(define b `((,q1) (,q1 ,b1))) (? b) ; q1
+(define c `((,r1) (,r1 ,c1))) (? c) ; r1
+(define d `((,s1) (,s1 ,d1))) (? d) ; s1
 
 ;; Morphisms in ℳ/m
-(define f `((,p1) (,q1 ,f1))) ; f1
-(define g `((,q1) (,r1 ,g1))) ; g1
-(define h `((,r1) (,s1 ,h1))) ; h1
+(define f `((,p1) (,q1 ,f1))) (? f) ; f1
+(define g `((,q1) (,r1 ,g1))) (? g) ; g1
+(define h `((,r1) (,s1 ,h1))) (? h) ; h1
 
 ;; Existence of composition
 (= b (cod f) (dom g))

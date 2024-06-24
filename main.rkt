@@ -124,9 +124,10 @@
   (define ?
     (match-λ
       [`((,j ,p) (,q ,i))
-       (and (?𝒞 j) (?𝒞 p)
-            (?𝒞 q) (?𝒞 i)
-            (=𝒞 (∘𝒞 j p) (∘𝒞 q i)))]
+       #:when
+       (and (?𝒞 j) (?𝒞 p) (=𝒞 (dom𝒞 j) (cod𝒞 p))
+            (?𝒞 q) (?𝒞 i) (=𝒞 (dom𝒞 q) (cod𝒞 i)))
+       (=𝒞 (∘𝒞 j p) (∘𝒞 q i))]
       [_ #f]))
   (define =
     (case-λ
@@ -166,10 +167,11 @@
   (define ?
     (match-λ
       [`((,p) (,q ,f))
+       #:when
        (and (?𝒞 p)
-            (?𝒞 q) (?𝒞 f)
-            (=𝒞 c (cod𝒞 p) (cod𝒞 q))
-            (=𝒞 p (∘𝒞 q f)))]
+            (?𝒞 q) (?𝒞 f) (=𝒞 (dom𝒞 q) (cod𝒞 f))
+            (=𝒞 c (cod𝒞 p) (cod𝒞 q)))
+       (=𝒞 p (∘𝒞 q f))]
       [_ #f]))
   (define =
     (case-λ
@@ -237,10 +239,11 @@
   (define ?
     (match-λ
       [`((,f ,p) (,q))
-       (and (?𝒞 f) (?𝒞 p)
+       #:when
+       (and (?𝒞 f) (?𝒞 p) (=𝒞 (dom𝒞 f) (cod𝒞 p))
             (?𝒞 q)
-            (=𝒞 (dom𝒞 p) (dom𝒞 q) c)
-            (=𝒞 (∘𝒞 f p) q))]
+            (=𝒞 (dom𝒞 p) (dom𝒞 q) c))
+       (=𝒞 (∘𝒞 f p) q)]
       [_ #f]))
   (define =
     (case-λ

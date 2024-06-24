@@ -21,15 +21,15 @@
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 ;; Objects
-(define a #hash([a . a] [  0  .   0 ] [  1  .   1 ] [  2  .   2 ]))
-(define b #hash([b . b] [ |0| .  |0|] [ |1| .  |1|] [ |2| .  |2|]))
-(define c #hash([c . c] [ "0" .  "0"] [ "1" .  "1"] [ "2" .  "2"]))
-(define d #hash([d . d] [#"0" . #"0"] [#"1" . #"1"] [#"2" . #"2"]))
+(define a #hash([a . a] [  0  .   0 ] [  1  .   1 ] [  2  .   2 ])) (? a)
+(define b #hash([b . b] [ |0| .  |0|] [ |1| .  |1|] [ |2| .  |2|])) (? b)
+(define c #hash([c . c] [ "0" .  "0"] [ "1" .  "1"] [ "2" .  "2"])) (? c)
+(define d #hash([d . d] [#"0" . #"0"] [#"1" . #"1"] [#"2" . #"2"])) (? d)
 
 ;; Morphisms
-(define f #hash([a . b] [  0  .  |0|] [  1  .  |1|] [  2  .  |2|]))
-(define g #hash([b . c] [ |0| .  "0"] [ |1| .  "1"] [ |2| .  "2"]))
-(define h #hash([c . d] [ "0" . #"0"] [ "1" . #"1"] [ "2" . #"2"]))
+(define f #hash([a . b] [  0  .  |0|] [  1  .  |1|] [  2  .  |2|])) (? f)
+(define g #hash([b . c] [ |0| .  "0"] [ |1| .  "1"] [ |2| .  "2"])) (? g)
+(define h #hash([c . d] [ "0" . #"0"] [ "1" . #"1"] [ "2" . #"2"])) (? h)
 
 ;; Existence of composition
 (= b (cod f) (dom g))

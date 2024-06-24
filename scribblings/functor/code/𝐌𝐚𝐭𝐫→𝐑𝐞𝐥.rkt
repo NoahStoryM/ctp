@@ -50,18 +50,13 @@
 (define (F m) (cons (matrix-num-cols m) (matrix-num-rows m)))
 
 ;; Objects in ℳ
-(: a ℳ)
-(: b ℳ)
-(: c ℳ)
-(define a (identity-matrix 1))
-(define b (identity-matrix 2))
-(define c (identity-matrix 3))
+(: a ℳ) (define a (identity-matrix 1)) (?ℳ a) (?ℛ (F a))
+(: b ℳ) (define b (identity-matrix 2)) (?ℳ b) (?ℛ (F b))
+(: c ℳ) (define c (identity-matrix 3)) (?ℳ c) (?ℛ (F c))
 
 ;; Morphisms in ℳ
-(: f (→ℳ a b))
-(: g (→ℳ b c))
-(define f (build-matrix 2 1 rand))
-(define g (build-matrix 3 2 rand))
+(: f (→ℳ a b)) (define f (build-matrix 2 1 rand)) (?ℳ f) (?ℛ (F f))
+(: g (→ℳ b c)) (define g (build-matrix 3 2 rand)) (?ℳ g) (?ℛ (F g))
 
 ;; Preservation of domain and codomain
 (=ℛ (F a) (domℛ (F f)) (F (domℳ f)))

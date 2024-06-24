@@ -8,12 +8,12 @@
 (define (= m . m*) (apply string=? m m*))
 
 ;; Objects
-(define ∗ (∘))
+(define ∗ (∘)) (? ∗)
 
 ;; Morphisms
-(define f "123")
-(define g "abc")
-(define h "ABC")
+(define f "123") (? f)
+(define g "abc") (? g)
+(define h "ABC") (? h)
 
 ;; Existence of composition
 (= ∗ (cod f) (dom g))

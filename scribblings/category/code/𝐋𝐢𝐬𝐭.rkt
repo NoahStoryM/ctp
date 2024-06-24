@@ -12,12 +12,12 @@
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 ;; Objects
-(define ∗ (∘))
+(define ∗ (∘)) (? ∗)
 
 ;; Morphisms
-(define f '(1 2 3))
-(define g '(a b c))
-(define h '(A B C))
+(define f '(1 2 3)) (? f)
+(define g '(a b c)) (? g)
+(define h '(A B C)) (? h)
 
 ;; Existence of composition
 (= ∗ (cod f) (dom g))

@@ -37,12 +37,12 @@
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 ;; Objects
-(define ∗ values)
+(define ∗ values) (? ∗)
 
 ;; Morphisms
-(define f number->string)
-(define g string->list)
-(define h list->vector)
+(define f number->string) (? f)
+(define g string->list)   (? g)
+(define h list->vector)   (? h)
 
 ;; Existence of composition
 (= ∗ (cod f) (dom g))

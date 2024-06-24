@@ -422,17 +422,17 @@ but @tech{commutative squares}.
 
 @bold{Exercise}: Prove that @math{(k∘i, l∘j) = (k, l)∘(i, j)}.
 
-In the following code, we create an @tech{arrow category} to which @tech{𝐌𝐚𝐭𝐫}
+In the following code, we create an @tech{arrow category} to which @tech{𝐑𝐞𝐥}
 gives rise:
 
-@racketfile{category/code/Arr_𝐌𝐚𝐭𝐫.rkt}
+@racketfile{category/code/Arr_𝐑𝐞𝐥.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{Arr} so that we can @racket[define]
-the @tech{arrow category} @math{Arr(ℳ)} in this way:
+the @tech{arrow category} @math{Arr(ℛ)} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
-  (Arr domℳ codℳ ∘ℳ ?ℳ =ℳ))
+  (Arr domℛ codℛ ∘ℛ ?ℛ =ℛ))
 ]
 
 @subsubsection{(Co)Slice Category}
@@ -471,7 +471,8 @@ not @tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
 @image["scribblings/category/images/over-cat_3.svg"]{[picture] over-cat_3.svg}
 
 @bold{Exercise}: Referencing the example code of the @tech{arrow category}
-@math{Arr(ℳ)}, implement the @tech{slice category} @math{ℳ/m}.
+@math{Arr(ℛ)}, implement a @tech{slice category} @math{ℳ/m} to which @tech{𝐌𝐚𝐭𝐫}
+gives rise.
 
 @bold{Exercise}: Try to @racket[define] @deftech{Sli} so that we can @racket[define]
 the @tech{slice category} @math{ℳ/m} in this way:
@@ -514,7 +515,8 @@ not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 @image["scribblings/category/images/under-cat_3.svg"]{[picture] under-cat_3.svg}
 
 @bold{Exercise}: Referencing the example code of the @tech{arrow category}
-@math{Arr(ℳ)}, implement the @tech{coslice category} @math{m/ℳ}.
+@math{Arr(ℳ)}, implement a @tech{coslice category} @math{m/ℳ} to which @tech{𝐌𝐚𝐭𝐫}
+gives rise.
 
 @bold{Exercise}: Try to @racket[define] @deftech{¬Sli} so that we can @racket[define]
 the @tech{coslice category} @math{m/ℳ} in this way:
@@ -580,13 +582,13 @@ Examples in @tech{𝐌𝐚𝐭𝐫}:
 
 @racketblock[
 (code:comment2 "Objects")
-(define a (identity-matrix 2))
-(define b (identity-matrix 3))
+(define a (identity-matrix 2)) (? a)
+(define b (identity-matrix 3)) (? b)
 
 (code:comment2 "Morphisms")
-(define f (matrix [[1 -2] [0 1] [0 0]])) (code:comment "split monomorphism")
-(define g (matrix [[1 2 0] [0 1 0]]))    (code:comment "split epimorphism")
-(define f∘g (∘ f g))                     (code:comment "split idempotent")
+(define f (matrix [[1 -2] [0 1] [0 0]])) (? f)   (code:comment "split monomorphism")
+(define g (matrix [[1 2 0] [0 1 0]]))    (? g)   (code:comment "split epimorphism")
+(define f∘g (∘ f g))                     (? f∘g) (code:comment "split idempotent")
 
 (code:comment2 "g∘f is the identity morphism of a")
 (= a (∘ g f))
@@ -624,12 +626,12 @@ Examples in @tech{𝐑𝐞𝐥}:
 
 @racketblock[
 (code:comment2 "Objects")
-(define a '(a . a))
-(define b '(b . b))
+(define a '(a . a)) (? a)
+(define b '(b . b)) (? b)
 
 (code:comment2 "Morphisms")
-(define f '(a . b))
-(define g '(b . a))
+(define f '(a . b)) (? f)
+(define g '(b . a)) (? g)
 
 (code:comment2 "a ≅ b")
 (= a (∘ g f))
