@@ -61,6 +61,9 @@
      (match* (s1 s2)
        [(`((,l ,q) (,r ,k))
          `((,j ,p) (,q ,i)))
+        #:when
+        (and (=ℛ (domℛ l) (codℛ j))
+             (=ℛ (domℛ k) (codℛ i)))
         `((,(∘ℛ l j) ,p) (,r ,(∘ℛ k i)))])]
     [(s1 s2 . s*) (apply ∘ (∘ s1 s2) s*)]))
 (define ?

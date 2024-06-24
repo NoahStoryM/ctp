@@ -119,6 +119,9 @@
        (match* (s1 s2)
          [(`((,l ,q) (,r ,k))
            `((,j ,p) (,q ,i)))
+          #:when
+          (and (=𝒞 (dom𝒞 l) (cod𝒞 j))
+               (=𝒞 (dom𝒞 k) (cod𝒞 i)))
           `((,(∘𝒞 l j) ,p) (,r ,(∘𝒞 k i)))])]
       [(s1 s2 . s*) (apply ∘ (∘ s1 s2) s*)]))
   (define ?
@@ -162,6 +165,7 @@
        (match* (t1 t2)
          [(`((,q) (,r ,g))
            `((,p) (,q ,f)))
+          #:when (=𝒞 (dom𝒞 g) (cod𝒞 f))
           `((,p) (,r ,(∘𝒞 g f)))])]
       [(t1 t2 . t*) (apply ∘ (∘ t1 t2) t*)]))
   (define ?
@@ -234,6 +238,7 @@
        (match* (t1 t2)
          [(`((,g ,q) (,r))
            `((,f ,p) (,q)))
+          #:when (=𝒞 (dom𝒞 g) (cod𝒞 f))
           `((,(∘𝒞 g f) ,p) (,r))])]
       [(t1 t2 . t*) (apply ∘ (∘ t1 t2) t*)]))
   (define ?
