@@ -164,9 +164,10 @@ are @tech{monoids} and @tech{morphisms} are @tech{monoidal homomorphisms}.
 
 @subsection{Forgetful Functor}
 
-A @deftech{forgetful functor} (@deftech{underlying functor}) is a type of
-@tech{functor} that forgets some or all of the structure of the @tech{objects}
-and the structure-preserving @tech{functions} in its @tech{domain} @tech{category}.
+A @deftech{forgetful functor} (@deftech{underlying functor} or @deftech{stripping functor})
+is a type of @tech{functor} that forgets some or all of the structure of the
+@tech{objects} and the structure-preserving @tech{functions} in its @tech{domain}
+@tech{category}.
 
 For example, if we forget @tech{morphisms} in a @tech{category}, then we get a
 @tech{set}. Extending this idea, we get a @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝐒𝐞𝐭},
