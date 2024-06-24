@@ -63,7 +63,7 @@
   (define r* (map cadr (cons p p*)))
   (× (apply ∘ℳ m*) (apply ∘ℛ r*)))
 (define (? p)
-  (and (list? p) (= 2 (length p))
+  (and (list? p) (eqv? 2 (length p))
        (?ℳ (car  p))
        (?ℛ (cadr p))))
 (define (= . p*)

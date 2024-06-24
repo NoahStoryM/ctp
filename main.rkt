@@ -87,7 +87,7 @@
 (define (?× . ?*)
   (define n (length ?*))
   (define (? . m*)
-    (and (list? m*) (= n (length m*))
+    (and (list? m*) (eqv? n (length m*))
          (andmap call ?* m*)))
   ?)
 (define (=× . =*)
