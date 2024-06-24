@@ -515,7 +515,7 @@ not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 @image["scribblings/category/images/under-cat_3.svg"]{[picture] under-cat_3.svg}
 
 @bold{Exercise}: Referencing the example code of the @tech{arrow category}
-@math{Arr(ℳ)}, implement a @tech{coslice category} @math{m/ℳ} to which @tech{𝐌𝐚𝐭𝐫}
+@math{Arr(ℛ)}, implement a @tech{coslice category} @math{m/ℳ} to which @tech{𝐌𝐚𝐭𝐫}
 gives rise.
 
 @bold{Exercise}: Try to @racket[define] @deftech{¬Sli} so that we can @racket[define]
