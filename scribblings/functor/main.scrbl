@@ -299,3 +299,21 @@ Cayley representation of @math{𝒞^op}:
   (define f (Hf b))
   f)
 ]
+
+@subsection{Action}
+
+@subsubsection{Monoid Action}
+
+@subsubsection{Finite State Machine}
+
+@subsubsection{Typed Action}
+
+@section{Full and Faithful}
+
+@section{Equivalence}
+
+@subsection{Quotient Category}
+
+@subsubsection{Congruence Class}
+
+@subsubsection{Factorization of Functors}
