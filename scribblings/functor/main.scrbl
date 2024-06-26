@@ -145,7 +145,7 @@ concept can be seen as @tech{isomorphic} @tech{objects} in @tech{𝐂𝐚𝐭}.
 Therefore, in the following sections, when we discuss specific @tech{categories},
 their definitions might differ from the Racket code in the previous sections.
 For instance, in the @secref{Category_of_Pointed_Sets}, the @tech{morphisms} of
-@tech{𝐒𝐞𝐭∗} were defined as @racket[hash] tables, but essentially they are mappings
+@tech{𝐒𝐞𝐭∗} are defined as @racket[hash] tables, but essentially they are mappings
 preserve @tech{base points} and might be defined as @tech{procedures} in later
 sections.
 
