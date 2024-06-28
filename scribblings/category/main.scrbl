@@ -2,7 +2,9 @@
 
 @(require (for-label ctp
                      (except-in racket/base =)
+                     racket/hash
                      racket/match
+                     racket/set
                      math/matrix)
           "../ctp-utils.rkt")
 
