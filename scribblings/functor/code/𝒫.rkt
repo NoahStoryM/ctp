@@ -15,7 +15,7 @@
     (define 𝒫s0 (𝒫 s0))
     (hash-union 𝒫s 𝒫s0 #:combine/key combine/key)))
 
-(define (map->function m s)
+(define (mapping->function m s)
   (define v*
     (let ([v1* (list->set (hash-values m))])
       (for/fold ([v* (set)])
@@ -78,7 +78,7 @@
                      (hash-has-key? b0 y)))
               (hash-set a0 x x) a0)))
       (values b0 a0)))
-  (define f^∗ (map->function m (𝒫 a)))
+  (define f^∗ (mapping->function m (𝒫 a)))
   f^∗)
 
 (: 𝒫_∗ (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫_∗ a) (𝒫_∗ b)))))
@@ -93,7 +93,7 @@
           (define y (hash-ref f x))
           (hash-set b0 y y)))
       (values a0 b0)))
-  (define f_∗ (map->function m (𝒫 b)))
+  (define f_∗ (mapping->function m (𝒫 b)))
   f_∗)
 
 (: 𝒫_! (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫_! a) (𝒫_! b)))))
@@ -110,7 +110,7 @@
           (if (equal? a0 (hash-union a0 a1 #:combine/key combine/key))
               (hash-set b0 y y) b0)))
       (values a0 b0)))
-  (define f_! (map->function m (𝒫 b)))
+  (define f_! (mapping->function m (𝒫 b)))
   f_!)
 
 ;; Objects
