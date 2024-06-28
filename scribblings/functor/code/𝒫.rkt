@@ -1,22 +1,30 @@
 #lang typed/racket/base/no-check
 
-(require racket/hash)
+(require racket/hash racket/set)
 
-(: combine (→ Any Any Any))
-(define combine (λ (v _) v))
+(: combine/key (→ Any Any Any Any))
+(define (combine/key k v1 v2) (if (eq? k '_) (set-union v1 v2) v1))
+
+(: e 𝒮) (define e (hash '_ (set)))
 
 (: 𝒫 (→ 𝒮 𝒮))
 (define (𝒫 s)
-  (for/fold ([𝒫s (hash s s)])
-            ([(v _) (in-hash s)])
+  (for/fold ([𝒫s (hash e e s s '_ (set))])
+            ([(v _) (in-hash (hash-remove s '_))])
     (define s0 (hash-remove s v))
     (define 𝒫s0 (𝒫 s0))
-    (hash-union 𝒫s 𝒫s0 #:combine combine)))
+    (hash-union 𝒫s 𝒫s0 #:combine/key combine/key)))
 
-(: Δ (∀ (a) (→ a (Pair a a))))
-(define (Δ a) (cons a a))
+(define (map->function m s)
+  (define v*
+    (let ([v1* (list->set (hash-values m))])
+      (for/fold ([v* (set)])
+                ([(v _) (in-hash (hash-remove s '_))])
+        (if (set-member? v1* v) v* (set-add v* v)))))
+  (define f (hash-set m '_ v*))
+  f)
 
-;; Category of Pointed Sets 𝒮
+;; Category of Sets 𝒮
 (: 𝒮 (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→𝒮 a b))))
 (: dom𝒮 (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) a)))
 (: cod𝒮 (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) b)))
@@ -24,17 +32,31 @@
 (: ?𝒮 (pred (∀ ([a : 𝒮] [b : 𝒮]) (→𝒮 a b))))
 (: =𝒮 (∀ ([a : 𝒮] [b : 𝒮] [c : 𝒮] [d : 𝒮] ...) (→ (× (→𝒮 a b) (→𝒮 c d) ...) Boolean)))
 (define (𝒮 m) m)
-(define (dom𝒮 m) (make-immutable-hash (map Δ (hash-keys   m))))
-(define (cod𝒮 m) (make-immutable-hash (map Δ (hash-values m))))
+(define (dom𝒮 m)
+  (for/hash ([(a b) (in-hash m)])
+    (values a (if (eq? a '_) (set) a))))
+(define (cod𝒮 m)
+  (hash-union
+   (for/hash ([b (in-set (hash-ref m '_))]) (values b b))
+   (for/hash ([(a b) (in-hash (hash-remove m '_))]) (values b b))
+   e))
 (define ∘𝒮
   (case-λ
     [(m) m]
     [(m1 m2)
-     (for/hash ([(k2 v2) (in-hash m2)])
-       (define v1 (hash-ref m1 v2))
-       (values k2 v1))]
+     (define m
+       (for/hash ([(k2 v2) (in-hash (hash-remove m2 '_))])
+         (define v1 (hash-ref m1 v2))
+         (values k2 v1)))
+     (define v*
+       (let ([v1* (list->set (hash-values m))])
+         (for/fold ([v* (set)])
+                   ([v2 (in-set (hash-ref m2 '_))])
+           (define v1 (hash-ref m1 v2))
+           (if (set-member? v1* v1) v* (set-add v* v1)))))
+     (hash-set m '_ (set-union v* (hash-ref m1 '_)))]
     [(m1 m2 . m*) (apply ∘𝒮 (∘𝒮 m1 m2) m*)]))
-(define (?𝒮 m) (hash? m))
+(define (?𝒮 m) (and (hash? m) (set? (hash-ref m '_ #f))))
 (define =𝒮
   (case-λ
     [(_) #t]
@@ -42,72 +64,63 @@
     [(m1 m2 . m*) (and (=𝒮 m1 m2) (apply =𝒮 m2 m*))]))
 
 ;; Powerset Functors
-(: 𝒫^∗ (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 b a) (→𝒮 (𝒫^∗ a) (𝒫^∗ b)))))
+(: 𝒫^∗ (∀ ([b : 𝒮] [a : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫^∗ b) (𝒫^∗ a)))))
 (define (𝒫^∗ f)
-  (define b (dom𝒮 f))
-  (define a (cod𝒮 f))
-  (define 𝒫b (𝒫 b))
-  (define 𝒫a (𝒫 a))
-  (define f^∗
-    (for/hash ([(a0 _) (in-hash 𝒫a)])
-      (define b0
-        (for/fold ([res #hash()])
-                  ([(eb _) (in-hash b)])
-          (if (and (hash-has-key? f eb)
-                   (let ([ea (hash-ref f eb)])
-                     (hash-has-key? a0 ea)))
-              (hash-set res eb eb)
-              res)))
-      (values a0 b0)))
+  (define a (dom𝒮 f))
+  (define b (cod𝒮 f))
+  (define m
+    (for/hash ([(bs _) (in-hash (hash-remove (𝒫 b) '_))])
+      (define as
+        (for/fold ([as e])
+                  ([(ea _) (in-hash (hash-remove a '_))])
+          (if (and (hash-has-key? f ea)
+                   (let ([eb (hash-ref f ea)])
+                     (hash-has-key? bs eb)))
+              (hash-set as ea ea) as)))
+      (values bs as)))
+  (define f^∗ (map->function m (𝒫 a)))
   f^∗)
 
 (: 𝒫_∗ (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫_∗ a) (𝒫_∗ b)))))
 (define (𝒫_∗ f)
   (define a (dom𝒮 f))
   (define b (cod𝒮 f))
-  (define 𝒫a (𝒫 a))
-  (define 𝒫b (𝒫 b))
-  (define f_∗
-    (for/hash ([(a0 _) (in-hash 𝒫a)])
-      (define b0
-        (for/fold ([res #hash()])
-                  ([(ea _) (in-hash a0)])
+  (define m
+    (for/hash ([(as _) (in-hash (hash-remove (𝒫 a) '_))])
+      (define bs
+        (for/fold ([bs e])
+                  ([(ea _) (in-hash (hash-remove as '_))])
           (define eb (hash-ref f ea))
-          (hash-set res eb eb)))
-      (values a0 b0)))
+          (hash-set bs eb eb)))
+      (values as bs)))
+  (define f_∗ (map->function m (𝒫 b)))
   f_∗)
 
 (: 𝒫_! (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫_! a) (𝒫_! b)))))
 (define (𝒫_! f)
   (define a (dom𝒮 f))
   (define b (cod𝒮 f))
-  (define 𝒫a (𝒫 a))
-  (define 𝒫b (𝒫 b))
-  (define f_!
-    (for/hash ([(a0 _) (in-hash 𝒫a)])
-      (define b0
-        (for/fold ([res #hash()])
-                  ([(ea _) (in-hash a0)])
-          (define eb (hash-ref f ea))
-          (for/fold ([res (hash-set res eb eb)])
-                    ([(ea _) (in-hash a)])
-            (define eb (hash-ref f ea))
-            (if (or (hash-has-key? a0 ea)
-                    (not (hash-has-key? res eb)))
-                res (hash-remove res eb)))))
-      (values a0 b0)))
+  (define f^∗ (𝒫^∗ f))
+  (define m
+    (for/hash ([(as _) (in-hash (hash-remove (𝒫 a) '_))])
+      (define bs
+        (for/fold ([bs e])
+                  ([(eb _) (in-hash (hash-remove b '_))])
+          (define ebs (hash eb eb '_ (set)))
+          (if (equal? as (hash-union as (hash-ref f^∗ ebs) #:combine/key combine/key))
+              (hash-set bs eb eb) bs)))
+      (values as bs)))
+  (define f_! (map->function m (𝒫 b)))
   f_!)
 
 ;; Objects
-(: a 𝒮) (define a #hash([a . a] [  0  .   0 ] [  1  .   1 ] [  2  .   2 ])) (?𝒮 a)
-(: b 𝒮) (define b #hash([b . b] [ |0| .  |0|] [ |1| .  |1|] [ |2| .  |2|])) (?𝒮 b)
-(: c 𝒮) (define c #hash([c . c] [ "0" .  "0"] [ "1" .  "1"] [ "2" .  "2"])) (?𝒮 c)
-(: d 𝒮) (define d #hash([d . d] [#"0" . #"0"] [#"1" . #"1"] [#"2" . #"2"])) (?𝒮 d)
+(: a 𝒮) (define a (hash 'a0 'a0 'a1 'a1 '_ (set))) (?𝒮 a)
+(: b 𝒮) (define b (hash 'b0 'b0 'b1 'b1 '_ (set))) (?𝒮 b)
+(: c 𝒮) (define c (hash 'c0 'c0 'c1 'c1 '_ (set))) (?𝒮 c)
 
 ;; Morphisms
-(: f (→𝒮 a b)) (define f #hash([a . b] [  0  .  |0|] [  1  .  |1|] [  2  .  |2|])) (?𝒮 f)
-(: g (→𝒮 b c)) (define g #hash([b . c] [ |0| .  "0"] [ |1| .  "1"] [ |2| .  "2"])) (?𝒮 g)
-(: h (→𝒮 c d)) (define h #hash([c . d] [ "0" . #"0"] [ "1" . #"1"] [ "2" . #"2"])) (?𝒮 h)
+(: f (→𝒮 a b)) (define f (hash 'a0 'b0 'a1 'b0 '_ (set 'b1))) (?𝒮 f)
+(: g (→𝒮 b c)) (define g (hash 'b0 'c0 'b1 'c0 '_ (set 'c1))) (?𝒮 g)
 
 ;; Preservation of domain and codomain
 (=𝒮 (𝒫^∗ b) (dom𝒮 (𝒫^∗ f)) (𝒫^∗ (cod𝒮 f)))
@@ -135,3 +148,5 @@
 (=𝒮 (∘𝒮 (𝒫_∗ g) (𝒫_∗ f)) (𝒫_∗ (∘𝒮 g f)))
 
 (=𝒮 (∘𝒮 (𝒫_! g) (𝒫_! f)) (𝒫_! (∘𝒮 g f)))
+
+(pretty-print (list (∘𝒮 (𝒫_! g) (𝒫_! f)) (𝒫_! (∘𝒮 g f))))

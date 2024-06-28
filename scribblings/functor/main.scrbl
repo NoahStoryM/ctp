@@ -193,6 +193,12 @@ to @tech{𝐒𝐞𝐭}.
 
 @subsection{Powerset Functor}
 
+@image["scribblings/functor/images/f.svg"]{[picture] f.svg}
+
+@image["scribblings/functor/images/f^∗.svg"]{[picture] f^∗.svg}
+@image["scribblings/functor/images/f_∗.svg"]{[picture] f_∗.svg}
+@image["scribblings/functor/images/f_!.svg"]{[picture] f_!.svg}
+
 @racketfile{functor/code/𝒫.rkt}
 
 @subsection{Hom Functor}
