@@ -2,6 +2,8 @@
 
 (require racket/hash racket/set)
 
+(define (function->mapping f) (hash-remove f '_))
+
 ;; Category of Pointed Sets
 (define (dom m)
   (for/hash ([(a b) (in-hash m)])
@@ -9,14 +11,14 @@
 (define (cod m)
   (hash-union
    (for/hash ([b (in-set (hash-ref m '_))]) (values b b))
-   (for/hash ([(a b) (in-hash (hash-remove m '_))]) (values b b))
+   (for/hash ([(a b) (in-hash (function->mapping m))]) (values b b))
    (hash '_ (set))))
 (define ∘
   (case-λ
     [(m) m]
     [(m1 m2)
      (define m
-       (for/hash ([(k2 v2) (in-hash (hash-remove m2 '_))])
+       (for/hash ([(k2 v2) (in-hash (function->mapping m2))])
          (define v1 (hash-ref m1 v2))
          (values k2 v1)))
      (define v*

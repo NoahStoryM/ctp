@@ -10,16 +10,17 @@
 (: 𝒫 (→ 𝒮 𝒮))
 (define (𝒫 s)
   (for/fold ([𝒫s (hash e e s s '_ (set))])
-            ([(v _) (in-hash (hash-remove s '_))])
+            ([(v _) (in-hash (function->mapping s))])
     (define s0 (hash-remove s v))
     (define 𝒫s0 (𝒫 s0))
     (hash-union 𝒫s 𝒫s0 #:combine/key combine/key)))
 
+(define (function->mapping f) (hash-remove f '_))
 (define (mapping->function m s)
   (define v*
     (let ([v1* (list->set (hash-values m))])
       (for/fold ([v* (set)])
-                ([(v _) (in-hash (hash-remove s '_))])
+                ([(v _) (in-hash (function->mapping s))])
         (if (set-member? v1* v) v* (set-add v* v)))))
   (define f (hash-set m '_ v*))
   f)
@@ -38,14 +39,14 @@
 (define (cod𝒮 m)
   (hash-union
    (for/hash ([b (in-set (hash-ref m '_))]) (values b b))
-   (for/hash ([(a b) (in-hash (hash-remove m '_))]) (values b b))
+   (for/hash ([(a b) (in-hash (function->mapping m))]) (values b b))
    e))
 (define ∘𝒮
   (case-λ
     [(m) m]
     [(m1 m2)
      (define m
-       (for/hash ([(k2 v2) (in-hash (hash-remove m2 '_))])
+       (for/hash ([(k2 v2) (in-hash (function->mapping m2))])
          (define v1 (hash-ref m1 v2))
          (values k2 v1)))
      (define v*
@@ -69,10 +70,10 @@
   (define a (dom𝒮 f))
   (define b (cod𝒮 f))
   (define m
-    (for/hash ([(b0 _) (in-hash (hash-remove (𝒫 b) '_))])
+    (for/hash ([(b0 _) (in-hash (function->mapping (𝒫 b)))])
       (define a0
         (for/fold ([a0 e])
-                  ([(x _) (in-hash (hash-remove a '_))])
+                  ([(x _) (in-hash (function->mapping a))])
           (if (and (hash-has-key? f x)
                    (let ([y (hash-ref f x)])
                      (hash-has-key? b0 y)))
@@ -86,10 +87,10 @@
   (define a (dom𝒮 f))
   (define b (cod𝒮 f))
   (define m
-    (for/hash ([(a0 _) (in-hash (hash-remove (𝒫 a) '_))])
+    (for/hash ([(a0 _) (in-hash (function->mapping (𝒫 a)))])
       (define b0
         (for/fold ([b0 e])
-                  ([(x _) (in-hash (hash-remove a0 '_))])
+                  ([(x _) (in-hash (function->mapping a0))])
           (define y (hash-ref f x))
           (hash-set b0 y y)))
       (values a0 b0)))
@@ -102,10 +103,10 @@
   (define b (cod𝒮 f))
   (define f^∗ (𝒫^∗ f))
   (define m
-    (for/hash ([(a0 _) (in-hash (hash-remove (𝒫 a) '_))])
+    (for/hash ([(a0 _) (in-hash (function->mapping (𝒫 a)))])
       (define b0
         (for/fold ([b0 e])
-                  ([(y _) (in-hash (hash-remove b '_))])
+                  ([(y _) (in-hash (function->mapping b))])
           (define a1 (hash-ref f^∗ (hash y y '_ (set))))
           (if (equal? a0 (hash-union a0 a1 #:combine/key combine/key))
               (hash-set b0 y y) b0)))
