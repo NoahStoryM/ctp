@@ -114,13 +114,13 @@
   f_!)
 
 ;; Objects
-(: a 𝒮) (define a (hash 'a0 'a0 'a1 'a1 '_ (set))) (?𝒮 a)
-(: b 𝒮) (define b (hash 'b0 'b0 'b1 'b1 '_ (set))) (?𝒮 b)
-(: c 𝒮) (define c (hash 'c0 'c0 'c1 'c1 '_ (set))) (?𝒮 c)
+(: a 𝒮) (define a (hash 'x0 'x0 'x1 'x1 '_ (set))) (?𝒮 a)
+(: b 𝒮) (define b (hash 'y0 'y0 'y1 'y1 '_ (set))) (?𝒮 b)
+(: c 𝒮) (define c (hash 'z0 'z0 'z1 'z1 '_ (set))) (?𝒮 c)
 
 ;; Morphisms
-(: f (→𝒮 a b)) (define f (hash 'a0 'b0 'a1 'b0 '_ (set 'b1))) (?𝒮 f)
-(: g (→𝒮 b c)) (define g (hash 'b0 'c0 'b1 'c0 '_ (set 'c1))) (?𝒮 g)
+(: f (→𝒮 a b)) (define f (hash 'x0 'y0 'x1 'y0 '_ (set 'y1))) (?𝒮 f)
+(: g (→𝒮 b c)) (define g (hash 'y0 'z0 'y1 'z0 '_ (set 'z1))) (?𝒮 g)
 
 ;; Preservation of domain and codomain
 (=𝒮 (𝒫^∗ b) (dom𝒮 (𝒫^∗ f)) (𝒫^∗ (cod𝒮 f)))
