@@ -30,7 +30,7 @@
 (: cod𝒮 (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) b)))
 (: ∘𝒮 (∀ ([a : 𝒮] [b : 𝒮] [c : 𝒮] ... [z : 𝒮]) (→ (× (→𝒮 a b) (→𝒮 b c) ...) (→𝒮 a z))))
 (: ?𝒮 (pred (∀ ([a : 𝒮] [b : 𝒮]) (→𝒮 a b))))
-(: =𝒮 (∀ ([a : 𝒮] [b : 𝒮] [c : 𝒮] [d : 𝒮] ...) (→ (× (→𝒮 a b) (→𝒮 c d) ...) Boolean)))
+(: =𝒮 (∀ ([a : 𝒮] [b : 𝒮] [c : 𝒮] [d : 𝒮] ...) (→ (× (→𝒮 a b) (→𝒮 c d) ...) Boolxn)))
 (define (𝒮 m) m)
 (define (dom𝒮 m)
   (for/hash ([(a b) (in-hash m)])
@@ -69,15 +69,15 @@
   (define a (dom𝒮 f))
   (define b (cod𝒮 f))
   (define m
-    (for/hash ([(bs _) (in-hash (hash-remove (𝒫 b) '_))])
-      (define as
-        (for/fold ([as e])
-                  ([(ea _) (in-hash (hash-remove a '_))])
-          (if (and (hash-has-key? f ea)
-                   (let ([eb (hash-ref f ea)])
-                     (hash-has-key? bs eb)))
-              (hash-set as ea ea) as)))
-      (values bs as)))
+    (for/hash ([(b0 _) (in-hash (hash-remove (𝒫 b) '_))])
+      (define a0
+        (for/fold ([a0 e])
+                  ([(x _) (in-hash (hash-remove a '_))])
+          (if (and (hash-has-key? f x)
+                   (let ([y (hash-ref f x)])
+                     (hash-has-key? b0 y)))
+              (hash-set a0 x x) a0)))
+      (values b0 a0)))
   (define f^∗ (map->function m (𝒫 a)))
   f^∗)
 
@@ -86,13 +86,13 @@
   (define a (dom𝒮 f))
   (define b (cod𝒮 f))
   (define m
-    (for/hash ([(as _) (in-hash (hash-remove (𝒫 a) '_))])
-      (define bs
-        (for/fold ([bs e])
-                  ([(ea _) (in-hash (hash-remove as '_))])
-          (define eb (hash-ref f ea))
-          (hash-set bs eb eb)))
-      (values as bs)))
+    (for/hash ([(a0 _) (in-hash (hash-remove (𝒫 a) '_))])
+      (define b0
+        (for/fold ([b0 e])
+                  ([(x _) (in-hash (hash-remove a0 '_))])
+          (define y (hash-ref f x))
+          (hash-set b0 y y)))
+      (values a0 b0)))
   (define f_∗ (map->function m (𝒫 b)))
   f_∗)
 
@@ -102,14 +102,14 @@
   (define b (cod𝒮 f))
   (define f^∗ (𝒫^∗ f))
   (define m
-    (for/hash ([(as _) (in-hash (hash-remove (𝒫 a) '_))])
-      (define bs
-        (for/fold ([bs e])
-                  ([(eb _) (in-hash (hash-remove b '_))])
-          (define ebs (hash eb eb '_ (set)))
-          (if (equal? as (hash-union as (hash-ref f^∗ ebs) #:combine/key combine/key))
-              (hash-set bs eb eb) bs)))
-      (values as bs)))
+    (for/hash ([(a0 _) (in-hash (hash-remove (𝒫 a) '_))])
+      (define b0
+        (for/fold ([b0 e])
+                  ([(y _) (in-hash (hash-remove b '_))])
+          (define a1 (hash-ref f^∗ (hash y y '_ (set))))
+          (if (equal? a0 (hash-union a0 a1 #:combine/key combine/key))
+              (hash-set b0 y y) b0)))
+      (values a0 b0)))
   (define f_! (map->function m (𝒫 b)))
   f_!)
 
