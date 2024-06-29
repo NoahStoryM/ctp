@@ -188,6 +188,10 @@ on @tech{monoids}.
 
 @subsection{Subcategory}
 
+@margin-note{
+A @deftech{subset} can be viewed as a @tech{subcategory} of a @tech{discrete category}.
+}
+
 Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
 of @math{𝒞} iff:
 
