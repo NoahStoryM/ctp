@@ -5,15 +5,18 @@
 (: combine/key (→ Any Any Any Any))
 (define (combine/key k v1 v2) (if (eq? k '_) (set-union v1 v2) v1))
 
-(: e 𝒮) (define e (hash '_ (set)))
+(:  e 𝒮) (define  e (hash '_ (set)))
+(: 𝒫e 𝒮) (define 𝒫e (hash-set e e e))
 
 (: 𝒫 (→ 𝒮 𝒮))
 (define (𝒫 s)
-  (for/fold ([𝒫s (hash e e s s '_ (set))])
-            ([(v _) (in-hash (function->mapping s))])
-    (define s0 (hash-remove s v))
-    (define 𝒫s0 (𝒫 s0))
-    (hash-union 𝒫s 𝒫s0 #:combine/key combine/key)))
+  (if (=𝒮 s e)
+      𝒫e
+      (for/fold ([𝒫s (hash-set 𝒫e s s)])
+                ([(v _) (in-hash (function->mapping s))])
+        (define s0 (hash-remove s v))
+        (define 𝒫s0 (𝒫 s0))
+        (hash-union 𝒫s 𝒫s0 #:combine/key combine/key))))
 
 (define (function->mapping f) (hash-remove f '_))
 (define (mapping->function m s)
