@@ -233,7 +233,7 @@ Let @math{a_0} be a @tech{subset} of @math{a}, @math{b_0} be a @tech{subset} of
         @image["scribblings/functor/images/f_!.svg"]{[picture] f_!.svg}}
 
   @;; TODO
-  @;; @item{@deftech{exceptional image functor}
+  @;; @item{@deftech{exceptional inverse image functor}
   @;;       @math{𝒫@^{!}: 𝐒𝐞𝐭@^{op} → 𝐒𝐞𝐭}
   @;;
   @;;       @math{𝒫@^{!}(f) = f@^{!}}, where @math{f@^{!}(b_0) := {x ∈ a | }}.
