@@ -203,6 +203,7 @@ The @deftech{powerset} of a @tech{set} @math{s}, denoted as @math{𝒫(s)}, is t
 @tech{set} of all @tech{subsets} of @math{s}.
 
 For a @tech{function} @math{f: a → b} between @tech{sets}:
+
 @image["scribblings/functor/images/f.svg"]{[picture] f.svg}
 
 Let @math{a_0} be a @tech{subset} of @math{a}, @math{b_0} be a @tech{subset} of
