@@ -192,13 +192,55 @@ to @tech{𝐒𝐞𝐭}.
 
 @section{𝐒𝐞𝐭-Valued Functor}
 
+A @deftech{𝐒𝐞𝐭-valued functor} on @math{𝒞} is a @tech{functor} from @math{𝒞} to
+@tech{𝐒𝐞𝐭}. @tech{𝐒𝐞𝐭-valued functors} have theoretical importance due to the
+@tech{Yoneda Lemma}, a fundamental result in @tech{category theory} that will be
+introduced in detail in the next chapter.
+
 @subsection{Powerset Functor}
 
+The @deftech{powerset} of a @tech{set} @math{s}, denoted as @math{𝒫(s)}, is the
+@tech{set} of all @tech{subsets} of @math{s}.
+
+For a @tech{function} @math{f: a → b} between @tech{sets}:
 @image["scribblings/functor/images/f.svg"]{[picture] f.svg}
 
-@image["scribblings/functor/images/f^∗.svg"]{[picture] f^∗.svg}
-@image["scribblings/functor/images/f_∗.svg"]{[picture] f_∗.svg}
-@image["scribblings/functor/images/f_!.svg"]{[picture] f_!.svg}
+Let @math{a_0} be a @tech{subset} of @math{a}, @math{b_0} be a @tech{subset} of
+@math{b}. There are different @deftech{powerset functors}:
+
+@itemlist[
+  #:style 'ordered
+  @item{@deftech{direct image functor} (@deftech{existential image functor})
+        @math{𝒫@_{∗}: 𝐒𝐞𝐭 → 𝐒𝐞𝐭}
+
+        @math{𝒫@_{∗}(f) = f@_{∗}}, where @math{f@_{∗}(a_0) = {f(x) | x ∈ a_0}}.
+
+        @image["scribblings/functor/images/f_∗.svg"]{[picture] f_∗.svg}}
+
+  @item{@deftech{preimage functor} (@deftech{inverse image functor})
+        @math{𝒫@^{∗}: 𝐒𝐞𝐭@^{op} → 𝐒𝐞𝐭}
+
+        @math{𝒫@^{∗}(f) = f@^{∗}}, where @math{f@^{∗}(b_0) = {x ∈ a | f(x) ∈ b_0}}.
+
+        @image["scribblings/functor/images/f^∗.svg"]{[picture] f^∗.svg}}
+
+  @item{@deftech{universal image functor}
+        @math{𝒫@_{!}: 𝐒𝐞𝐭 → 𝐒𝐞𝐭}
+
+        @math{𝒫@_{!}(f) = f@_{!}}, where @math{f@_{!}(a_0) = {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
+
+        @image["scribblings/functor/images/f_!.svg"]{[picture] f_!.svg}}
+
+  @;; TODO
+  @;; @item{@deftech{exceptional image functor}
+  @;;       @math{𝒫@^{!}: 𝐒𝐞𝐭@^{op} → 𝐒𝐞𝐭}
+  @;;
+  @;;       @math{𝒫@^{!}(f) = f@^{!}}, where @math{f@^{!}(b_0) = {x ∈ a | }}.
+  @;;
+  @;;       @image["scribblings/functor/images/f^!.svg"]{[picture] f^!.svg}}
+  ]
+
+Here’s how we can @racket[define] the @tech{powerset functors} in Racket:
 
 @racketfile{functor/code/𝒫.rkt}
 

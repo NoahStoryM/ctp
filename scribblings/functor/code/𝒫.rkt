@@ -65,6 +65,21 @@
     [(m1 m2 . m*) (and (=𝒮 m1 m2) (apply =𝒮 m2 m*))]))
 
 ;; Powerset Functors
+(: 𝒫_∗ (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫_∗ a) (𝒫_∗ b)))))
+(define (𝒫_∗ f)
+  (define a (dom𝒮 f))
+  (define b (cod𝒮 f))
+  (define m
+    (for/hash ([(a0 _) (in-hash (function->mapping (𝒫 a)))])
+      (define b0
+        (for/fold ([b0 e])
+                  ([(x _) (in-hash (function->mapping a0))])
+          (define y (hash-ref f x))
+          (hash-set b0 y y)))
+      (values a0 b0)))
+  (define f_∗ (mapping->function m (𝒫 b)))
+  f_∗)
+
 (: 𝒫^∗ (∀ ([b : 𝒮] [a : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫^∗ b) (𝒫^∗ a)))))
 (define (𝒫^∗ f)
   (define a (dom𝒮 f))
@@ -81,21 +96,6 @@
       (values b0 a0)))
   (define f^∗ (mapping->function m (𝒫 a)))
   f^∗)
-
-(: 𝒫_∗ (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫_∗ a) (𝒫_∗ b)))))
-(define (𝒫_∗ f)
-  (define a (dom𝒮 f))
-  (define b (cod𝒮 f))
-  (define m
-    (for/hash ([(a0 _) (in-hash (function->mapping (𝒫 a)))])
-      (define b0
-        (for/fold ([b0 e])
-                  ([(x _) (in-hash (function->mapping a0))])
-          (define y (hash-ref f x))
-          (hash-set b0 y y)))
-      (values a0 b0)))
-  (define f_∗ (mapping->function m (𝒫 b)))
-  f_∗)
 
 (: 𝒫_! (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫_! a) (𝒫_! b)))))
 (define (𝒫_! f)
@@ -124,28 +124,28 @@
 (: g (→𝒮 b c)) (define g (hash 'y0 'z0 'y1 'z0 '_ (set 'z1))) (?𝒮 g)
 
 ;; Preservation of domain and codomain
-(=𝒮 (𝒫 b) (𝒫^∗ b) (dom𝒮 (𝒫^∗ f)) (𝒫^∗ (cod𝒮 f)))
-(=𝒮 (𝒫 a) (𝒫^∗ a) (cod𝒮 (𝒫^∗ f)) (𝒫^∗ (dom𝒮 f)))
-
 (=𝒮 (𝒫 a) (𝒫_∗ a) (dom𝒮 (𝒫_∗ f)) (𝒫_∗ (dom𝒮 f)))
 (=𝒮 (𝒫 b) (𝒫_∗ b) (cod𝒮 (𝒫_∗ f)) (𝒫_∗ (cod𝒮 f)))
+
+(=𝒮 (𝒫 b) (𝒫^∗ b) (dom𝒮 (𝒫^∗ f)) (𝒫^∗ (cod𝒮 f)))
+(=𝒮 (𝒫 a) (𝒫^∗ a) (cod𝒮 (𝒫^∗ f)) (𝒫^∗ (dom𝒮 f)))
 
 (=𝒮 (𝒫 a) (𝒫_! a) (dom𝒮 (𝒫_! f)) (𝒫_! (dom𝒮 f)))
 (=𝒮 (𝒫 b) (𝒫_! b) (cod𝒮 (𝒫_! f)) (𝒫_! (cod𝒮 f)))
 
 ;; Preservation of identity morphisms
 (=𝒮      a  (dom𝒮      a)  (cod𝒮      a))
-(=𝒮 (𝒫^∗ a) (dom𝒮 (𝒫^∗ a)) (cod𝒮 (𝒫^∗ a)))
+(=𝒮 (𝒫_∗ a) (dom𝒮 (𝒫_∗ a)) (cod𝒮 (𝒫_∗ a)))
 
 (=𝒮      a  (dom𝒮      a)  (cod𝒮      a))
-(=𝒮 (𝒫_∗ a) (dom𝒮 (𝒫_∗ a)) (cod𝒮 (𝒫_∗ a)))
+(=𝒮 (𝒫^∗ a) (dom𝒮 (𝒫^∗ a)) (cod𝒮 (𝒫^∗ a)))
 
 (=𝒮      a  (dom𝒮      a)  (cod𝒮      a))
 (=𝒮 (𝒫_! a) (dom𝒮 (𝒫_! a)) (cod𝒮 (𝒫_! a)))
 
 ;; Preservation of composable pairs
-(=𝒮 (∘𝒮 (𝒫^∗ f) (𝒫^∗ g)) (𝒫^∗ (∘𝒮 g f)))
-
 (=𝒮 (∘𝒮 (𝒫_∗ g) (𝒫_∗ f)) (𝒫_∗ (∘𝒮 g f)))
+
+(=𝒮 (∘𝒮 (𝒫^∗ f) (𝒫^∗ g)) (𝒫^∗ (∘𝒮 g f)))
 
 (=𝒮 (∘𝒮 (𝒫_! g) (𝒫_! f)) (𝒫_! (∘𝒮 g f)))
