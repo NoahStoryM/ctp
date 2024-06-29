@@ -207,7 +207,7 @@ For a @tech{function} @math{f: a → b} between @tech{sets}:
 @image["scribblings/functor/images/f.svg"]{[picture] f.svg}
 
 Let @math{a_0} be a @tech{subset} of @math{a}, @math{b_0} be a @tech{subset} of
-@math{b}. There are different @deftech{powerset functors}:
+@math{b}. There are different @deftech{powerset functor}s:
 
 @itemlist[
   #:style 'ordered
