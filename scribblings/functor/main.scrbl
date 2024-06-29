@@ -324,3 +324,5 @@ Cayley representation of @math{𝒞^op}:
 @subsubsection{Congruence Class}
 
 @subsubsection{Factorization of Functors}
+
+@subsection{Subobject}
