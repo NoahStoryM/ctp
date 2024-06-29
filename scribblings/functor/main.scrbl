@@ -214,21 +214,21 @@ Let @math{a_0} be a @tech{subset} of @math{a}, @math{b_0} be a @tech{subset} of
   @item{@deftech{direct image functor} (@deftech{existential image functor})
         @math{𝒫@_{∗}: 𝐒𝐞𝐭 → 𝐒𝐞𝐭}
 
-        @math{𝒫@_{∗}(f) = f@_{∗}}, where @math{f@_{∗}(a_0) = {f(x) | x ∈ a_0}}.
+        @math{𝒫@_{∗}(f) = f@_{∗}}, where @math{f@_{∗}(a_0) := {f(x) | x ∈ a_0}}.
 
         @image["scribblings/functor/images/f_∗.svg"]{[picture] f_∗.svg}}
 
   @item{@deftech{preimage functor} (@deftech{inverse image functor})
         @math{𝒫@^{∗}: 𝐒𝐞𝐭@^{op} → 𝐒𝐞𝐭}
 
-        @math{𝒫@^{∗}(f) = f@^{∗}}, where @math{f@^{∗}(b_0) = {x ∈ a | f(x) ∈ b_0}}.
+        @math{𝒫@^{∗}(f) = f@^{∗}}, where @math{f@^{∗}(b_0) := {x ∈ a | f(x) ∈ b_0}}.
 
         @image["scribblings/functor/images/f^∗.svg"]{[picture] f^∗.svg}}
 
   @item{@deftech{universal image functor}
         @math{𝒫@_{!}: 𝐒𝐞𝐭 → 𝐒𝐞𝐭}
 
-        @math{𝒫@_{!}(f) = f@_{!}}, where @math{f@_{!}(a_0) = {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
+        @math{𝒫@_{!}(f) = f@_{!}}, where @math{f@_{!}(a_0) := {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
 
         @image["scribblings/functor/images/f_!.svg"]{[picture] f_!.svg}}
 
@@ -236,7 +236,7 @@ Let @math{a_0} be a @tech{subset} of @math{a}, @math{b_0} be a @tech{subset} of
   @;; @item{@deftech{exceptional image functor}
   @;;       @math{𝒫@^{!}: 𝐒𝐞𝐭@^{op} → 𝐒𝐞𝐭}
   @;;
-  @;;       @math{𝒫@^{!}(f) = f@^{!}}, where @math{f@^{!}(b_0) = {x ∈ a | }}.
+  @;;       @math{𝒫@^{!}(f) = f@^{!}}, where @math{f@^{!}(b_0) := {x ∈ a | }}.
   @;;
   @;;       @image["scribblings/functor/images/f^!.svg"]{[picture] f^!.svg}}
   ]
