@@ -247,13 +247,80 @@ Here’s how we can @racket[define] the @tech{powerset functors} in Racket:
 
 @subsection{Hom Functor}
 
+@subsubsection{Hom Set}
+
+A @deftech{hom set} in @math{𝒞}:
+@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a and cod@_{𝒞}(f) = x}}
+
+@tech{functions} between @tech{hom sets}:
+
+@math{Hom@_{𝒞}(i, j)(f) := j∘f∘i}
+
+@image["scribblings/functor/images/hom_1.svg"]{[picture] hom_1.svg}
+
+@math{Hom@_{𝒞}(a, j) := Hom@_{𝒞}(id@_{a}, j)}
+
+@image["scribblings/functor/images/hom_2.svg"]{[picture] hom_2.svg}
+
+@math{Hom@_{𝒞}(i, x) := Hom@_{𝒞}(i, id@_{x})}
+
+@image["scribblings/functor/images/hom_3.svg"]{[picture] hom_3.svg}
+
 @subsubsection{Covariant Hom Functor}
 
+@deftech{covariant hom functor}
+@math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞𝐭}
+
+@math{Hom@_{𝒞}(a, -)(j) := Hom@_{𝒞}(a, j)}
+
+@image["scribblings/functor/images/Hom_1.svg"]{[picture] Hom_1.svg}
+
+@racketblock[
+(: a 𝒞)
+(: Hom𝒞 (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 a y)))))
+(define (Hom𝒞 j) (λ (f) (∘𝒞 j f)))
+]
+
+@bold{Exercise}: Prove that @math{Hom@_{𝒞}(i, -)} is @bold{not} a @tech{functor}.
+
+@racketblock[
+(: b 𝒞) (: a 𝒞) (: i (→𝒞 b a))
+(: Hom𝒞 (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 b y)))))
+(define (Hom𝒞 j) (λ (f) (∘𝒞 j f i)))
+]
+
 @subsubsection{Contravariant Hom Functor}
+@deftech{contravariant hom functor}
+@math{Hom@_{𝒞}(-, x): 𝒞 → 𝐒𝐞𝐭@^{op}}
+
+@math{Hom@_{𝒞}(-, x)(i) := Hom@_{𝒞}(i, x)}
+
+@image["scribblings/functor/images/Hom_2.svg"]{[picture] Hom_2.svg}
+
+@racketblock[
+(: x 𝒞)
+(: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b x)))))
+(define (Hom𝒞 i) (λ (f) (∘𝒞 f i)))
+]
+
+@bold{Exercise}: Prove that @math{Hom@_{𝒞}(-, j)} is @bold{not} a @tech{functor}.
+
+@racketblock[
+(: x 𝒞) (: y 𝒞) (: j (→𝒞 x y))
+(: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b y)))))
+(define (Hom𝒞 i) (λ (f) (∘𝒞 j f i)))
+]
 
 @subsubsection{Two-Variable Hom Functor}
 
-@image["scribblings/functor/images/Hom.svg"]{[picture] Hom.svg}
+@deftech{two-variable hom functor}
+@math{Hom@_{𝒞}(-, -): 𝒞 → 𝐒𝐞𝐭@^{op} × 𝐒𝐞𝐭}
+
+@math{Hom@_{𝒞}(-, -)(a, x) := Hom@_{𝒞}(a, x)}
+
+@math{Hom@_{𝒞}(-, -)(i, j) := Hom@_{𝒞}(i, j)}
+
+@image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
 
 @racketblock[
 (: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→ (→𝒞 a x) (→𝒞 b y)))))
@@ -284,7 +351,7 @@ Cayley representation of @math{𝒞}:
   𝒞/g)
 ]
 
-@image["scribblings/functor/images/H1.svg"]{[picture] H1.svg}
+@image["scribblings/functor/images/H_1.svg"]{[picture] H_1.svg}
 
 @racketblock[
 (: U (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝐂𝐚𝐭 𝒞/b 𝒞/c) (→𝐒𝐞𝐭 (H b) (H c)))))
@@ -327,7 +394,7 @@ Cayley representation of @math{𝒞^op}:
   f/𝒞)
 ]
 
-@image["scribblings/functor/images/H0.svg"]{[picture] H0.svg}
+@image["scribblings/functor/images/H_2.svg"]{[picture] H_2.svg}
 
 @racketblock[
 (: U (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝐂𝐚𝐭 b/𝒞 a/𝒞) (→𝐒𝐞𝐭 (H b) (H a)))))
