@@ -291,7 +291,7 @@ A @deftech{hom set} in @math{𝒞}:
 
 @subsubsection{Contravariant Hom Functor}
 @deftech{contravariant hom functor}
-@math{Hom@_{𝒞}(-, x): 𝒞 → 𝐒𝐞𝐭@^{op}}
+@math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 𝐒𝐞𝐭}
 
 @math{Hom@_{𝒞}(-, x)(i) := Hom@_{𝒞}(i, x)}
 
@@ -314,7 +314,7 @@ A @deftech{hom set} in @math{𝒞}:
 @subsubsection{Two-Variable Hom Functor}
 
 @deftech{two-variable hom functor}
-@math{Hom@_{𝒞}(-, -): 𝒞 → 𝐒𝐞𝐭@^{op} × 𝐒𝐞𝐭}
+@math{Hom@_{𝒞}(-, -): 𝒞@^{op} × 𝒞 → 𝐒𝐞𝐭}
 
 @math{Hom@_{𝒞}(-, -)(a, x) := Hom@_{𝒞}(a, x)}
 
