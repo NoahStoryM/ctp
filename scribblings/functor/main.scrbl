@@ -290,6 +290,7 @@ A @deftech{hom set} in @math{𝒞}:
 ]
 
 @subsubsection{Contravariant Hom Functor}
+
 @deftech{contravariant hom functor}
 @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 𝐒𝐞𝐭}
 
