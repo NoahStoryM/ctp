@@ -87,7 +87,7 @@ properties of @tech{functors}.
 
 The following example illustrates how to implement @tech{functors} in Racket:
 
-@racketfile{functor/code/𝐌𝐚𝐭𝐫→𝐑𝐞𝐥.rkt}
+@racketfile{code/functor/𝐌𝐚𝐭𝐫→𝐑𝐞𝐥.rkt}
 
 @bold{Exercise}: Prove that @tech{functors} can be @tech[#:key "compose"]{composed}
 and that this @tech{composition} is @tech{associative}.
@@ -199,6 +199,8 @@ introduced in detail in the next chapter.
 
 @subsection{Powerset Functor}
 
+@subsubsection{Powerset}
+
 The @deftech{powerset} of a @tech{set} @math{s}, denoted as @math{𝒫(s)}, is the
 @tech{set} of all @tech{subsets} of @math{s}.
 
@@ -208,6 +210,12 @@ For a @tech{function} @math{f: a → b} between @tech{sets}:
 
 Let @math{a_0} be a @tech{subset} of @math{a}, @math{b_0} be a @tech{subset} of
 @math{b}. There are different @deftech{powerset functor}s:
+
+@subsubsection{Direct Image Functor}
+
+@subsubsection{Preimage Functor}
+
+@subsubsection{Universal Image Functor}
 
 @itemlist[
   #:style 'ordered
@@ -243,7 +251,7 @@ Let @math{a_0} be a @tech{subset} of @math{a}, @math{b_0} be a @tech{subset} of
 
 Here’s how we can @racket[define] the @tech{powerset functors} in Racket:
 
-@racketfile{functor/code/𝒫.rkt}
+@racketfile{code/functor/𝒫.rkt}
 
 @subsection{Hom Functor}
 

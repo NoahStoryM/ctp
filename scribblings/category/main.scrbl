@@ -248,7 +248,7 @@ is an example of @tech{OOC}. In @tech{𝐍𝐚𝐭}, @tech{morphisms} are natura
 @tech/refer{numbers}, and the single @tech{object}, represented by @tech{∗}, is
 @code{0}:
 
-@racketfile{category/code/𝐍𝐚𝐭.rkt}
+@racketfile{code/category/𝐍𝐚𝐭.rkt}
 
 @subsubsection{Category of Lists}
 
@@ -256,7 +256,7 @@ The @tech{category} of @tech/refer{lists}, denoted as @deftech{𝐋𝐢𝐬𝐭}
 @tech{OOC}. In @tech{𝐋𝐢𝐬𝐭}, the single @tech{object} @tech{∗} is @racket[null],
 and the @tech{morphisms} are @tech/refer{lists}:
 
-@racketfile{category/code/𝐋𝐢𝐬𝐭.rkt}
+@racketfile{code/category/𝐋𝐢𝐬𝐭.rkt}
 
 @subsubsection{Category of Strings}
 
@@ -274,7 +274,7 @@ In @tech{𝐌𝐚𝐭𝐫}, each @math{m × n} @tech/math{matrix} is considered 
 its @tech{domain} is the n-order identity @tech/math{matrix}, and its @tech{codomain}
 is the m-order identity @tech/math{matrix}:
 
-@racketfile{category/code/𝐌𝐚𝐭𝐫.rkt}
+@racketfile{code/category/𝐌𝐚𝐭𝐫.rkt}
 
 @subsubsection{Category of Binary Relations}
 
@@ -287,7 +287,7 @@ A @tech{preordered set}, @math{(S, ≤)}, can be viewed as a @tech{category}, de
 as @deftech{𝐑𝐞𝐥}, where @tech{morphisms} are @tech{binary relations} on its underlying
 @tech{set} @math{S}:
 
-@racketfile{category/code/𝐑𝐞𝐥.rkt}
+@racketfile{code/category/𝐑𝐞𝐥.rkt}
 
 @margin-note{
 A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
@@ -307,7 +307,7 @@ The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭∗}
 @tech{morphisms} are @tech{functions} preserving the @tech{base points} of
 @tech{pointed sets}:
 
-@racketfile{category/code/𝐒𝐞𝐭∗.rkt}
+@racketfile{code/category/𝐒𝐞𝐭∗.rkt}
 
 @subsubsection{Category of Procedures}
 
@@ -331,7 +331,7 @@ an untyped language, allows any @tech{procedure} to be @tech[#:key "compose"]{co
 such as @code{(∘ car +)}, but such a @tech{procedure} will only @racket[raise] an
 @racket[exn] when applied. Therefore, @tech{𝐏𝐫𝐨𝐜} can be regarded as an @tech{OOC}:
 
-@racketfile{category/code/𝐏𝐫𝐨𝐜.rkt}
+@racketfile{code/category/𝐏𝐫𝐨𝐜.rkt}
 
 @subsection{Constructions on Categories}
 
@@ -381,7 +381,7 @@ Let's illustrate this concept with a Racket code example
 we create a @tech{product category} by taking the @tech[#:key "cartesian product"]{product}
 of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐑𝐞𝐥}.
 
-@racketfile{category/code/𝐌𝐚𝐭𝐫×𝐑𝐞𝐥.rkt}
+@racketfile{code/category/𝐌𝐚𝐭𝐫×𝐑𝐞𝐥.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{dom×}, @deftech{cod×}, @deftech{∘×},
 @deftech{?×} and @deftech{=×} so that we can @racket[define] the
@@ -431,7 +431,7 @@ but @tech{commutative squares}.
 In the following code, we create an @tech{arrow category} to which @tech{𝐑𝐞𝐥}
 gives rise:
 
-@racketfile{category/code/Arr_𝐑𝐞𝐥.rkt}
+@racketfile{code/category/Arr_𝐑𝐞𝐥.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{Arr} so that we can @racket[define]
 the @tech{arrow category} @math{Arr(ℛ)} in this way:

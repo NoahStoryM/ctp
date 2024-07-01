@@ -12,7 +12,7 @@
     [(_ file-name:str)
      #:with file-str (file->string (syntax-e #'file-name))
      #:with ctx      (syntax/loc stx #'file-name)
-     (syntax/loc stx (typeset-code #:context ctx 'file-str))]))
+     (syntax/loc stx (filebox file-name (typeset-code #:context ctx 'file-str)))]))
 
 (define-syntax (define-tech stx)
   (syntax-parse stx
