@@ -2,7 +2,9 @@
 
 (require racket/match)
 
-;; Category of Binary Relations
+(provide 𝐑𝐞𝐥)
+(define (𝐑𝐞𝐥 . _) (values dom cod ∘ ? =))
+
 (define (dom m) (define o (car m)) (cons o o))
 (define (cod m) (define o (cdr m)) (cons o o))
 (define ∘
@@ -17,27 +19,31 @@
     [(m1 m2) (equal? m1 m2)]
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
-;; Objects
-(define a '(a . a)) (? a)
-(define b '(b . b)) (? b)
-(define c '(c . c)) (? c)
-(define d '(d . d)) (? d)
+(module+ test
+  (require rackunit)
 
-;; Morphisms
-(define f '(a . b)) (? f)
-(define g '(b . c)) (? g)
-(define h '(c . d)) (? h)
+  ;; Objects
+  (define a '(a . a)) (check-pred ? a)
+  (define b '(b . b)) (check-pred ? b)
+  (define c '(c . c)) (check-pred ? c)
+  (define d '(d . d)) (check-pred ? d)
 
-;; Existence of composition
-(= b (cod f) (dom g))
-(= a (dom (∘ g f)) (dom f))
-(= c (cod (∘ g f)) (cod g))
+  ;; Morphisms
+  (define f '(a . b)) (check-pred ? f)
+  (define g '(b . c)) (check-pred ? g)
+  (define h '(c . d)) (check-pred ? h)
 
-;; Associativity of composition
-(= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
 
-;; Existence of identity morphisms
-(= a (dom a) (cod a))
+  ;; Existence of composition
+  (check-true (= b (cod f) (dom g)))
+  (check-true (= a (dom (∘ g f)) (dom f)))
+  (check-true (= c (cod (∘ g f)) (cod g)))
 
-;; Composition and identity morphisms
-(= f (∘ f (dom f)) (∘ (cod f) f))
+  ;; Associativity of composition
+  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
+
+  ;; Existence of identity morphisms
+  (check-true (= a (dom a) (cod a)))
+
+  ;; Composition and identity morphisms
+  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))

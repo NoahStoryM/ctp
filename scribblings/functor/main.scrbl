@@ -99,10 +99,10 @@ higher-level structure where @tech{objects} are @tech{categories} and @tech{morp
 are @tech{functors} between them.
 
 In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
-@tech{𝐒𝐞𝐭} and @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functions}
-and @tech{functors} as @tech{procedures}. Note that since the task of comparing
-@tech{procedure} functionality can only be done by the programmer, we will avoid
-using @racket[=] or just use it as pseudocode.
+@tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functors} as
+@tech{procedures}. Note that since the task of comparing @tech{procedure}
+functionality can only be done by the programmer, we will avoid using @racket[=]
+or just use it as pseudocode.
 
 @racketblock[
 (code:comment2 "Category of Categories")
@@ -145,10 +145,9 @@ concept can be seen as @tech{isomorphic} @tech{objects} in @tech{𝐂𝐚𝐭}.
 
 Therefore, in the following sections, when we discuss specific @tech{categories},
 their definitions might differ from the Racket code in the previous sections.
-For instance, in the @secref{Category_of_Pointed_Sets}, the @tech{morphisms} of
-@tech{𝐒𝐞𝐭∗} are defined as @racket[hash] tables, but essentially they are mappings
-preserve @tech{base points} and might be defined as @tech{procedures} in later
-sections.
+For instance, in the @secref{Category_of_Sets}, @tech{morphisms} of @tech{𝐒𝐞𝐭} are
+defined as @racket[hash] tables, but essentially they are mappings and might be
+defined as @tech{procedures} in later sections.
 
 @subsubsection{Category of Monoids}
 
@@ -185,9 +184,9 @@ Here's how we can @racket[define] @math{U} in Racket:
 ]
 
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐌𝐨𝐧}
-to @tech{𝐒𝐞𝐭∗}.
+to @tech{𝐒𝐞𝐭@_{∗}}.
 
-@bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐒𝐞𝐭∗}
+@bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐒𝐞𝐭@_{∗}}
 to @tech{𝐒𝐞𝐭}.
 
 @section{𝐒𝐞𝐭-Valued Functor}

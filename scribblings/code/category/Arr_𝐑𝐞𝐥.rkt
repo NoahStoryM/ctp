@@ -1,47 +1,13 @@
 #lang racket/base
 
 (require racket/match)
+(require (file "𝐑𝐞𝐥.rkt"))
 
-;; Category of Binary Relations ℛ
-(define (domℛ r) (define o (car r)) (cons o o))
-(define (codℛ r) (define o (cdr r)) (cons o o))
-(define ∘ℛ
-  (case-λ
-    [(r) r]
-    [(r1 r2) (match* (r1 r2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
-    [(r1 r2 . r*) (apply ∘ℛ (∘ℛ r1 r2) r*)]))
-(define (?ℛ r) (pair? r))
-(define =ℛ
-  (case-λ
-    [(_) #t]
-    [(r1 r2) (equal? r1 r2)]
-    [(r1 r2 . r*) (and (=ℛ r1 r2) (apply =ℛ r2 r*))]))
+(define-values (domℛ codℛ ∘ℛ ?ℛ =ℛ) (𝐑𝐞𝐥))
 
-;; Objects in ℛ
-(define a~ '(a . a)) (?ℛ a~)
-(define b~ '(b . b)) (?ℛ b~)
-(define c~ '(c . c)) (?ℛ c~)
-(define d~ '(d . d)) (?ℛ d~)
-(define e~ '(e . e)) (?ℛ e~)
-(define f~ '(f . f)) (?ℛ f~)
-(define g~ '(g . g)) (?ℛ g~)
-(define h~ '(h . h)) (?ℛ h~)
+(provide Arr_𝐑𝐞𝐥)
+(define (Arr_𝐑𝐞𝐥 . _) (values dom cod ∘ ? =))
 
-;; Morphisms in ℛ
-(define p~ '(a . b)) (?ℛ p~)
-(define q~ '(c . d)) (?ℛ q~)
-(define r~ '(e . f)) (?ℛ r~)
-(define s~ '(g . h)) (?ℛ s~)
-
-(define i~ '(a . c)) (?ℛ i~)
-(define j~ '(b . d)) (?ℛ j~)
-(define k~ '(c . e)) (?ℛ k~)
-(define l~ '(d . f)) (?ℛ l~)
-(define m~ '(e . g)) (?ℛ m~)
-(define n~ '(f . h)) (?ℛ n~)
-
-
-;; Arrow Category Arr(ℛ)
 (define dom
   (match-λ
     [`((,j ,p) (,q ,i))
@@ -86,27 +52,55 @@
        [(_ _) #f])]
     [(s1 s2 . s*) (and (= s1 s2) (apply = s2 s*))]))
 
-;; Objects in Arr(ℛ)
-(define a `((,b~ ,p~) (,p~ ,a~))) (? a) ; p~
-(define b `((,d~ ,q~) (,q~ ,c~))) (? b) ; q~
-(define c `((,f~ ,r~) (,r~ ,e~))) (? c) ; r~
-(define d `((,h~ ,s~) (,s~ ,g~))) (? d) ; s~
+(module+ test
+  (require rackunit)
 
-;; Morphisms in Arr(ℛ)
-(define f `((,j~ ,p~) (,q~ ,i~))) (? f) ; (i~, j~)
-(define g `((,l~ ,q~) (,r~ ,k~))) (? g) ; (k~, l~)
-(define h `((,n~ ,r~) (,s~ ,m~))) (? h) ; (m~, n~)
+  ;; Objects in ℛ
+  (define a~ '(a . a)) (check-pred ?ℛ a~)
+  (define b~ '(b . b)) (check-pred ?ℛ b~)
+  (define c~ '(c . c)) (check-pred ?ℛ c~)
+  (define d~ '(d . d)) (check-pred ?ℛ d~)
+  (define e~ '(e . e)) (check-pred ?ℛ e~)
+  (define f~ '(f . f)) (check-pred ?ℛ f~)
+  (define g~ '(g . g)) (check-pred ?ℛ g~)
+  (define h~ '(h . h)) (check-pred ?ℛ h~)
 
-;; Existence of composition
-(= b (cod f) (dom g))
-(= a (dom (∘ g f)) (dom f))
-(= c (cod (∘ g f)) (cod g))
+  ;; Morphisms in ℛ
+  (define p~ '(a . b)) (check-pred ?ℛ p~)
+  (define q~ '(c . d)) (check-pred ?ℛ q~)
+  (define r~ '(e . f)) (check-pred ?ℛ r~)
+  (define s~ '(g . h)) (check-pred ?ℛ s~)
 
-;; Associativity of composition
-(= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
+  (define i~ '(a . c)) (check-pred ?ℛ i~)
+  (define j~ '(b . d)) (check-pred ?ℛ j~)
+  (define k~ '(c . e)) (check-pred ?ℛ k~)
+  (define l~ '(d . f)) (check-pred ?ℛ l~)
+  (define m~ '(e . g)) (check-pred ?ℛ m~)
+  (define n~ '(f . h)) (check-pred ?ℛ n~)
 
-;; Existence of identity morphisms
-(= a (dom a) (cod a))
 
-;; Composition and identity morphisms
-(= f (∘ f (dom f)) (∘ (cod f) f))
+  ;; Objects in Arr(ℛ)
+  (define a `((,b~ ,p~) (,p~ ,a~))) (check-pred ? a) ; p~
+  (define b `((,d~ ,q~) (,q~ ,c~))) (check-pred ? b) ; q~
+  (define c `((,f~ ,r~) (,r~ ,e~))) (check-pred ? c) ; r~
+  (define d `((,h~ ,s~) (,s~ ,g~))) (check-pred ? d) ; s~
+
+  ;; Morphisms in Arr(ℛ)
+  (define f `((,j~ ,p~) (,q~ ,i~))) (check-pred ? f) ; (i~, j~)
+  (define g `((,l~ ,q~) (,r~ ,k~))) (check-pred ? g) ; (k~, l~)
+  (define h `((,n~ ,r~) (,s~ ,m~))) (check-pred ? h) ; (m~, n~)
+
+
+  ;; Existence of composition
+  (check-true (= b (cod f) (dom g)))
+  (check-true (= a (dom (∘ g f)) (dom f)))
+  (check-true (= c (cod (∘ g f)) (cod g)))
+
+  ;; Associativity of composition
+  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
+
+  ;; Existence of identity morphisms
+  (check-true (= a (dom a) (cod a)))
+
+  ;; Composition and identity morphisms
+  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))

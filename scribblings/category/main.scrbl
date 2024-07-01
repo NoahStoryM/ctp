@@ -296,26 +296,21 @@ A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
 
 @bold{Exercise}: View a @tech{poset} as a @tech{category} and implement it.
 
-@subsubsection{Category of Pointed Sets}
+@subsubsection{Category of Sets}
 
-@margin-note{
-A @deftech{pointed set}, @math{(S, s)}, is a @tech{set} @math{S} equipped with
-a distinguished @tech{element} @math{s}, often called the @deftech{base point}.
-}
+The @tech{category} of @tech{sets}, denoted as @deftech{𝐒𝐞𝐭}, where @tech{morphisms}
+are @tech{functions}:
 
-The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭∗}, where
-@tech{morphisms} are @tech{functions} preserving the @tech{base points} of
-@tech{pointed sets}:
-
-@racketfile{code/category/𝐒𝐞𝐭∗.rkt}
+@racketfile{code/category/𝐒𝐞𝐭.rkt}
 
 @subsubsection{Category of Procedures}
 
-The @tech{category} of @tech{procedures}, denoted as @deftech{𝐏𝐫𝐨𝐜}, is perhaps the
-most important @tech{category} in programming. As the name suggests, @tech{𝐏𝐫𝐨𝐜} has
-@deftech{procedures} (also known as @tech[#:key "procedure"]{functions} in functional programming)
-as its @tech{morphisms}. It resembles the @tech{category} of @tech{sets}, denoted as
-@deftech{𝐒𝐞𝐭}, where @tech{morphisms} are mathematical @tech{functions}.
+The @tech{category} of @tech{procedures}, denoted as @deftech{𝐏𝐫𝐨𝐜}, is perhaps
+the most important @tech{category} in programming. As the name suggests,
+@tech{𝐏𝐫𝐨𝐜} has @deftech{procedures}
+(also known as @tech[#:key "procedure"]{functions} in functional programming)
+as its @tech{morphisms}. It resembles @tech{𝐒𝐞𝐭}, where @tech{morphisms} are
+mathematical @tech{functions}.
 
 An important point to consider in @tech{𝐏𝐫𝐨𝐜} is the @tech[#:key "equal"]{equality}
 of @tech{morphisms}. In @tech{𝐒𝐞𝐭}, two @tech{functions} are considered @tech{equal}
@@ -806,7 +801,13 @@ This approach to viewing @tech{elements} requires only the presence of a
 thereby generalizing the concept of @tech{elements} of @tech{sets} in a broader
 and more abstract manner.
 
-@bold{Exercise}: Prove that @tech{𝐒𝐞𝐭∗} is the @tech{coslice category} @math{1/𝐒𝐞𝐭}.
+@margin-note{
+A @deftech{pointed set}, @math{(S, s)}, is a @tech{set} @math{S} equipped with
+a distinguished @tech{element} @math{s}, often called the @deftech{base point}.
+}
+
+@bold{Exercise}: Prove that the @tech{category} of @tech{pointed sets}, denoted
+as @deftech{𝐒𝐞𝐭@_{∗}}, is @tech{isomorphic} the @tech{coslice category} @math{1/𝐒𝐞𝐭}.
 
 In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math{f: A → B}.
 Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},

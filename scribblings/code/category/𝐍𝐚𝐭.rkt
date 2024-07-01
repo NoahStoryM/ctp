@@ -1,29 +1,35 @@
 #lang racket/base
 
-;; Category of Natural Numbers
-(define (dom _) ∗)
-(define (cod _) ∗)
+(provide 𝐍𝐚𝐭)
+(define (𝐍𝐚𝐭 . _) (values dom cod ∘ ? =))
+
+(define (dom _) 0)
+(define (cod _) 0)
 (define (∘ . m*) (apply + m*))
 (define (? m) (exact-nonnegative-integer? m))
 
-;; Objects
-(define ∗ (∘)) (? ∗)
+(module+ test
+  (require rackunit)
 
-;; Morphisms
-(define f 1) (? f)
-(define g 2) (? g)
-(define h 3) (? h)
+  ;; Objects
+  (define ∗ (∘)) (check-pred ? ∗)
 
-;; Existence of composition
-(= ∗ (cod f) (dom g))
-(= ∗ (dom (∘ g f)) (dom f))
-(= ∗ (cod (∘ g f)) (cod g))
+  ;; Morphisms
+  (define f 1) (check-pred ? f)
+  (define g 2) (check-pred ? g)
+  (define h 3) (check-pred ? h)
 
-;; Associativity of composition
-(= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
 
-;; Existence of identity morphisms
-(= ∗ (dom ∗) (cod ∗))
+  ;; Existence of composition
+  (check-true (= ∗ (cod f) (dom g)))
+  (check-true (= ∗ (dom (∘ g f)) (dom f)))
+  (check-true (= ∗ (cod (∘ g f)) (cod g)))
 
-;; Composition and identity morphisms
-(= f (∘ f (dom f)) (∘ (cod f) f))
+  ;; Associativity of composition
+  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
+
+  ;; Existence of identity morphisms
+  (check-true (= ∗ (dom ∗) (cod ∗)))
+
+  ;; Composition and identity morphisms
+  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))

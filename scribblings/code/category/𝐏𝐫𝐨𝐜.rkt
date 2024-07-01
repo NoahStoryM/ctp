@@ -5,18 +5,20 @@
   #:property prop:procedure
   (struct-field-index body))
 
-;; Category of Procedures
-(define (dom _) ∗)
-(define (cod _) ∗)
+(provide 𝐏𝐫𝐨𝐜)
+(define (𝐏𝐫𝐨𝐜 . _) (values dom cod ∘ ? =))
+
+(define (dom _) values)
+(define (cod _) values)
 (define ∘
   (case-λ
-    [() ∗]
+    [() values]
     [(m) m]
     [m*
      (define procedure**
        (for/list ([m (in-list m*)])
          (cond
-           [(eq? ∗ m) '()]
+           [(eq? values m) '()]
            [(composition? m) (composition-procedure* m)]
            [else (list m)])))
      (define procedure* (apply append procedure**))
@@ -36,24 +38,28 @@
                       (composition-procedure* m2))))]
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
-;; Objects
-(define ∗ values) (? ∗)
+(module+ test
+  (require rackunit)
 
-;; Morphisms
-(define f number->string) (? f)
-(define g string->list)   (? g)
-(define h list->vector)   (? h)
+  ;; Objects
+  (define ∗ values) (check-pred ? ∗)
 
-;; Existence of composition
-(= ∗ (cod f) (dom g))
-(= ∗ (dom (∘ g f)) (dom f))
-(= ∗ (cod (∘ g f)) (cod g))
+  ;; Morphisms
+  (define f number->string) (check-pred ? f)
+  (define g string->list)   (check-pred ? g)
+  (define h list->vector)   (check-pred ? h)
 
-;; Associativity of composition
-(= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
 
-;; Existence of identity morphisms
-(= ∗ (dom ∗) (cod ∗))
+  ;; Existence of composition
+  (check-true (= ∗ (cod f) (dom g)))
+  (check-true (= ∗ (dom (∘ g f)) (dom f)))
+  (check-true (= ∗ (cod (∘ g f)) (cod g)))
 
-;; Composition and identity morphisms
-(= f (∘ f (dom f)) (∘ (cod f) f))
+  ;; Associativity of composition
+  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
+
+  ;; Existence of identity morphisms
+  (check-true (= ∗ (dom ∗) (cod ∗)))
+
+  ;; Composition and identity morphisms
+  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))

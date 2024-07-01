@@ -1,48 +1,41 @@
 #lang racket/base
 
 (require racket/match)
+(require (file "../../code/category/𝐑𝐞𝐥.rkt"))
 
-;; ≤ Category
-(define (dom m) (define o (car m)) (cons o o))
-(define (cod m) (define o (cdr m)) (cons o o))
-(define ∘
-  (case-λ
-    [(m) m]
-    [(m1 m2) (match* (m1 m2) [(`(,b . ,c) `(,a . ,b)) `(,a . ,c)])]
-    [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
+(define-values (dom cod ∘ _ =) (𝐑𝐞𝐥))
 (define ?
   (match-λ
     [`(,a . ,b)
      (and (real? a) (real? b)
           (<= a b))]
     [_ #f]))
-(define =
-  (case-λ
-    [(_) #t]
-    [(m1 m2) (equal? m1 m2)]
-    [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
-;; Objects
-(define a '(0 . 0)) (? a)
-(define b '(1 . 1)) (? b)
-(define c '(2 . 2)) (? c)
-(define d '(3 . 3)) (? d)
+(module+ test
+  (require rackunit)
 
-;; Morphisms
-(define f '(0 . 1)) (? f)
-(define g '(1 . 2)) (? g)
-(define h '(2 . 3)) (? h)
+  ;; Objects
+  (define a '(0 . 0)) (check-pred ? a)
+  (define b '(1 . 1)) (check-pred ? b)
+  (define c '(2 . 2)) (check-pred ? c)
+  (define d '(3 . 3)) (check-pred ? d)
 
-;; Existence of composition
-(= b (cod f) (dom g))
-(= a (dom (∘ g f)) (dom f))
-(= c (cod (∘ g f)) (cod g))
+  ;; Morphisms
+  (define f '(0 . 1)) (check-pred ? f)
+  (define g '(1 . 2)) (check-pred ? g)
+  (define h '(2 . 3)) (check-pred ? h)
 
-;; Associativity of composition
-(= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f)))
 
-;; Existence of identity morphisms
-(= a (dom a) (cod a))
+  ;; Existence of composition
+  (check-true (= b (cod f) (dom g)))
+  (check-true (= a (dom (∘ g f)) (dom f)))
+  (check-true (= c (cod (∘ g f)) (cod g)))
 
-;; Composition and identity morphisms
-(= f (∘ f (dom f)) (∘ (cod f) f))
+  ;; Associativity of composition
+  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
+
+  ;; Existence of identity morphisms
+  (check-true (= a (dom a) (cod a)))
+
+  ;; Composition and identity morphisms
+  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))
