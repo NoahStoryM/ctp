@@ -370,12 +370,12 @@ A @deftech{product category} @math{𝒞 × 𝒟} combines the given @tech{catego
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
 
-@bold{Exercise}: Prove that @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
+@bold{Exercise}: Prove that @math{(g_0∘f_0)×(g_1∘f_1) = (g_0×g_1)∘(f_0×f_1)}.
 
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
 we create a @tech{product category} by taking the @tech[#:key "cartesian product"]{product}
-of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐑𝐞𝐥}.
+of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐑𝐞𝐥}:
 
 @racketfile{code/category/𝐌𝐚𝐭𝐫×𝐑𝐞𝐥.rkt}
 
