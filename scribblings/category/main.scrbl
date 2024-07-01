@@ -808,7 +808,7 @@ a distinguished @tech{element} @math{s}, often called the @deftech{base point}.
 }
 
 @bold{Exercise}: Prove that the @tech{category} of @tech{pointed sets}, denoted
-as @deftech{𝐒𝐞𝐭@_{∗}}, is @tech{isomorphic} the @tech{coslice category} @math{1/𝐒𝐞𝐭}.
+as @deftech{𝐒𝐞𝐭@_{∗}}, is @tech{isomorphic} to the @tech{coslice category} @math{1/𝐒𝐞𝐭}.
 
 In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math{f: A → B}.
 Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},
