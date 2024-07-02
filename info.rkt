@@ -9,6 +9,7 @@
 (define build-deps
   '("scribble-lib"
     "rackunit-lib"
+    "rackunit-doc"
     "racket-doc"
     "typed-racket-doc"
     "math-lib"
