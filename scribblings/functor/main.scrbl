@@ -258,7 +258,7 @@ Here’s how we can @racket[define] the @tech{powerset functors} in Racket:
 @subsubsection{Hom Set}
 
 A @deftech{hom set} in @math{𝒞}:
-@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a and cod@_{𝒞}(f) = x}}
+@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}
 
 @tech{functions} between @tech{hom sets}:
 
