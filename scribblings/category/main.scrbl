@@ -163,7 +163,7 @@ in the @tech{commutative square}:
 A @deftech{discrete category} is a @tech{category} where the only @tech{morphisms}
 are the @tech{identity morphisms}. In other words, every @tech{object} is only
 connected to itself via its @tech{identity morphism}. This means that a
-@tech{discrete category} can be viewed as a @tech{category} version of a
+@tech{discrete category} can be viewed as the @tech{category} version of a
 @deftech{set}: the @tech{objects} of the @tech{discrete category} correspond to
 the @deftech{elements} of the @tech{set}. A @deftech{function} between two
 @tech{sets} can be viewed as a @tech{functor} between two @tech{discrete categories}.
