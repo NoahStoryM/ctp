@@ -370,6 +370,12 @@ A @deftech{product category} @math{𝒞 × 𝒟} combines the given @tech{catego
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
 
+@margin-note{
+@tech{∘} in this equation are different in different @tech{categories}. The first
+two @tech{∘} represent @tech{composition} in the individual @tech{categories},
+while the third @tech{∘} represents @tech{composition} in the @tech{product category}.
+}
+
 @bold{Exercise}: Prove that @math{(g_0∘f_0)×(g_1∘f_1) = (g_0×g_1)∘(f_0×f_1)}.
 
 Let's illustrate this concept with a Racket code example
