@@ -19,3 +19,4 @@
 (define scribblings '(("scribblings/ctp.scrbl" (multi-page) (getting-started))))
 
 (define clean '("compiled" "private/compiled"))
+(define test-omit-paths '(#px"^((?!/code/|/exercises/).)*$"))
