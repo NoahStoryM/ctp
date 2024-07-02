@@ -8,6 +8,7 @@
 (define deps '("base" "typed-racket-lib"))
 (define build-deps
   '("scribble-lib"
+    "rackunit-lib"
     "racket-doc"
     "typed-racket-doc"
     "math-lib"
