@@ -199,59 +199,58 @@ introduced in detail in the next chapter.
 
 @subsection{Powerset Functor}
 
-@subsubsection{Powerset}
-
 The @deftech{powerset} of a @tech{set} @math{s}, denoted as @math{𝒫(s)}, is the
-@tech{set} of all @tech{subsets} of @math{s}.
+@tech{set} of all @tech{subsets} of @math{s}. There are different
+@deftech{powerset functor}s, all of which map @math{s} to @math{𝒫(s)}.
 
-For a @tech{function} @math{f: a → b} between @tech{sets}:
+@racketfile{code/function/𝒫.rkt}
+
+For a @tech{function} @math{f: a → b}, the @deftech{image} of @math{f}, denoted
+as @math{im(f)}, is the @tech{subset} of @math{b}:
+@math{im(f) := {f(x) | x ∈ a}}.
 
 @image["scribblings/functor/images/f.svg"]{[picture] f.svg}
 
-Let @math{a_0} be a @tech{subset} of @math{a}, @math{b_0} be a @tech{subset} of
-@math{b}. There are different @deftech{powerset functor}s:
+Let @math{a_0} be a @tech{subset} of @math{a} and @math{b_0} be a @tech{subset}
+of @math{b}.
 
 @subsubsection{Direct Image Functor}
 
+The @deftech{direct image} (@deftech{existential image}) of @math{a_0}, denoted
+as @math{f@_{∗}(a_0)}, is the @tech{subset} of @math{b}:
+@math{f@_{∗}(a_0) := {f(x) | x ∈ a_0}}.
+
+The @deftech{direct image functor} (@deftech{existential image functor})
+@math{𝒫@_{∗}} takes @math{f} to @math{f@_{∗}}: @math{𝒫@_{∗}(f) = f@_{∗}}.
+
+@image["scribblings/functor/images/f_∗.svg"]{[picture] f_∗.svg}
+
+@racketfile{code/functor/𝒫_∗.rkt}
+
 @subsubsection{Preimage Functor}
+
+The @deftech{preimage} (@deftech{inverse image}) of @math{b_0}, denoted as
+@math{f@^{∗}(b_0)}, is the @tech{subset} of @math{a}:
+@math{f@^{∗}(b_0) := {x ∈ a | f(x) ∈ b_0}}.
+
+The @deftech{preimage functor} (@deftech{inverse image functor}) @math{𝒫@^{∗}}
+takes @math{f} to @math{f@^{∗}}: @math{𝒫@^{∗}(f) = f@^{∗}}.
+
+@image["scribblings/functor/images/f^∗.svg"]{[picture] f^∗.svg}
+
+@racketfile{code/functor/𝒫^∗.rkt}
 
 @subsubsection{Universal Image Functor}
 
-@itemlist[
-  #:style 'ordered
-  @item{@deftech{direct image functor} (@deftech{existential image functor})
-        @math{𝒫@_{∗}: 𝐒𝐞𝐭 → 𝐒𝐞𝐭}
+The @deftech{universal image} of @math{a_0}, denoted as @math{f@_{!}(a_0)}, is
+the @tech{subset} of @math{b}: @math{f@_{!}(a_0) := {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
 
-        @math{𝒫@_{∗}(f) = f@_{∗}}, where @math{f@_{∗}(a_0) := {f(x) | x ∈ a_0}}.
+The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f@_{!}}:
+@math{𝒫@_{!}(f) = f@_{!}}.
 
-        @image["scribblings/functor/images/f_∗.svg"]{[picture] f_∗.svg}}
+@image["scribblings/functor/images/f_!.svg"]{[picture] f_!.svg}
 
-  @item{@deftech{preimage functor} (@deftech{inverse image functor})
-        @math{𝒫@^{∗}: 𝐒𝐞𝐭@^{op} → 𝐒𝐞𝐭}
-
-        @math{𝒫@^{∗}(f) = f@^{∗}}, where @math{f@^{∗}(b_0) := {x ∈ a | f(x) ∈ b_0}}.
-
-        @image["scribblings/functor/images/f^∗.svg"]{[picture] f^∗.svg}}
-
-  @item{@deftech{universal image functor}
-        @math{𝒫@_{!}: 𝐒𝐞𝐭 → 𝐒𝐞𝐭}
-
-        @math{𝒫@_{!}(f) = f@_{!}}, where @math{f@_{!}(a_0) := {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
-
-        @image["scribblings/functor/images/f_!.svg"]{[picture] f_!.svg}}
-
-  @;; TODO
-  @;; @item{@deftech{exceptional inverse image functor}
-  @;;       @math{𝒫@^{!}: 𝐒𝐞𝐭@^{op} → 𝐒𝐞𝐭}
-  @;;
-  @;;       @math{𝒫@^{!}(f) = f@^{!}}, where @math{f@^{!}(b_0) := {x ∈ a | }}.
-  @;;
-  @;;       @image["scribblings/functor/images/f^!.svg"]{[picture] f^!.svg}}
-  ]
-
-Here’s how we can @racket[define] the @tech{powerset functors} in Racket:
-
-@racketfile{code/functor/𝒫.rkt}
+@racketfile{code/functor/𝒫_!.rkt}
 
 @subsection{Hom Functor}
 
