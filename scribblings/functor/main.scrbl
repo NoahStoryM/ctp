@@ -200,8 +200,7 @@ introduced in detail in the next chapter.
 @subsection{Powerset Functor}
 
 The @deftech{powerset} of a @tech{set} @math{s}, denoted as @math{𝒫(s)}, is the
-@tech{set} of all @tech{subsets} of @math{s}. There are different
-@deftech{powerset functor}s, all of which map @math{s} to @math{𝒫(s)}.
+@tech{set} of all @tech{subsets} of @math{s}.
 
 @racketfile{code/function/𝒫.rkt}
 
@@ -212,7 +211,8 @@ as @math{im(f)}, is the @tech{subset} of @math{b}:
 @image["scribblings/functor/images/f.svg"]{[picture] f.svg}
 
 Let @math{a_0} be a @tech{subset} of @math{a} and @math{b_0} be a @tech{subset}
-of @math{b}.
+of @math{b}. There are different @deftech{powerset functor}s, all of which map
+@math{s} to @math{𝒫(s)}.
 
 @subsubsection{Direct Image Functor}
 
