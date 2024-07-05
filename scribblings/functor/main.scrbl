@@ -280,7 +280,7 @@ Additionally, we can @racket[define] two other @tech{functions}:
         @image["scribblings/functor/images/hom_3.svg"]{[picture] hom_3.svg}}
   ]
 
-These @tech{functions} provide a foundation for defining @deftech{hom functors}.
+These @tech{functions} provide a foundation for defining @deftech{hom functor}s.
 
 @subsubsection{Covariant Hom Functor}
 
