@@ -336,8 +336,6 @@ takes @math{i × j} to @math{Hom@_{𝒞}(i, j)}.
 (define (Hom𝒞 i j) (λ (f) (∘𝒞 j f i)))
 ]
 
-@subsection{Representable Functor}
-
 @subsection{Cayley's Theory}
 
 Cayley representation of @math{𝒞}:
