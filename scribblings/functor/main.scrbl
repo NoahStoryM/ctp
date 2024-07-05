@@ -254,31 +254,38 @@ The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f
 
 @subsection{Hom Functor}
 
-@subsubsection{Hom Set}
+For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set},
+denoted as @math{Hom@_{𝒞}(a, x)}, is the collection of all @tech{morphisms} from
+@math{a} to @math{x}:
+@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
 
-A @deftech{hom set} in @math{𝒞}:
-@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}
-
-@tech{functions} between @tech{hom sets}:
-
-@math{Hom@_{𝒞}(i, j)(f) := j∘f∘i}
+For @tech{morphisms} @math{f: a → x}, @math{i: b → a} and @math{j: x → y}, we can
+@racket[define] a @tech{function}
+@math{Hom@_{𝒞}(i, j): Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
+@math{Hom@_{𝒞}(i, j)(f) := j∘f∘i}.
 
 @image["scribblings/functor/images/hom_1.svg"]{[picture] hom_1.svg}
 
-@math{Hom@_{𝒞}(a, j) := Hom@_{𝒞}(id@_{a}, j)}
+Additionally, we can @racket[define] two other @tech{functions}:
 
-@image["scribblings/functor/images/hom_2.svg"]{[picture] hom_2.svg}
+@itemlist[
+  #:style 'ordered
+  @item{@math{Hom@_{𝒞}(a, j) := Hom@_{𝒞}(id@_{a}, j)}, where
+        @math{Hom@_{𝒞}(a, j)(f) = j∘f}.
 
-@math{Hom@_{𝒞}(i, x) := Hom@_{𝒞}(i, id@_{x})}
+        @image["scribblings/functor/images/hom_2.svg"]{[picture] hom_2.svg}}
+  @item{@math{Hom@_{𝒞}(i, x) := Hom@_{𝒞}(i, id@_{x})}, where
+        @math{Hom@_{𝒞}(i, x)(f) = f∘i}.
 
-@image["scribblings/functor/images/hom_3.svg"]{[picture] hom_3.svg}
+        @image["scribblings/functor/images/hom_3.svg"]{[picture] hom_3.svg}}
+  ]
+
+These @tech{functions} provide a foundation for defining @deftech{hom functors}.
 
 @subsubsection{Covariant Hom Functor}
 
-@deftech{covariant hom functor}
-@math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞𝐭}
-
-@math{Hom@_{𝒞}(a, -)(j) := Hom@_{𝒞}(a, j)}
+The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞𝐭} takes
+@math{j} to @math{Hom@_{𝒞}(a, j)}.
 
 @image["scribblings/functor/images/Hom_1.svg"]{[picture] Hom_1.svg}
 
@@ -298,10 +305,8 @@ A @deftech{hom set} in @math{𝒞}:
 
 @subsubsection{Contravariant Hom Functor}
 
-@deftech{contravariant hom functor}
-@math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 𝐒𝐞𝐭}
-
-@math{Hom@_{𝒞}(-, x)(i) := Hom@_{𝒞}(i, x)}
+The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 𝐒𝐞𝐭} takes
+@math{i} to @math{Hom@_{𝒞}(i, x)}.
 
 @image["scribblings/functor/images/Hom_2.svg"]{[picture] Hom_2.svg}
 
@@ -321,12 +326,8 @@ A @deftech{hom set} in @math{𝒞}:
 
 @subsubsection{Two-Variable Hom Functor}
 
-@deftech{two-variable hom functor}
-@math{Hom@_{𝒞}(-, -): 𝒞@^{op} × 𝒞 → 𝐒𝐞𝐭}
-
-@math{Hom@_{𝒞}(-, -)(a, x) := Hom@_{𝒞}(a, x)}
-
-@math{Hom@_{𝒞}(-, -)(i, j) := Hom@_{𝒞}(i, j)}
+The @deftech{two-variable hom functor} @math{Hom@_{𝒞}(-, -): 𝒞@^{op} × 𝒞 → 𝐒𝐞𝐭}
+takes @math{i × j} to @math{Hom@_{𝒞}(i, j)}.
 
 @image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
 
