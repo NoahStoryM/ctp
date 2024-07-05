@@ -291,7 +291,7 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞�
 
 @racketblock[
 (: a 𝒞)
-(: Hom𝒞 (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 a y)))))
+(: Hom𝒞 (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 a y)))))
 (define (Hom𝒞 j) (λ (f) (∘𝒞 j f)))
 ]
 
@@ -299,7 +299,7 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞�
 
 @racketblock[
 (: b 𝒞) (: a 𝒞) (: i (→𝒞 b a))
-(: Hom𝒞 (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 b y)))))
+(: Hom𝒞 (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b y)))))
 (define (Hom𝒞 j) (λ (f) (∘𝒞 j f i)))
 ]
 
@@ -312,7 +312,7 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 
 
 @racketblock[
 (: x 𝒞)
-(: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b x)))))
+(: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b x)))))
 (define (Hom𝒞 i) (λ (f) (∘𝒞 f i)))
 ]
 
@@ -320,7 +320,7 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 
 
 @racketblock[
 (: x 𝒞) (: y 𝒞) (: j (→𝒞 x y))
-(: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b y)))))
+(: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b y)))))
 (define (Hom𝒞 i) (λ (f) (∘𝒞 j f i)))
 ]
 
@@ -332,13 +332,18 @@ takes @math{i × j} to @math{Hom@_{𝒞}(i, j)}.
 @image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
 
 @racketblock[
-(: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→ (→𝒞 a x) (→𝒞 b y)))))
+(: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b y)))))
 (define (Hom𝒞 i j) (λ (f) (∘𝒞 j f i)))
 ]
 
-@subsection{Cayley's Theory}
+@subsection{Cayley's Theorem}
 
-Cayley representation of @math{𝒞}:
+@deftech{Cayley's theorem} in the context of @tech{category theory} states that
+every @tech{small category} @math{𝒞} is @tech{isomorphic} to a @tech{subcategory}
+of @math{𝐒𝐞𝐭}. This is a powerful result because it allows us to represent abstract
+@tech{categories} concretely.
+
+@deftech{Cayley representation} of @math{𝒞}:
 
 @racketblock[
 (: H (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐒𝐞𝐭 (H b) (H c)))))
