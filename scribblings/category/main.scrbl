@@ -302,7 +302,7 @@ A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
 @math{(S, ≤)}, for which @math{≤} is antisymmetric.
 }
 
-@bold{Exercise}: Implement the @tech{category} @deftech{𝐏𝐨𝐬𝐞𝐭} of @tech{poset}.
+@bold{Exercise}: Implement the @tech{category} @deftech{𝐏𝐨𝐬𝐞𝐭} of @tech{posets}.
 
 @subsubsection{Category of Matrices}
 
