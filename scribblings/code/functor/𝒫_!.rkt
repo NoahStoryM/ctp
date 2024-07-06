@@ -1,38 +1,43 @@
 #lang typed/racket/base/no-check
 
-(require racket/hash racket/set)
+(require racket/hash racket/set racket/promise)
 (require (file "𝒫^∗.rkt")
+         (file "../category/𝐒𝐞𝐭.rkt")
          (file "../function/𝒫.rkt"))
 
 (: 𝒫_! (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫 a) (𝒫 b)))))
 (provide 𝒫_!)
 (define (𝒫_! f)
+  (define m (function-map f))
+  (define f^∗ (𝒫^∗ f))
+  (define m^∗ (function-map f^∗))
   (define a (dom𝒮 f))
   (define b (cod𝒮 f))
-  (define f^∗ (𝒫^∗ f))
-  (define m
-    (for/hash ([(a0 _) (in-hash (function->mapping (𝒫 a)))])
+  (define 𝒫a (𝒫 a))
+  (define 𝒫b (𝒫 b))
+  (define ht
+    (for/hash ([(a0 _) (in-hash (function-map 𝒫a))])
       (define b0
-        (for/fold ([b0 e])
-                  ([(y _) (in-hash (function->mapping b))])
-          (define a1 (hash-ref f^∗ (hash y y '_ (set))))
+        (for/fold ([b0 #hash()])
+                  ([(y _) (in-hash (function-map b))])
+          (define a1 (hash-ref m^∗ (hash y y)))
           (if (equal? a0 (hash-union a0 a1 #:combine/key combine/key))
               (hash-set b0 y y) b0)))
       (values a0 b0)))
-  (define f_! (mapping->function m (𝒫 b)))
+  (define f_! (function (lazy 𝒫a) (lazy 𝒫b) ht))
   f_!)
 
 (module+ test
   (require rackunit)
 
   ;; Objects
-  (: a 𝒮) (define a (hash 'x0 'x0 'x1 'x1 '_ (set))) (check-pred ?𝒮 a)
-  (: b 𝒮) (define b (hash 'y0 'y0 'y1 'y1 '_ (set))) (check-pred ?𝒮 b)
-  (: c 𝒮) (define c (hash 'z0 'z0 'z1 'z1 '_ (set))) (check-pred ?𝒮 c)
+  (: a 𝒮) (define a (function (lazy a) (lazy a) #hash([x0 . x0] [x1 . x1]))) (check-pred ?𝒮 a)
+  (: b 𝒮) (define b (function (lazy b) (lazy b) #hash([y0 . y0] [y1 . y1]))) (check-pred ?𝒮 b)
+  (: c 𝒮) (define c (function (lazy c) (lazy c) #hash([z0 . z0] [z1 . z1]))) (check-pred ?𝒮 c)
 
   ;; Morphisms
-  (: f (→𝒮 a b)) (define f (hash 'x0 'y0 'x1 'y0 '_ (set 'y1))) (check-pred ?𝒮 f)
-  (: g (→𝒮 b c)) (define g (hash 'y0 'z0 'y1 'z0 '_ (set 'z1))) (check-pred ?𝒮 g)
+  (: f (→𝒮 a b)) (define f (function (lazy a) (lazy b) #hash([x0 . y0] [x1 . y0]))) (check-pred ?𝒮 f)
+  (: g (→𝒮 b c)) (define g (function (lazy b) (lazy c) #hash([y0 . z0] [y1 . z0]))) (check-pred ?𝒮 g)
 
   ;; Preservation of domain and codomain
   (check-true (=𝒮 (𝒫 a) (𝒫_! a) (dom𝒮 (𝒫_! f)) (𝒫_! (dom𝒮 f))))

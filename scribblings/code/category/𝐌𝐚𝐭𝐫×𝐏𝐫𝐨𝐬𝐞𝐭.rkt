@@ -1,16 +1,16 @@
 #lang racket/base
 
-(require math/matrix racket/match)
-(require (file "𝐌𝐚𝐭𝐫.rkt") (file "𝐑𝐞𝐥.rkt"))
+(require math/matrix racket/match racket/promise racket/set)
+(require (file "𝐌𝐚𝐭𝐫.rkt") (file "𝐏𝐫𝐨𝐬𝐞𝐭.rkt"))
 
 (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
-(define-values (domℛ codℛ ∘ℛ ?ℛ =ℛ) (𝐑𝐞𝐥))
+(define-values (domℛ codℛ ∘ℛ ?ℛ =ℛ) (𝐏𝐫𝐨𝐬𝐞𝐭))
 
 (define (× . m*) m*)
 (define (rand m n) (random 1 9))
 
-(provide 𝐌𝐚𝐭𝐫×𝐑𝐞𝐥)
-(define (𝐌𝐚𝐭𝐫×𝐑𝐞𝐥 . _) (values dom cod ∘ ? =))
+(provide 𝐌𝐚𝐭𝐫×𝐏𝐫𝐨𝐬𝐞𝐭)
+(define (𝐌𝐚𝐭𝐫×𝐏𝐫𝐨𝐬𝐞𝐭 . _) (values dom cod ∘ ? =))
 
 (define dom (match-λ [`(,m ,r) (× (domℳ m) (domℛ r))]))
 (define cod (match-λ [`(,m ,r) (× (codℳ m) (codℛ r))]))

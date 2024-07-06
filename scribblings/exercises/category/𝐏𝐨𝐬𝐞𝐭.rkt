@@ -1,9 +1,12 @@
 #lang racket/base
 
 (require racket/match)
-(require (file "../../code/category/𝐑𝐞𝐥.rkt"))
+(require (file "../../code/category/𝐏𝐫𝐨𝐬𝐞𝐭.rkt"))
 
-(define-values (dom cod ∘ _ =) (𝐑𝐞𝐥))
+(provide 𝐏𝐨𝐬𝐞𝐭)
+(define (𝐏𝐨𝐬𝐞𝐭 . _) (values dom cod ∘ ? =))
+
+(define-values (dom cod ∘ _ =) (𝐏𝐫𝐨𝐬𝐞𝐭))
 (define ?
   (match-λ
     [`(,a . ,b)

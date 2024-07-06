@@ -49,7 +49,5 @@
     [(_ t* ...+)
      #'(begin (deftech@ t*) ...)]))
 
-#;(deftech@ 𝐂𝐚𝐭 𝐋𝐢𝐬𝐭 𝐌𝐚𝐭𝐫 𝐌𝐨𝐧 𝐍𝐚𝐭 𝐏𝐫𝐨𝐜 𝐑𝐞𝐥 𝐒𝐞𝐭 𝐒𝐞𝐭∗ 𝐒𝐭𝐫)
-
 (define main (λ ([argv (current-command-line-arguments)]) (values)))
 (module+ main (call-with-values main exit))

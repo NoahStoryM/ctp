@@ -1,5 +1,6 @@
 #lang racket/base
 
+(provide (struct-out composition))
 (struct composition (procedure* body)
   #:constructor-name make-composition
   #:property prop:procedure

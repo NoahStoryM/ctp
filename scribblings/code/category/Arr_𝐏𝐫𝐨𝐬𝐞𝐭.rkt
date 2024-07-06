@@ -1,12 +1,12 @@
 #lang racket/base
 
 (require racket/match)
-(require (file "𝐑𝐞𝐥.rkt"))
+(require (file "𝐏𝐫𝐨𝐬𝐞𝐭.rkt"))
 
-(define-values (domℛ codℛ ∘ℛ ?ℛ =ℛ) (𝐑𝐞𝐥))
+(define-values (domℛ codℛ ∘ℛ ?ℛ =ℛ) (𝐏𝐫𝐨𝐬𝐞𝐭))
 
-(provide Arr_𝐑𝐞𝐥)
-(define (Arr_𝐑𝐞𝐥 . _) (values dom cod ∘ ? =))
+(provide Arr_𝐏𝐫𝐨𝐬𝐞𝐭)
+(define (Arr_𝐏𝐫𝐨𝐬𝐞𝐭 . _) (values dom cod ∘ ? =))
 
 (define dom
   (match-λ

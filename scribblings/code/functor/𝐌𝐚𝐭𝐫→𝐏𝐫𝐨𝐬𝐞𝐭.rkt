@@ -2,7 +2,7 @@
 
 (require math/matrix)
 (require (file "../category/𝐌𝐚𝐭𝐫.rkt")
-         (file "../category/𝐑𝐞𝐥.rkt"))
+         (file "../category/𝐏𝐫𝐨𝐬𝐞𝐭.rkt"))
 
 (: rand (→ Index Index Any))
 (define (rand m n) (random 1 9))
@@ -23,7 +23,7 @@
 (: ?ℛ (pred (∀ ([a : ℛ] [b : ℛ]) (→ℛ a b))))
 (: =ℛ (∀ ([a : ℛ] [b : ℛ] [c : ℛ] [d : ℛ] ...) (→ (× (→ℛ a b) (→ℛ c d) ...) Boolean)))
 (define (ℛ m) m)
-(define-values (domℛ codℛ ∘ℛ ?ℛ =ℛ) (𝐑𝐞𝐥))
+(define-values (domℛ codℛ ∘ℛ ?ℛ =ℛ) (𝐏𝐫𝐨𝐬𝐞𝐭))
 
 ;; Functors from ℳ to ℛ
 (: F (∀ ([a : ℳ] [b : ℳ]) (→ (→ℳ a b) (→ℛ (F a) (F b)))))

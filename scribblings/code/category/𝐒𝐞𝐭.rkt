@@ -1,56 +1,54 @@
 #lang racket/base
 
-(require racket/hash racket/set)
+(require racket/hash racket/promise)
 
-(define (function->mapping f) (hash-remove f '_))
+(provide (struct-out function))
+(struct function (dom cod map))
 
 (provide 𝐒𝐞𝐭)
 (define (𝐒𝐞𝐭 . _) (values dom cod ∘ ? =))
 
-(define (dom m)
-  (for/hash ([(a b) (in-hash m)])
-    (values a (if (eq? a '_) (set) a))))
-(define (cod m)
-  (hash-union
-   (for/hash ([b (in-set (hash-ref m '_))]) (values b b))
-   (for/hash ([(a b) (in-hash (function->mapping m))]) (values b b))
-   (hash '_ (set))))
+(define (dom m) (force (function-dom m)))
+(define (cod m) (force (function-cod m)))
 (define ∘
   (case-λ
     [(m) m]
     [(m1 m2)
-     (define m
-       (for/hash ([(k2 v2) (in-hash (function->mapping m2))])
-         (define v1 (hash-ref m1 v2))
+     (define ht1 (function-map m1))
+     (define ht2 (function-map m2))
+     (define ht
+       (for/hash ([(k2 v2) (in-hash ht2)])
+         (define v1 (hash-ref ht1 v2))
          (values k2 v1)))
-     (define v*
-       (let ([v1* (list->set (hash-values m))])
-         (for/fold ([v* (set)])
-                   ([v2 (in-set (hash-ref m2 '_))])
-           (define v1 (hash-ref m1 v2))
-           (if (set-member? v1* v1) v* (set-add v* v1)))))
-     (hash-set m '_ (set-union v* (hash-ref m1 '_)))]
+     (function (function-dom m2) (function-cod m1) ht)]
     [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
-(define (? m) (and (hash? m) (set? (hash-ref m '_ #f))))
+(define (? m) (function? m))
 (define =
   (case-λ
     [(_) #t]
-    [(m1 m2) (equal? m1 m2)]
+    [(m1 m2)
+     (and
+      (equal? (function-map      m1)
+              (function-map      m2))
+      (equal? (function-map (dom m1))
+              (function-map (dom m2)))
+      (equal? (function-map (cod m1))
+              (function-map (cod m2))))]
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 (module+ test
   (require rackunit)
 
   ;; Objects
-  (define a (hash 'a 'a   0    0    1    1    2    2  '_ (set))) (check-pred ? a)
-  (define b (hash 'b 'b '|0| '|0| '|1| '|1| '|2| '|2| '_ (set))) (check-pred ? b)
-  (define c (hash 'c 'c  "0"  "0"  "1"  "1"  "2"  "2" '_ (set))) (check-pred ? c)
-  (define d (hash 'd 'd #"0" #"0" #"1" #"1" #"2" #"2" '_ (set))) (check-pred ? d)
+  (define a (function (lazy a) (lazy a) #hash([a . a] [  0  .   0 ] [  1  .   1 ] [  2  .   2 ]))) (check-pred ? a)
+  (define b (function (lazy b) (lazy b) #hash([b . b] [ |0| .  |0|] [ |1| .  |1|] [ |2| .  |2|]))) (check-pred ? b)
+  (define c (function (lazy c) (lazy c) #hash([c . c] [ "0" .  "0"] [ "1" .  "1"] [ "2" .  "2"]))) (check-pred ? c)
+  (define d (function (lazy d) (lazy d) #hash([d . d] [#"0" . #"0"] [#"1" . #"1"] [#"2" . #"2"]))) (check-pred ? d)
 
   ;; Morphisms
-  (define f (hash 'a 'b   0  'b   1  'b   2  '|2| '_ (set '|0| '|1|))) (check-pred ? f)
-  (define g (hash 'b 'c '|0| 'c '|1| 'c '|2|  "2" '_ (set  "0"  "1"))) (check-pred ? g)
-  (define h (hash 'c 'd  "0" 'd  "1" 'd  "2" #"2" '_ (set #"0" #"1"))) (check-pred ? h)
+  (define f (function (lazy a) (lazy b) #hash([a . b] [  0  .  |0|] [  1  .  |0|] [  2  .  |1|]))) (check-pred ? f)
+  (define g (function (lazy b) (lazy c) #hash([b . c] [ |0| .  "0"] [ |1| .  "0"] [ |2| .  "1"]))) (check-pred ? g)
+  (define h (function (lazy c) (lazy d) #hash([c . d] [ "0" . #"0"] [ "1" . #"0"] [ "2" . #"1"]))) (check-pred ? h)
 
 
   ;; Existence of composition

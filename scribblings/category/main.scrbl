@@ -190,7 +190,8 @@ on @tech{monoids}.
 @subsection{Subcategory}
 
 @margin-note{
-A @deftech{subset} can be viewed as a @tech{subcategory} of a @tech{discrete category}.
+A @deftech{subset} can be viewed as a @tech{subcategory} of a @tech{discrete category},
+and a @deftech{submonoid} can be viewed as a @tech{subcategory} of an @tech{OOC}.
 }
 
 Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
@@ -267,6 +268,41 @@ an @tech{OOC}.
 @bold{Exercise}: Using the example code provided above as a reference, implement
 @tech{𝐒𝐭𝐫}.
 
+@subsubsection{Category of Relations}
+
+@margin-note{
+A @deftech{relation} from a @tech{set} @math{s} to a @tech{set} @math{t} is a
+@tech{subset} of @math{s × t}. Specially, a subset of @math{s × s} is a
+@deftech{binary relation} on @math{s}, and the @deftech{diagonal relation}
+(@deftech{equality relation}) on @math{s} is the @tech{relation} @math{Δ_s},
+where @math{Δ_s := {(x, x) ∈ s × s | x ∈ s}}.
+}
+
+The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, where
+@tech{morphisms} are @tech{relations}:
+
+@racketfile{code/category/𝐑𝐞𝐥.rkt}
+
+@subsubsection{Category of Prosets}
+
+@margin-note{
+A @deftech{preordered set} (@deftech{proset}), @math{(S, ≤)}, is a @tech{set}
+@math{S} equipped with a @tech{binary relation} @math{≤} that is reflexive
+and transitive.
+}
+
+A @tech{proset}, @math{(S, ≤)}, can be viewed as a @tech{category}, denoted as
+@deftech{𝐏𝐫𝐨𝐬𝐞𝐭}, where @tech{morphisms} are @tech{elements} of @math{≤}:
+
+@racketfile{code/category/𝐏𝐫𝐨𝐬𝐞𝐭.rkt}
+
+@margin-note{
+A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
+@math{(S, ≤)}, for which @math{≤} is antisymmetric.
+}
+
+@bold{Exercise}: Implement the @tech{category} @deftech{𝐏𝐨𝐬𝐞𝐭} of @tech{poset}.
+
 @subsubsection{Category of Matrices}
 
 The @tech{category} of @tech/math[#:key "matrix"]{matrices}, denoted as @deftech{𝐌𝐚𝐭𝐫},
@@ -276,26 +312,6 @@ its @tech{domain} is the n-order identity @tech/math{matrix}, and its @tech{codo
 is the m-order identity @tech/math{matrix}:
 
 @racketfile{code/category/𝐌𝐚𝐭𝐫.rkt}
-
-@subsubsection{Category of Binary Relations}
-
-@margin-note{
-A @deftech{preordered set}, @math{(S, ≤)}, is a @tech{set} @math{S} equipped with
-a @deftech{binary relation} operator @math{≤} that is reflexive and transitive.
-}
-
-A @tech{preordered set}, @math{(S, ≤)}, can be viewed as a @tech{category}, denoted
-as @deftech{𝐑𝐞𝐥}, where @tech{morphisms} are @tech{binary relations} on its underlying
-@tech{set} @math{S}:
-
-@racketfile{code/category/𝐑𝐞𝐥.rkt}
-
-@margin-note{
-A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
-@math{(S, ≤)}, for which @math{≤} is antisymmetric.
-}
-
-@bold{Exercise}: View a @tech{poset} as a @tech{category} and implement it.
 
 @subsubsection{Category of Sets}
 
@@ -314,11 +330,12 @@ as its @tech{morphisms}. It resembles @tech{𝐒𝐞𝐭}, where @tech{morphisms
 mathematical @tech{functions}.
 
 An important point to consider in @tech{𝐏𝐫𝐨𝐜} is the @tech[#:key "equal"]{equality}
-of @tech{morphisms}. In @tech{𝐒𝐞𝐭}, two @tech{functions} are considered @tech{equal}
-if they produce the same output for every input. However, in @tech{𝐏𝐫𝐨𝐜}, determining
-whether two @tech{procedures} are @tech{equal} (i.e., produce the same output for every possible input)
-is undecidable in general. As a result, we must rely on the programmer's judgment
-to ascertain whether the behavior of two @tech{procedures} is the same.
+of @tech{morphisms}. In @tech{𝐒𝐞𝐭}, two @tech{functions} are considered
+@tech{equal} if they produce the same output for every input. However, in
+@tech{𝐏𝐫𝐨𝐜}, determining whether two @tech{procedures} are @tech{equal}
+(i.e., produce the same output for every possible input) is undecidable in general.
+As a result, we must rely on the programmer's judgment to ascertain whether the
+behavior of two @tech{procedures} is the same.
 
 From the computing science perspective, @tech{category theory} is a strongly
 typed language, stronger than any programming language. This is due to the
@@ -380,10 +397,10 @@ while the third @tech{∘} represents @tech{composition} in the @tech{product ca
 
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
-we create a @tech{product category} by taking the @tech[#:key "cartesian product"]{product}
-of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐑𝐞𝐥}:
+we create a @tech{product category} by taking the
+@tech[#:key "cartesian product"]{product} of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐏𝐫𝐨𝐬𝐞𝐭}:
 
-@racketfile{code/category/𝐌𝐚𝐭𝐫×𝐑𝐞𝐥.rkt}
+@racketfile{code/category/𝐌𝐚𝐭𝐫×𝐏𝐫𝐨𝐬𝐞𝐭.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{dom×}, @deftech{cod×}, @deftech{∘×},
 @deftech{?×} and @deftech{=×} so that we can @racket[define] the
@@ -430,10 +447,10 @@ but @tech{commutative squares}.
 
 @bold{Exercise}: Prove that @math{(k∘i, l∘j) = (k, l)∘(i, j)}.
 
-In the following code, we create an @tech{arrow category} to which @tech{𝐑𝐞𝐥}
+In the following code, we create an @tech{arrow category} to which @tech{𝐏𝐫𝐨𝐬𝐞𝐭}
 gives rise:
 
-@racketfile{code/category/Arr_𝐑𝐞𝐥.rkt}
+@racketfile{code/category/Arr_𝐏𝐫𝐨𝐬𝐞𝐭.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{Arr} so that we can @racket[define]
 the @tech{arrow category} @math{Arr(ℛ)} in this way:
@@ -675,7 +692,7 @@ for @math{a} in any @tech{commutative diagram} without affecting the
 @tech[#:key "commutative"]{commutativity} of the @tech{diagram}. This property
 makes @tech{isomorphisms} a weak concept of @tech{identity morphisms}.
 
-Examples in @tech{𝐑𝐞𝐥}:
+Examples in @tech{𝐏𝐫𝐨𝐬𝐞𝐭}:
 
 @racketblock[
 (code:comment2 "Objects")
