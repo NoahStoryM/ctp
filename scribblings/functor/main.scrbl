@@ -89,7 +89,7 @@ properties of @tech{functors}.
 
 The following example illustrates how to implement @tech{functors} in Racket:
 
-@racketfile{code/functor/𝐌𝐚𝐭𝐫→𝐏𝐫𝐨𝐬𝐞𝐭.rkt}
+@racketfile{code/functor/𝐒𝐞𝐭→𝐑𝐞𝐥.rkt}
 
 @bold{Exercise}: Prove that @tech{functors} can be @tech[#:key "compose"]{composed}
 and that this @tech{composition} is @tech{associative}.
