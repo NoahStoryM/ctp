@@ -273,14 +273,15 @@ an @tech{OOC}.
 
 @margin-note{
 A @deftech{relation} from a @tech{set} @math{s} to a @tech{set} @math{t} is a
-@tech{subset} of @math{s × t}. Specially, a subset of @math{s × s} is a
-@deftech{binary relation} on @math{s}, and the @deftech{diagonal relation}
+@tech{subset} of @math{s × t}. Specially, a @deftech{binary relation} on @math{s}
+is a @tech{subset} of @math{s × s}, and the @deftech{diagonal relation}
 (@deftech{equality relation}) on @math{s} is the @tech{relation} @math{Δ_s},
 where @math{Δ_s := {(x, x) ∈ s × s | x ∈ s}}.
 }
 
 The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, where
-@tech{morphisms} are @tech{relations}:
+@tech{identity morphisms} are @tech{diagonal relations}, and @tech{morphisms} are
+@tech{relations}:
 
 @racketfile{code/category/𝐑𝐞𝐥.rkt}
 

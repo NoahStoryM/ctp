@@ -40,15 +40,15 @@
   (require rackunit)
 
   ;; Objects
-  (define a (function (lazy a) (lazy a) #hash([a . a] [  0  .   0 ] [  1  .   1 ] [  2  .   2 ]))) (check-pred ? a)
-  (define b (function (lazy b) (lazy b) #hash([b . b] [ |0| .  |0|] [ |1| .  |1|] [ |2| .  |2|]))) (check-pred ? b)
-  (define c (function (lazy c) (lazy c) #hash([c . c] [ "0" .  "0"] [ "1" .  "1"] [ "2" .  "2"]))) (check-pred ? c)
-  (define d (function (lazy d) (lazy d) #hash([d . d] [#"0" . #"0"] [#"1" . #"1"] [#"2" . #"2"]))) (check-pred ? d)
+  (define a (function (lazy a) (lazy a) #hash([a . a] [  0  .   0 ] [  1  .   1 ]))) (check-pred ? a)
+  (define b (function (lazy b) (lazy b) #hash([b . b] [ |0| .  |0|] [ |1| .  |1|]))) (check-pred ? b)
+  (define c (function (lazy c) (lazy c) #hash([c . c] [ "0" .  "0"] [ "1" .  "1"]))) (check-pred ? c)
+  (define d (function (lazy d) (lazy d) #hash([d . d] [#"0" . #"0"] [#"1" . #"1"]))) (check-pred ? d)
 
   ;; Morphisms
-  (define f (function (lazy a) (lazy b) #hash([a . b] [  0  .  |0|] [  1  .  |0|] [  2  .  |1|]))) (check-pred ? f)
-  (define g (function (lazy b) (lazy c) #hash([b . c] [ |0| .  "0"] [ |1| .  "0"] [ |2| .  "1"]))) (check-pred ? g)
-  (define h (function (lazy c) (lazy d) #hash([c . d] [ "0" . #"0"] [ "1" . #"0"] [ "2" . #"1"]))) (check-pred ? h)
+  (define f (function (lazy a) (lazy b) #hash([a . b] [  0  .  |0|] [  1  .  |0|]))) (check-pred ? f)
+  (define g (function (lazy b) (lazy c) #hash([b . c] [ |0| .  "0"] [ |1| .  "0"]))) (check-pred ? g)
+  (define h (function (lazy c) (lazy d) #hash([c . d] [ "0" . #"0"] [ "1" . #"0"]))) (check-pred ? h)
 
 
   ;; Existence of composition
