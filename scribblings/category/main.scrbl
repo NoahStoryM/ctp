@@ -5,6 +5,7 @@
                      racket/hash
                      racket/match
                      racket/set
+                     racket/promise
                      rackunit
                      math/matrix)
           "../ctp-utils.rkt")
