@@ -1,21 +1,26 @@
 #lang racket/base
 
 (require racket/match)
-(require (file "../../code/category/𝐏𝐫𝐨𝐬𝐞𝐭.rkt"))
+(require (file "../../code/category/𝐏𝐚𝐢𝐫.rkt"))
 
-(provide 𝐏𝐨𝐬𝐞𝐭)
-(define (𝐏𝐨𝐬𝐞𝐭 . _) (values dom cod ∘ ? =))
+(define-values (dom cod ∘ =)
+  (call-with-values 𝐏𝐚𝐢𝐫 (λ (dom cod ∘ ? =) (values dom cod ∘ =))))
 
-(define-values (dom cod ∘ _ =) (𝐏𝐫𝐨𝐬𝐞𝐭))
-(define ?
-  (match-λ
-    [`(,a . ,b)
-     (and (real? a) (real? b)
-          (<= a b))]
-    [_ #f]))
+(provide Preord)
+(define (Preord S? ≤)
+  (define ?
+    (match-λ
+      [`(,a . ,b)
+       (and (S? a) (S? b))
+       (≤ a b)]
+      [_ #f]))
+  (values dom cod ∘ ? =))
+
 
 (module+ test
   (require rackunit)
+
+  (define ? (call-with-values 𝐏𝐚𝐢𝐫 (λ (dom cod ∘ ? =) ?)))
 
   ;; Objects
   (define a '(0 . 0)) (check-pred ? a)

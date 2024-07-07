@@ -1,17 +1,65 @@
 #lang racket/base
 
-(require ctp math/matrix)
-(require (file "../../code/category/𝐌𝐚𝐭𝐫.rkt"))
+(require racket/match)
 
-(define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
+(provide Sli)
+(define ((Sli dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞) c)
+  (define dom
+    (match-λ
+      [`((,p) (,q ,f))
+       (define a (dom𝒞 f))
+       `((,p) (,p ,a))]))
+  (define cod
+    (match-λ
+      [`((,p) (,q ,f))
+       (define b (cod𝒞 f))
+       `((,q) (,q ,b))]))
+  (define ∘
+    (case-λ
+      [(t) t]
+      [(t1 t2)
+       (match* (t1 t2)
+         [(`((,q) (,r ,g))
+           `((,p) (,q ,f)))
+          #:when (=𝒞 (dom𝒞 g) (cod𝒞 f))
+          `((,p) (,r ,(∘𝒞 g f)))])]
+      [(t1 t2 . t*) (apply ∘ (∘ t1 t2) t*)]))
+  (define ?
+    (match-λ
+      [`((,p) (,q ,f))
+       #:when
+       (and (?𝒞 p)
+            (?𝒞 q) (?𝒞 f) (=𝒞 (dom𝒞 q) (cod𝒞 f))
+            (=𝒞 c (cod𝒞 p) (cod𝒞 q)))
+       (=𝒞 p (∘𝒞 q f))]
+      [_ #f]))
+  (define =
+    (case-λ
+      [(_) #t]
+      [(t1 t2)
+       (match* (t1 t2)
+         [(`((,r) (,s ,h))
+           `((,p) (,q ,f)))
+          (and (=𝒞 r p)
+               (=𝒞 s q) (=𝒞 h f))]
+         [(_ _) #f])]
+      [(t1 t2 . t*) (and (= t1 t2) (apply = t*))]))
 
-(define (rand m n) (random 1 9))
+  (values dom cod ∘ ? =))
 
-(define m (identity-matrix 5))
-(define-values (dom cod ∘ ? =) ((Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
 
 (module+ test
   (require rackunit)
+  (require math/matrix)
+  (require (file "../../code/category/𝐌𝐚𝐭𝐫.rkt"))
+
+  (define (rand m n) (random 1 9))
+  (define m (identity-matrix 5))
+
+  (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
+  (define-values (dom cod ∘ ? =)
+    ((Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
+
 
   ;; Objects in ℳ
   (define a1 (identity-matrix 1)) (check-pred ?ℳ a1)

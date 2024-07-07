@@ -56,8 +56,8 @@ viewing a @tech{category} not just as a network of @tech{objects} linked by
 primary focus. In this universe, @tech{objects} serve more as structural markers
 than active participants, and @tech{morphisms} are entities that can represent
 transformations, operations, or even concrete entities like @tech/refer{numbers},
-@tech/refer{lists}, and @tech/refer{strings}, as long as they adhere to the
-@deftech{composition rules}:
+@tech/refer{lists}, @tech/refer{strings},  and @tech/refer{pairs}, as long as
+they adhere to the @deftech{composition rules}:
 
 @itemlist[
   #:style 'ordered
@@ -221,6 +221,12 @@ A @deftech{@deftech{wide} subcategory} is a @tech{subcategory} that includes all
 @tech{wide subcategory} of @math{𝒞}, then every @tech{object} in @math{𝒞} is also
 an @tech{object} in @math{𝒟}.
 
+@subsection{Concrete Category}
+
+A @deftech{@deftech{concrete} category} is a @tech{category} where @tech{objects}
+are structured @tech{sets} (e.g., @tech{monoids}), and @tech{morphisms} are
+@tech{functions} preserve the structure (e.g., @tech{monoidal homomorphisms}).
+
 @section{Mapping Category to Programming}
 
 In this section, we'll explore how @tech{category theory} concepts can be mapped
@@ -285,7 +291,12 @@ The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, wher
 
 @racketfile{code/category/𝐑𝐞𝐥.rkt}
 
-@subsubsection{Category of Prosets}
+@subsubsection{Category of Pairs}
+
+The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}, where
+@tech{morphisms} are @tech{pairs}:
+
+@racketfile{code/category/𝐏𝐚𝐢𝐫.rkt}
 
 @margin-note{
 A @deftech{preordered set} (@deftech{proset}), @math{(S, ≤)}, is a @tech{set}
@@ -293,17 +304,28 @@ A @deftech{preordered set} (@deftech{proset}), @math{(S, ≤)}, is a @tech{set}
 and transitive.
 }
 
-A @tech{proset}, @math{(S, ≤)}, can be viewed as a @tech{category}, denoted as
-@deftech{𝐏𝐫𝐨𝐬𝐞𝐭}, where @tech{morphisms} are @tech{elements} of @math{≤}:
+A @tech{proset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
+@tech{category} is called the @deftech{preorder category} associated to a
+@tech{proset}.
 
-@racketfile{code/category/𝐏𝐫𝐨𝐬𝐞𝐭.rkt}
+@bold{Exercise}: Try to @racket[define] @deftech{Preord} so that we can
+@racket[define] the @tech{preorder category} associated to a @tech{poset} in
+this way:
+
+@racketblock[
+(define-values (dom cod ∘ ? =)
+  (Preord S? ≤))
+]
 
 @margin-note{
 A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
 @math{(S, ≤)}, for which @math{≤} is antisymmetric.
 }
 
-@bold{Exercise}: Implement the @tech{category} @deftech{𝐏𝐨𝐬𝐞𝐭} of @tech{posets}.
+A @tech{poset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
+@tech{category} is called the @deftech{order category} of a @tech{poset}.
+
+@bold{Exercise}: Implement the @tech{order category} of a @tech{poset}.
 
 @subsubsection{Category of Matrices}
 
@@ -400,22 +422,22 @@ while the third @tech{∘} represents @tech{composition} in the @tech{product ca
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
 we create a @tech{product category} by taking the
-@tech[#:key "cartesian product"]{product} of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐏𝐫𝐨𝐬𝐞𝐭}:
+@tech[#:key "cartesian product"]{product} of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐏𝐚𝐢𝐫}:
 
-@racketfile{code/category/𝐌𝐚𝐭𝐫×𝐏𝐫𝐨𝐬𝐞𝐭.rkt}
+@racketfile{code/category/𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{dom×}, @deftech{cod×}, @deftech{∘×},
 @deftech{?×} and @deftech{=×} so that we can @racket[define] the
-@tech{product category} @math{ℳ × ℛ} in this way:
+@tech{product category} @math{ℳ × 𝒫} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
   (values
-   (dom× domℳ domℛ)
-   (cod× codℳ codℛ)
-   (∘× ∘ℳ ∘ℛ)
-   (?× ?ℳ ?ℛ)
-   (=× =ℳ =ℛ)))
+   (dom× domℳ dom𝒫)
+   (cod× codℳ cod𝒫)
+   (∘× ∘ℳ ∘𝒫)
+   (?× ?ℳ ?𝒫)
+   (=× =ℳ =𝒫)))
 ]
 
 @subsubsection{Arrow Category}
@@ -449,17 +471,17 @@ but @tech{commutative squares}.
 
 @bold{Exercise}: Prove that @math{(k∘i, l∘j) = (k, l)∘(i, j)}.
 
-In the following code, we create an @tech{arrow category} to which @tech{𝐏𝐫𝐨𝐬𝐞𝐭}
+In the following code, we create an @tech{arrow category} to which @tech{𝐏𝐚𝐢𝐫}
 gives rise:
 
-@racketfile{code/category/Arr_𝐏𝐫𝐨𝐬𝐞𝐭.rkt}
+@racketfile{code/category/Arr_𝐏𝐚𝐢𝐫.rkt}
 
-@bold{Exercise}: Try to @racket[define] @deftech{Arr} so that we can @racket[define]
-the @tech{arrow category} @math{Arr(ℛ)} in this way:
+@bold{Exercise}: Try to @racket[define] @deftech{Arr} so that we can
+@racket[define] the @tech{arrow category} @math{Arr(𝒫)} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
-  (Arr domℛ codℛ ∘ℛ ?ℛ =ℛ))
+  (Arr dom𝒫 cod𝒫 ∘𝒫 ?𝒫 =𝒫))
 ]
 
 @subsubsection{(Co)Slice Category}
@@ -498,7 +520,7 @@ not @tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
 @image["scribblings/category/images/over-cat_3.svg"]{[picture] over-cat_3.svg}
 
 @bold{Exercise}: Referencing the example code of the @tech{arrow category}
-@math{Arr(ℛ)}, implement a @tech{slice category} @math{ℳ/m} to which @tech{𝐌𝐚𝐭𝐫}
+@math{Arr(𝒫)}, implement a @tech{slice category} @math{ℳ/m} to which @tech{𝐌𝐚𝐭𝐫}
 gives rise.
 
 @bold{Exercise}: Try to @racket[define] @deftech{Sli} so that we can @racket[define]
@@ -542,7 +564,7 @@ not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 @image["scribblings/category/images/under-cat_3.svg"]{[picture] under-cat_3.svg}
 
 @bold{Exercise}: Referencing the example code of the @tech{arrow category}
-@math{Arr(ℛ)}, implement a @tech{coslice category} @math{m/ℳ} to which @tech{𝐌𝐚𝐭𝐫}
+@math{Arr(𝒫)}, implement a @tech{coslice category} @math{m/ℳ} to which @tech{𝐌𝐚𝐭𝐫}
 gives rise.
 
 @bold{Exercise}: Try to @racket[define] @deftech{¬Sli} so that we can @racket[define]
@@ -694,7 +716,7 @@ for @math{a} in any @tech{commutative diagram} without affecting the
 @tech[#:key "commutative"]{commutativity} of the @tech{diagram}. This property
 makes @tech{isomorphisms} a weak concept of @tech{identity morphisms}.
 
-Examples in @tech{𝐏𝐫𝐨𝐬𝐞𝐭}:
+Examples in @tech{𝐏𝐚𝐢𝐫}:
 
 @racketblock[
 (code:comment2 "Objects")

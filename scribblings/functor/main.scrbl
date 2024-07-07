@@ -164,6 +164,12 @@ are @tech{monoids} and @tech{morphisms} are @tech{monoidal homomorphisms}.
 @tech{𝐌𝐨𝐧} can be viewed as the @tech{category} of @tech{OOCs}, and
 @tech{monoidal homomorphisms} can be viewed as @tech{functors} between @tech{OOCs}.
 
+@subsubsection{Category of Groups}
+
+@subsubsection{Category of Prosets}
+
+@subsubsection{Category of Posets}
+
 @subsection{Forgetful Functor}
 
 A @deftech{forgetful functor} (@deftech{underlying functor} or @deftech{stripping functor})

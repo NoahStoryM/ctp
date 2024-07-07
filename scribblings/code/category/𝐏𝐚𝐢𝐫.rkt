@@ -2,8 +2,8 @@
 
 (require racket/match)
 
-(provide 𝐏𝐫𝐨𝐬𝐞𝐭)
-(define (𝐏𝐫𝐨𝐬𝐞𝐭 . _) (values dom cod ∘ ? =))
+(provide 𝐏𝐚𝐢𝐫)
+(define (𝐏𝐚𝐢𝐫 . _) (values dom cod ∘ ? =))
 
 (define (dom m) (define o (car m)) (cons o o))
 (define (cod m) (define o (cdr m)) (cons o o))
