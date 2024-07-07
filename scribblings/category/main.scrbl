@@ -294,7 +294,7 @@ The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, wher
 @subsubsection{Category of Pairs}
 
 The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}, where
-@tech{morphisms} are @tech{pairs}:
+@tech{morphisms} are @tech/refer{pairs}:
 
 @racketfile{code/category/𝐏𝐚𝐢𝐫.rkt}
 
