@@ -3,7 +3,7 @@
 (require (file "¬.rkt") (file "Sli.rkt"))
 
 (provide ¬Sli)
-(define (¬Sli dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
+(define ((¬Sli c) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
   ;; ¬𝒞
   (define-values (dom¬𝒞 cod¬𝒞 ∘¬𝒞 ?¬𝒞 =¬𝒞)
     (¬ dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
@@ -13,25 +13,24 @@
     (for/fold ([¬t '()]) ([s* (in-list t)])
       (cons (reverse s*) ¬t)))
 
-  (λ (c)
-    ;; ¬𝒞/c
-    (define-values (dom¬𝒞/c cod¬𝒞/c ∘¬𝒞/c ?¬𝒞/c =¬𝒞/c)
-      ((Sli dom¬𝒞 cod¬𝒞 ∘¬𝒞 ?𝒞 =𝒞) c))
+  ;; ¬𝒞/c
+  (define-values (dom¬𝒞/c cod¬𝒞/c ∘¬𝒞/c ?¬𝒞/c =¬𝒞/c)
+    ((Sli c) dom¬𝒞 cod¬𝒞 ∘¬𝒞 ?𝒞 =𝒞))
 
-    ;; ¬(¬𝒞/c)
-    (define-values (¬dom¬𝒞/c ¬cod¬𝒞/c ¬∘¬𝒞/c ¬?¬𝒞/c ¬=¬𝒞/c)
-      (¬ dom¬𝒞/c cod¬𝒞/c ∘¬𝒞/c ?¬𝒞/c =¬𝒞/c))
+  ;; ¬(¬𝒞/c)
+  (define-values (¬dom¬𝒞/c ¬cod¬𝒞/c ¬∘¬𝒞/c ¬?¬𝒞/c ¬=¬𝒞/c)
+    (¬ dom¬𝒞/c cod¬𝒞/c ∘¬𝒞/c ?¬𝒞/c =¬𝒞/c))
 
-    ;; c/𝒞 = ¬(¬𝒞/c)
-    (define (dom t) (~ (¬dom¬𝒞/c (~ t))))
-    (define (cod t) (~ (¬cod¬𝒞/c (~ t))))
-    (define (∘ . t*) (~ (apply ¬∘¬𝒞/c (map ~ t*))))
-    (define (? t) (¬?¬𝒞/c (~ t)))
-    (define (= . t*) (apply ¬=¬𝒞/c (map ~ t*)))
+  ;; c/𝒞 = ¬(¬𝒞/c)
+  (define (dom t) (~ (¬dom¬𝒞/c (~ t))))
+  (define (cod t) (~ (¬cod¬𝒞/c (~ t))))
+  (define (∘ . t*) (~ (apply ¬∘¬𝒞/c (map ~ t*))))
+  (define (? t) (¬?¬𝒞/c (~ t)))
+  (define (= . t*) (apply ¬=¬𝒞/c (map ~ t*)))
 
-    (values dom cod ∘ ? =)))
+  (values dom cod ∘ ? =))
 
-#;(define ((¬Sli dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞) c)
+#;(define ((¬Sli c) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
     (define dom
       (match-λ
         [`((,f ,p) (,q))
@@ -85,7 +84,7 @@
 
   (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
   (define-values (dom cod ∘ ? =)
-    ((¬Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
+    ((¬Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
 
 
   ;; Objects in ℳ

@@ -3,7 +3,7 @@
 (require racket/match)
 
 (provide Sli)
-(define ((Sli dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞) c)
+(define ((Sli c) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
   (define dom
     (match-λ
       [`((,p) (,q ,f))
@@ -58,7 +58,7 @@
 
   (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
   (define-values (dom cod ∘ ? =)
-    ((Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
+    ((Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
 
 
   ;; Objects in ℳ

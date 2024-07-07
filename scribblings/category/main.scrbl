@@ -528,7 +528,7 @@ the @tech{slice category} @math{ℳ/m} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
-  ((Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
+  ((Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
 ]
 
 The @tech{dual} notion of a @tech{slice category} @math{𝒞/c} is a @deftech{coslice category}
@@ -572,7 +572,7 @@ the @tech{coslice category} @math{m/ℳ} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
-  ((¬Sli domℳ codℳ ∘ℳ ?ℳ =ℳ) m))
+  ((¬Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
 ]
 
 @bold{Exercise}: Prove that @math{ℳ^op/m = (m/ℳ)^op}.
