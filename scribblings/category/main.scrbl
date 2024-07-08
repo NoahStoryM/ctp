@@ -225,8 +225,8 @@ an @tech{object} in @math{𝒟}.
 
 A @deftech{@deftech{concrete} category} is a @tech{category} where @tech{objects}
 are @deftech{structured sets} (e.g., @tech{monoids}), and @tech{morphisms} are
-@deftech{homomorphisms}, meaning @tech{functions} that preserve the structure
-(e.g., @tech{monoid homomorphisms}).
+@deftech{homomorphisms} (e.g., @tech{monoid homomorphisms}), meaning
+@tech{functions} that preserve the structure.
 
 @section{Mapping Category to Programming}
 
