@@ -166,7 +166,7 @@ are the @tech{identity morphisms}. In other words, every @tech{object} is only
 connected to itself via its @tech{identity morphism}. This means that a
 @tech{discrete category} can be viewed as the @tech{category} version of a
 @deftech{set}: the @tech{objects} of the @tech{discrete category} correspond to
-the @deftech{elements} of the @tech{set}. A @deftech{function} between two
+the @deftech{element}s of the @tech{set}. A @deftech{function} between two
 @tech{sets} can be viewed as a @tech{functor} between two @tech{discrete categories}.
 
 @subsection{One-Object Category}
@@ -349,7 +349,7 @@ are @tech{functions}:
 
 The @tech{category} of @tech{procedures}, denoted as @deftech{𝐏𝐫𝐨𝐜}, is perhaps
 the most important @tech{category} in programming. As the name suggests,
-@tech{𝐏𝐫𝐨𝐜} has @deftech{procedures}
+@tech{𝐏𝐫𝐨𝐜} has @deftech{procedure}s
 (also known as @tech[#:key "procedure"]{functions} in functional programming)
 as its @tech{morphisms}. It resembles @tech{𝐒𝐞𝐭}, where @tech{morphisms} are
 mathematical @tech{functions}.
