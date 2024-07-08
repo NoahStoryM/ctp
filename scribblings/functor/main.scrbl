@@ -154,15 +154,15 @@ defined as @tech{procedures} in later sections.
 @subsubsection{Category of Monoids}
 
 @margin-note{
-A @deftech{monoidal homomorphism} @math{f: (A, ∘, a) → (B, ·, b)} is a
+A @deftech{monoid homomorphism} @math{f: (A, ∘, a) → (B, ·, b)} is a
 @tech{function} that preserves the @tech{monoid} structure:
 @math{f(x∘y) = f(x)·f(y)} and @math{f(a) = b}.
 }
 
 The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where @tech{objects}
-are @tech{monoids} and @tech{morphisms} are @tech{monoidal homomorphisms}.
+are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
 @tech{𝐌𝐨𝐧} can be viewed as the @tech{category} of @tech{OOCs}, and
-@tech{monoidal homomorphisms} can be viewed as @tech{functors} between @tech{OOCs}.
+@tech{monoid homomorphisms} can be viewed as @tech{functors} between @tech{OOCs}.
 
 @subsubsection{Category of Groups}
 
