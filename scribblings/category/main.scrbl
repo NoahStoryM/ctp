@@ -826,13 +826,13 @@ If a @tech{terminal object} @tech{1} exists within a @tech{category} @math{𝒞}
 @deftech{global element} of another @tech{object} @math{a} in @math{𝒞} is defined
 as a @tech{morphism} @math{1 → a}.
 
-Although a @tech{category} is fundamentally @tech[#:key "compose"]{composed} of
-@tech{objects} and @tech{morphisms}, @tech{objects} within some @tech{categories}
-possess some inherent structures. The beauty of @tech{category theory} lies in
-our ability to consistently identify special @tech{morphisms} that reveal and
-represent these structures. This perspective not only deepens our understanding
-of tangible structures but also inspires us to perceive connections and patterns
-beyond the obvious structural definitions.
+Although a @tech{category} is fundamentally composed of @tech{objects} and
+@tech{morphisms}, @tech{objects} within some @tech{categories} possess some
+inherent structures. The beauty of @tech{category theory} lies in our ability to
+consistently identify special @tech{morphisms} that reveal and represent these
+structures. This perspective not only deepens our understanding of tangible
+structures but also inspires us to perceive connections and patterns beyond the
+obvious structural definitions.
 
 Consider @tech{𝐒𝐞𝐭} as an example. We understand that @tech{sets} contain
 @tech{elements}. However, the definition of @tech{categories} does not talk about
