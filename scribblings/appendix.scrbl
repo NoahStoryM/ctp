@@ -5,15 +5,15 @@
 @title{Appendix}
 @defmodule[ctp]
 
-@defproc[(dom [m procedure?]) procedure?]{
+@defproc[(dom [m morphism?]) morphism?]{
 See @tech{dom}.
 }
 
-@defproc[(cod [m procedure?]) procedure?]{
+@defproc[(cod [m morphism?]) morphism?]{
 See @tech{cod}.
 }
 
-@defproc[(∘ [m procedure?] ...) procedure?]{
+@defproc[(∘ [m morphism?] ...) morphism?]{
 See @tech{∘}.
 }
 
@@ -21,7 +21,7 @@ See @tech{∘}.
 See @tech{?}.
 }
 
-@defproc[(= [m0 procedure?] [m1 procedure?] ...) boolean?]{
+@defproc[(= [m0 morphism?] [m1 morphism?] ...) boolean?]{
 See @tech{=}.
 }
 

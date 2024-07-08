@@ -278,11 +278,11 @@ an @tech{OOC}.
 @subsubsection{Category of Relations}
 
 @margin-note{
-A @deftech{relation} from a @tech{set} @math{s} to a @tech{set} @math{t} is a
-@tech{subset} of @math{s × t}. Specially, a @deftech{binary relation} on @math{s}
-is a @tech{subset} of @math{s × s}, and the @deftech{diagonal relation}
-(@deftech{equality relation}) on @math{s} is the @tech{relation} @math{Δ_s},
-where @math{Δ_s := {(x, x) ∈ s × s | x ∈ s}}.
+A @deftech{relation} from a @tech{set} @math{S} to a @tech{set} @math{T} is a
+@tech{subset} of @math{S × T}. Specially, a @deftech{binary relation} on @math{S}
+is a @tech{subset} of @math{S × S}, and the @deftech{diagonal relation}
+(@deftech{equality relation}) on @math{S} is the @tech{relation} @math{Δ_S},
+where @math{Δ_s := {(x, x) ∈ S × S | x ∈ S}}.
 }
 
 The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, where
