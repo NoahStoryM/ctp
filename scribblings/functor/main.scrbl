@@ -166,6 +166,17 @@ are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
 
 @subsubsection{Category of Groups}
 
+@margin-note{
+A @deftech{group homomorphism} @math{f: (A, ∘, a) → (B, ·, b)} is a
+@tech{monoid homomorphism} that preserves the @tech{group} structure:
+@math{f(x@^{–1}) = f(x)@^{–1}}.
+}
+
+The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where @tech{objects}
+are @tech{groups} and @tech{morphisms} are @tech{group homomorphisms}.
+@tech{𝐆𝐫𝐩} can be viewed as the @tech{category} of @tech{OOGs}, and
+@tech{group homomorphisms} can be viewed as @tech{functors} between @tech{OOGs}.
+
 @subsubsection{Category of Prosets}
 
 @subsubsection{Category of Posets}
