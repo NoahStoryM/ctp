@@ -280,10 +280,10 @@ an @tech{OOC}.
 
 @margin-note{
 A @deftech{relation} from a @tech{set} @math{S} to a @tech{set} @math{T} is a
-@tech{subset} of @math{S × T}. Specially, a @deftech{binary relation} on @math{S}
-is a @tech{subset} of @math{S × S}, and the @deftech{diagonal relation}
+@tech{subset} of @math{S×T}. Specially, a @deftech{binary relation} on @math{S}
+is a @tech{subset} of @math{S×S}, and the @deftech{diagonal relation}
 (@deftech{equality relation}) on @math{S} is the @tech{relation} @math{Δ_S},
-where @math{Δ_s := {(x, x) ∈ S × S | x ∈ S}}.
+where @math{Δ_s := {(x, x) ∈ S×S | x ∈ S}}.
 }
 
 The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, where
@@ -333,7 +333,7 @@ A @tech{poset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}.
 
 The @tech{category} of @tech/math[#:key "matrix"]{matrices}, denoted as @deftech{𝐌𝐚𝐭𝐫},
 is a fascinating example that combines linear algebra with @tech{category theory}.
-In @tech{𝐌𝐚𝐭𝐫}, each @math{m × n} @tech/math{matrix} is considered a @tech{morphism},
+In @tech{𝐌𝐚𝐭𝐫}, each @math{m×n} @tech/math{matrix} is considered a @tech{morphism},
 its @tech{domain} is the n-order identity @tech/math{matrix}, and its @tech{codomain}
 is the m-order identity @tech/math{matrix}:
 
@@ -408,7 +408,7 @@ In this context, @tech[#:key "cartesian product"]{products} refer to
 @deftech{cartesian product}s, which are @tech{product objects} in @tech{𝐒𝐞𝐭}.
 }
 
-A @deftech{product category} @math{𝒞 × 𝒟} combines the given @tech{categories}
+A @deftech{product category} @math{𝒞×𝒟} combines the given @tech{categories}
 @math{𝒞} and @math{𝒟} to form a new @tech{category}.
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
@@ -430,7 +430,7 @@ we create a @tech{product category} by taking the
 
 @bold{Exercise}: Try to @racket[define] @deftech{dom×}, @deftech{cod×}, @deftech{∘×},
 @deftech{?×} and @deftech{=×} so that we can @racket[define] the
-@tech{product category} @math{ℳ × 𝒫} in this way:
+@tech{product category} @math{ℳ×𝒫} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)

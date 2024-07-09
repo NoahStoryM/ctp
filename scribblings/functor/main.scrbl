@@ -368,8 +368,8 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 
 
 @subsubsection{Two-Variable Hom Functor}
 
-The @deftech{two-variable hom functor} @math{Hom@_{𝒞}(-, -): 𝒞@^{op} × 𝒞 → 𝐒𝐞𝐭}
-takes @math{i × j} to @math{Hom@_{𝒞}(i, j)}.
+The @deftech{two-variable hom functor} @math{Hom@_{𝒞}(-, -): 𝒞@^{op}×𝒞 → 𝐒𝐞𝐭}
+takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
 
 @image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
 
