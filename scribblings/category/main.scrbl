@@ -302,7 +302,7 @@ The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}
 @margin-note{
 A @deftech{preordered set} (@deftech{proset}), @math{(S, ≤)}, is a @tech{set}
 @math{S} equipped with a @tech{binary relation} @math{≤} that is reflexive
-and transitive.
+and transitive. @math{≤} is called a @deftech{preorder} on @math{S}.
 }
 
 A @tech{proset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
@@ -320,7 +320,8 @@ this way:
 
 @margin-note{
 A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
-@math{(S, ≤)}, for which @math{≤} is antisymmetric.
+@math{(S, ≤)}, in which @math{≤} is antisymmetric. @math{≤} is called a
+@deftech{partial order} on @math{S}.
 }
 
 A @tech{poset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
