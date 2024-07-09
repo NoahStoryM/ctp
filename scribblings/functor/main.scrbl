@@ -154,9 +154,9 @@ defined as @tech{procedures} in later sections.
 @subsubsection{Category of Monoids}
 
 @margin-note{
-A @deftech{monoid homomorphism} @math{f: (A, ∘, a) → (B, ·, b)} is a
+A @deftech{monoid homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
 @tech{function} that preserves the @tech{monoid} structure:
-@math{f(x∘y) = f(x)·f(y)} and @math{f(a) = b}.
+@math{f(x∘y) = f(x)·f(y)} and @math{f(s) = t}.
 }
 
 The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where @tech{objects}
@@ -167,7 +167,7 @@ are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
 @subsubsection{Category of Groups}
 
 @margin-note{
-A @deftech{group homomorphism} @math{f: (A, ∘, a) → (B, ·, b)} is a
+A @deftech{group homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
 @tech{monoid homomorphism} that preserves the @tech{group} structure:
 @math{f(x@^{–1}) = f(x)@^{–1}}.
 }

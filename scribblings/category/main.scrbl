@@ -768,8 +768,9 @@ A @deftech{groupoid} is a @tech{category} in which all @tech{morphisms} are
 @subsubsection{One-Object Groupoid}
 
 @margin-note{
-A @deftech{group} is a @tech{monoid} in which every @tech{element} has a unique
-@tech{inverse}.
+A @deftech{group} @math{(S, ∘, s)} is a @tech{monoid} in which every
+@tech{element} @math{x} has a unique @tech{inverse} @math{x@^{–1}}:
+@math{x∘x@^{–1} = x@^{–1}∘x = s}.
 }
 
 A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
