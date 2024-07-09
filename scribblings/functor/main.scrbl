@@ -194,8 +194,8 @@ and @tech{monotone functions} can be viewed as @tech{functors} between them.
 
 @subsubsection{Category of Posets}
 
-The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐨𝐬}, is a
-@tech{full subcategory} of @tech{𝐏𝐫𝐨𝐬} where @tech{objects} are @tech{prosets}.
+The @tech{category} of @tech{posets}, denoted as @deftech{𝐏𝐨𝐬}, is a
+@tech{full subcategory} of @tech{𝐏𝐫𝐨𝐬} where @tech{objects} are @tech{posets}.
 
 @subsection{Forgetful Functor}
 
