@@ -319,9 +319,9 @@ this way:
 ]
 
 @margin-note{
-A @deftech{partially ordered set} (@deftech{poset}) is a @tech{preordered set},
-@math{(S, ≤)}, in which @math{≤} is antisymmetric. @math{≤} is called a
-@deftech{partial order} on @math{S}.
+A @deftech{partially ordered set} (@deftech{ordered set}, or @deftech{poset})
+is a @tech{preordered set}, @math{(S, ≤)}, in which @math{≤} is antisymmetric.
+@math{≤} is called a @deftech{partial order} on @math{S}.
 }
 
 A @tech{poset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
