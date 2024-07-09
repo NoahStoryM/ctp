@@ -151,52 +151,6 @@ For instance, in the @secref{Category_of_Sets}, @tech{morphisms} of @tech{𝐒�
 defined as @racket[hash] tables, but essentially they are mappings and might be
 defined as @tech{procedures} in later sections.
 
-@subsubsection{Category of Monoids}
-
-@margin-note{
-A @deftech{monoid homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
-@tech{function} that preserves the @tech{monoid} structure:
-@math{f(x∘y) = f(x)·f(y)} and @math{f(s) = t}.
-}
-
-The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where @tech{objects}
-are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
-@tech{𝐌𝐨𝐧} can be viewed as the @tech{category} of @tech{OOCs}, and
-@tech{monoid homomorphisms} can be viewed as @tech{functors} between them.
-
-@subsubsection{Category of Groups}
-
-@margin-note{
-A @deftech{group homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
-@tech{monoid homomorphism} that preserves the @tech{group} structure:
-@math{f(x@^{–1}) = f(x)@^{–1}}.
-}
-
-The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where @tech{objects}
-are @tech{groups} and @tech{morphisms} are @tech{group homomorphisms}.
-@tech{𝐆𝐫𝐩} can be viewed as the @tech{category} of @tech{OOGs}, and
-@tech{group homomorphisms} can be viewed as @tech{functors} between them.
-
-@subsubsection{Category of Prosets}
-
-@margin-note{
-A @deftech{@deftech{monotone} function}
-(@deftech{@deftech{monotonic} function}, @deftech{@deftech{isotone} function},
- @deftech{@deftech{isotonic} function}, or @deftech{order homomorphism})
-@math{f: (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
-structure: if @math{x ≤ y}, then @math{f(x) ⋜ f(y)}.
-}
-
-The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where @tech{objects}
-are @tech{prosets} and @tech{morphisms} are @tech{monotone functions}.
-@tech{𝐏𝐫𝐨𝐬} can be viewed as the @tech{category} of @tech{preorder categories},
-and @tech{monotone functions} can be viewed as @tech{functors} between them.
-
-@subsubsection{Category of Posets}
-
-The @tech{category} of @tech{posets}, denoted as @deftech{𝐏𝐨𝐬}, is a
-@tech{full subcategory} of @tech{𝐏𝐫𝐨𝐬} where @tech{objects} are @tech{posets}.
-
 @subsection{Forgetful Functor}
 
 A @deftech{forgetful functor} (@deftech{underlying functor} or @deftech{stripping functor})
@@ -223,6 +177,60 @@ to @tech{𝐒𝐞𝐭@_{∗}}.
 
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐒𝐞𝐭@_{∗}}
 to @tech{𝐒𝐞𝐭}.
+
+@section{Categories of Structured Sets}
+
+@tech{Structured sets} and their @tech{homomorphisms} form fundamental
+@tech{categories} that encapsulate various algebraic structures. These
+@tech{categories} allow us to study and generalize properties and operations
+across different mathematical systems. In this section, we will explore several
+important @tech{categories} of @tech{structured sets}.
+
+@subsection{Category of Monoids}
+
+@margin-note{
+A @deftech{monoid homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
+@tech{function} that preserves the @tech{monoid} structure:
+@math{f(x∘y) = f(x)·f(y)} and @math{f(s) = t}.
+}
+
+The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where @tech{objects}
+are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
+@tech{𝐌𝐨𝐧} can be viewed as the @tech{category} of @tech{OOCs}, and
+@tech{monoid homomorphisms} can be viewed as @tech{functors} between them.
+
+@subsection{Category of Groups}
+
+@margin-note{
+A @deftech{group homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
+@tech{monoid homomorphism} that preserves the @tech{group} structure:
+@math{f(x@^{–1}) = f(x)@^{–1}}.
+}
+
+The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where @tech{objects}
+are @tech{groups} and @tech{morphisms} are @tech{group homomorphisms}.
+@tech{𝐆𝐫𝐩} can be viewed as the @tech{category} of @tech{OOGs}, and
+@tech{group homomorphisms} can be viewed as @tech{functors} between them.
+
+@subsection{Category of Prosets}
+
+@margin-note{
+A @deftech{@deftech{monotone} function}
+(@deftech{@deftech{monotonic} function}, @deftech{@deftech{isotone} function},
+ @deftech{@deftech{isotonic} function}, or @deftech{order homomorphism})
+@math{f: (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
+structure: if @math{x ≤ y}, then @math{f(x) ⋜ f(y)}.
+}
+
+The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where @tech{objects}
+are @tech{prosets} and @tech{morphisms} are @tech{monotone functions}.
+@tech{𝐏𝐫𝐨𝐬} can be viewed as the @tech{category} of @tech{preorder categories},
+and @tech{monotone functions} can be viewed as @tech{functors} between them.
+
+@subsection{Category of Posets}
+
+The @tech{category} of @tech{posets}, denoted as @deftech{𝐏𝐨𝐬}, is a
+@tech{full subcategory} of @tech{𝐏𝐫𝐨𝐬} where @tech{objects} are @tech{posets}.
 
 @section{𝐒𝐞𝐭-Valued Functor}
 
