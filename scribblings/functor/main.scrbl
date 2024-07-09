@@ -162,7 +162,7 @@ A @deftech{monoid homomorphism} @math{f: (A, ∘, a) → (B, ·, b)} is a
 The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where @tech{objects}
 are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
 @tech{𝐌𝐨𝐧} can be viewed as the @tech{category} of @tech{OOCs}, and
-@tech{monoid homomorphisms} can be viewed as @tech{functors} between @tech{OOCs}.
+@tech{monoid homomorphisms} can be viewed as @tech{functors} between them.
 
 @subsubsection{Category of Groups}
 
@@ -175,11 +175,27 @@ A @deftech{group homomorphism} @math{f: (A, ∘, a) → (B, ·, b)} is a
 The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where @tech{objects}
 are @tech{groups} and @tech{morphisms} are @tech{group homomorphisms}.
 @tech{𝐆𝐫𝐩} can be viewed as the @tech{category} of @tech{OOGs}, and
-@tech{group homomorphisms} can be viewed as @tech{functors} between @tech{OOGs}.
+@tech{group homomorphisms} can be viewed as @tech{functors} between them.
 
 @subsubsection{Category of Prosets}
 
+@margin-note{
+A @deftech{@deftech{monotone} function}
+(@deftech{@deftech{monotonic} function}, @deftech{@deftech{isotone} function},
+ @deftech{@deftech{isotonic} function}, or @deftech{order homomorphism})
+@math{f: (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
+structure: if @math{x ≤ y}, then @math{f(x) ⋜ f(y)}.
+}
+
+The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where @tech{objects}
+are @tech{prosets} and @tech{morphisms} are @tech{monotone functions}.
+@tech{𝐏𝐫𝐨𝐬} can be viewed as the @tech{category} of @tech{preorder categories},
+and @tech{monotone functions} can be viewed as @tech{functors} between them.
+
 @subsubsection{Category of Posets}
+
+The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐨𝐬}, is a
+@tech{full subcategory} of @tech{𝐏𝐫𝐨𝐬} where @tech{objects} are @tech{prosets}.
 
 @subsection{Forgetful Functor}
 
