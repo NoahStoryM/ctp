@@ -182,18 +182,19 @@ to @tech{𝐒𝐞𝐭}.
 
 For a @tech{morphism} @math{g: b → c} in a @tech{category} @math{𝒞}, there is a
 @deftech{composition functor} @math{𝒞/g: 𝒞/b → 𝒞/c}. @math{𝒞/g} maps an @tech{object}
-@math{f} in @math{𝒞/b} to an @tech{object} @math{g∘f} in @math{𝒞/c}.
+@math{f} in @math{𝒞/b} to the @tech{object} @math{g∘f} in @math{𝒞/c}.
 
-@bold{Exercise}: Try to @racket[define] a @tech{composition functor}
-@math{ℳ/g: ℳ/b → ℳ/c} in Racket, where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫}.
+@bold{Exercise}: Implement a @tech{composition functor} @math{ℳ/g: ℳ/b → ℳ/c},
+where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫} and @math{g: b → c} is a @tech{morphism} in @math{ℳ}.
 
-@bold{Exercise}: Try to @racket[define] a @tech{composition functor}
-@math{f/ℳ: b/ℳ → a/ℳ} in Racket, where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫}.
+@bold{Exercise}: Implement a @tech{composition functor} @math{f/ℳ: b/ℳ → a/ℳ},
+where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫} and @math{f: a → b} is a @tech{morphism} in @math{ℳ}.
 
 @subsection{(Co)Slice Functor}
 
-The @deftech{slice functor} @math{𝒞/-} maps each @tech{morphism} @math{g: b → c}
-in a @tech{category} @math{𝒞} to the @tech{composition functor} @math{𝒞/g: 𝒞/b → 𝒞/c}.
+For a @tech{category} @math{𝒞}, the @deftech{slice functor} @math{𝒞/-} maps each
+@tech{morphism} @math{g: b → c} in @math{𝒞} to the @tech{composition functor}
+@math{𝒞/g: 𝒞/b → 𝒞/c}.
 
 @image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
 
@@ -209,8 +210,9 @@ in a @tech{category} @math{𝒞} to the @tech{composition functor} @math{𝒞/g:
   𝒞/g)
 ]
 
-The @deftech{coslice functor} @math{-/𝒞} maps each @tech{morphism} @math{f: a → b}
-in a @tech{category} @math{𝒞} to the @tech{composition functor} @math{f/𝒞: b/𝒞 → a/𝒞}.
+For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} maps each
+@tech{morphism} @math{f: a → b} in @math{𝒞} to the @tech{composition functor}
+@math{f/𝒞: b/𝒞 → a/𝒞}.
 
 @image["scribblings/functor/images/-÷𝒞.svg"]{[picture] -÷𝒞.svg}
 
