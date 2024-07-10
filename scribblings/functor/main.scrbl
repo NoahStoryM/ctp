@@ -463,8 +463,8 @@ and @code{get-an-element}.
 
 @bold{Exercise}: Prove that @math{H = G@^{–1} and G = H@^{–1}}.
 
-@math{H} is equal to the @tech{composition} of @math{𝒞/-} and the
-@tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
+@math{H} is equal to the @tech{composition} of the @tech{slice functor} @math{𝒞/-}
+and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
 
 @image["scribblings/functor/images/H_1.svg"]{[picture] H_1.svg}
 
@@ -503,8 +503,8 @@ attention to its @tech{opposite category} @math{𝒞^op}:
 
 @bold{Exercise}: Prove that @math{H = G@^{–1} and G = H@^{–1}}.
 
-@math{H} is equal to the @tech{composition} of @math{-/𝒞} and the
-@tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
+@math{H} is equal to the @tech{composition} of the @tech{coslice functor} @math{-/𝒞}
+and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
 
 @image["scribblings/functor/images/H_2.svg"]{[picture] H_2.svg}
 
