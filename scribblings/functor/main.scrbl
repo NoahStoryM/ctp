@@ -185,10 +185,10 @@ For a @tech{morphism} @math{g: b → c} in a @tech{category} @math{𝒞}, there 
 @math{f} in @math{𝒞/b} to an @tech{object} @math{g∘f} in @math{𝒞/c}.
 
 @bold{Exercise}: Try to @racket[define] a @tech{composition functor}
-@math{𝒞/g: 𝒞/b → 𝒞/c} in Racket.
+@math{ℳ/g: ℳ/b → ℳ/c} in Racket, where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫}.
 
 @bold{Exercise}: Try to @racket[define] a @tech{composition functor}
-@math{f/𝒞: b/𝒞 → a/𝒞} in Racket.
+@math{f/ℳ: b/ℳ → a/ℳ} in Racket, where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫}.
 
 @subsection{(Co)Slice Functor}
 
