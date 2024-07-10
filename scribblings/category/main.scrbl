@@ -63,7 +63,7 @@ they adhere to the @deftech{composition rules}:
   #:style 'ordered
   @item{Existence of @deftech{composition}
 
-        For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, a @tech{composition}
+        For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, the @deftech{composite}
         @math{g∘f} is defined iff @math{cod(f) = dom(g)}. When @math{g∘f}
         is defined, @math{dom(g∘f) = dom(f)} and @math{cod(g∘f) = cod(g)}.
 
@@ -864,9 +864,9 @@ In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math
 Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},
 denoted as @math{f(x)}. In @tech{category theory}, we can express this application
 using @tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A}, then
-the application of @math{f} to @math{x} is represented by the @tech{composition}
-of @math{f} with @math{x}, written as @math{f∘x}. Thus, the notation @math{f(x)}
-is sometimes used in @tech{category theory} to denote the @tech{composition}
+the application of @math{f} to @math{x} is represented by the @tech{composite}
+of @math{x} and @math{f}, written as @math{f∘x}. Thus, the notation @math{f(x)}
+is sometimes used in @tech{category theory} to denote the @tech{composite}
 @math{f∘x}, where @math{x} is interpreted as a @tech{morphism} rather than an
 @tech{element}. In this context, an arbitrary @tech{morphism} @math{x: a → b} is
 called a @deftech{variable element} of @math{b}, parametrized by @math{a}. This
