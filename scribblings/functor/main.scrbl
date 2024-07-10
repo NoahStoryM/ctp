@@ -519,7 +519,7 @@ and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
   Hf)
 ]
 
-@bold{Exercise}: Prove that @math{H = U∘𝒞/-}.
+@bold{Exercise}: Prove that @math{H = U∘-/𝒞}.
 
 @subsection{Action}
 
