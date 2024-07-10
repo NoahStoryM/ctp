@@ -509,7 +509,7 @@ and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
 @image["scribblings/functor/images/H_2.svg"]{[picture] H_2.svg}
 
 @racketblock[
-(: U (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝐂𝐚𝐭 b/𝒞 a/𝒞) (→𝐒𝐞𝐭 (H b) (H a)))))
+(: U (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝐂𝐚𝐭 b/𝒞 a/𝒞) (→𝒮 (H b) (H a)))))
 (define (U f/𝒞)
   (: Hf (∀ ([c : 𝒞]) (→ (→𝒞 b c) (→𝒞 a c))))
   (define (Hf g)
