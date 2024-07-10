@@ -444,7 +444,7 @@ we create a @tech{product category} by taking the
 
 @subsubsection{Arrow Category}
 
-Given a @tech{category} @math{𝒞}, the @deftech{arrow category} @math{Arr(𝒞)} is
+Given a @tech{category} @math{𝒞}, the @deftech{arrow category} @math{𝒞@^{→}} is
 constructed by takeing its @tech{morphisms} as @tech{objects} and @tech{commutative squares}
 as @tech{morphisms}.
 
@@ -462,7 +462,7 @@ Then, we get some new @tech{commutative squares} by @tech{composition}:
 
 Finally, using @tech{nodes} to represent @tech{morphisms}, and using @tech{arrows}
 to represent @tech{commutative squares}, we get a @tech{directed graph} that obeys
-the @tech{composition rules}, which is the @tech{arrow category} @math{Arr(𝒞)}:
+the @tech{composition rules}, which is the @tech{arrow category} @math{𝒞@^{→}}:
 
 @margin-note{
 Although we name @tech{arrows} using pairs here, note that they are not pairs,
@@ -479,7 +479,7 @@ gives rise:
 @racketfile{code/category/Arr_𝐏𝐚𝐢𝐫.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{Arr} so that we can
-@racket[define] the @tech{arrow category} @math{Arr(𝒫)} in this way:
+@racket[define] the @tech{arrow category} @math{𝒫@^{→}} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
@@ -522,7 +522,7 @@ not @tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
 @image["scribblings/category/images/over-cat_3.svg"]{[picture] over-cat_3.svg}
 
 @bold{Exercise}: Referencing the example code of the @tech{arrow category}
-@math{Arr(𝒫)}, implement a @tech{slice category} @math{ℳ/m} to which @tech{𝐌𝐚𝐭𝐫}
+@math{𝒫@^{→}}, implement a @tech{slice category} @math{ℳ/m} to which @tech{𝐌𝐚𝐭𝐫}
 gives rise.
 
 @bold{Exercise}: Try to @racket[define] @deftech{Sli} so that we can @racket[define]
@@ -566,7 +566,7 @@ not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 @image["scribblings/category/images/under-cat_3.svg"]{[picture] under-cat_3.svg}
 
 @bold{Exercise}: Referencing the example code of the @tech{arrow category}
-@math{Arr(𝒫)}, implement a @tech{coslice category} @math{m/ℳ} to which @tech{𝐌𝐚𝐭𝐫}
+@math{𝒫@^{→}}, implement a @tech{coslice category} @math{m/ℳ} to which @tech{𝐌𝐚𝐭𝐫}
 gives rise.
 
 @bold{Exercise}: Try to @racket[define] @deftech{¬Sli} so that we can @racket[define]
