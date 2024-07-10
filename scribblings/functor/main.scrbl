@@ -178,6 +178,51 @@ to @tech{𝐒𝐞𝐭@_{∗}}.
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐒𝐞𝐭@_{∗}}
 to @tech{𝐒𝐞𝐭}.
 
+@subsection{Composition Functor}
+
+For a @tech{morphism} @math{g: b → c} in a @tech{category} @math{𝒞}, there is a
+@deftech{composition functor} @math{𝒞/g: 𝒞/b → 𝒞/c}. @math{𝒞/g} maps an @tech{object}
+@math{f} in @math{𝒞/b} to an @tech{object} @math{g∘f} in @math{𝒞/c}.
+
+@bold{Exercise}: Try to @racket[define] a @tech{composition functor}
+@math{𝒞/g: 𝒞/b → 𝒞/c} in Racket.
+
+@bold{Exercise}: Try to @racket[define] a @tech{composition functor}
+@math{f/𝒞: b/𝒞 → a/𝒞} in Racket.
+
+@subsection{(Co)Slice Functor}
+
+The @deftech{slice functor} @math{𝒞/-} maps each @tech{morphism} @math{g: b → c}
+in a @tech{category} @math{𝒞} to the @tech{composition functor} @math{𝒞/g: 𝒞/b → 𝒞/c}.
+
+@image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
+
+@racketblock[
+(: 𝒞/- (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐂𝐚𝐭 𝒞/b 𝒞/c))))
+(define (𝒞/- g)
+  (: 𝒞/g (∀ ([x : 𝒞/b] [y : 𝒞/b]) (→ (→𝒞/b x y) (→𝒞/c (∘𝒞 g x) (∘𝒞 g y)))))
+  (define 𝒞/g
+    (match-λ
+      [`((,x) (,y ,z))
+       `((,(∘𝒞 g x)) (,(∘𝒞 g y) ,z))]))
+  𝒞/g)
+]
+
+The @deftech{coslice functor} @math{-/𝒞} maps each @tech{morphism} @math{f: a → b}
+in a @tech{category} @math{𝒞} to the @tech{composition functor} @math{f/𝒞: b/𝒞 → a/𝒞}.
+
+@image["scribblings/functor/images/-÷𝒞.svg"]{[picture] -÷𝒞.svg}
+
+@racketblock[
+(: -/𝒞 (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐂𝐚𝐭 b/𝒞 a/𝒞))))
+(define (-/𝒞 f)
+  (: f/𝒞 (∀ ([x : b/𝒞] [y : b/𝒞]) (→ (→b/𝒞 x y) (→a/𝒞 (∘𝒞 x f) (∘𝒞 y f)))))
+  (define f/𝒞
+    (match-λ
+      [`((,z ,x) (,y))
+       `((,z ,(∘𝒞 x f)) (,(∘𝒞 y f)))]))
+  f/𝒞)
+]
 @section{Categories of Structured Sets}
 
 @tech{Structured sets} and their @tech{homomorphisms} form fundamental
@@ -392,19 +437,6 @@ of @math{𝐒𝐞𝐭}. This is a powerful result because it allows us to repres
 (define (H g) (λ (f) (∘𝒞 g f)))
 ]
 
-@image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
-
-@racketblock[
-(: 𝒞/- (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐂𝐚𝐭 𝒞/b 𝒞/c))))
-(define (𝒞/- g)
-  (: 𝒞/g (∀ ([x : 𝒞/b] [y : 𝒞/b]) (→ (→𝒞/b x y) (→𝒞/c (∘𝒞 g x) (∘𝒞 g y)))))
-  (define 𝒞/g
-    (match-λ
-      [`((,x) (,y ,z))
-       `((,(∘𝒞 g x)) (,(∘𝒞 g y) ,z))]))
-  𝒞/g)
-]
-
 @image["scribblings/functor/images/H_1.svg"]{[picture] H_1.svg}
 
 @racketblock[
@@ -433,19 +465,6 @@ Cayley representation of @math{𝒞^op}:
 @racketblock[
 (: H (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐒𝐞𝐭 (H b) (H a)))))
 (define (H f) (λ (g) (∘𝒞 g f)))
-]
-
-@image["scribblings/functor/images/-÷𝒞.svg"]{[picture] -÷𝒞.svg}
-
-@racketblock[
-(: -/𝒞 (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐂𝐚𝐭 b/𝒞 a/𝒞))))
-(define (-/𝒞 f)
-  (: f/𝒞 (∀ ([x : b/𝒞] [y : b/𝒞]) (→ (→b/𝒞 x y) (→a/𝒞 (∘𝒞 x f) (∘𝒞 y f)))))
-  (define f/𝒞
-    (match-λ
-      [`((,z ,x) (,y))
-       `((,z ,(∘𝒞 x f)) (,(∘𝒞 y f)))]))
-  f/𝒞)
 ]
 
 @image["scribblings/functor/images/H_2.svg"]{[picture] H_2.svg}
