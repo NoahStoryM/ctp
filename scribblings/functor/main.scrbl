@@ -432,21 +432,44 @@ takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
 
 @deftech{Cayley's theorem} in the context of @tech{category theory} states that
 every @tech{small category} @math{𝒞} is @tech{isomorphic} to a @tech{subcategory}
-of @math{𝐒𝐞𝐭}. This is a powerful result because it allows us to represent abstract
-@tech{categories} concretely.
+of @math{𝐒𝐞𝐭} @math{𝒮}. @math{𝒮} is called the @deftech{Cayley representation}
+of @math{𝒞}.
 
-@deftech{Cayley representation} of @math{𝒞}:
+To demonstrate this, we will @racket[define] @tech{isomorphisms} @math{H: 𝒞 → 𝒮}
+and @math{G: 𝒮 → 𝒞}:
+
+@margin-note{
+The definition of @math{G} is pseudocode. Since we treat @tech{sets} and
+@tech{functions} as @tech{procedures} here, we cannot @racket[define] @code{dom𝒮}
+and @code{get-an-element}.
+}
 
 @racketblock[
-(: 𝒞 𝐂𝐚𝐭)
-(: H (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐒𝐞𝐭 (H b) (H c)))))
-(define (H g) (λ (f) (∘𝒞 g f)))
+(: 𝒞 𝐂𝐚𝐭) (: 𝒮 𝐂𝐚𝐭)
+
+(: H (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝒮 (H b) (H c)))))
+(define (H g)
+  (define (Hg f) (∘𝒞 g f))
+  Hg)
+
+(: G (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒮 (H b) (H c)) (→𝒞 b c))))
+(define (G Hg)
+  (define Hb (dom𝒮 Hg))
+  (define f (get-an-element Hb))
+  (define b (cod𝒞 f))
+  (define g (Hg b))
+  g)
 ]
+
+@bold{Exercise}: Prove that @math{H = G@^{–1} and G = H@^{–1}}.
+
+@math{H} is equal to the @tech{composition} of @math{𝒞/-} and the
+@tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
 
 @image["scribblings/functor/images/H_1.svg"]{[picture] H_1.svg}
 
 @racketblock[
-(: U (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝐂𝐚𝐭 𝒞/b 𝒞/c) (→𝐒𝐞𝐭 (H b) (H c)))))
+(: U (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝐂𝐚𝐭 𝒞/b 𝒞/c) (→𝒮 (H b) (H c)))))
 (define (U 𝒞/g)
   (: Hg (∀ ([a : 𝒞]) (→ (→𝒞 a b) (→𝒞 a c))))
   (define (Hg f)
@@ -456,23 +479,32 @@ of @math{𝐒𝐞𝐭}. This is a powerful result because it allows us to repres
   Hg)
 ]
 
-@racketblock[
-(: G (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝐒𝐞𝐭 (H b) (H c)) (→𝒞 b c))))
-(define (G Hg)
-  (define Hb (dom𝐒𝐞𝐭 Hg))
-  (define f (get-an-element Hb))
-  (define b (cod𝒞 f))
-  (define g (Hg b))
-  g)
-]
+@bold{Exercise}: Prove that @math{H = U∘𝒞/-}.
 
-Cayley representation of @math{𝒞^op}:
+Having explored the @tech{Cayley representation} of @math{𝒞}, we now turn our
+attention to its @tech{opposite category} @math{𝒞^op}:
 
 @racketblock[
-(: 𝒞 𝐂𝐚𝐭)
-(: H (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐒𝐞𝐭 (H b) (H a)))))
-(define (H f) (λ (g) (∘𝒞 g f)))
+(: 𝒞 𝐂𝐚𝐭) (: 𝒮 𝐂𝐚𝐭)
+
+(: H (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝒮 (H b) (H a)))))
+(define (H f)
+  (define (Hf g) (∘𝒞 g f))
+  Hf)
+
+(: G (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒮 (H b) (H a)) (→𝒞 a b))))
+(define (G Hf)
+  (define Hb (dom𝒮 Hf))
+  (define g (get-an-element Hb))
+  (define b (dom𝒞 g))
+  (define f (Hf b))
+  f)
 ]
+
+@bold{Exercise}: Prove that @math{H = G@^{–1} and G = H@^{–1}}.
+
+@math{H} is equal to the @tech{composition} of @math{-/𝒞} and the
+@tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
 
 @image["scribblings/functor/images/H_2.svg"]{[picture] H_2.svg}
 
@@ -487,15 +519,7 @@ Cayley representation of @math{𝒞^op}:
   Hf)
 ]
 
-@racketblock[
-(: G (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝐒𝐞𝐭 (H b) (H a)) (→𝒞 a b))))
-(define (G Hf)
-  (define Hb (dom𝐒𝐞𝐭 Hf))
-  (define g (get-an-element Hb))
-  (define b (dom𝒞 g))
-  (define f (Hf b))
-  f)
-]
+@bold{Exercise}: Prove that @math{H = U∘𝒞/-}.
 
 @subsection{Action}
 
