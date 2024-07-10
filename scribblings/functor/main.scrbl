@@ -198,6 +198,7 @@ in a @tech{category} @math{𝒞} to the @tech{composition functor} @math{𝒞/g:
 @image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
 
 @racketblock[
+(: 𝒞 𝐂𝐚𝐭)
 (: 𝒞/- (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐂𝐚𝐭 𝒞/b 𝒞/c))))
 (define (𝒞/- g)
   (: 𝒞/g (∀ ([x : 𝒞/b] [y : 𝒞/b]) (→ (→𝒞/b x y) (→𝒞/c (∘𝒞 g x) (∘𝒞 g y)))))
@@ -214,6 +215,7 @@ in a @tech{category} @math{𝒞} to the @tech{composition functor} @math{f/𝒞:
 @image["scribblings/functor/images/-÷𝒞.svg"]{[picture] -÷𝒞.svg}
 
 @racketblock[
+(: 𝒞 𝐂𝐚𝐭)
 (: -/𝒞 (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐂𝐚𝐭 b/𝒞 a/𝒞))))
 (define (-/𝒞 f)
   (: f/𝒞 (∀ ([x : b/𝒞] [y : b/𝒞]) (→ (→b/𝒞 x y) (→a/𝒞 (∘𝒞 x f) (∘𝒞 y f)))))
@@ -377,7 +379,7 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞�
 @image["scribblings/functor/images/Hom_1.svg"]{[picture] Hom_1.svg}
 
 @racketblock[
-(: a 𝒞)
+(: 𝒞 𝐂𝐚𝐭) (: a 𝒞)
 (: Hom𝒞 (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 a y)))))
 (define (Hom𝒞 j) (λ (f) (∘𝒞 j f)))
 ]
@@ -385,7 +387,7 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞�
 @bold{Exercise}: Prove that @math{Hom@_{𝒞}(i, -)} is @bold{not} a @tech{functor}.
 
 @racketblock[
-(: b 𝒞) (: a 𝒞) (: i (→𝒞 b a))
+(: 𝒞 𝐂𝐚𝐭) (: b 𝒞) (: a 𝒞) (: i (→𝒞 b a))
 (: Hom𝒞 (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b y)))))
 (define (Hom𝒞 j) (λ (f) (∘𝒞 j f i)))
 ]
@@ -398,7 +400,7 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 
 @image["scribblings/functor/images/Hom_2.svg"]{[picture] Hom_2.svg}
 
 @racketblock[
-(: x 𝒞)
+(: 𝒞 𝐂𝐚𝐭) (: x 𝒞)
 (: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b x)))))
 (define (Hom𝒞 i) (λ (f) (∘𝒞 f i)))
 ]
@@ -406,7 +408,7 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 
 @bold{Exercise}: Prove that @math{Hom@_{𝒞}(-, j)} is @bold{not} a @tech{functor}.
 
 @racketblock[
-(: x 𝒞) (: y 𝒞) (: j (→𝒞 x y))
+(: 𝒞 𝐂𝐚𝐭) (: x 𝒞) (: y 𝒞) (: j (→𝒞 x y))
 (: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b y)))))
 (define (Hom𝒞 i) (λ (f) (∘𝒞 j f i)))
 ]
@@ -419,6 +421,7 @@ takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
 @image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
 
 @racketblock[
+(: 𝒞 𝐂𝐚𝐭)
 (: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b y)))))
 (define (Hom𝒞 i j) (λ (f) (∘𝒞 j f i)))
 ]
@@ -433,6 +436,7 @@ of @math{𝐒𝐞𝐭}. This is a powerful result because it allows us to repres
 @deftech{Cayley representation} of @math{𝒞}:
 
 @racketblock[
+(: 𝒞 𝐂𝐚𝐭)
 (: H (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝐒𝐞𝐭 (H b) (H c)))))
 (define (H g) (λ (f) (∘𝒞 g f)))
 ]
@@ -463,6 +467,7 @@ of @math{𝐒𝐞𝐭}. This is a powerful result because it allows us to repres
 Cayley representation of @math{𝒞^op}:
 
 @racketblock[
+(: 𝒞 𝐂𝐚𝐭)
 (: H (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝐒𝐞𝐭 (H b) (H a)))))
 (define (H f) (λ (g) (∘𝒞 g f)))
 ]
