@@ -54,12 +54,9 @@
   (require (file "../../code/category/𝐌𝐚𝐭𝐫.rkt"))
 
   (define (rand m n) (random 1 9))
-  (define m (identity-matrix 5))
 
+  ;; ℳ
   (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
-  (define-values (dom cod ∘ ? =)
-    ((Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
-
 
   ;; Objects in ℳ
   (define a1 (identity-matrix 1)) (check-pred ?ℳ a1)
@@ -72,12 +69,16 @@
   (define g1 (build-matrix 3 2 rand)) (check-pred ?ℳ g1)
   (define h1 (build-matrix 4 3 rand)) (check-pred ?ℳ h1)
 
+
+  ;; ℳ/m
+  (define m (identity-matrix 5))
+  (define-values (dom cod ∘ ? =)
+    ((Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
+
   (define s1 (build-matrix 5 4 rand)) (check-pred ?ℳ s1)
-
-  (define r1 (∘ℳ s1 h1))       (check-pred ?ℳ r1)
-  (define q1 (∘ℳ s1 h1 g1))    (check-pred ?ℳ q1)
-  (define p1 (∘ℳ s1 h1 g1 f1)) (check-pred ?ℳ p1)
-
+  (define r1 (∘ℳ s1 h1))              (check-pred ?ℳ r1)
+  (define q1 (∘ℳ s1 h1 g1))           (check-pred ?ℳ q1)
+  (define p1 (∘ℳ s1 h1 g1 f1))        (check-pred ?ℳ p1)
 
   ;; Objects in ℳ/m
   (define a `((,p1) (,p1 ,a1))) (check-pred ? a) ; p1
