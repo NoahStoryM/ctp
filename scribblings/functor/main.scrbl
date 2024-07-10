@@ -432,7 +432,7 @@ takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
 
 @deftech{Cayley's theorem} in the context of @tech{category theory} states that
 every @tech{small category} @math{𝒞} is @tech{isomorphic} to a @tech{subcategory}
-of @math{𝐒𝐞𝐭} @math{𝒮}. @math{𝒮} is called the @deftech{Cayley representation}
+of @math{𝐒𝐞𝐭} @math{𝒮}. @math{𝒮} is called the @deftech{Cayley's representation}
 of @math{𝒞}.
 
 To demonstrate this, we will @racket[define] @tech{isomorphisms} @math{H: 𝒞 → 𝒮}
@@ -481,7 +481,7 @@ and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
 
 @bold{Exercise}: Prove that @math{H = U∘𝒞/-}.
 
-Having explored the @tech{Cayley representation} of @math{𝒞}, we now turn our
+Having explored the @tech{Cayley's representation} of @math{𝒞}, we now turn our
 attention to its @tech{opposite category} @math{𝒞^op}:
 
 @racketblock[
