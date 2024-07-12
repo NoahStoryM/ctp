@@ -96,6 +96,11 @@ and that this @tech{composition} is @tech{associative}.
 
 @subsection{Category of Categories}
 
+@margin-note{
+An @deftech{endofunctor} is an @tech{endomorphism} in @tech{𝐂𝐚𝐭}, and an
+@deftech{autofunctor} is an @tech{automorphism} in @tech{𝐂𝐚𝐭}.
+}
+
 The @tech{category} of @tech{categories}, denoted as @deftech{𝐂𝐚𝐭}, forms a
 higher-level structure where @tech{objects} are @tech{categories} and @tech{morphisms}
 are @tech{functors} between them.
