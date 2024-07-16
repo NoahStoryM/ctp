@@ -13,10 +13,10 @@
 In this chapter, we introduce the concept of @tech{functors}. @tech{Functors}
 play a crucial role in @tech{category theory} by mapping @tech{objects} and
 @tech{morphisms} between @tech{categories} while preserving their structural
-properties. To enhance readability and provide a clear understanding of how
-@tech{functors} can be applied in programming, we will use the syntax of Typed
-Racket.
+properties.
 
+To enhance readability and provide a clear understanding of how @tech{functors}
+can be applied in programming, we will use the syntax of Typed Racket.
 Specifically, we will use @code{#lang typed/racket/base/no-check} instead of
 @code{#lang racket/base}. This choice allows us to leverage the benefits of
 Typed Racket, such as type annotations, which improve code clarity and help
