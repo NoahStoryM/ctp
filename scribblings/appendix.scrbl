@@ -21,7 +21,7 @@ See @tech{∘}.
 See @tech{?}.
 }
 
-@defproc[(= [m0 morphism?] [m1 morphism?] ...) boolean?]{
+@defproc[(= [m morphism?] ...+) boolean?]{
 See @tech{=}.
 }
 
