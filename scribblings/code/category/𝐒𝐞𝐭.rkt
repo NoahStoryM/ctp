@@ -14,13 +14,14 @@
   (case-λ
     [(m) m]
     [(m1 m2)
-     (define ht1 (function-map m1))
-     (define ht2 (function-map m2))
-     (define ht
-       (for/hash ([(k2 v2) (in-hash ht2)])
-         (define v1 (hash-ref ht1 v2))
+     (define m1.map (function-map m1))
+     (define m2.map (function-map m2))
+     (define m.map
+       (for/hash ([(k2 v2) (in-hash m2.map)])
+         (define v1 (hash-ref m1.map v2))
          (values k2 v1)))
-     (function (function-dom m2) (function-cod m1) ht)]
+     (define m (function (function-dom m2) (function-cod m1) m.map))
+     m]
     [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
 (define (? m) (function? m))
 (define =
