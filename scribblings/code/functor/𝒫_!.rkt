@@ -15,7 +15,7 @@
   (define b (cod𝒮 f))
   (define 𝒫a (𝒫 a))
   (define 𝒫b (𝒫 b))
-  (define ht
+  (define f_!.map
     (for/hash ([(a0 _) (in-hash (function-map 𝒫a))])
       (define b0
         (for/fold ([b0 #hash()])
@@ -24,7 +24,7 @@
           (if (equal? a0 (hash-union a0 a1 #:combine/key combine/key))
               (hash-set b0 y y) b0)))
       (values a0 b0)))
-  (define f_! (function (lazy 𝒫a) (lazy 𝒫b) ht))
+  (define f_! (function (lazy 𝒫a) (lazy 𝒫b) f_!.map))
   f_!)
 
 (module+ test

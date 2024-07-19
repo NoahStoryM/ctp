@@ -26,6 +26,6 @@
         (define 𝒫s0 (𝒫 s0))
         (hash-union 𝒫s 𝒫s0 #:combine/key combine/key)))
     (λ (s)
-      (define ht (𝒫 (function-map s)))
-      (define 𝒫s (function (lazy 𝒫s) (lazy 𝒫s) ht))
+      (define 𝒫s.map (𝒫 (function-map s)))
+      (define 𝒫s (function (lazy 𝒫s) (lazy 𝒫s) 𝒫s.map))
       𝒫s)))

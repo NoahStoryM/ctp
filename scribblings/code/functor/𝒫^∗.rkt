@@ -12,7 +12,7 @@
   (define b (cod𝒮 f))
   (define 𝒫a (𝒫 a))
   (define 𝒫b (𝒫 b))
-  (define ht
+  (define f^∗.map
     (for/hash ([(b0 _) (in-hash (function-map 𝒫b))])
       (define a0
         (for/fold ([a0 #hash()])
@@ -22,7 +22,7 @@
                      (hash-has-key? b0 y)))
               (hash-set a0 x x) a0)))
       (values b0 a0)))
-  (define f^∗ (function (lazy 𝒫b) (lazy 𝒫a) ht))
+  (define f^∗ (function (lazy 𝒫b) (lazy 𝒫a) f^∗.map))
   f^∗)
 
 (module+ test
