@@ -580,7 +580,7 @@ this way.
 
 To further explore the connection between @tech{monoid actions} and @tech{functors},
 we can @racket[curry] @math{α} and obtain a @tech{function} @math{F@_{α1}: M → [S → S]},
-where @math{F@_{α1}(m)(s) = α(m, s)}. Next, we can interpret @math{M} as an @tech{OOC}
+where @math{F@_{α1}(m)(s) = α(m, s)}. Next, we can view @math{M} as an @tech{OOC}
 @math{C(M)}, and then @racket[define] a @tech{functor} @math{F@_{α}: C(M) → 𝐒𝐞𝐭},
 where @math{F@_{α}(∗) = S} and @math{F@_{α}(m) = F@_{α1}(m) = α(m, -)}.
 
