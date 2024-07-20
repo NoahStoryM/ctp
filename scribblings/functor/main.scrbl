@@ -2,6 +2,7 @@
 
 @(require (for-label ctp
                      (only-meta-in 0 (except-in typed/racket/no-check =))
+                     racket/function
                      racket/hash
                      racket/promise
                      rackunit
@@ -526,13 +527,79 @@ and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
 
 @bold{Exercise}: Prove that @math{H = U∘-/𝒞}.
 
-@subsection{Action}
+@subsection{Monoid Action}
 
-@subsubsection{Monoid Action}
+@margin-note{
+In this context, @tech{actions} are assumed to be @deftech{left action}s by default.
+There is also a concept of @deftech{right action}, which is a @tech{function}
+@math{β: S×B → S}.
+}
+
+An @deftech{action} of a @tech{set} @math{A} on a @tech{set} @math{S} is a
+@tech{function} @math{α: A×S → S}. @math{α} shows how each @tech{element} of
+@math{A} transforms the @tech{elements} of @math{S} in a consistent manner.
+
+@margin-note{
+If @math{M} is a @tech{group}, then @math{α} is a @deftech{group action}.
+}
+
+Let @math{M} be a @tech{monoid} @math{(M, ∘, 1)}, a @deftech{monoid action} of
+@math{M} on a @tech{set} @math{S} is an @tech{action} @math{α: M×S → S}
+satisfying the following properties:
+
+@itemlist[
+  #:style 'ordered
+  @item{Identity:
+        @math{α(1, s) = s} for all @math{s ∈ S}.}
+  @item{Associativity:
+        @math{α(m∘n, s) = α(m, α(n, s))} for all @math{m, n ∈ M} and @math{s ∈ S}.}
+  ]
+
+These properties ensure that the @tech{monoid action} respects the structure of
+the @tech{monoid}, providing a coherent way to apply the @tech{elements} of
+@math{M} to the @tech{elements} of @math{S}.
+
+Another common way to denote a @tech{monoid action} is by writing @math{ms} to
+represent @math{α(m, s)}. Using this notation, the properties of a
+@tech{monoid action} can be restated as follows:
+
+@itemlist[
+  #:style 'ordered
+  @item{Identity:
+        @math{1s = s} for all @math{s ∈ S}.}
+  @item{Associativity:
+        @math{(m∘n)s = m(ns)} for all @math{m, n ∈ M} and @math{s ∈ S}.}
+  ]
+
+In this notation, the @tech{monoid action} is described more compactly,
+emphasizing the direct application of @tech{elements} from the @tech{monoid}
+@math{M} to the @tech{set} @math{S}. @math{S} is also called an @math{M-set} in
+this way.
+
+@subsubsection{Monoid Action as Functor}
+
+To further explore the connection between @tech{monoid actions} and @tech{functors},
+we can @racket[curry] @math{α} and obtain a @tech{function} @math{F@_{α1}: M → [S → S]},
+where @math{F@_{α1}(m)(s) = α(m, s)}. Next, we can interpret @math{M} as an @tech{OOC}
+@math{C(M)}, and then @racket[define] a @tech{functor} @math{F@_{α}: C(M) → 𝐒𝐞𝐭},
+where @math{F@_{α}(∗) = S} and @math{F@_{α}(m) = F@_{α1}(m) = α(m, -)}.
+
+@image["scribblings/functor/images/act.svg"]
+
+@margin-note{
+A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{category}
+@math{𝒟} is just a @tech{functor} from @math{𝒞} to @math{𝒟}.
+}
+
+In this way, we can @racket[define] an @tech{action} of the @tech{monoid}
+@math{M} on the @tech{object} @math{S} in the @tech{category} @math{𝒞} to be a
+@tech{functor} @math{ρ: C(M) → 𝒞}, where @math{ρ(∗) = S}.
 
 @subsubsection{Finite State Machine}
 
-@subsubsection{Typed Action}
+@subsubsection{𝐒𝐞𝐭-valued Functor as a Category Action}
+
+@subsubsection{Typed Finite State Machine}
 
 @section{Full and Faithful}
 
