@@ -597,6 +597,8 @@ In this way, we can @racket[define] an @tech{action} of the @tech{monoid}
 
 @subsubsection{Finite State Machine}
 
+@racketfile{code/functor/FSM.rkt}
+
 @subsubsection{𝐒𝐞𝐭-valued Functor as a Category Action}
 
 @subsubsection{Typed Finite State Machine}
