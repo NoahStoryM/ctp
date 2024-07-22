@@ -527,7 +527,7 @@ and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
 
 @bold{Exercise}: Prove that @math{H = U∘-/𝒞}.
 
-@subsection{Monoid Action}
+@subsection{Action}
 
 @margin-note{
 In this context, @tech{actions} are assumed to be @deftech{left action}s by default.
@@ -585,6 +585,8 @@ where @math{F@_{α1}(m)(s) = α(m, s)}. Next, we can view @math{M} as an @tech{O
 where @math{F@_{α}(∗) = S} and @math{F@_{α}(m) = F@_{α1}(m) = α(m, -)}.
 
 @image["scribblings/functor/images/act.svg"]
+
+@bold{Exercise}: Prove that @math{F@_{α1}} is a @tech{monoid homomorphism}.
 
 @margin-note{
 A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{category}

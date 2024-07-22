@@ -6,6 +6,13 @@
 (: #;𝐒𝐞𝐭  𝒮 𝐂𝐚𝐭) (define (𝒮 m) m) (define ∘𝒮 compose)
 (: #;𝐋𝐢𝐬𝐭 ℒ 𝐂𝐚𝐭) (define (ℒ m) m) (define ∘ℒ append)
 
+(: 𝒞 (Listof (List A S S)))
+(define 𝒞
+  '([∘𝒞   𝒞2 𝒞1]
+    [dom𝒞 𝒞1 𝒞0]
+    [cod𝒞 𝒞1 𝒞0]
+    [id𝒞  𝒞0 𝒞1]))
+
 (: A 𝒮) (define-type A (∪ ∘𝒞 dom𝒞 cod𝒞 id𝒞))
 (: S 𝒮) (define-type S (∪ 𝒞0 𝒞1 𝒞2))
 (: s0 S) (define s0 '𝒞2)
@@ -31,13 +38,6 @@
     ['() s]
     [`(,a . ,w) (φ a (φ* w s))]))
 
-(: 𝒞 (Listof (List A S S)))
-(define 𝒞
-  '([∘𝒞   𝒞2 𝒞1]
-    [dom𝒞 𝒞1 𝒞0]
-    [cod𝒞 𝒞1 𝒞0]
-    [id𝒞  𝒞0 𝒞1]))
-
 (module+ test
   (define (recognizer a*) (φ* (reverse a*) s0))
   (check-eq? '𝒞1 (recognizer '(∘𝒞)))
@@ -47,7 +47,7 @@
   (check-eq? '𝒞1 (recognizer '(∘𝒞 dom𝒞 id𝒞))))
 
 (: ∗ ℒ) (define ∗ (∘ℒ))
-(: F (→ (→ℒ ∗ ∗) (→𝒮 S S)))
+(: F (→ #;A* (→ℒ ∗ ∗) (→𝒮 S S)))
 (define F (curry φ*))
 
 (module+ test
