@@ -97,14 +97,10 @@ and that this @tech{composition} is @tech{associative}.
 
 @subsection{Category of Categories}
 
-@margin-note{
-An @deftech{endofunctor} is an @tech{endomorphism} in @tech{𝐂𝐚𝐭}, and an
-@deftech{autofunctor} is an @tech{automorphism} in @tech{𝐂𝐚𝐭}.
-}
-
 The @tech{category} of @tech{categories}, denoted as @deftech{𝐂𝐚𝐭}, forms a
 higher-level structure where @tech{objects} are @tech{categories} and @tech{morphisms}
-are @tech{functors} between them.
+are @tech{functors} between them. An @deftech{endofunctor} is an @tech{endomorphism}
+in @tech{𝐂𝐚𝐭}, and an @deftech{autofunctor} is an @tech{automorphism} in @tech{𝐂𝐚𝐭}.
 
 In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
 @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functors} as
@@ -243,11 +239,9 @@ important @tech{categories} of @tech{structured sets}.
 
 @subsection{Category of Monoids}
 
-@margin-note{
 A @deftech{monoid homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
 @tech{function} that preserves the @tech{monoid} structure:
 @math{f(x∘y) = f(x)·f(y)} and @math{f(s) = t}.
-}
 
 The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where @tech{objects}
 are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
@@ -256,11 +250,9 @@ are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
 
 @subsection{Category of Groups}
 
-@margin-note{
 A @deftech{group homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
 @tech{monoid homomorphism} that preserves the @tech{group} structure:
 @math{f(x@^{–1}) = f(x)@^{–1}}.
-}
 
 The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where @tech{objects}
 are @tech{groups} and @tech{morphisms} are @tech{group homomorphisms}.
@@ -269,13 +261,11 @@ are @tech{groups} and @tech{morphisms} are @tech{group homomorphisms}.
 
 @subsection{Category of Prosets}
 
-@margin-note{
 A @deftech{@deftech{monotone} function}
 (@deftech{@deftech{monotonic} function}, @deftech{@deftech{isotone} function},
  @deftech{@deftech{isotonic} function}, or @deftech{order homomorphism})
 @math{f: (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
 structure: if @math{x ≤ y}, then @math{f(x) ⋜ f(y)}.
-}
 
 The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where @tech{objects}
 are @tech{prosets} and @tech{morphisms} are @tech{monotone functions}.
@@ -588,14 +578,12 @@ where @math{F@_{α}(∗) = S} and @math{F@_{α}(m) = F@_{α1}(m) = α(m, -)}.
 
 @bold{Exercise}: Prove that @math{F@_{α1}} is a @tech{monoid homomorphism}.
 
-@margin-note{
-A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{category}
-@math{𝒟} is just a @tech{functor} from @math{𝒞} to @math{𝒟}.
-}
-
 In this way, we can @racket[define] an @tech{action} of the @tech{monoid}
 @math{M} on the @tech{object} @math{S} in the @tech{category} @math{𝒞} to be a
 @tech{functor} @math{ρ: C(M) → 𝒞}, where @math{ρ(∗) = S}.
+
+A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{category}
+@math{𝒟} is just a @tech{functor} from @math{𝒞} to @math{𝒟}.
 
 @subsubsection{Finite State Machine}
 

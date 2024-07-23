@@ -171,11 +171,9 @@ the @deftech{element}s of the @tech{set}. A @deftech{function} between two
 
 @subsection{One-Object Category}
 
-@margin-note{
 A @deftech{monoid} (@deftech{monoidal set}) @math{(S, ∘, s)} is a @tech{set}
 @math{S} equipped with an @tech{associative} binary operation @math{∘} and an
 @deftech{identity element} @math{s}.
-}
 
 A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}.
 In @tech{OOC}, there is only a single @tech{object}, usually denoted as @deftech{∗},
@@ -190,11 +188,6 @@ on @tech{monoids}.
 
 @subsection{Subcategory}
 
-@margin-note{
-A @deftech{subset} can be viewed as a @tech{subcategory} of a @tech{discrete category},
-and a @deftech{submonoid} can be viewed as a @tech{subcategory} of an @tech{OOC}.
-}
-
 Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
 of @math{𝒞} iff:
 
@@ -205,6 +198,9 @@ of @math{𝒞} iff:
   @item{If the @tech{morphism} @math{f} is in @math{𝒟}, then so are @math{dom(f)} and @math{cod(f)}.}
   @item{If the @tech{composable pair} @math{(f, g)} is in @math{𝒟}, then so is @math{g∘f}.}
   ]
+
+A @deftech{subset} can be viewed as a @tech{subcategory} of a @tech{discrete category},
+and a @deftech{submonoid} can be viewed as a @tech{subcategory} of an @tech{OOC}.
 
 @subsubsection{Full Subcategory}
 
@@ -278,13 +274,11 @@ an @tech{OOC}.
 
 @subsubsection{Category of Relations}
 
-@margin-note{
 A @deftech{relation} from a @tech{set} @math{S} to a @tech{set} @math{T} is a
 @tech{subset} of @math{S×T}. Specially, a @deftech{binary relation} on @math{S}
 is a @tech{subset} of @math{S×S}, and the @deftech{diagonal relation}
 (@deftech{equality relation}) on @math{S} is the @tech{relation} @math{Δ_S},
 where @math{Δ_s := {(x, x) ∈ S×S | x ∈ S}}.
-}
 
 The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, where
 @tech{identity morphisms} are @tech{diagonal relations}, and @tech{morphisms} are
@@ -299,11 +293,9 @@ The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}
 
 @racketfile{code/category/𝐏𝐚𝐢𝐫.rkt}
 
-@margin-note{
 A @deftech{preordered set} (@deftech{proset}), @math{(S, ≤)}, is a @tech{set}
 @math{S} equipped with a @tech{binary relation} @math{≤} that is reflexive
 and transitive. @math{≤} is called a @deftech{preorder} on @math{S}.
-}
 
 A @tech{proset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
 @tech{category} is called the @deftech{preorder category} associated to a
@@ -318,11 +310,9 @@ this way:
   (Preord S? ≤))
 ]
 
-@margin-note{
 A @deftech{partially ordered set} (@deftech{ordered set}, or @deftech{poset})
 is a @tech{preordered set}, @math{(S, ≤)}, in which @math{≤} is antisymmetric.
 @math{≤} is called a @deftech{partial order} on @math{S}.
-}
 
 A @tech{poset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
 @tech{category} is called the @deftech{order category} of a @tech{poset}.
@@ -620,16 +610,14 @@ duplication, thereby establishing the @deftech{surjective} nature of @math{e}.
 @bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an
 @tech{epimorphism} in @math{𝒞^op}.
 
-@margin-note{
+For a @tech{morphism} @math{f: a → b}, the notation changes based on its properties:
+@math{f: a ↣ b} if @math{f} is @tech{monic}, @math{f: a ↠ b} if @math{f} is @tech{epic},
+and @math{f: a ⤖ b} if @math{f} is both @tech{monic} and @tech{epic}.
+
 In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms} from
 two distinct classes @math{ℰ} and @math{ℳ}, rather than exclusively representing
 @tech{monomorphisms} and @tech{epimorphisms}. Additionally, @deftech{⤖} indicates
 @tech{morphisms} from @math{ℰ ∩ ℳ}.
-}
-
-For a @tech{morphism} @math{f: a → b}, the notation changes based on its properties:
-@math{f: a ↣ b} if @math{f} is @tech{monic}, @math{f: a ↠ b} if @math{f} is @tech{epic},
-and @math{f: a ⤖ b} if @math{f} is both @tech{monic} and @tech{epic}.
 
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
@@ -767,11 +755,9 @@ A @deftech{groupoid} is a @tech{category} in which all @tech{morphisms} are
 
 @subsubsection{One-Object Groupoid}
 
-@margin-note{
 A @deftech{group} @math{(S, ∘, s)} is a @tech{monoid} in which every
 @tech{element} @math{x} has a unique @tech{inverse} @math{x@^{–1}}:
 @math{x∘x@^{–1} = x@^{–1}∘x = s}.
-}
 
 A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
 
@@ -852,13 +838,11 @@ This approach to viewing @tech{elements} requires only the presence of a
 thereby generalizing the concept of @tech{elements} of @tech{sets} in a broader
 and more abstract manner.
 
-@margin-note{
-A @deftech{pointed set}, @math{(S, s)}, is a @tech{set} @math{S} equipped with
-a distinguished @tech{element} @math{s}, often called the @deftech{base point}.
-}
-
-@bold{Exercise}: Prove that the @tech{category} of @tech{pointed sets}, denoted
-as @deftech{𝐒𝐞𝐭@_{∗}}, is @tech{isomorphic} to the @tech{coslice category} @math{1/𝐒𝐞𝐭}.
+@bold{Exercise}: A @deftech{pointed set}, @math{(S, s)}, is a @tech{set} @math{S}
+equipped with a distinguished @tech{element} @math{s}, often called the
+@deftech{base point}. Prove that the @tech{category} of @tech{pointed sets},
+denoted as @deftech{𝐒𝐞𝐭@_{∗}}, is @tech{isomorphic} to the @tech{coslice category}
+@math{1/𝐒𝐞𝐭}.
 
 In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math{f: A → B}.
 Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},
