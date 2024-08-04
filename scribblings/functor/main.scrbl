@@ -241,7 +241,7 @@ important @tech{categories} of @tech{structured sets}.
 
 A @deftech{monoid homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
 @tech{function} that preserves the @tech{monoid} structure:
-@math{f(x∘y) = f(x)·f(y)} and @math{f(s) = t}.
+@math{∀x, y ∈ S, f(x∘y) = f(x)·f(y)}, and @math{f(s) = t}.
 
 The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where @tech{objects}
 are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
@@ -252,7 +252,7 @@ are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
 
 A @deftech{group homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
 @tech{monoid homomorphism} that preserves the @tech{group} structure:
-@math{f(x@^{–1}) = f(x)@^{–1}}.
+@math{∀x ∈ S, f(x@^{–1}) = f(x)@^{–1}}.
 
 The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where @tech{objects}
 are @tech{groups} and @tech{morphisms} are @tech{group homomorphisms}.
@@ -265,7 +265,7 @@ A @deftech{@deftech{monotone} function}
 (@deftech{@deftech{monotonic} function}, @deftech{@deftech{isotone} function},
  @deftech{@deftech{isotonic} function}, or @deftech{order homomorphism})
 @math{f: (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
-structure: if @math{x ≤ y}, then @math{f(x) ⋜ f(y)}.
+structure: @math{∀x, y ∈ S}, if @math{x ≤ y}, then @math{f(x) ⋜ f(y)}.
 
 The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where @tech{objects}
 are @tech{prosets} and @tech{morphisms} are @tech{monotone functions}.
@@ -539,10 +539,8 @@ satisfying the following properties:
 
 @itemlist[
   #:style 'ordered
-  @item{Identity:
-        @math{α(1, s) = s} for all @math{s ∈ S}.}
-  @item{Associativity:
-        @math{α(m∘n, s) = α(m, α(n, s))} for all @math{m, n ∈ M} and @math{s ∈ S}.}
+  @item{Identity: @math{∀s ∈ S, α(1, s) = s}.}
+  @item{Associativity: @math{∀m, n ∈ M, ∀s ∈ S, α(m∘n, s) = α(m, α(n, s))}.}
   ]
 
 These properties ensure that the @tech{monoid action} respects the structure of
@@ -555,10 +553,8 @@ represent @math{α(m, s)}. Using this notation, the properties of a
 
 @itemlist[
   #:style 'ordered
-  @item{Identity:
-        @math{1s = s} for all @math{s ∈ S}.}
-  @item{Associativity:
-        @math{(m∘n)s = m(ns)} for all @math{m, n ∈ M} and @math{s ∈ S}.}
+  @item{Identity: @math{∀s ∈ S, 1s = s}.}
+  @item{Associativity: @math{∀m, n ∈ M, ∀s ∈ S, (m∘n)s = m(ns)}.}
   ]
 
 In this notation, the @tech{monoid action} is described more compactly,
