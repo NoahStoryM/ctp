@@ -39,6 +39,7 @@
     [`(,a . ,w) (φ a (φ* w s))]))
 
 (module+ test
+  (: recognizer (→ A* S))
   (define (recognizer a*) (φ* (reverse a*) s0))
   (check-eq? '𝒞1 (recognizer '(∘𝒞)))
   (check-eq? '𝒞0 (recognizer '(∘𝒞 cod𝒞)))
