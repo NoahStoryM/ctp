@@ -583,6 +583,24 @@ A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{cate
 
 @subsubsection{Finite State Machine}
 
+A @deftech{finite state machine} (@deftech{FSM}) @math{ℳ} is a mathematical model
+used to design algorithms and systems that can be in one of a finite number of
+@tech{states} at any given time. @math{ℳ} can be described as a tuple
+@math{(A, S, s_0, φ)}:
+
+@itemlist[
+  @item{@math{A} (@deftech{alphabet}):
+        The finite @tech{set} of all possible input symbols that @math{ℳ} can read.}
+  @item{@math{S} (@deftech{state}s):
+        The finite @tech{set} of all @tech{states} that @math{ℳ} can be in.}
+  @item{@math{s_0} (@deftech{start state}):
+        The initial @tech{state} of @math{ℳ}.}
+  @item{@math{φ} (@deftech{transition function}):
+        A @tech{function} @math{A×S → S} that defines the @tech{state} transition
+        of @math{ℳ}. @math{φ} takes the current @tech{state} and an input symbol as
+        arguments and returns the next @tech{state}.}
+  ]
+
 @racketfile{code/functor/FSM.rkt}
 
 @subsubsection{𝐒𝐞𝐭-valued Functor as a Category Action}
