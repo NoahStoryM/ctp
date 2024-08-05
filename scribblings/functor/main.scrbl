@@ -597,9 +597,27 @@ used to design algorithms and systems that can be in one of a finite number of
         The initial @tech{state} of @math{ℳ}.}
   @item{@math{φ} (@deftech{transition function}):
         A @tech{function} @math{A×S → S} that defines the @tech{state} transition
-        of @math{ℳ}. @math{φ} takes the current @tech{state} and an input symbol as
-        arguments and returns the next @tech{state}.}
+        of @math{ℳ}. @math{φ} takes the current @tech{state} and an input symbol
+        as arguments and returns the next @tech{state}.}
   ]
+
+With @math{φ}, we can view any @tech{element} in @math{A} as a transition.
+Similarly, we'd like to find a way to represent a sequence of transitions. The
+@deftech{Kleene star} (@deftech{Kleene closure}) @math{A@^{*}} of a @tech{set}
+@math{A} is the @tech{set} of all possible finite-length sequences of @tech{elements}
+of @math{A}. In order to view any @tech{element} in @math{A@^{*}} as a sequence
+of transitions, we @racket[define] the @tech{function} @math{φ@^{*}: A@^{*}×S → S}:
+
+@itemlist[
+  #:style 'ordered
+  @item{@math{∀s ∈ S, φ@^{*}((), s) = s}}
+  @item{@math{∀s ∈ S, ∀w ∈ A@^{*}, ∀a ∈ A, φ@^{*}((a)w, s) = φ(a, φ@^{*}(w, s))}}
+]
+
+@bold{Exercise}: Prove that @math{φ@^{*}} is a @tech{monoid action}.
+
+@bold{Exercise}: Try to view @math{φ@^{*}} as a @tech{𝐒𝐞𝐭-valued functor}
+@math{F@_{φ@^{*}}} and implement it.
 
 @racketfile{code/functor/FSM.rkt}
 
