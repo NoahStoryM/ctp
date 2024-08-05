@@ -567,7 +567,7 @@ this way.
 To further explore the connection between @tech{monoid actions} and @tech{functors},
 we can @racket[curry] @math{α} and obtain a @tech{function} @math{F@_{α1}: M → [S → S]},
 where @math{F@_{α1}(m)(s) = α(m, s)}. Next, we can view @math{M} as an @tech{OOC}
-@math{C(M)}, and then @racket[define] a @tech{functor} @math{F@_{α}: C(M) → 𝐒𝐞𝐭},
+@math{C(M)}, and then @racket[define] a @tech{𝐒𝐞𝐭-valued functor} @math{F@_{α}: C(M) → 𝐒𝐞𝐭},
 where @math{F@_{α}(∗) = S} and @math{F@_{α}(m) = F@_{α1}(m) = α(m, -)}.
 
 @image["scribblings/functor/images/act.svg"]
@@ -627,7 +627,7 @@ a way to represent a sequence of @tech{transitions}. We @racket[define] the
 
 @racketfile{code/functor/FSM.rkt}
 
-@subsubsection{𝐒𝐞𝐭-valued Functors as Typed Actions}
+@subsubsection{𝐒𝐞𝐭-Valued Functors as Typed Actions}
 
 @image["scribblings/functor/images/typed-act.svg"]
 
