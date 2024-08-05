@@ -39,17 +39,22 @@
     [`(,a . ,w) (φ a (φ* w s))]))
 
 (module+ test
-  (: recognizer (→ A* S))
-  (define (recognizer a*) (φ* (reverse a*) s0))
-  (check-eq? '𝒞1 (recognizer '(∘𝒞)))
-  (check-eq? '𝒞0 (recognizer '(∘𝒞 cod𝒞)))
-  (check-eq? '𝒞0 (recognizer '(∘𝒞 dom𝒞)))
-  (check-eq? '𝒞1 (recognizer '(∘𝒞 cod𝒞 id𝒞)))
-  (check-eq? '𝒞1 (recognizer '(∘𝒞 dom𝒞 id𝒞))))
+  (check-eq? '𝒞1 (φ* '(∘𝒞) s0))
+  (check-eq? '𝒞0 (φ* '(cod𝒞 ∘𝒞) s0))
+  (check-eq? '𝒞0 (φ* '(dom𝒞 ∘𝒞) s0))
+  (check-eq? '𝒞1 (φ* '(id𝒞 cod𝒞 ∘𝒞) s0))
+  (check-eq? '𝒞1 (φ* '(id𝒞 dom𝒞 ∘𝒞) s0)))
 
 (: ∗ ℒ) (define ∗ (∘ℒ))
 (: F (→ #;A* (→ℒ ∗ ∗) (→𝒮 S S)))
 (define F (curry φ*))
+
+(module+ test
+  (check-eq? '𝒞1 ((F '(∘𝒞)) s0))
+  (check-eq? '𝒞0 ((F '(cod𝒞 ∘𝒞)) s0))
+  (check-eq? '𝒞0 ((F '(dom𝒞 ∘𝒞)) s0))
+  (check-eq? '𝒞1 ((F '(id𝒞 cod𝒞 ∘𝒞)) s0))
+  (check-eq? '𝒞1 ((F '(id𝒞 dom𝒞 ∘𝒞)) s0)))
 
 (module+ test
   (check-eq?
