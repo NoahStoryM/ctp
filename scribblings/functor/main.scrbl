@@ -591,8 +591,8 @@ used to design algorithms and systems that can be in one of a finite number of
 @itemlist[
   @item{@math{A} (@deftech{alphabet}):
         The finite @tech{set} of all possible input symbols that @math{ℳ} can read.}
-  @item{@math{S} (@deftech{state}s):
-        The finite @tech{set} of all @tech{states} that @math{ℳ} can be in.}
+  @item{@math{S} (@deftech{state space}):
+        The finite @tech{set} of all @deftech{state}s that @math{ℳ} can be in.}
   @item{@math{s_0} (@deftech{start state}):
         The initial @tech{state} of @math{ℳ}.}
   @item{@math{φ} (@deftech{transition function}):
@@ -626,7 +626,7 @@ Similarly, we'd like to find a way to represent a sequence of transitions. We
 
 @racketfile{code/functor/FSM.rkt}
 
-@subsubsection{𝐒𝐞𝐭-valued Functor as a Category Action}
+@subsubsection{𝐒𝐞𝐭-valued Functor as Category Action}
 
 @subsubsection{Typed Finite State Machine}
 
