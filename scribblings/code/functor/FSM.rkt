@@ -13,8 +13,8 @@
     [cod𝒞 𝒞1 𝒞0]
     [id𝒞  𝒞0 𝒞1]))
 
-(: A 𝒮) (define-type A (∪ ∘𝒞 dom𝒞 cod𝒞 id𝒞))
-(: S 𝒮) (define-type S (∪ 𝒞0 𝒞1 𝒞2))
+(: A 𝒮) (define-type A (∪ '∘𝒞 'dom𝒞 'cod𝒞 'id𝒞))
+(: S 𝒮) (define-type S (∪ '𝒞0 '𝒞1 '𝒞2))
 (: s0 S) (define s0 '𝒞2)
 (: φ (→ (× A S) S))
 (define (φ a s)
