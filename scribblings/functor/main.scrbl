@@ -562,7 +562,7 @@ emphasizing the direct application of @tech{elements} from the @tech{monoid}
 @math{M} to the @tech{set} @math{S}. @math{S} is also called an @math{M-set} in
 this way.
 
-@subsubsection{Monoid Action as Functor}
+@subsubsection{Monoid Actions as Functors}
 
 To further explore the connection between @tech{monoid actions} and @tech{functors},
 we can @racket[curry] @math{α} and obtain a @tech{function} @math{F@_{α1}: M → [S → S]},
@@ -627,7 +627,9 @@ a way to represent a sequence of @tech{transitions}. We @racket[define] the
 
 @racketfile{code/functor/FSM.rkt}
 
-@subsubsection{𝐒𝐞𝐭-valued Functor as Category Action}
+@subsubsection{𝐒𝐞𝐭-valued Functors as Typed Actions}
+
+@image["scribblings/functor/images/typed-act.svg"]
 
 @subsubsection{Typed Finite State Machine}
 
