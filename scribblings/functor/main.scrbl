@@ -597,8 +597,7 @@ used to design algorithms and systems that can be in one of a finite number of
         The initial @tech{state} of @math{ℳ}.}
   @item{@math{φ} (@deftech{transition function}):
         An @tech{action} of @math{A} on @math{S} that defines the @tech{state}
-        transition of @math{ℳ}. @math{φ: A×S → S} takes the current @tech{state}
-        and an input symbol as arguments and returns the next @tech{state}.}
+        @deftech{transition} of @math{ℳ}.}
   ]
 
 The @deftech{Kleene star} (@deftech{Kleene closure}) @math{A@^{*}} of a @tech{set}
@@ -608,9 +607,11 @@ of @math{A}.
 @bold{Exercise}: Think about the relationship between @tech{Kleene star} and
 @tech{monoid}.
 
-By currying @math{φ}, we can view any @tech{element} in @math{A} as a transition.
-Similarly, we'd like to find a way to represent a sequence of transitions. We
-@racket[define] the @tech{function} @math{φ@^{*}: A@^{*}×S → S}:
+@math{φ: A×S → S} takes the current @tech{state} and an input symbol as arguments
+and returns the next @tech{state}. By currying @math{φ}, we can view any
+@tech{element} in @math{A} as a @tech{transition}. Similarly, we'd like to find
+a way to represent a sequence of @tech{transitions}. We @racket[define] the
+@tech{function} @math{φ@^{*}: A@^{*}×S → S}:
 
 @itemlist[
   #:style 'ordered
