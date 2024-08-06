@@ -283,8 +283,16 @@ The @tech{category} of @tech{posets}, denoted as @deftech{𝐏𝐨𝐬}, is a
 In this context, @tech{graphs} are assumed to be @tech{directed graphs} by default.
 }
 
-A @deftech{graph homomorphism} is like a @tech{functor} that only preserves
-@tech{sources} and @tech{targets}.
+Similar to @tech{categories}, we can describe a @tech{graph} @math{𝒢} with
+the following @tech{diagram}:
+
+@image["scribblings/functor/images/grf.svg"]{[picture] grf.svg}
+
+A @deftech{graph homomorphism} @math{φ: 𝒢 → ℋ} is like a @tech{functor} that
+only preserves @tech{sources} and @tech{targets}. We can describe @math{φ} with
+the following @tech{diagram}:
+
+@image["scribblings/functor/images/grf-hom.svg"]{[picture] grf-hom.svg}
 
 The @tech{category} of @deftech{graph}, denoted as @deftech{𝐆𝐫𝐟}, where
 @tech{objects} are @tech{graphs} and @tech{morphisms} are @tech{graph homomorphisms}.
