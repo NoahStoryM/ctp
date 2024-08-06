@@ -629,6 +629,20 @@ a way to represent a sequence of @tech{transitions}. We @racket[define] the
 
 @subsubsection{𝐒𝐞𝐭-Valued Functors as Typed Actions}
 
+We've shown that @tech{monoid actions} can be viewed as @tech{functors} from
+an @tech{OOC} to @tech{𝐒𝐞𝐭}. Can we view any @tech{𝐒𝐞𝐭-valued functor} as an
+@tech{action} that generalizes @tech{monoid actions}? Indeed, we can! Such an
+@tech{action} is called a @deftech{typed action}.
+
+A @tech{typed action} of @math{M} on @math{S} involves a type @tech{set} @math{T}
+and a @tech{function} @math{type: S → T}. This can be seen as @math{S} being
+divided into @tech{subsets} according to their types, and the @tech{elements} of
+@math{M} acting on these @tech{subsets}.
+
+For a @tech{functor} @math{F: 𝒞 → 𝐒𝐞𝐭}, we can view it as a @tech{typed action}
+in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t)}, where
+@math{F(t) = {s ∈ S | type(s) = t}}.
+
 @image["scribblings/functor/images/typed-act.svg"]
 
 @subsubsection{Typed Finite State Machine}
