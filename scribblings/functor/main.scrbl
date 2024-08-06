@@ -590,7 +590,7 @@ where @math{F@_{α1}(m)(s) = α(m, s) = ms}. Next, we can view @math{M} as an @t
 @math{C(M)}, and then @racket[define] a @tech{𝐒𝐞𝐭-valued functor} @math{F@_{α}: C(M) → 𝐒𝐞𝐭},
 where @math{F@_{α}(∗) = S} and @math{F@_{α}(m) = F@_{α1}(m) = α(m, -)}.
 
-@image["scribblings/functor/images/act.svg"]
+@image["scribblings/functor/images/act.svg"]{[picture] act.svg}
 
 @bold{Exercise}: Prove that @math{F@_{α1}} is a @tech{monoid homomorphism}.
 
