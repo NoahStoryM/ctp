@@ -8,10 +8,10 @@
 
 (: ℳ (Listof (List A S S)))
 (define ℳ
-  '([#\x b s]
-    [#\x s s]
+  '([#\x s s]
     [#\y s b]
-    [#\y b b]))
+    [#\y b b]
+    [#\x b s]))
 
 (: A 𝒮) (define-type A (∪ #\x #\y))
 (: S 𝒮) (define-type S (∪ 's 'b))
