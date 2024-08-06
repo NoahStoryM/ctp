@@ -286,7 +286,7 @@ In this context, @tech{graphs} are assumed to be @tech{directed graphs} by defau
 A @deftech{graph homomorphism} is like a @tech{functor} that only preserves
 @tech{sources} and @tech{targets}.
 
-The @tech{category} of @deftech{graph}, denoted as @deftech{𝐆𝐫𝐩𝐡}, where
+The @tech{category} of @deftech{graph}, denoted as @deftech{𝐆𝐫𝐟}, where
 @tech{objects} are @tech{graphs} and @tech{morphisms} are @tech{graph homomorphisms}.
 
 @section{𝐒𝐞𝐭-Valued Functor}
