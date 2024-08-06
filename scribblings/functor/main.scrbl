@@ -277,14 +277,17 @@ and @tech{monotone functions} can be viewed as @tech{functors} between them.
 The @tech{category} of @tech{posets}, denoted as @deftech{𝐏𝐨𝐬}, is a
 @tech{full subcategory} of @tech{𝐏𝐫𝐨𝐬} where @tech{objects} are @tech{posets}.
 
-@subsection{Category of Directed Graphs}
+@subsection{Category of Graphs}
+
+@margin-note{
+In this context, @tech{graphs} are assumed to be @tech{directed graphs} by default.
+}
 
 A @deftech{graph homomorphism} is like a @tech{functor} that only preserves
 @tech{sources} and @tech{targets}.
 
-The @tech{category} of @tech{directed graph}, denoted as @deftech{𝐆𝐫𝐩𝐡}, where
-@tech{objects} are @tech{directed graphs} and @tech{morphisms} are
-@tech{graph homomorphisms}.
+The @tech{category} of @deftech{graph}, denoted as @deftech{𝐆𝐫𝐩𝐡}, where
+@tech{objects} are @tech{graphs} and @tech{morphisms} are @tech{graph homomorphisms}.
 
 @section{𝐒𝐞𝐭-Valued Functor}
 
