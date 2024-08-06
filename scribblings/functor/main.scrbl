@@ -663,7 +663,7 @@ For a @tech{functor} @math{F: 𝒞 → 𝐒𝐞𝐭}, we can view it as a @tech{
 in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t)}, where
 @math{F(t) = {s ∈ S | type(s) = t}}.
 
-@image["scribblings/functor/images/typed-act.svg"]
+@image["scribblings/functor/images/typed-act.svg"]{[picture] typed-act.svg}
 
 @subsubsection{Typed Finite State Machine}
 
