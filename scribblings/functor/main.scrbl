@@ -610,7 +610,7 @@ a @deftech{state table}, or a tuple @math{(A, S, s_0, φ)}:
 
 @itemlist[
   @item{@math{A} (@deftech{alphabet}):
-        The finite @tech{set} of all possible input @deftech{letter} that
+        The finite @tech{set} of all possible input @deftech{letter}s that
         @math{ℳ} can read.}
   @item{@math{S} (@deftech{state space}):
         The finite @tech{set} of all @deftech{state}s that @math{ℳ} can be in.}
