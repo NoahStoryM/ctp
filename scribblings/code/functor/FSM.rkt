@@ -27,8 +27,8 @@
         s]
        [_ #f]))
    (raise-arguments-error
-    'φ "invalid token or state"
-    "token" a
+    'φ "invalid character or state"
+    "character" a
     "state" s)))
 
 (define-type A* (Listof A))
