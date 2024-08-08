@@ -605,8 +605,8 @@ A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{cate
 
 A @deftech{finite state machine} (@deftech{FSM}) @math{ℳ} is a mathematical model
 used to design algorithms and systems that can be in one of a finite number of
-@tech{states} at any given time. @math{ℳ} can be described as a tuple
-@math{(A, S, s_0, φ)}:
+@tech{states} at any given time. @math{ℳ} can be described as a @deftech{state diagram}
+or a tuple @math{(A, S, s_0, φ)}:
 
 @itemlist[
   @item{@math{A} (@deftech{alphabet}):
