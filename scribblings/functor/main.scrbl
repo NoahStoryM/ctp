@@ -642,9 +642,6 @@ a way to represent a sequence of @tech{transitions}. We @racket[define] the
 @bold{Exercise}: Prove that @math{φ@^{*}} is a @tech{monoid action} of
 @math{A@^{*}} on @math{S}.
 
-@bold{Exercise}: Try to view @math{φ@^{*}} as a @tech{𝐒𝐞𝐭-valued functor}
-@math{F@_{φ@^{*}}} and implement it.
-
 Here is a Racket example for the @tech{FSM} @math{ℳ_1}
 @math{(A_1 = {x, y}, S_1 = {s, b}, s, φ_1)}:
 
