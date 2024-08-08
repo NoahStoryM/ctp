@@ -646,14 +646,14 @@ a way to represent a sequence of @tech{transitions}. We @racket[define] the
 @math{F@_{φ@^{*}}} and implement it.
 
 The following is a @tech{state diagram} of a @tech{FSM} @math{ℳ_1}
-@math{(A = {x, y}, S = {s, b}, s, φ)}:
+@math{(A_1 = {x, y}, S_1 = {s, b}, s, φ_1)}:
 
 @image["scribblings/functor/images/ℳ_1.svg"]{[picture] ℳ_1.svg}
 
 @racketfile{code/functor/FSM.rkt}
 
 @bold{Exercise}: Try to @racket[define] another @tech{FSM} @math{ℳ_2}
-@math{(A = {x, y}, S = {s, b, o}, s, φ)} in Racket:
+@math{(A_2 = {x, y}, S_2 = {s, b, o}, s, φ_2)} in Racket:
 
 @image["scribblings/functor/images/ℳ_2.svg"]{[picture] ℳ_2.svg}
 

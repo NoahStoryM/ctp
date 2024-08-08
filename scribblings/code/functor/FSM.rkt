@@ -6,20 +6,20 @@
 (: #;𝐒𝐞𝐭  𝒮 𝐂𝐚𝐭) (define (𝒮 m) m) (define ∘𝒮 compose)
 (: #;𝐋𝐢𝐬𝐭 ℒ 𝐂𝐚𝐭) (define (ℒ m) m) (define ∘ℒ append)
 
-(: ℳ1 (Listof (List A S S)))
+(: ℳ1 (Listof (List A1 S1 S1)))
 (define ℳ1
   '([#\x s s]
     [#\y s b]
     [#\y b b]
     [#\x b s]))
 
-(: A 𝒮) (define-type A (∪ #\x #\y))
-(: S 𝒮) (define-type S (∪ 's 'b))
-(: s0 S) (define s0 's)
-(: φ (→ (× A S) S))
-(define (φ a s)
+(: A1 𝒮) (define-type A1 (∪ #\x #\y))
+(: S1 𝒮) (define-type S1 (∪ 's 'b))
+(: s0 S1) (define s0 's)
+(: φ1 (→ (× A1 S1) S1))
+(define (φ1 a s)
   (or
-   (for/or ([i : (List A S S) (in-list ℳ1)])
+   (for/or ([i : (List A1 S1 S1) (in-list ℳ1)])
      (match i
        [`(,(? (curry eq? a))
           ,(? (curry eq? s))
@@ -31,15 +31,15 @@
     "character" a
     "state" s)))
 
-(define-type A* (Listof A))
-(: φ* (→ (× A* S) S))
-(define (φ* a* s)
+(define-type A1* (Listof A1))
+(: φ1* (→ (× A1* S1) S1))
+(define (φ1* a* s)
   (match a*
     ['() s]
-    [`(,a . ,w) (φ a (φ* w s))]))
+    [`(,a . ,w) (φ1 a (φ1* w s))]))
 
-(: run (→ String S))
-(define (run str) (φ* (reverse (string->list str)) s0))
+(: run (→ String S1))
+(define (run str) (φ1* (reverse (string->list str)) s0))
 
 (module+ test
   (check-eq? 'b (run "yy"))
@@ -48,8 +48,8 @@
   (check-eq? 's (run "xx")))
 
 (: ∗ ℒ) (define ∗ (∘ℒ))
-(: Fφ* (→ #;A* (→ℒ ∗ ∗) (→𝒮 S S)))
-(define Fφ* (curry φ*))
+(: Fφ1* (→ #;A* (→ℒ ∗ ∗) (→𝒮 S1 S1)))
+(define Fφ1* (curry φ1*))
 
 (module+ test
   (for* ([i (in-list '("x" "y" "xx" "xy" "yx" "yy"))]
@@ -57,5 +57,5 @@
     (define m (reverse (string->list i)))
     (define n (reverse (string->list j)))
     (check-eq?
-     ((Fφ* (∘ℒ m n)) s0)
-     ((∘𝒮 (Fφ* m) (Fφ* n)) s0))))
+     ((Fφ1* (∘ℒ m n)) s0)
+     ((∘𝒮 (Fφ1* m) (Fφ1* n)) s0))))
