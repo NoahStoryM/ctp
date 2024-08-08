@@ -700,7 +700,7 @@ In a @deftech{typed finite state machine} (@deftech{TFSM}) @math{ℳ}, the
 valid. This introduces a layer of flexibility and specificity in modeling
 @tech{state} @tech{transitions}, where not every @tech{state} needs to handle
 every possible input @tech{letter}. In some contexts, certain @tech{states} might
-only handle a @tech{subset} of the available input @tech{letters}, and any undefined
+only handle a @tech{subset} of the @tech{alphabet}, and any undefined
 @tech{transition} might signify an @racket[exn] or a special condition that needs
 separate handling.
 
