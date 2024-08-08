@@ -15,7 +15,7 @@
 
 (: A1 𝒮) (define-type A1 (∪ #\x #\y))
 (: S1 𝒮) (define-type S1 (∪ 's 'b))
-(: s0 S1) (define s0 's)
+(: s1 S1) (define s1 's)
 (: φ1 (→ (× A1 S1) S1))
 (define (φ1 a s)
   (or
@@ -39,7 +39,7 @@
     [`(,a . ,w) (φ1 a (φ1* w s))]))
 
 (: run (→ String S1))
-(define (run str) (φ1* (reverse (string->list str)) s0))
+(define (run str) (φ1* (reverse (string->list str)) s1))
 
 (module+ test
   (check-eq? 'b (run "yy"))
@@ -57,5 +57,5 @@
     (define m (reverse (string->list i)))
     (define n (reverse (string->list j)))
     (check-eq?
-     ((Fφ1* (∘ℒ m n)) s0)
-     ((∘𝒮 (Fφ1* m) (Fφ1* n)) s0))))
+     ((Fφ1* (∘ℒ m n)) s1)
+     ((∘𝒮 (Fφ1* m) (Fφ1* n)) s1))))
