@@ -29,7 +29,7 @@
         s]
        [_ #f]))
    (raise-arguments-error
-    'φ "invalid character or state"
+    'φ2 "invalid character or state"
     "character" a
     "state" s)))
 
