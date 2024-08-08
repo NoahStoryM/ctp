@@ -627,10 +627,10 @@ of @math{A}.
 @bold{Exercise}: Think about the relationship between @tech{Kleene star} and
 @tech{monoid}.
 
-@math{φ: A×S → S} takes the current @tech{state} and an input symbol as arguments
-and returns the next @tech{state}. By currying @math{φ}, we can view any
-@tech{element} in @math{A} as a @tech{transition}. Similarly, we'd like to find
-a way to represent a sequence of @tech{transitions}. We @racket[define] the
+@math{φ: A×S → S} takes an input @deftech{letter} and the current @tech{state} as
+arguments and returns the next @tech{state}. By currying @math{φ}, we can view
+any @tech{element} in @math{A} as a @tech{transition}. Similarly, we'd like to
+find a way to represent a sequence of @tech{transitions}. We @racket[define] the
 @tech{function} @math{φ@^{*}: A@^{*}×S → S}:
 
 @itemlist[
