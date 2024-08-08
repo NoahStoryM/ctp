@@ -701,8 +701,8 @@ valid. This introduces a layer of flexibility and specificity in modeling
 @tech{state} @tech{transitions}, where not every @tech{state} needs to handle
 every possible input @tech{letter}. In some contexts, certain @tech{states} might
 only handle a @tech{subset} of the @tech{alphabet}, and any undefined
-@tech{transition} might signify an @racket[exn] or a special condition that needs
-separate handling.
+@tech{transition} might signify an @racket[error] or a special condition that
+needs separate handling.
 
 @;; @math{(𝒢, T, S, s_0, φ)}
 @;;
