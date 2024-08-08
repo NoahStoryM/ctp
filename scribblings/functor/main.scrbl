@@ -646,14 +646,14 @@ a way to represent a sequence of @tech{transitions}. We @racket[define] the
 @math{F@_{φ@^{*}}} and implement it.
 
 The following is a @tech{state diagram} of a @tech{FSM} @math{ℳ_1}
-@math{(A = {x, y}, S = {s_0, b}, s_0, φ)}:
+@math{(A = {x, y}, S = {s, b}, s, φ)}:
 
 @image["scribblings/functor/images/ℳ_1.svg"]{[picture] ℳ_1.svg}
 
 @racketfile{code/functor/FSM.rkt}
 
 @bold{Exercise}: Try to @racket[define] another @tech{FSM} @math{ℳ_2}
-@math{(A = {x, y}, S = {s_0, b, o}, s_0, φ)} in Racket:
+@math{(A = {x, y}, S = {s, b, o}, s, φ)} in Racket:
 
 @image["scribblings/functor/images/ℳ_2.svg"]{[picture] ℳ_2.svg}
 
@@ -676,6 +676,16 @@ in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t
 @image["scribblings/functor/images/typed-act.svg"]{[picture] typed-act.svg}
 
 @subsubsection{Typed Finite State Machine}
+
+A @deftech{typed finite state machine} (@deftech{TFSM}) @math{ℳ}
+
+@math{(𝒢, T, S, s_0, φ)}
+
+In order to extend φ* to a typed action, there must be some changes:
+
+typed alphabet: from a set to a graph
+
+@racketfile{code/functor/TFSM.rkt}
 
 @section{Full and Faithful}
 

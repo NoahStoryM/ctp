@@ -8,14 +8,14 @@
 
 (: ℳ1 (Listof (List A S S)))
 (define ℳ1
-  '([#\x s0 s0]
-    [#\y s0 b ]
-    [#\y b  b ]
-    [#\x b  s0]))
+  '([#\x s s]
+    [#\y s b]
+    [#\y b b]
+    [#\x b s]))
 
 (: A 𝒮) (define-type A (∪ #\x #\y))
-(: S 𝒮) (define-type S (∪ 's0 'b))
-(: s0 S) (define s0 's0)
+(: S 𝒮) (define-type S (∪ 's 'b))
+(: s0 S) (define s0 's)
 (: φ (→ (× A S) S))
 (define (φ a s)
   (or
@@ -42,10 +42,10 @@
 (define (run str) (φ* (reverse (string->list str)) s0))
 
 (module+ test
-  (check-eq? 'b  (run "yy"))
-  (check-eq? 'b  (run "xy"))
-  (check-eq? 's0 (run "yx"))
-  (check-eq? 's0 (run "xx")))
+  (check-eq? 'b (run "yy"))
+  (check-eq? 'b (run "xy"))
+  (check-eq? 's (run "yx"))
+  (check-eq? 's (run "xx")))
 
 (: ∗ ℒ) (define ∗ (∘ℒ))
 (: Fφ* (→ #;A* (→ℒ ∗ ∗) (→𝒮 S S)))

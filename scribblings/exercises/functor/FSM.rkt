@@ -8,16 +8,16 @@
 
 (: ℳ2 (Listof (List A S S)))
 (define ℳ2
-  '([#\x s0 o]
-    [#\y s0 b]
-    [#\x b  b]
-    [#\y b  b]
-    [#\x o  o]
-    [#\y o  o]))
+  '([#\x s o]
+    [#\y s b]
+    [#\x b b]
+    [#\y b b]
+    [#\x o o]
+    [#\y o o]))
 
 (: A 𝒮) (define-type A (∪ #\x #\y))
-(: S 𝒮) (define-type S (∪ 's0 'b 'o))
-(: s0 S) (define s0 's0)
+(: S 𝒮) (define-type S (∪ 's 'b 'o))
+(: s0 S) (define s0 's)
 (: φ (→ (× A S) S))
 (define (φ a s)
   (or
