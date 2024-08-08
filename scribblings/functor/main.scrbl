@@ -605,8 +605,8 @@ A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{cate
 
 A @deftech{finite state machine} (@deftech{FSM}) @math{ℳ} is a mathematical model
 used to design algorithms and systems that can be in one of a finite number of
-@tech{states} at any given time. @math{ℳ} can be described as a @deftech{state diagram}
-or a tuple @math{(A, S, s_0, φ)}:
+@tech{states} at any given time. @math{ℳ} can be described as a @deftech{state diagram},
+a @deftech{state table}, or a tuple @math{(A, S, s_0, φ)}:
 
 @itemlist[
   @item{@math{A} (@deftech{alphabet}):
@@ -645,17 +645,36 @@ a way to represent a sequence of @tech{transitions}. We @racket[define] the
 @bold{Exercise}: Try to view @math{φ@^{*}} as a @tech{𝐒𝐞𝐭-valued functor}
 @math{F@_{φ@^{*}}} and implement it.
 
-The following is a @tech{state diagram} of a @tech{FSM} @math{ℳ_1}
+Here is a Racket example for the @tech{FSM} @math{ℳ_1}
 @math{(A_1 = {x, y}, S_1 = {s, b}, s, φ_1)}:
 
 @image["scribblings/functor/images/ℳ_1.svg"]{[picture] ℳ_1.svg}
 
+@centered{
+@tabular[#:sep @hspace[1]
+@list[
+  @list[@bold{@math{S_1} \ @math{A_1}} @bold{@math{x}} @bold{@math{y}}]
+  @list[@bold{@math{s}} @math{s} @math{b}]
+  @list[@bold{@math{b}} @math{s} @math{b}]
+]]
+}
+
 @racketfile{code/functor/FSM.rkt}
 
-@bold{Exercise}: Try to @racket[define] another @tech{FSM} @math{ℳ_2}
-@math{(A_2 = {x, y}, S_2 = {s, b, o}, s, φ_2)} in Racket:
+@bold{Exercise}: Try to implement another Racket example for the @tech{FSM}
+@math{ℳ_2} @math{(A_2 = {x, y}, S_2 = {s, b, o}, s, φ_2)}:
 
 @image["scribblings/functor/images/ℳ_2.svg"]{[picture] ℳ_2.svg}
+
+@centered{
+@tabular[#:sep @hspace[1]
+@list[
+  @list[@bold{@math{S_2} \ @math{A_2}} @bold{@math{x}} @bold{@math{y}}]
+  @list[@bold{@math{s}} @math{o} @math{b}]
+  @list[@bold{@math{b}} @math{b} @math{b}]
+  @list[@bold{@math{o}} @math{o} @math{o}]
+]]
+}
 
 @subsubsection{𝐒𝐞𝐭-Valued Functors as Typed Actions}
 
@@ -677,15 +696,17 @@ in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t
 
 @subsubsection{Typed Finite State Machine}
 
-A @deftech{typed finite state machine} (@deftech{TFSM}) @math{ℳ}
-
-@math{(𝒢, T, S, s_0, φ)}
-
-In order to extend φ* to a typed action, there must be some changes:
-
-typed alphabet: from a set to a graph
-
-@racketfile{code/functor/TFSM.rkt}
+@;; the state diagram of a FSM has a property: each node can accept all symbols in M
+@;;
+@;; A @deftech{typed finite state machine} (@deftech{TFSM}) @math{ℳ}
+@;;
+@;; @math{(𝒢, T, S, s_0, φ)}
+@;;
+@;; In order to extend φ* to a typed action, there must be some changes:
+@;;
+@;; typed alphabet: from a set to a graph
+@;;
+@;; @racketfile{code/functor/TFSM.rkt}
 
 @section{Full and Faithful}
 
