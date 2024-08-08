@@ -645,7 +645,17 @@ a way to represent a sequence of @tech{transitions}. We @racket[define] the
 @bold{Exercise}: Try to view @math{φ@^{*}} as a @tech{𝐒𝐞𝐭-valued functor}
 @math{F@_{φ@^{*}}} and implement it.
 
+The following is a @tech{state diagram} of a @tech{FSM} @math{ℳ_1}
+@math{(A = {x, y}, S = {s_0, b}, s_0, φ)}:
+
+@image["scribblings/functor/images/ℳ_1.svg"]{[picture] ℳ_1.svg}
+
 @racketfile{code/functor/FSM.rkt}
+
+@bold{Exercise}: Try to @racket[define] another @tech{FSM} @math{ℳ_2}
+@math{(A = {x, y}, S = {s_0, b, o}, s_0, φ)} in Racket:
+
+@image["scribblings/functor/images/ℳ_2.svg"]{[picture] ℳ_2.svg}
 
 @subsubsection{𝐒𝐞𝐭-Valued Functors as Typed Actions}
 

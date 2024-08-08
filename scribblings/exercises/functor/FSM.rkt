@@ -6,20 +6,22 @@
 (: #;𝐒𝐞𝐭  𝒮 𝐂𝐚𝐭) (define (𝒮 m) m) (define ∘𝒮 compose)
 (: #;𝐋𝐢𝐬𝐭 ℒ 𝐂𝐚𝐭) (define (ℒ m) m) (define ∘ℒ append)
 
-(: ℳ1 (Listof (List A S S)))
-(define ℳ1
-  '([#\x s0 s0]
-    [#\y s0 b ]
-    [#\y b  b ]
-    [#\x b  s0]))
+(: ℳ2 (Listof (List A S S)))
+(define ℳ2
+  '([#\x s0 o]
+    [#\y s0 b]
+    [#\x b  b]
+    [#\y b  b]
+    [#\x o  o]
+    [#\y o  o]))
 
 (: A 𝒮) (define-type A (∪ #\x #\y))
-(: S 𝒮) (define-type S (∪ 's0 'b))
+(: S 𝒮) (define-type S (∪ 's0 'b 'o))
 (: s0 S) (define s0 's0)
 (: φ (→ (× A S) S))
 (define (φ a s)
   (or
-   (for/or ([i : (List A S S) (in-list ℳ1)])
+   (for/or ([i : (List A S S) (in-list ℳ2)])
      (match i
        [`(,(? (curry eq? a))
           ,(? (curry eq? s))
@@ -42,10 +44,10 @@
 (define (run str) (φ* (reverse (string->list str)) s0))
 
 (module+ test
-  (check-eq? 'b  (run "yy"))
-  (check-eq? 'b  (run "xy"))
-  (check-eq? 's0 (run "yx"))
-  (check-eq? 's0 (run "xx")))
+  (check-eq? 'b (run "yy"))
+  (check-eq? 'o (run "xy"))
+  (check-eq? 'b (run "yx"))
+  (check-eq? 'o (run "xx")))
 
 (: ∗ ℒ) (define ∗ (∘ℒ))
 (: Fφ* (→ #;A* (→ℒ ∗ ∗) (→𝒮 S S)))
