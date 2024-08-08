@@ -610,7 +610,8 @@ a @deftech{state table}, or a tuple @math{(A, S, s_0, φ)}:
 
 @itemlist[
   @item{@math{A} (@deftech{alphabet}):
-        The finite @tech{set} of all possible input symbols that @math{ℳ} can read.}
+        The finite @tech{set} of all possible input @deftech{letter} that
+        @math{ℳ} can read.}
   @item{@math{S} (@deftech{state space}):
         The finite @tech{set} of all @deftech{state}s that @math{ℳ} can be in.}
   @item{@math{s_0} (@deftech{start state}):
@@ -627,7 +628,7 @@ of @math{A}.
 @bold{Exercise}: Think about the relationship between @tech{Kleene star} and
 @tech{monoid}.
 
-@math{φ: A×S → S} takes an input @deftech{letter} and the current @tech{state} as
+@math{φ: A×S → S} takes an input @tech{letter} and the current @tech{state} as
 arguments and returns the next @tech{state}. By currying @math{φ}, we can view
 any @tech{element} in @math{A} as a @tech{transition}. Similarly, we'd like to
 find a way to represent a sequence of @tech{transitions}. We @racket[define] the
