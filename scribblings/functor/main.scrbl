@@ -694,17 +694,49 @@ in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t
 
 @subsubsection{Typed Finite State Machine}
 
-@;; the state diagram of a FSM has a property: each node can accept all symbols in M
-@;;
-@;; A @deftech{typed finite state machine} (@deftech{TFSM}) @math{ℳ}
-@;;
+In a @deftech{typed finite state machine} (@deftech{TFSM}) @math{ℳ}, the
+@tech{state table} does not need to be complete. Instead, its @tech{alphabet} and
+@tech{@tech{states}} are typed, meaning that only certain @tech{transitions} are
+valid. This introduces a layer of flexibility and specificity in modeling
+@tech{state} @tech{transitions}, where not every @tech{state} needs to handle
+every possible input @tech{letter}. In some contexts, certain @tech{states} might
+only handle a @tech{subset} of the available input @tech{letters}, and any undefined
+@tech{transition} might signify an @racket[exn] or a special condition that needs
+separate handling.
+
 @;; @math{(𝒢, T, S, s_0, φ)}
 @;;
 @;; In order to extend φ* to a typed action, there must be some changes:
 @;;
-@;; typed alphabet: from a set to a graph
-@;;
-@;; @racketfile{code/functor/TFSM.rkt}
+
+@image["scribblings/functor/images/ℳ.svg"]{[picture] ℳ.svg}
+
+@centered{
+@tabular[#:sep @hspace[1]
+@list[
+  @list[@bold{@math{S} \ @math{A}}
+             @bold{@math{1}} @bold{@math{2}}
+             @bold{@math{q}}
+             @bold{@math{x}} @bold{@math{y}}]
+
+  @list[@bold{@math{s}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
+  @list[@bold{@math{a}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
+  @list[@bold{@math{r}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
+  @list[@bold{@math{}} @math{} @math{} @math{} @math{} @math{}]
+
+  @list[@bold{@math{s_1}} @math{} @math{} @math{a} @math{s_1} @math{b_1}]
+  @list[@bold{@math{b_1}} @math{} @math{} @math{r} @math{s_2} @math{b_2}]
+  @list[@bold{@math{}} @math{} @math{} @math{} @math{} @math{}]
+
+  @list[@bold{@math{s_2}} @math{} @math{} @math{r} @math{o_2} @math{b_2}]
+  @list[@bold{@math{b_2}} @math{} @math{} @math{r} @math{b_2} @math{b_2}]
+  @list[@bold{@math{o_2}} @math{} @math{} @math{a} @math{o_2} @math{o_2}]
+]]
+}
+
+@image["scribblings/functor/images/𝒢.svg"]{[picture] 𝒢.svg}
+
+@racketfile{code/functor/TFSM.rkt}
 
 @section{Full and Faithful}
 
