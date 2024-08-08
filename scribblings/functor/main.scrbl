@@ -714,7 +714,7 @@ separate handling.
 @centered{
 @tabular[#:sep @hspace[1]
 @list[
-  @list[@bold{@math{S} \ @math{A}}
+  @list[@bold{@math{S} \ @math{𝒢_1}}
              @bold{@math{1}} @bold{@math{2}}
              @bold{@math{q}}
              @bold{@math{x}} @bold{@math{y}}]
@@ -722,11 +722,9 @@ separate handling.
   @list[@bold{@math{s}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
   @list[@bold{@math{a}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
   @list[@bold{@math{r}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
-  @list[@bold{@math{}} @math{} @math{} @math{} @math{} @math{}]
 
   @list[@bold{@math{s_1}} @math{} @math{} @math{a} @math{s_1} @math{b_1}]
-  @list[@bold{@math{b_1}} @math{} @math{} @math{r} @math{s_2} @math{b_2}]
-  @list[@bold{@math{}} @math{} @math{} @math{} @math{} @math{}]
+  @list[@bold{@math{b_1}} @math{} @math{} @math{r} @math{s_1} @math{b_1}]
 
   @list[@bold{@math{s_2}} @math{} @math{} @math{r} @math{o_2} @math{b_2}]
   @list[@bold{@math{b_2}} @math{} @math{} @math{r} @math{b_2} @math{b_2}]
