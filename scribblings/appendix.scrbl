@@ -17,6 +17,18 @@ See @tech{cod}.
 See @tech{∘}.
 }
 
+@defproc[(src [m morphism?]) morphism?]{
+See @tech{src}.
+}
+
+@defproc[(tgt [m morphism?]) morphism?]{
+See @tech{tgt}.
+}
+
+@defproc[(· [m morphism?] ...) morphism?]{
+See @tech{·}.
+}
+
 @defproc[(? [v any/c]) boolean?]{
 See @tech{?}.
 }
