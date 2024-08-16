@@ -640,8 +640,15 @@ find a way to represent a sequence of @tech{transitions}. We @racket[define] the
   @item{@math{∀s ∈ S, ∀w ∈ A@^{*}, ∀a ∈ A, φ@^{*}((a)w, s) = φ(a, φ@^{*}(w, s))}}
 ]
 
+@margin-note{
+In this context, @tech{FSMs} are assumed to be @deftech{deterministic} by default.
+If an @tech{FSM} is @deftech{nondeterministic}, its @math{φ} is a @tech{relation}
+rather than a @tech{function}, so @math{φ@^{*}} is a @tech{monoid action} in
+@tech{𝐑𝐞𝐥} rather than in @tech{𝐒𝐞𝐭}.
+}
+
 @bold{Exercise}: Prove that @math{φ@^{*}} is a @tech{monoid action} of
-@math{A@^{*}} on @math{S}.
+@math{A@^{*}} on @math{S} in @tech{𝐒𝐞𝐭}.
 
 Here is a Racket example for the @tech{FSM} @math{ℳ_1}
 @math{(A_1 = {x, y}, S_1 = {s, b}, s, φ_1)}:
