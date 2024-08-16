@@ -714,7 +714,7 @@ itself.
 }
 
 An @tech{FSM} can be represented as a tuple @math{(A, S, s_0, φ)}. In contrast,
-a @tech{TFSM} @math{ℳ} can be represented as a tuple @math{(𝒢, T, S, s_0, φ)},
+a @tech{TFSM} @math{ℳ} can be represented as a tuple @math{(𝒢, S, s_0, φ)},
 where:
 
 @itemlist[
