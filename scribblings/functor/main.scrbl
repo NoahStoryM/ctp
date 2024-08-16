@@ -694,7 +694,11 @@ in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t
 
 @subsubsection{Typed Finite State Machine}
 
-In a @deftech{typed finite state machine} (@deftech{TFSM}) @math{ℳ}, the
+@tech{FSMs} are typically characterized by their complete @tech{state tables},
+meaning that for every @tech{state} and every input @tech{letter}, there is a
+defined @tech{transition} to another @tech{state} (or possibly the same @tech{state}).
+
+In a @deftech{typed finite state machine} (@deftech{TFSM}) @math{ℳ}, its
 @tech{state table} does not need to be complete. Instead, its @tech{alphabet} and
 @tech{@tech{states}} are typed, meaning that only certain @tech{transitions} are
 valid. This introduces a layer of flexibility and specificity in modeling
