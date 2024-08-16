@@ -698,20 +698,40 @@ in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t
 meaning that for every @tech{state} and every input @tech{letter}, there is a
 defined @tech{transition} to another @tech{state} (or possibly the same @tech{state}).
 
-In a @deftech{typed finite state machine} (@deftech{TFSM}) @math{ℳ}, its
-@tech{state table} does not need to be complete. Instead, its @tech{alphabet} and
-@tech{@tech{states}} are typed, meaning that only certain @tech{transitions} are
-valid. This introduces a layer of flexibility and specificity in modeling
-@tech{state} @tech{transitions}, where not every @tech{state} needs to handle
-every possible input @tech{letter}. In some contexts, certain @tech{states} might
-only handle a @tech{subset} of the @tech{alphabet}, and any undefined
-@tech{transition} might signify an @racket[error] or a special condition that
-needs separate handling.
+In a @deftech{typed finite state machine} (@deftech{TFSM}), its @tech{state table}
+does not need to be complete. Instead, its @tech{alphabet} and @tech{@tech{states}}
+are typed, meaning that only certain @tech{transitions} are valid. This introduces
+a layer of flexibility and specificity in modeling @tech{state} @tech{transitions},
+where not every @tech{state} needs to handle every possible input @tech{letter}.
+In some contexts, certain @tech{states} might only handle a @tech{subset} of the
+@tech{alphabet}, and any undefined @tech{transition} might signify an @racket[error]
+or a special condition that needs separate handling.
 
-@;; @math{(𝒢, T, S, s_0, φ)}
-@;;
-@;; In order to extend φ* to a typed action, there must be some changes:
-@;;
+@margin-note{
+In a certain sense, a @tech{set} can be viewed as a @deftech{one-node graph},
+where @tech{elements} are @tech{arrows} pointing from the only @tech{node} to
+itself.
+}
+
+An @tech{FSM} can be represented as a tuple @math{(A, S, s_0, φ)}. In contrast,
+a @tech{TFSM} @math{ℳ} can be represented as a tuple @math{(𝒢, T, S, s_0, φ)},
+where:
+
+@itemlist[
+  @item{@math{𝒢} (@deftech{typed alphabet}):
+        A @tech{graph} whose @tech{arrows} are @tech{letters} and @tech{nodes}
+        are types.}
+  @item{@math{S} (@tech{state space}):
+        The finite @tech{set} of all @tech{states} that @math{ℳ} can be in.}
+  @item{@math{s_0} (@tech{start state}):
+        The initial @tech{state} of @math{ℳ}.}
+  @item{@math{φ} (@deftech{typed transition function}):
+        A @tech{graph homomorphism} from @math{𝒢} to @tech{𝐒𝐞𝐭}.}
+  ]
+
+We can use a @tech{state diagram} and a @tech{state table} to illustrate a
+@tech{TFSM} @math{ℳ}, which can be viewed as a combination of multiple @tech{FSMs}
+@math{ℳ_1} and @math{ℳ_2}:
 
 @image["scribblings/functor/images/ℳ.svg"]{[picture] ℳ.svg}
 
@@ -723,20 +743,37 @@ needs separate handling.
              @bold{@math{q}}
              @bold{@math{x}} @bold{@math{y}}]
 
-  @list[@bold{@math{s}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
-  @list[@bold{@math{a}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
-  @list[@bold{@math{r}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
+  @list[@bold{@math{s_0}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
+  @list[@bold{@math{a_0}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
+  @list[@bold{@math{r_0}} @math{s_1} @math{s_2} @math{} @math{} @math{}]
 
-  @list[@bold{@math{s_1}} @math{} @math{} @math{a} @math{s_1} @math{b_1}]
-  @list[@bold{@math{b_1}} @math{} @math{} @math{r} @math{s_1} @math{b_1}]
+  @list[@bold{@math{s_1}} @math{} @math{} @math{a_0} @math{s_1} @math{b_1}]
+  @list[@bold{@math{b_1}} @math{} @math{} @math{r_0} @math{s_1} @math{b_1}]
 
-  @list[@bold{@math{s_2}} @math{} @math{} @math{r} @math{o_2} @math{b_2}]
-  @list[@bold{@math{b_2}} @math{} @math{} @math{r} @math{b_2} @math{b_2}]
-  @list[@bold{@math{o_2}} @math{} @math{} @math{a} @math{o_2} @math{o_2}]
+  @list[@bold{@math{s_2}} @math{} @math{} @math{r_0} @math{o_2} @math{b_2}]
+  @list[@bold{@math{b_2}} @math{} @math{} @math{r_0} @math{b_2} @math{b_2}]
+  @list[@bold{@math{o_2}} @math{} @math{} @math{a_0} @math{o_2} @math{o_2}]
 ]]
 }
 
+Let @math{S_0 = {s_0, a_0, r_0}}, @math{S_1 = {s_1, b_1}} and
+@math{S_2 = {s_2, b_2, o_2}}. In the @tech{typed alphabet} @math{𝒢}, @math{S_1}
+and @math{S_2} are the @tech{state spaces} of @math{ℳ_1} and @math{ℳ_2}
+respectively:
+
 @image["scribblings/functor/images/𝒢.svg"]{[picture] 𝒢.svg}
+
+@margin-note{
+For each @tech{node} @math{a}, there is a unique @tech{path} of length @math{0},
+called the @deftech{empty path} at @math{a}.
+}
+
+Similar to @tech{FSMs}, @math{φ: 𝒢 → 𝐒𝐞𝐭} generates a @tech{typed action}
+@math{φ*: F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @deftech{path category} of @math{𝒢},
+where @tech{objects} are @tech{nodes} and @tech{morphisms} are @deftech{paths}
+(a sequence of @tech{arrows} connected end to end).
+
+Here is how to implement @math{ℳ} in Racket:
 
 @racketfile{code/functor/TFSM.rkt}
 
