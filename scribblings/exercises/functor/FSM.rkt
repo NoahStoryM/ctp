@@ -54,8 +54,9 @@
 (define Fφ2* (curry φ2*))
 
 (module+ test
-  (for* ([i (in-list '("x" "y" "xx" "xy" "yx" "yy"))]
-         [j (in-list '("x" "y" "xx" "xy" "yx" "yy"))])
+  (define str* '("x" "y" "xx" "xy" "yx" "yy"))
+  (for* ([i (in-list str*)]
+         [j (in-list str*)])
     (define m (reverse (string->list i)))
     (define n (reverse (string->list j)))
     (check-eq?
