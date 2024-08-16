@@ -1,6 +1,8 @@
 #lang typed/racket/base/no-check
 
 (require racket/match racket/function)
+(provide ℳ2 A2 S2 s2 φ2 φ2* Fφ2*)
+
 (module+ test (require rackunit))
 
 (: #;𝐒𝐞𝐭  𝒮 𝐂𝐚𝐭) (define (𝒮 m) m) (define ∘𝒮 compose)
@@ -8,16 +10,16 @@
 
 (: ℳ2 (Listof (List A2 S2 S2)))
 (define ℳ2
-  '([#\x s o]
-    [#\y s b]
-    [#\x b b]
-    [#\y b b]
-    [#\x o o]
-    [#\y o o]))
+  '([#\x s2 o2]
+    [#\y s2 b2]
+    [#\x b2 b2]
+    [#\y b2 b2]
+    [#\x o2 o2]
+    [#\y o2 o2]))
 
 (: A2 𝒮) (define-type A2 (∪ #\x #\y))
-(: S2 𝒮) (define-type S2 (∪ 's 'b 'o))
-(: s2 S2) (define s2 's)
+(: S2 𝒮) (define-type S2 (∪ 's2 'b2 'o2))
+(: s2 S2) (define s2 's2)
 (: φ2 (→ (× A2 S2) S2))
 (define (φ2 a s)
   (or
@@ -44,10 +46,10 @@
 (define (run str) (φ2* (reverse (string->list str)) s2))
 
 (module+ test
-  (check-eq? 'b (run "yy"))
-  (check-eq? 'o (run "xy"))
-  (check-eq? 'b (run "yx"))
-  (check-eq? 'o (run "xx")))
+  (check-eq? 'b2 (run "yy"))
+  (check-eq? 'o2 (run "xy"))
+  (check-eq? 'b2 (run "yx"))
+  (check-eq? 'o2 (run "xx")))
 
 (: ∗ ℒ) (define ∗ (∘ℒ))
 (: Fφ2* (→ #;A* (→ℒ ∗ ∗) (→𝒮 S2 S2)))

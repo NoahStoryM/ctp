@@ -651,7 +651,7 @@ rather than a @tech{function}, so @math{φ@^{*}} is a @tech{monoid action} in
 @math{A@^{*}} on @math{S} in @tech{𝐒𝐞𝐭}.
 
 Here is a Racket example for the @tech{FSM} @math{ℳ_1}
-@math{(A_1 = {x, y}, S_1 = {s, b}, s, φ_1)}:
+@math{(A_1 = {x, y}, S_1 = {s_1, b_1}, s_1, φ_1)}:
 
 @image["scribblings/functor/images/ℳ_1.svg"]{[picture] ℳ_1.svg}
 
@@ -659,15 +659,15 @@ Here is a Racket example for the @tech{FSM} @math{ℳ_1}
 @tabular[#:sep @hspace[1]
 @list[
   @list[@bold{@math{S_1} \ @math{A_1}} @bold{@math{x}} @bold{@math{y}}]
-  @list[@bold{@math{s}} @math{s} @math{b}]
-  @list[@bold{@math{b}} @math{s} @math{b}]
+  @list[@bold{@math{s_1}} @math{s_1} @math{b_1}]
+  @list[@bold{@math{b_1}} @math{s_1} @math{b_1}]
 ]]
 }
 
 @racketfile{code/functor/FSM.rkt}
 
 @bold{Exercise}: Try to implement another Racket example for the @tech{FSM}
-@math{ℳ_2} @math{(A_2 = {x, y}, S_2 = {s, b, o}, s, φ_2)}:
+@math{ℳ_2} @math{(A_2 = {x, y}, S_2 = {s_2, b_2, o_2}, s_2, φ_2)}:
 
 @image["scribblings/functor/images/ℳ_2.svg"]{[picture] ℳ_2.svg}
 
