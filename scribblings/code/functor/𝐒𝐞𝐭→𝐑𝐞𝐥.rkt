@@ -26,16 +26,16 @@
 (: F (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→ℛ (F a) (F b)))))
 (define F
   (let ()
-    (define (F m) (for/set ([(x y) (in-hash m)]) (cons x y)))
+    (define (F.map m) (for/set ([(x y) (in-hash m)]) (cons x y)))
     (λ (f)
       (define a (dom𝒮 f))
       (define b (cod𝒮 f))
       (define a.map (function-map a))
       (define b.map (function-map b))
       (define f.map (function-map f))
-      (define Fa (relation (lazy Fa) (lazy Fa) (F a.map)))
-      (define Fb (relation (lazy Fb) (lazy Fb) (F b.map)))
-      (define Ff (relation (lazy Fa) (lazy Fb) (F f.map)))
+      (define Fa (relation (lazy Fa) (lazy Fa) (F.map a.map)))
+      (define Fb (relation (lazy Fb) (lazy Fb) (F.map b.map)))
+      (define Ff (relation (lazy Fa) (lazy Fb) (F.map f.map)))
       Ff)))
 
 (module+ test
