@@ -9,7 +9,7 @@
 (: #;𝐒𝐞𝐭  𝒮 𝐂𝐚𝐭) (define (𝒮 m) m) (define ∘𝒮 compose)
 (: #;𝐋𝐢𝐬𝐭 ℒ 𝐂𝐚𝐭) (define (ℒ m) m) (define ∘ℒ append)
 
-(: ℳ (Listof (List Char Symbol Symbol)))
+(: ℳ (Listof 𝒢1))
 (define ℳ
   (append
    '([#\1 a0 s1]
