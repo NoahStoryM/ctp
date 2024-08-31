@@ -62,5 +62,5 @@
     (define m (reverse (string->list i)))
     (define n (reverse (string->list j)))
     (check-eq?
-     ((Fφ2* (∘ℒ m n)) s2)
-     ((∘𝒮 (Fφ2* m) (Fφ2* n)) s2))))
+     ((Fφ2* (∘ℒ n m)) s2)
+     ((∘𝒮 (Fφ2* n) (Fφ2* m)) s2))))
