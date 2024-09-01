@@ -95,6 +95,13 @@ The following example illustrates how to implement @tech{functors} in Racket:
 @bold{Exercise}: Prove that @tech{functors} can be @tech[#:key "compose"]{composed}
 and that this @tech{composition} is @tech{associative}.
 
+A @tech{functor} @math{F} @deftech{preserve}s a property @math{𝑃} of
+@tech{morphisms} if whenever @math{f} has @math{𝑃}, so does @math{F(f)}.
+Conversely, a @tech{functor} @deftech{reflect}s a property @math{𝑃} of
+@tech{morphisms} if whenever @math{F(f)} has @math{𝑃}, so does @math{f}.
+
+@bold{Exercise}: Prove that every @tech{functor} @tech{preserves} @tech{isomorphisms}.
+
 @subsection{Category of Categories}
 
 The @tech{category} of @tech{categories}, denoted as @deftech{𝐂𝐚𝐭}, forms a
@@ -785,6 +792,35 @@ Here is how to implement @math{ℳ} in Racket:
 @racketfile{code/functor/TFSM.rkt}
 
 @section{Full and Faithful}
+
+A @tech{functor} @math{F: 𝒞 → 𝒟} is called @deftech{full} if for every pair
+of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the induced mapping from
+@math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))} is @tech{surjective}.
+
+A @tech{functor} @math{F: 𝒞 → 𝒟} is called @deftech{faithful} if for every pair
+of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the induced mapping from
+@math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))} is @tech{injective}.
+
+A @tech{functor} is called @deftech{fully faithful} if it's both @tech{full} and
+@tech{faithful}.
+
+@bold{Exercise}: Prove that every @tech{isomorphism} in @tech{𝐂𝐚𝐭} is a
+@tech{fully faithful} @tech{functor}.
+
+@margin-note{
+The exercise demonstrates that a @tech{fully faithful} @tech{functor}
+@tech{reflects} @tech{isomorphisms}.
+}
+
+@bold{Exercise}: Let @math{F: 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
+Prove that for an @tech{isomorphism} @math{u: F(a) → F(b)} in @math{𝒟}, if there
+is a @tech{morphism} @math{f: a → b} in @math{𝒞} for which @math{F(f) = u}, then
+@math{f} is the unique @tech{isomorphism} from @math{a} to @math{b}.
+
+@bold{Exercise}: Let @math{F: 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
+Prove that for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞},
+if @math{F(a) = F(b)}, then @math{a ≅ b} and
+@math{Hom@_{𝒞}(a, a) ≅ Hom@_{𝒞}(a, b) ≅ Hom@_{𝒞}(b, a) ≅ Hom@_{𝒞}(b, b)}.
 
 @section{Equivalence}
 
