@@ -204,7 +204,7 @@ and a @deftech{submonoid} can be viewed as a @tech{subcategory} of an @tech{OOC}
 
 @subsubsection{Full Subcategory}
 
-A @deftech{@deftech{full} subcategory} arises when we selectively remove certain
+A @deftech{full subcategory} arises when we selectively remove certain
 @tech{objects} from a @tech{category} @math{𝒞} along with the @tech{morphisms}
 whose @tech{domains} or @tech{codomains} involve these @tech{objects}. The
 resulting @tech{subcategory} @math{𝒟}, retains all the @tech{morphisms} from
@@ -212,7 +212,7 @@ resulting @tech{subcategory} @math{𝒟}, retains all the @tech{morphisms} from
 
 @subsubsection{Wide Subcategory}
 
-A @deftech{@deftech{wide} subcategory} is a @tech{subcategory} that includes all
+A @deftech{wide subcategory} is a @tech{subcategory} that includes all
 @tech{objects} from the original @tech{category}. Formally, if @math{𝒟} is a
 @tech{wide subcategory} of @math{𝒞}, then every @tech{object} in @math{𝒞} is also
 an @tech{object} in @math{𝒟}.
