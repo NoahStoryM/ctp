@@ -64,7 +64,7 @@
 (: φ* (∀ ([a : F𝒢] [b : F𝒢]) (→ (→F𝒢 a b) (→𝐒𝐞𝐭 (φ* a) (φ* b)))))
 (define (φ* g*) (apply ∘𝒮 (map φ g*)))
 
-(: make-path (→ (× String Symbol) (Listof 𝒢1)))
+(: make-path (→ (× String 𝒢0) (Listof 𝒢1)))
 (define (make-path str s)
   (for/fold ([g* '()] [n0 s] #:result g*)
             ([a (in-list (string->list str))])
