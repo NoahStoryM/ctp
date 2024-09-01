@@ -95,10 +95,10 @@ The following example illustrates how to implement @tech{functors} in Racket:
 @bold{Exercise}: Prove that @tech{functors} can be @tech[#:key "compose"]{composed}
 and that this @tech{composition} is @tech{associative}.
 
-A @tech{functor} @math{F} @deftech{preserve}s a property @math{𝑃} of
-@tech{morphisms} if whenever @math{f} has @math{𝑃}, so does @math{F(f)}.
-Conversely, a @tech{functor} @deftech{reflect}s a property @math{𝑃} of
-@tech{morphisms} if whenever @math{F(f)} has @math{𝑃}, so does @math{f}.
+A @tech{functor} @math{F} @deftech{preserve}s a property @math{P} of
+@tech{morphisms} if whenever @math{f} has @math{P}, so does @math{F(f)}.
+Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
+@tech{morphisms} if whenever @math{F(f)} has @math{P}, so does @math{f}.
 
 @bold{Exercise}: Prove that every @tech{functor} @tech{preserves} @tech{isomorphisms}.
 
