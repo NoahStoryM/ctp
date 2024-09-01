@@ -64,7 +64,7 @@ they adhere to the @deftech{composition rules}:
   @item{Existence of @deftech{composition}
 
         For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, the @deftech{composite}
-        @math{g∘f} is defined iff @math{cod(f) = dom(g)}. When @math{g∘f}
+        @math{g∘f} is defined if @math{cod(f) = dom(g)}. When @math{g∘f}
         is defined, @math{dom(g∘f) = dom(f)} and @math{cod(g∘f) = cod(g)}.
 
         @image["scribblings/category/images/C-1.svg"]{[picture] C-1.svg}}
@@ -189,7 +189,7 @@ on @tech{monoids}.
 @subsection{Subcategory}
 
 Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
-of @math{𝒞} iff:
+of @math{𝒞} if:
 
 @itemlist[
   #:style 'ordered
@@ -580,13 +580,13 @@ and express important concepts using the language of @tech{category theory}.
 
 @subsection{Endomorphism}
 
-For a @tech{morphism} @math{f}, it is an @deftech{endomorphism} iff @math{dom(f) = cod(f)}.
+For a @tech{morphism} @math{f}, it is an @deftech{endomorphism} if @math{dom(f) = cod(f)}.
 
 @image["scribblings/category/images/endo.svg"]{[picture] endo.svg}
 
 @subsubsection{Idempotent}
 
-For an @tech{endomorphism} @math{f}, it is an @deftech{idempotent} iff @math{f = f∘f}.
+For an @tech{endomorphism} @math{f}, it is an @deftech{idempotent} if @math{f = f∘f}.
 
 @image["scribblings/category/images/idem.svg"]{[picture] idem.svg}
 
@@ -695,7 +695,7 @@ and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphis
 In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f@^{–1}},
 and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
-iff there exists an @tech{isomorphism} between them.
+if there exists an @tech{isomorphism} between them.
 
 @tech{Isomorphisms} are crucial because they imply that the @tech{objects} they
 connect can be interchanged in any context within the @tech{category}. This means
