@@ -163,7 +163,7 @@ defined as @tech{procedures} in later sections.
 @subsection{Inclusion Functor}
 
 An @deftech{inclusion functor} @math{I: 𝒟 → 𝒞} is a @tech{functor} which sends
-each @tech{object} and each @tech{morphim} in @math{𝒟} to @math{𝒞}.
+each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
 @bold{Exercise}: Prove that @math{𝒟} is a @tech{subcategory} of @math{𝒞}.
 
