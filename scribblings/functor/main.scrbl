@@ -806,11 +806,6 @@ A @tech{functor} is called @deftech{fully faithful} if it's both @tech{full} and
 @bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is a
 @tech{fully faithful} @tech{functor}.
 
-@margin-note{
-The exercise demonstrates that a @tech{fully faithful} @tech{functor}
-@tech{reflects} @tech{isomorphisms}.
-}
-
 @bold{Exercise}: Let @math{F: 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
 Prove that for an @tech{isomorphism} @math{u: F(a) → F(b)} in @math{𝒟}, if there
 is a @tech{morphism} @math{f: a → b} in @math{𝒞} for which @math{F(f) = u}, then
