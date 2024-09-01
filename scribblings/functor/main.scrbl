@@ -160,6 +160,13 @@ For instance, in the @secref{Category_of_Sets}, @tech{morphisms} of @tech{𝐒�
 defined as @racket[hash] tables, but essentially they are mappings and might be
 defined as @tech{procedures} in later sections.
 
+@subsection{Inclusion Functor}
+
+An @deftech{inclusion functor} @math{I: 𝒟 → 𝒞} is a @tech{functor} which sends
+each @tech{object} and each @tech{morphim} in @math{𝒟} to @math{𝒞}.
+
+@bold{Exercise}: Prove that @math{𝒟} is a @tech{subcategory} of @math{𝒞}.
+
 @subsection{Forgetful Functor}
 
 A @deftech{forgetful functor} (@deftech{underlying functor} or @deftech{stripping functor})
@@ -796,9 +803,15 @@ A @tech{functor} @math{F: 𝒞 → 𝒟} is called @deftech{full} if for every p
 of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the induced mapping from
 @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))} is @tech{surjective}.
 
+@bold{Exercise}: Prove that every @tech{inclusion functor} from a
+@tech{full subcategory} is a @tech{full} @tech{functor}.
+
 A @tech{functor} @math{F: 𝒞 → 𝒟} is called @deftech{faithful} (@deftech{embedding})
 if for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the induced
 mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))} is @tech{injective}.
+
+@bold{Exercise}: Prove that every @tech{inclusion functor} is a
+@tech{faithful} @tech{functor}.
 
 A @tech{functor} is called @deftech{fully faithful} (@deftech{fully embedding})
 if it's both @tech{full} and @tech{faithful}.
