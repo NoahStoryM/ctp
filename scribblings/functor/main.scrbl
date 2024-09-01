@@ -807,11 +807,6 @@ A @tech{functor} is called @deftech{fully faithful} if it's both @tech{full} and
 @tech{fully faithful} @tech{functor}.
 
 @bold{Exercise}: Let @math{F: 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
-Prove that for an @tech{isomorphism} @math{u: F(a) → F(b)} in @math{𝒟}, if there
-is a @tech{morphism} @math{f: a → b} in @math{𝒞} for which @math{F(f) = u}, then
-@math{f} is the unique @tech{isomorphism} from @math{a} to @math{b}.
-
-@bold{Exercise}: Let @math{F: 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
 Prove that for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞},
 if @math{F(a) = F(b)}, then @math{a ≅ b} and
 @math{Hom@_{𝒞}(a, a) ≅ Hom@_{𝒞}(a, b) ≅ Hom@_{𝒞}(b, a) ≅ Hom@_{𝒞}(b, b)}.
