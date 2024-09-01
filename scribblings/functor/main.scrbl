@@ -252,8 +252,8 @@ A @deftech{monoid homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
 
 The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where
 @tech{objects} are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
-@tech{𝐌𝐨𝐧} can be viewed as the @tech{category} of @tech{OOCs}, and
-@tech{monoid homomorphisms} can be viewed as @tech{functors} between them.
+@tech{𝐌𝐨𝐧} can be viewed as the @tech{category} of @tech{OOCs}, denoted as
+@deftech{𝐎𝐨𝐜}.
 
 @subsection{Category of Groups}
 
@@ -263,8 +263,8 @@ A @deftech{group homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
 
 The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where
 @tech{objects} are @tech{groups} and @tech{morphisms} are @tech{group homomorphisms}.
-@tech{𝐆𝐫𝐩} can be viewed as the @tech{category} of @tech{OOGs}, and
-@tech{group homomorphisms} can be viewed as @tech{functors} between them.
+@tech{𝐆𝐫𝐩} can be viewed as the @tech{category} of @tech{OOGs}, denoted as
+@deftech{𝐎𝐨𝐠}.
 
 @subsection{Category of Prosets}
 
