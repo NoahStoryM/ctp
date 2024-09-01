@@ -804,7 +804,7 @@ of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the induced mapping from
 A @tech{functor} is called @deftech{fully faithful} if it's both @tech{full} and
 @tech{faithful}.
 
-@bold{Exercise}: Prove that every @tech{isomorphism} in @tech{𝐂𝐚𝐭} is a
+@bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is a
 @tech{fully faithful} @tech{functor}.
 
 @margin-note{
