@@ -30,7 +30,7 @@ connections or processes but as entities in their own right.
 @subsection{Category}
 
 @margin-note{
-This tutorial focuses on @deftech{@deftech{small} category} and does not cover
+This tutorial does not distinguish @deftech{@deftech{small} category} and
 @deftech{@deftech{large} category}. For more information on @tech{small} and
 @tech{large} @tech{category}, please refer to
 @hyperlink["https://ncatlab.org/nlab/show/small+category"]{Small Category}
