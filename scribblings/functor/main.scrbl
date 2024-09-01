@@ -823,12 +823,10 @@ if it's both @tech{full} and @tech{faithful}.
 Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
 @math{Hom@_{𝒞}(a, a) ≅ Hom@_{𝒞}(a, b) ≅ Hom@_{𝒞}(b, a) ≅ Hom@_{𝒞}(b, b)}.
 
-@section{Equivalence}
+@section{Quotient Category}
 
-@subsection{Quotient Category}
-
-@subsubsection{Congruence Class}
-
-@subsubsection{Factorization of Functors}
+@subsection{Congruence Class}
 
 @subsection{Subobject}
+
+@subsection{Factorization of Functors}
