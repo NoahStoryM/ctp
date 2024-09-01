@@ -731,6 +731,9 @@ if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{�
 @bold{Exercise}: Prove that a @tech{morphism} is @tech{invertible} iff it is both
 @tech{monic} and @tech{split epic} (or is both @tech{split monic} and @tech{epic}).
 
+@bold{Exercise}: Prove that a @tech{function} is @deftech{bijective} iff it's an
+@tech{isomorphism} in @tech{𝐒𝐞𝐭}.
+
 @subsubsection{Automorphism}
 
 An @deftech{automorphism} is an @tech{invertible} @tech{endomorphism}.
