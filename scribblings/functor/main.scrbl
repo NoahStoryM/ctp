@@ -4,7 +4,9 @@
                      (only-meta-in 0 (except-in typed/racket/no-check =))
                      racket/function
                      racket/hash
+                     racket/match
                      racket/promise
+                     racket/set
                      rackunit
                      math/matrix)
           "../ctp-utils.rkt")

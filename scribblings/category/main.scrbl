@@ -4,8 +4,8 @@
                      (except-in racket/base =)
                      racket/hash
                      racket/match
-                     racket/set
                      racket/promise
+                     racket/set
                      rackunit
                      math/matrix)
           "../ctp-utils.rkt")
