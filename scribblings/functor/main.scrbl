@@ -19,8 +19,8 @@ play a crucial role in @tech{category theory} by mapping @tech{objects} and
 properties.
 
 To enhance readability and provide a clear understanding of how @tech{functors}
-can be applied in programming, we will use the syntax of Typed Racket.
-Specifically, we will use @code{#lang typed/racket/base/no-check} instead of
+can be applied in programming, we'll use the syntax of Typed Racket.
+Specifically, we'll use @code{#lang typed/racket/base/no-check} instead of
 @code{#lang racket/base}. This choice allows us to leverage the benefits of
 Typed Racket, such as type annotations, which improve code clarity and help
 illustrate the functorial properties more effectively.
@@ -114,7 +114,7 @@ in @tech{𝐂𝐚𝐭}, and an @deftech{autofunctor} is an @tech{automorphism} i
 In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
 @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functors} as
 @tech{procedures}. Note that since the task of comparing @tech{procedure}
-functionality can only be done by the programmer, we will avoid using @racket[=]
+functionality can only be done by the programmer, we'll avoid using @racket[=]
 or just use it as pseudocode.
 
 @racketblock[
@@ -250,7 +250,7 @@ For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} m
 @tech{Structured sets} and their @tech{homomorphisms} form fundamental
 @tech{categories} that encapsulate various algebraic structures. These
 @tech{categories} allow us to study and generalize properties and operations
-across different mathematical systems. In this section, we will explore several
+across different mathematical systems. In this section, we'll explore several
 important @tech{categories} of @tech{structured sets}.
 
 @subsection{Category of Monoids}
@@ -466,7 +466,7 @@ every @tech{small category} @math{𝒞} is @tech{isomorphic} to a @tech{subcateg
 of @math{𝐒𝐞𝐭} @math{𝒮}. @math{𝒮} is called the @deftech{Cayley's representation}
 of @math{𝒞}.
 
-To demonstrate this, we will @racket[define] @tech{isomorphisms} @math{H: 𝒞 → 𝒮}
+To demonstrate this, we'll @racket[define] @tech{isomorphisms} @math{H: 𝒞 → 𝒮}
 and @math{G: 𝒮 → 𝒞}:
 
 @margin-note{
