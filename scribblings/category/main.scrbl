@@ -287,7 +287,7 @@ have:
   @item{@deftech{Symmetry}:
         @math{△} is @deftech{symmetric} if @math{∀x, y ∈ S, x △ y ⇒ y △ x}.}
   @item{@deftech{Antisymmetry}:
-        @math{△} is @deftech{antisymmetric} if @math{∀x, y ∈ S, x △ y ∧ y △ x ⇒ x = z}.}
+        @math{△} is @deftech{antisymmetric} if @math{∀x, y ∈ S, x △ y ∧ y △ x ⇒ x = y}.}
   @item{@deftech{Reflexivity}:
         @math{△} is @deftech{reflexive} if @math{∀x ∈ S, x △ x}.}
   @item{@deftech{Transitivity}:
