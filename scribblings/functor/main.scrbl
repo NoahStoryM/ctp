@@ -838,6 +838,8 @@ an @tech{element} @math{x ∈ S}, the @tech{equivalence class} of @math{x} under
 @math{x}. This is denoted as @math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}.
 Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}.
 
+@bold{Exercise}: Prove that if @math{x ∼ y}, then @math{[x] = [y]}.
+
 A @deftech{congruence relation} @math{∼} on a @tech{category} @math{𝒞} is an
 @tech{equivalence relation} on the @tech{morphisms} of @math{𝒞} that is
 compatible with the @tech{composition} of @tech{morphisms}. Formally, @math{∼}
