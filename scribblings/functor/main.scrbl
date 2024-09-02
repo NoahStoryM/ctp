@@ -6,7 +6,6 @@
                      racket/hash
                      racket/match
                      racket/promise
-                     racket/set
                      rackunit
                      math/matrix)
           "../ctp-utils.rkt")
@@ -379,7 +378,7 @@ The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f
 For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set},
 denoted as @math{Hom@_{𝒞}(a, x)}, is the collection of all @tech{morphisms} from
 @math{a} to @math{x}:
-@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
+@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@^{𝒞}(f) = a ∧ cod@^{𝒞}(f) = x}}.
 
 For @tech{morphisms} @math{f: a → x}, @math{i: b → a} and @math{j: x → y}, we can
 @racket[define] a @tech{function}
