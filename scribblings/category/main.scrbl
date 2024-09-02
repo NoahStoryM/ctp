@@ -277,7 +277,7 @@ an @tech{OOC}.
 A @deftech{relation} from a @tech{set} @math{S} to a @tech{set} @math{T} is a
 @tech{subset} of @math{S×T}. Specially, a @deftech{binary relation} on @math{S}
 is a @tech{subset} of @math{S×S}, and the @deftech{diagonal relation}
-(@deftech{equality relation}) on @math{S} is the @tech{relation} @math{Δ_S},
+(@deftech{equality relation}) on @math{S} is denoted as @math{Δ_S},
 where @math{Δ_s := {(x, x) ∈ S×S | x ∈ S}}.
 
 The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, where
