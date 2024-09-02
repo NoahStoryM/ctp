@@ -4,7 +4,7 @@
 
 (provide (all-defined-out))
 
-(define × (procedure-rename values '×))
+(define × values)
 (define (dom _) ×)
 (define (cod _) ×)
 (define (src _) ×)
