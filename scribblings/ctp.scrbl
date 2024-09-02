@@ -71,7 +71,7 @@ Let the journey begin.
 @;; include-section[(file "sketch/main.scrbl")]
 @;; include-section[(file "adjunction/main.scrbl")]
 @;; include-section[(file "co-monad/main.scrbl")]
-@;; include-section[(file "n-category/main.scrbl")]
+@;; include-section[(file "2-category/main.scrbl")]
 @;; include-section[(file "monoidal category/main.scrbl")]
 @;; include-section[(file "ccc&λ/main.scrbl")]
 @;; include-section[(file "topos/main.scrbl")]
