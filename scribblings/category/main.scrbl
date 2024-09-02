@@ -280,6 +280,20 @@ is a @tech{subset} of @math{S×S}, and the @deftech{diagonal relation}
 (@deftech{equality relation}) on @math{S} is denoted as @math{Δ_S}, where
 @math{Δ_s := {(x, x) ∈ S×S | x ∈ S}}.
 
+Here're some properties that a @tech{binary relation} on @math{S} @math{△} may
+have:
+
+@itemlist[
+  @item{@deftech{Symmetry}:
+        @math{△} is @deftech{symmetric} if @math{∀x, y ∈ S, x △ y ⇒ y △ x}.}
+  @item{@deftech{Antisymmetry}:
+        @math{△} is @deftech{antisymmetric} if @math{∀x, y ∈ S, x △ y ∧ y △ x ⇒ x = z}.}
+  @item{@deftech{Reflexivity}:
+        @math{△} is @deftech{reflexive} if @math{∀x ∈ S, x △ x}.}
+  @item{@deftech{Transitivity}:
+        @math{△} is @deftech{transitive} if @math{∀x, y, z ∈ S, x △ y ∧ y △ z ⇒ x △ z}.}
+]
+
 The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, where
 @tech{identity morphisms} are @tech{diagonal relations}, and @tech{morphisms} are
 @tech{relations}:
@@ -294,8 +308,8 @@ The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}
 @racketfile{code/category/𝐏𝐚𝐢𝐫.rkt}
 
 A @deftech{preordered set} (@deftech{proset}), @math{(S, ≤)}, is a @tech{set}
-@math{S} equipped with a @tech{binary relation} @math{≤} that is reflexive
-and transitive. @math{≤} is called a @deftech{preorder} on @math{S}.
+@math{S} equipped with a @tech{binary relation} @math{≤} that is @tech{reflexive}
+and @tech{transitive}. @math{≤} is called a @deftech{preorder} on @math{S}.
 
 A @tech{proset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
 @tech{category} is called the @deftech{preorder category} associated to a
@@ -311,7 +325,7 @@ this way:
 ]
 
 A @deftech{partially ordered set} (@deftech{ordered set}, or @deftech{poset})
-is a @tech{preordered set}, @math{(S, ≤)}, in which @math{≤} is antisymmetric.
+is a @tech{preordered set}, @math{(S, ≤)}, in which @math{≤} is @tech{antisymmetric}.
 @math{≤} is called a @deftech{partial order} on @math{S}.
 
 A @tech{poset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
