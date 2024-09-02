@@ -826,10 +826,10 @@ Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
 
 @section{Quotient Category}
 
-An @deftech{equivalence relation} on @math{S} is a @tech{binary relation}
-@math{@deftech{∼}} that is @tech{reflexive}, @tech{symmetric}, and @tech{transitive}.
-@math{∼} partitions @math{S} into disjoint @deftech{class}es, known as
-@deftech{equivalence class}es, where all @tech{elements} within an
+An @deftech{equivalence relation} @math{@deftech{∼}} on @math{S} is a
+@tech{binary relation} that is @tech{reflexive}, @tech{symmetric}, and
+@tech{transitive}. @math{∼} partitions @math{S} into disjoint @deftech{class}es,
+known as @deftech{equivalence class}es, where all @tech{elements} within an
 @tech{equivalence class} are related to each other.
 
 For example, given an @tech{equivalence relation} @math{∼} on a set @math{S} and
@@ -838,6 +838,39 @@ an @tech{element} @math{x ∈ S}, the @tech{equivalence class} of @math{x} under
 @math{x}. This is denoted as @math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}.
 Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}.
 
-@subsection{Subobject}
+A @deftech{congruence relation} @math{∼} on a @tech{category} @math{𝒞} is an
+@tech{equivalence relation} on the @tech{morphisms} of @math{𝒞} that is
+compatible with the @tech{composition} of @tech{morphisms}. Formally, @math{∼}
+satisfies the following properties:
+
+@itemlist[
+  #:style 'ordered
+  @item{for @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, if @math{f ∼ g},
+        then they're @deftech{parallel}, i.e., @math{dom(f) = dom(g)} and
+        @math{cod(f) = cod(g)}.}
+  @item{for @tech{morphisms} @math{f: b → c}, @math{g: b → c}, @math{h: a → b}
+        and @math{k: c → d} in @math{𝒞}, if @math{f ∼ g}, then @math{f∘h ∼ g∘h}
+        and @math{k∘f ∼ k∘g}.
+
+        @image["scribblings/functor/images/congruence.svg"]{[picture] congruence.svg}}
+]
+
+A @deftech{congruence class} is an @tech{equivalence class} under a
+@tech{congruence relation}.
+
+The @deftech{quotient} of @math{𝒞} by @math{∼}, denoted as @math{𝒞/∼}
+(@deftech{quotient category}), is a new @tech{category} defined as follows:
+
+@itemlist[
+  #:style 'ordered
+  @item{The @tech{objects} of @math{𝒞/∼} are the @tech{objects} of @math{𝒞}.}
+  @item{The @tech{morphisms} of @math{𝒞/∼} are the @tech{congruence class}es of
+        @tech{morphisms} of @math{𝒞}.}
+  @item{If @math{f: a → b} in @math{𝒞}, then @math{[f]: a → b} in @math{𝒞/∼}.}
+  @item{If @math{f: a → b} and @math{g: b → c} in @math{𝒞}, then
+        @math{[g]∘[f] = [g∘f]: a → c} in @math{𝒞/∼}.}
+]
 
 @subsection{Factorization of Functors}
+
+@subsection{Subobject}
