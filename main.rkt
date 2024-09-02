@@ -4,7 +4,6 @@
 
 (provide (all-defined-out))
 
-(define × values)
 (define (dom _) ×)
 (define (cod _) ×)
 (define (src _) ×)
@@ -17,3 +16,4 @@
     [(_) #t]
     [(m1 m2) (eq? m1 m2)]
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
+(define × (∘))
