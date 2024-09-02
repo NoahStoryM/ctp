@@ -826,10 +826,10 @@ Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
 
 @section{Quotient Category}
 
-An @deftech{equivalence relation} @math{@deftech{∼}} on @math{S} is a
-@tech{binary relation} that is @tech{reflexive}, @tech{symmetric}, and
-@tech{transitive}. @math{∼} partitions @math{S} into disjoint @deftech{class}es,
-known as @deftech{equivalence class}es, where all @tech{elements} within an
+An @deftech{equivalence relation} @math{∼} on @math{S} is a @tech{binary relation}
+that is @tech{reflexive}, @tech{symmetric}, and @tech{transitive}. @math{∼}
+partitions @math{S} into disjoint @deftech{class}es, known as
+@deftech{equivalence class}es, where all @tech{elements} within an
 @tech{equivalence class} are related to each other.
 
 For example, given an @tech{equivalence relation} @math{∼} on a set @math{S} and
@@ -855,6 +855,14 @@ satisfies the following properties:
         @image["scribblings/functor/images/congruence.svg"]{[picture] congruence.svg}}
 ]
 
+@bold{Exercise}: Show that we can replace the second properties with "for
+@tech{morphisms} @math{f_1: a → b}, @math{f_2: a → b}, @math{g_1: b → c}
+and @math{g_2: b → c} in @math{𝒞}, if @math{f_1 ∼ f_2} and @math{g_1 ∼ g_2},
+then @math{g_1∘f_1 ∼ g_2∘f_2}".
+
+@bold{Exercise}: Let @math{∼} and @math{∽} be @tech{congruence relations}.
+Prove that @math{∼ ∩ ∽} is also a @tech{congruence relation}.
+
 A @deftech{congruence class} is an @tech{equivalence class} under a
 @tech{congruence relation}.
 
@@ -871,6 +879,14 @@ The @deftech{quotient} of @math{𝒞} by @math{∼}, denoted as @math{𝒞/∼}
         @math{[g]∘[f] = [g∘f]: a → c} in @math{𝒞/∼}.}
 ]
 
+The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} that
+@math{∀a ∈ 𝒞_0, Q(a) = a} and @math{∀f ∈ 𝒞_1, Q(f) = [f]}.
+
 @subsection{Factorization of Functors}
 
+@;; @deftech{factor through}
+
 @subsection{Subobject}
+
+@;; @deftech{subobject}
+@;; @deftech{proper subobject}

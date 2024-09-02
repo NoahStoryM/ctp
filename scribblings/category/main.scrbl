@@ -874,3 +874,5 @@ called a @deftech{variable element} of @math{b}, parametrized by @math{a}. This
 viewpoint aligns with the idea that @tech{morphisms} in a @tech{category} can be
 thought of as @tech{elements}, and an application is a special case of @tech{morphism}
 @tech{composition}.
+
+@subsection{Factorization System}
