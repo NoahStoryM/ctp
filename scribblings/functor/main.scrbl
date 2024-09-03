@@ -828,7 +828,7 @@ Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
 
 An @deftech{equivalence relation} @math{∼} on @math{S} is a @tech{binary relation}
 that is @tech{reflexive}, @tech{symmetric}, and @tech{transitive}. @math{∼}
-partitions @math{S} into disjoint @deftech{class}es, known as
+partitions @math{S} into disjoint @tech[#:key "class"]{classes}, known as
 @deftech{equivalence class}es, where all @tech{elements} within an
 @tech{equivalence class} are related to each other.
 

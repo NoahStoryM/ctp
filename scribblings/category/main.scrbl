@@ -636,9 +636,9 @@ if @math{i} is @tech{epic}, and @math{i: t_1 ⤖ t_2} if @math{i} is both
 @image["scribblings/category/images/mono&epi.svg"]{[picture] mono&epi.svg}
 
 In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms} from
-two distinct classes @math{ℰ} and @math{ℳ}, rather than exclusively representing
-@tech{monomorphisms} and @tech{epimorphisms}. Additionally, @deftech{⤖} indicates
-@tech{morphisms} from @math{ℰ ∩ ℳ}.
+two distinct @deftech{class}es @math{ℰ} and @math{ℳ}, rather than
+exclusively representing @tech{monomorphisms} and @tech{epimorphisms}. Additionally,
+@deftech{⤖} indicates @tech{morphisms} from @math{ℰ ∩ ℳ}.
 
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
