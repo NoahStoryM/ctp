@@ -1,7 +1,7 @@
 #lang racket/base
 
-(provide ¬)
-(define (¬ dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
+(provide †)
+(define († dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
   (define (∘ . m*) (apply ∘𝒞 (reverse m*)))
   (values cod𝒞 dom𝒞 ∘ ?𝒞 =𝒞))
 
@@ -9,7 +9,7 @@
   (require rackunit)
   (require (file "../../code/category/𝐏𝐚𝐢𝐫.rkt"))
 
-  (define-values (dom cod ∘ ? =) ((compose ¬ 𝐏𝐚𝐢𝐫)))
+  (define-values (dom cod ∘ ? =) ((compose † 𝐏𝐚𝐢𝐫)))
 
   ;; Objects
   (define a '(a . a)) (check-pred ? a)

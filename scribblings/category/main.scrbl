@@ -397,12 +397,12 @@ the @tech{composition rules}, so this new @tech{directed graph} is also a
 
 @bold{Exercise}: Prove that @math{(𝒞^op)^op = 𝒞}.
 
-@bold{Exercise}: Try to @racket[define] @deftech{¬} so that we can @racket[define]
+@bold{Exercise}: Try to @racket[define] @deftech{†} so that we can @racket[define]
 the @tech{opposite category} @math{𝒞^op} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
-  (¬ dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
+  († dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
 ]
 
 @subsubsection{Product Category}
@@ -573,17 +573,17 @@ not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 @math{𝒫@^{→}}, implement a @tech{coslice category} @math{m/ℳ} to which @tech{𝐌𝐚𝐭𝐫}
 gives rise.
 
-@bold{Exercise}: Try to @racket[define] @deftech{¬Sli} so that we can @racket[define]
+@bold{Exercise}: Try to @racket[define] @deftech{†Sli} so that we can @racket[define]
 the @tech{coslice category} @math{m/ℳ} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
-  ((¬Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
+  ((†Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
 ]
 
 @bold{Exercise}: Prove that @math{ℳ^op/m = (m/ℳ)^op}.
 
-@bold{Exercise}: Try to @racket[define] @tech{¬Sli} by using @tech{¬} and @tech{Sli}.
+@bold{Exercise}: Try to @racket[define] @tech{†Sli} by using @tech{†} and @tech{Sli}.
 
 @section{Categorical Definitions}
 

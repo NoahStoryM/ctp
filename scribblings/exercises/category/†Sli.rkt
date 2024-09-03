@@ -1,36 +1,36 @@
 #lang racket/base
 
-(require (file "¬.rkt") (file "Sli.rkt"))
+(require (file "†.rkt") (file "Sli.rkt"))
 
-(provide ¬Sli)
-(define ((¬Sli c) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
-  ;; ¬𝒞
-  (define-values (dom¬𝒞 cod¬𝒞 ∘¬𝒞 ?¬𝒞 =¬𝒞)
-    (¬ dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
+(provide †Sli)
+(define ((†Sli c) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
+  ;; †𝒞
+  (define-values (dom†𝒞 cod†𝒞 ∘†𝒞 ?†𝒞 =†𝒞)
+    († dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
 
   ;; reverse commutative triangle
   (define (~ t)
-    (for/fold ([¬t '()]) ([s* (in-list t)])
-      (cons (reverse s*) ¬t)))
+    (for/fold ([†t '()]) ([s* (in-list t)])
+      (cons (reverse s*) †t)))
 
-  ;; ¬𝒞/c
-  (define-values (dom¬𝒞/c cod¬𝒞/c ∘¬𝒞/c ?¬𝒞/c =¬𝒞/c)
-    ((Sli c) dom¬𝒞 cod¬𝒞 ∘¬𝒞 ?𝒞 =𝒞))
+  ;; †𝒞/c
+  (define-values (dom†𝒞/c cod†𝒞/c ∘†𝒞/c ?†𝒞/c =†𝒞/c)
+    ((Sli c) dom†𝒞 cod†𝒞 ∘†𝒞 ?𝒞 =𝒞))
 
-  ;; ¬(¬𝒞/c)
-  (define-values (¬dom¬𝒞/c ¬cod¬𝒞/c ¬∘¬𝒞/c ¬?¬𝒞/c ¬=¬𝒞/c)
-    (¬ dom¬𝒞/c cod¬𝒞/c ∘¬𝒞/c ?¬𝒞/c =¬𝒞/c))
+  ;; †(†𝒞/c)
+  (define-values (†dom†𝒞/c †cod†𝒞/c †∘†𝒞/c †?†𝒞/c †=†𝒞/c)
+    († dom†𝒞/c cod†𝒞/c ∘†𝒞/c ?†𝒞/c =†𝒞/c))
 
-  ;; c/𝒞 = ¬(¬𝒞/c)
-  (define (dom t) (~ (¬dom¬𝒞/c (~ t))))
-  (define (cod t) (~ (¬cod¬𝒞/c (~ t))))
-  (define (∘ . t*) (~ (apply ¬∘¬𝒞/c (map ~ t*))))
-  (define (? t) (¬?¬𝒞/c (~ t)))
-  (define (= . t*) (apply ¬=¬𝒞/c (map ~ t*)))
+  ;; c/𝒞 = †(†𝒞/c)
+  (define (dom t) (~ (†dom†𝒞/c (~ t))))
+  (define (cod t) (~ (†cod†𝒞/c (~ t))))
+  (define (∘ . t*) (~ (apply †∘†𝒞/c (map ~ t*))))
+  (define (? t) (†?†𝒞/c (~ t)))
+  (define (= . t*) (apply †=†𝒞/c (map ~ t*)))
 
   (values dom cod ∘ ? =))
 
-#;(define ((¬Sli c) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
+#;(define ((†Sli c) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
     (define dom
       (match-λ
         [`((,f ,p) (,q))
@@ -99,7 +99,7 @@
   ;; m/ℳ
   (define m (identity-matrix 5))
   (define-values (dom cod ∘ ? =)
-    ((¬Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
+    ((†Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
 
   (define p0 (build-matrix 1 5 rand)) (check-pred ?ℳ p0)
   (define q0 (∘ℳ f0 p0))              (check-pred ?ℳ q0)
