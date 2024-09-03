@@ -614,6 +614,8 @@ that no two different @tech{morphisms}, when @tech[#:key "compose"]{composed} wi
 @math{m} on the right, result in the same @tech{morphism}, thereby establishing
 the @deftech{injective} nature of @math{m}.
 
+@image["scribblings/category/images/mono.svg"]{[picture] mono.svg}
+
 Conversely, an @deftech{epimorphism} (often referred to as @deftech{epi}, or called be @deftech{epic})
 @math{e} is defined as a @deftech{right cancellable} @tech{morphism}. This property
 means that for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)}, if
@@ -621,12 +623,17 @@ means that for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)}, if
 that @math{e} reaches all possible endpoints in the target @tech{object} without
 duplication, thereby establishing the @deftech{surjective} nature of @math{e}.
 
+@image["scribblings/category/images/epi.svg"]{[picture] epi.svg}
+
 @bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an
 @tech{epimorphism} in @math{𝒞^op}.
 
-For a @tech{morphism} @math{f: a → b}, the notation changes based on its properties:
-@math{f: a ↣ b} if @math{f} is @tech{monic}, @math{f: a ↠ b} if @math{f} is @tech{epic},
-and @math{f: a ⤖ b} if @math{f} is both @tech{monic} and @tech{epic}.
+For a @tech{morphism} @math{i: t_1 → t_2}, the notation changes based on its
+properties: @math{i: t_1 ↣ t_2} if @math{f} is @tech{monic}, @math{i: t_1 ↠ t_2}
+if @math{f} is @tech{epic}, and @math{i: t_1 ⤖ t_2} if @math{f} is both
+@tech{monic} and @tech{epic}.
+
+@image["scribblings/category/images/mono&epi.svg"]{[picture] mono&epi.svg}
 
 In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms} from
 two distinct classes @math{ℰ} and @math{ℳ}, rather than exclusively representing
