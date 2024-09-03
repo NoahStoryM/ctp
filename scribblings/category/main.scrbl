@@ -159,6 +159,82 @@ in the @tech{commutative square}:
 @image["scribblings/category/images/lift_1.svg"]{[picture] lift_1.svg}
 @image["scribblings/category/images/lift_2.svg"]{[picture] lift_2.svg}
 
+@subsection{Relation}
+
+A @deftech{relation} over some @tech{sets} is a @tech{subset} of
+@tech{cartesian product} of them.
+
+Here're some properties that a @tech{relation} @math{△} over a @tech{set}
+@math{S} may have:
+
+@itemlist[
+  @item{@deftech{Symmetry}:
+        @math{△} is @deftech{symmetric} if: @math{∀x, y ∈ S, x △ y ⇒ y △ x}.}
+  @item{@deftech{Antisymmetry}:
+        @math{△} is @deftech{antisymmetric} if: @math{∀x, y ∈ S, x △ y ∧ y △ x ⇒ x = y}.}
+  @item{@deftech{Reflexivity}:
+        @math{△} is @deftech{reflexive} if: @math{∀x ∈ S, x △ x}.}
+  @item{@deftech{Transitivity}:
+        @math{△} is @deftech{transitive} if: @math{∀x, y, z ∈ S, x △ y ∧ y △ z ⇒ x △ z}.}
+]
+
+A @deftech{binary relation} from a @tech{set} @math{S} to a @tech{set} @math{T}
+is a @tech{relation} over @math{S×T}.
+
+The @deftech{diagonal relation} (@deftech{equality relation}) over a @tech{set}
+@math{S}, denoted as @math{Δ_S}, is a @tech{binary relation} over @math{S}:
+@math{{(x, x) | x ∈ S}}.
+
+A @deftech{function} @math{f: S → T} can be viewed as the @tech{binary relation}:
+@math{{(x, f(x)) | x ∈ S}}. The @deftech{image} of @math{f}, denoted as
+@math{im(f)}, is the @tech{subset} of @math{T}: @math{im(f) := {f(x) | x ∈ S}}.
+
+An @deftech{equivalence relation} @math{∼} over @math{S} is a @tech{relation}
+that is @tech{reflexive}, @tech{symmetric}, and @tech{transitive}. @math{∼}
+partitions @math{S} into disjoint @tech[#:key "class"]{classes}, known as
+@deftech{equivalence class}es, where all @tech{elements} within an
+@tech{equivalence class} are related to each other.
+
+For example, given an @tech{equivalence relation} @math{∼} on a @tech{set} @math{S}
+and an @tech{element} @math{x ∈ S}, the @tech{equivalence class} of @math{x} under
+@math{∼} is the @tech{set} of all @tech{elements} in @math{S} that are related to
+@math{x}. This is denoted as @math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}.
+Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}.
+
+@image["scribblings/category/images/eq-cls.svg"]{[picture] eq-cls.svg}
+
+@bold{Exercise}: Prove that @math{x ∼ y ⇒ [x] = [y]}.
+
+A @deftech{congruence relation} @math{∼} on a @tech{category} @math{𝒞} is an
+@tech{equivalence relation} on the @tech{morphisms} of @math{𝒞} that is
+compatible with the @tech{composition} of @tech{morphisms}. Formally, @math{∼}
+satisfies the following properties:
+
+@itemlist[
+  #:style 'ordered
+  @item{For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, if @math{f ∼ g},
+        then they're @deftech{parallel}, i.e., @math{dom(f) = dom(g)} and
+        @math{cod(f) = cod(g)}.}
+  @item{For @tech{morphisms} @math{f: b → c}, @math{g: b → c}, @math{h: a → b}
+        and @math{k: c → d} in @math{𝒞}, if @math{f ∼ g}, then @math{f∘h ∼ g∘h}
+        and @math{k∘f ∼ k∘g}.
+
+        @image["scribblings/category/images/congruence_1.svg"]{[picture] congruence_1.svg}}
+]
+
+@bold{Exercise}: Show that we can replace the second properties with: "For
+@tech{morphisms} @math{f_1: a → b}, @math{f_2: a → b}, @math{g_1: b → c}
+and @math{g_2: b → c} in @math{𝒞}, if @math{f_1 ∼ f_2} and @math{g_1 ∼ g_2},
+then @math{g_1∘f_1 ∼ g_2∘f_2}.".
+
+@image["scribblings/category/images/congruence_2.svg"]{[picture] congruence_2.svg}
+
+@bold{Exercise}: Let @math{∼} and @math{∽} be @tech{congruence relations}.
+Prove that @math{∼ ∩ ∽} is also a @tech{congruence relation}.
+
+A @deftech{congruence class} is an @tech{equivalence class} under a
+@tech{congruence relation}.
+
 @subsection{Discrete Category}
 
 A @deftech{discrete category} is a @tech{category} where the only @tech{morphisms}
@@ -166,7 +242,7 @@ are the @tech{identity morphisms}. In other words, every @tech{object} is only
 connected to itself via its @tech{identity morphism}. This means that a
 @tech{discrete category} can be viewed as the @tech{category} version of a
 @deftech{set}: the @tech{objects} of the @tech{discrete category} correspond to
-the @deftech{element}s of the @tech{set}. A @deftech{function} between two
+the @deftech{element}s of the @tech{set}. A @tech{function} between two
 @tech{sets} can be viewed as a @tech{functor} between two @tech{discrete categories}.
 
 @subsection{One-Object Category}
@@ -185,37 +261,6 @@ The @tech{monoid} structure becomes evident when we consider the @tech{identity 
 as the @tech{monoid} @tech{identity element} and the @tech{composition} operation
 as the @tech{monoid} operation. Thus, @tech{OOCs} provide a categorical perspective
 on @tech{monoids}.
-
-@subsection{Subcategory}
-
-Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
-of @math{𝒞} if:
-
-@itemlist[
-  #:style 'ordered
-  @item{@math{𝒟_0 ⊆ 𝒞_0} and @math{𝒟_1 ⊆ 𝒞_1}.}
-  @item{If the @tech{object} @math{a} is in @math{𝒟}, then so is @math{id_a}.}
-  @item{If the @tech{morphism} @math{f} is in @math{𝒟}, then so are @math{dom(f)} and @math{cod(f)}.}
-  @item{If the @tech{composable pair} @math{(f, g)} is in @math{𝒟}, then so is @math{g∘f}.}
-  ]
-
-A @deftech{subset} can be viewed as a @tech{subcategory} of a @tech{discrete category},
-and a @deftech{submonoid} can be viewed as a @tech{subcategory} of an @tech{OOC}.
-
-@subsubsection{Full Subcategory}
-
-A @deftech{full subcategory} arises when we selectively remove certain
-@tech{objects} from a @tech{category} @math{𝒞} along with the @tech{morphisms}
-whose @tech{domains} or @tech{codomains} involve these @tech{objects}. The
-resulting @tech{subcategory} @math{𝒟}, retains all the @tech{morphisms} from
-@math{𝒞} that have not been affected by the removal of @tech{objects}.
-
-@subsubsection{Wide Subcategory}
-
-A @deftech{wide subcategory} is a @tech{subcategory} that includes all
-@tech{objects} from the original @tech{category}. Formally, if @math{𝒟} is a
-@tech{wide subcategory} of @math{𝒞}, then every @tech{object} in @math{𝒞} is also
-an @tech{object} in @math{𝒟}.
 
 @subsection{Concrete Category}
 
@@ -274,29 +319,9 @@ an @tech{OOC}.
 
 @subsubsection{Category of Relations}
 
-A @deftech{relation} from a @tech{set} @math{S} to a @tech{set} @math{T} is a
-@tech{subset} of @math{S×T}. Specially, a @deftech{binary relation} on @math{S}
-is a @tech{subset} of @math{S×S}, and the @deftech{diagonal relation}
-(@deftech{equality relation}) on @math{S} is denoted as @math{Δ_S}, where
-@math{Δ_s := {(x, x) ∈ S×S | x ∈ S}}.
-
-Here're some properties that a @tech{binary relation} on @math{S} @math{△} may
-have:
-
-@itemlist[
-  @item{@deftech{Symmetry}:
-        @math{△} is @deftech{symmetric} if @math{∀x, y ∈ S, x △ y ⇒ y △ x}.}
-  @item{@deftech{Antisymmetry}:
-        @math{△} is @deftech{antisymmetric} if @math{∀x, y ∈ S, x △ y ∧ y △ x ⇒ x = y}.}
-  @item{@deftech{Reflexivity}:
-        @math{△} is @deftech{reflexive} if @math{∀x ∈ S, x △ x}.}
-  @item{@deftech{Transitivity}:
-        @math{△} is @deftech{transitive} if @math{∀x, y, z ∈ S, x △ y ∧ y △ z ⇒ x △ z}.}
-]
-
 The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, where
 @tech{identity morphisms} are @tech{diagonal relations}, and @tech{morphisms} are
-@tech{relations}:
+@tech{binary relations}:
 
 @racketfile{code/category/𝐑𝐞𝐥.rkt}
 
@@ -308,21 +333,13 @@ The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}
 @racketfile{code/category/𝐏𝐚𝐢𝐫.rkt}
 
 A @deftech{preordered set} (@deftech{proset}), @math{(S, ≤)}, is a @tech{set}
-@math{S} equipped with a @tech{binary relation} @math{≤} that is @tech{reflexive}
-and @tech{transitive}. @math{≤} is called a @deftech{preorder} on @math{S}.
+@math{S} equipped with a @tech{relation} @math{≤} over @math{S} that is
+@tech{reflexive} and @tech{transitive}. @math{≤} is called a @deftech{preorder}
+on @math{S}.
 
 A @tech{proset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
 @tech{category} is called the @deftech{preorder category} associated to a
 @tech{proset}.
-
-@bold{Exercise}: Try to @racket[define] @deftech{Preord} so that we can
-@racket[define] the @tech{preorder category} associated to a @tech{poset} in
-this way:
-
-@racketblock[
-(define-values (dom cod ∘ ? =)
-  (Preord S? ≤))
-]
 
 A @deftech{partially ordered set} (@deftech{ordered set}, or @deftech{poset})
 is a @tech{preordered set}, @math{(S, ≤)}, in which @math{≤} is @tech{antisymmetric}.
@@ -403,6 +420,67 @@ the @tech{opposite category} @math{𝒞^op} in this way:
 @racketblock[
 (define-values (dom cod ∘ ? =)
   († dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
+]
+
+@subsubsection{Subcategory}
+
+Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
+of @math{𝒞} if:
+
+@itemlist[
+  #:style 'ordered
+  @item{@math{𝒟_0 ⊆ 𝒞_0} and @math{𝒟_1 ⊆ 𝒞_1}.}
+  @item{If the @tech{object} @math{a} is in @math{𝒟}, then so is @math{id_a}.}
+  @item{If the @tech{morphism} @math{f} is in @math{𝒟}, then so are @math{dom(f)} and @math{cod(f)}.}
+  @item{If the @tech{composable pair} @math{(f, g)} is in @math{𝒟}, then so is @math{g∘f}.}
+  ]
+
+@bold{Exercise}: Try to @racket[define] @deftech{⊆} so that we can @racket[define]
+the @tech{subcategory} @math{𝒟} of @math{𝒞} in this way:
+
+@racketblock[
+(define-values (dom cod ∘ ? =)
+  ((⊆ ?𝒟) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
+]
+
+A @deftech{subset} can be viewed as a @tech{subcategory} of a @tech{discrete category},
+and a @deftech{submonoid} can be viewed as a @tech{subcategory} of an @tech{OOC}.
+
+A @deftech{full subcategory} arises when we selectively remove certain
+@tech{objects} from a @tech{category} @math{𝒞} along with the @tech{morphisms}
+whose @tech{domains} or @tech{codomains} involve these @tech{objects}. The
+resulting @tech{subcategory} @math{𝒟}, retains all the @tech{morphisms} from
+@math{𝒞} that have not been affected by the removal of @tech{objects}.
+
+A @deftech{wide subcategory} is a @tech{subcategory} that includes all
+@tech{objects} from the original @tech{category}. Formally, if @math{𝒟} is a
+@tech{wide subcategory} of @math{𝒞}, then every @tech{object} in @math{𝒞} is also
+an @tech{object} in @math{𝒟}.
+
+@subsubsection{Quotient Category}
+
+The @deftech{quotient} of @math{𝒞} by @math{∼}, denoted as @math{𝒞/∼}
+(the @deftech{quotient category}), reflects the structure of @math{𝒞} but with
+the @tech{morphisms} grouped into
+@tech[#:key "congruence class"]{congruence classes} under @math{∼}:
+
+@itemlist[
+  #:style 'ordered
+  @item{The @tech{objects} of @math{𝒞/∼} are the @tech{objects} of @math{𝒞}.}
+  @item{The @tech{morphisms} of @math{𝒞/∼} are the
+        @tech[#:key "congruence class"]{congruence classes} of @tech{morphisms}
+        of @math{𝒞}.}
+  @item{If @math{f: a → b} in @math{𝒞}, then @math{[f]: a → b} in @math{𝒞/∼}.}
+  @item{If @math{f: a → b} and @math{g: b → c} in @math{𝒞}, then
+        @math{[g]∘[f] = [g∘f]: a → c} in @math{𝒞/∼}.}
+]
+
+@bold{Exercise}: Try to @racket[define] @deftech{|\|} so that we can @racket[define]
+the @tech{quotient category} @math{𝒞/∼} in this way:
+
+@racketblock[
+(define-values (dom cod ∘ ? =)
+  ((|\| ∼) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
 ]
 
 @subsubsection{Product Category}
@@ -881,5 +959,14 @@ called a @deftech{variable element} of @math{b}, parametrized by @math{a}. This
 viewpoint aligns with the idea that @tech{morphisms} in a @tech{category} can be
 thought of as @tech{elements}, and an application is a special case of @tech{morphism}
 @tech{composition}.
+
+@subsection{Subobject}
+
+For @tech{morphisms} @math{f: a → b} and @math{g: c → b}, if @math{f} can
+@deftech{factor through} @math{g}, it means that there exists a @tech{morphism}
+@math{h: a → c} such that @math{f = g∘h}.
+
+@;; @deftech{subobject}
+@;; @deftech{proper subobject}
 
 @subsection{Factorization System}

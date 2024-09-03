@@ -195,6 +195,24 @@ to @tech{𝐒𝐞𝐭@_{∗}}.
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐒𝐞𝐭@_{∗}}
 to @tech{𝐒𝐞𝐭}.
 
+@section{Quotient Functor}
+
+The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} that
+@math{∀a ∈ 𝒞_0, Q(a) = a} and @math{∀f ∈ 𝒞_1, Q(f) = [f]}.
+
+@bold{Exercise}: For a @tech{functor} @math{F: 𝒞 → 𝒟} and a
+@tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.
+Prove that there is a unique @tech{functor} @math{F_0: 𝒞/∼ → 𝒟} for which
+@math{F_0∘Q = F}.
+
+@image["scribblings/functor/images/F0.svg"]{[picture] F0.svg}
+
+@subsection{Factorization of Functors}
+
+This section introduce a method of expressing any @tech{functor} as a
+@tech{composition} of other @tech{functors}, typically to simplify or better
+understand its structure.
+
 @subsection{Composition Functor}
 
 For a @tech{morphism} @math{g: b → c} in a @tech{category} @math{𝒞}, there is a
@@ -325,15 +343,11 @@ The @deftech{powerset} of a @tech{set} @math{s}, denoted as @math{𝒫(s)}, is t
 
 @racketfile{code/function/𝒫.rkt}
 
-For a @tech{function} @math{f: a → b}, the @deftech{image} of @math{f}, denoted
-as @math{im(f)}, is the @tech{subset} of @math{b}:
-@math{im(f) := {f(x) | x ∈ a}}.
-
 @image["scribblings/functor/images/f.svg"]{[picture] f.svg}
 
-Let @math{a_0} be a @tech{subset} of @math{a} and @math{b_0} be a @tech{subset}
-of @math{b}. There are different @deftech{powerset functor}s, all of which map
-@math{s} to @math{𝒫(s)}.
+For a @tech{function} @math{f: a → b}, let @math{a_0} be a @tech{subset} of
+@math{a} and @math{b_0} be a @tech{subset} of @math{b}. There are different
+@deftech{powerset functor}s, all of which map a @tech{set} @math{s} to @math{𝒫(s)}.
 
 @subsubsection{Direct Image Functor}
 
@@ -823,93 +837,3 @@ if it's both @tech{full} and @tech{faithful}.
 @bold{Exercise}: Let @math{F: 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
 Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
 @math{Hom@_{𝒞}(a, a) ≅ Hom@_{𝒞}(a, b) ≅ Hom@_{𝒞}(b, a) ≅ Hom@_{𝒞}(b, b)}.
-
-@section{Quotient Category}
-
-An @deftech{equivalence relation} @math{∼} on @math{S} is a @tech{binary relation}
-that is @tech{reflexive}, @tech{symmetric}, and @tech{transitive}. @math{∼}
-partitions @math{S} into disjoint @tech[#:key "class"]{classes}, known as
-@deftech{equivalence class}es, where all @tech{elements} within an
-@tech{equivalence class} are related to each other.
-
-For example, given an @tech{equivalence relation} @math{∼} on a @tech{set} @math{S}
-and an @tech{element} @math{x ∈ S}, the @tech{equivalence class} of @math{x} under
-@math{∼} is the @tech{set} of all @tech{elements} in @math{S} that are related to
-@math{x}. This is denoted as @math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}.
-Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}.
-
-@image["scribblings/functor/images/eq-cls.svg"]{[picture] eq-cls.svg}
-
-@bold{Exercise}: Prove that @math{x ∼ y ⇒ [x] = [y]}.
-
-A @deftech{congruence relation} @math{∼} on a @tech{category} @math{𝒞} is an
-@tech{equivalence relation} on the @tech{morphisms} of @math{𝒞} that is
-compatible with the @tech{composition} of @tech{morphisms}. Formally, @math{∼}
-satisfies the following properties:
-
-@itemlist[
-  #:style 'ordered
-  @item{For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, if @math{f ∼ g},
-        then they're @deftech{parallel}, i.e., @math{dom(f) = dom(g)} and
-        @math{cod(f) = cod(g)}.}
-  @item{For @tech{morphisms} @math{f: b → c}, @math{g: b → c}, @math{h: a → b}
-        and @math{k: c → d} in @math{𝒞}, if @math{f ∼ g}, then @math{f∘h ∼ g∘h}
-        and @math{k∘f ∼ k∘g}.
-
-        @image["scribblings/functor/images/congruence_1.svg"]{[picture] congruence_1.svg}}
-]
-
-@bold{Exercise}: Show that we can replace the second properties with: "For
-@tech{morphisms} @math{f_1: a → b}, @math{f_2: a → b}, @math{g_1: b → c}
-and @math{g_2: b → c} in @math{𝒞}, if @math{f_1 ∼ f_2} and @math{g_1 ∼ g_2},
-then @math{g_1∘f_1 ∼ g_2∘f_2}.".
-
-@image["scribblings/functor/images/congruence_2.svg"]{[picture] congruence_2.svg}
-
-@bold{Exercise}: Let @math{∼} and @math{∽} be @tech{congruence relations}.
-Prove that @math{∼ ∩ ∽} is also a @tech{congruence relation}.
-
-A @deftech{congruence class} is an @tech{equivalence class} under a
-@tech{congruence relation}.
-
-The @deftech{quotient} of @math{𝒞} by @math{∼}, denoted as @math{𝒞/∼}
-(the @deftech{quotient category}), is constructed by identifying @tech{morphisms}
-that are related by a @tech{congruence relation}. @math{𝒞/∼} reflects the
-structure of @math{𝒞} but with the @tech{morphisms} grouped into
-@tech[#:key "congruence class"]{congruence classes} under @math{∼}:
-
-@itemlist[
-  #:style 'ordered
-  @item{The @tech{objects} of @math{𝒞/∼} are the @tech{objects} of @math{𝒞}.}
-  @item{The @tech{morphisms} of @math{𝒞/∼} are the
-        @tech[#:key "congruence class"]{congruence classes} of @tech{morphisms}
-        of @math{𝒞}.}
-  @item{If @math{f: a → b} in @math{𝒞}, then @math{[f]: a → b} in @math{𝒞/∼}.}
-  @item{If @math{f: a → b} and @math{g: b → c} in @math{𝒞}, then
-        @math{[g]∘[f] = [g∘f]: a → c} in @math{𝒞/∼}.}
-]
-
-The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} that
-@math{∀a ∈ 𝒞_0, Q(a) = a} and @math{∀f ∈ 𝒞_1, Q(f) = [f]}.
-
-@bold{Exercise}: For a @tech{functor} @math{F: 𝒞 → 𝒟} and a
-@tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.
-Prove that there is a unique @tech{functor} @math{F_0: 𝒞/∼ → 𝒟} for which
-@math{F_0∘Q = F}.
-
-@image["scribblings/functor/images/F0.svg"]{[picture] F0.svg}
-
-@subsection{Factorization of Functors}
-
-This section introduce a method of expressing any @tech{functor} as a
-@tech{composition} of other @tech{functors}, typically to simplify or better
-understand its structure.
-
-For @tech{morphisms} @math{f: a → b} and @math{g: c → b}, if @math{f} can
-@deftech{factor through} @math{g}, it means that there exists a @tech{morphism}
-@math{h: a → c} such that @math{f = g∘h}.
-
-@subsection{Subobject}
-
-@;; @deftech{subobject}
-@;; @deftech{proper subobject}

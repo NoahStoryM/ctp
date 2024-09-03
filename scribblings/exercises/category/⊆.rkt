@@ -1,26 +1,23 @@
 #lang racket/base
 
-(require racket/match)
-(require (file "../../code/category/𝐏𝐚𝐢𝐫.rkt"))
-
-(define-values (dom cod ∘ =)
-  (call-with-values 𝐏𝐚𝐢𝐫 (λ (dom cod ∘ ? =) (values dom cod ∘ =))))
-
-(provide Preord)
-(define (Preord S? ≤)
-  (define ?
-    (match-λ
-      [`(,a . ,b)
-       (and (S? a) (S? b))
-       (≤ a b)]
-      [_ #f]))
-  (values dom cod ∘ ? =))
-
+(provide ⊆)
+(define ((⊆ ?𝒟) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞)
+  (values dom𝒞 cod𝒞 ∘𝒞 ?𝒟 =𝒞))
 
 (module+ test
   (require rackunit)
+  (require racket/match)
+  (require (file "../../code/category/𝐏𝐚𝐢𝐫.rkt"))
 
-  (define ? (call-with-values 𝐏𝐚𝐢𝐫 (λ (dom cod ∘ ? =) ?)))
+  (define-values (dom cod ∘ ? =)
+    (let ()
+      (define ?
+        (match-λ
+          [`(,a . ,b)
+           (and (real? a) (real? b))
+           (<= a b)]
+          [_ #f]))
+      ((compose (⊆ ?) 𝐏𝐚𝐢𝐫))))
 
   ;; Objects
   (define a '(0 . 0)) (check-pred ? a)
