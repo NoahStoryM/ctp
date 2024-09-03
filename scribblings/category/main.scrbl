@@ -182,16 +182,16 @@ A @deftech{binary relation} from a @tech{set} @math{S} to a @tech{set} @math{T}
 is a @tech{relation} over @math{S×T}.
 
 The @deftech{diagonal relation} (@deftech{equality relation}) over a @tech{set}
-@math{S}, denoted as @math{Δ_S}, is a @tech{binary relation} over @math{S}:
+@math{S}, denoted as @math{Δ_S}, is the @tech{binary relation} over @math{S}:
 @math{{(x, x) | x ∈ S}}.
 
 A @deftech{function} @math{f: S → T} can be viewed as the @tech{binary relation}:
 @math{{(x, f(x)) | x ∈ S}}. The @deftech{image} of @math{f}, denoted as
-@math{im(f)}, is the @tech{subset} of @math{T}: @math{im(f) := {f(x) | x ∈ S}}.
+@math{im(f)}, is the @tech{subset} of @math{T}: @math{{f(x) | x ∈ S}}.
 
 An @deftech{equivalence relation} @math{∼} over @math{S} is a @tech{relation}
 that is @tech{reflexive}, @tech{symmetric}, and @tech{transitive}. @math{∼}
-partitions @math{S} into disjoint @tech[#:key "class"]{classes}, known as
+partitions @math{S} into disjoint @deftech{class}es, known as
 @deftech{equivalence class}es, where all @tech{elements} within an
 @tech{equivalence class} are related to each other.
 
@@ -459,9 +459,9 @@ an @tech{object} in @math{𝒟}.
 
 @subsubsection{Quotient Category}
 
-The @deftech{quotient} of @math{𝒞} by @math{∼}, denoted as @math{𝒞/∼}
-(the @deftech{quotient category}), reflects the structure of @math{𝒞} but with
-the @tech{morphisms} grouped into
+The @deftech{quotient} of @math{𝒞} by @math{∼}, denoted as
+@deftech{quotient category} @math{𝒞/∼}, reflects the structure of @math{𝒞} but
+with the @tech{morphisms} grouped into
 @tech[#:key "congruence class"]{congruence classes} under @math{∼}:
 
 @itemlist[
@@ -714,7 +714,7 @@ if @math{i} is @tech{epic}, and @math{i: t_1 ⤖ t_2} if @math{i} is both
 @image["scribblings/category/images/mono&epi.svg"]{[picture] mono&epi.svg}
 
 In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms} from
-two distinct @deftech{class}es @math{ℰ} and @math{ℳ}, rather than
+two distinct @tech[#:key "class"]{classes} @math{ℰ} and @math{ℳ}, rather than
 exclusively representing @tech{monomorphisms} and @tech{epimorphisms}. Additionally,
 @deftech{⤖} indicates @tech{morphisms} from @math{ℰ ∩ ℳ}.
 
