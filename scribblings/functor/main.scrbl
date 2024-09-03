@@ -280,7 +280,7 @@ A @deftech{@deftech{monotone} function}
 (@deftech{@deftech{monotonic} function}, @deftech{@deftech{isotone} function},
  @deftech{@deftech{isotonic} function}, or @deftech{order homomorphism})
 @math{f: (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
-structure: @math{∀x, y ∈ S}, if @math{x ≤ y}, then @math{f(x) ⋜ f(y)}.
+structure: @math{∀x, y ∈ S, x ≤ y ⇒ f(x) ⋜ f(y)}.
 
 The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where
 @tech{objects} are @tech{prosets} and @tech{morphisms} are @tech{monotone functions}.
@@ -838,7 +838,7 @@ an @tech{element} @math{x ∈ S}, the @tech{equivalence class} of @math{x} under
 @math{x}. This is denoted as @math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}.
 Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}.
 
-@bold{Exercise}: Prove that if @math{x ∼ y}, then @math{[x] = [y]}.
+@bold{Exercise}: Prove that @math{x ∼ y ⇒ [x] = [y]}.
 
 A @deftech{congruence relation} @math{∼} on a @tech{category} @math{𝒞} is an
 @tech{equivalence relation} on the @tech{morphisms} of @math{𝒞} that is
