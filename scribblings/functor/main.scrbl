@@ -869,13 +869,17 @@ A @deftech{congruence class} is an @tech{equivalence class} under a
 @tech{congruence relation}.
 
 The @deftech{quotient} of @math{𝒞} by @math{∼}, denoted as @math{𝒞/∼}
-(the @deftech{quotient category}), is a new @tech{category} defined as follows:
+(the @deftech{quotient category}), is constructed by identifying @tech{morphisms}
+that are related by a @tech{congruence relation}. @math{𝒞/∼} reflects the
+structure of @math{𝒞} but with the @tech{morphisms} grouped into
+@tech[#:key "congruence class"]{congruence classes} under @math{∼}:
 
 @itemlist[
   #:style 'ordered
   @item{The @tech{objects} of @math{𝒞/∼} are the @tech{objects} of @math{𝒞}.}
-  @item{The @tech{morphisms} of @math{𝒞/∼} are the @tech{congruence class}es of
-        @tech{morphisms} of @math{𝒞}.}
+  @item{The @tech{morphisms} of @math{𝒞/∼} are the
+        @tech[#:key "congruence class"]{congruence classes} of @tech{morphisms}
+        of @math{𝒞}.}
   @item{If @math{f: a → b} in @math{𝒞}, then @math{[f]: a → b} in @math{𝒞/∼}.}
   @item{If @math{f: a → b} and @math{g: b → c} in @math{𝒞}, then
         @math{[g]∘[f] = [g∘f]: a → c} in @math{𝒞/∼}.}
@@ -886,7 +890,13 @@ The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} t
 
 @subsection{Factorization of Functors}
 
-@;; @deftech{factor through}
+This section introduce a method of expressing any @tech{functor} as a
+@tech{composition} of other @tech{functors}, typically to simplify or better
+understand its structure.
+
+For @tech{morphisms} @math{f: a → b} and @math{g: c → b}, if @math{f} can
+@deftech{factor through} @math{g}, it means that there exists a @tech{morphism}
+@math{h: a → c} such that @math{f = g∘h}.
 
 @subsection{Subobject}
 
