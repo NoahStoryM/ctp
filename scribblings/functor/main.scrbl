@@ -888,6 +888,11 @@ structure of @math{𝒞} but with the @tech{morphisms} grouped into
 The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} that
 @math{∀a ∈ 𝒞_0, Q(a) = a} and @math{∀f ∈ 𝒞_1, Q(f) = [f]}.
 
+@bold{Exercise}: For a @tech{functor} @math{F: 𝒞 → 𝒟} and a
+@tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.
+Prove that there is a unique @tech{functor} @math{F_0: 𝒞/∼ → 𝒟} for which
+@math{F_0∘Q = F}.
+
 @subsection{Factorization of Functors}
 
 This section introduce a method of expressing any @tech{functor} as a
