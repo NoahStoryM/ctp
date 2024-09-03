@@ -838,6 +838,8 @@ and an @tech{element} @math{x ∈ S}, the @tech{equivalence class} of @math{x} u
 @math{x}. This is denoted as @math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}.
 Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}.
 
+@image["scribblings/functor/images/eq-cls.svg"]{[picture] eq-cls.svg}
+
 @bold{Exercise}: Prove that @math{x ∼ y ⇒ [x] = [y]}.
 
 A @deftech{congruence relation} @math{∼} on a @tech{category} @math{𝒞} is an
@@ -894,6 +896,8 @@ The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} t
 @tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.
 Prove that there is a unique @tech{functor} @math{F_0: 𝒞/∼ → 𝒟} for which
 @math{F_0∘Q = F}.
+
+@image["scribblings/functor/images/F0.svg"]{[picture] F0.svg}
 
 @subsection{Factorization of Functors}
 
