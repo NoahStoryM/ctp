@@ -847,17 +847,17 @@ satisfies the following properties:
 
 @itemlist[
   #:style 'ordered
-  @item{for @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, if @math{f ∼ g},
+  @item{For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, if @math{f ∼ g},
         then they're @deftech{parallel}, i.e., @math{dom(f) = dom(g)} and
         @math{cod(f) = cod(g)}.}
-  @item{for @tech{morphisms} @math{f: b → c}, @math{g: b → c}, @math{h: a → b}
+  @item{For @tech{morphisms} @math{f: b → c}, @math{g: b → c}, @math{h: a → b}
         and @math{k: c → d} in @math{𝒞}, if @math{f ∼ g}, then @math{f∘h ∼ g∘h}
         and @math{k∘f ∼ k∘g}.
 
         @image["scribblings/functor/images/congruence.svg"]{[picture] congruence.svg}}
 ]
 
-@bold{Exercise}: Show that we can replace the second properties with "for
+@bold{Exercise}: Show that we can replace the second properties with: "For
 @tech{morphisms} @math{f_1: a → b}, @math{f_2: a → b}, @math{g_1: b → c}
 and @math{g_2: b → c} in @math{𝒞}, if @math{f_1 ∼ f_2} and @math{g_1 ∼ g_2},
 then @math{g_1∘f_1 ∼ g_2∘f_2}".
@@ -869,7 +869,7 @@ A @deftech{congruence class} is an @tech{equivalence class} under a
 @tech{congruence relation}.
 
 The @deftech{quotient} of @math{𝒞} by @math{∼}, denoted as @math{𝒞/∼}
-(@deftech{quotient category}), is a new @tech{category} defined as follows:
+(the @deftech{quotient category}), is a new @tech{category} defined as follows:
 
 @itemlist[
   #:style 'ordered
