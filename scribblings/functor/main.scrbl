@@ -832,8 +832,8 @@ partitions @math{S} into disjoint @tech[#:key "class"]{classes}, known as
 @deftech{equivalence class}es, where all @tech{elements} within an
 @tech{equivalence class} are related to each other.
 
-For example, given an @tech{equivalence relation} @math{∼} on a set @math{S} and
-an @tech{element} @math{x ∈ S}, the @tech{equivalence class} of @math{x} under
+For example, given an @tech{equivalence relation} @math{∼} on a @tech{set} @math{S}
+and an @tech{element} @math{x ∈ S}, the @tech{equivalence class} of @math{x} under
 @math{∼} is the @tech{set} of all @tech{elements} in @math{S} that are related to
 @math{x}. This is denoted as @math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}.
 Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}.
