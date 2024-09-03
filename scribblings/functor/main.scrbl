@@ -70,8 +70,7 @@ a @tech{covariant functor} from @math{𝒞@^{op}} to @math{𝒟}. See more in
         @image["scribblings/functor/images/F-3.svg"]{[picture] F-3.svg}}
   ]
 
-Let @math{𝒞_2} be the collection of @tech{composable pairs} in @math{𝒞}. We can
-describe @math{𝒞} with the following @tech{diagram}:
+We can describe @math{𝒞} with the following @tech{diagram}:
 
 @image["scribblings/functor/images/cat.svg"]{[picture] cat.svg}
 

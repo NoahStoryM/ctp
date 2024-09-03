@@ -427,12 +427,16 @@ the @tech{opposite category} @math{𝒞^op} in this way:
 Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
 of @math{𝒞} if:
 
+@margin-note{
+@math{𝒞_2} is the collection of @tech{composable pairs} in @math{𝒞}.
+}
+
 @itemlist[
   #:style 'ordered
-  @item{@math{𝒟_0 ⊆ 𝒞_0} and @math{𝒟_1 ⊆ 𝒞_1}.}
-  @item{If the @tech{object} @math{a} is in @math{𝒟}, then so is @math{id_a}.}
-  @item{If the @tech{morphism} @math{f} is in @math{𝒟}, then so are @math{dom(f)} and @math{cod(f)}.}
-  @item{If the @tech{composable pair} @math{(f, g)} is in @math{𝒟}, then so is @math{g∘f}.}
+  @item{@math{𝒟_0 ⊆ 𝒞_0 ∧ 𝒟_1 ⊆ 𝒞_1}.}
+  @item{@math{∀a ∈ 𝒞_0, a ∈ 𝒟_0 ⇒ id_a ∈ 𝒟_1}.}
+  @item{@math{∀f ∈ 𝒞_1, f ∈ 𝒟_1 ⇒ dom(f) ∈ 𝒟_0 ∧ cod(f) ∈ 𝒟_0}.}
+  @item{@math{∀(f, g) ∈ 𝒞_2, (f, g) ∈ 𝒟_2 ⇒ g∘f ∈ 𝒟_1}.}
   ]
 
 @bold{Exercise}: Try to @racket[define] @deftech{⊆} so that we can @racket[define]
@@ -685,21 +689,19 @@ For an @tech{endomorphism} @math{f}, it is an @deftech{idempotent} if @math{f = 
 @subsection{Monomorphism and Epimorphism}
 
 A @deftech{monomorphism} (often abbreviated as @deftech{mono}, or called be @deftech{monic})
-@math{m} is defined as a @deftech{left cancellable} @tech{morphism}. This property
-means that for all @tech{composable pairs} @math{(a, m)} and @math{(b, m)}, if
-@math{m∘a = m∘b}, then it must follow that @math{a = b}. Such a condition ensures
-that no two different @tech{morphisms}, when @tech[#:key "compose"]{composed} with
-@math{m} on the right, result in the same @tech{morphism}, thereby establishing
+@math{m} in a @tech{category} @math{𝒞} is defined as a @deftech{left cancellable}
+@tech{morphism}: @math{∀(a, m), (b, m) ∈ 𝒞_2, m∘a = m∘b ⇒ a = b}. Such a condition
+ensures that no two different @tech{morphisms}, when @tech[#:key "compose"]{composed}
+with @math{m} on the right, result in the same @tech{morphism}, thereby establishing
 the @deftech{injective} nature of @math{m}.
 
 @image["scribblings/category/images/mono.svg"]{[picture] mono.svg}
 
-Conversely, an @deftech{epimorphism} (often referred to as @deftech{epi}, or called be @deftech{epic})
-@math{e} is defined as a @deftech{right cancellable} @tech{morphism}. This property
-means that for all @tech{composable pairs} @math{(e, x)} and @math{(e, y)}, if
-@math{x∘e = y∘e}, then it must follow that @math{x = y}. Such a condition ensures
-that @math{e} reaches all possible endpoints in the target @tech{object} without
-duplication, thereby establishing the @deftech{surjective} nature of @math{e}.
+Conversely, an @deftech{epimorphism} (often abbreviated as @deftech{epi}, or called be @deftech{epic})
+@math{e} in a @tech{category} @math{𝒞} is defined as a @deftech{right cancellable}
+@tech{morphism}: @math{∀(e, x), (e, y) ∈ 𝒞_2, x∘e = y∘e ⇒ x = y}. Such a condition
+ensures that @math{e} reaches all possible endpoints in the target @tech{object}
+without duplication, thereby establishing the @deftech{surjective} nature of @math{e}.
 
 @image["scribblings/category/images/epi.svg"]{[picture] epi.svg}
 
