@@ -629,8 +629,8 @@ duplication, thereby establishing the @deftech{surjective} nature of @math{e}.
 @tech{epimorphism} in @math{𝒞^op}.
 
 For a @tech{morphism} @math{i: t_1 → t_2}, the notation changes based on its
-properties: @math{i: t_1 ↣ t_2} if @math{f} is @tech{monic}, @math{i: t_1 ↠ t_2}
-if @math{f} is @tech{epic}, and @math{i: t_1 ⤖ t_2} if @math{f} is both
+properties: @math{i: t_1 ↣ t_2} if @math{i} is @tech{monic}, @math{i: t_1 ↠ t_2}
+if @math{i} is @tech{epic}, and @math{i: t_1 ⤖ t_2} if @math{i} is both
 @tech{monic} and @tech{epic}.
 
 @image["scribblings/category/images/mono&epi.svg"]{[picture] mono&epi.svg}
