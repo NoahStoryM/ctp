@@ -23,8 +23,8 @@ using Racket programming language as our exploration tool.
 @section{Basic Definitions}
 
 In the abstract world of mathematics, @tech{category theory} offers a unified
-framework for analyzing and synthesizing concepts across different fields. Central
-to our exploration are @tech{morphisms}, which we consider not merely as
+framework for analyzing and synthesizing concepts across different fields.
+Central to our exploration are @tech{morphisms}, which we consider not merely as
 connections or processes but as entities in their own right.
 
 @subsection{Category}
@@ -178,6 +178,8 @@ Here're some properties that a @tech{relation} @math{△} over a @tech{set}
         @math{△} is @deftech{transitive} if: @math{∀x, y, z ∈ S, x △ y ∧ y △ z ⇒ x △ z}.}
 ]
 
+@subsubsection{Binary Relation}
+
 A @deftech{binary relation} from a @tech{set} @math{S} to a @tech{set} @math{T}
 is a @tech{relation} over @math{S×T}.
 
@@ -188,6 +190,8 @@ The @deftech{diagonal relation} (@deftech{equality relation}) over a @tech{set}
 A @deftech{function} @math{f: S → T} can be viewed as the @tech{binary relation}:
 @math{{(x, f(x)) | x ∈ S}}. The @deftech{image} of @math{f}, denoted as
 @math{im(f)}, is the @tech{subset} of @math{T}: @math{{f(x) | x ∈ S}}.
+
+@subsubsection{Equivalence Relation}
 
 An @deftech{equivalence relation} @math{∼} over @math{S} is a @tech{relation}
 that is @tech{reflexive}, @tech{symmetric}, and @tech{transitive}. @math{∼}
@@ -205,8 +209,10 @@ Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}
 
 @bold{Exercise}: Prove that @math{x ∼ y ⇒ [x] = [y]}.
 
-A @deftech{congruence relation} @math{∼} on a @tech{category} @math{𝒞} is an
-@tech{equivalence relation} on the @tech{morphisms} of @math{𝒞} that is
+@subsubsection{Congruence Relation}
+
+A @deftech{congruence relation} @math{@deftech{∼}} on a @tech{category} @math{𝒞}
+is an @tech{equivalence relation} on the @tech{morphisms} of @math{𝒞} that is
 compatible with the @tech{composition} of @tech{morphisms}. Formally, @math{∼}
 satisfies the following properties:
 
@@ -414,13 +420,10 @@ the @tech{composition rules}, so this new @tech{directed graph} is also a
 
 @bold{Exercise}: Prove that @math{(𝒞^op)^op = 𝒞}.
 
-@bold{Exercise}: Try to @racket[define] @deftech{†} so that we can @racket[define]
-the @tech{opposite category} @math{𝒞^op} in this way:
+We can @racket[define] @deftech{†} in Racket to implement the
+@tech{opposite category} @math{𝒞^op}:
 
-@racketblock[
-(define-values (dom cod ∘ ? =)
-  († dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
-]
+@racketfile{code/category/†.rkt}
 
 @subsubsection{Subcategory}
 
@@ -439,13 +442,10 @@ of @math{𝒞} if:
   @item{@math{∀(f, g) ∈ 𝒞_2, (f, g) ∈ 𝒟_2 ⇒ g∘f ∈ 𝒟_1}.}
   ]
 
-@bold{Exercise}: Try to @racket[define] @deftech{⊆} so that we can @racket[define]
-the @tech{subcategory} @math{𝒟} of @math{𝒞} in this way:
+We can @racket[define] @deftech{⊆} in Racket to implement the @tech{subcategory}
+@math{𝒟} of @math{𝒞}:
 
-@racketblock[
-(define-values (dom cod ∘ ? =)
-  ((⊆ ?𝒟) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
-]
+@racketfile{code/category/⊆.rkt}
 
 A @deftech{subset} can be viewed as a @tech{subcategory} of a @tech{discrete category},
 and a @deftech{submonoid} can be viewed as a @tech{subcategory} of an @tech{OOC}.
@@ -479,13 +479,10 @@ with the @tech{morphisms} grouped into
         @math{[g]∘[f] = [g∘f]: a → c} in @math{𝒞/∼}.}
 ]
 
-@bold{Exercise}: Try to @racket[define] @deftech{|\|} so that we can @racket[define]
-the @tech{quotient category} @math{𝒞/∼} in this way:
+We can @racket[define] @deftech{÷} in Racket to implement the
+@tech{quotient category} @math{𝒞/∼}:
 
-@racketblock[
-(define-values (dom cod ∘ ? =)
-  ((|\| ∼) dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞))
-]
+@racketfile{code/category/÷.rkt}
 
 @subsubsection{Product Category}
 
@@ -655,17 +652,17 @@ not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 @math{𝒫@^{→}}, implement a @tech{coslice category} @math{m/ℳ} to which @tech{𝐌𝐚𝐭𝐫}
 gives rise.
 
-@bold{Exercise}: Try to @racket[define] @deftech{†Sli} so that we can @racket[define]
+@bold{Exercise}: Try to @racket[define] @deftech{Sli†} so that we can @racket[define]
 the @tech{coslice category} @math{m/ℳ} in this way:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
-  ((†Sli m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
+  ((Sli† m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
 ]
 
 @bold{Exercise}: Prove that @math{ℳ^op/m = (m/ℳ)^op}.
 
-@bold{Exercise}: Try to @racket[define] @tech{†Sli} by using @tech{†} and @tech{Sli}.
+@bold{Exercise}: Try to @racket[define] @tech{Sli†} by using @tech{†} and @tech{Sli}.
 
 @section{Categorical Definitions}
 

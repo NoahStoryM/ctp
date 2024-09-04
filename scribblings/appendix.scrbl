@@ -5,27 +5,27 @@
 @title{Appendix}
 @defmodule[ctp]
 
-@defproc[(dom [m morphism?]) morphism?]{
+@defproc[(dom [m morphism/c]) morphism/c]{
 See @tech{dom}.
 }
 
-@defproc[(cod [m morphism?]) morphism?]{
+@defproc[(cod [m morphism/c]) morphism/c]{
 See @tech{cod}.
 }
 
-@defproc[(∘ [m morphism?] ...) morphism?]{
+@defproc[(∘ [m morphism/c] ...) morphism/c]{
 See @tech{∘}.
 }
 
-@defproc[(src [m morphism?]) morphism?]{
+@defproc[(src [m morphism/c]) morphism/c]{
 See @tech{src}.
 }
 
-@defproc[(tgt [m morphism?]) morphism?]{
+@defproc[(tgt [m morphism/c]) morphism/c]{
 See @tech{tgt}.
 }
 
-@defproc[(· [m morphism?] ...) morphism?]{
+@defproc[(· [m morphism/c] ...) morphism/c]{
 See @tech{·}.
 }
 
@@ -33,8 +33,24 @@ See @tech{·}.
 See @tech{?}.
 }
 
-@defproc[(= [m morphism?] ...+) boolean?]{
+@defproc[(= [m morphism/c] ...+) boolean?]{
 See @tech{=}.
+}
+
+@defproc[(∼ [m morphism/c] ...+) boolean?]{
+See @tech{∼}.
+}
+
+@defproc[(† [𝒞 category/c]) category/c]{
+See @tech{†}.
+}
+
+@defproc[(÷ [∼ ∼/c]) (-> category/c category/c)]{
+See @tech{÷}.
+}
+
+@defproc[(⊆ [? ?/c]) (-> category/c category/c)]{
+See @tech{⊆}.
 }
 
 @defproc[(× [v any/c] ...) any]{

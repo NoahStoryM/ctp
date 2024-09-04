@@ -1,15 +1,15 @@
 #lang typed/racket/base/no-check
 
 (require (file "../../code/category/𝐌𝐚𝐭𝐫.rkt")
-         (file "../../code/functor/†SliF.rkt"))
+         (file "../../code/functor/SliF†.rkt"))
 
 (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
-(define -/ℳ (†SliF ∘ℳ))
+(define -/ℳ (SliF† ∘ℳ))
 
 (module+ test
   (require rackunit)
   (require math/matrix)
-  (require (file "../../exercises/category/†Sli.rkt"))
+  (require (file "../../exercises/category/Sli†.rkt"))
 
   (define (rand m n) (random 1 9))
 
@@ -27,7 +27,7 @@
 
   ;; b/ℳ
   (define-values (domb/ℳ codb/ℳ ∘b/ℳ ?b/ℳ =b/ℳ)
-    ((†Sli b0) domℳ codℳ ∘ℳ ?ℳ =ℳ))
+    ((Sli† b0) domℳ codℳ ∘ℳ ?ℳ =ℳ))
 
   (define p0 (build-matrix 1 2 rand)) (check-pred ?ℳ p0)
   (define q0 (∘ℳ f0 p0))              (check-pred ?ℳ q0)
@@ -48,7 +48,7 @@
 
   ;; a/ℳ
   (define-values (doma/ℳ coda/ℳ ∘a/ℳ ?a/ℳ =a/ℳ)
-    ((†Sli a0) domℳ codℳ ∘ℳ ?ℳ =ℳ))
+    ((Sli† a0) domℳ codℳ ∘ℳ ?ℳ =ℳ))
 
   ;; Functors
   (define f/ℳ (-/ℳ f0))
