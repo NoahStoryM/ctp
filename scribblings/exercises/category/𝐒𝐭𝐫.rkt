@@ -10,27 +10,12 @@
 (define (= m . m*) (apply string=? m m*))
 
 (module+ test
-  (require rackunit)
-
-  ;; Objects
-  (define ∗ (∘)) (check-pred ? ∗)
+  (require "../../code/category/check.rkt")
 
   ;; Morphisms
-  (define f "123") (check-pred ? f)
-  (define g "abc") (check-pred ? g)
-  (define h "ABC") (check-pred ? h)
+  (define f "123")
+  (define g "abc")
+  (define h "ABC")
 
-
-  ;; Existence of composition
-  (check-true (= ∗ (cod f) (dom g)))
-  (check-true (= ∗ (dom (∘ g f)) (dom f)))
-  (check-true (= ∗ (cod (∘ g f)) (cod g)))
-
-  ;; Associativity of composition
-  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
-
-  ;; Existence of identity morphisms
-  (check-true (= ∗ (dom ∗) (cod ∗)))
-
-  ;; Composition and identity morphisms
-  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))
+  (define check-𝐒𝐭𝐫 (check-ooc 𝐒𝐭𝐫))
+  (check-𝐒𝐭𝐫 f g h))

@@ -41,30 +41,18 @@
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 (module+ test
-  (require rackunit)
+  (require "check.rkt")
 
   ;; Objects
-  (define a (relation (lazy a) (lazy a) (set '(a0 . a0) '(a1 . a1) '(a2 . a2)))) (check-pred ? a)
-  (define b (relation (lazy b) (lazy b) (set '(b0 . b0) '(b1 . b1) '(b2 . b2)))) (check-pred ? b)
-  (define c (relation (lazy c) (lazy c) (set '(c0 . c0) '(c1 . c1) '(c2 . c2)))) (check-pred ? c)
-  (define d (relation (lazy d) (lazy d) (set '(d0 . d0) '(d1 . d1) '(d2 . d2)))) (check-pred ? d)
+  (define a (relation (lazy a) (lazy a) (set '(a0 . a0) '(a1 . a1) '(a2 . a2))))
+  (define b (relation (lazy b) (lazy b) (set '(b0 . b0) '(b1 . b1) '(b2 . b2))))
+  (define c (relation (lazy c) (lazy c) (set '(c0 . c0) '(c1 . c1) '(c2 . c2))))
+  (define d (relation (lazy d) (lazy d) (set '(d0 . d0) '(d1 . d1) '(d2 . d2))))
 
   ;; Morphisms
-  (define f (relation (lazy a) (lazy b) (set '(a0 . b0) '(a0 . b1) '(a2 . b0)))) (check-pred ? f)
-  (define g (relation (lazy b) (lazy c) (set '(b0 . c0) '(b0 . c1) '(b2 . c0)))) (check-pred ? g)
-  (define h (relation (lazy c) (lazy d) (set '(c0 . d0) '(c0 . d1) '(c2 . d0)))) (check-pred ? h)
+  (define f (relation (lazy a) (lazy b) (set '(a0 . b0) '(a0 . b1) '(a2 . b0))))
+  (define g (relation (lazy b) (lazy c) (set '(b0 . c0) '(b0 . c1) '(b2 . c0))))
+  (define h (relation (lazy c) (lazy d) (set '(c0 . d0) '(c0 . d1) '(c2 . d0))))
 
-
-  ;; Existence of composition
-  (check-true (= b (cod f) (dom g)))
-  (check-true (= a (dom (∘ g f)) (dom f)))
-  (check-true (= c (cod (∘ g f)) (cod g)))
-
-  ;; Associativity of composition
-  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
-
-  ;; Existence of identity morphisms
-  (check-true (= a (dom a) (cod a)))
-
-  ;; Composition and identity morphisms
-  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))
+  (define check-𝐑𝐞𝐥 (check-cat 𝐑𝐞𝐥))
+  (check-𝐑𝐞𝐥 a b c d f g h))

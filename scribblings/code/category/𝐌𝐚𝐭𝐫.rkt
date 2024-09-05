@@ -2,8 +2,6 @@
 
 (require math/matrix)
 
-(define (rand m n) (random 1 9))
-
 (provide 𝐌𝐚𝐭𝐫)
 (define (𝐌𝐚𝐭𝐫 . _) (values dom cod ∘ ? =))
 
@@ -18,30 +16,19 @@
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 (module+ test
-  (require rackunit)
+  (require "check.rkt")
+  (define (rand m n) (random 1 9))
 
   ;; Objects
-  (define a (identity-matrix 1)) (check-pred ? a)
-  (define b (identity-matrix 2)) (check-pred ? b)
-  (define c (identity-matrix 3)) (check-pred ? c)
-  (define d (identity-matrix 4)) (check-pred ? d)
+  (define a (identity-matrix 1))
+  (define b (identity-matrix 2))
+  (define c (identity-matrix 3))
+  (define d (identity-matrix 4))
 
   ;; Morphisms
-  (define f (build-matrix 2 1 rand)) (check-pred ? f)
-  (define g (build-matrix 3 2 rand)) (check-pred ? g)
-  (define h (build-matrix 4 3 rand)) (check-pred ? h)
+  (define f (build-matrix 2 1 rand))
+  (define g (build-matrix 3 2 rand))
+  (define h (build-matrix 4 3 rand))
 
-
-  ;; Existence of composition
-  (check-true (= b (cod f) (dom g)))
-  (check-true (= a (dom (∘ g f)) (dom f)))
-  (check-true (= c (cod (∘ g f)) (cod g)))
-
-  ;; Associativity of composition
-  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
-
-  ;; Existence of identity morphisms
-  (check-true (= a (dom a) (cod a)))
-
-  ;; Composition and identity morphisms
-  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))
+  (define check-𝐌𝐚𝐭𝐫 (check-cat 𝐌𝐚𝐭𝐫))
+  (check-𝐌𝐚𝐭𝐫 a b c d f g h))

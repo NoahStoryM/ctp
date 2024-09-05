@@ -9,27 +9,12 @@
 (define (? m) (exact-nonnegative-integer? m))
 
 (module+ test
-  (require rackunit)
-
-  ;; Objects
-  (define ∗ (∘)) (check-pred ? ∗)
+  (require "check.rkt")
 
   ;; Morphisms
-  (define f 1) (check-pred ? f)
-  (define g 2) (check-pred ? g)
-  (define h 3) (check-pred ? h)
+  (define f 1)
+  (define g 2)
+  (define h 3)
 
-
-  ;; Existence of composition
-  (check-true (= ∗ (cod f) (dom g)))
-  (check-true (= ∗ (dom (∘ g f)) (dom f)))
-  (check-true (= ∗ (cod (∘ g f)) (cod g)))
-
-  ;; Associativity of composition
-  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
-
-  ;; Existence of identity morphisms
-  (check-true (= ∗ (dom ∗) (cod ∗)))
-
-  ;; Composition and identity morphisms
-  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))
+  (define check-𝐍𝐚𝐭 (check-ooc 𝐍𝐚𝐭))
+  (check-𝐍𝐚𝐭 f g h))

@@ -14,27 +14,12 @@
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 (module+ test
-  (require rackunit)
-
-  ;; Objects
-  (define ∗ (∘)) (check-pred ? ∗)
+  (require "check.rkt")
 
   ;; Morphisms
-  (define f '(1 2 3)) (check-pred ? f)
-  (define g '(a b c)) (check-pred ? g)
-  (define h '(A B C)) (check-pred ? h)
+  (define f '(1 2 3))
+  (define g '(a b c))
+  (define h '(A B C))
 
-
-  ;; Existence of composition
-  (check-true (= ∗ (cod f) (dom g)))
-  (check-true (= ∗ (dom (∘ g f)) (dom f)))
-  (check-true (= ∗ (cod (∘ g f)) (cod g)))
-
-  ;; Associativity of composition
-  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
-
-  ;; Existence of identity morphisms
-  (check-true (= ∗ (dom ∗) (cod ∗)))
-
-  ;; Composition and identity morphisms
-  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))
+  (define check-𝐋𝐢𝐬𝐭 (check-ooc 𝐋𝐢𝐬𝐭))
+  (check-𝐋𝐢𝐬𝐭 f g h))

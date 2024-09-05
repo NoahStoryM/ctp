@@ -289,6 +289,12 @@ to abstract over @tech{categories}.
 We stipulate that @code{(∘)} returns @tech{∗}, @code{(∘ m)} returns @code{m},
 and @code{(= m)} returns @code{#t} in Racket.
 
+To verify the properties of @tech{categories}, we'll @racket[define] some
+@deftech{check} @tech{procedures} to automate the testing of essential properties
+within a @tech{category}:
+
+@racketfile{code/category/check.rkt}
+
 @subsection{Category Examples}
 
 Let's see how these abstractions can be applied to create and manipulate

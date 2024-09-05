@@ -20,30 +20,18 @@
     [(m1 m2 . m*) (and (= m1 m2) (apply = m2 m*))]))
 
 (module+ test
-  (require rackunit)
+  (require "check.rkt")
 
   ;; Objects
-  (define a '(a . a)) (check-pred ? a)
-  (define b '(b . b)) (check-pred ? b)
-  (define c '(c . c)) (check-pred ? c)
-  (define d '(d . d)) (check-pred ? d)
+  (define a '(a . a))
+  (define b '(b . b))
+  (define c '(c . c))
+  (define d '(d . d))
 
   ;; Morphisms
-  (define f '(a . b)) (check-pred ? f)
-  (define g '(b . c)) (check-pred ? g)
-  (define h '(c . d)) (check-pred ? h)
+  (define f '(a . b))
+  (define g '(b . c))
+  (define h '(c . d))
 
-
-  ;; Existence of composition
-  (check-true (= b (cod f) (dom g)))
-  (check-true (= a (dom (∘ g f)) (dom f)))
-  (check-true (= c (cod (∘ g f)) (cod g)))
-
-  ;; Associativity of composition
-  (check-true (= (∘ h g f) (∘ (∘ h g) f) (∘ h (∘ g f))))
-
-  ;; Existence of identity morphisms
-  (check-true (= a (dom a) (cod a)))
-
-  ;; Composition and identity morphisms
-  (check-true (= f (∘ f (dom f)) (∘ (cod f) f))))
+  (define check-𝐏𝐚𝐢𝐫 (check-cat 𝐏𝐚𝐢𝐫))
+  (check-𝐏𝐚𝐢𝐫 a b c d f g h))
