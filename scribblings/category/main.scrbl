@@ -985,7 +985,7 @@ For @tech{morphisms} @math{i: a → c} and @math{j: b → c}, if @math{i} can
 @math{k: a → b} such that @math{i} can @deftech{factor as} @math{i = j∘k}.
 
 Let @math{∼} be an @tech{equivalence relation} between @tech{monomorphisms}
-@math{i: a → c} and @math{j: b → c} in @math{𝒞} if each can @tech{factor through}
+@math{i: a ↣ c} and @math{j: b ↣ c} in @math{𝒞} if each can @tech{factor through}
 the other. A @deftech{subobject} of @math{c} is an @tech{equivalence class} of
 @tech{monomorphisms} under @math{∼}. If the @tech{subobject} does not contain
 @math{id_c}, then it's a @deftech{proper subobject} of @math{c}.
