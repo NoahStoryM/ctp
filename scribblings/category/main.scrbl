@@ -967,11 +967,27 @@ thought of as @tech{elements}, and an application is a special case of @tech{mor
 
 @subsection{Subobject}
 
-For @tech{morphisms} @math{f: a → b} and @math{g: c → b}, if @math{f} can
-@deftech{factor through} @math{g}, it means that there exists a @tech{morphism}
-@math{h: a → c} such that @math{f = g∘h}.
+In general, when we say that @math{d} is a @deftech{substructure} of @math{c},
+this often means that there exists an @deftech{inclusion function} @math{i: d → c}.
+However, from the perspective of @tech{category theory}, we focus only on
+@tech{morphisms} and their @tech{composition}, without considering the internal
+structure of @tech{objects}.
 
-@;; @deftech{subobject}
-@;; @deftech{proper subobject}
+To establish the concept of a @tech{subobject} of an @tech{object}, we consider
+@math{[i]}, the @tech{equivalence class} of @tech{morphisms} end to @math{c} that
+contains an @tech{inclusion function} @math{i}. Since @tech{morphisms} are not
+always @tech{functions}, we cannot directly say that @math{i} is an
+@tech{inclusion function}, so we generalize @math{[i]} by using @tech{monomorphism}
+instead of @tech{inclusion function}.
+
+For @tech{morphisms} @math{f: a → c} and @math{g: b → c}, if @math{f} can
+@deftech{factor through} @math{g}, it means that there exists a @tech{morphism}
+@math{h: a → b} such that @math{f} can @deftech{factor as} @math{f = g∘h}.
+
+Let @math{∼} be an @tech{equivalence relation} between @tech{monomorphisms}
+@math{f: a → c} and @math{g: b → c} in @math{𝒞} if each can @tech{factor through}
+the other. A @deftech{subobject} of @math{c} is an @tech{equivalence class} of
+@tech{monomorphisms} under @math{∼}. If the @tech{subobject} does not contain
+@math{id_c}, then it's a @deftech{proper subobject} of @math{c}.
 
 @subsection{Factorization System}
