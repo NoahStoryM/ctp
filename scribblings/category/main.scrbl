@@ -990,13 +990,19 @@ the other. A @deftech{subobject} of @math{c} is an @tech{equivalence class} of
 @tech{monomorphisms} under @math{∼}. If the @tech{subobject} does not contain
 @math{id_c}, then it's a @deftech{proper subobject} of @math{c}.
 
-@bold{Exercise}: Prove that there is at most one @tech{morphism} @math{k: a → b}
-such that @math{i = j∘k}. And if @math{k} exists, it must be @tech{invertible}.
-
-@bold{Exercise}: Prove @math{i ≅ j} in @math{𝒞/c}.
-
 @bold{Exercise}: Prove that a @tech{proper subobject} does not contain any
 @tech{isomorphism}.
+
+@bold{Exercise}: Prove that @math{i ∼ j} in @math{𝒞} means @math{i ≅ j} in
+@math{𝒞/c}.
+
+@bold{Exercise}: Let @math{i: a ↣ c} and @math{j: b ↣ c} be @tech{monic}. Prove
+that there is at most one @tech{morphism} @math{k: a → b} such that @math{i = j∘k}.
+And if @math{k} exists, it must be @tech{monic}.
+
+@bold{Exercise}: Let @math{𝒞_c} be the @tech{full subcategory} of @math{𝒞/c} on
+@tech{monomorphisms}. Show that @math{𝒞_c} is a @tech{proset}, and a
+@tech{subobject} of @math{c} is an @tech{isomorphism} @tech{class} of @math{𝒞_c}.
 
 The following @tech{diagram} shows how to view a @tech{subset} @math{a := {1, 2, 3}}
 of @math{c := {1, 2, 3, 4, 5, 6}} as the @tech{subobject} @math{[i]} in @tech{𝐒𝐞𝐭}:
