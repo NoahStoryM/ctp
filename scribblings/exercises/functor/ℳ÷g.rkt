@@ -10,7 +10,7 @@
   (require math/matrix
            (file "../../code/category/check.rkt")
            (file "../../code/functor/check.rkt")
-           (file "..//category/Sli.rkt"))
+           (file "../category/Sli.rkt"))
   (define (rand m n) (random 1 9))
 
   ;; Objects in ℳ
