@@ -212,11 +212,12 @@ Prove that there is a unique @tech{functor} @math{F_0: 𝒞/∼ → 𝒟} for wh
 
 @image["scribblings/functor/images/F0.svg"]{[picture] F0.svg}
 
-@subsection{Factorization of Functors}
-
-This section introduce a method of expressing any @tech{functor} as a
-@tech{composition} of other @tech{functors}, typically to simplify or better
-understand its structure.
+@;; TODO
+@;; @subsection{Factorization of Functors}
+@;;
+@;; This section introduce a method of expressing any @tech{functor} as a
+@;; @tech{composition} of other @tech{functors}, typically to simplify or better
+@;; understand its structure.
 
 @subsection{Composition Functor}
 
