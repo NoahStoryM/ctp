@@ -504,8 +504,8 @@ A @deftech{product category} @math{𝒞×𝒟} combines the given @tech{categori
 
 @margin-note{
 @tech{∘} in this equation are different in different @tech{categories}. The first
-two @tech{∘} represent @tech{composition} in the individual @tech{categories},
-while the third @tech{∘} represents @tech{composition} in the @tech{product category}.
+two @tech{∘}s represent @tech{compose}s in the individual @tech{categories},
+while the third @tech{∘} represents @tech{compose} in the @tech{product category}.
 }
 
 @bold{Exercise}: Prove that @math{(g_0∘f_0)×(g_1∘f_1) = (g_0×g_1)∘(f_0×f_1)}.
