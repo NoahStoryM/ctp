@@ -980,14 +980,19 @@ always @tech{functions}, we cannot directly say that @math{i} is an
 @tech{inclusion function}, so we generalize @math{[i]} by using @tech{monomorphism}
 instead of @tech{inclusion function}.
 
-For @tech{morphisms} @math{f: a → c} and @math{g: b → c}, if @math{f} can
-@deftech{factor through} @math{g}, it means that there exists a @tech{morphism}
-@math{h: a → b} such that @math{f} can @deftech{factor as} @math{f = g∘h}.
+For @tech{morphisms} @math{i: a → c} and @math{j: b → c}, if @math{i} can
+@deftech{factor through} @math{j}, it means that there exists a @tech{morphism}
+@math{k: a → b} such that @math{i} can @deftech{factor as} @math{i = j∘k}.
 
 Let @math{∼} be an @tech{equivalence relation} between @tech{monomorphisms}
-@math{f: a → c} and @math{g: b → c} in @math{𝒞} if each can @tech{factor through}
+@math{i: a → c} and @math{j: b → c} in @math{𝒞} if each can @tech{factor through}
 the other. A @deftech{subobject} of @math{c} is an @tech{equivalence class} of
 @tech{monomorphisms} under @math{∼}. If the @tech{subobject} does not contain
 @math{id_c}, then it's a @deftech{proper subobject} of @math{c}.
+
+The following @tech{diagram} shows how to view a @tech{subset} @math{a := {1, 2, 3}}
+of @math{c := {1, 2, 3, 4, 5, 6}} as the @tech{subobject} @math{[i]} in @tech{𝐒𝐞𝐭}:
+
+@image["scribblings/category/images/subobj.svg"]{[picture] subobj.svg}
 
 @subsection{Factorization System}
