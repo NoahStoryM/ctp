@@ -19,8 +19,8 @@
       (check-true (=𝒟 (F b) (cod𝒟 (F f)) (F (cod𝒞 f))))
 
       ;; Preservation of identity morphisms
-      (check-true (=𝒞    a  (dom𝒞    a)  (cod𝒞    a)))
-      (check-true (=𝒟 (F a) (dom𝒟 (F a)) (cod𝒟 (F a))))
+      (check-true (=𝒞    c  (dom𝒞    c)  (cod𝒞    c)))
+      (check-true (=𝒟 (F c) (dom𝒟 (F c)) (cod𝒟 (F c))))
 
       ;; Preservation of composable pairs
       (check-true (=𝒟 (∘𝒟 (F g) (F f)) (F (∘𝒞 g f)))))))

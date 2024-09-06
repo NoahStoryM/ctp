@@ -88,6 +88,12 @@ We can see that each similarly labeled square in the @tech{diagram} is a
 @tech{commutative square}. Additionally, the @tech{commutative squares} show the
 properties of @tech{functors}.
 
+To verify the properties of @tech{functors}, we'll @racket[define] some
+@tech{check} @tech{procedures} to automate the testing of essential properties
+a @tech{functor} preserves:
+
+@racketfile{code/functor/check.rkt}
+
 The following example illustrates how to implement @tech{functors} in Racket:
 
 @racketfile{code/functor/𝐒𝐞𝐭→𝐑𝐞𝐥.rkt}

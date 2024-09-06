@@ -26,24 +26,17 @@
   f^∗)
 
 (module+ test
-  (require rackunit)
+  (require "check.rkt" (file "../category/†.rkt"))
 
   ;; Objects
-  (: a 𝒮) (define a (function (lazy a) (lazy a) #hash([x0 . x0] [x1 . x1]))) (check-pred ?𝒮 a)
-  (: b 𝒮) (define b (function (lazy b) (lazy b) #hash([y0 . y0] [y1 . y1]))) (check-pred ?𝒮 b)
-  (: c 𝒮) (define c (function (lazy c) (lazy c) #hash([z0 . z0] [z1 . z1]))) (check-pred ?𝒮 c)
+  (: a 𝒮) (define a (function (lazy a) (lazy a) #hash([x0 . x0] [x1 . x1])))
+  (: b 𝒮) (define b (function (lazy b) (lazy b) #hash([y0 . y0] [y1 . y1])))
+  (: c 𝒮) (define c (function (lazy c) (lazy c) #hash([z0 . z0] [z1 . z1])))
 
   ;; Morphisms
-  (: f (→𝒮 a b)) (define f (function (lazy a) (lazy b) #hash([x0 . y0] [x1 . y0]))) (check-pred ?𝒮 f)
-  (: g (→𝒮 b c)) (define g (function (lazy b) (lazy c) #hash([y0 . z0] [y1 . z0]))) (check-pred ?𝒮 g)
+  (: f (→𝒮 a b)) (define f (function (lazy a) (lazy b) #hash([x0 . y0] [x1 . y0])))
+  (: g (→𝒮 b c)) (define g (function (lazy b) (lazy c) #hash([y0 . z0] [y1 . z0])))
 
-  ;; Preservation of domain and codomain
-  (check-true (=𝒮 (𝒫 b) (𝒫^∗ b) (dom𝒮 (𝒫^∗ f)) (𝒫^∗ (cod𝒮 f))))
-  (check-true (=𝒮 (𝒫 a) (𝒫^∗ a) (cod𝒮 (𝒫^∗ f)) (𝒫^∗ (dom𝒮 f))))
-
-  ;; Preservation of identity morphisms
-  (check-true (=𝒮      a  (dom𝒮      a)  (cod𝒮      a)))
-  (check-true (=𝒮 (𝒫^∗ a) (dom𝒮 (𝒫^∗ a)) (cod𝒮 (𝒫^∗ a))))
-
-  ;; Preservation of composable pairs
-  (check-true (=𝒮 (∘𝒮 (𝒫^∗ f) (𝒫^∗ g)) (𝒫^∗ (∘𝒮 g f)))))
+  (define check-𝐒𝐞𝐭†→𝐒𝐞𝐭 (check-ftr (compose † 𝐒𝐞𝐭) 𝐒𝐞𝐭))
+  (define check-𝒫^∗ (check-𝐒𝐞𝐭†→𝐒𝐞𝐭 𝒫^∗))
+  (check-𝒫^∗ c b a g f))
