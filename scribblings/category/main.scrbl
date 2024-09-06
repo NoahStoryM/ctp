@@ -991,7 +991,7 @@ the other. A @deftech{subobject} of @math{c} is an @tech{equivalence class} of
 @math{id_c}, then it's a @deftech{proper subobject} of @math{c}.
 
 @bold{Exercise}: Prove that there is at most one @tech{morphism} @math{k: a → b}
-such that @math{i = j∘k}. And if @tech{k} exists, it must be @tech{invertible}.
+such that @math{i = j∘k}. And if @math{k} exists, it must be @tech{invertible}.
 
 @bold{Exercise}: Prove @math{i ≅ j} in @math{𝒞/c}.
 
