@@ -965,7 +965,7 @@ viewpoint aligns with the idea that @tech{morphisms} in a @tech{category} can be
 thought of as @tech{elements}, and an application is a special case of @tech{morphism}
 @tech{composition}.
 
-@subsection{Subobject}
+@subsection{Subobject and Quotient Object}
 
 In general, when we say that @math{d} is a @deftech{substructure} of @math{c},
 this often means that there exists an @deftech{inclusion function} @math{i: d → c}.

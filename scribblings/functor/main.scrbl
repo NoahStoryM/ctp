@@ -173,6 +173,25 @@ each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
 @bold{Exercise}: Prove that @math{𝒟} is a @tech{subcategory} of @math{𝒞}.
 
+@subsection{Quotient Functor}
+
+The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} that
+@math{∀a ∈ 𝒞_0, Q(a) = a} and @math{∀f ∈ 𝒞_1, Q(f) = [f]}.
+
+@bold{Exercise}: For a @tech{functor} @math{F: 𝒞 → 𝒟} and a
+@tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.
+Prove that there is a unique @tech{functor} @math{F′: 𝒞/∼ → 𝒟} for which
+@math{F′∘Q = F}.
+
+@image["scribblings/functor/images/F′.svg"]{[picture] F′.svg}
+
+@;; TODO
+@;; @subsection{Factorization of Functors}
+@;;
+@;; This section introduce a method of expressing any @tech{functor} as a
+@;; @tech{composition} of other @tech{functors}, typically to simplify or better
+@;; understand its structure.
+
 @subsection{Forgetful Functor}
 
 A @deftech{forgetful functor} (@deftech{underlying functor} or @deftech{stripping functor})
@@ -199,25 +218,6 @@ to @tech{𝐒𝐞𝐭@_{∗}}.
 
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐒𝐞𝐭@_{∗}}
 to @tech{𝐒𝐞𝐭}.
-
-@subsection{Quotient Functor}
-
-The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} that
-@math{∀a ∈ 𝒞_0, Q(a) = a} and @math{∀f ∈ 𝒞_1, Q(f) = [f]}.
-
-@bold{Exercise}: For a @tech{functor} @math{F: 𝒞 → 𝒟} and a
-@tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.
-Prove that there is a unique @tech{functor} @math{F_0: 𝒞/∼ → 𝒟} for which
-@math{F_0∘Q = F}.
-
-@image["scribblings/functor/images/F0.svg"]{[picture] F0.svg}
-
-@;; TODO
-@;; @subsection{Factorization of Functors}
-@;;
-@;; This section introduce a method of expressing any @tech{functor} as a
-@;; @tech{composition} of other @tech{functors}, typically to simplify or better
-@;; understand its structure.
 
 @subsection{Composition Functor}
 
