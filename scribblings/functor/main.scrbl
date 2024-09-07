@@ -200,7 +200,7 @@ to @tech{𝐒𝐞𝐭@_{∗}}.
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐒𝐞𝐭@_{∗}}
 to @tech{𝐒𝐞𝐭}.
 
-@section{Quotient Functor}
+@subsection{Quotient Functor}
 
 The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} that
 @math{∀a ∈ 𝒞_0, Q(a) = a} and @math{∀f ∈ 𝒞_1, Q(f) = [f]}.
