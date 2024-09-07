@@ -993,9 +993,7 @@ the other. A @deftech{subobject} of @math{c} is an @tech{equivalence class} of
 @bold{Exercise}: Prove that a @tech{proper subobject} does not contain any
 @tech{isomorphism}.
 
-@bold{Exercise}: Let @math{i: a ↣ c} and @math{j: b ↣ c} be @tech{monic}. Prove
-that there is at most one @tech{morphism} @math{k: a → b} such that @math{i = j∘k}.
-And if @math{k} exists, it must be @tech{monic}.
+@bold{Exercise}: Prove @math{i ∼ j ⇒ a ≅ b}.
 
 @bold{Exercise}: Let @math{𝒞_c} be the @tech{full subcategory} of @math{𝒞/c} on
 @tech{monomorphisms}. Show that @math{𝒞_c} is a @tech{proset}, and a
