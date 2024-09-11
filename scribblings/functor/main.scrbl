@@ -185,13 +185,6 @@ Prove that there is a unique @tech{functor} @math{F′: 𝒞/∼ → 𝒟} for w
 
 @image["scribblings/functor/images/F′.svg"]{[picture] F′.svg}
 
-@;; TODO
-@;; @subsection{Factorization of Functors}
-@;;
-@;; This section introduce a method of expressing any @tech{functor} as a
-@;; @tech{composition} of other @tech{functors}, typically to simplify or better
-@;; understand its structure.
-
 @subsection{Forgetful Functor}
 
 A @deftech{forgetful functor} (@deftech{underlying functor} or @deftech{stripping functor})
