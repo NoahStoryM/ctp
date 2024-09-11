@@ -1027,7 +1027,7 @@ the other. A @deftech{quotient object} (@deftech{cosubobject}) of @math{c} is an
 @tech{quotient object} does not contain @math{id_c}, then it's a
 @deftech{proper quotient object} (@deftech{proper cosubobject}) of @math{c}.
 
-@bold{Exercise}: Prove that a @tech{qoutient object} in @math{𝒞} is also a
+@bold{Exercise}: Prove that a @tech{quotient object} in @math{𝒞} is also a
 @tech{subobject} in @math{𝒞@^{op}}.
 
 @bold{Exercise}: Prove that a @tech{proper quotient object} does not contain any
