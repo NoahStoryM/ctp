@@ -176,7 +176,7 @@ each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 @subsection{Quotient Functor}
 
 The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} that
-@math{∀a ∈ 𝒞_0, Q(a) = a} and @math{∀f ∈ 𝒞_1, Q(f) = [f]}.
+@math{∀a ∈ 𝒞_0, Q(a) = [a]} and @math{∀f ∈ 𝒞_1, Q(f) = [f]}.
 
 @bold{Exercise}: For a @tech{functor} @math{F: 𝒞 → 𝒟} and a
 @tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.

@@ -142,6 +142,9 @@ like this:
 
 @image["scribblings/category/images/comm-tri.svg"]{[picture] comm-tri.svg}
 
+@math{h} is saied to @deftech{factor through} any (and all) of @math{f}, @math{g},
+and @math{b}.
+
 @subsubsection{Commutative Square}
 
 A @deftech{commutative square} is a @tech{commutative diagram} that has the shape
@@ -218,9 +221,10 @@ satisfies the following properties:
 
 @itemlist[
   #:style 'ordered
+  @item{For @tech{objects} @math{a} and @math{b} in @math{𝒞}, if @math{a ∼ b},
+        then @math{id_a ∼ id_b}.}
   @item{For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, if @math{f ∼ g},
-        then they're @deftech{parallel}, i.e., @math{dom(f) = dom(g)} and
-        @math{cod(f) = cod(g)}.}
+        then @math{dom(f) ∼ dom(g)} and @math{cod(f) ∼ cod(g)}.}
   @item{For @tech{morphisms} @math{f: b → c}, @math{g: b → c}, @math{h: a → b}
         and @math{k: c → d} in @math{𝒞}, if @math{f ∼ g}, then @math{f∘h ∼ g∘h}
         and @math{k∘f ∼ k∘g}.
@@ -476,19 +480,24 @@ with the @tech{morphisms} grouped into
 
 @itemlist[
   #:style 'ordered
-  @item{The @tech{objects} of @math{𝒞/∼} are the @tech{objects} of @math{𝒞}.}
+  @item{The @tech{objects} of @math{𝒞/∼} are the
+        @tech[#:key "congruence class"]{congruence classes} of @tech{objects}
+        of @math{𝒞}.}
   @item{The @tech{morphisms} of @math{𝒞/∼} are the
         @tech[#:key "congruence class"]{congruence classes} of @tech{morphisms}
         of @math{𝒞}.}
-  @item{If @math{f: a → b} in @math{𝒞}, then @math{[f]: a → b} in @math{𝒞/∼}.}
+  @item{If @math{f: a → b} in @math{𝒞}, then @math{[f]: [a] → [b]} in @math{𝒞/∼}.}
   @item{If @math{f: a → b} and @math{g: b → c} in @math{𝒞}, then
-        @math{[g]∘[f] = [g∘f]: a → c} in @math{𝒞/∼}.}
+        @math{[g]∘[f] = [g∘f]: [a] → [c]} in @math{𝒞/∼}.}
 ]
 
 We can @racket[define] @deftech{÷} in Racket to implement the
 @tech{quotient category} @math{𝒞/∼}:
 
 @racketfile{code/category/÷.rkt}
+
+A @deftech{quotient set} can be viewed as a @tech{quotient category} of a
+@tech{discrete category}.
 
 @subsubsection{Product Category}
 
@@ -980,10 +989,6 @@ always @tech{functions}, we cannot directly say that @math{i} is an
 @tech{inclusion function}, so we generalize @math{[i]} by using @tech{monomorphism}
 instead of @tech{inclusion function}.
 
-For @tech{morphisms} @math{i: a → c} and @math{j: b → c}, if @math{i} can
-@deftech{factor through} @math{j}, it means that there exists a @tech{morphism}
-@math{k: a → b} such that @math{i} can @deftech{factor as} @math{i = j∘k}.
-
 Let @math{∼} be an @tech{equivalence relation} between @tech{monomorphisms}
 @math{i: a ↣ c} and @math{j: b ↣ c} in @math{𝒞} if each can @tech{factor through}
 the other. A @deftech{subobject} of @math{c} is an @tech{equivalence class} of
@@ -1003,5 +1008,42 @@ The following @tech{diagram} shows how to view a @tech{subset} @math{a := {1, 2,
 of @math{c := {1, 2, 3, 4, 5, 6}} as the @tech{subobject} @math{[i]} in @tech{𝐒𝐞𝐭}:
 
 @image["scribblings/category/images/subobj.svg"]{[picture] subobj.svg}
+
+Similar to how a @tech{subobject} is defined via an @tech{equivalence class} of
+@tech{monomorphisms}, a @tech{quotient object} is defined through an
+@tech{equivalence class} of @tech{epimorphisms}.
+
+In the same way that a @tech{subobject} @math{[i]} is concerned with
+@tech{inclusion function} @math{i} via @tech{monomorphisms}, a @tech{quotient object}
+@math{[p]} captures the idea of @deftech{projection function} @math{p} via
+@tech{epimorphisms}. A @tech{quotient object} corresponds to a
+@deftech{quotient structure} (@deftech{cosubstructure}), associated with an
+@tech{equivalence relations}.
+
+Let @math{∼} be an @tech{equivalence relation} between @tech{epimorphisms}
+@math{p: c ↠ b} and @math{q: c ↠ a} in @math{𝒞} if each can @tech{factor through}
+the other. A @deftech{quotient object} (@deftech{cosubobject}) of @math{c} is an
+@tech{equivalence class} of @tech{epimorphisms} under @math{∼}. If the
+@tech{quotient object} does not contain @math{id_c}, then it's a
+@deftech{proper quotient object} (@deftech{proper cosubobject}) of @math{c}.
+
+@bold{Exercise}: Prove that a @tech{qoutient object} in @math{𝒞} is also a
+@tech{subobject} in @math{𝒞@^{op}}.
+
+@bold{Exercise}: Prove that a @tech{proper quotient object} does not contain any
+@tech{isomorphism}.
+
+@bold{Exercise}: Prove @math{p ∼ q ⇒ a ≅ b}.
+
+@bold{Exercise}: Let @math{𝒞^c} be the @tech{full subcategory} of @math{c/𝒞} on
+@tech{epimorphisms}. Show that @math{𝒞^c} is a @tech{proset}, and a
+@tech{quotient object} of @math{c} is an @tech{isomorphism} @tech{class} of
+@math{𝒞^c}.
+
+The following @tech{diagram} shows how to view a @tech{quotient set}
+@math{b := {{1, 4}, {2, 5}, {3, 6}}} of @math{c := {1, 2, 3, 4, 5, 6}} as the
+@tech{quotient object} @math{[p]} in @tech{𝐒𝐞𝐭}:
+
+@image["scribblings/category/images/cosubobj.svg"]{[picture] cosubobj.svg}
 
 @subsection{Factorization System}
