@@ -168,20 +168,20 @@ defined as @tech{procedures} in later sections.
 
 @subsection{Inclusion Functor}
 
-An @deftech{inclusion functor} @math{I: 𝒟 → 𝒞} is a @tech{functor} which sends
+The @deftech{inclusion functor} @math{I: 𝒟 → 𝒞} is a @tech{functor} which sends
 each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
 @bold{Exercise}: Prove that @math{𝒟} is a @tech{subcategory} of @math{𝒞}.
 
-@subsection{Quotient Functor}
+@subsection{Projection Functor}
 
-The @deftech{quotient functor} @math{Q: 𝒞 → 𝒞/∼} is a @tech{functor} that
-@math{∀a ∈ 𝒞_0, Q(a) = [a]} and @math{∀f ∈ 𝒞_1, Q(f) = [f]}.
+The @deftech{projection functor} (@deftech{quotient functor}) @math{P: 𝒞 → 𝒞/∼}
+is a @tech{functor} that @math{∀a ∈ 𝒞_0, P(a) = [a]} and @math{∀f ∈ 𝒞_1, P(f) = [f]}.
 
 @bold{Exercise}: For a @tech{functor} @math{F: 𝒞 → 𝒟} and a
 @tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.
 Prove that there is a unique @tech{functor} @math{F′: 𝒞/∼ → 𝒟} for which
-@math{F′∘Q = F}.
+@math{F′∘P = F}.
 
 @image["scribblings/functor/images/F′.svg"]{[picture] F′.svg}
 
