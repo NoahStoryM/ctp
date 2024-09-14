@@ -192,7 +192,20 @@ The @deftech{diagonal relation} (@deftech{equality relation}) over a @tech{set}
 
 A @deftech{function} @math{f: S → T} can be viewed as the @tech{binary relation}:
 @math{{(x, f(x)) | x ∈ S}}. The @deftech{image} of @math{f}, denoted as
-@math{im(f)}, is the @tech{subset} of @math{T}: @math{{f(x) | x ∈ S}}.
+@math{im(f)}, is the @tech{subset} of @math{T}: @math{{f(x) | x ∈ S}}. @math{f}
+may have additional properties:
+
+@itemlist[
+  @item{Be @deftech{injective}: @math{f} is an @deftech{injection} if it maps
+        distinct @tech{elements} of @math{S} to distinct @tech{elements} of
+        @math{T}. Formally, @math{∀ x, y ∈ S, f(x) = f(y) ⇒ x = y}.}
+  @item{Be @deftech{surjective}: @math{f} is a @deftech{surjection} if every
+        @tech{element} of @math{T} is the @tech{image} of some @tech{element} in
+        @math{S}; formally, @math{∀ y ∈ T, ∃ x ∈ S, f(x) = y}.}
+  @item{Be @deftech{bijective}: @math{f} is a @deftech{bijection} if it is both
+        @tech{injective} and @tech{surjective}, establishing a one-to-one
+        correspondence between @math{S} and @math{T}.}
+]
 
 @subsubsection{Equivalence Relation}
 
@@ -705,7 +718,7 @@ A @deftech{monomorphism} (often abbreviated as @deftech{mono}, or called be @def
 @tech{morphism}: @math{∀(a, m), (b, m) ∈ 𝒞_2, m∘a = m∘b ⇒ a = b}. Such a condition
 ensures that no two different @tech{morphisms}, when @tech[#:key "compose"]{composed}
 with @math{m} on the right, result in the same @tech{morphism}, thereby establishing
-the @deftech{injective} nature of @math{m}.
+the @tech{injective} nature of @math{m}.
 
 @image["scribblings/category/images/mono.svg"]{[picture] mono.svg}
 
@@ -713,7 +726,7 @@ Conversely, an @deftech{epimorphism} (often abbreviated as @deftech{epi}, or cal
 @math{e} in a @tech{category} @math{𝒞} is defined as a @deftech{right cancellable}
 @tech{morphism}: @math{∀(e, x), (e, y) ∈ 𝒞_2, x∘e = y∘e ⇒ x = y}. Such a condition
 ensures that @math{e} reaches all possible endpoints in the target @tech{object}
-without duplication, thereby establishing the @deftech{surjective} nature of @math{e}.
+without duplication, thereby establishing the @tech{surjective} nature of @math{e}.
 
 @image["scribblings/category/images/epi.svg"]{[picture] epi.svg}
 
@@ -844,7 +857,7 @@ if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{�
 @bold{Exercise}: Prove that a @tech{morphism} is @tech{invertible} iff it is both
 @tech{monic} and @tech{split epic} (or is both @tech{split monic} and @tech{epic}).
 
-@bold{Exercise}: Prove that a @tech{function} is @deftech{bijective} iff it's an
+@bold{Exercise}: Prove that a @tech{function} is @tech{bijective} iff it's an
 @tech{isomorphism} in @tech{𝐒𝐞𝐭}.
 
 @subsubsection{Automorphism}
