@@ -796,8 +796,10 @@ a @deftech{left inverse} of @math{f}. @math{a} is called a @deftech{retract} of
 a @deftech{cosection} (@deftech{retraction}) of @math{f}, or a @tech{retraction}
 of @math{b} onto @math{a}.
 
-@bold{Exercise}: Prove that every @tech{epimorphism} in @tech{𝐒𝐞𝐭} is
-@tech{split epic}.
+@bold{Exercise}: Prove that every @tech{monomorphism} in @tech{𝐒𝐞𝐭} whose
+@tech{domain} is not @tech{{}} is @tech{split monic}.
+
+@bold{Exercise}: Prove that every @tech{epimorphism} in @tech{𝐒𝐞𝐭} is @tech{split epic}.
 
 Examples in @tech{𝐌𝐚𝐭𝐫}:
 
