@@ -722,6 +722,13 @@ the @tech{injective} nature of @math{m}.
 
 @image["scribblings/category/images/mono.svg"]{[picture] mono.svg}
 
+@bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
+if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
+@tech{monomorphism}.
+
+@bold{Exercise}: Prove that if @math{g∘f} is a @tech{monomorphism}, then @math{f}
+is also a @tech{monomorphism}.
+
 Conversely, an @deftech{epimorphism} (often abbreviated as @deftech{epi}, or called be @deftech{epic})
 @math{e} in a @tech{category} @math{𝒞} is defined as a @deftech{right cancellable}
 @tech{morphism}: @math{∀(e, x), (e, y) ∈ 𝒞_2, x∘e = y∘e ⇒ x = y}. Such a condition
@@ -732,6 +739,13 @@ without duplication, thereby establishing the @tech{surjective} nature of @math{
 
 @bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an
 @tech{epimorphism} in @math{𝒞^op}.
+
+@bold{Exercise}: Prove that for @tech{epimorphisms} @math{f} and @math{g},
+if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also an
+@tech{epimorphism}.
+
+@bold{Exercise}: Prove that if @math{g∘f} is an @tech{epimorphism}, then @math{g}
+is also an @tech{epimorphism}.
 
 For a @tech{morphism} @math{i: t_1 → t_2}, the notation changes based on its
 properties: @math{i: t_1 ↣ t_2} if @math{i} is @tech{monic}, @math{i: t_1 ↠ t_2}
@@ -744,20 +758,6 @@ In some cases, we use @deftech{↣} and @deftech{↠} to denote @tech{morphisms}
 two distinct @tech[#:key "class"]{classes} @math{ℰ} and @math{ℳ}, rather than
 exclusively representing @tech{monomorphisms} and @tech{epimorphisms}. Additionally,
 @deftech{⤖} indicates @tech{morphisms} from @math{ℰ ∩ ℳ}.
-
-@bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
-if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
-@tech{monomorphism}.
-
-@bold{Exercise}: Prove that if @math{g∘f} is a @tech{monomorphism}, then @math{f}
-is also a @tech{monomorphism}.
-
-@bold{Exercise}: Prove that for @tech{epimorphisms} @math{f} and @math{g},
-if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also an
-@tech{epimorphism}.
-
-@bold{Exercise}: Prove that if @math{g∘f} is an @tech{epimorphism}, then @math{g}
-is also an @tech{epimorphism}.
 
 @subsection{Split Morphism}
 
