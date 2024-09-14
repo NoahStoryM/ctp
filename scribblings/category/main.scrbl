@@ -722,6 +722,10 @@ the @tech{injective} nature of @math{m}.
 
 @image["scribblings/category/images/mono.svg"]{[picture] mono.svg}
 
+@bold{Exercise}: Prove that every @tech{monomorphism} in @tech{𝐒𝐞𝐭} is @tech{injective}.
+
+@bold{Exercise}: Prove that every @tech{injection} is @tech{monic} in @tech{𝐒𝐞𝐭}.
+
 @bold{Exercise}: Prove that for @tech{monomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also a
 @tech{monomorphism}.
@@ -736,6 +740,10 @@ ensures that @math{e} reaches all possible endpoints in the target @tech{object}
 without duplication, thereby establishing the @tech{surjective} nature of @math{e}.
 
 @image["scribblings/category/images/epi.svg"]{[picture] epi.svg}
+
+@bold{Exercise}: Prove that every @tech{epimorphism} in @tech{𝐒𝐞𝐭} is @tech{surjective}.
+
+@bold{Exercise}: Prove that every @tech{surjection} is @tech{epic} in @tech{𝐒𝐞𝐭}.
 
 @bold{Exercise}: Prove that a @tech{monomorphism} in @math{𝒞} is an
 @tech{epimorphism} in @math{𝒞^op}.
@@ -788,6 +796,9 @@ a @deftech{left inverse} of @math{f}. @math{a} is called a @deftech{retract} of
 a @deftech{cosection} (@deftech{retraction}) of @math{f}, or a @tech{retraction}
 of @math{b} onto @math{a}.
 
+@bold{Exercise}: Prove that every @tech{epimorphism} in @tech{𝐒𝐞𝐭} is
+@tech{split epic}.
+
 Examples in @tech{𝐌𝐚𝐭𝐫}:
 
 @racketblock[
@@ -822,6 +833,10 @@ In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f@
 and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
 if there exists an @tech{isomorphism} between them.
+
+@bold{Exercise}: Prove that every @tech{isomorphism} in @tech{𝐒𝐞𝐭} is @tech{bijective}.
+
+@bold{Exercise}: Prove that every @tech{bijection} is @tech{invertible} in @tech{𝐒𝐞𝐭}.
 
 @tech{Isomorphisms} are crucial because they imply that the @tech{objects} they
 connect can be interchanged in any context within the @tech{category}. This means
