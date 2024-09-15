@@ -160,7 +160,7 @@ like this:
 
 @image["scribblings/category/images/comm-sqr.svg"]{[picture] comm-sqr.svg}
 
-If there is a @tech{morphism} @math{l} making @math{f = l∘h} and @math{g = k∘l},
+If there is a @tech{morphism} @math{l} making @math{h = l∘f} and @math{k = g∘l},
 then @math{l} is a @deftech{lift} (@deftech{diagonal fill-in} or @deftech{filler})
 in the @tech{commutative square}:
 
