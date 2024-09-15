@@ -212,10 +212,10 @@ may have additional properties:
 @itemlist[
   @item{Be @deftech{injective}: @math{f} is an @deftech{injection} if it maps
         distinct @tech{elements} of @math{S} to distinct @tech{elements} of
-        @math{T}. Formally, @math{∀ x, y ∈ S, f(x) = f(y) ⇒ x = y}.}
+        @math{T}. Formally, @math{∀x, y ∈ S, f(x) = f(y) ⇒ x = y}.}
   @item{Be @deftech{surjective}: @math{f} is a @deftech{surjection} if every
         @tech{element} of @math{T} is the @tech{image} of some @tech{element} in
-        @math{S}; formally, @math{∀ y ∈ T, ∃ x ∈ S, f(x) = y}.}
+        @math{S}; formally, @math{∀y ∈ T, ∃x ∈ S, f(x) = y}.}
   @item{Be @deftech{bijective}: @math{f} is a @deftech{bijection} if it is both
         @tech{injective} and @tech{surjective}, establishing a one-to-one
         correspondence between @math{S} and @math{T}.}
@@ -248,7 +248,7 @@ satisfies the following properties:
 
 @itemlist[
   #:style 'ordered
-  @item{@math{∀a, b ∈ 𝒞_0, a ∼ b ⇒ id@_{a} ∼ id@_{b}}.}
+  @item{@math{∀a, b ∈ 𝒞_0, a ∼ b ⇒ id_a ∼ id_b}.}
   @item{@math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ dom(f) ∼ dom(g) ∧ cod(f) ∼ cod(g)}.}
   @item{@math{∀f, g ∈ Hom@_{𝒞}(b, c), ∀h ∈ Hom@_{𝒞}(a, b), ∀k ∈ Hom@_{𝒞}(c, d),
               f ∼ g ⇒ f∘h ∼ g∘h ∧ k∘f ∼ k∘g}.
