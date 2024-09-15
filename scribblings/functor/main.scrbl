@@ -388,8 +388,8 @@ The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f
 
 @subsection{Hom Functor}
 
-For @tech{morphisms} @math{f: a → x}, @math{i: b → a} and @math{j: x → y}, we can
-@racket[define] a @tech{function}
+For @tech{morphisms} @math{f: a → x}, @math{i: b → a} and @math{j: x → y} in
+@math{𝒞}, we can @racket[define] a @tech{function}
 @math{Hom@_{𝒞}(i, j): Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
 @math{Hom@_{𝒞}(i, j)(f) := j∘f∘i}.
 
