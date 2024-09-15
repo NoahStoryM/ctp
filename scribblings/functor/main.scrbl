@@ -499,7 +499,7 @@ and @code{get-an-element}.
   g)
 ]
 
-@bold{Exercise}: Prove that @math{H = G@^{–1} and G = H@^{–1}}.
+@bold{Exercise}: Prove @math{H = G@^{–1}} and @math{G = H@^{–1}}.
 
 @math{H} is equal to the @tech{composite} of the @tech{slice functor} @math{𝒞/-}
 and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
@@ -517,7 +517,7 @@ and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
   Hg)
 ]
 
-@bold{Exercise}: Prove that @math{H = U∘𝒞/-}.
+@bold{Exercise}: Prove @math{H = U∘𝒞/-}.
 
 Having explored the @tech{Cayley's representation} of @math{𝒞}, we now turn our
 attention to its @tech{opposite category} @math{𝒞^op}:
@@ -539,7 +539,7 @@ attention to its @tech{opposite category} @math{𝒞^op}:
   f)
 ]
 
-@bold{Exercise}: Prove that @math{H = G@^{–1} and G = H@^{–1}}.
+@bold{Exercise}: Prove @math{H = G@^{–1}} and @math{G = H@^{–1}}.
 
 @math{H} is equal to the @tech{composite} of the @tech{coslice functor} @math{-/𝒞}
 and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
@@ -557,7 +557,7 @@ and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
   Hf)
 ]
 
-@bold{Exercise}: Prove that @math{H = U∘-/𝒞}.
+@bold{Exercise}: Prove @math{H = U∘-/𝒞}.
 
 @subsection{Action}
 

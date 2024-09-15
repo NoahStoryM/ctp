@@ -228,7 +228,7 @@ Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}
 
 @image["scribblings/category/images/eq-cls.svg"]{[picture] eq-cls.svg}
 
-@bold{Exercise}: Prove that @math{x ∼ y ⇒ [x] = [y]}.
+@bold{Exercise}: Prove @math{x ∼ y ⇒ [x] = [y]}.
 
 @subsubsection{Congruence Relation}
 
@@ -239,21 +239,17 @@ satisfies the following properties:
 
 @itemlist[
   #:style 'ordered
-  @item{For @tech{objects} @math{a} and @math{b} in @math{𝒞}, if @math{a ∼ b},
-        then @math{id_a ∼ id_b}.}
-  @item{For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, if @math{f ∼ g},
-        then @math{dom(f) ∼ dom(g)} and @math{cod(f) ∼ cod(g)}.}
-  @item{For @tech{morphisms} @math{f: b → c}, @math{g: b → c}, @math{h: a → b}
-        and @math{k: c → d} in @math{𝒞}, if @math{f ∼ g}, then @math{f∘h ∼ g∘h}
-        and @math{k∘f ∼ k∘g}.
+  @item{@math{∀a, b ∈ 𝒞_0, a ∼ b ⇒ id@_{a} ∼ id@_{b}}.}
+  @item{@math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ dom(f) ∼ dom(g) ∧ cod(f) ∼ cod(g)}.}
+  @item{@math{∀f, g ∈ Hom@_{𝒞}(b, c), ∀h ∈ Hom@_{𝒞}(a, b), ∀k ∈ Hom@_{𝒞}(c, d),
+              f ∼ g ⇒ f∘h ∼ g∘h ∧ k∘f ∼ k∘g}.
 
         @image["scribblings/category/images/congruence_1.svg"]{[picture] congruence_1.svg}}
 ]
 
-@bold{Exercise}: Show that we can replace the second properties with: "For
-@tech{morphisms} @math{f_1: a → b}, @math{f_2: a → b}, @math{g_1: b → c}
-and @math{g_2: b → c} in @math{𝒞}, if @math{f_1 ∼ f_2} and @math{g_1 ∼ g_2},
-then @math{g_1∘f_1 ∼ g_2∘f_2}.".
+@bold{Exercise}: Show that we can replace the second properties with:
+@math{∀f_1, f_2 ∈ Hom@_{𝒞}(a, b), ∀g_1, g_2 ∈ Hom@_{𝒞}(b, c),
+      f_1 ∼ f_2 ∧ g_1 ∼ g_2 ⇒ g_1∘f_1 ∼ g_2∘f_2}.
 
 @image["scribblings/category/images/congruence_2.svg"]{[picture] congruence_2.svg}
 
@@ -446,7 +442,7 @@ to the @tech{composition rules}. If we reverse all the @tech{arrows} in the
 the @tech{composition rules}, so this new @tech{directed graph} is also a
 @tech{category} @math{𝒞^op}.
 
-@bold{Exercise}: Prove that @math{(𝒞^op)^op = 𝒞}.
+@bold{Exercise}: Prove @math{(𝒞^op)^op = 𝒞}.
 
 We can @racket[define] @deftech{†} in Racket to implement the
 @tech{opposite category} @math{𝒞^op}:
@@ -535,7 +531,7 @@ two @tech{∘}s represent @tech{compose}s in the individual @tech{categories},
 while the third @tech{∘} represents @tech{compose} in the @tech{product category}.
 }
 
-@bold{Exercise}: Prove that @math{(g_0∘f_0)×(g_1∘f_1) = (g_0×g_1)∘(f_0×f_1)}.
+@bold{Exercise}: Prove @math{(g_0∘f_0)×(g_1∘f_1) = (g_0×g_1)∘(f_0×f_1)}.
 
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
@@ -587,7 +583,7 @@ but @tech{commutative squares}.
 
 @image["scribblings/category/images/arr-cat_3.svg"]{[picture] arr-cat_3.svg}
 
-@bold{Exercise}: Prove that @math{(k∘i, l∘j) = (k, l)∘(i, j)}.
+@bold{Exercise}: Prove @math{(k∘i, l∘j) = (k, l)∘(i, j)}.
 
 In the following code, we create an @tech{arrow category} to which @tech{𝐏𝐚𝐢𝐫}
 gives rise:
@@ -693,7 +689,7 @@ the @tech{coslice category} @math{m/ℳ} in this way:
   ((Sli† m) domℳ codℳ ∘ℳ ?ℳ =ℳ))
 ]
 
-@bold{Exercise}: Prove that @math{ℳ^op/m = (m/ℳ)^op}.
+@bold{Exercise}: Prove @math{ℳ^op/m = (m/ℳ)^op}.
 
 @bold{Exercise}: Try to @racket[define] @tech{Sli†} by using @tech{†} and @tech{Sli}.
 
@@ -945,7 +941,7 @@ in @math{𝒞}, then @math{a ≅ b}.
 @image["scribblings/category/images/0→1_1.svg"]{[picture] 0→1_1.svg}
 @image["scribblings/category/images/0→1_2.svg"]{[picture] 0→1_2.svg}
 
-@bold{Exercise}: Prove that @math{!_1=⟨⟩_0}.
+@bold{Exercise}: Prove @math{!_1=⟨⟩_0}.
 
 @bold{Exercise}: Prove that an @tech{initial object} in @math{𝒞} is also a
 @tech{terminal object} in @math{𝒞^op}.
