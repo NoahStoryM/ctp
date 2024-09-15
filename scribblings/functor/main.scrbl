@@ -277,8 +277,8 @@ A @deftech{monoid homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
 
 The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where
 @tech{objects} are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
-@tech{𝐌𝐨𝐧} is @tech{equivalent} to the @tech{category} of @tech{OOCs}, denoted as
-@deftech{𝐎𝐨𝐜}.
+@tech{𝐌𝐨𝐧} is @tech{equivalent} to the @tech{category} of @tech{OOCs}, denoted
+as @deftech{𝐎𝐨𝐜}.
 
 @subsection{Category of Groups}
 
@@ -288,8 +288,8 @@ A @deftech{group homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
 
 The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where
 @tech{objects} are @tech{groups} and @tech{morphisms} are @tech{group homomorphisms}.
-@tech{𝐆𝐫𝐩} is @tech{equivalent} to the @tech{category} of @tech{OOGs}, denoted as
-@deftech{𝐎𝐨𝐠}.
+@tech{𝐆𝐫𝐩} is @tech{equivalent} to the @tech{category} of @tech{OOGs}, denoted
+as @deftech{𝐎𝐨𝐠}.
 
 @subsection{Category of Prosets}
 
@@ -337,7 +337,7 @@ introduced in detail in the next chapter.
 
 @subsection{Powerset Functor}
 
-The @deftech{powerset} of a @tech{set} @math{s}, denoted as @math{𝒫(s)}, is the
+The @deftech{powerset} of a @tech{set} @math{s}, denoted by @math{𝒫(s)}, is the
 @tech{set} of all @tech{subsets} of @math{s}.
 
 @racketfile{code/function/𝒫.rkt}
@@ -351,7 +351,7 @@ For a @tech{function} @math{f: a → b}, let @math{a_0} be a @tech{subset} of
 @subsubsection{Direct Image Functor}
 
 The @deftech{direct image} (@deftech{existential image}) of @math{a_0}, denoted
-as @math{f@_{∗}(a_0)}, is the @tech{subset} of @math{b}:
+by @math{f@_{∗}(a_0)}, is the @tech{subset} of @math{b}:
 @math{f@_{∗}(a_0) := {f(x) | x ∈ a_0}}.
 
 The @deftech{direct image functor} (@deftech{existential image functor})
@@ -363,7 +363,7 @@ The @deftech{direct image functor} (@deftech{existential image functor})
 
 @subsubsection{Preimage Functor}
 
-The @deftech{preimage} (@deftech{inverse image}) of @math{b_0}, denoted as
+The @deftech{preimage} (@deftech{inverse image}) of @math{b_0}, denoted by
 @math{f@^{∗}(b_0)}, is the @tech{subset} of @math{a}:
 @math{f@^{∗}(b_0) := {x ∈ a | f(x) ∈ b_0}}.
 
@@ -376,7 +376,7 @@ takes @math{f} to @math{f@^{∗}}: @math{𝒫@^{∗}(f) = f@^{∗}}.
 
 @subsubsection{Universal Image Functor}
 
-The @deftech{universal image} of @math{a_0}, denoted as @math{f@_{!}(a_0)}, is
+The @deftech{universal image} of @math{a_0}, denoted by @math{f@_{!}(a_0)}, is
 the @tech{subset} of @math{b}: @math{f@_{!}(a_0) := {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
 
 The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f@_{!}}:

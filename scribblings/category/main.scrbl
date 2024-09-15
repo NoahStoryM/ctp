@@ -78,14 +78,14 @@ they adhere to the @deftech{composition rules}:
 
         For @tech{composable pairs} @math{(f, g)} and @math{(g, h)} in @math{𝒞},
         @tech{composition} is @deftech{associative}: @math{(h∘g)∘f = h∘(g∘f)},
-        denoted as @math{h∘g∘f}.
+        denoted by @math{h∘g∘f}.
 
         @image["scribblings/category/images/C-2.svg"]{[picture] C-2.svg}}
   @item{Existence of @deftech{identity morphism}s
 
         Every @tech{object} has an associated @tech{identity morphism}.
         For an @tech{object} @math{a} in @math{𝒞}, its @tech{identity morphism}
-        is denoted as @math{id_a} or @math{1_a}, and @math{a = dom(id_a) = cod(id_a)}.
+        is denoted by @math{id_a} or @math{1_a}, and @math{a = dom(id_a) = cod(id_a)}.
 
         @image["scribblings/category/images/C-3.svg"]{[picture] C-3.svg}}
   @item{@tech{Composition} and @tech{identity morphisms}
@@ -96,7 +96,7 @@ they adhere to the @deftech{composition rules}:
   ]
 
 For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set},
-denoted as @math{Hom@_{𝒞}(a, x)}, is the @tech{set} of all @tech{morphisms} from
+denoted by @math{Hom@_{𝒞}(a, x)}, is the @tech{set} of all @tech{morphisms} from
 @math{a} to @math{x}:
 @math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom(f) = a ∧ cod(f) = x}}.
 
@@ -192,11 +192,11 @@ A @deftech{binary relation} from a @tech{set} @math{S} to a @tech{set} @math{T}
 is a @tech{relation} over @math{S×T}.
 
 The @deftech{diagonal relation} (@deftech{equality relation}) over a @tech{set}
-@math{S}, denoted as @math{Δ_S}, is the @tech{binary relation} over @math{S}:
+@math{S}, denoted by @math{Δ_S}, is the @tech{binary relation} over @math{S}:
 @math{{(x, x) | x ∈ S}}.
 
 A @deftech{function} @math{f: S → T} can be viewed as the @tech{binary relation}:
-@math{{(x, f(x)) | x ∈ S}}. The @deftech{image} of @math{f}, denoted as
+@math{{(x, f(x)) | x ∈ S}}. The @deftech{image} of @math{f}, denoted by
 @math{im(f)}, is the @tech{subset} of @math{T}: @math{{f(x) | x ∈ S}}. @math{f}
 may have additional properties:
 
@@ -223,7 +223,7 @@ partitions @math{S} into disjoint @deftech{class}es, known as
 For example, given an @tech{equivalence relation} @math{∼} on a @tech{set} @math{S}
 and an @tech{element} @math{x ∈ S}, the @tech{equivalence class} of @math{x} under
 @math{∼} is the @tech{set} of all @tech{elements} in @math{S} that are related to
-@math{x}. This is denoted as @math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}.
+@math{x}. This is denoted by @math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}.
 Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}.
 
 @image["scribblings/category/images/eq-cls.svg"]{[picture] eq-cls.svg}
@@ -276,7 +276,7 @@ A @deftech{monoid} (@deftech{monoidal set}) @math{(S, ∘, s)} is a @tech{set}
 @deftech{identity element} @math{s}.
 
 A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}.
-In @tech{OOC}, there is only a single @tech{object}, usually denoted as @deftech{∗},
+In @tech{OOC}, there is only a single @tech{object}, usually denoted by @deftech{∗},
 and @tech{morphisms} are defined within the context of @tech{∗}.
 
 @image["scribblings/category/images/ooc.svg"]{[picture] ooc.svg}
@@ -832,8 +832,8 @@ and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphis
 
 @image["scribblings/category/images/iso.svg"]{[picture] iso.svg}
 
-In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted as @math{f@^{–1}},
-and @math{f} is the @tech{inverse} of @math{g}, denoted as @math{g@^{–1}}.
+In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted by @math{f@^{–1}},
+and @math{f} is the @tech{inverse} of @math{g}, denoted by @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
 if there exists an @tech{isomorphism} between them.
 
@@ -916,7 +916,8 @@ A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
 
 An @deftech{@deftech{initial} object} @deftech{0} in a @tech{category} @math{𝒞}
 is an @tech{object} from which there exists exactly one @tech{morphism} to every
-other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@deftech{!}_a: 0 → a}.
+other @tech{object} @math{a} in @math{𝒞}, usually denoted by
+@math{@deftech{!}_a: 0 → a}.
 
 @bold{Exercise}: Prove that if @math{a} and @math{b} are @tech{initial objects}
 in @math{𝒞}, then @math{a ≅ b}.
@@ -930,7 +931,8 @@ in @math{𝒞}, then @math{a ≅ b}.
 
 Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{category}
 @math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism} from
-every other @tech{object} @math{a} in @math{𝒞}, usually denoted as @math{@deftech{⟨⟩}_a: a → 1}.
+every other @tech{object} @math{a} in @math{𝒞}, usually denoted by
+@math{@deftech{⟨⟩}_a: a → 1}.
 
 @bold{Exercise}: Prove that if @math{a} and @math{b} are @tech{terminal objects}
 in @math{𝒞}, then @math{a ≅ b}.
@@ -993,7 +995,7 @@ denoted as @deftech{𝐒𝐞𝐭@_{∗}}, is @tech{isomorphic} to the @tech{cosl
 
 In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math{f: A → B}.
 Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},
-denoted as @math{f(x)}. In @tech{category theory}, we can express this application
+denoted by @math{f(x)}. In @tech{category theory}, we can express this application
 using @tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A}, then
 the application of @math{f} to @math{x} is represented by the @tech{composite}
 of @math{x} and @math{f}, written as @math{f∘x}. Thus, the notation @math{f(x)}
