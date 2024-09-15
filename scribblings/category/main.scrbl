@@ -167,6 +167,15 @@ in the @tech{commutative square}:
 @image["scribblings/category/images/lift_1.svg"]{[picture] lift_1.svg}
 @image["scribblings/category/images/lift_2.svg"]{[picture] lift_2.svg}
 
+If a @tech{lift} exists in any @tech{commutative square} involving @math{f} and
+@math{g}, then we say that @math{f} is @deftech{weakly orthogonal} to @math{g},
+or that @math{(f, g)} has the @deftech{lifting property}, denoted by
+@math{f@deftech{↓}g} or @math{f@deftech{⧄}g}. In this case, @math{f} has the
+@deftech{left lifting property} with respect to @math{g}, and @math{g} has the
+@deftech{right lifting property} with respect to @math{f}. If the @tech{lift} is
+unique, we say that @math{f} is @deftech{orthogonal} to @math{g}, denoted by
+@math{f@deftech{⊥}g}.
+
 @subsection{Relation}
 
 A @deftech{relation} over some @tech{sets} is a @tech{subset} of
