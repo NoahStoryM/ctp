@@ -1089,3 +1089,32 @@ The following @tech{diagram} shows how to view a @tech{quotient set}
 @image["scribblings/category/images/cosubobj.svg"]{[picture] cosubobj.svg}
 
 @subsection{Factorization System}
+
+A @deftech{weak factorization system} (@deftech{WFS}) @math{(ℰ, ℳ)} in @math{𝒞}
+consists of two @tech[#:key "class"]{classes} @math{ℰ} and @math{ℳ} of
+@tech{morphisms} in @math{𝒞}, such that:
+
+@itemlist[
+  @item{@math{∀f ∈ 𝒞_1, ∃e ∈ ℰ, ∃m ∈ ℳ, f = m∘e}.}
+  @item{@math{∀e ∈ ℰ, ∀m ∈ ℳ, e⧄m}.}
+]
+
+@bold{Exercise}: Prove that every @tech{isomorphism} is in @math{ℰ ∩ ℳ}.
+
+@bold{Exercise}: Prove @math{∀e_1, e_2 ∈ ℰ, cod(e_1) = dom(e_2) ⇒ e_2∘e_1 ∈ ℰ}.
+
+@bold{Exercise}: Prove @math{∀m_1, m_2 ∈ ℳ, cod(m_1) = dom(m_2) ⇒ m_2∘m_1 ∈ ℳ}.
+
+@bold{Exercise}: Prove @math{∀e ∈ ℰ, ∀m ∈ 𝒞_1, e⧄m ⇒ m ∈ ℳ}.
+
+@bold{Exercise}: Prove @math{∀e ∈ 𝒞_1, ∀m ∈ ℳ, e⧄m ⇒ e ∈ ℰ}.
+
+An @deftech{orthogonal factorization system} (@deftech{OFS}) is a @tech{WFS}
+where @math{∀e ∈ ℰ, ∀m ∈ ℳ, e⊥m}.
+
+@bold{Exercise}: If a @tech{morphism} @math{f} can be factored as @math{m_1∘e_1}
+and @math{m_2∘e_2}, then show that there exists a unique @tech{morphism} @math{l}
+such that @math{e_2 = l∘e_1} and @math{m_1 = m_2∘l}; moreover, @math{l} is an
+@tech{isomorphism}.
+
+@image["scribblings/category/images/l.svg"]{[picture] l.svg}
