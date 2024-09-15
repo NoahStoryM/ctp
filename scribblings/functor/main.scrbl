@@ -388,11 +388,6 @@ The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f
 
 @subsection{Hom Functor}
 
-For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set},
-denoted as @math{Hom@_{𝒞}(a, x)}, is the @tech{set} of all @tech{morphisms} from
-@math{a} to @math{x}:
-@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom(f) = a ∧ cod(f) = x}}.
-
 For @tech{morphisms} @math{f: a → x}, @math{i: b → a} and @math{j: x → y}, we can
 @racket[define] a @tech{function}
 @math{Hom@_{𝒞}(i, j): Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where

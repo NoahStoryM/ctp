@@ -95,6 +95,11 @@ they adhere to the @deftech{composition rules}:
         @image["scribblings/category/images/C-4.svg"]{[picture] C-4.svg}}
   ]
 
+For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set},
+denoted as @math{Hom@_{𝒞}(a, x)}, is the @tech{set} of all @tech{morphisms} from
+@math{a} to @math{x}:
+@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom(f) = a ∧ cod(f) = x}}.
+
 @margin-note{
 In traditional @tech{category theory}, @tech{categories} are often named after
 their @tech{objects}.
