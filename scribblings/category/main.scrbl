@@ -736,6 +736,10 @@ In this section, we explore the fundamental idea of defining properties a
 This approach, known as the @deftech{categorical definition}, allows us to capture
 and express important concepts using the language of @tech{category theory}.
 
+Note that many @tech{categorical definitions} can also be described in terms of
+@tech{hom sets}. Readers will be invited to prove the @tech{equivalence} of these
+two approaches (i.e., the iff statements).
+
 @subsection{Endomorphism}
 
 For a @tech{morphism} @math{f}, it is an @deftech{endomorphism} if @math{dom(f) = cod(f)}.
@@ -759,7 +763,11 @@ the @tech{injective} nature of @math{m}.
 
 @image["scribblings/category/images/mono.svg"]{[picture] mono.svg}
 
-@bold{Exercise}: Prove that every @tech{monomorphism} in @tech{𝐒𝐞𝐭} is @tech{injective}.
+@bold{Exercise}: Prove that a @tech{morphism} @math{j: x → y} is @tech{monic} iff
+for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{injective}.
+
+@bold{Exercise}: Prove that every @tech{monomorphism} in @tech{𝐒𝐞𝐭} is
+@tech{injective}.
 
 @bold{Exercise}: Prove that every @tech{injection} is @tech{monic} in @tech{𝐒𝐞𝐭}.
 
@@ -778,7 +786,11 @@ without duplication, thereby establishing the @tech{surjective} nature of @math{
 
 @image["scribblings/category/images/epi.svg"]{[picture] epi.svg}
 
-@bold{Exercise}: Prove that every @tech{epimorphism} in @tech{𝐒𝐞𝐭} is @tech{surjective}.
+@bold{Exercise}: Prove that a @tech{morphism} @math{i: b → a} is @tech{epic} iff
+for any @tech{object} @math{x}, @math{Hom(i, x)} is @tech{injective}.
+
+@bold{Exercise}: Prove that every @tech{epimorphism} in @tech{𝐒𝐞𝐭} is
+@tech{surjective}.
 
 @bold{Exercise}: Prove that every @tech{surjection} is @tech{epic} in @tech{𝐒𝐞𝐭}.
 
@@ -832,6 +844,12 @@ a @deftech{left inverse} of @math{f}. @math{a} is called a @deftech{retract} of
 @math{b}, @math{f} is called a @deftech{section} of @math{g}, @math{g} is called
 a @deftech{cosection} (@deftech{retraction}) of @math{f}, or a @tech{retraction}
 of @math{b} onto @math{a}.
+
+@bold{Exercise}: Prove that a @tech{morphism} @math{i: b → a} is @tech{split monic}
+iff for any @tech{object} @math{x}, @math{Hom(i, x)} is @tech{surjective}.
+
+@bold{Exercise}: Prove that a @tech{morphism} @math{j: x → y} is @tech{split epic}
+iff for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{surjective}.
 
 @bold{Exercise}: Prove that every @tech{monomorphism} in @tech{𝐒𝐞𝐭} whose
 @tech{domain} is not @tech{{}} is @tech{split monic}.
@@ -909,7 +927,16 @@ Examples in @tech{𝐏𝐚𝐢𝐫}:
 if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{–1}∘g@^{–1}}.
 
 @bold{Exercise}: Prove that a @tech{morphism} is @tech{invertible} iff it is both
-@tech{monic} and @tech{split epic} (or is both @tech{split monic} and @tech{epic}).
+@tech{monic} and @tech{split epic}.
+
+@bold{Exercise}: Prove that a @tech{morphism} is @tech{invertible} iff it is both
+@tech{split monic} and @tech{epic}.
+
+@bold{Exercise}: Prove that a @tech{morphism} @math{f: a → b} is @tech{invertible}
+iff for any @tech{object} @math{c}, @math{Hom(c, f)} is @tech{bijective}.
+
+@bold{Exercise}: Prove that a @tech{morphism} @math{f: a → b} is @tech{invertible}
+iff for any @tech{object} @math{c}, @math{Hom(f, c)} is @tech{bijective}.
 
 @bold{Exercise}: Prove that a @tech{function} is @tech{bijective} iff it's an
 @tech{isomorphism} in @tech{𝐒𝐞𝐭}.
