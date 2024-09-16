@@ -1099,6 +1099,9 @@ consists of two @tech[#:key "class"]{classes} @math{ℰ} and @math{ℳ} of
   @item{@math{∀e ∈ ℰ, ∀m ∈ ℳ, e⧄m}.}
 ]
 
+@bold{Exercise}: Prove that a @tech{WFS} @math{(ℰ, ℳ)} in @math{𝒞} is also a
+@tech{WFS} @math{(ℳ, ℰ)} in @math{𝒞@^{op}}.
+
 @bold{Exercise}: Prove that every @tech{isomorphism} is in @math{ℰ ∩ ℳ}.
 
 @bold{Exercise}: Prove @math{∀e_1, e_2 ∈ ℰ, cod(e_1) = dom(e_2) ⇒ e_2∘e_1 ∈ ℰ}.
