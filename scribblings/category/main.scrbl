@@ -171,6 +171,14 @@ or that @math{(f, g)} has the @deftech{lifting property}, denoted by
 unique, we say that @math{f} is @deftech{orthogonal} to @math{g}, denoted by
 @math{f@deftech{⊥}g}.
 
+For a @tech{class} @math{𝒞} of @tech{morphisms}, its @deftech{right orthogonal class}
+is denoted by @math{𝒞@^{⊥}} or @math{𝒞@^{↓}}, where
+@math{𝒞@^{⊥} := {g | f⊥g ∀f ∈ 𝒞}}, and its @deftech{left orthogonal class}
+is denoted by @math{@^{⊥}𝒞} or @math{𝒞@^{↑}}, where
+@math{@^{⊥}𝒞 := {f | f⊥g ∀g ∈ 𝒞}}.
+
+@bold{Exercise}: Prove @math{𝒞@^{↓↑↓} = 𝒞@^{↓}} and @math{𝒞@^{↑↓↑} = 𝒞@^{↑}}.
+
 @subsection{Relation}
 
 A @deftech{relation} over some @tech{sets} is a @tech{subset} of
@@ -1170,7 +1178,7 @@ consists of two @tech[#:key "class"]{classes} @math{ℰ} and @math{ℳ} of
 
 @itemlist[
   @item{@math{∀f ∈ 𝒞_1, ∃e ∈ ℰ, ∃m ∈ ℳ, f = m∘e}.}
-  @item{@math{∀e ∈ ℰ, ∀m ∈ ℳ, e⧄m}.}
+  @item{@math{ℰ⧄ℳ}: @math{∀e ∈ ℰ, ∀m ∈ ℳ, e⧄m}.}
 ]
 
 @bold{Exercise}: Prove that a @tech{WFS} @math{(ℰ, ℳ)} in @math{𝒞} is also a
@@ -1187,7 +1195,7 @@ consists of two @tech[#:key "class"]{classes} @math{ℰ} and @math{ℳ} of
 @bold{Exercise}: Prove @math{∀e ∈ 𝒞_1, ∀m ∈ ℳ, e⧄m ⇒ e ∈ ℰ}.
 
 An @deftech{orthogonal factorization system} (@deftech{OFS}) is a @tech{WFS}
-where @math{∀e ∈ ℰ, ∀m ∈ ℳ, e⊥m}.
+where @math{ℰ⊥ℳ}: @math{∀e ∈ ℰ, ∀m ∈ ℳ, e⊥m}.
 
 @bold{Exercise}: If a @tech{morphism} @math{f} can be factored as @math{m_1∘e_1}
 and @math{m_2∘e_2}, then show that there exists a unique @tech{morphism} @math{l}
