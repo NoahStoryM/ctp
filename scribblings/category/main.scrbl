@@ -744,11 +744,15 @@ two approaches (i.e., the iff statements).
 
 For a @tech{morphism} @math{f}, it is an @deftech{endomorphism} if @math{dom(f) = cod(f)}.
 
+The following @tech{diagram} is @tech{commutative}:
+
 @image["scribblings/category/images/endo.svg"]{[picture] endo.svg}
 
 @subsubsection{Idempotent}
 
 For an @tech{endomorphism} @math{f}, it is an @deftech{idempotent} if @math{f = f∘f}.
+
+The following @tech{diagram} is @tech{commutative}:
 
 @image["scribblings/category/images/idem.svg"]{[picture] idem.svg}
 
@@ -837,6 +841,8 @@ For @tech{morphisms} @math{f: a ↣ b} and @math{g: b ↠ a} in @math{𝒞}, if
 (often abbreviated as @deftech{split epi}, or called be @deftech{split epic}),
 and @math{f∘g} is a @deftech{split idempotent}.
 
+The following @tech{diagram} is @tech{commutative}:
+
 @image["scribblings/category/images/split.svg"]{[picture] split.svg}
 
 In this case, @math{f} is a @deftech{right inverse} of @math{g}, and @math{g} is
@@ -883,6 +889,8 @@ Examples in @tech{𝐌𝐚𝐭𝐫}:
 For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if @math{g∘f = id_a}
 and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphism}s
 (often abbreviated as @deftech{iso}, or called be @deftech{isic} or @deftech{invertible}).
+
+The following @tech{diagram} is @tech{commutative}:
 
 @image["scribblings/category/images/iso.svg"]{[picture] iso.svg}
 
@@ -944,6 +952,8 @@ iff for any @tech{object} @math{c}, @math{Hom(f, c)} is @tech{bijective}.
 @subsubsection{Automorphism}
 
 An @deftech{automorphism} is an @tech{invertible} @tech{endomorphism}.
+
+The following @tech{diagrams} are @tech{commutative}:
 
 @image["scribblings/category/images/auto_1.svg"]{[picture] auto_1.svg}
 @image["scribblings/category/images/auto_2.svg"]{[picture] auto_2.svg}
@@ -1012,6 +1022,8 @@ in @math{𝒞}, then @math{a ≅ b}.
 
 @bold{Exercise}: Prove that any @deftech{singleton set} @deftech{{∗}} is a
 @tech{terminal object} in @tech{𝐒𝐞𝐭}.
+
+The following @tech{diagrams} are @tech{commutative}:
 
 @image["scribblings/category/images/0→1_1.svg"]{[picture] 0→1_1.svg}
 @image["scribblings/category/images/0→1_2.svg"]{[picture] 0→1_2.svg}
