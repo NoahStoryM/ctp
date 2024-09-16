@@ -907,8 +907,10 @@ A @deftech{replete subcategory} is a @tech{subcategory} that includes all
 @tech{objects} in the @tech{subcategory}, as well as the corresponding
 @tech{isomorphisms}. Formally, let @math{𝒟} be a @tech{replete subcategory} of
 @math{𝒞}, for any @tech{object} @math{a} in @math{𝒟}, if there is an
-@tech{isomorphism} @math{f: a → b} in @math{𝒞}, then @math{b}, @math{f}, and
-@math{f@^{–1}} must also be in @math{𝒟}.
+@tech{isomorphism} @math{f: a → b} in @math{𝒞}, then @math{b} and @math{f} are
+also in @math{𝒟}.
+
+@bold{Exercise}: Prove that @math{f@^{–1}} is also in @math{𝒟}.
 
 @subsection{Groupoid}
 
