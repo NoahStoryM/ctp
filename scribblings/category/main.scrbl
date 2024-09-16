@@ -744,8 +744,6 @@ two approaches (i.e., the iff statements).
 
 For a @tech{morphism} @math{f}, it is an @deftech{endomorphism} if @math{dom(f) = cod(f)}.
 
-The following @tech{diagram} is @tech{commutative}:
-
 @image["scribblings/category/images/endo.svg"]{[picture] endo.svg}
 
 @subsubsection{Idempotent}
