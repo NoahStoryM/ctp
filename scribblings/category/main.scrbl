@@ -494,14 +494,6 @@ A @deftech{wide subcategory} is a @tech{subcategory} that includes all
 @tech{wide subcategory} of @math{𝒞}, every @tech{object} in @math{𝒞} is also an
 @tech{object} in @math{𝒟}.
 
-A @deftech{replete subcategory} is a @tech{subcategory} that includes all
-@tech{objects} in the original @tech{category} that are @tech{isomorphic} to the
-@tech{objects} in the @tech{subcategory}, as well as the corresponding
-@tech{isomorphisms}. Formally, let @math{𝒟} be a @tech{replete subcategory} of
-@math{𝒞}, for any @tech{object} @math{a} in @math{𝒟}, if there is an
-@tech{isomorphism} @math{f: a → b} in @math{𝒞}, then @math{b}, @math{f}, and
-@math{f@^{–1}} must also be in @math{𝒟}.
-
 @subsubsection{Quotient Category}
 
 The @deftech{quotient} of @math{𝒞} by @math{∼}, denoted as
@@ -907,6 +899,16 @@ An @deftech{automorphism} is an @tech{invertible} @tech{endomorphism}.
 A @deftech{@deftech{representative} subcategory} is a @tech{subcategory} @math{𝒟}
 of a @tech{category} @math{𝒞} that every @tech{object} of @math{𝒞} is @tech{isomorphic}
 to some @tech{object} of @math{𝒟}.
+
+@subsubsection{Replete Subcategory}
+
+A @deftech{replete subcategory} is a @tech{subcategory} that includes all
+@tech{objects} in the original @tech{category} that are @tech{isomorphic} to the
+@tech{objects} in the @tech{subcategory}, as well as the corresponding
+@tech{isomorphisms}. Formally, let @math{𝒟} be a @tech{replete subcategory} of
+@math{𝒞}, for any @tech{object} @math{a} in @math{𝒟}, if there is an
+@tech{isomorphism} @math{f: a → b} in @math{𝒞}, then @math{b}, @math{f}, and
+@math{f@^{–1}} must also be in @math{𝒟}.
 
 @subsection{Groupoid}
 
