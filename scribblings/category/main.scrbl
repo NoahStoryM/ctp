@@ -1190,9 +1190,9 @@ consists of two @tech[#:key "class"]{classes} @math{ℰ} and @math{ℳ} of
 
 @bold{Exercise}: Prove @math{∀m_1, m_2 ∈ ℳ, cod(m_1) = dom(m_2) ⇒ m_2∘m_1 ∈ ℳ}.
 
-@bold{Exercise}: Prove @math{∀e ∈ ℰ, ∀m ∈ 𝒞_1, e⧄m ⇒ m ∈ ℳ}.
+@bold{Exercise}: Prove @math{∀m ∈ 𝒞_1, ℰ⧄m ⇒ m ∈ ℳ}.
 
-@bold{Exercise}: Prove @math{∀e ∈ 𝒞_1, ∀m ∈ ℳ, e⧄m ⇒ e ∈ ℰ}.
+@bold{Exercise}: Prove @math{∀e ∈ 𝒞_1, e⧄ℳ ⇒ e ∈ ℰ}.
 
 An @deftech{orthogonal factorization system} (@deftech{OFS}) is a @tech{WFS}
 where @math{ℰ⊥ℳ}: @math{∀e ∈ ℰ, ∀m ∈ ℳ, e⊥m}.
