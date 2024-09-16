@@ -1197,6 +1197,8 @@ consists of two @tech[#:key "class"]{classes} @math{ℰ} and @math{ℳ} of
 An @deftech{orthogonal factorization system} (@deftech{OFS}) is a @tech{WFS}
 where @math{ℰ⊥ℳ}: @math{∀e ∈ ℰ, ∀m ∈ ℳ, e⊥m}.
 
+@bold{Exercise}: Prove @math{ℰ = @^{⊥}ℳ} and @math{ℳ = ℰ@^{⊥}}.
+
 @bold{Exercise}: If a @tech{morphism} @math{f} can be factored as @math{m_1∘e_1}
 and @math{m_2∘e_2}, then show that there exists a unique @tech{morphism} @math{l}
 such that @math{e_2 = l∘e_1} and @math{m_1 = m_2∘l}; moreover, @math{l} is an
