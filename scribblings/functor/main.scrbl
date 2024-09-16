@@ -798,8 +798,11 @@ A @tech{functor} @math{F: 𝒞 → 𝒟} is called @deftech{full} if for every p
 of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the induced mapping from
 @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))} is @tech{surjective}.
 
-A @tech{functor} is called @deftech{fully faithful} (@deftech{fully embedding})
-if it's both @tech{full} and @tech{faithful}.
+A @tech{functor} @math{F: 𝒞 → 𝒟} is called @deftech{fully faithful}
+(@deftech{fully embedding}) if it's both @tech{full} and @tech{faithful}, which
+means that for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞},
+the induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
+is @tech{bijective}.
 
 @bold{Exercise}: Prove that every @tech{inclusion functor} from a
 @tech{full subcategory} is a @tech{fully faithful} @tech{functor}.
