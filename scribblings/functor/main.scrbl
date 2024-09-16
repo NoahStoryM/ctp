@@ -388,28 +388,7 @@ The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f
 
 @subsection{Hom Functor}
 
-For @tech{morphisms} @math{f: a → x}, @math{i: b → a} and @math{j: x → y} in
-@math{𝒞}, we can @racket[define] a @tech{function}
-@math{Hom@_{𝒞}(i, j): Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
-@math{Hom@_{𝒞}(i, j)(f) := j∘f∘i}.
-
-@image["scribblings/functor/images/hom_1.svg"]{[picture] hom_1.svg}
-
-Additionally, we can @racket[define] two other @tech{functions}:
-
-@itemlist[
-  #:style 'ordered
-  @item{@math{Hom@_{𝒞}(a, j) := Hom@_{𝒞}(id@_{a}, j)}, where
-        @math{Hom@_{𝒞}(a, j)(f) = j∘f}.
-
-        @image["scribblings/functor/images/hom_2.svg"]{[picture] hom_2.svg}}
-  @item{@math{Hom@_{𝒞}(i, x) := Hom@_{𝒞}(i, id@_{x})}, where
-        @math{Hom@_{𝒞}(i, x)(f) = f∘i}.
-
-        @image["scribblings/functor/images/hom_3.svg"]{[picture] hom_3.svg}}
-  ]
-
-These @tech{functions} provide a foundation for defining @deftech{hom functor}s.
+The @tech{hom sets} form the basis for the concept of @deftech{hom functor}s.
 
 @subsubsection{Covariant Hom Functor}
 
