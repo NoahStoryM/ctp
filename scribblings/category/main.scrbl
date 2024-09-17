@@ -863,10 +863,10 @@ iff for any @tech{object} @math{x}, @math{Hom(i, x)} is @tech{surjective}.
 @bold{Exercise}: Prove that a @tech{morphism} @math{j: x → y} is @tech{split epic}
 iff for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{surjective}.
 
-@bold{Exercise}: Prove that every @tech{monomorphism} in @tech{𝐒𝐞𝐭} whose
+@bold{Exercise}: Prove that every @tech{injection} in @tech{𝐒𝐞𝐭} whose
 @tech{domain} is not @tech{{}} is @tech{split monic}.
 
-@bold{Exercise}: Prove that every @tech{epimorphism} in @tech{𝐒𝐞𝐭} is @tech{split epic}.
+@bold{Exercise}: Prove that every @tech{surjection} in @tech{𝐒𝐞𝐭} is @tech{split epic}.
 
 Examples in @tech{𝐌𝐚𝐭𝐫}:
 
