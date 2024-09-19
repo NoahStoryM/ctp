@@ -961,9 +961,6 @@ iff for any @tech{object} @math{c}, @math{Hom(c, f)} is @tech{bijective}.
 @bold{Exercise}: Prove that a @tech{morphism} @math{f: a → b} is @tech{invertible}
 iff for any @tech{object} @math{c}, @math{Hom(f, c)} is @tech{bijective}.
 
-@bold{Exercise}: Prove that a @tech{function} is @tech{bijective} iff it's an
-@tech{isomorphism} in @tech{𝐒𝐞𝐭}.
-
 @subsubsection{Automorphism}
 
 An @deftech{automorphism} is an @tech{invertible} @tech{endomorphism}.
