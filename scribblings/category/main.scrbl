@@ -1090,11 +1090,13 @@ equipped with a distinguished @tech{element} @math{s}, often called the
 denoted as @deftech{𝐒𝐞𝐭@_{∗}}, is @tech{isomorphic} to the @tech{coslice category}
 @math{1/𝐒𝐞𝐭}.
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{f} in @math{𝐒𝐞𝐭} is
-@tech{injective} iff @math{f⧄⟨⟩@_{{a, b}}}, and iff @math{⟨⟩@_{{a, b}}⧄f}.
+@bold{Exercise}: Consider @math{f: {a, b} → {∗}} in @math{𝐒𝐞𝐭}, which is the
+simplest example of a non-@tech{injective} @tech{morphism}. Prove that a
+@tech{morphism} @math{g} is @tech{injective} iff @math{f⧄g}, and iff @math{g⧄f}.
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{g} in @math{𝐒𝐞𝐭} is
-@tech{surjective} iff @math{!_1⧄g}.
+@bold{Exercise}: Consider @math{f: {} → {∗}} in @math{𝐒𝐞𝐭}, which is the
+simplest example of a non-@tech{surjective} @tech{morphism}. Prove that a
+@tech{morphism} @math{g} is @tech{surjective} iff @math{f⧄g}.
 
 In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math{f: A → B}.
 Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},
