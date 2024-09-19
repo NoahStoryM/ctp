@@ -171,11 +171,15 @@ or that @math{(f, g)} has the @deftech{lifting property}, denoted by
 unique, we say that @math{f} is @deftech{orthogonal} to @math{g}, denoted by
 @math{f@deftech{⊥}g}.
 
-For a @tech{class} @math{𝒞} of @tech{morphisms}, its @deftech{right orthogonal class}
-is denoted by @math{𝒞@^{⊥}} or @math{𝒞@^{↓}}, where
-@math{𝒞@^{⊥} := {g | f⊥g ∀f ∈ 𝒞}}, and its @deftech{left orthogonal class}
-is denoted by @math{@^{⊥}𝒞} or @math{𝒞@^{↑}}, where
-@math{@^{⊥}𝒞 := {f | f⊥g ∀g ∈ 𝒞}}.
+For a @tech{class} @math{𝒞} of @tech{morphisms},
+the @deftech{right Quillen negation} (@deftech{right weak orthogonal class}) is
+denoted by @math{𝒞@^{⧄}}, where @math{𝒞@^{⧄} := {g | f⧄g ∀f ∈ 𝒞}}, and
+the @deftech{left Quillen negation} (@deftech{left weak orthogonal class}) is
+denoted by @math{@^{⧄}𝒞}, where @math{@^{⧄}𝒞 := {f | f⧄g ∀g ∈ 𝒞}}. Similarly,
+the @deftech{right orthogonal class} is denoted by @math{𝒞@^{⊥}} or @math{𝒞@^{↓}},
+where @math{𝒞@^{⊥} := {g | f⊥g ∀f ∈ 𝒞}}, and
+the @deftech{left orthogonal class} is denoted by @math{@^{⊥}𝒞} or @math{𝒞@^{↑}},
+where @math{@^{⊥}𝒞 := {f | f⊥g ∀g ∈ 𝒞}}.
 
 @bold{Exercise}: Prove @math{𝒞@^{↓↑↓} = 𝒞@^{↓}} and @math{𝒞@^{↑↓↑} = 𝒞@^{↑}}.
 
@@ -1083,6 +1087,12 @@ equipped with a distinguished @tech{element} @math{s}, often called the
 @deftech{base point}. Prove that the @tech{category} of @tech{pointed sets},
 denoted as @deftech{𝐒𝐞𝐭@_{∗}}, is @tech{isomorphic} to the @tech{coslice category}
 @math{1/𝐒𝐞𝐭}.
+
+@bold{Exercise}: Prove that a @tech{morphism} @math{f} in @math{𝐒𝐞𝐭} is
+@tech{injective} iff @math{f⧄⟨⟩@_{{a, b}}}, and iff @math{⟨⟩@_{{a, b}}⧄f}.
+
+@bold{Exercise}: Prove that a @tech{morphism} @math{g} in @math{𝐒𝐞𝐭} is
+@tech{surjective} iff @math{!_1⧄g}.
 
 In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math{f: A → B}.
 Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},
