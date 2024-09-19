@@ -171,10 +171,15 @@ or that @math{(f, g)} has the @deftech{lifting property}, denoted by
 unique, we say that @math{f} is @deftech{orthogonal} to @math{g}, denoted by
 @math{f@deftech{⊥}g}.
 
+From experience, if two @tech{morphisms} @math{f} and @math{g} satisfy @math{f⧄g},
+then @math{f} and @math{g} often possess opposite properties. This relationship
+reflects the complementary nature of their roles in a @tech{commutative square},
+where the lifting property typically holds due to these contrasting characteristics.
+
 For a @tech{class} @math{𝒞} of @tech{morphisms},
-the @deftech{right Quillen negation} (@deftech{right weak orthogonal class}) is
+the @deftech{right weak orthogonal class} (@deftech{right Quillen negation}) is
 denoted by @math{𝒞@^{⧄}}, where @math{𝒞@^{⧄} := {g | f⧄g ∀f ∈ 𝒞}}, and
-the @deftech{left Quillen negation} (@deftech{left weak orthogonal class}) is
+the @deftech{left weak orthogonal class} (@deftech{left Quillen negation}) is
 denoted by @math{@^{⧄}𝒞}, where @math{@^{⧄}𝒞 := {f | f⧄g ∀g ∈ 𝒞}}. Similarly,
 the @deftech{right orthogonal class} is denoted by @math{𝒞@^{⊥}} or @math{𝒞@^{↓}},
 where @math{𝒞@^{⊥} := {g | f⊥g ∀f ∈ 𝒞}}, and
