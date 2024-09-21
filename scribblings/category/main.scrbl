@@ -1217,6 +1217,14 @@ For example, in @math{𝐒𝐞𝐭}, we can think of @math{ℰ} as the @tech{cla
 @tech{surjections} and @math{ℳ} as the @tech{class} of @tech{injections}.
 then @math{(ℰ, ℳ)} is an @tech{OFS}.
 
+@bold{Exercise}: Show that every @tech{category} @math{𝒞} has an @tech{OFS} in
+which @math{ℰ} consists of all @tech{morphisms} and @math{ℳ} consists of all
+@tech{isomorphisms}.
+
+@bold{Exercise}: Show that every @tech{category} @math{𝒞} has an @tech{OFS} in
+which @math{ℰ} consists of all @tech{isomorphisms} and @math{ℳ} consists of all
+@tech{morphisms}.
+
 This definition of @math{OFS} explains how different @tech{factorizations} of a
 @tech{morphism} relate to each other, ensuring that there exists a unique
 @tech{morphism} between any two ways of factoring the same @tech{morphism}.
@@ -1262,6 +1270,12 @@ unique up to @tech{isomorphism}:
 @bold{Exercise}: Prove that a @tech{WFS} @math{(ℰ, ℳ)} in @math{𝒞} is also a
 @tech{WFS} @math{(ℳ, ℰ)} in @math{𝒞@^{op}}.
 
+@bold{Exercise}: Prove @math{∀e ∈ 𝒞_1, e⧄ℳ ⇒ e ∈ ℰ}.
+
 @bold{Exercise}: Prove @math{∀m ∈ 𝒞_1, ℰ⧄m ⇒ m ∈ ℳ}.
 
-@bold{Exercise}: Prove @math{∀e ∈ 𝒞_1, e⧄ℳ ⇒ e ∈ ℰ}.
+@bold{Exercise}: Prove that if every @tech{morphism} in @math{ℰ} is @tech{epic},
+then the @tech{WFS} @math{(ℰ, ℳ)} is an @tech{OFS}.
+
+@bold{Exercise}: Prove that if every @tech{morphism} in @math{ℳ} is @tech{monic},
+then the @tech{WFS} @math{(ℰ, ℳ)} is an @tech{OFS}.
