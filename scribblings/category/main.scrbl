@@ -1240,6 +1240,8 @@ relationship between the two @tech[#:key "class"]{classes}:
   @item{@math{ℰ⊥ℳ}: @math{ℰ = @^{⊥}ℳ ∧ ℳ = ℰ@^{⊥}}.}
 ]
 
+The following @tech{diagram} is @tech{commutative}:
+
 @image["scribblings/category/images/ℰ⊥ℳ.svg"]{[picture] ℰ⊥ℳ.svg}
 
 @bold{Exercise}: Prove that these two definitions are @tech{equivalent}.
