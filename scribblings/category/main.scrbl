@@ -1219,8 +1219,8 @@ then @math{(ℰ, ℳ)} is an @tech{OFS}.
 
 This definition of @math{OFS} explains how different @tech{factorizations} of a
 @tech{morphism} relate to each other, ensuring that there exists a unique
-@tech{morphism} between any two ways of factoring a @tech{morphism}. However,
-there is an equally important alternative definition that focuses on the
+@tech{morphism} between any two ways of factoring the same @tech{morphism}.
+However, there is an equally important alternative definition that focuses on the
 interaction between the two @tech[#:key "class"]{classes} of @tech{morphisms}
 through the @tech{lifting property}.
 
