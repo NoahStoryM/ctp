@@ -1186,36 +1186,94 @@ The following @tech{diagram} shows how to view a @tech{quotient set}
 
 @subsection{Factorization System}
 
-A @deftech{weak factorization system} (@deftech{WFS}) @math{(ℰ, ℳ)} in @math{𝒞}
-consists of two @tech[#:key "class"]{classes} @math{ℰ} and @math{ℳ} of
-@tech{morphisms} in @math{𝒞}, such that:
+A @deftech{factorization system} naturally arises when we want to decompose
+@tech{morphisms} in a @tech{category} into two distinct types. The goal is to
+ensure that any @tech{morphism} in the @tech{category} can be factored as a
+@tech{composition} of two @tech{morphisms} from two different
+@tech[#:key "class"]{classes}, with a structured relationship between the
+different possible @deftech{factorization}s.
+
+@subsubsection{Orthogonal Factorization System}
+
+An @deftech{orthogonal factorization system} (@deftech{OFS}) @math{(ℰ, ℳ)} in a
+@tech{category} @math{𝒞} consists of two @tech[#:key "class"]{classes} @math{ℰ}
+and @math{ℳ} of @tech{morphisms} in @math{𝒞}, such that:
 
 @itemlist[
   @item{@math{∀f ∈ 𝒞_1, ∃e ∈ ℰ, ∃m ∈ ℳ, f = m∘e}.}
-  @item{@math{ℰ⧄ℳ}: @math{∀e ∈ ℰ, ∀m ∈ ℳ, e⧄m}.}
-]
+  @item{@math{ℰ} and @math{ℳ} are each closed under @tech{composition}.}
+  @item{@math{ℰ ∩ ℳ} contains all @tech{isomorphisms}.}
+  @item{If @math{f} can factor as @math{m_1∘e_1} and @math{m_2∘e_2}, then there
+        exists a unique @tech{morphism} @math{l} such that @math{e_2 = l∘e_1}
+        and @math{m_1 = m_2∘l}.}
+  ]
 
-@bold{Exercise}: Prove that a @tech{WFS} @math{(ℰ, ℳ)} in @math{𝒞} is also a
-@tech{WFS} @math{(ℳ, ℰ)} in @math{𝒞@^{op}}.
-
-@bold{Exercise}: Prove that every @tech{isomorphism} is in @math{ℰ ∩ ℳ}.
-
-@bold{Exercise}: Prove @math{∀e_1, e_2 ∈ ℰ, cod(e_1) = dom(e_2) ⇒ e_2∘e_1 ∈ ℰ}.
-
-@bold{Exercise}: Prove @math{∀m_1, m_2 ∈ ℳ, cod(m_1) = dom(m_2) ⇒ m_2∘m_1 ∈ ℳ}.
-
-@bold{Exercise}: Prove @math{∀m ∈ 𝒞_1, ℰ⧄m ⇒ m ∈ ℳ}.
-
-@bold{Exercise}: Prove @math{∀e ∈ 𝒞_1, e⧄ℳ ⇒ e ∈ ℰ}.
-
-An @deftech{orthogonal factorization system} (@deftech{OFS}) is a @tech{WFS}
-where @math{ℰ⊥ℳ}: @math{∀e ∈ ℰ, ∀m ∈ ℳ, e⊥m}.
-
-@bold{Exercise}: Prove @math{ℰ = @^{⊥}ℳ} and @math{ℳ = ℰ@^{⊥}}.
-
-@bold{Exercise}: If a @tech{morphism} @math{f} can be factored as @math{m_1∘e_1}
-and @math{m_2∘e_2}, then show that there exists a unique @tech{morphism} @math{l}
-such that @math{e_2 = l∘e_1} and @math{m_1 = m_2∘l}; moreover, @math{l} is an
-@tech{isomorphism}.
+@bold{Exercise}: Prove that the unique @tech{morphism} @math{l} in the
+@tech{factorization} is an @tech{isomorphism}.
 
 @image["scribblings/category/images/l.svg"]{[picture] l.svg}
+
+For example, in @math{𝐒𝐞𝐭}, we can think of @math{ℰ} as the @tech{class} of
+@tech{surjections} and @math{ℳ} as the @tech{class} of @tech{injections}.
+then @math{(ℰ, ℳ)} is an @tech{OFS}.
+
+This definition of @math{OFS} explains how different @tech{factorizations} of a
+@tech{morphism} relate to each other, ensuring that there exists a unique
+@tech{morphism} between any two ways of factoring a @tech{morphism}. However,
+there is an equally important alternative definition that focuses on the
+interaction between the two @tech[#:key "class"]{classes} of @tech{morphisms}
+through the @tech{lifting property}.
+
+This second perspective shifts the focus to @tech{commutative squares}: for every
+@tech{morphism} in @math{ℰ} and every @tech{morphism} in @math{ℳ}, any
+@tech{commutative square} involving them admits a unique @tech{lift}. This
+property provides another way to describe the system by expressing the deep
+relationship between the two @tech[#:key "class"]{classes}:
+
+@margin-note{
+@math{(ℰ, ℳ)} such that @math{ℰ⊥ℳ} is sometimes called a
+@deftech{prefactorization system}.
+}
+
+@itemlist[
+  @item{@math{∀f ∈ 𝒞_1, ∃e ∈ ℰ, ∃m ∈ ℳ, f = m∘e}.}
+  @item{@math{ℰ⊥ℳ}: @math{ℰ = @^{⊥}ℳ ∧ ℳ = ℰ@^{⊥}}.}
+]
+
+@image["scribblings/category/images/ℰ⊥ℳ.svg"]{[picture] ℰ⊥ℳ.svg}
+
+@bold{Exercise}: Prove that these two definitions are @tech{equivalent}.
+
+@;; A @deftech{weak factorization system} (@deftech{WFS}) @math{(ℰ, ℳ)} in @math{𝒞}
+@;; consists of two @tech[#:key "class"]{classes} @math{ℰ} and @math{ℳ} of
+@;; @tech{morphisms} in @math{𝒞}, such that:
+
+@;; @itemlist[
+@;;   @item{@math{∀f ∈ 𝒞_1, ∃e ∈ ℰ, ∃m ∈ ℳ, f = m∘e}.}
+@;;   @item{@math{ℰ⧄ℳ}: @math{∀e ∈ ℰ, ∀m ∈ ℳ, e⧄m}.}
+@;; ]
+
+@;; @bold{Exercise}: Prove that a @tech{WFS} @math{(ℰ, ℳ)} in @math{𝒞} is also a
+@;; @tech{WFS} @math{(ℳ, ℰ)} in @math{𝒞@^{op}}.
+
+@;; @bold{Exercise}: Prove that every @tech{isomorphism} is in @math{ℰ ∩ ℳ}.
+
+@;; @bold{Exercise}: Prove @math{∀e_1, e_2 ∈ ℰ, cod(e_1) = dom(e_2) ⇒ e_2∘e_1 ∈ ℰ}.
+
+@;; @bold{Exercise}: Prove @math{∀m_1, m_2 ∈ ℳ, cod(m_1) = dom(m_2) ⇒ m_2∘m_1 ∈ ℳ}.
+
+@;; @bold{Exercise}: Prove @math{∀m ∈ 𝒞_1, ℰ⧄m ⇒ m ∈ ℳ}.
+
+@;; @bold{Exercise}: Prove @math{∀e ∈ 𝒞_1, e⧄ℳ ⇒ e ∈ ℰ}.
+
+@;; An @deftech{orthogonal factorization system} (@deftech{OFS}) is a @tech{WFS}
+@;; where @math{ℰ⊥ℳ}: @math{∀e ∈ ℰ, ∀m ∈ ℳ, e⊥m}.
+
+@;; @bold{Exercise}: Prove @math{ℰ = @^{⊥}ℳ} and @math{ℳ = ℰ@^{⊥}}.
+
+@;; @bold{Exercise}: If a @tech{morphism} @math{f} can be factored as @math{m_1∘e_1}
+@;; and @math{m_2∘e_2}, then show that there exists a unique @tech{morphism} @math{l}
+@;; such that @math{e_2 = l∘e_1} and @math{m_1 = m_2∘l}; moreover, @math{l} is an
+@;; @tech{isomorphism}.
+
+@;; @image["scribblings/category/images/l.svg"]{[picture] l.svg}
