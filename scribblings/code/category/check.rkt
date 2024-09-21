@@ -31,5 +31,7 @@
 (define (check-ooc 𝒞)
   (define-values (dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞) (𝒞))
   (define ∗ (∘𝒞))
+  (check-pred ?𝒞 ∗)
+  (check-true (=𝒞 ∗ (dom𝒞 ∗) (cod𝒞 ∗)))
   (define check-𝒞 (check-cat 𝒞))
   (λ (f g h) (check-𝒞 ∗ ∗ ∗ ∗ f g h)))
