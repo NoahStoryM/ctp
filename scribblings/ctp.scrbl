@@ -62,14 +62,21 @@ enhance your work as a programmer.
 
 Let the journey begin.
 
-@local-table-of-contents[]
+@table-of-contents[]
 
 @include-section[(file "category/main.scrbl")]
 @include-section[(file "functor/main.scrbl")]
 @;; include-section[(file "natural transformations/main.scrbl")]
-@;; include-section[(file "n-category/main.scrbl")]
 @;; include-section[(file "co-limit/main.scrbl")]
-@;; include-section[(file "ccc&λ/main.scrbl")]
+@;; include-section[(file "sketch/main.scrbl")]
 @;; include-section[(file "adjunction/main.scrbl")]
 @;; include-section[(file "co-monad/main.scrbl")]
+@;; include-section[(file "2-category/main.scrbl")]
 @;; include-section[(file "monoidal category/main.scrbl")]
+@;; include-section[(file "ccc&λ/main.scrbl")]
+@;; include-section[(file "topos/main.scrbl")]
+@;; include-section[(file "kan extension/main.scrbl")]
+
+@include-section[(file "appendix.scrbl")]
+
+@index-section{}

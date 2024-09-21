@@ -12,7 +12,8 @@
     [(_ file-name:str)
      #:with file-str (file->string (syntax-e #'file-name))
      #:with ctx      (syntax/loc stx #'file-name)
-     (syntax/loc stx (typeset-code #:context ctx 'file-str))]))
+     (syntax/loc stx
+       (filebox file-name (typeset-code #:indent 0 #:context ctx 'file-str)))]))
 
 (define-syntax (define-tech stx)
   (syntax-parse stx
@@ -36,6 +37,17 @@
 (define-tech tech/guide '(lib "scribblings/guide/guide.scrbl"))
 (define-tech tech/refer '(lib "scribblings/reference/reference.scrbl"))
 (define-tech tech/math  '(lib "math/scribblings/math.scrbl"))
+
+(define ^ (compose superscript math))
+(define _ (compose subscript   math))
+
+(define-syntax deftech@
+  (syntax-parser
+    [(_ t)
+     #:with key #'(symbol->string 't)
+     #'(define t (tech key))]
+    [(_ t* ...+)
+     #'(begin (deftech@ t*) ...)]))
 
 (define main (λ ([argv (current-command-line-arguments)]) (values)))
 (module+ main (call-with-values main exit))
