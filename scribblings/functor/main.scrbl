@@ -101,12 +101,33 @@ The following example illustrates how to implement @tech{functors} in Racket:
 @bold{Exercise}: Prove that @tech{functors} can be @tech[#:key "compose"]{composed}
 and that this @tech{composition} is @tech{associative}.
 
-A @tech{functor} @math{F} @deftech{preserve}s a property @math{P} of
-@tech{morphisms} if whenever @math{f} has @math{P}, so does @math{F(f)}.
+A @tech{functor} @math{F: 𝒞 → 𝒟} @deftech{preserve}s a property @math{P} of
+@tech{morphisms} in @math{𝒞} if whenever @math{f} has @math{P}, so does @math{F(f)}.
 Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
-@tech{morphisms} if whenever @math{F(f)} has @math{P}, so does @math{f}.
+@tech{morphisms} in @math{𝒟} if whenever @math{F(f)} has @math{P}, so does @math{f}.
 
 @bold{Exercise}: Prove that every @tech{functor} @tech{preserves} @tech{isomorphisms}.
+
+@math{F} may have additional properties:
+
+@itemlist[
+  @item{Be @deftech{faithful} (@deftech{embedding}):
+        for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
+        induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
+        is @tech{injective}.}
+  @item{Be @deftech{full}:
+        for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
+        induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
+        is @tech{surjective}.}
+  @item{Be @deftech{fully faithful} (@deftech{fully embedding}):
+        for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
+        induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
+        is @tech{bijective}.}
+]
+
+@bold{Exercise}: Let @math{F: 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
+Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
+@math{Hom@_{𝒞}(a, a) ≅ Hom@_{𝒞}(a, b) ≅ Hom@_{𝒞}(b, a) ≅ Hom@_{𝒞}(b, b)}.
 
 @subsection{Category of Categories}
 
@@ -114,6 +135,9 @@ The @tech{category} of @tech{categories}, denoted as @deftech{𝐂𝐚𝐭}, for
 higher-level structure where @tech{objects} are @tech{categories} and @tech{morphisms}
 are @tech{functors} between them. An @deftech{endofunctor} is an @tech{endomorphism}
 in @tech{𝐂𝐚𝐭}, and an @deftech{autofunctor} is an @tech{automorphism} in @tech{𝐂𝐚𝐭}.
+
+@bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is a
+@tech{fully faithful} @tech{functor}.
 
 In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
 @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functors} as
@@ -172,6 +196,12 @@ The @deftech{inclusion functor} @math{I: 𝒟 → 𝒞} is a @tech{functor} whic
 each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
 @bold{Exercise}: Prove that @math{𝒟} is a @tech{subcategory} of @math{𝒞}.
+
+@bold{Exercise}: Prove that every @tech{inclusion functor} is a
+@tech{faithful} @tech{functor}.
+
+@bold{Exercise}: Prove that every @tech{inclusion functor} from a
+@tech{full subcategory} is a @tech{fully faithful} @tech{functor}.
 
 @subsection{Projection Functor}
 
@@ -784,32 +814,3 @@ where @tech{objects} are @tech{nodes} and @tech{morphisms} are @deftech{paths}
 Here is how to implement @math{ℳ} in Racket:
 
 @racketfile{code/functor/TFSM.rkt}
-
-@section{Faithful and Full}
-
-A @tech{functor} @math{F: 𝒞 → 𝒟} is called @deftech{faithful} (@deftech{embedding})
-if for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the induced
-mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))} is @tech{injective}.
-
-@bold{Exercise}: Prove that every @tech{inclusion functor} is a
-@tech{faithful} @tech{functor}.
-
-A @tech{functor} @math{F: 𝒞 → 𝒟} is called @deftech{full} if for every pair
-of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the induced mapping from
-@math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))} is @tech{surjective}.
-
-A @tech{functor} @math{F: 𝒞 → 𝒟} is called @deftech{fully faithful}
-(@deftech{fully embedding}) if it's both @tech{full} and @tech{faithful}, which
-means that for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞},
-the induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
-is @tech{bijective}.
-
-@bold{Exercise}: Prove that every @tech{inclusion functor} from a
-@tech{full subcategory} is a @tech{fully faithful} @tech{functor}.
-
-@bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is a
-@tech{fully faithful} @tech{functor}.
-
-@bold{Exercise}: Let @math{F: 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
-Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
-@math{Hom@_{𝒞}(a, a) ≅ Hom@_{𝒞}(a, b) ≅ Hom@_{𝒞}(b, a) ≅ Hom@_{𝒞}(b, b)}.
