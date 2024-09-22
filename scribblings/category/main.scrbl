@@ -519,6 +519,8 @@ of @math{𝒞} if:
   @item{@math{∀(f, g) ∈ 𝒞_2, (f, g) ∈ 𝒟_2 ⇒ g∘f ∈ 𝒟_1}.}
   ]
 
+@bold{Exercise}: Show that every @tech{category} is a @tech{subcategory} of itself.
+
 We can @racket[define] @deftech{⊆} in Racket to implement the @tech{subcategory}
 @math{𝒟} of @math{𝒞}:
 
@@ -558,6 +560,9 @@ with the @tech{morphisms} grouped into
         @math{[g]∘[f] = [g∘f]: [a] → [c]} in @math{𝒞/∼}.}
 ]
 
+@bold{Exercise}: Show that every @tech{category} is also the @tech{quotient category}
+of itself by @math{=}.
+
 We can @racket[define] @deftech{÷} in Racket to implement the
 @tech{quotient category} @math{𝒞/∼}:
 
@@ -577,6 +582,9 @@ A @deftech{product category} @math{𝒞×𝒟} combines the given @tech{categori
 @math{𝒞} and @math{𝒟} to form a new @tech{category}.
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
+
+@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are
+@tech{quotient categories} of @math{𝒞×𝒟}.
 
 @margin-note{
 @tech{∘} in this equation are different in different @tech{categories}. The first
@@ -618,6 +626,9 @@ A @deftech{sum category} @math{𝒞+𝒟} only contains all @tech{objects} and
 @tech{morphisms} from @math{𝒞} and @math{𝒟}.
 
 @image["scribblings/category/images/sum-cat.svg"]{[picture] sum-cat.svg}
+
+@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are
+@tech{subcategories} of @math{𝒞+𝒟}.
 
 Let's illustrate this concept with a Racket code example
 (@tech{disjoint union} is implemented as @tech{tagged union}). In the following
