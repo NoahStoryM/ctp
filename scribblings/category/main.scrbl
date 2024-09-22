@@ -191,7 +191,7 @@ where @math{@^{⊥}𝒞 := {f | f⊥g ∀g ∈ 𝒞}}.
 @subsection{Relation}
 
 A @deftech{relation} over some @tech{sets} is a @tech{subset} of
-@tech{cartesian product} of them.
+@tech{Cartesian product} of them.
 
 Here're some properties that a @tech{relation} @math{△} over a @tech{set}
 @math{S} may have:
@@ -569,8 +569,8 @@ A @deftech{quotient set} can be viewed as a @tech{quotient category} of a
 @subsubsection{Product Category}
 
 @margin-note{
-In this context, @tech[#:key "cartesian product"]{products} refer to
-@deftech{cartesian product}s, which are @tech{product objects} in @tech{𝐒𝐞𝐭}.
+In this context, @tech[#:key "Cartesian product"]{products} refer to
+@tech{Cartesian products}, which are @tech{product objects} in @tech{𝐒𝐞𝐭}.
 }
 
 A @deftech{product category} @math{𝒞×𝒟} combines the given @tech{categories}
@@ -587,9 +587,9 @@ while the third @tech{∘} represents @tech{compose} in the @tech{product catego
 @bold{Exercise}: Prove @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
 
 Let's illustrate this concept with a Racket code example
-(@racket[list] is used here as @tech{cartesian product}). In the following code,
+(@tech{Cartesian product} is implemented as @racket[list]). In the following code,
 we create a @tech{product category} by taking the
-@tech[#:key "cartesian product"]{product} of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐏𝐚𝐢𝐫}:
+@tech[#:key "Cartesian product"]{product} of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐏𝐚𝐢𝐫}:
 
 @racketfile{code/category/𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫.rkt}
 
@@ -611,7 +611,7 @@ we create a @tech{product category} by taking the
 
 @margin-note{
 In this context, @tech[#:key "disjoint union"]{sums} refer to
-@deftech{disjoint union}s, which are @tech{sum objects} in @tech{𝐒𝐞𝐭}.
+@tech{disjoint unions}, which are @tech{sum objects} in @tech{𝐒𝐞𝐭}.
 }
 
 A @deftech{sum category} @math{𝒞+𝒟} only contains all @tech{objects} and
@@ -620,7 +620,7 @@ A @deftech{sum category} @math{𝒞+𝒟} only contains all @tech{objects} and
 @image["scribblings/category/images/sum-cat.svg"]{[picture] sum-cat.svg}
 
 Let's illustrate this concept with a Racket code example
-(@tech{disjoint union} is implemented as @deftech{tagged union}). In the following
+(@tech{disjoint union} is implemented as @tech{tagged union}). In the following
 code, we create a @tech{sum category} by taking the
 @tech[#:key "disjoint union"]{sum} of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐏𝐚𝐢𝐫}:
 
