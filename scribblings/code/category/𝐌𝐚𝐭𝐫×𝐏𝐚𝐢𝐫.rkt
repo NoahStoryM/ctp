@@ -1,12 +1,10 @@
 #lang racket/base
 
-(require math/matrix racket/match racket/promise racket/set)
+(require math/matrix racket/match)
 (require (file "𝐌𝐚𝐭𝐫.rkt") (file "𝐏𝐚𝐢𝐫.rkt"))
 
 (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
 (define-values (dom𝒫 cod𝒫 ∘𝒫 ?𝒫 =𝒫) (𝐏𝐚𝐢𝐫))
-
-(define (rand m n) (random 1 9))
 
 (provide 𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫)
 (define (𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫 . _) (values dom cod ∘ ? =))

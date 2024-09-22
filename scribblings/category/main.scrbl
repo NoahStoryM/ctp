@@ -584,7 +584,7 @@ two @tech{∘}s represent @tech{compose}s in the individual @tech{categories},
 while the third @tech{∘} represents @tech{compose} in the @tech{product category}.
 }
 
-@bold{Exercise}: Prove @math{(g_0∘f_0)×(g_1∘f_1) = (g_0×g_1)∘(f_0×f_1)}.
+@bold{Exercise}: Prove @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
 
 Let's illustrate this concept with a Racket code example
 (@racket[list] is used here as @tech{cartesian product}). In the following code,
@@ -593,8 +593,8 @@ we create a @tech{product category} by taking the
 
 @racketfile{code/category/𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫.rkt}
 
-@bold{Exercise}: Try to @racket[define] @deftech{dom×}, @deftech{cod×}, @deftech{∘×},
-@deftech{?×} and @deftech{=×} so that we can @racket[define] the
+@bold{Exercise}: Try to @racket[define] @deftech{dom×}, @deftech{cod×},
+@deftech{∘×}, @deftech{?×} and @deftech{=×} so that we can @racket[define] the
 @tech{product category} @math{ℳ×𝒫} in this way:
 
 @racketblock[
@@ -605,6 +605,39 @@ we create a @tech{product category} by taking the
    (∘× ∘ℳ ∘𝒫)
    (?× ?ℳ ?𝒫)
    (=× =ℳ =𝒫)))
+]
+
+@subsubsection{Sum Category}
+
+@margin-note{
+In this context, @tech[#:key "disjoint union"]{sums} refer to
+@deftech{disjoint union}s, which are @tech{sum objects} in @tech{𝐒𝐞𝐭}.
+}
+
+A @deftech{sum category} @math{𝒞+𝒟} only contains all @tech{objects} and
+@tech{morphisms} from @math{𝒞} and @math{𝒟}.
+
+@image["scribblings/category/images/sum-cat.svg"]{[picture] sum-cat.svg}
+
+Let's illustrate this concept with a Racket code example
+(@tech{disjoint union} is implemented as @deftech{tagged union}). In the following
+code, we create a @tech{sum category} by taking the
+@tech[#:key "disjoint union"]{sum} of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐏𝐚𝐢𝐫}:
+
+@racketfile{code/category/𝐌𝐚𝐭𝐫+𝐏𝐚𝐢𝐫.rkt}
+
+@bold{Exercise}: Try to @racket[define] @deftech{dom+}, @deftech{cod+},
+@deftech{∘+}, @deftech{?+} and @deftech{=+} so that we can @racket[define] the
+@tech{sum category} @math{ℳ+𝒫} in this way:
+
+@racketblock[
+(define-values (dom cod ∘ ? =)
+  (values
+   (dom+ domℳ dom𝒫)
+   (cod+ codℳ cod𝒫)
+   (∘+ ∘ℳ ∘𝒫)
+   (?+ ?ℳ ?𝒫)
+   (=+ =ℳ =𝒫)))
 ]
 
 @subsubsection{Arrow Category}
