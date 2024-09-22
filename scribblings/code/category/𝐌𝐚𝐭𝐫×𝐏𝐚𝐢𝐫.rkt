@@ -6,18 +6,17 @@
 (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
 (define-values (dom𝒫 cod𝒫 ∘𝒫 ?𝒫 =𝒫) (𝐏𝐚𝐢𝐫))
 
-(define (× . m*) m*)
 (define (rand m n) (random 1 9))
 
 (provide 𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫)
 (define (𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫 . _) (values dom cod ∘ ? =))
 
-(define dom (match-λ [`(,m ,p) (× (domℳ m) (dom𝒫 p))]))
-(define cod (match-λ [`(,m ,p) (× (codℳ m) (cod𝒫 p))]))
+(define dom (match-λ [`(,m ,p) (list (domℳ m) (dom𝒫 p))]))
+(define cod (match-λ [`(,m ,p) (list (codℳ m) (cod𝒫 p))]))
 (define (∘ l . l*)
   (define m* (map car  (cons l l*)))
   (define p* (map cadr (cons l l*)))
-  (× (apply ∘ℳ m*) (apply ∘𝒫 p*)))
+  (list (apply ∘ℳ m*) (apply ∘𝒫 p*)))
 (define (? l)
   (and (list? l) (eqv? 2 (length l))
        (?ℳ (car  l))
@@ -60,15 +59,15 @@
   (check-𝐏𝐚𝐢𝐫 a1 b1 c1 d1 f1 g1 h1)
 
   ;; Objects in ℳ × 𝒫
-  (define a (× a0 a1)) ; (a0, a1)
-  (define b (× b0 b1)) ; (b0, b1)
-  (define c (× c0 c1)) ; (c0, c1)
-  (define d (× d0 d1)) ; (d0, d1)
+  (define a (list a0 a1)) ; (a0, a1)
+  (define b (list b0 b1)) ; (b0, b1)
+  (define c (list c0 c1)) ; (c0, c1)
+  (define d (list d0 d1)) ; (d0, d1)
 
   ;; Morphisms in ℳ × 𝒫
-  (define f (× f0 f1)) ; (f0, f1)
-  (define g (× g0 g1)) ; (g0, g1)
-  (define h (× h0 h1)) ; (h0, h1)
+  (define f (list f0 f1)) ; (f0, f1)
+  (define g (list g0 g1)) ; (g0, g1)
+  (define h (list h0 h1)) ; (h0, h1)
 
   (define check-𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫 (check-cat 𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫))
   (check-𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫 a b c d f g h))
