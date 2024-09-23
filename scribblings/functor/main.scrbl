@@ -201,6 +201,8 @@ each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 there is an @tech{inclusion functor} from @math{𝒞} to @math{𝒞+𝒟} and an
 @tech{inclusion functor} from @math{𝒟} to @math{𝒞+𝒟}.
 
+@bold{Exercise}: Prove @math{𝒞 ≅ 0+𝒞 ≅ 𝒞+0}.
+
 @bold{Exercise}: Prove that every @tech{inclusion functor} is a
 @tech{faithful} @tech{functor}.
 
@@ -215,6 +217,8 @@ is a @tech{functor} that @math{∀a ∈ 𝒞_0, P(a) = [a]} and @math{∀f ∈ �
 @bold{Exercise}: Show that for every @tech{product category} @math{𝒞×𝒟},
 there is a @tech{projection functor} from @math{𝒞×𝒟} to @math{𝒞} and a
 @tech{projection functor} from @math{𝒞×𝒟} to @math{𝒟}.
+
+@bold{Exercise}: Prove @math{𝒞 ≅ 1×𝒞 ≅ 𝒞×1}.
 
 @bold{Exercise}: For a @tech{functor} @math{F: 𝒞 → 𝒟} and a
 @tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.
