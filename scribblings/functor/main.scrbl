@@ -755,9 +755,9 @@ In a certain sense, a @tech{category} can be regarded as a @deftech{typed monoid
 }
 
 In a @deftech{typed finite state machine} (@deftech{TFSM}), its @tech{state table}
-does not need to be complete. Instead, its @tech{alphabet} and @tech{@tech{states}}
-are typed, meaning that only certain @tech{transitions} are valid. This introduces
-a layer of flexibility and specificity in modeling @tech{state} @tech{transitions},
+does not need to be complete. Instead, its @tech{alphabet} and @tech{states} are
+typed, meaning that only certain @tech{transitions} are valid. This introduces a
+layer of flexibility and specificity in modeling @tech{state} @tech{transitions},
 where not every @tech{state} needs to handle every possible input @tech{letter}.
 In some contexts, certain @tech{states} might only handle a @tech{subset} of the
 @tech{alphabet}, and any undefined @tech{transition} might signify an @racket[error]
