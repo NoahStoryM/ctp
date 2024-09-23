@@ -1125,7 +1125,7 @@ This approach to viewing @tech{elements} requires only the presence of a
 thereby generalizing the concept of @tech{elements} of @tech{sets} in a broader
 and more abstract manner.
 
-@bold{Exercise}: A @deftech{pointed set}, @math{(S, s)}, is a @tech{set} @math{S}
+@bold{Exercise}: A @deftech{pointed set} @math{(S, s)} is a @tech{set} @math{S}
 equipped with a distinguished @tech{element} @math{s}, often called the
 @deftech{base point}. Prove that the @tech{category} of @tech{pointed sets},
 denoted as @deftech{𝐒𝐞𝐭@_{∗}}, is @tech{isomorphic} to the @tech{coslice category}
