@@ -527,7 +527,7 @@ We can @racket[define] @deftech{†} in Racket to implement the
 @subsubsection{Subcategory}
 
 Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
-of @math{𝒞} if:
+of @math{𝒞}, denoted by @math{𝒟 ⊆ 𝒞}, if:
 
 @margin-note{
 @math{𝒞_2} is the @tech{collection} of @tech{composable pairs} in @math{𝒞}.
