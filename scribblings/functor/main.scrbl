@@ -111,15 +111,15 @@ Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
 @math{F} may have additional properties:
 
 @itemlist[
-  @item{Be @deftech{faithful} (@deftech{embedding}):
+  @item{@deftech{Faithful} (@deftech{Embedding}):
         for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
         induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
         is @tech{injective}.}
-  @item{Be @deftech{full}:
+  @item{@deftech{Full}:
         for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
         induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
         is @tech{surjective}.}
-  @item{Be @deftech{fully faithful} (@deftech{fully embedding}):
+  @item{@deftech{Fully Faithful} (@deftech{Fully Embedding}):
         for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
         induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
         is @tech{bijective}.}

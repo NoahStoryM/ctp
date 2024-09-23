@@ -223,13 +223,13 @@ A @deftech{function} @math{f: S → T} can be viewed as the @tech{binary relatio
 may have additional properties:
 
 @itemlist[
-  @item{Be @deftech{injective}: @math{f} is an @deftech{injection} if it maps
+  @item{@deftech{Injective}: @math{f} is an @deftech{injection} if it maps
         distinct @tech{elements} of @math{S} to distinct @tech{elements} of
         @math{T}. Formally, @math{∀x, y ∈ S, f(x) = f(y) ⇒ x = y}.}
-  @item{Be @deftech{surjective}: @math{f} is a @deftech{surjection} if every
+  @item{@deftech{Surjective}: @math{f} is a @deftech{surjection} if every
         @tech{element} of @math{T} is the @tech{image} of some @tech{element} in
         @math{S}; formally, @math{∀y ∈ T, ∃x ∈ S, f(x) = y}.}
-  @item{Be @deftech{bijective}: @math{f} is a @deftech{bijection} if it is both
+  @item{@deftech{Bijective}: @math{f} is a @deftech{bijection} if it is both
         @tech{injective} and @tech{surjective}, establishing a one-to-one
         correspondence between @math{S} and @math{T}.}
 ]

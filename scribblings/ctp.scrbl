@@ -23,7 +23,7 @@ further exploration of @tech{category theory}:
   ]
 }
 
-The @deftech{category theory}, a branch of mathematics that deals with abstract
+@deftech{Category theory}, a branch of mathematics that deals with abstract
 structures and relationships, may seem esoteric at first glance. However, its
 principles are deeply intertwined with the concepts and patterns we encounter in
 programming. Through this tutorial, we aim to bridge the gap between these two
@@ -33,7 +33,7 @@ new ways of thinking and problem-solving.
 In the following chapters, we will explore the core concepts of @tech{category theory}
 — @tech{objects}, @tech{morphisms}, @tech{categories}, @tech{functors},
 @tech{natural transformations}, @tech{Yoneda Lemma}, @tech{2-categories} & @tech{2-morphisms},
-(co)@tech{limits}, @tech{cartesion closed categories} & @tech{typed lambda},
+(co)@tech{limits}, @tech{Cartesion closed categories} & @tech{typed lambda},
 @tech{adjunctions}, (co)@tech{monads}, @tech{monoidal categories}, and more —
 and how these can be represented and utilized within the Racket programming language.
 The goal is not to exhaustively cover @tech{category theory} or to transform you
