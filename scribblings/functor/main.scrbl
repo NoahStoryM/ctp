@@ -12,10 +12,10 @@
 
 @title[#:tag "_Functor_"]{Functor}
 
-In this chapter, we introduce the concept of @tech{functors}. @tech{Functors}
-play a crucial role in @tech{category theory} by mapping @tech{objects} and
-@tech{morphisms} between @tech{categories} while preserving their structural
-properties.
+In this @seclink["_Functor_"]{chapter}, we introduce the concept of @tech{functors}.
+@tech{Functors} play a crucial role in @tech{category theory} by mapping
+@tech{objects} and @tech{morphisms} between @tech{categories} while preserving
+their structural properties.
 
 To enhance readability and provide a clear understanding of how @tech{functors}
 can be applied in programming, we'll use the syntax of Typed Racket.
@@ -307,11 +307,11 @@ For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} m
 ]
 @section{Categories of Structured Sets}
 
-@tech{Structured sets} and their @tech{homomorphisms} form fundamental
-@tech{categories} that encapsulate various algebraic structures. These
-@tech{categories} allow us to study and generalize properties and operations
-across different mathematical systems. In this section, we'll explore several
-important @tech{categories} of @tech{structured sets}.
+@tech{Structured sets} and their @tech{homomorphisms} form fundamental @tech{categories}
+that encapsulate various algebraic structures. These @tech{categories} allow us
+to study and generalize properties and operations across different mathematical
+systems. In this @seclink["Categories_of_Structured_Sets"]{section}, we'll explore
+several important @tech{categories} of @tech{structured sets}.
 
 @subsection{Category of Monoids}
 

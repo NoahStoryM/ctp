@@ -12,11 +12,12 @@
 
 @title[#:tag "_Category_"]{Category}
 
-Welcome to the first chapter of our @secref{_CTP_} tutorial! Here, we delve into
-the foundational concepts of @tech{category theory}, focusing on @tech{morphisms}
-as the central entities of study. This chapter sets the stage for understanding
-how these entities interact within the structured universe of @tech{categories},
-using Racket programming language as our exploration tool.
+Welcome to the first @seclink["_Category_"]{chapter} of our @secref{_CTP_}
+tutorial! Here, we delve into the foundational concepts of @tech{category theory},
+focusing on @tech{morphisms} as the central entities of study. This
+@seclink["_Category_"]{chapter} sets the stage for understanding how these
+entities interact within the structured universe of @tech{categories}, using
+Racket programming language as our exploration tool.
 
 @local-table-of-contents[]
 
@@ -363,8 +364,8 @@ where @math{@^{⊥}𝒞 := {f | f⊥g ∀g ∈ 𝒞}}.
 
 @section{Mapping Category to Programming}
 
-In this section, we'll explore how @tech{category theory} concepts can be mapped
-to practical programming constructs.
+In this @seclink["Mapping_Category_to_Programming"]{section}, we'll explore how
+@tech{category theory} concepts can be mapped to practical programming constructs.
 
 Just as @racket[car], @racket[cdr], @racket[cons], @racket[pair?], and @racket[equal?]
 provide an abstraction for @tech/refer{pairs} in Racket, we'll introduce the notions
@@ -493,9 +494,10 @@ such as @code{(∘ car +)}, but such a @tech{procedure} will only @racket[raise]
 
 @subsection{Constructions on Categories}
 
-This section involves the creation of new @tech{categories} using existing ones.
-These constructions provide a way to extend our understanding of @tech{categories}
-and explore various relationships between them.
+This @seclink["Constructions_on_Categories"]{section} involves the creation of
+new @tech{categories} using existing ones. These constructions provide a way to
+extend our understanding of @tech{categories} and explore various relationships
+between them.
 
 @subsubsection{Opposite Category}
 
@@ -801,10 +803,11 @@ the @tech{coslice category} @math{m/ℳ} like this:
 
 @section{Categorical Definitions}
 
-In this section, we explore the fundamental idea of defining properties a
-@tech{category} may have solely through @tech{objects} and @tech{morphisms} in it.
-This approach, known as the @deftech{categorical definition}, allows us to capture
-and express important concepts using the language of @tech{category theory}.
+In this @seclink["Categorical_Definitions"]{section}, we explore the fundamental
+idea of defining properties a @tech{category} may have solely through
+@tech{objects} and @tech{morphisms} in it. This approach, known as the
+@deftech{categorical definition}, allows us to capture and express important
+concepts using the language of @tech{category theory}.
 
 Note that many @tech{categorical definitions} can also be described in terms of
 @tech{hom sets}. Readers will be invited to prove the @tech{equivalence} of these
