@@ -725,8 +725,8 @@ we get a @tech{directed graph} that obeys the @tech{composition rules}, which is
 the @tech{slice category} @math{𝒞/c_1}:
 
 @margin-note{
-Although we name @tech{arrows} using @tech{morphisms} here, note that they are
-not @tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
+Although we name @tech{arrows} using @tech{morphisms} in @math{𝒞} here, note that
+they are not @tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
 }
 
 @image["scribblings/category/images/over-cat_3.svg"]{[picture] over-cat_3.svg}
@@ -769,8 +769,8 @@ we get a @tech{directed graph} that obeys the @tech{composition rules}, which is
 the @tech{coslice category} @math{c_0/𝒞}:
 
 @margin-note{
-Although we name @tech{arrows} using @tech{morphisms} here, note that they are
-not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
+Although we name @tech{arrows} using @tech{morphisms} in @math{𝒞} here, note that
+they are not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 }
 
 @image["scribblings/category/images/under-cat_3.svg"]{[picture] under-cat_3.svg}
