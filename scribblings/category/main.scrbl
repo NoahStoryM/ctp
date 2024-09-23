@@ -1065,7 +1065,7 @@ A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
 An @deftech{@deftech{initial} object} @deftech{0} in a @tech{category} @math{𝒞}
 is an @tech{object} from which there exists exactly one @tech{morphism} to every
 other @tech{object} @math{a} in @math{𝒞}, usually denoted by
-@math{@deftech{!}_a: 0 → a}.
+@math{!@_{0→a}: 0 → a}, pronounced @deftech{bang to} @math{a}.
 
 @bold{Exercise}: Prove that if @math{a} and @math{b} are @tech{initial objects}
 in @math{𝒞}, then @math{a ≅ b}.
@@ -1080,7 +1080,7 @@ in @math{𝒞}, then @math{a ≅ b}.
 Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{category}
 @math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism} from
 every other @tech{object} @math{a} in @math{𝒞}, usually denoted by
-@math{@deftech{⟨⟩}_a: a → 1}.
+@math{!@_{a→1}: a → 1}, pronounced @deftech{bang from} @math{a}.
 
 @bold{Exercise}: Prove that if @math{a} and @math{b} are @tech{terminal objects}
 in @math{𝒞}, then @math{a ≅ b}.
@@ -1092,8 +1092,6 @@ The following @tech{diagrams} are @tech{commutative}:
 
 @image["scribblings/category/images/0→1_1.svg"]{[picture] 0→1_1.svg}
 @image["scribblings/category/images/0→1_2.svg"]{[picture] 0→1_2.svg}
-
-@bold{Exercise}: Prove @math{!_1=⟨⟩_0}.
 
 @bold{Exercise}: Prove that an @tech{initial object} in @math{𝒞} is also a
 @tech{terminal object} in @math{𝒞^op}.
