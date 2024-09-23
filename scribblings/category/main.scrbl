@@ -606,7 +606,7 @@ and @math{𝒟}, respectively. Each @tech{object} and @tech{morphism} in the
 @bold{Exercise}: Prove @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
 
 To see this concept in action, let’s use Racket to implement it. In the following
-example, we construct the @tech{product category} from @math{𝐌𝐚𝐭𝐫} and @math{𝐏𝐚𝐢𝐫}:
+example, we construct the @tech{product category} @math{𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫}:
 
 @racketfile{code/category/𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫.rkt}
 
@@ -634,7 +634,7 @@ and @math{𝒟} as its own.
 @image["scribblings/category/images/sum-cat.svg"]{[picture] sum-cat.svg}
 
 To see this concept in action, let’s use Racket to implement it. In the following
-example, we construct the @tech{sum category} from @math{𝐌𝐚𝐭𝐫} and @math{𝐏𝐚𝐢𝐫}:
+example, we construct the @tech{sum category} @math{𝐌𝐚𝐭𝐫+𝐏𝐚𝐢𝐫}:
 
 @racketfile{code/category/𝐌𝐚𝐭𝐫+𝐏𝐚𝐢𝐫.rkt}
 
