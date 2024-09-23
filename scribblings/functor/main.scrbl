@@ -139,6 +139,8 @@ in @tech{𝐂𝐚𝐭}, and an @deftech{autofunctor} is an @tech{automorphism} i
 @bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is a
 @tech{fully faithful} @tech{functor}.
 
+@bold{Exercise}: Think about what @tech{0} and @tech{1} are in @tech{𝐂𝐚𝐭}.
+
 In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
 @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functors} as
 @tech{procedures}. Note that since the task of comparing @tech{procedure}
