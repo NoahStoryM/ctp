@@ -573,11 +573,6 @@ A @deftech{quotient set} can be viewed as a @tech{quotient category} of a
 
 @subsubsection{Product Category}
 
-@margin-note{
-In this context, @tech[#:key "Cartesian product"]{products} refer to
-@tech{Cartesian products}, which are @tech{product objects} in @tech{𝐒𝐞𝐭}.
-}
-
 A @deftech{product category}, denoted as @math{𝒞×𝒟}, is constructed by combining
 the @tech{categories} @math{𝒞} and @math{𝒟} to form a new @tech{category}.
 The @tech{objects} and @tech{morphisms} of @math{𝒞×𝒟} are defined as the
@@ -621,11 +616,6 @@ example, we construct the @tech{product category} from @math{𝐌𝐚𝐭𝐫} a
 ]
 
 @subsubsection{Sum Category}
-
-@margin-note{
-In this context, @tech[#:key "disjoint union"]{sums} refer to
-@tech{disjoint unions}, which are @tech{sum objects} in @tech{𝐒𝐞𝐭}.
-}
 
 A @deftech{sum category}, denoted as @math{𝒞+𝒟}, is constructed by taking the
 @tech{disjoint union} of the @tech{objects} and @tech{morphisms} from @math{𝒞}
