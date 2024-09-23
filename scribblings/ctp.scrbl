@@ -23,7 +23,7 @@ further exploration of @tech{category theory}:
   ]
 }
 
-@deftech{Category theory}, a branch of mathematics that deals with abstract
+The @deftech{category theory}, a branch of mathematics that deals with abstract
 structures and relationships, may seem esoteric at first glance. However, its
 principles are deeply intertwined with the concepts and patterns we encounter in
 programming. Through this tutorial, we aim to bridge the gap between these two
