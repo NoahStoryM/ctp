@@ -578,8 +578,14 @@ In this context, @tech[#:key "Cartesian product"]{products} refer to
 @tech{Cartesian products}, which are @tech{product objects} in @tech{𝐒𝐞𝐭}.
 }
 
-A @deftech{product category} @math{𝒞×𝒟} combines the given @tech{categories}
-@math{𝒞} and @math{𝒟} to form a new @tech{category}.
+A @deftech{product category}, denoted as @math{𝒞×𝒟}, is constructed by combining
+the @tech{categories} @math{𝒞} and @math{𝒟} to form a new @tech{category}.
+The @tech{objects} and @tech{morphisms} of @math{𝒞×𝒟} are defined as the
+@tech{Cartesian product} of the @tech{objects} and @tech{morphisms} from @math{𝒞}
+and @math{𝒟}, respectively. Each @tech{object} and @tech{morphism} in the
+@tech{product category} corresponds to an @tech{element} in the
+@tech{Cartesian product} of @tech{objects} and @tech{morphisms} from the original
+@tech{categories}.
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
 
@@ -587,17 +593,16 @@ A @deftech{product category} @math{𝒞×𝒟} combines the given @tech{categori
 @tech{quotient categories} of @math{𝒞×𝒟}.
 
 @margin-note{
-@tech{∘} in this equation are different in different @tech{categories}. The first
-two @tech{∘}s represent @tech{compose}s in the individual @tech{categories},
-while the third @tech{∘} represents @tech{compose} in the @tech{product category}.
+In this equation the first two @tech{∘}s represent @tech{compose}s in the
+individual @tech{categories}, while the third @tech{∘} represents @tech{compose}
+in the @tech{product category}.
 }
 
 @bold{Exercise}: Prove @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
 
-Let's illustrate this concept with a Racket code example
-(@tech{Cartesian product} is implemented as @racket[list]). In the following code,
-we create a @tech{product category} by taking the
-@tech[#:key "Cartesian product"]{product} of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐏𝐚𝐢𝐫}:
+To see this concept in action, let’s use Racket to implement it. In the following
+example, we construct the @tech{product category} from @math{𝐌𝐚𝐭𝐫} and @math{𝐏𝐚𝐢𝐫}
+(using @racket[list] for @tech{Cartesian product}):
 
 @racketfile{code/category/𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫.rkt}
 
@@ -622,18 +627,19 @@ In this context, @tech[#:key "disjoint union"]{sums} refer to
 @tech{disjoint unions}, which are @tech{sum objects} in @tech{𝐒𝐞𝐭}.
 }
 
-A @deftech{sum category} @math{𝒞+𝒟} only contains all @tech{objects} and
-@tech{morphisms} from @math{𝒞} and @math{𝒟}.
+A @deftech{sum category}, denoted as @math{𝒞+𝒟}, is constructed by taking the
+@tech{disjoint union} of the @tech{objects} and @tech{morphisms} from @math{𝒞}
+and @math{𝒟}. It contains all the @tech{objects} and @tech{morphisms} of @math{𝒞}
+and @math{𝒟} as its own.
 
 @image["scribblings/category/images/sum-cat.svg"]{[picture] sum-cat.svg}
 
 @bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are
 @tech{subcategories} of @math{𝒞+𝒟}.
 
-Let's illustrate this concept with a Racket code example
-(@tech{disjoint union} is implemented as @tech{tagged union}). In the following
-code, we create a @tech{sum category} by taking the
-@tech[#:key "disjoint union"]{sum} of @tech{𝐌𝐚𝐭𝐫} and @tech{𝐏𝐚𝐢𝐫}:
+To see this concept in action, let’s use Racket to implement it. In the following
+example, we construct the @tech{sum category} from @math{𝐌𝐚𝐭𝐫} and @math{𝐏𝐚𝐢𝐫}
+(using tagged @tech/refer{pair} for @tech{disjoint union}):
 
 @racketfile{code/category/𝐌𝐚𝐭𝐫+𝐏𝐚𝐢𝐫.rkt}
 
@@ -653,9 +659,9 @@ code, we create a @tech{sum category} by taking the
 
 @subsubsection{Arrow Category}
 
-Given a @tech{category} @math{𝒞}, the @deftech{arrow category} @math{𝒞@^{→}} is
-constructed by takeing its @tech{morphisms} as @tech{objects} and @tech{commutative squares}
-as @tech{morphisms}.
+Given a @tech{category} @math{𝒞}, the @deftech{arrow category}, denoted as
+@math{𝒞@^{→}}, is constructed by takeing its @tech{morphisms} as @tech{objects}
+and @tech{commutative squares} as @tech{morphisms}.
 
 For example, here are three @tech{commutative squares} in @math{𝒞}:
 
@@ -697,13 +703,13 @@ gives rise:
 
 @subsubsection{(Co)Slice Category}
 
-A @deftech{slice category} (@deftech{over category}) @math{𝒞/c} is a construction
-that allows us to study a @tech{category} @math{𝒞} through the lens of a fixed
-@tech{object} @math{c} in @math{𝒞}. Intuitively, @math{𝒞/c} consists of all
-the @tech{objects} and @tech{morphisms} in @math{𝒞} that are "over" @math{c}.
-
-@math{𝒞/c} is constructed by takeing @math{𝒞}'s @tech{morphisms} end to @math{c}
-as @tech{objects}, and @tech{commutative triangles} end to @math{c} as @tech{morphisms}.
+A @deftech{slice category} (@deftech{over category}), denoted as @math{𝒞/c},
+is a construction that allows us to study a @tech{category} @math{𝒞} through the
+lens of a fixed @tech{object} @math{c} in @math{𝒞}. Intuitively, @math{𝒞/c}
+consists of all the @tech{objects} and @tech{morphisms} in @math{𝒞} that are
+"over" @math{c}. @math{𝒞/c} is constructed by takeing @math{𝒞}'s @tech{morphisms}
+end to @math{c} as @tech{objects}, and @tech{commutative triangles} end to @math{c}
+as @tech{morphisms}.
 
 For example, here are three @tech{commutative triangles} end to @math{c_1}
 in @math{𝒞}:
@@ -743,11 +749,11 @@ the @tech{slice category} @math{ℳ/m} like this:
 ]
 
 The @tech{dual} notion of a @tech{slice category} @math{𝒞/c} is a @deftech{coslice category}
-(@deftech{under category}) @math{c/𝒞}, which consists of all the @tech{objects}
-and @tech{morphisms} in @math{𝒞} that are "under" @math{c}.
-
-@math{c/𝒞} is constructed by takeing @math{𝒞}'s @tech{morphisms} start from @math{c}
-as @tech{objects}, and @tech{commutative triangles} start from @math{c} as @tech{morphisms}.
+(@deftech{under category}), denoted as @math{c/𝒞}, which consists of all the
+@tech{objects} and @tech{morphisms} in @math{𝒞} that are "under" @math{c}.
+@math{c/𝒞} is constructed by takeing @math{𝒞}'s @tech{morphisms} start from
+@math{c} as @tech{objects}, and @tech{commutative triangles} start from @math{c}
+as @tech{morphisms}.
 
 For example, here are three @tech{commutative triangles} start from @math{c_0}
 in @math{𝒞}:
