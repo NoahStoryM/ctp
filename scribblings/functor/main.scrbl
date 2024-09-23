@@ -139,7 +139,19 @@ in @tech{𝐂𝐚𝐭}, and an @deftech{autofunctor} is an @tech{automorphism} i
 @bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is a
 @tech{fully faithful} @tech{functor}.
 
+@bold{Exercise}: Prove @math{𝒞 ≅ 𝒞/=}.
+
+@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
+some @tech{quotient categories} of @math{𝒞×𝒟}.
+
+@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
+some @tech{subcategories} of @math{𝒞+𝒟}.
+
 @bold{Exercise}: Think about what @tech{0} and @tech{1} are in @tech{𝐂𝐚𝐭}.
+
+@bold{Exercise}: Prove @math{𝒞 ≅ 0+𝒞 ≅ 𝒞+0}.
+
+@bold{Exercise}: Prove @math{𝒞 ≅ 1×𝒞 ≅ 𝒞×1}.
 
 In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
 @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functors} as
@@ -197,13 +209,7 @@ defined as @tech{procedures} in later sections.
 The @deftech{inclusion functor} @math{I: 𝒟 → 𝒞} is a @tech{functor} which sends
 each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
-@bold{Exercise}: Prove that @math{𝒟} is a @tech{subcategory} of @math{𝒞}.
-
-@bold{Exercise}: Show that for every @tech{sum category} @math{𝒞+𝒟},
-there is an @tech{inclusion functor} from @math{𝒞} to @math{𝒞+𝒟} and an
-@tech{inclusion functor} from @math{𝒟} to @math{𝒞+𝒟}.
-
-@bold{Exercise}: Prove @math{𝒞 ≅ 0+𝒞 ≅ 𝒞+0}.
+@bold{Exercise}: Prove @math{𝒟 ⊆ 𝒞}.
 
 @bold{Exercise}: Prove that every @tech{inclusion functor} is a
 @tech{faithful} @tech{functor}.
@@ -215,12 +221,6 @@ there is an @tech{inclusion functor} from @math{𝒞} to @math{𝒞+𝒟} and an
 
 The @deftech{projection functor} (@deftech{quotient functor}) @math{P: 𝒞 → 𝒞/∼}
 is a @tech{functor} that @math{∀a ∈ 𝒞_0, P(a) = [a]} and @math{∀f ∈ 𝒞_1, P(f) = [f]}.
-
-@bold{Exercise}: Show that for every @tech{product category} @math{𝒞×𝒟},
-there is a @tech{projection functor} from @math{𝒞×𝒟} to @math{𝒞} and a
-@tech{projection functor} from @math{𝒞×𝒟} to @math{𝒟}.
-
-@bold{Exercise}: Prove @math{𝒞 ≅ 1×𝒞 ≅ 𝒞×1}.
 
 @bold{Exercise}: For a @tech{functor} @math{F: 𝒞 → 𝒟} and a
 @tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.

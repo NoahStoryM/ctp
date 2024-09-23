@@ -960,14 +960,6 @@ and @math{f} is the @tech{inverse} of @math{g}, denoted by @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
 if there exists an @tech{isomorphism} between them.
 
-@bold{Exercise}: Prove @math{𝒞 ≅ 𝒞/=}.
-
-@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
-some @tech{quotient categories} of @math{𝒞×𝒟}.
-
-@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
-some @tech{subcategories} of @math{𝒞+𝒟}.
-
 @bold{Exercise}: Prove that every @tech{isomorphism} in @tech{𝐒𝐞𝐭} is @tech{bijective}.
 
 @bold{Exercise}: Prove that every @tech{bijection} is @tech{invertible} in @tech{𝐒𝐞𝐭}.
