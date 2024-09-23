@@ -441,8 +441,8 @@ Such a @tech{category} is called the @deftech{preorder category} associated to a
 A @deftech{partially ordered set} (@deftech{ordered set}, or @deftech{poset})
 is a @tech{preordered set} @math{(S, ≤)}, in which @math{≤} is @tech{antisymmetric}.
 @math{≤} is called a @deftech{partial order} on @math{S}. A @tech{poset} can be
-viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a @tech{category} is called
-the @deftech{order category} of a @tech{poset}.
+viewed as a @tech{full subcategory} of some @tech{preorder categories}. Such a
+@tech{category} is called the @deftech{order category} of a @tech{poset}.
 
 @bold{Exercise}: Implement the @tech{order category} of a @tech{poset}.
 
