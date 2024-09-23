@@ -603,7 +603,7 @@ we create a @tech{product category} by taking the
 
 @bold{Exercise}: Try to @racket[define] @deftech{dom×}, @deftech{cod×},
 @deftech{∘×}, @deftech{?×} and @deftech{=×} so that we can @racket[define] the
-@tech{product category} @math{ℳ×𝒫} in this way:
+@tech{product category} @math{ℳ×𝒫} like this:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
@@ -639,7 +639,7 @@ code, we create a @tech{sum category} by taking the
 
 @bold{Exercise}: Try to @racket[define] @deftech{dom+}, @deftech{cod+},
 @deftech{∘+}, @deftech{?+} and @deftech{=+} so that we can @racket[define] the
-@tech{sum category} @math{ℳ+𝒫} in this way:
+@tech{sum category} @math{ℳ+𝒫} like this:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
@@ -688,7 +688,7 @@ gives rise:
 @racketfile{code/category/Arr_𝐏𝐚𝐢𝐫.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{Arr} so that we can
-@racket[define] the @tech{arrow category} @math{𝒫@^{→}} in this way:
+@racket[define] the @tech{arrow category} @math{𝒫@^{→}} like this:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
@@ -735,7 +735,7 @@ not @tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
 gives rise.
 
 @bold{Exercise}: Try to @racket[define] @deftech{Sli} so that we can @racket[define]
-the @tech{slice category} @math{ℳ/m} in this way:
+the @tech{slice category} @math{ℳ/m} like this:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
@@ -779,7 +779,7 @@ not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
 gives rise.
 
 @bold{Exercise}: Try to @racket[define] @deftech{Sli†} so that we can @racket[define]
-the @tech{coslice category} @math{m/ℳ} in this way:
+the @tech{coslice category} @math{m/ℳ} like this:
 
 @racketblock[
 (define-values (dom cod ∘ ? =)
