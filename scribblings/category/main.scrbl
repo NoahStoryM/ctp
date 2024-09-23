@@ -603,12 +603,6 @@ and @math{𝒟}, respectively. Each @tech{object} and @tech{morphism} in the
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
 
-@margin-note{
-In this equation the first two @tech{∘}s represent @tech{compose}s in the
-individual @tech{categories}, while the third @tech{∘} represents @tech{compose}
-in the @tech{product category}.
-}
-
 @bold{Exercise}: Prove @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
 
 To see this concept in action, let’s use Racket to implement it. In the following
