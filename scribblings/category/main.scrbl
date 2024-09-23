@@ -990,7 +990,7 @@ Examples in @tech{𝐏𝐚𝐢𝐫}:
 
 @bold{Exercise}: Prove that every @tech{object} is @tech{isomorphic} to itself.
 
-@bold{Exercise}: Prove that for a @tech{isomorphism} @math{f}, @math{f = (f@^{–1})@^{–1}}.
+@bold{Exercise}: Prove that for an @tech{isomorphism} @math{f}, @math{f = (f@^{–1})@^{–1}}.
 
 @bold{Exercise}: Prove that for @tech{isomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{–1}∘g@^{–1}}.
