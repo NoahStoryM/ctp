@@ -431,7 +431,7 @@ The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}
 
 @racketfile{code/category/𝐏𝐚𝐢𝐫.rkt}
 
-A @deftech{preordered set} (@deftech{proset}) @math{(S, ≤)}, is a @tech{set}
+A @deftech{preordered set} (@deftech{proset}) @math{(S, ≤)} is a @tech{set}
 @math{S} equipped with a @tech{binary relation} @math{≤} over @math{S} that is
 @tech{reflexive} and @tech{transitive}. @math{≤} is called a @deftech{preorder}
 on @math{S}.
