@@ -174,7 +174,8 @@ unique, we say that @math{f} is @deftech{orthogonal} to @math{g}, denoted by
 From experience, if two @tech{morphisms} @math{f} and @math{g} satisfy @math{f⧄g},
 then @math{f} and @math{g} often possess opposite properties. This relationship
 reflects the complementary nature of their roles in a @tech{commutative square},
-where the lifting property typically holds due to these contrasting characteristics.
+where the @tech{lifting property} typically holds due to these contrasting
+characteristics.
 
 For a @tech{class} @math{𝒞} of @tech{morphisms},
 the @deftech{right weak orthogonal class} (@deftech{right Quillen negation}) is
