@@ -419,8 +419,8 @@ an @tech{OOC}.
 @subsubsection{Category of Relations}
 
 The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, where
-@tech{identity morphisms} are @tech{diagonal relations}, and @tech{morphisms} are
-@tech{binary relations}:
+@tech{morphisms} are @tech{binary relations}, and @tech{identity morphisms} are
+@tech{diagonal relations}:
 
 @racketfile{code/category/𝐑𝐞𝐥.rkt}
 
