@@ -169,7 +169,7 @@ is the @tech{set} of all @deftech{ordered list}s:
 Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{disjoint union}
 (@deftech{tagged union}) of them, denoted as @math{A_0@deftech{+}A_1} or
 @math{@deftech{∐}@_{i=0, 1}A_i}, is the @tech{set} of all @deftech{tagged pair}s:
-@math{∐@_{i=0, 1}A_i = A_0+A_1 := {(a, 0) | a ∈ A_0} ∪ {(a, 1) | a ∈ A_1}}.
+@math{∐@_{i=0, 1}A_i = A_0+A_1 := ∪@_{i=0, 1}{(a, i) | a ∈ A_i}}.
 
 @subsection{Hom Set}
 
