@@ -541,7 +541,7 @@ of @math{𝒞} if:
   @item{@math{∀(f, g) ∈ 𝒞_2, (f, g) ∈ 𝒟_2 ⇒ g∘f ∈ 𝒟_1}.}
   ]
 
-@bold{Exercise}: Show that every @tech{category} is a @tech{subcategory} of itself.
+@bold{Exercise}: Prove @math{𝒞 ⊆ 𝒞}.
 
 We can @racket[define] @deftech{⊆} in Racket to implement the @tech{subcategory}
 @math{𝒟} of @math{𝒞}:
@@ -582,9 +582,6 @@ with the @tech{morphisms} grouped into
         @math{[g]∘[f] = [g∘f]: [a] → [c]} in @math{𝒞/∼}.}
 ]
 
-@bold{Exercise}: Show that every @tech{category} is also the @tech{quotient category}
-of itself by @tech{=}.
-
 We can @racket[define] @deftech{÷} in Racket to implement the
 @tech{quotient category} @math{𝒞/∼}:
 
@@ -605,9 +602,6 @@ and @math{𝒟}, respectively. Each @tech{object} and @tech{morphism} in the
 @tech{categories}.
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
-
-@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are
-@tech{quotient categories} of @math{𝒞×𝒟}.
 
 @margin-note{
 In this equation the first two @tech{∘}s represent @tech{compose}s in the
@@ -644,9 +638,6 @@ and @math{𝒟}. It contains all the @tech{objects} and @tech{morphisms} of @mat
 and @math{𝒟} as its own.
 
 @image["scribblings/category/images/sum-cat.svg"]{[picture] sum-cat.svg}
-
-@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are
-@tech{subcategories} of @math{𝒞+𝒟}.
 
 To see this concept in action, let’s use Racket to implement it. In the following
 example, we construct the @tech{sum category} from @math{𝐌𝐚𝐭𝐫} and @math{𝐏𝐚𝐢𝐫}:
@@ -974,6 +965,14 @@ In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted by @math{f@
 and @math{f} is the @tech{inverse} of @math{g}, denoted by @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
 if there exists an @tech{isomorphism} between them.
+
+@bold{Exercise}: Prove @math{𝒞 ≅ 𝒞/=}.
+
+@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
+some @tech{quotient categories} of @math{𝒞×𝒟}.
+
+@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
+some @tech{subcategories} of @math{𝒞+𝒟}.
 
 @bold{Exercise}: Prove that every @tech{isomorphism} in @tech{𝐒𝐞𝐭} is @tech{bijective}.
 
