@@ -160,14 +160,14 @@ are @deftech{structured set}s (e.g., @tech{monoids}), and @tech{morphisms} are
 @subsection{Cartesian Product}
 
 Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{Cartesian product}
-of them, denoted as @math{A_0@deftech{×}A_1} or @math{@deftech{∏}@_{i=0, 1}A_i},
+of them, denoted by @math{A_0@deftech{×}A_1} or @math{@deftech{∏}@_{i=0, 1}A_i},
 is the @tech{set} of all @deftech{ordered list}s:
 @math{∏@_{i=0, 1}A_i = A_0×A_1 := {(a_0, a_1) | a_0 ∈ A_0, a_1 ∈ A_1}}.
 
 @subsection{Disjoint Union}
 
 Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{disjoint union}
-(@deftech{tagged union}) of them, denoted as @math{A_0@deftech{+}A_1} or
+(@deftech{tagged union}) of them, denoted by @math{A_0@deftech{+}A_1} or
 @math{@deftech{∐}@_{i=0, 1}A_i}, is the @tech{set} of all @deftech{tagged pair}s:
 @math{∐@_{i=0, 1}A_i = A_0+A_1 := ∪@_{i=0, 1}{(a, i) | a ∈ A_i}}.
 
@@ -588,7 +588,7 @@ A @deftech{quotient set} can be viewed as a @tech{quotient category} of a
 
 @subsubsection{Product Category}
 
-A @deftech{product category}, denoted as @math{𝒞×𝒟}, is constructed by combining
+A @deftech{product category}, denoted by @math{𝒞×𝒟}, is constructed by combining
 the @tech{categories} @math{𝒞} and @math{𝒟} to form a new @tech{category}.
 The @tech{objects} and @tech{morphisms} of @math{𝒞×𝒟} are defined as the
 @tech{Cartesian product} of the @tech{objects} and @tech{morphisms} from @math{𝒞}
@@ -631,7 +631,7 @@ example, we construct the @tech{product category} from @math{𝐌𝐚𝐭𝐫} a
 
 @subsubsection{Sum Category}
 
-A @deftech{sum category}, denoted as @math{𝒞+𝒟}, is constructed by taking the
+A @deftech{sum category}, denoted by @math{𝒞+𝒟}, is constructed by taking the
 @tech{disjoint union} of the @tech{objects} and @tech{morphisms} from @math{𝒞}
 and @math{𝒟}. It contains all the @tech{objects} and @tech{morphisms} of @math{𝒞}
 and @math{𝒟} as its own.
@@ -662,7 +662,7 @@ example, we construct the @tech{sum category} from @math{𝐌𝐚𝐭𝐫} and @
 
 @subsubsection{Arrow Category}
 
-Given a @tech{category} @math{𝒞}, the @deftech{arrow category}, denoted as
+Given a @tech{category} @math{𝒞}, the @deftech{arrow category}, denoted by
 @math{𝒞@^{→}}, is constructed by takeing its @tech{morphisms} as @tech{objects}
 and @tech{commutative squares} as @tech{morphisms}.
 
@@ -706,7 +706,7 @@ gives rise:
 
 @subsubsection{(Co)Slice Category}
 
-A @deftech{slice category} (@deftech{over category}), denoted as @math{𝒞/c},
+A @deftech{slice category} (@deftech{over category}), denoted by @math{𝒞/c},
 is a construction that allows us to study a @tech{category} @math{𝒞} through the
 lens of a fixed @tech{object} @math{c} in @math{𝒞}. Intuitively, @math{𝒞/c}
 consists of all the @tech{objects} and @tech{morphisms} in @math{𝒞} that are
@@ -752,7 +752,7 @@ the @tech{slice category} @math{ℳ/m} like this:
 ]
 
 The @tech{dual} notion of a @tech{slice category} @math{𝒞/c} is a @deftech{coslice category}
-(@deftech{under category}), denoted as @math{c/𝒞}, which consists of all the
+(@deftech{under category}), denoted by @math{c/𝒞}, which consists of all the
 @tech{objects} and @tech{morphisms} in @math{𝒞} that are "under" @math{c}.
 @math{c/𝒞} is constructed by takeing @math{𝒞}'s @tech{morphisms} start from
 @math{c} as @tech{objects}, and @tech{commutative triangles} start from @math{c}
