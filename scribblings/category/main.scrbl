@@ -1089,9 +1089,6 @@ The following @tech{diagrams} are @tech{commutative}:
 @bold{Exercise}: Prove that an @tech{initial object} in @math{𝒞} is also a
 @tech{terminal object} in @math{𝒞^op}.
 
-@bold{Exercise}: Prove that @tech{initial objects} (or @tech{terminal objects})
-are @tech{isomorphic} to each other.
-
 @bold{Exercise}: Think about the relationships between @math{0/𝒞}, @math{𝒞/1},
 and @math{𝒞}.
 
