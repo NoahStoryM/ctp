@@ -205,10 +205,19 @@ Additionally, we can @racket[define] two other @tech{functions}:
 
 @subsection{Relation}
 
-A @deftech{relation} over some @tech{sets} is a @tech{subset} of
+A @deftech{relation} over some @tech{sets} is a @tech{subset} of the
 @tech{Cartesian product} of them.
 
-Here're some properties that a @tech{relation} @math{△} over a @tech{set}
+@subsubsection{Binary Relation}
+
+A @deftech{binary relation} from a @tech{set} @math{S} to a @tech{set} @math{T}
+is a @tech{relation} over @math{S} and @math{T}.
+
+The @deftech{diagonal relation} (@deftech{equality relation}) over a @tech{set}
+@math{S}, denoted by @math{Δ_S}, is the @tech{binary relation} over @math{S}:
+@math{{(x, x) | x ∈ S}}.
+
+Here're some properties that a @tech{binary relation} @math{△} over a @tech{set}
 @math{S} may have:
 
 @itemlist[
@@ -221,15 +230,6 @@ Here're some properties that a @tech{relation} @math{△} over a @tech{set}
   @item{@deftech{Transitivity}:
         @math{△} is @deftech{transitive} if: @math{∀x, y, z ∈ S, x △ y ∧ y △ z ⇒ x △ z}.}
 ]
-
-@subsubsection{Binary Relation}
-
-A @deftech{binary relation} from a @tech{set} @math{S} to a @tech{set} @math{T}
-is a @tech{relation} over @math{S×T}.
-
-The @deftech{diagonal relation} (@deftech{equality relation}) over a @tech{set}
-@math{S}, denoted by @math{Δ_S}, is the @tech{binary relation} over @math{S}:
-@math{{(x, x) | x ∈ S}}.
 
 A @deftech{function} @math{f: S → T} can be viewed as the @tech{binary relation}:
 @math{{(x, f(x)) | x ∈ S}}. The @deftech{image} of @math{f}, denoted by
@@ -250,7 +250,7 @@ may have additional properties:
 
 @subsubsection{Equivalence Relation}
 
-An @deftech{equivalence relation} @math{∼} over @math{S} is a @tech{relation}
+An @deftech{equivalence relation} @math{∼} over @math{S} is a @tech{binary relation}
 that is @tech{reflexive}, @tech{symmetric}, and @tech{transitive}. @math{∼}
 partitions @math{S} into disjoint @deftech{class}es, known as
 @deftech{equivalence class}es, where all @tech{elements} within an
@@ -264,7 +264,7 @@ Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}
 
 @image["scribblings/category/images/eq-cls.svg"]{[picture] eq-cls.svg}
 
-@bold{Exercise}: Prove @math{x ∼ y ⇒ [x] = [y]}.
+@bold{Exercise}: Prove @math{x ∼ y ⇔ [x] = [y]}.
 
 @subsubsection{Congruence Relation}
 
