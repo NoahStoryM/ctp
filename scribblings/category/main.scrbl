@@ -123,71 +123,71 @@ translate into practical programming examples, feel free to jump to
 @tech{objects}, @tech{morphisms}, and @tech{compositions} come to life in the
 Racket programming environment, providing concrete examples.
 
-@subsection{Commutative Diagram}
+@subsection{Discrete Category}
 
-Informally, a @deftech{diagram} comprises various @tech{objects} connected by
-various @tech{morphisms}. When the @tech{morphisms} with the same @tech{domain}
-and @tech{codomain} are the same one, the @tech{diagram} is a
-@deftech{@deftech{commutative} diagram}.
+A @deftech{discrete category} is a @tech{category} where the only @tech{morphisms}
+are the @tech{identity morphisms}. In other words, every @tech{object} is only
+connected to itself via its @tech{identity morphism}. This means that a
+@tech{discrete category} can be viewed as the @tech{category} version of a
+@deftech{set}: the @tech{objects} of the @tech{discrete category} correspond to
+the @deftech{element}s of the @tech{set}. A @tech{function} between two
+@tech{sets} can be viewed as a @tech{functor} between two @tech{discrete categories}.
 
-@tech{Commutative diagrams} serve as a powerful language for expressing equations.
+@subsection{One-Object Category}
 
-@subsubsection{Commutative Triangle}
+A @deftech{monoid} (@deftech{monoidal set}) @math{(S, ∘, s)} is a @tech{set}
+@math{S} equipped with an @tech{associative} binary operation @math{∘} and an
+@deftech{identity element} @math{s}.
 
-A @deftech{commutative triangle} is a @tech{commutative diagram} that has the shape
-of a triangle.
+A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}.
+In @tech{OOC}, there is only a single @tech{object}, usually denoted by @deftech{∗},
+and @tech{morphisms} are defined within the context of @tech{∗}.
 
-The equation @math{h = g∘f} can be pictured as a @tech{commutative triangle}
-like this:
+@image["scribblings/category/images/ooc.svg"]{[picture] ooc.svg}
 
-@image["scribblings/category/images/comm-tri.svg"]{[picture] comm-tri.svg}
+The @tech{monoid} structure becomes evident when we consider the @tech{identity morphism}
+as the @tech{monoid} @tech{identity element} and the @tech{composition} operation
+as the @tech{monoid} operation. Thus, @tech{OOCs} provide a categorical perspective
+on @tech{monoids}.
 
-@math{h} is saied to @deftech{factor through} any (and all) of @math{f}, @math{g},
-and @math{b}.
+@subsection{Concrete Category}
 
-@subsubsection{Commutative Square}
+A @deftech{@deftech{concrete} category} is a @tech{category} where @tech{objects}
+are @deftech{structured set}s (e.g., @tech{monoids}), and @tech{morphisms} are
+@deftech{homomorphism}s (e.g., @tech{monoid homomorphisms}), meaning
+@tech{functions} that preserve the structure.
 
-A @deftech{commutative square} is a @tech{commutative diagram} that has the shape
-of a square.
+@subsection{Hom Set}
 
-The equation @math{k∘f = g∘h} can be pictured as a @tech{commutative square}
-like this:
+@margin-note{
+If the @tech{morphisms} from @math{a} to @math{x} do not constitute a @tech{set},
+we use the term @deftech{hom class} instead of @tech{hom set}.
+}
 
-@image["scribblings/category/images/comm-sqr.svg"]{[picture] comm-sqr.svg}
+For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set},
+denoted by @math{Hom@_{𝒞}(a, x)}, is the @tech{set} of all @tech{morphisms} from
+@math{a} to @math{x}: @math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom(f) = a ∧ cod(f) = x}}.
 
-If there is a @tech{morphism} @math{l} making @math{h = l∘f} and @math{k = g∘l},
-then @math{l} is a @deftech{lift} (@deftech{diagonal fill-in} or @deftech{filler})
-in the @tech{commutative square}:
+For @tech{morphisms} @math{f: a → x}, @math{i: b → a} and @math{j: x → y} in
+@math{𝒞}, we can @racket[define] a @tech{function}
+@math{Hom@_{𝒞}(i, j): Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
+@math{Hom@_{𝒞}(i, j)(f) := j∘f∘i}.
 
-@image["scribblings/category/images/lift_1.svg"]{[picture] lift_1.svg}
-@image["scribblings/category/images/lift_2.svg"]{[picture] lift_2.svg}
+@image["scribblings/category/images/hom_1.svg"]{[picture] hom_1.svg}
 
-If a @tech{lift} exists in any @tech{commutative square} involving @math{f} and
-@math{g}, then we say that @math{f} is @deftech{weakly orthogonal} to @math{g},
-or that @math{(f, g)} has the @deftech{lifting property}, denoted by
-@math{f@deftech{↓}g} or @math{f@deftech{⧄}g}. In this case, @math{f} has the
-@deftech{left lifting property} with respect to @math{g}, and @math{g} has the
-@deftech{right lifting property} with respect to @math{f}. If the @tech{lift} is
-unique, we say that @math{f} is @deftech{orthogonal} to @math{g}, denoted by
-@math{f@deftech{⊥}g}.
+Additionally, we can @racket[define] two other @tech{functions}:
 
-From experience, if two @tech{morphisms} @math{f} and @math{g} satisfy @math{f⧄g},
-then @math{f} and @math{g} often possess opposite properties. This relationship
-reflects the complementary nature of their roles in a @tech{commutative square},
-where the @tech{lifting property} typically holds due to these contrasting
-characteristics.
+@itemlist[
+  #:style 'ordered
+  @item{@math{Hom@_{𝒞}(a, j) := Hom@_{𝒞}(id@_{a}, j)}, where
+        @math{Hom@_{𝒞}(a, j)(f) = j∘f}.
 
-For a @tech{class} @math{𝒞} of @tech{morphisms},
-the @deftech{right weak orthogonal class} (@deftech{right Quillen negation}) is
-denoted by @math{𝒞@^{⧄}}, where @math{𝒞@^{⧄} := {g | f⧄g ∀f ∈ 𝒞}}, and
-the @deftech{left weak orthogonal class} (@deftech{left Quillen negation}) is
-denoted by @math{@^{⧄}𝒞}, where @math{@^{⧄}𝒞 := {f | f⧄g ∀g ∈ 𝒞}}. Similarly,
-the @deftech{right orthogonal class} is denoted by @math{𝒞@^{⊥}} or @math{𝒞@^{↓}},
-where @math{𝒞@^{⊥} := {g | f⊥g ∀f ∈ 𝒞}}, and
-the @deftech{left orthogonal class} is denoted by @math{@^{⊥}𝒞} or @math{𝒞@^{↑}},
-where @math{@^{⊥}𝒞 := {f | f⊥g ∀g ∈ 𝒞}}.
+        @image["scribblings/category/images/hom_2.svg"]{[picture] hom_2.svg}}
+  @item{@math{Hom@_{𝒞}(i, x) := Hom@_{𝒞}(i, id@_{x})}, where
+        @math{Hom@_{𝒞}(i, x)(f) = f∘i}.
 
-@bold{Exercise}: Prove @math{𝒞@^{↓↑↓} = 𝒞@^{↓}} and @math{𝒞@^{↑↓↑} = 𝒞@^{↑}}.
+        @image["scribblings/category/images/hom_3.svg"]{[picture] hom_3.svg}}
+  ]
 
 @subsection{Relation}
 
@@ -281,71 +281,71 @@ Prove that @math{∼ ∩ ∽} is also a @tech{congruence relation}.
 A @deftech{congruence class} is an @tech{equivalence class} under a
 @tech{congruence relation}.
 
-@subsection{Discrete Category}
+@subsection{Commutative Diagram}
 
-A @deftech{discrete category} is a @tech{category} where the only @tech{morphisms}
-are the @tech{identity morphisms}. In other words, every @tech{object} is only
-connected to itself via its @tech{identity morphism}. This means that a
-@tech{discrete category} can be viewed as the @tech{category} version of a
-@deftech{set}: the @tech{objects} of the @tech{discrete category} correspond to
-the @deftech{element}s of the @tech{set}. A @tech{function} between two
-@tech{sets} can be viewed as a @tech{functor} between two @tech{discrete categories}.
+Informally, a @deftech{diagram} comprises various @tech{objects} connected by
+various @tech{morphisms}. When the @tech{morphisms} with the same @tech{domain}
+and @tech{codomain} are the same one, the @tech{diagram} is a
+@deftech{@deftech{commutative} diagram}.
 
-@subsection{One-Object Category}
+@tech{Commutative diagrams} serve as a powerful language for expressing equations.
 
-A @deftech{monoid} (@deftech{monoidal set}) @math{(S, ∘, s)} is a @tech{set}
-@math{S} equipped with an @tech{associative} binary operation @math{∘} and an
-@deftech{identity element} @math{s}.
+@subsubsection{Commutative Triangle}
 
-A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}.
-In @tech{OOC}, there is only a single @tech{object}, usually denoted by @deftech{∗},
-and @tech{morphisms} are defined within the context of @tech{∗}.
+A @deftech{commutative triangle} is a @tech{commutative diagram} that has the shape
+of a triangle.
 
-@image["scribblings/category/images/ooc.svg"]{[picture] ooc.svg}
+The equation @math{h = g∘f} can be pictured as a @tech{commutative triangle}
+like this:
 
-The @tech{monoid} structure becomes evident when we consider the @tech{identity morphism}
-as the @tech{monoid} @tech{identity element} and the @tech{composition} operation
-as the @tech{monoid} operation. Thus, @tech{OOCs} provide a categorical perspective
-on @tech{monoids}.
+@image["scribblings/category/images/comm-tri.svg"]{[picture] comm-tri.svg}
 
-@subsection{Concrete Category}
+@math{h} is saied to @deftech{factor through} any (and all) of @math{f}, @math{g},
+and @math{b}.
 
-A @deftech{@deftech{concrete} category} is a @tech{category} where @tech{objects}
-are @deftech{structured set}s (e.g., @tech{monoids}), and @tech{morphisms} are
-@deftech{homomorphism}s (e.g., @tech{monoid homomorphisms}), meaning
-@tech{functions} that preserve the structure.
+@subsubsection{Commutative Square}
 
-@subsection{Hom Set}
+A @deftech{commutative square} is a @tech{commutative diagram} that has the shape
+of a square.
 
-@margin-note{
-If the @tech{morphisms} from @math{a} to @math{x} do not constitute a @tech{set},
-we use the term @deftech{hom class} instead of @tech{hom set}.
-}
+The equation @math{k∘f = g∘h} can be pictured as a @tech{commutative square}
+like this:
 
-For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set},
-denoted by @math{Hom@_{𝒞}(a, x)}, is the @tech{set} of all @tech{morphisms} from
-@math{a} to @math{x}: @math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom(f) = a ∧ cod(f) = x}}.
+@image["scribblings/category/images/comm-sqr.svg"]{[picture] comm-sqr.svg}
 
-For @tech{morphisms} @math{f: a → x}, @math{i: b → a} and @math{j: x → y} in
-@math{𝒞}, we can @racket[define] a @tech{function}
-@math{Hom@_{𝒞}(i, j): Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
-@math{Hom@_{𝒞}(i, j)(f) := j∘f∘i}.
+If there is a @tech{morphism} @math{l} making @math{h = l∘f} and @math{k = g∘l},
+then @math{l} is a @deftech{lift} (@deftech{diagonal fill-in} or @deftech{filler})
+in the @tech{commutative square}:
 
-@image["scribblings/category/images/hom_1.svg"]{[picture] hom_1.svg}
+@image["scribblings/category/images/lift_1.svg"]{[picture] lift_1.svg}
+@image["scribblings/category/images/lift_2.svg"]{[picture] lift_2.svg}
 
-Additionally, we can @racket[define] two other @tech{functions}:
+If a @tech{lift} exists in any @tech{commutative square} involving @math{f} and
+@math{g}, then we say that @math{f} is @deftech{weakly orthogonal} to @math{g},
+or that @math{(f, g)} has the @deftech{lifting property}, denoted by
+@math{f@deftech{↓}g} or @math{f@deftech{⧄}g}. In this case, @math{f} has the
+@deftech{left lifting property} with respect to @math{g}, and @math{g} has the
+@deftech{right lifting property} with respect to @math{f}. If the @tech{lift} is
+unique, we say that @math{f} is @deftech{orthogonal} to @math{g}, denoted by
+@math{f@deftech{⊥}g}.
 
-@itemlist[
-  #:style 'ordered
-  @item{@math{Hom@_{𝒞}(a, j) := Hom@_{𝒞}(id@_{a}, j)}, where
-        @math{Hom@_{𝒞}(a, j)(f) = j∘f}.
+From experience, if two @tech{morphisms} @math{f} and @math{g} satisfy @math{f⧄g},
+then @math{f} and @math{g} often possess opposite properties. This relationship
+reflects the complementary nature of their roles in a @tech{commutative square},
+where the @tech{lifting property} typically holds due to these contrasting
+characteristics.
 
-        @image["scribblings/category/images/hom_2.svg"]{[picture] hom_2.svg}}
-  @item{@math{Hom@_{𝒞}(i, x) := Hom@_{𝒞}(i, id@_{x})}, where
-        @math{Hom@_{𝒞}(i, x)(f) = f∘i}.
+For a @tech{class} @math{𝒞} of @tech{morphisms},
+the @deftech{right weak orthogonal class} (@deftech{right Quillen negation}) is
+denoted by @math{𝒞@^{⧄}}, where @math{𝒞@^{⧄} := {g | f⧄g ∀f ∈ 𝒞}}, and
+the @deftech{left weak orthogonal class} (@deftech{left Quillen negation}) is
+denoted by @math{@^{⧄}𝒞}, where @math{@^{⧄}𝒞 := {f | f⧄g ∀g ∈ 𝒞}}. Similarly,
+the @deftech{right orthogonal class} is denoted by @math{𝒞@^{⊥}} or @math{𝒞@^{↓}},
+where @math{𝒞@^{⊥} := {g | f⊥g ∀f ∈ 𝒞}}, and
+the @deftech{left orthogonal class} is denoted by @math{@^{⊥}𝒞} or @math{𝒞@^{↑}},
+where @math{@^{⊥}𝒞 := {f | f⊥g ∀g ∈ 𝒞}}.
 
-        @image["scribblings/category/images/hom_3.svg"]{[picture] hom_3.svg}}
-  ]
+@bold{Exercise}: Prove @math{𝒞@^{↓↑↓} = 𝒞@^{↓}} and @math{𝒞@^{↑↓↑} = 𝒞@^{↑}}.
 
 @section{Mapping Category to Programming}
 
