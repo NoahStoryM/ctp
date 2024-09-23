@@ -1311,7 +1311,15 @@ unique up to @tech{isomorphism}:
 @bold{Exercise}: Prove that a @tech{WFS} @math{(ℰ, ℳ)} in @math{𝒞} is also a
 @tech{WFS} @math{(ℳ, ℰ)} in @math{𝒞@^{op}}.
 
+@margin-note{
+@math{e⧄ℳ := ∀m ∈ ℳ, e⧄m}.
+}
+
 @bold{Exercise}: Prove @math{∀e ∈ 𝒞_1, e⧄ℳ ⇒ e ∈ ℰ}.
+
+@margin-note{
+@math{ℰ⧄m := ∀e ∈ ℰ, e⧄m}.
+}
 
 @bold{Exercise}: Prove @math{∀m ∈ 𝒞_1, ℰ⧄m ⇒ m ∈ ℳ}.
 
