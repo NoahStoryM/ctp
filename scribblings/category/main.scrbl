@@ -157,6 +157,20 @@ are @deftech{structured set}s (e.g., @tech{monoids}), and @tech{morphisms} are
 @deftech{homomorphism}s (e.g., @tech{monoid homomorphisms}), meaning
 @tech{functions} that preserve the structure.
 
+@subsection{Cartesian Product}
+
+Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{Cartesian product}
+of them, denoted as @math{A_0@deftech{×}A_1} or @math{@deftech{∏}@_{i=0, 1}A_i},
+is the @tech{set} of all @deftech{ordered list}s:
+@math{∏@_{i=0, 1}A_i = A_0×A_1 := {(a_0, a_1) | a_0 ∈ A_0, a_1 ∈ A_1}}.
+
+@subsection{Disjoint Union}
+
+Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{disjoint union}
+(@deftech{tagged union}) of them, denoted as @math{A_0@deftech{+}A_1} or
+@math{@deftech{∐}@_{i=0, 1}A_i}, is the @tech{set} of all @deftech{tagged pair}s:
+@math{∐@_{i=0, 1}A_i = A_0+A_1 := {(a, 0) | a ∈ A_0} ∪ {(a, 1) | a ∈ A_1}}.
+
 @subsection{Hom Set}
 
 @margin-note{
@@ -597,8 +611,7 @@ in the @tech{product category}.
 @bold{Exercise}: Prove @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
 
 To see this concept in action, let’s use Racket to implement it. In the following
-example, we construct the @tech{product category} from @math{𝐌𝐚𝐭𝐫} and @math{𝐏𝐚𝐢𝐫}
-(using @racket[list] for @tech{Cartesian product}):
+example, we construct the @tech{product category} from @math{𝐌𝐚𝐭𝐫} and @math{𝐏𝐚𝐢𝐫}:
 
 @racketfile{code/category/𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫.rkt}
 
@@ -629,8 +642,7 @@ and @math{𝒟} as its own.
 @tech{subcategories} of @math{𝒞+𝒟}.
 
 To see this concept in action, let’s use Racket to implement it. In the following
-example, we construct the @tech{sum category} from @math{𝐌𝐚𝐭𝐫} and @math{𝐏𝐚𝐢𝐫}
-(using tagged @tech/refer{pair} for @tech{disjoint union}):
+example, we construct the @tech{sum category} from @math{𝐌𝐚𝐭𝐫} and @math{𝐏𝐚𝐢𝐫}:
 
 @racketfile{code/category/𝐌𝐚𝐭𝐫+𝐏𝐚𝐢𝐫.rkt}
 
