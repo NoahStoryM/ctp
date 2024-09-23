@@ -431,21 +431,18 @@ The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}
 
 @racketfile{code/category/𝐏𝐚𝐢𝐫.rkt}
 
-A @deftech{preordered set} (@deftech{proset}), @math{(S, ≤)}, is a @tech{set}
-@math{S} equipped with a @tech{relation} @math{≤} over @math{S} that is
+A @deftech{preordered set} (@deftech{proset}) @math{(S, ≤)}, is a @tech{set}
+@math{S} equipped with a @tech{binary relation} @math{≤} over @math{S} that is
 @tech{reflexive} and @tech{transitive}. @math{≤} is called a @deftech{preorder}
-on @math{S}.
-
-A @tech{proset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
-@tech{category} is called the @deftech{preorder category} associated to a
+on @math{S}. A @tech{proset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}.
+Such a @tech{category} is called the @deftech{preorder category} associated to a
 @tech{proset}.
 
 A @deftech{partially ordered set} (@deftech{ordered set}, or @deftech{poset})
-is a @tech{preordered set}, @math{(S, ≤)}, in which @math{≤} is @tech{antisymmetric}.
-@math{≤} is called a @deftech{partial order} on @math{S}.
-
-A @tech{poset} can be viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a
-@tech{category} is called the @deftech{order category} of a @tech{poset}.
+is a @tech{preordered set} @math{(S, ≤)}, in which @math{≤} is @tech{antisymmetric}.
+@math{≤} is called a @deftech{partial order} on @math{S}. A @tech{poset} can be
+viewed as a @tech{subcategory} of @tech{𝐏𝐚𝐢𝐫}. Such a @tech{category} is called
+the @deftech{order category} of a @tech{poset}.
 
 @bold{Exercise}: Implement the @tech{order category} of a @tech{poset}.
 
