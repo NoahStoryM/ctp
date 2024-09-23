@@ -561,7 +561,7 @@ with the @tech{morphisms} grouped into
 ]
 
 @bold{Exercise}: Show that every @tech{category} is also the @tech{quotient category}
-of itself by @math{=}.
+of itself by @tech{=}.
 
 We can @racket[define] @deftech{÷} in Racket to implement the
 @tech{quotient category} @math{𝒞/∼}:
