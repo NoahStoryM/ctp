@@ -492,9 +492,10 @@ typed language, stronger than any programming language. This is due to the
 @tech{composition rule}: @math{g∘f} exists iff @math{cod(f) = dom(g)}. Racket, being
 an untyped language, allows any @tech{procedure} to be @tech[#:key "compose"]{composed},
 such as @code{(∘ car +)}, but such a @tech{procedure} will only @racket[raise] an
-@racket[exn] when applied. Therefore, @tech{𝐏𝐫𝐨𝐜} can be regarded as an @tech{OOC}:
+@racket[exn] when applied. Therefore, @tech{𝐏𝐫𝐨𝐜} can be regarded as an @tech{OOC},
+where @tech{∗} is @racket[values].
 
-@racketfile{code/category/𝐏𝐫𝐨𝐜.rkt}
+@;; @racketfile{code/category/𝐏𝐫𝐨𝐜.rkt}
 
 @subsection{Constructions on Categories}
 
