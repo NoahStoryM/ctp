@@ -797,6 +797,9 @@ the @tech{coslice category} @math{m/ℳ} like this:
 
 @bold{Exercise}: Try to @racket[define] @tech{Sli†} by using @tech{†} and @tech{Sli}.
 
+@bold{Exercise}: Think about the relationships between (co)@tech{slice categories}
+and @tech{arrow categories}.
+
 @section{Categorical Definitions}
 
 In this @seclink["Categorical_Definitions"]{section}, we explore the fundamental
