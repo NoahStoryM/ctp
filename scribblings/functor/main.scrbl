@@ -139,8 +139,6 @@ in @tech{𝐂𝐚𝐭}, and an @deftech{autofunctor} is an @tech{automorphism} i
 @bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is a
 @tech{fully faithful} @tech{functor}.
 
-@bold{Exercise}: Prove @math{𝒞 ≅ 𝒞/=}.
-
 @bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
 some @tech{quotient categories} of @math{𝒞×𝒟}.
 

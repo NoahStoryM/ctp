@@ -586,6 +586,8 @@ with the @tech{morphisms} grouped into
         @math{[g]∘[f] = [g∘f]: [a] → [c]} in @math{𝒞/∼}.}
 ]
 
+@bold{Exercise}: Think about the relationships between @math{𝒞} and @math{𝒞/=}.
+
 We can @racket[define] @deftech{÷} in Racket to implement the
 @tech{quotient category} @math{𝒞/∼}:
 
