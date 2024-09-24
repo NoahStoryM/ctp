@@ -253,15 +253,18 @@ to @tech{𝐒𝐞𝐭}.
 
 @subsection{Composition Functor}
 
-For a @tech{morphism} @math{g: b → c} in a @tech{category} @math{𝒞}, there is a
-@deftech{composition functor} @math{𝒞/g: 𝒞/b → 𝒞/c}. @math{𝒞/g} maps an @tech{object}
-@math{f} in @math{𝒞/b} to the @tech{object} @math{g∘f} in @math{𝒞/c}.
-
-@bold{Exercise}: Implement a @tech{composition functor} @math{ℳ/g: ℳ/b → ℳ/c},
-where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫} and @math{g: b → c} is a @tech{morphism} in @math{ℳ}.
+For @tech{morphism} @math{f: a → b} and @math{g: b → c} in a @tech{category}
+@math{𝒞}, there are two kinds of @deftech{composition functor}s:
+@math{f/𝒞: b/𝒞 → a/𝒞} and @math{𝒞/g: 𝒞/b → 𝒞/c}. @math{f/𝒞} maps an @tech{object}
+@math{g} in @math{b/𝒞} to the @tech{object} @math{g∘f} in @math{a/𝒞}, while
+@math{𝒞/g} maps an @tech{object} @math{f} in @math{𝒞/b} to the @tech{object}
+@math{g∘f} in @math{𝒞/c}.
 
 @bold{Exercise}: Implement a @tech{composition functor} @math{f/ℳ: b/ℳ → a/ℳ},
 where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫} and @math{f: a → b} is a @tech{morphism} in @math{ℳ}.
+
+@bold{Exercise}: Implement a @tech{composition functor} @math{ℳ/g: ℳ/b → ℳ/c},
+where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫} and @math{g: b → c} is a @tech{morphism} in @math{ℳ}.
 
 @subsection{(Co)Slice Functor}
 
@@ -372,7 +375,7 @@ The @tech{category} of @deftech{graph}, denoted as @deftech{𝐆𝐫𝐟}, where
 A @deftech{𝐒𝐞𝐭-valued functor} on @math{𝒞} is a @tech{functor} from @math{𝒞} to
 @tech{𝐒𝐞𝐭}. @tech{𝐒𝐞𝐭-valued functors} have theoretical importance due to the
 @tech{Yoneda Lemma}, a fundamental result in @tech{category theory} that will be
-introduced in detail in the next chapter.
+introduced in detail in the next @seclink["_Natural_Transformation_"]{chapter}.
 
 @subsection{Powerset Functor}
 
