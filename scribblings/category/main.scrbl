@@ -1107,51 +1107,58 @@ A @tech{category} with a @tech{zero object} is called a @deftech{pointed categor
 
 @subsubsection{Global Element}
 
-In @tech{category theory}, we often want to capture the notion of @tech{elements}
-in a way that is consistent across different @tech{categories}. Although a
-@tech{category} doesn't inherently describe the internal structure of its
-@tech{objects}, we can still interpret @tech{elements} of an @tech{object} by
-using special @tech{morphisms}.
+In @tech{category theory}, we often seek to capture the notion of @tech{elements}
+in a way that remains consistent across different @tech{categories}. Although
+@tech{categories} do not inherently describe the internal structure of their
+@tech{objects}, we can still interpret @tech{elements} of an @tech{object}
+through special @tech{morphisms}.
 
-Consider @tech{𝐒𝐞𝐭} as an example. Since every @tech{set} @math{A} is
-@tech{isomorphic} to @math{Hom(1, A)}, where @tech{1} is a @tech{singleton set}
-@tech{{∗}}, we can then regard the @tech{elements} of @math{A} as the
-@tech{elements} of @math{Hom(1, A)}. In this view, an @tech{element} @math{x} of
-a @tech{set} @math{A} is simply a @tech{morphism} @math{x: 1 → A}:
+Consider @tech{𝐒𝐞𝐭} as an example. Any @tech{set} @math{A} is @tech{isomorphic} to
+@math{Hom(1, A)}, where @tech{1} is a @tech{singleton set} @tech{{∗}}. Therefore
+we can regard the @tech{elements} of @math{A} as the @tech{elements} of
+@math{Hom(1, A)}. In this view, an @tech{element} @math{x} of @math{A} corresponds
+to a @tech{morphism} @math{x: 1 → A}:
 
 @image["scribblings/category/images/global-elem_1.svg"]{[picture] global-elem_1.svg}
 @image["scribblings/category/images/global-elem_2.svg"]{[picture] global-elem_2.svg}
 @image["scribblings/category/images/global-elem_3.svg"]{[picture] global-elem_3.svg}
 
-This approach gives us a way to generalize the concept of @tech{elements} beyond
-@tech{sets}. In any @tech{category} @math{𝒞} with a @tech{terminal object}
-@tech{1}, we can @racket[define] the @tech{elements} of an @tech{object} @math{a}
-as the @tech{elements} of @math{Hom@_{𝒞}(1, a)}, i.e., the @tech{morphisms}
-@math{1 → a}. These @tech{morphisms} are called @deftech{global element}s
-(@deftech{global point}s) because they serve as a generalized notion of
-@tech{elements}.
+@bold{Exercise}: Consider @math{f: {a, b} → {∗}} in @math{𝐒𝐞𝐭}, the simplest
+example of a non-@tech{injective} @tech{morphism}. Prove that a @tech{morphism}
+@math{g} is @tech{injective} iff @math{f⧄g}, and iff @math{g⧄f}.
 
-@bold{Exercise}: Consider @math{f: {a, b} → {∗}} in @math{𝐒𝐞𝐭}, which is the
-simplest example of a non-@tech{injective} @tech{morphism}. Prove that a
-@tech{morphism} @math{g} is @tech{injective} iff @math{f⧄g}, and iff @math{g⧄f}.
+@bold{Exercise}: Consider @math{f: {} → {∗}} in @math{𝐒𝐞𝐭}, the simplest
+example of a non-@tech{surjective} @tech{morphism}. Prove that a @tech{morphism}
+@math{g} is @tech{surjective} iff @math{f⧄g}.
 
-@bold{Exercise}: Consider @math{f: {} → {∗}} in @math{𝐒𝐞𝐭}, which is the
-simplest example of a non-@tech{surjective} @tech{morphism}. Prove that a
-@tech{morphism} @math{g} is @tech{surjective} iff @math{f⧄g}.
+This approach generalizes the concept of @tech{elements} beyond @tech{sets}. In
+any @tech{category} @math{𝒞} with a @tech{terminal object} @tech{1}, we can
+@racket[define] the @tech{elements} of an @tech{object} @math{a} as the
+@tech{elements} of @math{Hom@_{𝒞}(1, a)}, i.e., the @tech{morphisms} @math{1 → a}.
+These @tech{morphisms} are called @deftech{global element}s (@deftech{global point}s)
+because they serve as a generalized notion of @tech{elements}.
 
-In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math{f: A → B}.
+If we can describe a property of a @tech{category} @math{𝒞} in a generalized way,
+we can extend this property to other @tech{categories}. For example, by describing
+the @tech{elements} of a @tech{set} @math{A} as the @tech{elements} of
+@math{Hom(1, A)}, we can then discuss the @tech{elements} of any @tech{object}
+in any @tech{category} that has a @tech{terminal object}. This abstraction allows
+us to apply familiar concepts beyond @tech{𝐒𝐞𝐭}, providing a consistent way to
+explore structures in various @tech{categories}.
+
+Let's further explore @tech{𝐒𝐞𝐭} with a @tech{function} @math{f: A → B}.
 Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},
-denoted by @math{f(x)}. In @tech{category theory}, we can express this application
-using @tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A}, then
+written as @math{f(x)}. In @tech{category theory}, we can express this application
+using @tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A},
 applying @math{f} to @math{x} corresponds to composing @math{x} with @math{f},
-denoted by @math{f∘x}. Thus, the notation @math{f(x)} is sometimes used to denote
-the @tech{composite} @math{f∘x}, where @math{x} is interpreted as a @tech{morphism}
-rather than an @tech{element}.
+written as @math{f∘x}. Therefore, the notation @math{f(x)} is sometimes used to
+denote the @tech{composite} @math{f∘x}, where @math{x} is interpreted as a
+@tech{morphism} rather than an @tech{element}.
 
-In this context, any @tech{morphism} @math{x: a → b} can be seen as a
-@deftech{variable element} of @math{b}, parametrized by @math{a}.  This viewpoint
-reinforces the idea that @tech{morphisms} can be thought of as generalized
-@tech{elements}, and applying @tech{functions} is simply a special case of
+In this context, any @tech{morphism} @math{x: a → b} can be viewed as a
+@deftech{variable element} of @math{b}, parametrized by @math{a}. This viewpoint
+reinforces the idea that @tech{morphisms} can be regarded as generalized
+@tech{elements}, and that @tech{function} application is simply a special case of
 @tech{morphism} @tech{composition}.
 
 @subsubsection{Pointed Object}
@@ -1166,11 +1173,12 @@ The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭@_{�
 be viewed as the @tech{coslice category} @math{1/𝐒𝐞𝐭}, where the @tech{base point}
 @math{s} of @math{S} corresponds to a @tech{global element} @math{s: 1 → S}.
 
-If a @tech{terminal object} @tech{1} exists within a @tech{category} @math{𝒞}, a
-@deftech{pointed object} in @math{𝒞} is an @tech{object} @math{S} equipped with
-a @tech{global element} @math{s: 1 → S}. The @tech{category} of @tech{pointed objects}
-in @math{𝒞} can be viewed as the @tech{coslice category} @math{1/𝒞}, generalizing
-the notion of @tech{pointed sets} to arbitrary @tech{categories}.
+Similarly, if a @tech{terminal object} @tech{1} exists within a @tech{category}
+@math{𝒞}, a @deftech{pointed object} in @math{𝒞} is an @tech{object} @math{S}
+equipped with a @tech{global element} @math{s: 1 → S}. The @tech{category} of
+@tech{pointed objects} in @math{𝒞} can be viewed as the @tech{coslice category}
+@math{1/𝒞}, generalizing the notion of @tech{pointed sets} to arbitrary
+@tech{categories}.
 
 @subsection{Subobject and Quotient Object}
 
