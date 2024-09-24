@@ -1094,8 +1094,8 @@ in @math{𝒞}, then @math{a ≅ b}.
 @tech{terminal object} in @math{𝒞^op}.
 
 If an @tech{object} is both an @tech{initial object} and a @tech{terminal object},
-it is called a @deftech{zero object} (@deftech{null object} or @deftech{biterminator}).
-A @tech{category} with a @tech{zero object} is called a @deftech{pointed category}.
+it is called a @deftech{null object} (@deftech{zero object} or @deftech{biterminator}).
+A @tech{category} with a @tech{null object} is called a @deftech{pointed category}.
 
 The following @tech{diagrams} are @tech{commutative}:
 
