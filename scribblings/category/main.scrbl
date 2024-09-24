@@ -1171,7 +1171,7 @@ meaning @math{f(s) = t}.
 
 The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭@_{∗}}, can
 be viewed as the @tech{coslice category} @math{1/𝐒𝐞𝐭}, where the @tech{base point}
-@math{s} of @math{S} corresponds to a @tech{global element} @math{s: 1 → S}.
+@math{s} of @math{S} corresponds to the @tech{global element} @math{s: 1 → S}.
 
 Similarly, if a @tech{terminal object} @tech{1} exists within a @tech{category}
 @math{𝒞}, a @deftech{pointed object} in @math{𝒞} is an @tech{object} @math{S}
