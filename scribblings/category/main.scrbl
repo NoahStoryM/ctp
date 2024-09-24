@@ -1090,20 +1090,20 @@ in @math{𝒞}, then @math{a ≅ b}.
 @bold{Exercise}: Prove that any @deftech{singleton set} @deftech{{∗}} is a
 @tech{terminal object} in @tech{𝐒𝐞𝐭}.
 
+@bold{Exercise}: Prove that an @tech{initial object} in @math{𝒞} is also a
+@tech{terminal object} in @math{𝒞^op}.
+
+If an @tech{object} is both an @tech{initial object} and a @tech{terminal object},
+it is called a @deftech{zero object} (@deftech{null object} or @deftech{biterminator}).
+A @tech{category} with a @tech{zero object} is called a @deftech{pointed category}.
+
 The following @tech{diagrams} are @tech{commutative}:
 
 @image["scribblings/category/images/0→1_1.svg"]{[picture] 0→1_1.svg}
 @image["scribblings/category/images/0→1_2.svg"]{[picture] 0→1_2.svg}
 
-@bold{Exercise}: Prove that an @tech{initial object} in @math{𝒞} is also a
-@tech{terminal object} in @math{𝒞^op}.
-
 @bold{Exercise}: Think about the relationships between @math{0/𝒞}, @math{𝒞/1},
 and @math{𝒞}.
-
-If an @tech{object} is both an @tech{initial object} and a @tech{terminal object},
-it is called a @deftech{zero object} (@deftech{null object} or @deftech{biterminator}).
-A @tech{category} with a @tech{zero object} is called a @deftech{pointed category}.
 
 @subsubsection{Global Element}
 
