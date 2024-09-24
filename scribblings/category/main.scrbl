@@ -1107,38 +1107,29 @@ A @tech{category} with a @tech{zero object} is called a @deftech{pointed categor
 
 @subsubsection{Global Element}
 
-If a @tech{terminal object} @tech{1} exists within a @tech{category} @math{𝒞}, a
-@deftech{global element} of another @tech{object} @math{a} in @math{𝒞} is defined
-as a @tech{morphism} @math{1 → a}.
+In @tech{category theory}, we often want to capture the notion of @tech{elements}
+in a way that is consistent across different @tech{categories}. Although a
+@tech{category} doesn't inherently describe the internal structure of its
+@tech{objects}, we can still interpret @tech{elements} of an @tech{object} by
+using special @tech{morphisms}.
 
-Although a @tech{category} is fundamentally composed of @tech{objects} and
-@tech{morphisms}, @tech{objects} within some @tech{categories} possess some
-inherent structures. The beauty of @tech{category theory} lies in our ability to
-consistently identify special @tech{morphisms} that reveal and represent these
-structures. This perspective not only deepens our understanding of tangible
-structures but also inspires us to perceive connections and patterns beyond the
-obvious structural definitions.
-
-Consider @tech{𝐒𝐞𝐭} as an example. We understand that @tech{sets} contain
-@tech{elements}. However, the definition of @tech{categories} does not talk about
-the internal structure of their @tech{objects}. Therefore, we must adopt a
-different viewpoint, characterizing @tech{elements} through @tech{morphisms} instead.
+Consider @tech{𝐒𝐞𝐭} as an example. Since every @tech{set} @math{A} is
+@tech{isomorphic} to @math{Hom(1, A)}, where @tech{1} is a @tech{singleton set}
+@tech{{∗}}, we can then regard the @tech{elements} of @math{A} as the
+@tech{elements} of @math{Hom(1, A)}. In this view, an @tech{element} @math{x} of
+a @tech{set} @math{A} is simply a @tech{morphism} @math{x: 1 → A}:
 
 @image["scribblings/category/images/global-elem_1.svg"]{[picture] global-elem_1.svg}
 @image["scribblings/category/images/global-elem_2.svg"]{[picture] global-elem_2.svg}
 @image["scribblings/category/images/global-elem_3.svg"]{[picture] global-elem_3.svg}
 
-This approach to viewing @tech{elements} requires only the presence of a
-@tech{terminal object} in the @tech{category}. In this context, the @tech{morphisms}
-@math{1 → a} can be seen as the @tech{elements} of the @tech{object} @math{a},
-thereby generalizing the concept of @tech{elements} of @tech{sets} in a broader
-and more abstract manner.
-
-@bold{Exercise}: A @deftech{pointed set} @math{(S, s)} is a @tech{set} @math{S}
-equipped with a distinguished @tech{element} @math{s}, often called the
-@deftech{base point}. Prove that the @tech{category} of @tech{pointed sets},
-denoted as @deftech{𝐒𝐞𝐭@_{∗}}, is @tech{isomorphic} to the @tech{coslice category}
-@math{1/𝐒𝐞𝐭}.
+This approach gives us a way to generalize the concept of @tech{elements} beyond
+@tech{sets}. In any @tech{category} @math{𝒞} with a @tech{terminal object}
+@tech{1}, we can @racket[define] the @tech{elements} of an @tech{object} @math{a}
+as the @tech{elements} of @math{Hom@_{𝒞}(1, a)}, i.e., the @tech{morphisms}
+@math{1 → a}. These @tech{morphisms} are called @deftech{global element}s
+(@deftech{global point}s) because they serve as a generalized notion of
+@tech{elements}.
 
 @bold{Exercise}: Consider @math{f: {a, b} → {∗}} in @math{𝐒𝐞𝐭}, which is the
 simplest example of a non-@tech{injective} @tech{morphism}. Prove that a
@@ -1152,15 +1143,34 @@ In further exploring @tech{𝐒𝐞𝐭}, let's consider a @tech{function} @math
 Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},
 denoted by @math{f(x)}. In @tech{category theory}, we can express this application
 using @tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A}, then
-the application of @math{f} to @math{x} is represented by the @tech{composite}
-of @math{x} and @math{f}, written as @math{f∘x}. Thus, the notation @math{f(x)}
-is sometimes used in @tech{category theory} to denote the @tech{composite}
-@math{f∘x}, where @math{x} is interpreted as a @tech{morphism} rather than an
-@tech{element}. In this context, an arbitrary @tech{morphism} @math{x: a → b} is
-called a @deftech{variable element} of @math{b}, parametrized by @math{a}. This
-viewpoint aligns with the idea that @tech{morphisms} in a @tech{category} can be
-thought of as @tech{elements}, and an application is a special case of @tech{morphism}
-@tech{composition}.
+applying @math{f} to @math{x} corresponds to composing @math{x} with @math{f},
+denoted by @math{f∘x}. Thus, the notation @math{f(x)} is sometimes used to denote
+the @tech{composite} @math{f∘x}, where @math{x} is interpreted as a @tech{morphism}
+rather than an @tech{element}.
+
+In this context, any @tech{morphism} @math{x: a → b} can be seen as a
+@deftech{variable element} of @math{b}, parametrized by @math{a}.  This viewpoint
+reinforces the idea that @tech{morphisms} can be thought of as generalized
+@tech{elements}, and applying @tech{functions} is simply a special case of
+@tech{morphism} @tech{composition}.
+
+@subsubsection{Pointed Object}
+
+A @deftech{pointed set} @math{(S, s)} is a @tech{set} @math{S} equipped with a
+distinguished @tech{element} @math{s}, often called the @deftech{base point}. A
+@tech{homomorphism} between two @tech{pointed sets}, @math{f: (S, s) → (T, t)},
+is a @tech{function} @math{f: S → T} that preserves the @tech{base point},
+meaning @math{f(s) = t}.
+
+The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭@_{∗}}, can
+be viewed as the @tech{coslice category} @math{1/𝐒𝐞𝐭}, where the @tech{base point}
+@math{s} of @math{S} corresponds to a @tech{global element} @math{s: 1 → S}.
+
+If a @tech{terminal object} @tech{1} exists within a @tech{category} @math{𝒞}, a
+@deftech{pointed object} in @math{𝒞} is an @tech{object} @math{S} equipped with
+a @tech{global element} @math{s: 1 → S}. The @tech{category} of @tech{pointed objects}
+in @math{𝒞} can be viewed as the @tech{coslice category} @math{1/𝒞}, generalizing
+the notion of @tech{pointed sets} to arbitrary @tech{categories}.
 
 @subsection{Subobject and Quotient Object}
 
