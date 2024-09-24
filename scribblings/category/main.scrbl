@@ -487,6 +487,10 @@ of @tech{morphisms}. In @tech{𝐒𝐞𝐭}, two @tech{functions} are considered
 As a result, we must rely on the programmer's judgment to ascertain whether the
 behavior of two @tech{procedures} is the same.
 
+@margin-note{
+In a certain sense, a @tech{category} can be regarded as a @deftech{typed monoid}.
+}
+
 From the computing science perspective, @tech{category theory} is a strongly
 typed language, stronger than any programming language. This is due to the
 @tech{composition rule}: @math{g∘f} exists iff @math{cod(f) = dom(g)}. Racket, being
