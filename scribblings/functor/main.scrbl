@@ -491,7 +491,7 @@ takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
 
 @deftech{Cayley's theorem} in the context of @tech{category theory} states that
 every @tech{small category} @math{𝒞} is @tech{isomorphic} to a @tech{subcategory}
-of @math{𝐒𝐞𝐭} @math{𝒮}. @math{𝒮} is called the @deftech{Cayley's representation}
+@math{𝒮} of @math{𝐒𝐞𝐭}. @math{𝒮} is called the @deftech{Cayley's representation}
 of @math{𝒞}.
 
 To demonstrate this, we'll @racket[define] @tech{isomorphisms} @math{H: 𝒞 → 𝒮}
