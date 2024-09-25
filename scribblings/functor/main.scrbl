@@ -311,9 +311,10 @@ equipped with some additional structure (e.g., @tech{monoids}), and the
 @tech{functions} that preserve that structure.
 
 Although many @tech{categories} of @tech{structured sets} are examples of
-@tech{concrete categories}, the concept of a @tech{concrete category} is
-more general. A @deftech{concrete category} is a @tech{category} @math{𝒞}
-equipped with a @tech{faithful} @tech{forgetful functor}: @math{U: 𝒞 → 𝐒𝐞𝐭}.
+@tech{concrete categories}, the concept of a @tech{concrete category} is more
+general. A @deftech{concrete category} is a @tech{category} @math{𝒞} equipped
+with a @tech{faithful} @tech{functor} @math{U: 𝒞 → 𝐒𝐞𝐭}. A @tech{category} is
+said to be @deftech{concretizable} iff it admits such a @tech{functor}.
 
 @tech{Structured sets} and their @tech{homomorphisms} form fundamental
 @tech{categories} that encapsulate various algebraic structures. These
