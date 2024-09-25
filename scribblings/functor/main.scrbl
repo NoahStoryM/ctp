@@ -305,11 +305,21 @@ For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} m
 ]
 @section{Categories of Structured Sets}
 
-@tech{Structured sets} and their @tech{homomorphisms} form fundamental @tech{categories}
-that encapsulate various algebraic structures. These @tech{categories} allow us
-to study and generalize properties and operations across different mathematical
-systems. In this @seclink["Categories_of_Structured_Sets"]{section}, we'll explore
-several important @tech{categories} of @tech{structured sets}.
+A @deftech{structured set} is a @tech{set}, known as @deftech{underlying set},
+equipped with some additional structure (e.g., @tech{monoids}), and the
+@deftech{homomorphisms} between them (e.g., @tech{monoid homomorphisms}) are
+@tech{functions} that preserve that structure.
+
+Although many @tech{categories} of @tech{structured sets} are examples of
+@tech{concrete categories}, the concept of a @tech{concrete category} is
+more general. A @deftech{concrete category} is a @tech{category} @math{𝒞}
+equipped with a @tech{faithful} @tech{forgetful functor}: @math{U: 𝒞 → 𝐒𝐞𝐭}.
+
+@tech{Structured sets} and their @tech{homomorphisms} form fundamental
+@tech{categories} that encapsulate various algebraic structures. These
+@tech{categories} allow us to study and generalize properties and operations
+across different mathematical systems. In this @seclink["Categories_of_Structured_Sets"]{section},
+we’ll explore several important @tech{categories} of @tech{structured sets}.
 
 @subsection{Category of Monoids}
 

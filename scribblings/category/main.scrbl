@@ -151,13 +151,6 @@ as the @tech{monoid} @tech{identity element} and the @tech{composition} operatio
 as the @tech{monoid} operation. Thus, @tech{OOCs} provide a categorical perspective
 on @tech{monoids}.
 
-@subsection{Concrete Category}
-
-A @deftech{@deftech{concrete} category} is a @tech{category} where @tech{objects}
-are @deftech{structured set}s (e.g., @tech{monoids}), and @tech{morphisms} are
-@deftech{homomorphism}s (e.g., @tech{monoid homomorphisms}), meaning
-@tech{functions} that preserve the structure.
-
 @subsection{Cartesian Product}
 
 Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{Cartesian product}
