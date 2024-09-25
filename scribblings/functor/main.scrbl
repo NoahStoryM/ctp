@@ -101,6 +101,10 @@ The following example illustrates how to implement @tech{functors} in Racket:
 @bold{Exercise}: Prove that @tech{functors} can be @tech[#:key "compose"]{composed}
 and that this @tech{composition} is @tech{associative}.
 
+@bold{Exercise}: Show that a @tech{diagram} can be defined as a @tech{functor},
+where the @tech{domain} is called the @deftech{indexing category} of the
+@tech{diagram}.
+
 A @tech{functor} @math{F: 𝒞 → 𝒟} @deftech{preserve}s a property @math{P} of
 @tech{morphisms} in @math{𝒞} if whenever @math{f} has @math{P}, so does @math{F(f)}.
 Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
