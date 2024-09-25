@@ -133,6 +133,9 @@ Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
         is @tech{bijective}.}
 ]
 
+@bold{Exercise}: Prove that every @tech{faithful} @tech{functor} @tech{reflects}
+@tech{commutative diagrams}.
+
 @bold{Exercise}: Let @math{F: 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
 Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
 @math{Hom@_{𝒞}(a, a) ≅ Hom@_{𝒞}(a, b) ≅ Hom@_{𝒞}(b, a) ≅ Hom@_{𝒞}(b, b)}.
