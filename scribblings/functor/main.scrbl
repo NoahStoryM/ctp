@@ -322,6 +322,10 @@ For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} m
 ]
 @section{Categories of Structured Sets}
 
+@margin-note{
+@tech{Functors} are sometimes called @deftech{category homomorphism}s.
+}
+
 A @deftech{structured set} is a @tech{set}, known as @deftech{underlying set},
 equipped with some additional structure (e.g., @tech{monoids}), and the
 @deftech{homomorphisms} between them (e.g., @tech{monoid homomorphisms}) are
