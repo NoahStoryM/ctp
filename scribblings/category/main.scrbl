@@ -930,14 +930,12 @@ iff for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{surjective}.
 This result is the categorical version of the @deftech{axiom of choice}.
 }
 
-@bold{Exercise}: Show that every @tech{surjection} in @tech{𝐒𝐞𝐭} is @tech{split epic}.
-
-@margin-note{
-This result does not require the @tech{axiom of choice}.
-}
+@bold{Exercise}: Prove that every @tech{surjection} in @tech{𝐒𝐞𝐭} is
+@tech{split epic}, using the @tech{axiom of choice}.
 
 @bold{Exercise}: Prove that every @tech{injection} in @tech{𝐒𝐞𝐭} whose
-@tech{domain} is not @tech{{}} is @tech{split monic}.
+@tech{domain} is not @tech{{}} is @tech{split monic}, without using the
+@tech{axiom of choice}.
 
 Examples in @tech{𝐌𝐚𝐭𝐫}:
 
