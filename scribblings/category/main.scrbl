@@ -187,11 +187,11 @@ Additionally, we can @racket[define] two other @tech{functions}:
 
 @itemlist[
   #:style 'ordered
-  @item{@math{Hom@_{𝒞}(a, j) := Hom@_{𝒞}(id@_{a}, j)}, where
+  @item{@math{Hom@_{𝒞}(a, j) := Hom@_{𝒞}(id_a, j)}, where
         @math{Hom@_{𝒞}(a, j)(f) = j∘f}.
 
         @image["scribblings/category/images/hom_2.svg"]{[picture] hom_2.svg}}
-  @item{@math{Hom@_{𝒞}(i, x) := Hom@_{𝒞}(i, id@_{x})}, where
+  @item{@math{Hom@_{𝒞}(i, x) := Hom@_{𝒞}(i, id_x)}, where
         @math{Hom@_{𝒞}(i, x)(f) = f∘i}.
 
         @image["scribblings/category/images/hom_3.svg"]{[picture] hom_3.svg}}
