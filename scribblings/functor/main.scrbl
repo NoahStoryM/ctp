@@ -469,6 +469,10 @@ The @tech{hom sets} form the basis for the concept of @deftech{hom functor}s.
 The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞𝐭} takes
 @math{j} to @math{Hom@_{𝒞}(a, j)}.
 
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
+
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(a, j∘g) = Hom@_{𝒞}(a, j)∘Hom@_{𝒞}(a, g)}.
+
 @image["scribblings/functor/images/Hom_1.svg"]{[picture] Hom_1.svg}
 
 @racketblock[
@@ -490,6 +494,10 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞�
 The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 𝐒𝐞𝐭} takes
 @math{i} to @math{Hom@_{𝒞}(i, x)}.
 
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, x) = id@_{Hom@_{𝒞}(a, x)}}.
+
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(f∘i, x) = Hom@_{𝒞}(i, x)∘Hom@_{𝒞}(f, x)}.
+
 @image["scribblings/functor/images/Hom_2.svg"]{[picture] Hom_2.svg}
 
 @racketblock[
@@ -510,6 +518,10 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 
 
 The @deftech{two-variable hom functor} @math{Hom@_{𝒞}(-, -): 𝒞@^{op}×𝒞 → 𝐒𝐞𝐭}
 takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
+
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
+
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(f∘i, j∘g) = Hom@_{𝒞}(i, j)∘Hom@_{𝒞}(f, g)}.
 
 @image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
 
