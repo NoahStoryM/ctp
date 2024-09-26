@@ -926,10 +926,18 @@ iff for any @tech{object} @math{x}, @math{Hom(i, x)} is @tech{surjective}.
 @bold{Exercise}: Prove that a @tech{morphism} @math{j: x → y} is @tech{split epic}
 iff for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{surjective}.
 
+@margin-note{
+This result is the categorical version of the @deftech{axiom of choice}.
+}
+
+@bold{Exercise}: Show that every @tech{surjection} in @tech{𝐒𝐞𝐭} is @tech{split epic}.
+
+@margin-note{
+This result does not require the @tech{axiom of choice}.
+}
+
 @bold{Exercise}: Prove that every @tech{injection} in @tech{𝐒𝐞𝐭} whose
 @tech{domain} is not @tech{{}} is @tech{split monic}.
-
-@bold{Exercise}: Prove that every @tech{surjection} in @tech{𝐒𝐞𝐭} is @tech{split epic}.
 
 Examples in @tech{𝐌𝐚𝐭𝐫}:
 
@@ -968,10 +976,6 @@ and @math{f} is the @tech{inverse} of @math{g}, denoted by @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
 if there exists an @tech{isomorphism} between them.
 
-@bold{Exercise}: Prove that every @tech{isomorphism} in @tech{𝐒𝐞𝐭} is @tech{bijective}.
-
-@bold{Exercise}: Prove that every @tech{bijection} is @tech{invertible} in @tech{𝐒𝐞𝐭}.
-
 @tech{Isomorphisms} are crucial because they imply that the @tech{objects} they
 connect can be interchanged in any context within the @tech{category}. This means
 that if @math{a ≅ b}, then any property, specifically any @tech{commutative diagram}
@@ -1003,17 +1007,16 @@ Examples in @tech{𝐏𝐚𝐢𝐫}:
 @bold{Exercise}: Prove that for @tech{isomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{–1}∘g@^{–1}}.
 
-@bold{Exercise}: Prove that a @tech{morphism} is @tech{invertible} iff it is both
-@tech{monic} and @tech{split epic}.
-
-@bold{Exercise}: Prove that a @tech{morphism} is @tech{invertible} iff it is both
-@tech{split monic} and @tech{epic}.
+@bold{Exercise}: Prove that a @tech{morphism} @math{f: a → b} is @tech{invertible}
+iff for any @tech{object} @math{c}, @math{Hom(c, f)} is @tech{bijective}, and iff
+@math{f} is both @tech{monic} and @tech{split epic}.
 
 @bold{Exercise}: Prove that a @tech{morphism} @math{f: a → b} is @tech{invertible}
-iff for any @tech{object} @math{c}, @math{Hom(c, f)} is @tech{bijective}.
+iff for any @tech{object} @math{c}, @math{Hom(f, c)} is @tech{bijective}, and iff
+@math{f} is both @tech{split monic} and @tech{epic}.
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{f: a → b} is @tech{invertible}
-iff for any @tech{object} @math{c}, @math{Hom(f, c)} is @tech{bijective}.
+@bold{Exercise}: Prove that a @tech{function} is @tech{bijective} iff it is
+@tech{invertible} in @tech{𝐒𝐞𝐭}, without using the @tech{axiom of choice}.
 
 @subsubsection{Automorphism}
 
