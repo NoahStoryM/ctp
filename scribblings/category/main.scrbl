@@ -927,15 +927,15 @@ iff for any @tech{object} @math{x}, @math{Hom(i, x)} is @tech{surjective}.
 iff for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{surjective}.
 
 @margin-note{
-This result is the categorical version of the @deftech{axiom of choice}.
+This result is the categorical version of the @deftech{axiom of choice},
+abbreviated @deftech{AC} or @deftech{AoC}.
 }
 
 @bold{Exercise}: Prove that every @tech{surjection} in @tech{𝐒𝐞𝐭} is
-@tech{split epic}, using the @tech{axiom of choice}.
+@tech{split epic}, using @tech{AC}.
 
 @bold{Exercise}: Prove that every @tech{injection} in @tech{𝐒𝐞𝐭} whose
-@tech{domain} is not @tech{{}} is @tech{split monic}, without using the
-@tech{axiom of choice}.
+@tech{domain} is not @tech{{}} is @tech{split monic}, without using @tech{AC}.
 
 Examples in @tech{𝐌𝐚𝐭𝐫}:
 
@@ -1014,7 +1014,7 @@ iff for any @tech{object} @math{c}, @math{Hom(f, c)} is @tech{bijective}, and if
 @math{f} is both @tech{split monic} and @tech{epic}.
 
 @bold{Exercise}: Prove that a @tech{function} is @tech{bijective} iff it is
-@tech{invertible} in @tech{𝐒𝐞𝐭}, without using the @tech{axiom of choice}.
+@tech{invertible} in @tech{𝐒𝐞𝐭}, without using @tech{AC}.
 
 @subsubsection{Automorphism}
 

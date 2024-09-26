@@ -549,7 +549,7 @@ and @math{G: 𝒮 → 𝒞}:
 @margin-note{
 The definition of @math{G} is pseudocode. Since we treat @tech{sets} and
 @tech{functions} as @tech{procedures} here, we cannot @racket[define] @code{dom𝒮}
-and @code{get-an-element}.
+and @code{choose-id}.
 }
 
 @racketblock[
@@ -563,8 +563,7 @@ and @code{get-an-element}.
 (: G (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒮 (H b) (H c)) (→𝒞 b c))))
 (define (G Hg)
   (define Hb (dom𝒮 Hg))
-  (define f (get-an-element Hb))
-  (define b (cod𝒞 f))
+  (define b (choose-id Hb))
   (define g (Hg b))
   g)
 ]
@@ -603,8 +602,7 @@ attention to its @tech{opposite category} @math{𝒞^op}:
 (: G (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒮 (H b) (H a)) (→𝒞 a b))))
 (define (G Hf)
   (define Hb (dom𝒮 Hf))
-  (define g (get-an-element Hb))
-  (define b (dom𝒞 g))
+  (define b (choose-id Hb))
   (define f (Hf b))
   f)
 ]
