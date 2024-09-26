@@ -303,6 +303,8 @@ For a @tech{category} @math{𝒞}, the @deftech{slice functor} @math{𝒞/-} map
   𝒞/g)
 ]
 
+@bold{Exercise}: Prove @math{𝒞/g∘f = 𝒞/g∘𝒞/f}.
+
 For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} maps each
 @tech{morphism} @math{f: a → b} in @math{𝒞} to the @tech{composition functor}
 @math{f/𝒞: b/𝒞 → a/𝒞}.
@@ -320,6 +322,9 @@ For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} m
        `((,z ,(∘𝒞 x f)) (,(∘𝒞 y f)))]))
   f/𝒞)
 ]
+
+@bold{Exercise}: Prove @math{g∘f/𝒞 = f/𝒞∘g/𝒞}.
+
 @section{Categories of Structured Sets}
 
 @margin-note{
@@ -469,10 +474,6 @@ The @tech{hom sets} form the basis for the concept of @deftech{hom functor}s.
 The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞𝐭} takes
 @math{j} to @math{Hom@_{𝒞}(a, j)}.
 
-@bold{Exercise}: Prove @math{Hom@_{𝒞}(a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
-
-@bold{Exercise}: Prove @math{Hom@_{𝒞}(a, j∘g) = Hom@_{𝒞}(a, j)∘Hom@_{𝒞}(a, g)}.
-
 @image["scribblings/functor/images/Hom_1.svg"]{[picture] Hom_1.svg}
 
 @racketblock[
@@ -480,6 +481,10 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞�
 (: Hom𝒞 (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 a y)))))
 (define (Hom𝒞 j) (λ (f) (∘𝒞 j f)))
 ]
+
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
+
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(a, j∘g) = Hom@_{𝒞}(a, j)∘Hom@_{𝒞}(a, g)}.
 
 @bold{Exercise}: Prove that @math{Hom@_{𝒞}(i, -)} is @bold{not} a @tech{functor}.
 
@@ -494,10 +499,6 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞�
 The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 𝐒𝐞𝐭} takes
 @math{i} to @math{Hom@_{𝒞}(i, x)}.
 
-@bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, x) = id@_{Hom@_{𝒞}(a, x)}}.
-
-@bold{Exercise}: Prove @math{Hom@_{𝒞}(f∘i, x) = Hom@_{𝒞}(i, x)∘Hom@_{𝒞}(f, x)}.
-
 @image["scribblings/functor/images/Hom_2.svg"]{[picture] Hom_2.svg}
 
 @racketblock[
@@ -505,6 +506,10 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 
 (: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b x)))))
 (define (Hom𝒞 i) (λ (f) (∘𝒞 f i)))
 ]
+
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, x) = id@_{Hom@_{𝒞}(a, x)}}.
+
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(f∘i, x) = Hom@_{𝒞}(i, x)∘Hom@_{𝒞}(f, x)}.
 
 @bold{Exercise}: Prove that @math{Hom@_{𝒞}(-, j)} is @bold{not} a @tech{functor}.
 
@@ -519,10 +524,6 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 
 The @deftech{two-variable hom functor} @math{Hom@_{𝒞}(-, -): 𝒞@^{op}×𝒞 → 𝐒𝐞𝐭}
 takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
 
-@bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
-
-@bold{Exercise}: Prove @math{Hom@_{𝒞}(f∘i, j∘g) = Hom@_{𝒞}(i, j)∘Hom@_{𝒞}(f, g)}.
-
 @image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
 
 @racketblock[
@@ -530,6 +531,10 @@ takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
 (: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b y)))))
 (define (Hom𝒞 i j) (λ (f) (∘𝒞 j f i)))
 ]
+
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
+
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(f∘i, j∘g) = Hom@_{𝒞}(i, j)∘Hom@_{𝒞}(f, g)}.
 
 @subsection{Cayley's Theorem}
 
