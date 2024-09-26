@@ -581,6 +581,12 @@ with the @tech{morphisms} grouped into
 
 @bold{Exercise}: Think about the relationships between @math{𝒞} and @math{𝒞/=}.
 
+@margin-note{
+In Racket, a @tech{relation} is often represented as a @tech{procedure} that
+returns @racket[#t] if its arguments belong to the @tech{relation}, and
+@racket[#f] otherwise.
+}
+
 We can @racket[define] @deftech{÷} in Racket to implement the
 @tech{quotient category} @math{𝒞/∼}:
 
