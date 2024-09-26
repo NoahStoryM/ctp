@@ -1133,8 +1133,8 @@ example of a non-@tech{surjective} @tech{morphism}. Prove that a @tech{morphism}
 
 This approach generalizes the concept of @tech{elements} beyond @tech{sets}. In
 any @tech{category} @math{𝒞} with a @tech{terminal object} @tech{1}, we can
-@racket[define] the @tech{elements} of an @tech{object} @math{a} as the
-@tech{elements} of @math{Hom@_{𝒞}(1, a)}, i.e., the @tech{morphisms} @math{1 → a}.
+@racket[define] the @tech{elements} of an @tech{object} @math{A} as the
+@tech{elements} of @math{Hom@_{𝒞}(1, A)}, i.e., the @tech{morphisms} @math{1 → A}.
 These @tech{morphisms} are called @deftech{global element}s (@deftech{global point}s).
 
 By describing properties of a @tech{category} in a generalized way, we can extend
@@ -1162,8 +1162,8 @@ Now, consider a @tech{function} @math{f: A → B} in @tech{𝐒𝐞𝐭}. Tradit
 @tech{composite} @math{f∘x}, where @math{x} is interpreted as a @tech{morphism}
 rather than an @tech{element}.
 
-In this context, any @tech{morphism} @math{x: a → b} can be viewed as a
-@deftech{variable element} of @math{b}, parametrized by @math{a}. This reinforces
+In this context, any @tech{morphism} @math{x: T → A} can be viewed as a
+@deftech{variable element} of @math{A}, parametrized by @math{T}. This reinforces
 the idea that @tech{morphisms} can be treated as @deftech{generalized element}s,
 and that @tech{function} application is simply a special case of @tech{morphism}
 @tech{composition}.
