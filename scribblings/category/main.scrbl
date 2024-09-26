@@ -1105,7 +1105,7 @@ The following @tech{diagrams} are @tech{commutative}:
 @bold{Exercise}: Think about the relationships between @math{0/𝒞}, @math{𝒞/1},
 and @math{𝒞}.
 
-@subsubsection{Global Element}
+@subsubsection{Global Element and Variable Element}
 
 In @tech{category theory}, we often seek to capture the notion of @tech{elements}
 in a way that remains consistent across different @tech{categories}. Although
@@ -1135,31 +1135,38 @@ This approach generalizes the concept of @tech{elements} beyond @tech{sets}. In
 any @tech{category} @math{𝒞} with a @tech{terminal object} @tech{1}, we can
 @racket[define] the @tech{elements} of an @tech{object} @math{a} as the
 @tech{elements} of @math{Hom@_{𝒞}(1, a)}, i.e., the @tech{morphisms} @math{1 → a}.
-These @tech{morphisms} are called @deftech{global element}s (@deftech{global point}s)
-because they serve as a generalized notion of @tech{elements}.
+These @tech{morphisms} are called @deftech{global element}s (@deftech{global point}s).
 
-If we can describe a property of a @tech{category} @math{𝒞} in a generalized way,
-we can extend this property to other @tech{categories}. For example, by describing
-the @tech{elements} of a @tech{set} @math{A} as the @tech{elements} of
-@math{Hom(1, A)}, we can then discuss the @tech{elements} of any @tech{object}
-in any @tech{category} that has a @tech{terminal object}. This abstraction allows
-us to apply familiar concepts beyond @tech{𝐒𝐞𝐭}, providing a consistent way to
-explore structures in various @tech{categories}.
+By describing properties of a @tech{category} in a generalized way, we can extend
+them to other @tech{categories}. In this example, by describing the @tech{elements}
+of a @tech{set} @math{A} as the @tech{elements} of @math{Hom(1, A)}, we can then
+discuss the @tech{elements} of any @tech{object} in any @tech{category} that has
+a @tech{terminal object}. This abstraction allows us to apply familiar concepts
+beyond @tech{𝐒𝐞𝐭}, providing a consistent way to explore structures in various
+@tech{categories}.
 
-Let's further explore @tech{𝐒𝐞𝐭} with a @tech{function} @math{f: A → B}.
-Traditionally, we @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A},
-written as @math{f(x)}. In @tech{category theory}, we can express this application
-using @tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A},
-applying @math{f} to @math{x} corresponds to composing @math{x} with @math{f},
-written as @math{f∘x}. Therefore, the notation @math{f(x)} is sometimes used to
-denote the @tech{composite} @math{f∘x}, where @math{x} is interpreted as a
-@tech{morphism} rather than an @tech{element}.
+While in @tech{𝐒𝐞𝐭}, the @tech{morphisms} from @tech{1} to @math{A} are enough to
+fully capture the structure of @math{A}, this is not always true in other
+@tech{categories}. In more general cases, the properties of an @tech{object}
+@math{A} in @math{𝒞} are determined by all @tech{morphisms} involving @math{A},
+not just those from a @tech{terminal object}. This broader perspective allows us
+to describe an @tech{object} through its interactions with other @tech{objects}
+in the @tech{category}.
+
+Now, consider a @tech{function} @math{f: A → B} in @tech{𝐒𝐞𝐭}. Traditionally, we
+@racket[apply] @math{f} to an @tech{element} @math{x} in @math{A}, written as
+@math{f(x)}. In @tech{category theory}, we can express this application using
+@tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A}, applying
+@math{f} to @math{x} corresponds to composing @math{x} with @math{f}, written as
+@math{f∘x}. Therefore, the notation @math{f(x)} is sometimes used to denote the
+@tech{composite} @math{f∘x}, where @math{x} is interpreted as a @tech{morphism}
+rather than an @tech{element}.
 
 In this context, any @tech{morphism} @math{x: a → b} can be viewed as a
-@deftech{variable element} of @math{b}, parametrized by @math{a}. This viewpoint
-reinforces the idea that @tech{morphisms} can be regarded as generalized
-@tech{elements}, and that @tech{function} application is simply a special case of
-@tech{morphism} @tech{composition}.
+@deftech{variable element} of @math{b}, parametrized by @math{a}. This reinforces
+the idea that @tech{morphisms} can be treated as @deftech{generalized element}s,
+and that @tech{function} application is simply a special case of @tech{morphism}
+@tech{composition}.
 
 @subsubsection{Pointed Object}
 
