@@ -66,7 +66,7 @@ Let the journey begin.
 
 @include-section[(file "category/main.scrbl")]
 @include-section[(file "functor/main.scrbl")]
-@;; include-section[(file "natural transformations/main.scrbl")]
+@include-section[(file "natural transformation/main.scrbl")]
 @;; include-section[(file "co-limit/main.scrbl")]
 @;; include-section[(file "sketch/main.scrbl")]
 @;; include-section[(file "adjunction/main.scrbl")]
