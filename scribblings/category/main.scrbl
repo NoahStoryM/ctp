@@ -811,6 +811,13 @@ Note that many @tech{categorical definitions} can also be described in terms of
 @tech{hom sets}. Readers will be invited to prove the @tech{equivalence} of these
 two approaches (i.e., the iff statements).
 
+@subsection{Parallel Morphism}
+
+For @tech{morphisms} @math{f} and @math{g}, they are @deftech{parallel} if
+@math{dom(f) = dom(g)} and @math{cod(f) = cod(g)}.
+
+@image["scribblings/category/images/parallel.svg"]{[picture] parallel.svg}
+
 @subsection{Endomorphism}
 
 For a @tech{morphism} @math{f}, it is an @deftech{endomorphism} if @math{dom(f) = cod(f)}.
