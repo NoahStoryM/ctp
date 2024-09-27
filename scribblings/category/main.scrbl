@@ -926,17 +926,6 @@ iff for any @tech{object} @math{x}, @math{Hom(i, x)} is @tech{surjective}.
 @bold{Exercise}: Prove that a @tech{morphism} @math{j: x → y} is @tech{split epic}
 iff for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{surjective}.
 
-@margin-note{
-This result is the categorical version of the @deftech{axiom of choice},
-abbreviated @deftech{AC} or @deftech{AoC}.
-}
-
-@bold{Exercise}: Prove that every @tech{surjection} in @tech{𝐒𝐞𝐭} is
-@tech{split epic}, using @tech{AC}.
-
-@bold{Exercise}: Prove that every @tech{injection} in @tech{𝐒𝐞𝐭} whose
-@tech{domain} is not @tech{{}} is @tech{split monic}, without using @tech{AC}.
-
 Examples in @tech{𝐌𝐚𝐭𝐫}:
 
 @racketblock[
@@ -958,6 +947,26 @@ Examples in @tech{𝐌𝐚𝐭𝐫}:
 (code:comment2 "f∘g is an idempotent")
 (= f∘g (∘ f∘g f∘g))
 ]
+
+@bold{Exercise}: Prove that every @tech{injection} in @tech{𝐒𝐞𝐭} whose
+@tech{domain} is not @tech{{}} is @tech{split monic}.
+
+You might wonder if a similar result holds for @tech{surjections}: is every
+@tech{surjection} in @tech{𝐒𝐞𝐭} @tech{split epic}? To explore this, consider a
+@tech{surjection} @math{g: b → a}. There is a @tech{collection} of
+@tech[#:key "equivalence class"]{equivalence classes} among the @tech{elements}
+of @math{b}, where @math{x ∼ y} if @math{g(x) = g(y) = z}. If there exists a
+@tech{right inverse} @math{f: a → b} such that @math{f(z) = x} or @math{f(z) = y},
+it would imply the existence of a @deftech{choice function} on the @tech{collection},
+which takes @math{[x]} and returns an @tech{element} of @math{[x]}.
+
+However, since there is no inherent way to distinguish between @tech{elements}
+within @math{[x]}, choosing one requires the @deftech{axiom of choice}
+(@deftech{AC} or @deftech{AoC}) in @deftech{set theory}. Therefore, the result is
+a categorical version of the @tech{axiom of choice}.
+
+@bold{Exercise}: Prove that every @tech{surjection} in @tech{𝐒𝐞𝐭} is
+@tech{split epic}, using @tech{AC}.
 
 @subsection{Isomorphism}
 
