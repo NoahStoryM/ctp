@@ -27,7 +27,7 @@ further exploration of @tech{category theory}:
 structures and relationships, may seem esoteric at first glance. However, its
 principles are deeply intertwined with the concepts and patterns we encounter in
 programming. Through this tutorial, we aim to bridge the gap between these two
-worlds, offering a unique perspective that enriches the programmer’s toolkit with
+worlds, offering a unique perspective that enriches the programmer's toolkit with
 new ways of thinking and problem-solving.
 
 In the following chapters, we will explore the core concepts of @tech{category theory}

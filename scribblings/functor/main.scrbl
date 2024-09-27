@@ -346,7 +346,7 @@ said to be @deftech{concretizable} iff it admits such a @tech{functor}.
 @tech{categories} that encapsulate various algebraic structures. These
 @tech{categories} allow us to study and generalize properties and operations
 across different mathematical systems. In this @seclink["Categories_of_Structured_Sets"]{section},
-we’ll explore several important @tech{categories} of @tech{structured sets}.
+we'll explore several important @tech{categories} of @tech{structured sets}.
 
 @subsection{Category of Monoids}
 
