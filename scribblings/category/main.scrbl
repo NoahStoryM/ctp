@@ -965,9 +965,6 @@ within @math{[x]}, choosing one requires the @deftech{axiom of choice}
 (@deftech{AC} or @deftech{AoC}) in @deftech{set theory}. Therefore, the result is
 a categorical version of the @tech{axiom of choice}.
 
-@bold{Exercise}: Prove that every @tech{surjection} in @tech{𝐒𝐞𝐭} is
-@tech{split epic}, using @tech{AC}.
-
 @subsection{Isomorphism}
 
 For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if @math{g∘f = id_a}
