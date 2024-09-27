@@ -13,8 +13,8 @@ of @tech{category theory} by introducing the concept of @tech{natural transforma
 Building on our foundation of @tech{categories} and @tech{functors}, this
 @seclink["_Natural_Transformation_"]{chapter} presents @tech{natural transformations}
 in a unique way: they are defined as @tech{functions} that map @tech{morphisms}
-in the @tech{source} @tech{category} to corresponding @tech{morphisms} in the
-@tech{target} @tech{category}, similar to @tech{functors}, while ensuring certain
+in the @tech{domain category} to corresponding @tech{morphisms} in the
+@tech{codomain category}, similar to @tech{functors}, while ensuring certain
 @tech{commutative} properties hold. This approach highlights that @tech{functors}
 themselves can be viewed as special @tech{natural transformations}, much like
 @tech{objects} can be viewed as special @tech{morphisms}, specifically as
