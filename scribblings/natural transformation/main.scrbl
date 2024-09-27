@@ -3,7 +3,7 @@
 @(require (for-label ctp (only-meta-in 0 (except-in typed/racket/base/no-check =)))
           "../ctp-utils.rkt")
 
-@title[#:tag "_Natural Transformation_"]{Natural Transformation}
+@title[#:tag "_Natural_Transformation_"]{Natural Transformation}
 
 In this @seclink["_Natural_Transformation_"]{chapter}, we extend our exploration
 of @tech{category theory} by introducing the concept of @tech{natural transformation}.
