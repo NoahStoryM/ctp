@@ -1,3 +1,6 @@
+# compiled
 compiled/
 doc/
-draft.scrbl
+
+# draft
+draft.*
