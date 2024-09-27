@@ -29,8 +29,8 @@ mathematical concepts through practical programming constructs.
 @section{Natural Transformation}
 
 A @deftech{natural transformation} @math{α} between @tech{parallel}
-@tech{functors} @math{F, G: 𝒞 → 𝒟}, denoted as @math{α: F ⇒ G}, is a way to map
-each @tech{morphism} @math{f: a → b} in @math{𝒞} to a corresponding
+@tech{functors} @math{F, G: 𝒞 → 𝒟}, denoted as @math{α: F @deftech{⇒} G}, is a
+way to map each @tech{morphism} @math{f: a → b} in @math{𝒞} to a corresponding
 @tech{morphism} @math{α(f): F(a) → G(b)} in @math{𝒟}. This mapping must ensure
 that the following @tech{diagram} is @tech{commutative}:
 
