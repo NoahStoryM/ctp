@@ -836,7 +836,7 @@ the @tech{injective} nature of @math{m}.
 
 @image["scribblings/category/images/mono.svg"]{[picture] mono.svg}
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{j: x → y} is @tech{monic} iff
+@bold{Exercise}: Prove that a @tech{morphism} @math{j: x ↣ y} is @tech{monic} iff
 for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{injective}.
 
 @bold{Exercise}: Prove that every @tech{monomorphism} in @tech{𝐒𝐞𝐭} is
@@ -859,7 +859,7 @@ without duplication, thereby establishing the @tech{surjective} nature of @math{
 
 @image["scribblings/category/images/epi.svg"]{[picture] epi.svg}
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{i: b → a} is @tech{epic} iff
+@bold{Exercise}: Prove that a @tech{morphism} @math{i: b ↠ a} is @tech{epic} iff
 for any @tech{object} @math{x}, @math{Hom(i, x)} is @tech{injective}.
 
 @bold{Exercise}: Prove that every @tech{epimorphism} in @tech{𝐒𝐞𝐭} is
@@ -920,10 +920,10 @@ a @deftech{left inverse} of @math{f}. @math{a} is called a @deftech{retract} of
 a @deftech{cosection} (@deftech{retraction}) of @math{f}, or a @tech{retraction}
 of @math{b} onto @math{a}.
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{i: b → a} is @tech{split monic}
+@bold{Exercise}: Prove that a @tech{morphism} @math{i: b ↣ a} is @tech{split monic}
 iff for any @tech{object} @math{x}, @math{Hom(i, x)} is @tech{surjective}.
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{j: x → y} is @tech{split epic}
+@bold{Exercise}: Prove that a @tech{morphism} @math{j: x ↠ y} is @tech{split epic}
 iff for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{surjective}.
 
 Examples in @tech{𝐌𝐚𝐭𝐫}:
@@ -953,10 +953,10 @@ Examples in @tech{𝐌𝐚𝐭𝐫}:
 
 You might wonder if a similar result holds for @tech{surjections}: is every
 @tech{surjection} in @tech{𝐒𝐞𝐭} @tech{split epic}? To explore this, consider a
-@tech{surjection} @math{g: b → a}. There is a @tech{collection} of
+@tech{surjection} @math{g: b ↠ a}. There is a @tech{collection} of
 @tech[#:key "equivalence class"]{equivalence classes} among the @tech{elements}
 of @math{b}, where @math{x ∼ y} if @math{g(x) = g(y) = z}. If there exists a
-@tech{right inverse} @math{f: a → b} such that @math{f(z) = x} or @math{f(z) = y},
+@tech{right inverse} @math{f: a ↣ b} such that @math{f(z) = x} or @math{f(z) = y},
 it would imply the existence of a @deftech{choice function} on the @tech{collection},
 which takes @math{[x]} and returns an @tech{element} of @math{[x]}.
 
