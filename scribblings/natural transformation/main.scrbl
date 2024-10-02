@@ -41,3 +41,6 @@ some @tech{check} @tech{procedures} to automate the testing of the
 @deftech{naturality} a @tech{natural transformation} has:
 
 @racketfile{code/natural transformation/check.rkt}
+
+@image["scribblings/natural transformation/images/N-2.svg"]{[picture] N-2.svg}
+@image["scribblings/natural transformation/images/N-3.svg"]{[picture] N-3.svg}
