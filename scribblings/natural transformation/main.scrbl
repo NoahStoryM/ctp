@@ -36,3 +36,8 @@ that the following @tech{diagram} is @tech{commutative}:
 
 @image["scribblings/natural transformation/images/N-1.svg"]{[picture] N-1.svg}
 
+To verify the properties of @tech{natural transformations}, we'll @racket[define]
+some @tech{check} @tech{procedures} to automate the testing of the
+@deftech{naturality} a @tech{natural transformation} has:
+
+@racketfile{code/natural transformation/check.rkt}
