@@ -1,6 +1,8 @@
 #lang scribble/manual
 
-@(require (for-label ctp (only-meta-in 0 (except-in typed/racket/base/no-check =)))
+@(require (for-label ctp
+                     (only-meta-in 0 (except-in typed/racket/base/no-check =))
+                     rackunit)
           "../ctp-utils.rkt")
 
 @title[#:tag "_Natural_Transformation_"]{Natural Transformation}
