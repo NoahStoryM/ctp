@@ -1192,10 +1192,10 @@ Now, consider a @tech{function} @math{f: A → B} in @tech{𝐒𝐞𝐭}. Tradit
 @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A}, written as
 @math{f(x)}. In @tech{category theory}, we can express this application using
 @tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A}, applying
-@math{f} to @math{x} corresponds to composing @math{x} with @math{f}, written as
-@math{f∘x}. Therefore, the notation @math{f(x)} is sometimes used to denote the
-@tech{composite} @math{f∘x}, where @math{x} is interpreted as a @tech{morphism}
-rather than an @tech{element}.
+@math{f} to @math{x} corresponds to @tech[#:key "compose"]{composing} @math{x}
+with @math{f}, written as @math{f∘x}. Therefore, the notation @math{f(x)} is
+sometimes used to denote the @tech{composite} @math{f∘x}, where @math{x} is
+interpreted as a @tech{morphism} rather than an @tech{element}.
 
 In this context, any @tech{morphism} @math{x: T → A} can be viewed as a
 @deftech{variable element} of @math{A}, parametrized by @math{T}. This reinforces
