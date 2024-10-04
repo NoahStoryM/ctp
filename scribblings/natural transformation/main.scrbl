@@ -44,6 +44,16 @@ some @tech{check} @tech{procedures} to automate the testing of the
 
 @racketfile{code/natural transformation/check.rkt}
 
+@subsection{Godement Calculus}
+
+In this @seclink["Godement_Calculus"]{section}, we explore two types of
+@tech{composition} for @tech{natural transformations}: @tech{horizontal composition}
+and @tech{vertical composition}. These forms of @tech{composition} are fundamental
+to understanding how @tech{natural transformations} interact and provide a deeper
+insight into their algebraic properties.
+
+@subsubsection{Horizontal Composition}
+
 Just as @tech{functors} can be @tech[#:key "compose"]{composed}, so can
 @tech{natural transformations}. In fact, a key insight is that @tech{functors}
 themselves can be viewed as special types of @tech{natural transformations}.
@@ -77,4 +87,16 @@ easier to reason about complex structures involving multiple @tech{functors} and
 @tech{natural transformations} ensures that the resulting @tech{diagram} is
 @tech{commutative}.
 
-@;; @image["scribblings/natural transformation/images/N-3.svg"]{[picture] N-3.svg}
+@subsubsection{Vertical Composition}
+
+@deftech{vertical composition}
+
+@image["scribblings/natural transformation/images/N-3.svg"]{[picture] N-3.svg}
+
+@subsubsection{Godements's Five Rules}
+
+@deftech{Godements's five rules} provide powerful tools for reasoning about the
+relationships between @tech{functors} and the @tech{natural transformations}
+between them. By organizing @tech{natural transformations} into structures that
+can themselves be @tech[#:key "compose"]{composed}, we reveal a higher level of
+abstraction within @tech{category theory}.
