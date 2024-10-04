@@ -990,7 +990,8 @@ The following @tech{diagram} is @tech{commutative}:
 In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted by @math{f@^{–1}},
 and @math{f} is the @tech{inverse} of @math{g}, denoted by @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
-if there exists an @tech{isomorphism} between them.
+if there exists an @tech{isomorphism} between them. An @deftech{isomorphism class}
+is an @tech{equivalence class} under @tech{≅}.
 
 @tech{Isomorphisms} are crucial because they imply that the @tech{objects} they
 connect can be interchanged in any context within the @tech{category}. This means
@@ -1233,7 +1234,7 @@ the other. A @deftech{subobject} of @math{c} is an @tech{equivalence class} of
 
 @bold{Exercise}: Let @math{𝒞_c} be the @tech{full subcategory} of @math{𝒞/c} on
 @tech{monomorphisms}. Show that @math{𝒞_c} is a @tech{proset}, and a
-@tech{subobject} of @math{c} is an @tech{isomorphism} @tech{class} of @math{𝒞_c}.
+@tech{subobject} of @math{c} is an @tech{isomorphism class} of @math{𝒞_c}.
 
 The following @tech{diagram} shows how to view a @tech{subset} @math{a := {1, 2, 3}}
 of @math{c := {1, 2, 3, 4, 5, 6}} as the @tech{subobject} @math{[i]} in @tech{𝐒𝐞𝐭}:
@@ -1268,8 +1269,7 @@ the other. A @deftech{quotient object} (@deftech{cosubobject}) of @math{c} is an
 
 @bold{Exercise}: Let @math{𝒞^c} be the @tech{full subcategory} of @math{c/𝒞} on
 @tech{epimorphisms}. Show that @math{𝒞^c} is a @tech{proset}, and a
-@tech{quotient object} of @math{c} is an @tech{isomorphism} @tech{class} of
-@math{𝒞^c}.
+@tech{quotient object} of @math{c} is an @tech{isomorphism class} of @math{𝒞^c}.
 
 The following @tech{diagram} shows how to view a @tech{quotient set}
 @math{b := {{1, 4}, {2, 5}, {3, 6}}} of @math{c := {1, 2, 3, 4, 5, 6}} as the
