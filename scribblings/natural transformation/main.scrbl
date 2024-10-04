@@ -91,9 +91,24 @@ easier to reason about complex structures involving multiple @tech{functors} and
 
 @subsubsection{Vertical Composition}
 
-@deftech{vertical composition}
+The @tech{vertical composition} of @tech{natural transformations} involves
+@tech[#:key "compose"]{composing} two @tech{natural transformations} that share
+a common @tech{functor}.
+
+Consider two @tech{natural transformations} @math{α: F ⇒ G} and @math{β: G ⇒ H},
+where @math{F, G, H: 𝒞 → 𝒟}. The @deftech{vertical composition} @math{β·α: F ⇒ H},
+is a new natural transformation that, for each @tech{morphism} @math{f: a → b}
+in @math{𝒞}, maps it to @math{β·α(f) : F(a) → H(b)} in @math{𝒟}.
+
+@bold{Exercise}: Prove @math{α = α·F = G·α}.
 
 @image["scribblings/natural transformation/images/N-3.svg"]{[picture] N-3.svg}
+
+@bold{Exercise}: Prove that the @tech{vertical composition} of
+@tech{natural transformations} ensures that the resulting @tech{diagram} is
+@tech{commutative}.
+
+@bold{Exercise}: Prove that @tech{vertical composition} is @tech{associative}.
 
 @subsubsection{Godements's Five Rules}
 
