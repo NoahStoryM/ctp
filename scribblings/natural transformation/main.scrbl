@@ -60,6 +60,10 @@ where @math{F, G: 𝒞 → 𝒟} and @math{H, K: 𝒟 → ℰ}. The
 @tech{natural transformation} that, for each @tech{morphism} @math{f: a → b} in
 @math{𝒞}, maps it to @math{β∘α(f) = β(α(f)): H∘F(a) → K∘G(b)} in @math{ℰ}.
 
+@bold{Exercise}: Prove @math{α = α∘id@_{𝒞} = id@_{𝒟}∘α}.
+
+@bold{Exercise}: Prove that @tech{horizontal composition} is @tech{associative}.
+
 We often omit the @tech{composition} symbol @tech{∘} when dealing with
 @tech{functors} and @tech{natural transformations}. For instance, expressions
 like @math{K∘F}, @math{β∘F}, @math{K∘α}, and @math{β∘α} are typically simplified
