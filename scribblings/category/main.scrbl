@@ -248,13 +248,15 @@ An @deftech{equivalence relation} @math{∼} over @math{S} is a @tech{binary rel
 that is @tech{reflexive}, @tech{symmetric}, and @tech{transitive}. @math{∼}
 partitions @math{S} into disjoint @deftech{class}es, known as
 @deftech{equivalence class}es, where all @tech{elements} within an
-@tech{equivalence class} are related to each other.
+@tech{equivalence class} are related to each other. A @deftech{setoid}
+(@deftech{extensional set}) @math{(S, ∼)} is a @tech{set} @math{S} equipped with
+an @tech{equivalence relation} @math{∼}.
 
-For example, given an @tech{equivalence relation} @math{∼} on a @tech{set} @math{S}
-and an @tech{element} @math{x ∈ S}, the @tech{equivalence class} of @math{x} under
-@math{∼} is the @tech{set} of all @tech{elements} in @math{S} that are related to
-@math{x}. This is denoted by @math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}.
-Every @tech{element} of @math{S} belongs to exactly one @tech{equivalence class}.
+For example, given a @tech{setoid} @math{(S, ∼)} and an @tech{element} @math{x ∈ S},
+the @tech{equivalence class} of @math{x} under @math{∼} is the @tech{set} of all
+@tech{elements} in @math{S} that are related to @math{x}. This is denoted by
+@math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}. Every @tech{element} of @math{S}
+belongs to exactly one @tech{equivalence class}.
 
 @image["scribblings/category/images/eq-cls.svg"]{[picture] eq-cls.svg}
 
@@ -594,6 +596,9 @@ We can @racket[define] @deftech{÷} in Racket to implement the
 
 A @deftech{quotient set} can be viewed as a @tech{quotient category} of a
 @tech{discrete category}.
+
+@bold{Exercise}: Show that an @tech{equivalence class} is an @tech{element} of
+a @tech{quotient set}.
 
 @subsubsection{Product Category}
 
