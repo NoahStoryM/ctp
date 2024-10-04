@@ -70,22 +70,24 @@ where @math{F, G: 𝒞 → 𝒟} and @math{H, K: 𝒟 → ℰ}. The
 @tech{natural transformation} that, for each @tech{morphism} @math{f: a → b} in
 @math{𝒞}, maps it to @math{β∘α(f) = β(α(f)): H∘F(a) → K∘G(b)} in @math{ℰ}.
 
+@bold{Exercise}: Show the types of @math{H∘α}, @math{K∘α}, @math{β∘F}, and @math{β∘G}.
+
 @bold{Exercise}: Prove @math{α = α∘id@_{𝒞} = id@_{𝒟}∘α}.
-
-@bold{Exercise}: Prove that @tech{horizontal composition} is @tech{associative}.
-
-We often omit the @tech{composition} symbol @tech{∘} when dealing with
-@tech{functors} and @tech{natural transformations}. For instance, expressions
-like @math{K∘F}, @math{β∘F}, @math{K∘α}, and @math{β∘α} are typically simplified
-to @math{KF}, @math{βF}, @math{Kα}, and @math{βα}. This simplification makes it
-easier to reason about complex structures involving multiple @tech{functors} and
-@tech{natural transformations}, reducing visual clutter and improving readability.
 
 @image["scribblings/natural transformation/images/N-2.svg"]{[picture] N-2.svg}
 
 @bold{Exercise}: Prove that the @tech{horizontal composition} of
 @tech{natural transformations} ensures that the resulting @tech{diagram} is
 @tech{commutative}.
+
+@bold{Exercise}: Prove that @tech{horizontal composition} is @tech{associative}.
+
+We often omit the @tech{composition} symbol @tech{∘} when dealing with
+@tech{functors} and @tech{natural transformations}. For instance, expressions
+like @math{K∘F}, @math{K∘α}, @math{β∘F}, and @math{β∘α} are typically simplified
+to @math{KF}, @math{Kα}, @math{βF}, and @math{βα}. This simplification makes it
+easier to reason about complex structures involving multiple @tech{functors} and
+@tech{natural transformations}, reducing visual clutter and improving readability.
 
 @subsubsection{Vertical Composition}
 
