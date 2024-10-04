@@ -880,8 +880,9 @@ is also a @tech{monomorphism}.
 Conversely, an @deftech{epimorphism} (often abbreviated as @deftech{epi}, or called be @deftech{epic})
 @math{e} in a @tech{category} @math{𝒞} is defined as a @deftech{right cancellable}
 @tech{morphism}: @math{∀(e, x), (e, y) ∈ 𝒞_2, x∘e = y∘e ⇒ x = y}. Such a condition
-ensures that @math{e} reaches all possible endpoints in the target @tech{object}
-without duplication, thereby establishing the @tech{surjective} nature of @math{e}.
+ensures that @math{e} reaches all possible endpoints in the @tech{target}
+@tech{object} without duplication, thereby establishing the @tech{surjective}
+nature of @math{e}.
 
 @image["scribblings/category/images/epi.svg"]{[picture] epi.svg}
 
