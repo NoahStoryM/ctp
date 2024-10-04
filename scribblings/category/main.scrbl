@@ -1005,8 +1005,9 @@ The following @tech{diagram} is @tech{commutative}:
 In this case, @math{g} is the @deftech{inverse} of @math{f}, denoted by @math{f@^{–1}},
 and @math{f} is the @tech{inverse} of @math{g}, denoted by @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
-if there exists an @tech{isomorphism} between them. An @deftech{isomorphism class}
-is an @tech{equivalence class} under @tech{≅}.
+if there exists an @tech{isomorphism} between them.
+
+An @deftech{isomorphism class} is an @tech{equivalence class} under @tech{≅}.
 
 @tech{Isomorphisms} are crucial because they imply that the @tech{objects} they
 connect can be interchanged in any context within the @tech{category}. This means
