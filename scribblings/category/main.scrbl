@@ -40,7 +40,7 @@ and
 }
 
 A @deftech{category} (@deftech{cat}) @math{𝒞} is defined by two
-@deftech{collections}: @math{𝒞_0} of @deftech{object}s (@deftech{0-cell}s)
+@tech{collections}: @math{𝒞_0} of @deftech{object}s (@deftech{0-cell}s)
 and @math{𝒞_1} of @deftech{morphism}s (@deftech{1-cell}s). Think of @math{𝒞} as
 a @deftech{directed graph}, where @tech{objects} are @deftech{node}s, and
 @tech{morphisms} are @deftech{arrow}s connecting these @tech{nodes}.
@@ -133,6 +133,20 @@ connected to itself via its @tech{identity morphism}. This means that a
 @deftech{set}: the @tech{objects} of the @tech{discrete category} correspond to
 the @deftech{element}s of the @tech{set}. A @tech{function} between two
 @tech{sets} can be viewed as a @tech{functor} between two @tech{discrete categories}.
+
+Beyond @tech{sets}, there are a few related terms that are commonly used:
+
+@itemlist[
+  @item{@deftech{Collection}:
+        A more informal term used to describe a bunch of things, without assuming
+        they necessarily form a formal structure, such as a @tech{set}. This term
+        is often used to avoid the strict assumptions of @deftech{set theory}.}
+  @item{@deftech{Family}:
+        An indexed @tech{collection}.}
+  @item{@deftech{Class}:
+        A @tech{collection} of mathematical objects defined by a common property
+        that all its @deftech{members} share.}
+  ]
 
 @subsection{One-Object Category}
 
@@ -246,7 +260,7 @@ may have additional properties:
 
 An @deftech{equivalence relation} @math{∼} over @math{S} is a @tech{binary relation}
 that is @tech{reflexive}, @tech{symmetric}, and @tech{transitive}. @math{∼}
-partitions @math{S} into disjoint @deftech{class}es, known as
+partitions @math{S} into disjoint @tech[#:key "class"]{classes}, known as
 @deftech{equivalence class}es, where all @tech{elements} within an
 @tech{equivalence class} are related to each other. A @deftech{setoid}
 (@deftech{extensional set}) @math{(S, ∼)} is a @tech{set} @math{S} equipped with
@@ -974,7 +988,7 @@ which takes @math{[x]} and returns an @tech{element} of @math{[x]}.
 
 However, since there is no inherent way to distinguish between @tech{elements}
 within @math{[x]}, choosing one requires the @deftech{axiom of choice}
-(@deftech{AC} or @deftech{AoC}) in @deftech{set theory}. Therefore, the result is
+(@deftech{AC} or @deftech{AoC}) in @tech{set theory}. Therefore, the result is
 a categorical version of the @tech{axiom of choice}.
 
 @subsection{Isomorphism}
