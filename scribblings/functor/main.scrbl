@@ -98,8 +98,9 @@ The following example illustrates how to implement @tech{functors} in Racket:
 
 @racketfile{code/functor/𝐒𝐞𝐭→𝐑𝐞𝐥.rkt}
 
-@bold{Exercise}: Prove that @tech{functors} can be @tech[#:key "compose"]{composed}
-and that this @tech{composition} is @tech{associative}.
+@bold{Exercise}: Prove that @tech{functors} @math{F: 𝒞 → 𝒟} and @math{G: 𝒟 → ℰ}
+can be @tech[#:key "compose"]{composed}: @math{G∘F(f) = G(F(f))}, and that this
+@tech{composition} is @tech{associative}.
 
 @bold{Exercise}: Show that a @deftech{diagram} can be defined as a @tech{functor},
 where the @tech{domain} is called the @deftech{indexing category} of the
