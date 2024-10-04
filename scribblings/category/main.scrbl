@@ -291,10 +291,10 @@ A @deftech{congruence class} is an @tech{equivalence class} under a
 
 @subsection{Commutative Diagram}
 
-Informally, a @deftech{diagram} comprises various @tech{objects} connected by
+Informally, a @tech{diagram} comprises various @tech{objects} connected by
 various @tech{morphisms}. When the @tech{morphisms} with the same @tech{domain}
 and @tech{codomain} are the same one, the @tech{diagram} is a
-@deftech{@deftech{commutative} diagram}.
+@deftech{commutative diagram}.
 
 @tech{Commutative diagrams} serve as a powerful language for expressing equations.
 

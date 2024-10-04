@@ -101,11 +101,11 @@ The following example illustrates how to implement @tech{functors} in Racket:
 @bold{Exercise}: Prove that @tech{functors} can be @tech[#:key "compose"]{composed}
 and that this @tech{composition} is @tech{associative}.
 
-@bold{Exercise}: Show that a @tech{diagram} can be defined as a @tech{functor},
+@bold{Exercise}: Show that a @deftech{diagram} can be defined as a @tech{functor},
 where the @tech{domain} is called the @deftech{indexing category} of the
 @tech{diagram}.
 
-@bold{Exercise}: Show that a @tech{diagram} is @tech{commutative} iff its
+@bold{Exercise}: Show that a @tech{diagram} is @deftech{commutative} iff its
 @tech{indexing category} is a @tech{preorder category}.
 
 A @tech{functor} @math{F: 𝒞 → 𝒟} @deftech{preserve}s a property @math{P} of
