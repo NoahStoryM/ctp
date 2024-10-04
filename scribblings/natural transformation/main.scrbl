@@ -36,6 +36,10 @@ way to map each @tech{morphism} @math{f: a → b} in @math{𝒞} to a correspond
 @tech{morphism} @math{α(f): F(a) → G(b)} in @math{𝒟}. This mapping must ensure
 that the following @tech{diagram} is @tech{commutative}:
 
+@margin-note{
+In a sense, @math{α(f)} can be considered a @tech{commutative square}.
+}
+
 @image["scribblings/natural transformation/images/N-1.svg"]{[picture] N-1.svg}
 
 To verify the properties of @tech{natural transformations}, we'll @racket[define]
@@ -91,9 +95,13 @@ easier to reason about complex structures involving multiple @tech{functors} and
 
 @subsubsection{Vertical Composition}
 
-The @tech{vertical composition} of @tech{natural transformations} involves
-@tech[#:key "compose"]{composing} two @tech{natural transformations} that share
-a common @tech{functor}.
+Since two adjacent @tech{commutative squares} can themselves be
+@tech[#:key "compose"]{composed} to form a larger @tech{commutative square},
+it naturally suggests that two @tech{natural transformations} that share a common
+@tech{functor} can also be @tech[#:key "compose"]{composed} to form a new
+@tech{natural transformation}. This leads us to @racket[define] a type of
+@tech{composition} for @tech{natural transformations}, known as
+@tech{vertical composition}.
 
 Consider two @tech{natural transformations} @math{α: F ⇒ G} and @math{β: G ⇒ H},
 where @math{F, G, H: 𝒞 → 𝒟}. The @deftech{vertical composition} @math{β·α: F ⇒ H},
