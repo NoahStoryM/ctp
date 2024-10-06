@@ -371,6 +371,11 @@ where @math{@^{⊥}𝒞 := {f | f⊥g ∀g ∈ 𝒞}}.
 
 @bold{Exercise}: Prove @math{𝒞@^{↓↑↓} = 𝒞@^{↓}} and @math{𝒞@^{↑↓↑} = 𝒞@^{↑}}.
 
+@subsubsection{Commutative Cube}
+
+A @deftech{commutative cube} is a @tech{commutative diagram} that has the shape
+of a cube.
+
 @section{Mapping Category to Programming}
 
 In this @seclink["Mapping_Category_to_Programming"]{section}, we'll explore how

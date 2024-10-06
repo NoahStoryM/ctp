@@ -74,17 +74,9 @@ where @math{F, G: 𝒞 → 𝒟} and @math{H, K: 𝒟 → ℰ}. The
 @tech{natural transformation} that, for each @tech{morphism} @math{f: a → b} in
 @math{𝒞}, maps it to @math{β∘α(f) = β(α(f)): H∘F(a) → K∘G(b)} in @math{ℰ}.
 
-@bold{Exercise}: Show the types of @math{H∘α}, @math{K∘α}, @math{β∘F}, and @math{β∘G}.
-
 @bold{Exercise}: Prove @math{α = α∘id@_{𝒞} = id@_{𝒟}∘α}.
 
-@image["scribblings/natural transformation/images/N-2.svg"]{[picture] N-2.svg}
-
-@bold{Exercise}: Prove that the @tech{horizontal composition} of
-@tech{natural transformations} ensures that the resulting @tech{diagram} is
-@tech{commutative}.
-
-@bold{Exercise}: Prove that @tech{horizontal composition} is @tech{associative}.
+@bold{Exercise}: Show the types of @math{H∘α}, @math{K∘α}, @math{β∘F}, and @math{β∘G}.
 
 We often omit the @tech{composition} symbol @tech{∘} when dealing with
 @tech{functors} and @tech{natural transformations}. For instance, expressions
@@ -92,6 +84,36 @@ like @math{K∘F}, @math{K∘α}, @math{β∘F}, and @math{β∘α} are typicall
 to @math{KF}, @math{Kα}, @math{βF}, and @math{βα}. This simplification makes it
 easier to reason about complex structures involving multiple @tech{functors} and
 @tech{natural transformations}, reducing visual clutter and improving readability.
+
+@image["scribblings/natural transformation/images/N-2.svg"]{[picture] N-2.svg}
+
+@bold{Exercise}: Prove that the @tech{horizontal composition} of
+@tech{natural transformations} ensures that the resulting @tech{diagram} is
+@tech{commutative}.
+
+The @tech{horizontal composition} involves more than just combining
+@tech{natural transformations} at a high level; it reveals the structure within
+the @tech[#:key "compose"]{composed} @tech{natural transformation}. For @math{βα},
+its type is @math{HF ⇒ KG}, where @math{HF} and @math{KG} are @tech{functors}
+from @math{𝒞} to @math{ℰ}. Additionally, there are three important
+@tech{commutative squares} associated with @math{βα}:
+
+@itemlist[
+  #:style 'ordered
+  @item{@math{βα: HF ⇒ KG} @image["scribblings/natural transformation/images/N-2_1.svg"]{[picture] N-2_1.svg}}
+  @item{@math{βα: Hα ⇒ Kα} @image["scribblings/natural transformation/images/N-2_2.svg"]{[picture] N-2_2.svg}}
+  @item{@math{βα: βF ⇒ βG} @image["scribblings/natural transformation/images/N-2_3.svg"]{[picture] N-2_3.svg}}
+  ]
+
+Note that @math{Hα}, @math{Kα}, @math{βF}, and @math{βG} are all
+@tech{natural transformations}, not @tech{functors}. These three
+@tech{commutative squares} arise naturally because @math{βα(f)} is the body
+diagonal of a @tech{commutative cube}, and there are precisely three faces of
+this cube whose face diagonals coincide with this body diagonal. Each of these
+faces also has a cube edge that starts from @math{HF(a)}, which uniquely
+identifies them among all the cube's faces.
+
+@bold{Exercise}: Prove that @tech{horizontal composition} is @tech{associative}.
 
 @subsubsection{Vertical Composition}
 
@@ -112,6 +134,8 @@ in @math{𝒞}, maps it to @math{β·α(f) : F(a) → H(b)} in @math{𝒟}.
 
 @image["scribblings/natural transformation/images/N-3.svg"]{[picture] N-3.svg}
 
+@image["scribblings/natural transformation/images/N-3_1.svg"]{[picture] N-3_1.svg}
+
 @bold{Exercise}: Prove that the @tech{vertical composition} of
 @tech{natural transformations} ensures that the resulting @tech{diagram} is
 @tech{commutative}.
@@ -125,3 +149,16 @@ relationships between @tech{functors} and the @tech{natural transformations}
 between them. By organizing @tech{natural transformations} into structures that
 can themselves be @tech[#:key "compose"]{composed}, we reveal a higher level of
 abstraction within @tech{category theory}.
+
+@deftech{Interchange Law}: @math{(δ·γ)∘(β·α) = (δ∘β)·(γ∘α)}.
+
+@image["scribblings/natural transformation/images/N-4.svg"]{[picture] N-4.svg}
+
+@image["scribblings/natural transformation/images/N-4_0.svg"]{[picture] N-4_0.svg}
+
+@itemlist[
+  #:style 'ordered
+  @item{@math{(δβ)·(γα): KF ⇒ MH} @image["scribblings/natural transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
+  @item{@math{(δ·γ)(β·α): K(β·α) ⇒ M(β·α)} @image["scribblings/natural transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
+  @item{@math{(δ·γ)(β·α): (δ·γ)F ⇒ (δ·γ)H} @image["scribblings/natural transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
+  ]
