@@ -48,6 +48,11 @@ some @tech{check} @tech{procedures} to automate the testing of the
 
 @racketfile{code/natural transformation/check.rkt}
 
+The following example illustrates how to implement @tech{natural transformations}
+in Racket:
+
+@racketfile{code/natural transformation/𝐒𝐞𝐭⇒𝐑𝐞𝐥.rkt}
+
 @subsection{Composition}
 
 In this @seclink["Composition"]{section}, we explore two types of
