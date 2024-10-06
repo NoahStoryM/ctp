@@ -100,9 +100,9 @@ from @math{𝒞} to @math{ℰ}. Additionally, there are three important
 
 @itemlist[
   #:style 'ordered
-  @item{@math{βα: HF ⇒ KG} @image["scribblings/natural transformation/images/N-2_1.svg"]{[picture] N-2_1.svg}}
-  @item{@math{βα: Hα ⇒ Kα} @image["scribblings/natural transformation/images/N-2_2.svg"]{[picture] N-2_2.svg}}
-  @item{@math{βα: βF ⇒ βG} @image["scribblings/natural transformation/images/N-2_3.svg"]{[picture] N-2_3.svg}}
+  @item{@math{βα(f): HF(f) ⇒ KG(f)} @image["scribblings/natural transformation/images/N-2_1.svg"]{[picture] N-2_1.svg}}
+  @item{@math{βα(f): Hα(f) ⇒ Kα(f)} @image["scribblings/natural transformation/images/N-2_2.svg"]{[picture] N-2_2.svg}}
+  @item{@math{βα(f): βF(f) ⇒ βG(f)} @image["scribblings/natural transformation/images/N-2_3.svg"]{[picture] N-2_3.svg}}
   ]
 
 Note that @math{Hα}, @math{Kα}, @math{βF}, and @math{βG} are all
@@ -111,7 +111,9 @@ Note that @math{Hα}, @math{Kα}, @math{βF}, and @math{βG} are all
 diagonal of a @tech{commutative cube}, and there are precisely three faces of
 this cube whose face diagonals coincide with this body diagonal. Each of these
 faces also has a cube edge that starts from @math{HF(a)}, which uniquely
-identifies them among all the cube's faces.
+identifies them among all the cube's faces:
+
+@image["scribblings/natural transformation/images/N-2_4.svg"]{[picture] N-2_4.svg}
 
 @bold{Exercise}: Prove that @tech{horizontal composition} is @tech{associative}.
 
@@ -133,8 +135,8 @@ in @math{𝒞}, maps it to @math{β·α(f) : F(a) → H(b)} in @math{𝒟}.
 @bold{Exercise}: Prove @math{α = α·F = G·α}.
 
 @image["scribblings/natural transformation/images/N-3.svg"]{[picture] N-3.svg}
-
 @image["scribblings/natural transformation/images/N-3_1.svg"]{[picture] N-3_1.svg}
+@image["scribblings/natural transformation/images/N-3_2.svg"]{[picture] N-3_2.svg}
 
 @bold{Exercise}: Prove that the @tech{vertical composition} of
 @tech{natural transformations} ensures that the resulting @tech{diagram} is
@@ -154,11 +156,13 @@ abstraction within @tech{category theory}.
 
 @image["scribblings/natural transformation/images/N-4.svg"]{[picture] N-4.svg}
 
-@image["scribblings/natural transformation/images/N-4_0.svg"]{[picture] N-4_0.svg}
-
 @itemlist[
   #:style 'ordered
-  @item{@math{(δβ)·(γα): KF ⇒ MH} @image["scribblings/natural transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
-  @item{@math{(δ·γ)(β·α): K(β·α) ⇒ M(β·α)} @image["scribblings/natural transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
-  @item{@math{(δ·γ)(β·α): (δ·γ)F ⇒ (δ·γ)H} @image["scribblings/natural transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
+  @item{@math{(δ·γ)(β·α)(f): KF(f) ⇒ MH(f)} @image["scribblings/natural transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
+  @item{@math{(δ·γ)(β·α)(f): K(β·α)(f) ⇒ M(β·α)(f)} @image["scribblings/natural transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
+  @item{@math{(δ·γ)(β·α)(f): (δ·γ)F(f) ⇒ (δ·γ)H(f)} @image["scribblings/natural transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
   ]
+
+@image["scribblings/natural transformation/images/N-4_4.svg"]{[picture] N-4_4.svg}
+
+@math{(δβ)·(γα)(f): KF(f) ⇒ MH(f)} @image["scribblings/natural transformation/images/N-4_5.svg"]{[picture] N-4_5.svg}
