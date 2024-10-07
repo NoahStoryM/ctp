@@ -170,3 +170,11 @@ abstraction within @tech{category theory}.
   ]
 
 @image["scribblings/natural transformation/images/N-4_4.svg"]{[picture] N-4_4.svg}
+
+@subsection{Structure of 𝐂𝐚𝐭}
+
+@subsubsection{Base Category}
+
+@subsubsection{Horizontal Category}
+
+@subsubsection{Vertical Category}
