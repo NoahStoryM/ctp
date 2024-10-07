@@ -151,11 +151,12 @@ in @math{𝒞}, maps it to @math{β·α(f) : F(a) → H(b)} in @math{𝒟}.
 
 @subsubsection{Interchange Law}
 
-@deftech{Interchange Law} provides powerful tools for reasoning about the
-relationships between @tech{functors} and the @tech{natural transformations}
-between them. By organizing @tech{natural transformations} into structures that
-can themselves be @tech[#:key "compose"]{composed}, we reveal a higher level of
-abstraction within @tech{category theory}.
+@deftech{Interchange Law} (@deftech{Exchange Law}) provides powerful tools for
+reasoning about the relationships between @tech{functors} and the
+@tech{natural transformations} between them. By organizing
+@tech{natural transformations} into structures that can themselves be
+@tech[#:key "compose"]{composed}, we reveal a higher level of abstraction within
+@tech{category theory}.
 
 @image["scribblings/natural transformation/images/N-4.svg"]{[picture] N-4.svg}
 
