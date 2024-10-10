@@ -201,8 +201,59 @@ Here are some important @tech{commutative squares} that arise:
 
 @subsection{Structure of 𝐂𝐚𝐭}
 
-@subsubsection{Base Category}
+In the previous @seclink["_Functor_"]{chapter}, we introduced what we referred to
+as @tech{𝐂𝐚𝐭}, which consists of @tech{categories} as @tech{objects} and
+@tech{functors} as @tech{morphisms}. Strictly speaking, this was actually the
+@deftech{base category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{b}}. With the
+introduction of @tech{natural transformations}, we can now see that
+@tech{functors} are actually a special case of @tech{natural transformations}.
+This observation reveals that the full structure of @tech{𝐂𝐚𝐭} is richer and more
+complex compared to other @tech{categories}, as it includes
+@tech{natural transformations} in addition to @tech{functors}.
+
+The complete @tech{𝐂𝐚𝐭} can be understood as being composed of two additional
+interrelated @tech{categories}: the @tech{horizontal category} and the
+@tech{vertical category}. These @tech{categories} give us deeper insights into
+the complex structure of @tech{𝐂𝐚𝐭} and how the different components
+(@tech{categories}, @tech{functors}, and @tech{natural transformations}) interact
+with each other.
 
 @subsubsection{Horizontal Category}
 
+The @deftech{horizontal category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{h}}, can
+be viewed as an extension of @tech{𝐂𝐚𝐭@^{b}}. In @tech{𝐂𝐚𝐭@^{b}}, @tech{objects} are
+@tech{categories} and @tech{morphisms} are @tech{functors} between @tech{categories}.
+In @tech{𝐂𝐚𝐭@^{h}}, the @tech{objects} remain the same but the @tech{morphisms} are
+generalized to include all @tech{natural transformations} between @tech{functors}.
+
+In @tech{𝐂𝐚𝐭@^{h}}, @tech{horizontal composition} serves as the @tech{composition}
+operation for @tech{morphisms}. This perspective allows us to see that
+@tech{horizontal composition} essentially works like the @tech{composition} of
+@tech{functions}: both @tech{functors} and @tech{natural transformations} are
+kinds of @tech{functions} between @tech{categories}.
+
 @subsubsection{Vertical Category}
+
+The @deftech{vertical category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{v}},
+provides a perspective that focuses on the relationships between @tech{functors}
+through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objects} are
+@tech{functors} between @tech{categories} and @tech{morphisms} are
+@tech{natural transformations} between @tech{functors}.
+
+To understand @tech{𝐂𝐚𝐭@^{v}}, consider a @tech{category} @math{𝐂(𝒞, 𝒟)}, which
+has all the @tech{functors} from @math{𝒞} to @math{𝒟} as @tech{objects}, and all
+the @tech{natural transformations} between those @tech{functors} as @tech{morphisms}.
+In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} is used as the @tech{composition}
+operation for @tech{morphisms}.
+
+Importantly, @tech{𝐂𝐚𝐭@^{v}} helps us understand why @tech{functors} can be viewed
+as a special case of @tech{natural transformations}. Specifically, in @math{𝐂(𝒞, 𝒟)},
+every @tech{functor} @math{F: 𝒞 → 𝒟} can be viewed as the
+@deftech{identity natural transformation} @math{id_F: F ⇒ F}, which acts as the
+@tech{identity morphism}.
+
+In Racket, to distinguish between operations in the @tech{horizontal category}
+and @tech{vertical category}, we introduce the notions of @deftech{src},
+@deftech{tgt}, and @deftech{·} to denote the @tech{domain}, @tech{codomain},
+and @tech{compose} operations in @math{𝐂(𝒞, 𝒟)}. Additionally, we stipulate that
+@racket[(∘)] and @racket[(·)] must return the same value.
