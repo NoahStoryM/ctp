@@ -382,7 +382,7 @@ In this @seclink["Mapping_Category_to_Programming"]{section}, we'll explore how
 @tech{category theory} concepts can be mapped to practical programming constructs.
 
 Just as @racket[car], @racket[cdr], @racket[cons], @racket[pair?], and @racket[equal?]
-provide an abstraction for @tech/refer{pairs} in Racket, we'll introduce the notions
+provide an abstraction for @tech/refer{pairs} in Racket, we introduce the notions
 of @deftech{dom}, @deftech{cod}, @deftech{∘}, @deftech{?}, and @deftech{=}
 (representing @tech{domain}, @tech{codomain}, @deftech{compose}, @deftech{predicate}, and @deftech{equal})
 to abstract over @tech{categories}.
