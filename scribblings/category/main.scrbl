@@ -1055,7 +1055,7 @@ iff for any @tech{object} @math{c}, @math{Hom(f, c)} is @tech{bijective}, and if
 @math{f} is both @tech{split monic} and @tech{epic}.
 
 @bold{Exercise}: Prove that a @tech{function} is @tech{bijective} iff it is
-@tech{invertible} in @tech{𝐒𝐞𝐭}, without using @tech{AC}.
+@tech{invertible} in @tech{𝐒𝐞𝐭}, without using the @tech{AC}.
 
 @subsubsection{Automorphism}
 
