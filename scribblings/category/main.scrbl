@@ -820,7 +820,8 @@ the @tech{coslice category} @math{m/ℳ} like this:
 
 @bold{Exercise}: Try to @racket[define] @tech{Sli†} by using @tech{†} and @tech{Sli}.
 
-@bold{Exercise}: Think about the relationships between (co)@tech{slice categories}
+@bold{Exercise}: Think about the relationships between
+(@tech[#:key "coslice category"]{co})@tech{slice categories}
 and @tech{arrow categories}.
 
 @section{Categorical Definitions}

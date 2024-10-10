@@ -32,9 +32,10 @@ new ways of thinking and problem-solving.
 
 In the following chapters, we will explore the core concepts of @tech{category theory}
 — @tech{objects}, @tech{morphisms}, @tech{categories}, @tech{functors},
-@tech{natural transformations}, @tech{Yoneda Lemma}, @tech{2-categories} & @tech{2-morphisms},
-(co)@tech{limits}, @tech{Cartesion closed categories} & @tech{typed lambda},
-@tech{adjunctions}, (co)@tech{monads}, @tech{monoidal categories}, and more —
+@tech{natural transformations}, @tech{Yoneda Lemma}, @tech{2-categories} &
+@tech{2-morphisms}, (@tech[#:key "colimit"]{co})@tech{limits},
+@tech{Cartesion closed categories} & @tech{typed lambda}, @tech{adjunctions},
+(@tech[#:key "comonad"]{co})@tech{monads}, @tech{monoidal categories}, and more —
 and how these can be represented and utilized within the Racket programming language.
 The goal is not to exhaustively cover @tech{category theory} or to transform you
 into a @tech{category} theorist. Instead, we will focus on mapping these abstract
