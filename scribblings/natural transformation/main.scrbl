@@ -151,23 +151,50 @@ in @math{𝒞}, maps it to @math{β·α(f) : F(a) → H(b)} in @math{𝒟}.
 
 @subsubsection{Interchange Law}
 
-@deftech{Interchange Law} (@deftech{Exchange Law}) provides powerful tools for
-reasoning about the relationships between @tech{functors} and the
-@tech{natural transformations} between them. By organizing
-@tech{natural transformations} into structures that can themselves be
-@tech[#:key "compose"]{composed}, we reveal a higher level of abstraction within
-@tech{category theory}.
+The @deftech{interchange law} (@deftech{IL}) explains how @tech{horizontal composition}
+and @tech{vertical composition} of @tech{natural transformations} interact with
+each other.
+
+To understand how the @tech{IL} works, recall that applying a @tech{natural transformation}
+to a @tech{morphism} often results in a @tech{morphism} which is the diagonal of
+a @tech{commutative square}. When dealing with adjacent @tech{natural transformations},
+there are multiple ways to @tech{compose} them, ultimately produce the same
+@tech{commutative diagram}. This is precisely what the @tech{IL} states.
+
+Consider the @tech{natural transformations} @math{α: F ⇒ G}, @math{β: G ⇒ H},
+@math{γ: K ⇒ L}, and @math{δ: L ⇒ M}, where @math{F, G, H: 𝒞 → 𝒟} and
+@math{K, L, M: 𝒟 → ℰ}. The @tech{commutative diagram} below illustrates the
+relationships between them:
 
 @image["scribblings/natural transformation/images/N-4.svg"]{[picture] N-4.svg}
 
-@math{(δ·γ)(β·α) = (δβ)·(γα)} @image["scribblings/natural transformation/images/IL.svg"]{[picture] IL.svg}
+@margin-note{
+In some @tech{category theory} texts, @math{∘} denotes @tech{vertical composition}
+and @math{∗} denotes @tech{horizontal composition}: @math{(δ∘γ)∗(β∘α) = (δ∗β)∘(γ∗α)}.
+}
+
+We can @tech[#:key "vertical composition"]{vertically compose}
+@math{α} with @math{β}, and @math{γ} with @math{δ}, as well as
+@tech[#:key "horizontal composition"]{horizontally compose} @math{α} with @math{γ},
+and @math{β} with @math{δ}. The @tech{IL} states that the @tech{horizontal composition}
+of two @tech{vertical compositions} is equal to the @tech{vertical composition}
+of two @tech{horizontal compositions}. More precisely, the @tech{IL} can be
+written as: @math{(δ·γ)∘(β·α) = (δ∘β)·(γ∘α)}.
+
+@image["scribblings/natural transformation/images/IL.svg"]{[picture] IL.svg}
+
+Here are some important @tech{commutative squares} that arise:
 
 @itemlist[
   #:style 'ordered
-  @;; @item{@math{(δβ)·(γα)(f): KF(f) ⇒ MH(f)} @image["scribblings/natural transformation/images/N-4_0.svg"]{[picture] N-4_0.svg}}
-  @item{@math{(δ·γ)(β·α)(f): KF(f) ⇒ MH(f)} @image["scribblings/natural transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
-  @item{@math{(δ·γ)(β·α)(f): K(β·α)(f) ⇒ M(β·α)(f)} @image["scribblings/natural transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
-  @item{@math{(δ·γ)(β·α)(f): (δ·γ)F(f) ⇒ (δ·γ)H(f)} @image["scribblings/natural transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
+  @item{@math{(δβ)·(γα)(f): KF(f) ⇒ MH(f)}
+        @image["scribblings/natural transformation/images/N-4_0.svg"]{[picture] N-4_0.svg}}
+  @item{@math{(δ·γ)(β·α)(f): KF(f) ⇒ MH(f)}
+        @image["scribblings/natural transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
+  @item{@math{(δ·γ)(β·α)(f): K(β·α)(f) ⇒ M(β·α)(f)}
+        @image["scribblings/natural transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
+  @item{@math{(δ·γ)(β·α)(f): (δ·γ)F(f) ⇒ (δ·γ)H(f)}
+        @image["scribblings/natural transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
   ]
 
 @image["scribblings/natural transformation/images/N-4_4.svg"]{[picture] N-4_4.svg}
