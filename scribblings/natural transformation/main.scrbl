@@ -240,15 +240,13 @@ through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objec
 @tech{functors} between @tech{categories} and @tech{morphisms} are
 @tech{natural transformations} between @tech{functors}.
 
-To understand @tech{𝐂𝐚𝐭@^{v}}, consider a @tech{category} @math{𝐂(𝒞, 𝒟)}, which
-has all the @tech{functors} from @math{𝒞} to @math{𝒟} as @tech{objects}, and all
-the @tech{natural transformations} between those @tech{functors} as @tech{morphisms}.
-In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} is used as the @tech{composition}
-operation for @tech{morphisms}.
-
-Importantly, @tech{𝐂𝐚𝐭@^{v}} helps us understand why @tech{functors} can be viewed
-as a special case of @tech{natural transformations}. Specifically, in @math{𝐂(𝒞, 𝒟)},
-every @tech{functor} @math{F: 𝒞 → 𝒟} can be viewed as the
+In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} serves as the @tech{composition}
+operation for @tech{morphisms}. This perspective helps us understand why
+@tech{functors} can be viewed as a special case of @tech{natural transformations}.
+Consider a @tech{category} @math{𝐂(𝒞, 𝒟)}, which has all the @tech{functors}
+from @math{𝒞} to @math{𝒟} as @tech{objects}, and all the
+@tech{natural transformations} between those @tech{functors} as @tech{morphisms}.
+In @math{𝐂(𝒞, 𝒟)}, every @tech{functor} @math{F: 𝒞 → 𝒟} can be viewed as the
 @deftech{identity natural transformation} @math{id_F: F ⇒ F}, which acts as the
 @tech{identity morphism}.
 
