@@ -220,11 +220,12 @@ with each other.
 
 @subsubsection{Horizontal Category}
 
-The @deftech{horizontal category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{h}}, can
-be viewed as an extension of @tech{𝐂𝐚𝐭@^{b}}. In @tech{𝐂𝐚𝐭@^{b}}, @tech{objects} are
-@tech{categories} and @tech{morphisms} are @tech{functors} between @tech{categories}.
-In @tech{𝐂𝐚𝐭@^{h}}, the @tech{objects} remain the same but the @tech{morphisms} are
-generalized to include all @tech{natural transformations} between @tech{functors}.
+The @deftech{horizontal category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{h}},
+can be viewed as an extension of @tech{𝐂𝐚𝐭@^{b}}. In @tech{𝐂𝐚𝐭@^{b}},
+@tech{objects} are @tech{categories} and @tech{morphisms} are @tech{functors}
+between @tech{categories}. In @tech{𝐂𝐚𝐭@^{h}}, the @tech{objects} remain the same
+but the @tech{morphisms} are generalized to include all @tech{natural transformations}
+between @tech{functors}.
 
 In @tech{𝐂𝐚𝐭@^{h}}, @tech{horizontal composition} serves as the @tech{composition}
 operation for @tech{morphisms}. This perspective allows us to see that
