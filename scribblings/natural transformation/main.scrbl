@@ -204,8 +204,11 @@ Here are some important @tech{commutative squares} that arise:
 In the previous @seclink["_Functor_"]{chapter}, we introduced what we referred to
 as @tech{𝐂𝐚𝐭}, which consists of @tech{categories} as @tech{objects} and
 @tech{functors} as @tech{morphisms}. Strictly speaking, this was actually the
-@deftech{base category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{b}}. With the
-introduction of @tech{natural transformations}, we can now see that
+@deftech{base category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{b}}.
+
+@image["scribblings/natural transformation/images/𝐂𝐚𝐭^b.svg"]{[picture] 𝐂𝐚𝐭^b.svg}
+
+With the introduction of @tech{natural transformations}, we can now see that
 @tech{functors} are actually a special case of @tech{natural transformations}.
 This observation reveals that the full structure of @tech{𝐂𝐚𝐭} is richer and more
 complex compared to other @tech{categories}, as it includes
@@ -227,6 +230,8 @@ between @tech{categories}. In @tech{𝐂𝐚𝐭@^{h}}, the @tech{objects} remai
 but the @tech{morphisms} are generalized to include all @tech{natural transformations}
 between @tech{functors}.
 
+@image["scribblings/natural transformation/images/𝐂𝐚𝐭^h.svg"]{[picture] 𝐂𝐚𝐭^h.svg}
+
 In @tech{𝐂𝐚𝐭@^{h}}, @tech{horizontal composition} serves as the @tech{composition}
 operation for @tech{morphisms}. This perspective allows us to see that
 @tech{horizontal composition} essentially works like the @tech{composition} of
@@ -240,6 +245,8 @@ provides a perspective that focuses on the relationships between @tech{functors}
 through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objects} are
 @tech{functors} between @tech{categories} and @tech{morphisms} are
 @tech{natural transformations} between @tech{functors}.
+
+@image["scribblings/natural transformation/images/𝐂𝐚𝐭^v.svg"]{[picture] 𝐂𝐚𝐭^v.svg}
 
 In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} serves as the @tech{composition}
 operation for @tech{morphisms}. This perspective helps us understand why
