@@ -336,7 +336,7 @@ further compress it for simplicity. Specifically:
   @item{@tech{Functor} is represented as a point that splits a line segment.}
 ]
 
-This compressed representation is not limited to @tech{𝐂𝐚𝐭} but can also be
+This compressed representation is not limited to @tech{𝐂𝐚𝐭@^{b}} but can also be
 extended to other @tech{categories}:
 
 @itemlist[
