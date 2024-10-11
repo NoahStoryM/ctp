@@ -13,7 +13,7 @@
         (check-pred ?𝒞 b) (check-pred ?𝒟 (α b))
         (check-pred ?𝒞 f) (check-pred ?𝒟 (α f))
 
-        ;; Naturality
+        ;; Naturality condition
         (check-true (=𝒟 (dom𝒟 (α f)) (dom𝒟 (F f)) (F a)))
         (check-true (=𝒟 (cod𝒟 (α f)) (cod𝒟 (G f)) (G b)))
         (check-true (=𝒟 (α f) (∘𝒟 (α b) (F f)) (∘𝒟 (G f) (α a))))))))

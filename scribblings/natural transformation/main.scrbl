@@ -42,6 +42,9 @@ In a sense, @math{α(f)} can be considered a @tech{commutative square}.
 
 @image["scribblings/natural transformation/images/N-1.svg"]{[picture] N-1.svg}
 
+The @tech{morphism} @math{α(f)} in @math{𝒟} for an @tech{object} @math{a} in
+@math{𝒞} is the @deftech{component} of @math{α} at @math{a}.
+
 To verify the properties of @tech{natural transformations}, we'll @racket[define]
 some @tech{check} @tech{procedures} to automate the testing of the
 @deftech{naturality} a @tech{natural transformation} has:
@@ -84,11 +87,11 @@ where @math{F, G: 𝒞 → 𝒟} and @math{H, K: 𝒟 → ℰ}. The
 @bold{Exercise}: Show the types of @math{H∘α}, @math{K∘α}, @math{β∘F}, and @math{β∘G}.
 
 We often omit the @tech{composition} symbol @tech{∘} when dealing with
-@tech{functors} and @tech{natural transformations}. For instance, expressions
-like @math{K∘F}, @math{K∘α}, @math{β∘F}, and @math{β∘α} are typically simplified
-to @math{KF}, @math{Kα}, @math{βF}, and @math{βα}. This simplification makes it
-easier to reason about complex structures involving multiple @tech{functors} and
-@tech{natural transformations}, reducing visual clutter and improving readability.
+@tech{functors} and @tech{natural transformations}. For instance, @math{β∘α(f)}
+are typically simplified to @math{βα(f)} or @math{βαf}. This simplification makes
+it easier to reason about complex structures involving multiple @tech{functors}
+and @tech{natural transformations}, reducing visual clutter and improving
+readability.
 
 @image["scribblings/natural transformation/images/N-2.svg"]{[picture] N-2.svg}
 
@@ -214,7 +217,7 @@ This observation reveals that the full structure of @tech{𝐂𝐚𝐭} is riche
 complex compared to other @tech{categories}, as it includes
 @tech{natural transformations} in addition to @tech{functors}.
 
-The complete @tech{𝐂𝐚𝐭} can be understood as being composed of two additional
+The complete @deftech{𝐂𝐚𝐭} can be understood as being composed of two additional
 interrelated @tech{categories}: the @tech{horizontal category} and the
 @tech{vertical category}. These @tech{categories} give us deeper insights into
 the complex structure of @tech{𝐂𝐚𝐭} and how the different components
@@ -260,6 +263,6 @@ In @math{𝐂(𝒞, 𝒟)}, every @tech{functor} @math{F: 𝒞 → 𝒟} can be 
 
 In Racket, to distinguish between operations in the @tech{horizontal category}
 and @tech{vertical category}, we introduce the notions of @deftech{src},
-@deftech{tgt}, and @deftech{·} to denote the @tech{domain}, @tech{codomain},
-and @tech{compose} operations in @math{𝐂(𝒞, 𝒟)}. Additionally, we stipulate that
+@deftech{tgt}, and @deftech{·} to denote the @tech{dom}, @tech{cod}, and
+@tech{compose} operators in @math{𝐂(𝒞, 𝒟)}. Additionally, we stipulate that
 @racket[(∘)] and @racket[(·)] must return the same value.
