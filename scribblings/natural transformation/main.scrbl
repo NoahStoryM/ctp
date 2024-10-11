@@ -327,3 +327,19 @@ structure interacts with the others.
 corresponding @tech{diagram}.
 
 @image["scribblings/natural transformation/images/str-diag.svg"]{[picture] str-diag.svg}
+
+If there are no @tech{natural transformations} in a @tech{string diagram}, we can
+further compress it for simplicity. Specifically:
+
+@itemlist[
+  @item{@tech{Category} is represented as a line segment.}
+  @item{@tech{Functor} is represented as a point that splits a line segment.}
+]
+
+This compressed representation is not limited to @tech{𝐂𝐚𝐭} but can also be
+extended to other @tech{categories}:
+
+@itemlist[
+  @item{@tech{0-cell} is represented as a line segment.}
+  @item{@tech{1-cell} is represented as a point that splits a line segment.}
+]
