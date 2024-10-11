@@ -319,9 +319,9 @@ structure:
 
 The advantage of using @tech{string diagrams} lies in their simplicity when
 representing complex structures in @tech{𝐂𝐚𝐭}. Instead of working with layers of
-@tech{nodes} and @tech{arrows}, @tech{string diagrams} allow us to represent these
-relationships in a clear, visual manner that highlights how each part of the
-structure interacts with the others.
+@tech{nodes} and @tech{arrows}, @tech{string diagrams} allow us to represent
+these relationships in a clear, visual manner that highlights how each part of
+the structure interacts with the others.
 
 @bold{Exercise}: The following is a @tech{string diagram}, try to draw the
 corresponding @tech{diagram}.
