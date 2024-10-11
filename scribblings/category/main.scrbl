@@ -82,7 +82,7 @@ they adhere to the @deftech{composition rules}:
         denoted by @math{h∘g∘f}.
 
         @image["scribblings/category/images/C-2.svg"]{[picture] C-2.svg}}
-  @item{Existence of @deftech{identity morphism}s
+  @item{Existence of @deftech{@deftech{identity} morphism}s
 
         Every @tech{object} has an associated @tech{identity morphism}.
         For an @tech{object} @math{a} in @math{𝒞}, its @tech{identity morphism}

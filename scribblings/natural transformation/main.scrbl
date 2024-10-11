@@ -259,8 +259,8 @@ Consider a @tech{category} @math{𝐂(𝒞, 𝒟)}, which has all the @tech{func
 from @math{𝒞} to @math{𝒟} as @tech{objects}, and all the
 @tech{natural transformations} between those @tech{functors} as @tech{morphisms}.
 In this @tech{category}, every @tech{functor} @math{F: 𝒞 → 𝒟} can be viewed as
-the @deftech{identity natural transformation} @math{id_F: F ⇒ F}, which acts as
-the @tech{identity morphism}.
+the @tech{identity} @tech{natural transformation} @math{id_F: F ⇒ F}, which acts
+as the @tech{identity morphism}.
 
 In Racket, to distinguish between operations in the @tech{horizontal category}
 and @tech{vertical category}, we introduce the notions of @deftech{src},
