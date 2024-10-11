@@ -42,7 +42,7 @@ In a sense, @math{α(f)} can be considered a @tech{commutative square}.
 
 @image["scribblings/natural transformation/images/N-1.svg"]{[picture] N-1.svg}
 
-The @tech{morphism} @math{α(f)} in @math{𝒟} for an @tech{object} @math{a} in
+The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 @math{𝒞} is the @deftech{component} of @math{α} at @math{a}.
 
 To verify the properties of @tech{natural transformations}, we'll @racket[define]
