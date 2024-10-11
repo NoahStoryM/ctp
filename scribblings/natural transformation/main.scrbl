@@ -33,8 +33,9 @@ mathematical concepts through practical programming constructs.
 A @deftech{natural transformation} @math{α} between @tech{parallel}
 @tech{functors} @math{F, G: 𝒞 → 𝒟}, denoted as @math{α: F @deftech{⇒} G}, is a
 way to map each @tech{morphism} @math{f: a → b} in @math{𝒞} to a corresponding
-@tech{morphism} @math{α(f): F(a) → G(b)} in @math{𝒟}. This mapping must ensure
-that the following @tech{diagram} is @tech{commutative}:
+@tech{morphism} @math{α(f): F(a) → G(b)} in @math{𝒟}. This mapping must adhere
+@deftech{@deftech{naturality} condition} that the following @tech{diagram} is
+@tech{commutative}:
 
 @margin-note{
 In a sense, @math{α(f)} can be considered a @tech{commutative square}.
@@ -47,7 +48,7 @@ The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 
 To verify the properties of @tech{natural transformations}, we'll @racket[define]
 some @tech{check} @tech{procedures} to automate the testing of the
-@deftech{naturality} a @tech{natural transformation} has:
+@tech{naturality} a @tech{natural transformation} has:
 
 @racketfile{code/natural transformation/check.rkt}
 
