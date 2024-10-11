@@ -263,6 +263,6 @@ In @math{𝐂(𝒞, 𝒟)}, every @tech{functor} @math{F: 𝒞 → 𝒟} can be 
 
 In Racket, to distinguish between operations in the @tech{horizontal category}
 and @tech{vertical category}, we introduce the notions of @deftech{src},
-@deftech{tgt}, and @deftech{·} to denote the @tech{dom}, @tech{cod}, and
+@deftech{tgt}, and @deftech{·} to denote the @tech{domain}, @tech{codomain}, and
 @tech{compose} operators in @math{𝐂(𝒞, 𝒟)}. Additionally, we stipulate that
 @racket[(∘)] and @racket[(·)] must return the same value.
