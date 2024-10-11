@@ -267,3 +267,63 @@ and @tech{vertical category}, we introduce the notions of @deftech{src},
 @deftech{tgt}, and @deftech{·} to denote the @tech{domain}, @tech{codomain}, and
 @tech{compose} operators in @math{𝐂(𝒞, 𝒟)}. Additionally, we stipulate that
 @racket[(∘)] and @racket[(·)] must return the same value.
+
+@subsection{String Diagram}
+
+Traditional @tech{diagrams} represent @tech{categories} as @tech{nodes},
+@tech{functors} as single @tech{arrows} between these @tech{nodes}, and
+@tech{natural transformations} as double @tech{arrows} between these single
+@tech{arrows}. In contrast, @deftech{string diagrams} provide a more intuitive
+and geometrical representation:
+
+@itemlist[
+  @item{@tech{Category} is represent as a plane.}
+  @item{@tech{Functor} is represent as a line segment that splits a plane.}
+  @item{@tech{Natural transformation} is represent as a point that splits a line segment.}
+]
+
+@tech{String diagrams} are a powerful tool for visualizing relationships between
+@tech{categories}, @tech{functors}, and @tech{natural transformations} within
+@tech{𝐂𝐚𝐭}. Below, we illustrate a @tech{natural transformation} @math{α: F ⇒ G},
+where @math{F, G: 𝒞 → 𝒟}, using both a traditional @tech{diagram} and a
+corresponding @tech{string diagram}:
+
+@margin-note{
+By default, @tech{string diagrams} are read from right to left and from bottom
+to top.
+}
+
+@image["scribblings/natural transformation/images/α.svg"]{[picture] α.svg}
+
+We also use special notations in @tech{string diagrams}:
+
+@itemlist[
+  @item{The @tech{identity} @tech{functor} is represented by a dashed line or may
+        be omitted entirely for simplicity.}
+  @item{Curved lines or arcs can also be used to represent @tech{functors}, and
+        their intersection represents a @tech{natural transformation}.}
+  ]
+
+Below is a traditional @tech{diagram} representing a @tech{natural transformation}
+@math{α: G∘F ⇒ id@_{𝒞}}, where @math{F: 𝒞 → 𝒟} and @math{G: 𝒟 → 𝒞}, along with
+its @tech{equivalent} representations using @tech{string diagrams}:
+
+@image["scribblings/natural transformation/images/α_0.svg"]{[picture] α_0.svg}
+
+The following @tech{string diagrams} show different ways of representing the same
+structure:
+
+@image["scribblings/natural transformation/images/α_1.svg"]{[picture] α_1.svg}
+@image["scribblings/natural transformation/images/α_2.svg"]{[picture] α_2.svg}
+@image["scribblings/natural transformation/images/α_3.svg"]{[picture] α_3.svg}
+
+The advantage of using @tech{string diagrams} lies in their simplicity when
+representing complex structures in @tech{𝐂𝐚𝐭}. Instead of working with layers of
+@tech{nodes} and @tech{arrows}, @tech{string diagrams} allow us to represent these
+relationships in a clear, visual manner that highlights how each part of the
+structure interacts with the others.
+
+@bold{Exercise}: The following is a @tech{string diagram}, try to draw the
+corresponding @tech{diagram}.
+
+@image["scribblings/natural transformation/images/str-diag.svg"]{[picture] str-diag.svg}
