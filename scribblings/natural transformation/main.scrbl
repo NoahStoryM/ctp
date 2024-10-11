@@ -277,9 +277,9 @@ Traditional @tech{diagrams} represent @tech{categories} as @tech{nodes},
 and geometrical representation:
 
 @itemlist[
-  @item{@tech{Category} is represent as a plane.}
-  @item{@tech{Functor} is represent as a line segment that splits a plane.}
-  @item{@tech{Natural transformation} is represent as a point that splits a line segment.}
+  @item{@tech{Category} is represented as a plane.}
+  @item{@tech{Functor} is represented as a line segment that splits a plane.}
+  @item{@tech{Natural transformation} is represented as a point that splits a line segment.}
 ]
 
 @tech{String diagrams} are a powerful tool for visualizing relationships between
