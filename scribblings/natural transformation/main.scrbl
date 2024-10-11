@@ -304,18 +304,26 @@ We also use special notations in @tech{string diagrams}:
         their intersection represents a @tech{natural transformation}.}
   ]
 
-Below is a traditional @tech{diagram} representing a @tech{natural transformation}
-@math{α: G∘F ⇒ id@_{𝒞}}, where @math{F: 𝒞 → 𝒟} and @math{G: 𝒟 → 𝒞}, along with
-its @tech{equivalent} representations using @tech{string diagrams}:
+The following two examples illustrate the special notations used in
+@tech{string diagrams}. These @tech{string diagrams} show @tech{equivalent} but
+visually distinct representations of the same structures.
+
+The first one shows a @tech{natural transformation} @math{α: G∘F ⇒ id@_{𝒞}},
+where @math{F: 𝒞 → 𝒟} and @math{G: 𝒟 → 𝒞}:
 
 @image["scribblings/natural transformation/images/α_0.svg"]{[picture] α_0.svg}
-
-The following @tech{string diagrams} show different ways of representing the same
-structure:
-
 @image["scribblings/natural transformation/images/α_1.svg"]{[picture] α_1.svg}
 @image["scribblings/natural transformation/images/α_2.svg"]{[picture] α_2.svg}
 @image["scribblings/natural transformation/images/α_3.svg"]{[picture] α_3.svg}
+
+The second one shows two @tech{natural transformations} @math{α: G∘F ⇒ id@_{𝒞}}
+and @math{β: id@_{𝒟} ⇒ H∘G}, where @math{F: 𝒞 → 𝒟}, @math{G: 𝒟 → 𝒞}, and
+@math{H: 𝒞 → 𝒟}:
+
+@image["scribblings/natural transformation/images/β&α_0.svg"]{[picture] β&α_0.svg}
+@image["scribblings/natural transformation/images/β&α_1.svg"]{[picture] β&α_1.svg}
+@image["scribblings/natural transformation/images/β&α_2.svg"]{[picture] β&α_2.svg}
+@image["scribblings/natural transformation/images/β&α_3.svg"]{[picture] β&α_3.svg}
 
 The advantage of using @tech{string diagrams} lies in their simplicity when
 representing complex structures in @tech{𝐂𝐚𝐭}. Instead of working with layers of
