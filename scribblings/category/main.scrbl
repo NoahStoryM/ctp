@@ -632,7 +632,8 @@ and @math{𝒟}, respectively. Each @tech{object} and @tech{morphism} in the
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
 
-@bold{Exercise}: Prove @math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
+@bold{Exercise}: Prove the @tech{interchange law}:
+@math{(g_0∘f_0, g_1∘f_1) = (g_0, g_1)∘(f_0, f_1)}.
 
 To see this concept in action, let's use Racket to implement it. In the following
 example, we construct the @tech{product category} @math{𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫}:
@@ -710,7 +711,8 @@ but @tech{commutative squares}.
 
 @image["scribblings/category/images/arr-cat_3.svg"]{[picture] arr-cat_3.svg}
 
-@bold{Exercise}: Prove @math{(k∘i, l∘j) = (k, l)∘(i, j)}.
+@bold{Exercise}: Prove the @tech{interchange law}:
+@math{(k∘i, l∘j) = (k, l)∘(i, j)}.
 
 In the following code, we create an @tech{arrow category} to which @tech{𝐏𝐚𝐢𝐫}
 gives rise:
@@ -1121,8 +1123,8 @@ in @math{𝒞}, then @math{a ≅ b}.
 }
 
 Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{category}
-@math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism} from
-every other @tech{object} @math{a} in @math{𝒞}, usually denoted by
+@math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism}
+from every other @tech{object} @math{a} in @math{𝒞}, usually denoted by
 @math{!@_{a→1}: a → 1}, pronounced @deftech{bang from} @math{a}.
 
 @bold{Exercise}: Prove that if @math{a} and @math{b} are @tech{terminal objects}
