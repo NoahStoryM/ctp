@@ -485,7 +485,7 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞�
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
 
-@bold{Exercise}: Prove @math{Hom@_{𝒞}(a, j∘g) = Hom@_{𝒞}(a, j)∘Hom@_{𝒞}(a, g)}.
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(a, j)∘Hom@_{𝒞}(a, g) = Hom@_{𝒞}(a, j∘g)}.
 
 @bold{Exercise}: Prove that @math{Hom@_{𝒞}(i, -)} is @bold{not} a @tech{functor}.
 
@@ -510,7 +510,7 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, x) = id@_{Hom@_{𝒞}(a, x)}}.
 
-@bold{Exercise}: Prove @math{Hom@_{𝒞}(f∘i, x) = Hom@_{𝒞}(i, x)∘Hom@_{𝒞}(f, x)}.
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(i, x)∘Hom@_{𝒞}(f, x) = Hom@_{𝒞}(f∘i, x)}.
 
 @bold{Exercise}: Prove that @math{Hom@_{𝒞}(-, j)} is @bold{not} a @tech{functor}.
 
@@ -535,7 +535,8 @@ takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
 
-@bold{Exercise}: Prove @math{Hom@_{𝒞}(f∘i, j∘g) = Hom@_{𝒞}(i, j)∘Hom@_{𝒞}(f, g)}.
+@bold{Exercise}: Prove the @tech{interchange law}:
+@math{Hom@_{𝒞}(i, j)∘Hom@_{𝒞}(f, g) = Hom@_{𝒞}(f∘i, j∘g)}.
 
 @subsection{Cayley's Theorem}
 
