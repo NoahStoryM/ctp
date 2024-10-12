@@ -262,8 +262,8 @@ In this @tech{category}, every @tech{functor} @math{F: 𝒞 → 𝒟} can be vie
 the @tech{identity} @tech{natural transformation} @math{id_F: F ⇒ F}, which acts
 as the @tech{identity morphism}.
 
-@bold{Exercise}: Consider a @tech{category} @math{𝐂(𝒞, 𝒞)}. What kind of structure
-does this @tech{category} exhibit when considering @tech{horizontal composition}?
+@bold{Exercise}: Think about what structure @math{𝐂(𝒞, 𝒞)} exhibits when
+considering @tech{horizontal composition}.
 
 In Racket, to distinguish between operations in the @tech{horizontal category}
 and @tech{vertical category}, we introduce the notions of @deftech{src},
