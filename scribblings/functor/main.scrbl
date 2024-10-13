@@ -38,8 +38,8 @@ if @math{f} is a @tech{morphism} in @math{𝒞}, @math{F(f) = F_1(f)}.
 }
 
 Similar to how a @tech{category} @math{𝒞} is defined by two @tech{collections}
-@math{𝒞_0} and @math{𝒞_1}, a @deftech{functor} @math{F: 𝒞 → 𝒟} is also defined
-by two @tech{functions} @math{F_0: 𝒞_0 → 𝒟_0} and @math{F_1: 𝒞_1 → 𝒟_1}. These
+@math{𝒞_0} and @math{𝒞_1}, a @deftech{functor} @math{F : 𝒞 → 𝒟} is also defined
+by two @tech{functions} @math{F_0 : 𝒞_0 → 𝒟_0} and @math{F_1 : 𝒞_1 → 𝒟_1}. These
 @tech{functions} must satisfy the following properties:
 
 @margin-note{
@@ -53,19 +53,20 @@ a @tech{covariant functor} from @math{𝒞@^{op}} to @math{𝒟}. See more in
   #:style 'ordered
   @item{Preservation of @tech{domains} and @tech{codomains}
 
-        For any @tech{morphism} @math{f: a → b} in @math{𝒞}, there is a @tech{morphism}
-        @math{F(f): F(a) → F(b)} in @math{𝒟}.
+        For any @tech{morphism} @math{f : a → b : 𝒞}, there is a @tech{morphism}
+        @math{F(f) : F(a) → F(b) : 𝒟}.
 
         @image["scribblings/functor/images/F-1.svg"]{[picture] F-1.svg}}
   @item{Preservation of @tech{identity morphisms}
 
-        For any @tech{object} @math{a} in @math{𝒞}, @math{F(id_a) = id@_{F(a)}}.
+        For any @tech{object} @math{a : 𝒞}, @math{F(id_a) = id@_{F(a)}}.
 
         @image["scribblings/functor/images/F-2.svg"]{[picture] F-2.svg}}
   @item{Preservation of @tech{composable pairs}
 
-        If @math{(f, g)} is a @tech{composable pair} in @math{𝒞}, then @math{(F(f), F(g))}
-        is a @tech{composable pair} in @math{𝒟}, and @math{F(g∘f) = F(g)∘F(f)}.
+        If @math{(f, g)} is a @tech{composable pair} in @math{𝒞}, then
+        @math{(F(f), F(g))} is a @tech{composable pair} in @math{𝒟}, and
+        @math{F(g∘f) = F(g)∘F(f)}.
 
         @image["scribblings/functor/images/F-3.svg"]{[picture] F-3.svg}}
   ]
@@ -75,7 +76,7 @@ We can describe @math{𝒞} with the following @tech{diagram}:
 @image["scribblings/functor/images/cat.svg"]{[picture] cat.svg}
 
 To illustrate the @tech{functor} @math{F}, consider a @tech{function}
-@math{F_2: 𝒞_2 → 𝒟_2}. This allows us to describe @math{F} with the following
+@math{F_2 : 𝒞_2 → 𝒟_2}. This allows us to describe @math{F} with the following
 @tech{diagram}:
 
 @image["scribblings/functor/images/functor.svg"]{[picture] functor.svg}
@@ -98,7 +99,7 @@ The following example illustrates how to implement @tech{functors} in Racket:
 
 @racketfile{code/functor/𝐒𝐞𝐭→𝐑𝐞𝐥.rkt}
 
-@bold{Exercise}: Prove that @tech{functors} @math{F: 𝒞 → 𝒟} and @math{G: 𝒟 → ℰ}
+@bold{Exercise}: Prove that @tech{functors} @math{F : 𝒞 → 𝒟} and @math{G : 𝒟 → ℰ}
 can be @tech[#:key "compose"]{composed}: @math{G∘F(f) = G(F(f))}, and that this
 @tech{composition} is @tech{associative}.
 
@@ -109,7 +110,7 @@ where the @tech{domain} is called the @deftech{indexing category} of the
 @bold{Exercise}: Show that a @tech{diagram} is @deftech{commutative} iff its
 @tech{indexing category} is a @tech{preorder category}.
 
-A @tech{functor} @math{F: 𝒞 → 𝒟} @deftech{preserve}s a property @math{P} of
+A @tech{functor} @math{F : 𝒞 → 𝒟} @deftech{preserve}s a property @math{P} of
 @tech{morphisms} in @math{𝒞} if whenever @math{f} has @math{P}, so does @math{F(f)}.
 Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
 @tech{morphisms} in @math{𝒟} if whenever @math{F(f)} has @math{P}, so does @math{f}.
@@ -143,7 +144,7 @@ Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
 @bold{Exercise}: Prove that every @tech{faithful} @tech{functor} @tech{reflects}
 @tech{epimorphisms}.
 
-@bold{Exercise}: Let @math{F: 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
+@bold{Exercise}: Let @math{F : 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
 Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
 @math{Hom@_{𝒞}(a, a) ≅ Hom@_{𝒞}(a, b) ≅ Hom@_{𝒞}(b, a) ≅ Hom@_{𝒞}(b, b)}.
 
@@ -219,7 +220,7 @@ defined as @tech{procedures} in later sections.
 
 @subsection{Inclusion Functor}
 
-The @deftech{inclusion functor} @math{I: 𝒟 → 𝒞} is a @tech{functor} which sends
+The @deftech{inclusion functor} @math{I : 𝒟 → 𝒞} is a @tech{functor} which sends
 each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
 @bold{Exercise}: Prove @math{𝒟 ⊆ 𝒞}.
@@ -232,12 +233,12 @@ each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
 @subsection{Projection Functor}
 
-The @deftech{projection functor} (@deftech{quotient functor}) @math{P: 𝒞 → 𝒞/∼}
+The @deftech{projection functor} (@deftech{quotient functor}) @math{P : 𝒞 → 𝒞/∼}
 is a @tech{functor} that @math{∀a ∈ 𝒞_0, P(a) = [a]} and @math{∀f ∈ 𝒞_1, P(f) = [f]}.
 
-@bold{Exercise}: For a @tech{functor} @math{F: 𝒞 → 𝒟} and a
+@bold{Exercise}: For a @tech{functor} @math{F : 𝒞 → 𝒟} and a
 @tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.
-Prove that there is a unique @tech{functor} @math{F′: 𝒞/∼ → 𝒟} for which
+Prove that there is a unique @tech{functor} @math{F′ : 𝒞/∼ → 𝒟} for which
 @math{F′∘P = F}.
 
 @image["scribblings/functor/images/F′.svg"]{[picture] F′.svg}
@@ -250,7 +251,7 @@ is a type of @tech{functor} that forgets some or all of the structure of the
 @tech{category}.
 
 For example, if we forget @tech{morphisms} in a @tech{category}, then we get a
-@tech{set}. Extending this idea, we get a @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝐒𝐞𝐭},
+@tech{set}. Extending this idea, we get a @tech{forgetful functor} @math{U : 𝐂𝐚𝐭 → 𝐒𝐞𝐭},
 which forgets @math{𝒞_1} and @math{F_1}, but preserves @math{𝒞_0} and @math{F_0}:
 @math{U_0(𝒞) = 𝒞_0} and @math{U_1(F) = F_0}.
 
@@ -271,24 +272,23 @@ to @tech{𝐒𝐞𝐭}.
 
 @subsection{Composition Functor}
 
-For @tech{morphism} @math{f: a → b} and @math{g: b → c} in a @tech{category}
-@math{𝒞}, there are two kinds of @deftech{composition functor}s:
-@math{f/𝒞: b/𝒞 → a/𝒞} and @math{𝒞/g: 𝒞/b → 𝒞/c}. @math{f/𝒞} maps an @tech{object}
-@math{g} in @math{b/𝒞} to the @tech{object} @math{g∘f} in @math{a/𝒞}, while
-@math{𝒞/g} maps an @tech{object} @math{f} in @math{𝒞/b} to the @tech{object}
-@math{g∘f} in @math{𝒞/c}.
+For @tech{morphism} @math{f : a → b : 𝒞} and @math{g : b → c : 𝒞}, there are two
+kinds of @deftech{composition functor}s: @math{f/𝒞 : b/𝒞 → a/𝒞} and
+@math{𝒞/g : 𝒞/b → 𝒞/c}. @math{f/𝒞} maps an @tech{object} @math{g} in @math{b/𝒞}
+to the @tech{object} @math{g∘f} in @math{a/𝒞}, while @math{𝒞/g} maps an
+@tech{object} @math{f} in @math{𝒞/b} to the @tech{object} @math{g∘f} in @math{𝒞/c}.
 
-@bold{Exercise}: Implement a @tech{composition functor} @math{f/ℳ: b/ℳ → a/ℳ},
-where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫} and @math{f: a → b} is a @tech{morphism} in @math{ℳ}.
+@bold{Exercise}: Implement a @tech{composition functor} @math{f/ℳ : b/ℳ → a/ℳ},
+where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫} and @math{f : a → b} is a @tech{morphism} in @math{ℳ}.
 
-@bold{Exercise}: Implement a @tech{composition functor} @math{ℳ/g: ℳ/b → ℳ/c},
-where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫} and @math{g: b → c} is a @tech{morphism} in @math{ℳ}.
+@bold{Exercise}: Implement a @tech{composition functor} @math{ℳ/g : ℳ/b → ℳ/c},
+where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫} and @math{g : b → c} is a @tech{morphism} in @math{ℳ}.
 
 @subsection{(Co)Slice Functor}
 
 For a @tech{category} @math{𝒞}, the @deftech{slice functor} @math{𝒞/-} maps each
-@tech{morphism} @math{g: b → c} in @math{𝒞} to the @tech{composition functor}
-@math{𝒞/g: 𝒞/b → 𝒞/c}.
+@tech{morphism} @math{g : b → c : 𝒞} to the @tech{composition functor}
+@math{𝒞/g : 𝒞/b → 𝒞/c}.
 
 @image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
 
@@ -307,8 +307,8 @@ For a @tech{category} @math{𝒞}, the @deftech{slice functor} @math{𝒞/-} map
 @bold{Exercise}: Prove @math{𝒞/g∘f = 𝒞/g∘𝒞/f}.
 
 For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} maps each
-@tech{morphism} @math{f: a → b} in @math{𝒞} to the @tech{composition functor}
-@math{f/𝒞: b/𝒞 → a/𝒞}.
+@tech{morphism} @math{f : a → b : 𝒞} to the @tech{composition functor}
+@math{f/𝒞 : b/𝒞 → a/𝒞}.
 
 @image["scribblings/functor/images/-÷𝒞.svg"]{[picture] -÷𝒞.svg}
 
@@ -340,7 +340,7 @@ equipped with some additional structure (e.g., @tech{monoids}), and the
 Although many @tech{categories} of @tech{structured sets} are examples of
 @tech{concrete categories}, the concept of a @tech{concrete category} is more
 general. A @deftech{concrete category} is a @tech{category} @math{𝒞} equipped
-with a @tech{faithful} @tech{functor} @math{U: 𝒞 → 𝐒𝐞𝐭}. A @tech{category} is
+with a @tech{faithful} @tech{functor} @math{U : 𝒞 → 𝐒𝐞𝐭}. A @tech{category} is
 said to be @deftech{concretizable} iff it admits such a @tech{functor}.
 
 @tech{Structured sets} and their @tech{homomorphisms} form fundamental
@@ -351,7 +351,7 @@ we'll explore several important @tech{categories} of @tech{structured sets}.
 
 @subsection{Category of Monoids}
 
-A @deftech{monoid homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
+A @deftech{monoid homomorphism} @math{f : (S, ∘, s) → (T, ·, t)} is a
 @tech{function} that preserves the @tech{monoid} structure:
 @math{∀x, y ∈ S, f(x∘y) = f(x)·f(y)}, and @math{f(s) = t}.
 
@@ -362,7 +362,7 @@ as @deftech{𝐎𝐨𝐜}.
 
 @subsection{Category of Groups}
 
-A @deftech{group homomorphism} @math{f: (S, ∘, s) → (T, ·, t)} is a
+A @deftech{group homomorphism} @math{f : (S, ∘, s) → (T, ·, t)} is a
 @tech{monoid homomorphism} that preserves the @tech{group} structure:
 @math{∀x ∈ S, f(x@^{–1}) = f(x)@^{–1}}.
 
@@ -376,7 +376,7 @@ as @deftech{𝐎𝐨𝐠}.
 A @deftech{@deftech{monotone} function}
 (@deftech{@deftech{monotonic} function}, @deftech{@deftech{isotone} function},
  @deftech{@deftech{isotonic} function}, or @deftech{order homomorphism})
-@math{f: (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
+@math{f : (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
 structure: @math{∀x, y ∈ S, x ≤ y ⇒ f(x) ⋜ f(y)}.
 
 The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where
@@ -399,7 +399,7 @@ the following @tech{diagram}:
 
 @image["scribblings/functor/images/grf.svg"]{[picture] grf.svg}
 
-A @deftech{graph homomorphism} @math{φ: 𝒢 → ℋ} is like a @tech{functor} that
+A @deftech{graph homomorphism} @math{φ : 𝒢 → ℋ} is like a @tech{functor} that
 only preserves @tech{sources} and @tech{targets}. We can describe @math{φ} with
 the following @tech{diagram}:
 
@@ -424,7 +424,7 @@ The @deftech{powerset} of a @tech{set} @math{s}, denoted by @math{𝒫(s)}, is t
 
 @image["scribblings/functor/images/f.svg"]{[picture] f.svg}
 
-For a @tech{function} @math{f: a → b}, let @math{a_0} be a @tech{subset} of
+For a @tech{function} @math{f : a → b}, let @math{a_0} be a @tech{subset} of
 @math{a} and @math{b_0} be a @tech{subset} of @math{b}. There are different
 @deftech{powerset functor}s, all of which map a @tech{set} @math{s} to @math{𝒫(s)}.
 
@@ -472,7 +472,7 @@ The @tech{hom sets} form the basis for the concept of @deftech{hom functor}s.
 
 @subsubsection{Covariant Hom Functor}
 
-The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞𝐭} takes
+The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭} takes
 @math{j} to @math{Hom@_{𝒞}(a, j)}.
 
 @image["scribblings/functor/images/Hom_1.svg"]{[picture] Hom_1.svg}
@@ -497,7 +497,7 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -): 𝒞 → 𝐒𝐞�
 
 @subsubsection{Contravariant Hom Functor}
 
-The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 𝐒𝐞𝐭} takes
+The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭} takes
 @math{i} to @math{Hom@_{𝒞}(i, x)}.
 
 @image["scribblings/functor/images/Hom_2.svg"]{[picture] Hom_2.svg}
@@ -522,7 +522,7 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x): 𝒞@^{op} → 
 
 @subsubsection{Two-Variable Hom Functor}
 
-The @deftech{two-variable hom functor} @math{Hom@_{𝒞}(-, -): 𝒞@^{op}×𝒞 → 𝐒𝐞𝐭}
+The @deftech{two-variable hom functor} @math{Hom@_{𝒞}(-, -) : 𝒞@^{op}×𝒞 → 𝐒𝐞𝐭}
 takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
 
 @image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
@@ -545,8 +545,8 @@ every @tech{small category} @math{𝒞} is @tech{isomorphic} to a @tech{subcateg
 @math{𝒮} of @math{𝐒𝐞𝐭}. @math{𝒮} is called the @deftech{Cayley's representation}
 of @math{𝒞}.
 
-To demonstrate this, we'll @racket[define] @tech{isomorphisms} @math{H: 𝒞 → 𝒮}
-and @math{G: 𝒮 → 𝒞}:
+To demonstrate this, we'll @racket[define] @tech{isomorphisms} @math{H : 𝒞 → 𝒮}
+and @math{G : 𝒮 → 𝒞}:
 
 @margin-note{
 The definition of @math{G} is pseudocode. Since we treat @tech{sets} and
@@ -573,7 +573,7 @@ and @code{choose-id}.
 @bold{Exercise}: Prove @math{H = G@^{–1}} and @math{G = H@^{–1}}.
 
 @math{H} is equal to the @tech{composite} of the @tech{slice functor} @math{𝒞/-}
-and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
+and the @tech{forgetful functor} @math{U : 𝐂𝐚𝐭 → 𝒮}:
 
 @image["scribblings/functor/images/H_1.svg"]{[picture] H_1.svg}
 
@@ -612,7 +612,7 @@ attention to its @tech{opposite category} @math{𝒞^op}:
 @bold{Exercise}: Prove @math{H = G@^{–1}} and @math{G = H@^{–1}}.
 
 @math{H} is equal to the @tech{composite} of the @tech{coslice functor} @math{-/𝒞}
-and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
+and the @tech{forgetful functor} @math{U : 𝐂𝐚𝐭 → 𝒮}:
 
 @image["scribblings/functor/images/H_2.svg"]{[picture] H_2.svg}
 
@@ -634,11 +634,11 @@ and the @tech{forgetful functor} @math{U: 𝐂𝐚𝐭 → 𝒮}:
 @margin-note{
 In this context, @tech{actions} are assumed to be @deftech{left action}s by default.
 There is also a concept of @deftech{right action}, which is a @tech{function}
-@math{β: S×B → S}.
+@math{β : S×B → S}.
 }
 
 An @deftech{action} of a @tech{set} @math{A} on a @tech{set} @math{S} is a
-@tech{function} @math{α: A×S → S}. @math{α} shows how each @tech{element} of
+@tech{function} @math{α : A×S → S}. @math{α} shows how each @tech{element} of
 @math{A} transforms the @tech{elements} of @math{S} in a consistent manner.
 
 @margin-note{
@@ -646,7 +646,7 @@ If @math{M} is a @tech{group}, then @math{α} is a @deftech{group action}.
 }
 
 Let @math{M} be a @tech{monoid} @math{(M, ∘, 1)}, a @deftech{monoid action} of
-@math{M} on a @tech{set} @math{S} is an @tech{action} @math{α: M×S → S}
+@math{M} on a @tech{set} @math{S} is an @tech{action} @math{α : M×S → S}
 satisfying the following properties:
 
 @itemlist[
@@ -688,7 +688,7 @@ where @math{F@_{α}(∗) = S} and @math{F@_{α}(m) = F@_{α1}(m) = α(m, -)}.
 
 In this way, we can @racket[define] an @tech{action} of the @tech{monoid}
 @math{M} on the @tech{object} @math{S} in the @tech{category} @math{𝒞} to be a
-@tech{functor} @math{ρ: C(M) → 𝒞}, where @math{ρ(∗) = S}.
+@tech{functor} @math{ρ : C(M) → 𝒞}, where @math{ρ(∗) = S}.
 
 A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{category}
 @math{𝒟} is just a @tech{functor} from @math{𝒞} to @math{𝒟}.
@@ -720,7 +720,7 @@ of @math{A}.
 @bold{Exercise}: Think about the relationship between @tech{Kleene star} and
 @tech{monoid}.
 
-@math{φ: A×S → S} takes an input @tech{letter} and the current @tech{state} as
+@math{φ : A×S → S} takes an input @tech{letter} and the current @tech{state} as
 arguments and returns the next @tech{state}. By currying @math{φ}, we can view
 any @tech{element} in @math{A} as a @tech{transition}. Similarly, we'd like to
 find a way to represent a sequence of @tech{transitions}. We @racket[define] the
@@ -781,11 +781,11 @@ an @tech{OOC} to @tech{𝐒𝐞𝐭}. Can we view any @tech{𝐒𝐞𝐭-valued 
 @tech{action} is called a @deftech{typed action}.
 
 A @tech{typed action} of @math{M} on @math{S} involves a type @tech{set} @math{T}
-and a @tech{function} @math{type: S → T}. This can be seen as @math{S} being
+and a @tech{function} @math{type : S → T}. This can be seen as @math{S} being
 divided into @tech{subsets} according to their types, and the @tech{elements} of
 @math{M} acting on these @tech{subsets}.
 
-For a @tech{functor} @math{F: 𝒞 → 𝐒𝐞𝐭}, we can view it as a @tech{typed action}
+For a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭}, we can view it as a @tech{typed action}
 in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t)}, where
 @math{F(t) = {s ∈ S | type(s) = t}}.
 
@@ -867,8 +867,8 @@ For each @tech{node} @math{a}, there is a unique @tech{path} of length @math{0},
 called the @deftech{empty path} at @math{a}.
 }
 
-Similar to @tech{FSMs}, @math{φ: 𝒢 → 𝐒𝐞𝐭} generates a @tech{typed action}
-@math{φ*: F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @deftech{path category} of @math{𝒢},
+Similar to @tech{FSMs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{typed action}
+@math{φ* : F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @deftech{path category} of @math{𝒢},
 where @tech{objects} are @tech{nodes} and @tech{morphisms} are @deftech{paths}
 (a sequence of @tech{arrows} connected end to end).
 

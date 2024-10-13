@@ -31,9 +31,10 @@ mathematical concepts through practical programming constructs.
 @section{Natural Transformation}
 
 A @deftech{natural transformation} @math{α} between @tech{parallel}
-@tech{functors} @math{F, G: 𝒞 → 𝒟}, denoted as @math{α: F @deftech{⇒} G}, is a
-way to map each @tech{morphism} @math{f: a → b} in @math{𝒞} to a corresponding
-@tech{morphism} @math{α(f): F(a) → G(b)} in @math{𝒟}. This mapping must adhere
+@tech{functors} @math{F} and @math{G} from @math{𝒞} to @math{𝒟}, denoted as
+@math{α : F @deftech{⇒} G : 𝒞 → 𝒟}, is a way to map each @tech{morphism}
+@math{f : a → b : 𝒞} to a corresponding @tech{morphism}
+@math{α(f) : F(a) → G(b) : 𝒟}. This mapping must adhere
 @deftech{@deftech{naturality} condition} that the following @tech{diagram} is
 @tech{commutative}:
 
@@ -77,11 +78,11 @@ Given that @tech{natural transformations} are defined as mappings of
 @tech{composition} for @tech{natural transformations}, known as
 @tech{horizontal composition}.
 
-Consider two @tech{natural transformations} @math{α: F ⇒ G} and @math{β: H ⇒ K},
-where @math{F, G: 𝒞 → 𝒟} and @math{H, K: 𝒟 → ℰ}. The
-@deftech{horizontal composition} @math{β∘α: H∘F ⇒ K∘G} is a new
-@tech{natural transformation} that, for each @tech{morphism} @math{f: a → b} in
-@math{𝒞}, maps it to @math{β∘α(f) = β(α(f)): H∘F(a) → K∘G(b)} in @math{ℰ}.
+Consider two @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟} and
+@math{β : H ⇒ K : 𝒟 → ℰ}. The @deftech{horizontal composition}
+@math{β∘α : H∘F ⇒ K∘G : 𝒞 → ℰ} is a new @tech{natural transformation} that, for
+each @tech{morphism} @math{f : a → b : 𝒞}, maps it to
+@math{β∘α(f) = β(α(f)) : H∘F(a) → K∘G(b) : ℰ}.
 
 @bold{Exercise}: Prove @math{α = α∘id@_{𝒞} = id@_{𝒟}∘α}.
 
@@ -109,9 +110,9 @@ from @math{𝒞} to @math{ℰ}. Additionally, there are three important
 
 @itemlist[
   #:style 'ordered
-  @item{@math{βα(f): HF(f) ⇒ KG(f)} @image["scribblings/natural transformation/images/N-2_1.svg"]{[picture] N-2_1.svg}}
-  @item{@math{βα(f): Hα(f) ⇒ Kα(f)} @image["scribblings/natural transformation/images/N-2_2.svg"]{[picture] N-2_2.svg}}
-  @item{@math{βα(f): βF(f) ⇒ βG(f)} @image["scribblings/natural transformation/images/N-2_3.svg"]{[picture] N-2_3.svg}}
+  @item{@math{βα(f) : HF(f) ⇒ KG(f)} @image["scribblings/natural transformation/images/N-2_1.svg"]{[picture] N-2_1.svg}}
+  @item{@math{βα(f) : Hα(f) ⇒ Kα(f)} @image["scribblings/natural transformation/images/N-2_2.svg"]{[picture] N-2_2.svg}}
+  @item{@math{βα(f) : βF(f) ⇒ βG(f)} @image["scribblings/natural transformation/images/N-2_3.svg"]{[picture] N-2_3.svg}}
   ]
 
 Note that @math{Hα}, @math{Kα}, @math{βF}, and @math{βG} are all
@@ -136,10 +137,10 @@ it naturally suggests that two @tech{natural transformations} that share a commo
 @tech{composition} for @tech{natural transformations}, known as
 @tech{vertical composition}.
 
-Consider two @tech{natural transformations} @math{α: F ⇒ G} and @math{β: G ⇒ H},
-where @math{F, G, H: 𝒞 → 𝒟}. The @deftech{vertical composition} @math{β·α: F ⇒ H},
-is a new natural transformation that, for each @tech{morphism} @math{f: a → b}
-in @math{𝒞}, maps it to @math{β·α(f) : F(a) → H(b)} in @math{𝒟}.
+Consider two @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟} and
+@math{β : G ⇒ H : 𝒞 → 𝒟}. The @deftech{vertical composition}
+@math{β·α : F ⇒ H : 𝒞 → 𝒟} is a new @tech{natural transformation} that, for each
+@tech{morphism} @math{f : a → b : 𝒞}, maps it to @math{β·α(f) : F(a) → H(b) : 𝒟}.
 
 @bold{Exercise}: Prove @math{α = α·F = G·α}.
 
@@ -165,10 +166,9 @@ a @tech{commutative square}. When dealing with adjacent @tech{natural transforma
 there are multiple ways to @tech{compose} them, ultimately produce the same
 @tech{commutative diagram}. This is precisely what the @tech{IL} states.
 
-Consider the @tech{natural transformations} @math{α: F ⇒ G}, @math{β: G ⇒ H},
-@math{γ: K ⇒ L}, and @math{δ: L ⇒ M}, where @math{F, G, H: 𝒞 → 𝒟} and
-@math{K, L, M: 𝒟 → ℰ}. The @tech{commutative diagram} below illustrates the
-relationships between them:
+Consider the @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟},
+@math{β : G ⇒ H : 𝒞 → 𝒟}, @math{γ : K ⇒ L : 𝒟 → ℰ}, and @math{δ : L ⇒ M : 𝒟 → ℰ}.
+The @tech{commutative diagram} below illustrates the relationships between them:
 
 @image["scribblings/natural transformation/images/N-4.svg"]{[picture] N-4.svg}
 
@@ -191,13 +191,13 @@ Here are some important @tech{commutative squares} that arise:
 
 @itemlist[
   #:style 'ordered
-  @item{@math{(δβ)·(γα)(f): KF(f) ⇒ MH(f)}
+  @item{@math{(δβ)·(γα)(f) : KF(f) ⇒ MH(f)}
         @image["scribblings/natural transformation/images/N-4_0.svg"]{[picture] N-4_0.svg}}
-  @item{@math{(δ·γ)(β·α)(f): KF(f) ⇒ MH(f)}
+  @item{@math{(δ·γ)(β·α)(f) : KF(f) ⇒ MH(f)}
         @image["scribblings/natural transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
-  @item{@math{(δ·γ)(β·α)(f): K(β·α)(f) ⇒ M(β·α)(f)}
+  @item{@math{(δ·γ)(β·α)(f) : K(β·α)(f) ⇒ M(β·α)(f)}
         @image["scribblings/natural transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
-  @item{@math{(δ·γ)(β·α)(f): (δ·γ)F(f) ⇒ (δ·γ)H(f)}
+  @item{@math{(δ·γ)(β·α)(f) : (δ·γ)F(f) ⇒ (δ·γ)H(f)}
         @image["scribblings/natural transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
   ]
 
@@ -258,8 +258,8 @@ operation for @tech{morphisms}. This perspective helps us understand why
 Consider a @tech{category} @math{𝐂(𝒞, 𝒟)}, which has all the @tech{functors}
 from @math{𝒞} to @math{𝒟} as @tech{objects}, and all the
 @tech{natural transformations} between those @tech{functors} as @tech{morphisms}.
-In this @tech{category}, every @tech{functor} @math{F: 𝒞 → 𝒟} can be viewed as
-the @tech{identity} @tech{natural transformation} @math{id_F: F ⇒ F}, which acts
+In this @tech{category}, every @tech{functor} @math{F : 𝒞 → 𝒟} can be viewed as
+the @tech{identity} @tech{natural transformation} @math{id_F : F ⇒ F}, which acts
 as the @tech{identity morphism}.
 
 @bold{Exercise}: Think about what structure @math{𝐂(𝒞, 𝒞)} exhibits when
@@ -287,8 +287,8 @@ and geometrical representation:
 
 @tech{String diagrams} are a powerful tool for visualizing relationships between
 @tech{categories}, @tech{functors}, and @tech{natural transformations} within
-@tech{𝐂𝐚𝐭}. Below, we illustrate a @tech{natural transformation} @math{α: F ⇒ G},
-where @math{F, G: 𝒞 → 𝒟}, using both a traditional @tech{diagram} and a
+@tech{𝐂𝐚𝐭}. Below, we illustrate a @tech{natural transformation}
+@math{α : F ⇒ G : 𝒞 → 𝒟}, using both a traditional @tech{diagram} and a
 corresponding @tech{string diagram}:
 
 @margin-note{
@@ -311,17 +311,17 @@ The following two examples illustrate the special notations used in
 @tech{string diagrams}. These @tech{string diagrams} show @tech{equivalent} but
 visually distinct representations of the same structures.
 
-The first one shows a @tech{natural transformation} @math{α: G∘F ⇒ id@_{𝒞}},
-where @math{F: 𝒞 → 𝒟} and @math{G: 𝒟 → 𝒞}:
+The first one shows a @tech{natural transformation} @math{α : G∘F ⇒ id@_{𝒞}},
+where @math{F : 𝒞 → 𝒟} and @math{G : 𝒟 → 𝒞}:
 
 @image["scribblings/natural transformation/images/α_0.svg"]{[picture] α_0.svg}
 @image["scribblings/natural transformation/images/α_1.svg"]{[picture] α_1.svg}
 @image["scribblings/natural transformation/images/α_2.svg"]{[picture] α_2.svg}
 @image["scribblings/natural transformation/images/α_3.svg"]{[picture] α_3.svg}
 
-The second one shows two @tech{natural transformations} @math{α: G∘F ⇒ id@_{𝒞}}
-and @math{β: id@_{𝒟} ⇒ H∘G}, where @math{F: 𝒞 → 𝒟}, @math{G: 𝒟 → 𝒞}, and
-@math{H: 𝒞 → 𝒟}:
+The second one shows two @tech{natural transformations} @math{α : G∘F ⇒ id@_{𝒞}}
+and @math{β : id@_{𝒟} ⇒ H∘G}, where @math{F : 𝒞 → 𝒟}, @math{G : 𝒟 → 𝒞}, and
+@math{H : 𝒞 → 𝒟}:
 
 @image["scribblings/natural transformation/images/β&α_0.svg"]{[picture] β&α_0.svg}
 @image["scribblings/natural transformation/images/β&α_1.svg"]{[picture] β&α_1.svg}

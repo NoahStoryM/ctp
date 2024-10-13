@@ -45,9 +45,9 @@ and @math{𝒞_1} of @deftech{morphism}s (@deftech{1-cell}s). Think of @math{�
 a @deftech{directed graph}, where @tech{objects} are @deftech{node}s, and
 @tech{morphisms} are @deftech{arrow}s connecting these @tech{nodes}.
 
-For a @tech{morphism} @math{f: a @deftech{→} b} in @math{𝒞}, its @deftech{domain}
+For a @tech{morphism} @math{f : a @deftech{→} b : 𝒞}, its @deftech{domain}
 (@deftech{source}) is @math{a}, and its @deftech{codomain} (@deftech{target}) is
-@math{b}: @math{dom(f) = a} and @math{cod(f) = b}.
+@math{b}: @math{dom@_{𝒞}(f) = a} and @math{cod@_{𝒞}(f) = b}.
 
 @image["scribblings/category/images/cat.svg"]{[picture] cat.svg}
 
@@ -65,8 +65,8 @@ they adhere to the @deftech{composition rules}:
   @item{Existence of @deftech{composition}
 
         For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, the @deftech{composite}
-        @math{g∘f} is defined if @math{cod(f) = dom(g)}. When @math{g∘f}
-        is defined, @math{dom(g∘f) = dom(f)} and @math{cod(g∘f) = cod(g)}.
+        @math{g∘f} is defined if @math{cod@_{𝒞}(f) = dom@_{𝒞}(g)}. When @math{g∘f}
+        is defined, @math{dom@_{𝒞}(g∘f) = dom@_{𝒞}(f)} and @math{cod@_{𝒞}(g∘f) = cod@_{𝒞}(g)}.
 
         @image["scribblings/category/images/C-1.svg"]{[picture] C-1.svg}}
   @item{@tech[#:key "associative"]{Associativity} of @tech{composition}
@@ -86,12 +86,12 @@ they adhere to the @deftech{composition rules}:
 
         Every @tech{object} has an associated @tech{identity morphism}.
         For an @tech{object} @math{a} in @math{𝒞}, its @tech{identity morphism}
-        is denoted by @math{id_a} or @math{1_a}, and @math{a = dom(id_a) = cod(id_a)}.
+        is denoted by @math{id_a} or @math{1_a}, and @math{a = dom@_{𝒞}(id_a) = cod@_{𝒞}(id_a)}.
 
         @image["scribblings/category/images/C-3.svg"]{[picture] C-3.svg}}
   @item{@tech{Composition} and @tech{identity morphisms}
 
-        For a @tech{morphism} @math{f: a → b} in @math{𝒞}, @math{f = f∘id_a = id_b∘f}.
+        For a @tech{morphism} @math{f : a → b : 𝒞}, @math{f = f∘id_a = id_b∘f}.
 
         @image["scribblings/category/images/C-4.svg"]{[picture] C-4.svg}}
   ]
@@ -188,11 +188,11 @@ we use the term @deftech{hom class} instead of @tech{hom set}.
 
 For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set},
 denoted by @math{Hom@_{𝒞}(a, x)}, is the @tech{set} of all @tech{morphisms} from
-@math{a} to @math{x}: @math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom(f) = a ∧ cod(f) = x}}.
+@math{a} to @math{x}: @math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
 
-For @tech{morphisms} @math{f: a → x}, @math{i: b → a} and @math{j: x → y} in
-@math{𝒞}, we can @racket[define] a @tech{function}
-@math{Hom@_{𝒞}(i, j): Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
+For @tech{morphisms} @math{f : a → x : 𝒞}, @math{i : b → a : 𝒞} and
+@math{j : x → y : 𝒞}, we can @racket[define] a @tech{function}
+@math{Hom@_{𝒞}(i, j) : Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
 @math{Hom@_{𝒞}(i, j)(f) := j∘f∘i}.
 
 @image["scribblings/category/images/hom_1.svg"]{[picture] hom_1.svg}
@@ -239,7 +239,7 @@ Here're some properties that a @tech{binary relation} @math{△} over a @tech{se
         @math{△} is @deftech{transitive} if: @math{∀x, y, z ∈ S, x △ y ∧ y △ z ⇒ x △ z}.}
 ]
 
-A @deftech{function} @math{f: S → T} can be viewed as the @tech{binary relation}:
+A @deftech{function} @math{f : S → T} can be viewed as the @tech{binary relation}:
 @math{{(x, f(x)) | x ∈ S}}. The @deftech{image} of @math{f}, denoted by
 @math{im(f)}, is the @tech{subset} of @math{T}: @math{{f(x) | x ∈ S}}. @math{f}
 may have additional properties:
@@ -286,7 +286,7 @@ satisfies the following properties:
 @itemlist[
   #:style 'ordered
   @item{@math{∀a, b ∈ 𝒞_0, a ∼ b ⇒ id_a ∼ id_b}.}
-  @item{@math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ dom(f) ∼ dom(g) ∧ cod(f) ∼ cod(g)}.}
+  @item{@math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ dom@_{𝒞}(f) ∼ dom@_{𝒞}(g) ∧ cod@_{𝒞}(f) ∼ cod@_{𝒞}(g)}.}
   @item{@math{∀f, g ∈ Hom@_{𝒞}(b, c), ∀h ∈ Hom@_{𝒞}(a, b), ∀k ∈ Hom@_{𝒞}(c, d),
               f ∼ g ⇒ f∘h ∼ g∘h ∧ k∘f ∼ k∘g}.
 
@@ -595,9 +595,9 @@ with the @tech{morphisms} grouped into
   @item{The @tech{morphisms} of @math{𝒞/∼} are the
         @tech[#:key "congruence class"]{congruence classes} of @tech{morphisms}
         of @math{𝒞}.}
-  @item{If @math{f: a → b} in @math{𝒞}, then @math{[f]: [a] → [b]} in @math{𝒞/∼}.}
-  @item{If @math{f: a → b} and @math{g: b → c} in @math{𝒞}, then
-        @math{[g]∘[f] = [g∘f]: [a] → [c]} in @math{𝒞/∼}.}
+  @item{If @math{f : a → b} in @math{𝒞}, then @math{[f] : [a] → [b]} in @math{𝒞/∼}.}
+  @item{If @math{f : a → b} and @math{g : b → c} in @math{𝒞}, then
+        @math{[g]∘[f] = [g∘f] : [a] → [c]} in @math{𝒞/∼}.}
 ]
 
 @bold{Exercise}: Think about the relationships between @math{𝒞} and @math{𝒞/=}.
@@ -870,8 +870,8 @@ the @tech{injective} nature of @math{m}.
 
 @image["scribblings/category/images/mono.svg"]{[picture] mono.svg}
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{j: x ↣ y} is @tech{monic} iff
-for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{injective}.
+@bold{Exercise}: Prove that a @tech{morphism} @math{j : x ↣ y : 𝒞} is @tech{monic}
+iff for any @tech{object} @math{a : 𝒞}, @math{Hom@_{𝒞}(a, j)} is @tech{injective}.
 
 @bold{Exercise}: Prove that every @tech{monomorphism} in @tech{𝐒𝐞𝐭} is
 @tech{injective}.
@@ -894,8 +894,8 @@ nature of @math{e}.
 
 @image["scribblings/category/images/epi.svg"]{[picture] epi.svg}
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{i: b ↠ a} is @tech{epic} iff
-for any @tech{object} @math{x}, @math{Hom(i, x)} is @tech{injective}.
+@bold{Exercise}: Prove that a @tech{morphism} @math{i : b ↠ a : 𝒞} is @tech{epic}
+iff for any @tech{object} @math{x : 𝒞}, @math{Hom@_{𝒞}(i, x)} is @tech{injective}.
 
 @bold{Exercise}: Prove that every @tech{epimorphism} in @tech{𝐒𝐞𝐭} is
 @tech{surjective}.
@@ -912,9 +912,9 @@ if @math{(f, g)} is a @tech{composable pair}, then @math{g∘f} is also an
 @bold{Exercise}: Prove that if @math{g∘f} is an @tech{epimorphism}, then @math{g}
 is also an @tech{epimorphism}.
 
-For a @tech{morphism} @math{i: t_1 → t_2}, the notation changes based on its
-properties: @math{i: t_1 ↣ t_2} if @math{i} is @tech{monic}, @math{i: t_1 ↠ t_2}
-if @math{i} is @tech{epic}, and @math{i: t_1 ⤖ t_2} if @math{i} is both
+For a @tech{morphism} @math{i : t_1 → t_2 : 𝒞}, the notation changes based on its
+properties: @math{i : t_1 ↣ t_2} if @math{i} is @tech{monic}, @math{i : t_1 ↠ t_2}
+if @math{i} is @tech{epic}, and @math{i : t_1 ⤖ t_2} if @math{i} is both
 @tech{monic} and @tech{epic}.
 
 @image["scribblings/category/images/mono&epi.svg"]{[picture] mono&epi.svg}
@@ -938,7 +938,7 @@ We can see from the names that:
 The proof is left as an exercise.
 }
 
-For @tech{morphisms} @math{f: a ↣ b} and @math{g: b ↠ a} in @math{𝒞}, if
+For @tech{morphisms} @math{f : a ↣ b : 𝒞} and @math{g : b ↠ a : 𝒞}, if
 @math{g∘f = id_a}, then @math{f} is a @deftech{split monomorphism}
 (often abbreviated as @deftech{split mono}, or called be @deftech{split monic}),
 @math{g} is a @deftech{split epimorphism}
@@ -955,11 +955,11 @@ a @deftech{left inverse} of @math{f}. @math{a} is called a @deftech{retract} of
 a @deftech{cosection} (@deftech{retraction}) of @math{f}, or a @tech{retraction}
 of @math{b} onto @math{a}.
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{i: b ↣ a} is @tech{split monic}
-iff for any @tech{object} @math{x}, @math{Hom(i, x)} is @tech{surjective}.
+@bold{Exercise}: Prove that a @tech{morphism} @math{i : b ↣ a : 𝒞} is @tech{split monic}
+iff for any @tech{object} @math{x : 𝒞}, @math{Hom@_{𝒞}(i, x)} is @tech{surjective}.
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{j: x ↠ y} is @tech{split epic}
-iff for any @tech{object} @math{a}, @math{Hom(a, j)} is @tech{surjective}.
+@bold{Exercise}: Prove that a @tech{morphism} @math{j : x ↠ y : 𝒞} is @tech{split epic}
+iff for any @tech{object} @math{a : 𝒞}, @math{Hom@_{𝒞}(a, j)} is @tech{surjective}.
 
 Examples in @tech{𝐌𝐚𝐭𝐫}:
 
@@ -988,10 +988,10 @@ Examples in @tech{𝐌𝐚𝐭𝐫}:
 
 You might wonder if a similar result holds for @tech{surjections}: is every
 @tech{surjection} in @tech{𝐒𝐞𝐭} @tech{split epic}? To explore this, consider a
-@tech{surjection} @math{g: b ↠ a}. There is a @tech{collection} of
+@tech{surjection} @math{g : b ↠ a : 𝐒𝐞𝐭}. There is a @tech{collection} of
 @tech[#:key "equivalence class"]{equivalence classes} among the @tech{elements}
 of @math{b}, where @math{x ∼ y} if @math{g(x) = g(y) = z}. If there exists a
-@tech{right inverse} @math{f: a ↣ b} such that @math{f(z) = x} or @math{f(z) = y},
+@tech{right inverse} @math{f : a ↣ b : 𝐒𝐞𝐭} such that @math{f(z) = x} or @math{f(z) = y},
 it would imply the existence of a @deftech{choice function} on the @tech{collection},
 which takes @math{[x]} and returns an @tech{element} of @math{[x]}.
 
@@ -1002,7 +1002,7 @@ a categorical version of the @tech{axiom of choice}.
 
 @subsection{Isomorphism}
 
-For @tech{morphisms} @math{f: a → b} and @math{g: b → a} in @math{𝒞}, if @math{g∘f = id_a}
+For @tech{morphisms} @math{f : a → b : 𝒞} and @math{g : b → a : 𝒞}, if @math{g∘f = id_a}
 and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphism}s
 (often abbreviated as @deftech{iso}, or called be @deftech{isic} or @deftech{invertible}).
 
@@ -1048,13 +1048,13 @@ Examples in @tech{𝐏𝐚𝐢𝐫}:
 @bold{Exercise}: Prove that for @tech{isomorphisms} @math{f} and @math{g},
 if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{–1}∘g@^{–1}}.
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{f: a → b} is @tech{invertible}
-iff for any @tech{object} @math{c}, @math{Hom(c, f)} is @tech{bijective}, and iff
-@math{f} is both @tech{monic} and @tech{split epic}.
+@bold{Exercise}: Prove that a @tech{morphism} @math{f : a → b : 𝒞} is @tech{invertible}
+iff for any @tech{object} @math{c : 𝒞}, @math{Hom@_{𝒞}(c, f)} is @tech{bijective},
+and iff @math{f} is both @tech{monic} and @tech{split epic}.
 
-@bold{Exercise}: Prove that a @tech{morphism} @math{f: a → b} is @tech{invertible}
-iff for any @tech{object} @math{c}, @math{Hom(f, c)} is @tech{bijective}, and iff
-@math{f} is both @tech{split monic} and @tech{epic}.
+@bold{Exercise}: Prove that a @tech{morphism} @math{f : a → b : 𝒞} is @tech{invertible}
+iff for any @tech{object} @math{c : 𝒞}, @math{Hom@_{𝒞}(f, c)} is @tech{bijective},
+and iff @math{f} is both @tech{split monic} and @tech{epic}.
 
 @bold{Exercise}: Prove that a @tech{function} is @tech{bijective} iff it is
 @tech{invertible} in @tech{𝐒𝐞𝐭}, without using the @tech{AC}.
@@ -1080,9 +1080,8 @@ A @deftech{replete subcategory} is a @tech{subcategory} that includes all
 @tech{objects} in the original @tech{category} that are @tech{isomorphic} to the
 @tech{objects} in the @tech{subcategory}, as well as the corresponding
 @tech{isomorphisms}. Formally, let @math{𝒟} be a @tech{replete subcategory} of
-@math{𝒞}, for any @tech{object} @math{a} in @math{𝒟}, if there is an
-@tech{isomorphism} @math{f: a → b} in @math{𝒞}, then both @math{b} and @math{f}
-are also in @math{𝒟}.
+@math{𝒞}, for any @tech{object} @math{a : 𝒟}, if there is an @tech{isomorphism}
+@math{f : a → b} in @math{𝒞}, then both @math{b} and @math{f} are also in @math{𝒟}.
 
 @subsection{Groupoid}
 
@@ -1157,22 +1156,22 @@ in a way that remains consistent across different @tech{categories}. Although
 through special @tech{morphisms}.
 
 Consider @tech{𝐒𝐞𝐭} as an example. Any @tech{set} @math{A} is @tech{isomorphic} to
-@math{Hom(1, A)}, where @tech{1} is a @tech{singleton set} @tech{{∗}}. Therefore
-we can regard the @tech{elements} of @math{A} as the @tech{elements} of
-@math{Hom(1, A)}. In this view, an @tech{element} @math{x} of @math{A} corresponds
-to a @tech{morphism} @math{x: 1 → A}:
+@math{Hom@_{𝐒𝐞𝐭}(1, A)}, where @tech{1} is a @tech{singleton set} @tech{{∗}}.
+Therefore we can regard the @tech{elements} of @math{A} as the @tech{elements} of
+@math{Hom@_{𝐒𝐞𝐭}(1, A)}. In this view, an @tech{element} @math{x} of @math{A}
+corresponds to a @tech{morphism} @math{x : 1 → A}:
 
 @image["scribblings/category/images/global-elem_1.svg"]{[picture] global-elem_1.svg}
 @image["scribblings/category/images/global-elem_2.svg"]{[picture] global-elem_2.svg}
 @image["scribblings/category/images/global-elem_3.svg"]{[picture] global-elem_3.svg}
 
-@bold{Exercise}: Consider @math{f: {a, b} → {∗}} in @math{𝐒𝐞𝐭}, the simplest
-example of a non-@tech{injective} @tech{morphism}. Prove that a @tech{morphism}
-@math{g} is @tech{injective} iff @math{f⧄g}, and iff @math{g⧄f}.
+@bold{Exercise}: Consider @math{f : {a, b} → {∗} : 𝐒𝐞𝐭}, the simplest example of
+a non-@tech{injective} @tech{morphism}. Prove that a @tech{morphism} @math{g} is
+@tech{injective} iff @math{f⧄g}, and iff @math{g⧄f}.
 
-@bold{Exercise}: Consider @math{f: {} → {∗}} in @math{𝐒𝐞𝐭}, the simplest
-example of a non-@tech{surjective} @tech{morphism}. Prove that a @tech{morphism}
-@math{g} is @tech{surjective} iff @math{f⧄g}.
+@bold{Exercise}: Consider @math{f : {} → {∗} : 𝐒𝐞𝐭}, the simplest example of
+a non-@tech{surjective} @tech{morphism}. Prove that a @tech{morphism} @math{g} is
+@tech{surjective} iff @math{f⧄g}.
 
 This approach generalizes the concept of @tech{elements} beyond @tech{sets}. In
 any @tech{category} @math{𝒞} with a @tech{terminal object} @tech{1}, we can
@@ -1182,11 +1181,11 @@ These @tech{morphisms} are called @deftech{global element}s (@deftech{global poi
 
 By describing properties of a @tech{category} in a generalized way, we can extend
 them to other @tech{categories}. In this example, by describing the @tech{elements}
-of a @tech{set} @math{A} as the @tech{elements} of @math{Hom(1, A)}, we can then
-discuss the @tech{elements} of any @tech{object} in any @tech{category} that has
-a @tech{terminal object}. This abstraction allows us to apply familiar concepts
-beyond @tech{𝐒𝐞𝐭}, providing a consistent way to explore structures in various
-@tech{categories}.
+of a @tech{set} @math{A} as the @tech{elements} of @math{Hom@_{𝐒𝐞𝐭}(1, A)}, we can
+then discuss the @tech{elements} of any @tech{object} in any @tech{category} that
+has a @tech{terminal object}. This abstraction allows us to apply familiar
+concepts beyond @tech{𝐒𝐞𝐭}, providing a consistent way to explore structures in
+various @tech{categories}.
 
 While in @tech{𝐒𝐞𝐭}, the @tech{morphisms} from @tech{1} to @math{A} are enough to
 fully capture the structure of @math{A}, this is not always true in other
@@ -1196,7 +1195,7 @@ not just those from a @tech{terminal object}. This broader perspective allows us
 to describe an @tech{object} through its interactions with other @tech{objects}
 in the @tech{category}.
 
-Now, consider a @tech{function} @math{f: A → B} in @tech{𝐒𝐞𝐭}. Traditionally, we
+Now, consider a @tech{function} @math{f : A → B : 𝐒𝐞𝐭}. Traditionally, we
 @racket[apply] @math{f} to an @tech{element} @math{x} in @math{A}, written as
 @math{f(x)}. In @tech{category theory}, we can express this application using
 @tech{morphisms}. Let @math{x} be a @tech{global element} of @math{A}, applying
@@ -1205,7 +1204,7 @@ with @math{f}, written as @math{f∘x}. Therefore, the notation @math{f(x)} is
 sometimes used to denote the @tech{composite} @math{f∘x}, where @math{x} is
 interpreted as a @tech{morphism} rather than an @tech{element}.
 
-In this context, any @tech{morphism} @math{x: T → A} can be viewed as a
+In this context, any @tech{morphism} @math{x : T → A} can be viewed as a
 @deftech{variable element} of @math{A}, parametrized by @math{T}. This reinforces
 the idea that @tech{morphisms} can be treated as @deftech{generalized element}s,
 and that @tech{function} application is simply a special case of @tech{morphism}
@@ -1215,17 +1214,17 @@ and that @tech{function} application is simply a special case of @tech{morphism}
 
 A @deftech{pointed set} @math{(S, s)} is a @tech{set} @math{S} equipped with a
 distinguished @tech{element} @math{s}, often called the @deftech{base point}. A
-@tech{homomorphism} between two @tech{pointed sets}, @math{f: (S, s) → (T, t)},
-is a @tech{function} @math{f: S → T} that preserves the @tech{base point},
+@tech{homomorphism} between two @tech{pointed sets}, @math{f : (S, s) → (T, t)},
+is a @tech{function} @math{f : S → T} that preserves the @tech{base point},
 meaning @math{f(s) = t}.
 
 The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭@_{∗}}, can
 be viewed as the @tech{coslice category} @math{1/𝐒𝐞𝐭}, where the @tech{base point}
-@math{s} of @math{S} corresponds to the @tech{global element} @math{s: 1 → S}.
+@math{s} of @math{S} corresponds to the @tech{global element} @math{s : 1 → S : 𝐒𝐞𝐭}.
 
 Similarly, if a @tech{terminal object} @tech{1} exists within a @tech{category}
-@math{𝒞}, a @deftech{pointed object} in @math{𝒞} is an @tech{object} @math{S}
-equipped with a @tech{global element} @math{s: 1 → S}. The @tech{category} of
+@math{𝒞}, a @deftech{pointed object} in @math{𝒞} is an @tech{object} @math{S : 𝒞}
+equipped with a @tech{global element} @math{s : 1 → S}. The @tech{category} of
 @tech{pointed objects} in @math{𝒞} can be viewed as the @tech{coslice category}
 @math{1/𝒞}, generalizing the notion of @tech{pointed sets} to arbitrary
 @tech{categories}.
@@ -1233,7 +1232,7 @@ equipped with a @tech{global element} @math{s: 1 → S}. The @tech{category} of
 @subsection{Subobject and Quotient Object}
 
 In general, when we say that @math{d} is a @deftech{substructure} of @math{c},
-this often means that there exists an @deftech{inclusion function} @math{i: d → c}.
+this often means that there exists an @deftech{inclusion function} @math{i : d → c}.
 However, from the perspective of @tech{category theory}, we focus only on
 @tech{morphisms} and their @tech{composition}, without considering the internal
 structure of @tech{objects}.
@@ -1246,7 +1245,7 @@ always @tech{functions}, we cannot directly say that @math{i} is an
 instead of @tech{inclusion function}.
 
 Let @math{∼} be an @tech{equivalence relation} between @tech{monomorphisms}
-@math{i: a ↣ c} and @math{j: b ↣ c} in @math{𝒞} if each can @tech{factor through}
+@math{i : a ↣ c : 𝒞} and @math{j : b ↣ c : 𝒞} if each can @tech{factor through}
 the other. A @deftech{subobject} of @math{c} is an @tech{equivalence class} of
 @tech{monomorphisms} under @math{∼}. If the @tech{subobject} does not contain
 @math{id_c}, then it's a @deftech{proper subobject} of @math{c}.
@@ -1277,7 +1276,7 @@ In the same way that a @tech{subobject} @math{[i]} is concerned with
 @tech{equivalence relations}.
 
 Let @math{∼} be an @tech{equivalence relation} between @tech{epimorphisms}
-@math{p: c ↠ b} and @math{q: c ↠ a} in @math{𝒞} if each can @tech{factor through}
+@math{p : c ↠ b : 𝒞} and @math{q : c ↠ a : 𝒞} if each can @tech{factor through}
 the other. A @deftech{quotient object} (@deftech{cosubobject}) of @math{c} is an
 @tech{equivalence class} of @tech{epimorphisms} under @math{∼}. If the
 @tech{quotient object} does not contain @math{id_c}, then it's a
