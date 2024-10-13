@@ -803,7 +803,7 @@ in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t
 
 @tech{FSMs} are typically characterized by their complete @tech{state tables},
 meaning that for every @tech{state} and every input @tech{letter}, there is a
-defined @tech{transition} to another @tech{state} (or possibly the same @tech{state}).
+defined @tech{transition} to a @tech{state}.
 
 In a @deftech{typed finite state machine} (@deftech{TFSM}), its @tech{state table}
 does not need to be complete. Instead, its @tech{alphabet} and @tech{states} are
