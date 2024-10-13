@@ -262,6 +262,17 @@ In this @tech{category}, every @tech{functor} @math{F : 𝒞 → 𝒟} can be vi
 the @tech{identity} @tech{natural transformation} @math{id_F : F ⇒ F}, which acts
 as the @tech{identity morphism}.
 
+@bold{Exercise}: Prove the @deftech{exponential laws}:
+
+@itemlist[
+  @item{@math{1@^{𝒜} ≅ 1}}
+  @item{@math{𝒜@^{1} ≅ 𝒜}}
+  @item{@math{𝒜@^{0} ≅ 1}}
+  @item{@math{𝒜@^{𝒞}×ℬ@^{𝒞} ≅ (𝒜×ℬ)@^{𝒞}}}
+  @item{@math{𝒞@^{𝒜×ℬ} ≅ (𝒞@^{ℬ})@^{𝒜}}}
+  @item{@math{𝒞@^{𝒜+ℬ} ≅ 𝒞@^{𝒜}×𝒞@^{ℬ}}}
+]
+
 @bold{Exercise}: Think about what structure @math{𝒞@^{𝒞}} exhibits when
 considering @tech{horizontal composition}.
 
