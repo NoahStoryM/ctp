@@ -255,7 +255,7 @@ through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objec
 In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} serves as the @tech{composition}
 operation for @tech{morphisms}. This perspective helps us understand why
 @tech{functors} can be viewed as a special case of @tech{natural transformations}.
-Consider a @deftech{functor category} @math{𝒟@^{𝒞}}, which has all the
+Consider a @deftech{exponential category} @math{𝒟@^{𝒞}}, which has all the
 @tech{functors} from @math{𝒞} to @math{𝒟} as @tech{objects}, and all the
 @tech{natural transformations} between those @tech{functors} as @tech{morphisms}.
 In this @tech{category}, every @tech{functor} @math{F : 𝒞 → 𝒟} can be viewed as
