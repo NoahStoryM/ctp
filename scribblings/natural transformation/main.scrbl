@@ -255,20 +255,20 @@ through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objec
 In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} serves as the @tech{composition}
 operation for @tech{morphisms}. This perspective helps us understand why
 @tech{functors} can be viewed as a special case of @tech{natural transformations}.
-Consider a @tech{category} @math{𝐂(𝒞, 𝒟)}, which has all the @tech{functors}
+Consider a @deftech{functor category} @math{𝒟@^{𝒞}}, which has all the @tech{functors}
 from @math{𝒞} to @math{𝒟} as @tech{objects}, and all the
 @tech{natural transformations} between those @tech{functors} as @tech{morphisms}.
 In this @tech{category}, every @tech{functor} @math{F : 𝒞 → 𝒟} can be viewed as
 the @tech{identity} @tech{natural transformation} @math{id_F : F ⇒ F}, which acts
 as the @tech{identity morphism}.
 
-@bold{Exercise}: Think about what structure @math{𝐂(𝒞, 𝒞)} exhibits when
+@bold{Exercise}: Think about what structure @math{𝒞@^{𝒞}} exhibits when
 considering @tech{horizontal composition}.
 
 In Racket, to distinguish between operations in the @tech{horizontal category}
 and @tech{vertical category}, we introduce the notions of @deftech{src},
 @deftech{tgt}, and @deftech{·} to denote the @tech{domain}, @tech{codomain}, and
-@tech{compose} operators in @math{𝐂(𝒞, 𝒟)}. Additionally, we stipulate that
+@tech{compose} operators in @math{𝒟@^{𝒞}}. Additionally, we stipulate that
 @racket[(∘)] and @racket[(·)] must return the same value.
 
 @subsection{String Diagram}
