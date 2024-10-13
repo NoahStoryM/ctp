@@ -266,9 +266,8 @@ as the @tech{identity morphism}.
 @bold{Exercise}: Prove the @tech{exponential laws}:
 
 @itemlist[
-  @item{@math{1@^{𝒜} ≅ 1}}
+  @item{@math{𝒜@^{0} ≅ 1@^{𝒜} ≅ 1}}
   @item{@math{𝒜@^{1} ≅ 𝒜}}
-  @item{@math{𝒜@^{0} ≅ 1}}
   @item{@math{𝒜@^{𝒞}×ℬ@^{𝒞} ≅ (𝒜×ℬ)@^{𝒞}}}
   @item{@math{𝒞@^{𝒜×ℬ} ≅ (𝒞@^{ℬ})@^{𝒜}}}
   @item{@math{𝒞@^{𝒜+ℬ} ≅ 𝒞@^{𝒜}×𝒞@^{ℬ}}}
