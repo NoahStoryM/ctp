@@ -38,9 +38,10 @@ if @math{f} is a @tech{morphism} in @math{𝒞}, @math{F(f) = F_1(f)}.
 }
 
 Similar to how a @tech{category} @math{𝒞} is defined by two @tech{collections}
-@math{𝒞_0} and @math{𝒞_1}, a @deftech{functor} @math{F : 𝒞 → 𝒟} is also defined
-by two @tech{functions} @math{F_0 : 𝒞_0 → 𝒟_0} and @math{F_1 : 𝒞_1 → 𝒟_1}. These
-@tech{functions} must satisfy the following properties:
+@math{𝒞_0} and @math{𝒞_1}, a @deftech{functor} @math{F} from @math{𝒞} to @math{𝒟},
+denoted by @math{F : 𝒞 → 𝒟}, is also defined by two @tech{functions}
+@math{F_0 : 𝒞_0 → 𝒟_0} and @math{F_1 : 𝒞_1 → 𝒟_1}. These @tech{functions} must
+satisfy the following properties:
 
 @margin-note{
 The @tech{functors} discussed in this tutorial default to the @deftech{covariant functor}s.

@@ -45,9 +45,10 @@ and @math{𝒞_1} of @deftech{morphism}s (@deftech{1-cell}s). Think of @math{�
 a @deftech{directed graph}, where @tech{objects} are @deftech{node}s, and
 @tech{morphisms} are @deftech{arrow}s connecting these @tech{nodes}.
 
-For a @tech{morphism} @math{f : a @deftech{→} b : 𝒞}, its @deftech{domain}
-(@deftech{source}) is @math{a}, and its @deftech{codomain} (@deftech{target}) is
-@math{b}: @math{dom@_{𝒞}(f) = a} and @math{cod@_{𝒞}(f) = b}.
+For a @tech{morphism} @math{f} from an @tech{object} @math{a} to an @tech{object}
+@math{b} in @tech{category} @math{𝒞}, denoted by @math{f : a @deftech{→} b : 𝒞},
+its @deftech{domain} (@deftech{source}) is @math{a}, and its @deftech{codomain}
+(@deftech{target}) is @math{b}: @math{dom@_{𝒞}(f) = a} and @math{cod@_{𝒞}(f) = b}.
 
 @image["scribblings/category/images/cat.svg"]{[picture] cat.svg}
 
@@ -85,8 +86,8 @@ they adhere to the @deftech{composition rules}:
   @item{Existence of @deftech{@deftech{identity} morphism}s
 
         Every @tech{object} has an associated @tech{identity morphism}.
-        For an @tech{object} @math{a} in @math{𝒞}, its @tech{identity morphism}
-        is denoted by @math{id_a} or @math{1_a}, and @math{a = dom@_{𝒞}(id_a) = cod@_{𝒞}(id_a)}.
+        For an @tech{object} @math{a : 𝒞}, its @tech{identity morphism} is denoted
+        by @math{id_a} or @math{1_a}, and @math{a = dom@_{𝒞}(id_a) = cod@_{𝒞}(id_a)}.
 
         @image["scribblings/category/images/C-3.svg"]{[picture] C-3.svg}}
   @item{@tech{Composition} and @tech{identity morphisms}
@@ -186,9 +187,9 @@ If the @tech{morphisms} from @math{a} to @math{x} do not constitute a @tech{set}
 we use the term @deftech{hom class} instead of @tech{hom set}.
 }
 
-For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set},
-denoted by @math{Hom@_{𝒞}(a, x)}, is the @tech{set} of all @tech{morphisms} from
-@math{a} to @math{x}: @math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
+For @tech{objects} @math{a : 𝒞} and @math{x : 𝒞}, the @deftech{hom set}, denoted
+by @math{Hom@_{𝒞}(a, x)}, is the @tech{set} of all @tech{morphisms} from @math{a}
+to @math{x}: @math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
 
 For @tech{morphisms} @math{f : a → x : 𝒞}, @math{i : b → a : 𝒞} and
 @math{j : x → y : 𝒞}, we can @racket[define] a @tech{function}
@@ -731,11 +732,11 @@ gives rise:
 
 A @deftech{slice category} (@deftech{over category}), denoted by @math{𝒞/c},
 is a construction that allows us to study a @tech{category} @math{𝒞} through the
-lens of a fixed @tech{object} @math{c} in @math{𝒞}. Intuitively, @math{𝒞/c}
-consists of all the @tech{objects} and @tech{morphisms} in @math{𝒞} that are
-"over" @math{c}. @math{𝒞/c} is constructed by takeing @math{𝒞}'s @tech{morphisms}
-end to @math{c} as @tech{objects}, and @tech{commutative triangles} end to @math{c}
-as @tech{morphisms}.
+lens of a fixed @tech{object} @math{c} in it. Intuitively, @math{𝒞/c} consists of
+all the @tech{objects} and @tech{morphisms} in @math{𝒞} that are "over" @math{c}.
+@math{𝒞/c} is constructed by takeing @math{𝒞}'s @tech{morphisms} end to @math{c}
+as @tech{objects}, and @tech{commutative triangles} end to @math{c} as
+@tech{morphisms}.
 
 For example, here are three @tech{commutative triangles} end to @math{c_1}
 in @math{𝒞}:
@@ -1081,7 +1082,7 @@ A @deftech{replete subcategory} is a @tech{subcategory} that includes all
 @tech{objects} in the @tech{subcategory}, as well as the corresponding
 @tech{isomorphisms}. Formally, let @math{𝒟} be a @tech{replete subcategory} of
 @math{𝒞}, for any @tech{object} @math{a : 𝒟}, if there is an @tech{isomorphism}
-@math{f : a → b} in @math{𝒞}, then both @math{b} and @math{f} are also in @math{𝒟}.
+@math{f : a → b : 𝒞}, then both @math{b} and @math{f} are also in @math{𝒟}.
 
 @subsection{Groupoid}
 
