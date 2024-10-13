@@ -46,7 +46,7 @@ a @deftech{directed graph}, where @tech{objects} are @deftech{node}s, and
 @tech{morphisms} are @deftech{arrow}s connecting these @tech{nodes}.
 
 For a @tech{morphism} @math{f} from an @tech{object} @math{a} to an @tech{object}
-@math{b} in @tech{category} @math{𝒞}, denoted by @math{f : a @deftech{→} b : 𝒞},
+@math{b} in a @tech{category} @math{𝒞}, denoted by @math{f : a @deftech{→} b : 𝒞},
 its @deftech{domain} (@deftech{source}) is @math{a}, and its @deftech{codomain}
 (@deftech{target}) is @math{b}: @math{dom@_{𝒞}(f) = a} and @math{cod@_{𝒞}(f) = b}.
 
