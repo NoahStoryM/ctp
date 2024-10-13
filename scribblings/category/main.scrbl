@@ -1016,7 +1016,12 @@ and @math{f} is the @tech{inverse} of @math{g}, denoted by @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
 if there exists an @tech{isomorphism} between them.
 
+@margin-note{
 An @deftech{isomorphism class} is an @tech{equivalence class} under @tech{≅}.
+}
+
+@bold{Exercise}: Prove that @tech{≅} is an @tech{equivalence relation} over
+@math{𝒞_0}.
 
 @tech{Isomorphisms} are crucial because they imply that the @tech{objects} they
 connect can be interchanged in any context within the @tech{category}. This means
