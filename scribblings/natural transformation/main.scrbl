@@ -266,8 +266,8 @@ as the @tech{identity morphism}.
 @bold{Exercise}: Prove the @tech{exponential laws}:
 
 @itemlist[
-  @item{@math{𝒜@^{0} ≅ 1@^{𝒜} ≅ 1}}
-  @item{@math{𝒜@^{1} ≅ 𝒜}}
+  @item{@math{𝒜^0 ≅ 1@^{𝒜} ≅ 1}}
+  @item{@math{𝒜^1 ≅ 𝒜}}
   @item{@math{𝒜@^{𝒞}×ℬ@^{𝒞} ≅ (𝒜×ℬ)@^{𝒞}}}
   @item{@math{𝒞@^{𝒜×ℬ} ≅ (𝒞@^{ℬ})@^{𝒜}}}
   @item{@math{𝒞@^{𝒜+ℬ} ≅ 𝒞@^{𝒜}×𝒞@^{ℬ}}}
@@ -282,25 +282,65 @@ and @tech{vertical category}, we introduce the notions of @deftech{src},
 @tech{compose} operators in @math{𝒟@^{𝒞}}. Additionally, we stipulate that
 @racket[(∘)] and @racket[(·)] must return the same value.
 
+@section{2-Category}
+
+A @tech{set} (@deftech{0-category}) is defined by a @tech{collection} of
+@tech{elements} (@deftech{0-cell}s). Extending this idea, a @tech{category}
+(@deftech{1-category}) is defined by two @tech{collections}: @tech{objects}
+(@tech{0-cells}) and @tech{morphisms} (@deftech{1-cell}s). Importantly, in a
+@tech{category}, @tech{objects} can be seen as @tech{identity morphisms}, a
+special case of @tech{morphisms}.
+
+This natural progression leads us to consider whether we can extend our
+abstraction to include @deftech{2-morphism} (@deftech{2-cell}s). In other words,
+we can think about constructing a @deftech{2-category}, which is defined by not
+only @tech{0-cells} and @tech{1-cells} but also @tech{2-cells}. Just as in a
+@tech{1-category}, @tech{0-cells} are a special case of @tech{1-cells}, in a
+@tech{2-category}, @tech{1-cells} are a special case of @tech{2-cells}. This
+layered structure allows us to study the relationships between @tech{morphisms}
+in a deeper and more systematic way, which paves the way for powerful abstractions
+in @tech{category theory}.
+
+We already have an example of such a structure: @tech{𝐂𝐚𝐭}. In @tech{𝐂𝐚𝐭},
+@tech{categories} serve as @tech{0-cells}, @tech{functors} act as @tech{1-cells},
+and @tech{natural transformations} provide the additional layer of abstraction
+as @tech{2-cells}. This makes @tech{𝐂𝐚𝐭} a natural candidate for understanding
+the concept of a @tech{2-category}.
+
+To formalize this idea, we look at how @tech{𝐂𝐚𝐭} operates. There are two distinct
+@tech{composition} operations for @tech{natural transformations} within @tech{𝐂𝐚𝐭}:
+@tech{horizontal composition} and @tech{vertical composition}. These two forms of
+@tech{composition} interact systematically, governed by the @tech{interchange law}.
+We can describe @tech{𝐂𝐚𝐭} in terms of three interrelated @tech{categories}: the
+@tech{base category} @tech{𝐂𝐚𝐭@^{b}}, the @tech{horizontal category} @tech{𝐂𝐚𝐭@^{h}},
+and the @tech{vertical category} @tech{𝐂𝐚𝐭@^{v}}.
+
+Using these properties, we @racket[define] a @tech{2-category} @math{𝐂} as a
+structure consisting of three @tech{collections}: @math{𝐂_n} of @deftech{n-cells}
+for @math{n = 0, 1, 2}. In @math{𝐂}, there are two ways to @tech{compose}
+@tech{2-cells}: @tech{horizontal composition} and @tech{vertical composition},
+which satisfy the @tech{interchange law}. Additionally, @math{𝐂} can be described
+in terms of three @tech{1-categories}: the @tech{base category} @math{𝐂^b}, the
+@tech{horizontal category} @math{𝐂^h}, and the @tech{vertical category} @math{𝐂^v}.
+
 @subsection{String Diagram}
 
-Traditional @tech{diagrams} represent @tech{categories} as @tech{nodes},
-@tech{functors} as single @tech{arrows} between these @tech{nodes}, and
-@tech{natural transformations} as double @tech{arrows} between these single
-@tech{arrows}. In contrast, @deftech{string diagrams} provide a more intuitive
-and geometrical representation:
+Traditional @tech{diagrams} represent @tech{0-cells} as @tech{nodes},
+@tech{1-cells} as single @tech{arrows} between these @tech{nodes}, and
+@tech{2-cells} as double @tech{arrows} between these single @tech{arrows}.
+In contrast, @deftech{string diagrams} provide a more intuitive and geometrical
+representation:
 
 @itemlist[
-  @item{@tech{Category} is represented as a plane.}
-  @item{@tech{Functor} is represented as a line segment that splits a plane.}
-  @item{@tech{Natural transformation} is represented as a point that splits a line segment.}
+  @item{@tech{0-cell} is represented as a plane.}
+  @item{@tech{1-cell} is represented as a line segment that splits a plane.}
+  @item{@tech{2-cell} is represented as a point that splits a line segment.}
 ]
 
 @tech{String diagrams} are a powerful tool for visualizing relationships between
-@tech{categories}, @tech{functors}, and @tech{natural transformations} within
-@tech{𝐂𝐚𝐭}. Below, we illustrate a @tech{natural transformation}
-@math{α : F ⇒ G : 𝒞 → 𝒟}, using both a traditional @tech{diagram} and a
-corresponding @tech{string diagram}:
+@tech{n-cells} within a @tech{2-category} @math{𝐂}. Below, we illustrate a
+@tech{2-cell} @math{α : F ⇒ G : 𝒞 → 𝒟 : 𝐂}, using both a traditional
+@tech{diagram} and a corresponding @tech{string diagram}:
 
 @margin-note{
 By default, @tech{string diagrams} are read from right to left and from bottom
@@ -312,27 +352,27 @@ to top.
 We also use special notations in @tech{string diagrams}:
 
 @itemlist[
-  @item{The @tech{identity} @tech{functor} is represented by a dashed line or may
+  @item{The @tech{identity} @tech{1-cell} is represented by a dashed line or may
         be omitted entirely for simplicity.}
-  @item{Curved lines or arcs can also be used to represent @tech{functors}, and
-        their intersection represents a @tech{natural transformation}.}
+  @item{Curved lines or arcs can also be used to represent @tech{1-cells}, and
+        their intersection represents a @tech{2-cell}.}
   ]
 
 The following two examples illustrate the special notations used in
 @tech{string diagrams}. These @tech{string diagrams} show @tech{equivalent} but
 visually distinct representations of the same structures.
 
-The first one shows a @tech{natural transformation} @math{α : G∘F ⇒ id@_{𝒞}},
-where @math{F : 𝒞 → 𝒟} and @math{G : 𝒟 → 𝒞}:
+The first one shows a @tech{2-cell} @math{α : G∘F ⇒ id@_{𝒞}}, where
+@math{F : 𝒞 → 𝒟 : 𝐂} and @math{G : 𝒟 → 𝒞 : 𝐂}:
 
 @image["scribblings/natural transformation/images/α_0.svg"]{[picture] α_0.svg}
 @image["scribblings/natural transformation/images/α_1.svg"]{[picture] α_1.svg}
 @image["scribblings/natural transformation/images/α_2.svg"]{[picture] α_2.svg}
 @image["scribblings/natural transformation/images/α_3.svg"]{[picture] α_3.svg}
 
-The second one shows two @tech{natural transformations} @math{α : G∘F ⇒ id@_{𝒞}}
-and @math{β : id@_{𝒟} ⇒ H∘G}, where @math{F : 𝒞 → 𝒟}, @math{G : 𝒟 → 𝒞}, and
-@math{H : 𝒞 → 𝒟}:
+The second one shows two @tech{2-cells} @math{α : G∘F ⇒ id@_{𝒞}} and
+@math{β : id@_{𝒟} ⇒ H∘G}, where @math{F : 𝒞 → 𝒟 : 𝐂}, @math{G : 𝒟 → 𝒞 : 𝐂},
+and @math{H : 𝒞 → 𝒟 : 𝐂}:
 
 @image["scribblings/natural transformation/images/β&α_0.svg"]{[picture] β&α_0.svg}
 @image["scribblings/natural transformation/images/β&α_1.svg"]{[picture] β&α_1.svg}
@@ -340,28 +380,23 @@ and @math{β : id@_{𝒟} ⇒ H∘G}, where @math{F : 𝒞 → 𝒟}, @math{G : 
 @image["scribblings/natural transformation/images/β&α_3.svg"]{[picture] β&α_3.svg}
 
 The advantage of using @tech{string diagrams} lies in their simplicity when
-representing complex structures in @tech{𝐂𝐚𝐭}. Instead of working with layers of
-@tech{nodes} and @tech{arrows}, @tech{string diagrams} allow us to represent
-these relationships in a clear, visual manner that highlights how each part of
-the structure interacts with the others.
+representing complex structures in a @tech{2-category}. Instead of working with
+layers of @tech{nodes} and @tech{arrows}, @tech{string diagrams} allow us to
+represent these relationships in a clear, visual manner that highlights how each
+part of the structure interacts with the others.
 
 @bold{Exercise}: The following is a @tech{string diagram}, try to draw the
 corresponding @tech{diagram}.
 
 @image["scribblings/natural transformation/images/str-diag.svg"]{[picture] str-diag.svg}
 
-If there are no @tech{natural transformations} in a @tech{string diagram}, we can
-further compress it for simplicity. Specifically:
+If there are no @tech{2-cells} in a @tech{string diagram}, we can further
+compress it for simplicity. Specifically:
 
 @itemlist[
-  @item{@tech{Category} is represented as a line segment.}
-  @item{@tech{Functor} is represented as a point that splits a line segment.}
+  @item{@tech{0-cell} is represented as a line segment.}
+  @item{@tech{1-cell} is represented as a point that splits a line segment.}
 ]
 
-This compressed representation is not limited to @tech{𝐂𝐚𝐭@^{b}} but can also be
-extended to other @tech{categories}:
-
-@itemlist[
-  @item{@tech{Object} is represented as a line segment.}
-  @item{@tech{Morphism} is represented as a point that splits a line segment.}
-]
+This compressed representation is not limited to @math{𝐂^b} but can also be
+extended to other @tech{1-categories}.
