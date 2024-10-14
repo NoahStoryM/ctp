@@ -298,8 +298,8 @@ only @tech{0-cells} and @tech{1-cells} but also @tech{2-cells}. Just as in a
 @tech{1-category}, @tech{0-cells} are a special case of @tech{1-cells}, in a
 @tech{2-category}, @tech{1-cells} are a special case of @tech{2-cells}. This
 layered structure allows us to study the relationships between @tech{morphisms}
-in a deeper and more systematic way, which paves the way for powerful abstractions
-in @tech{category theory}.
+in a deeper and more systematic way, paving the way for powerful abstractions in
+@tech{category theory}.
 
 We already have an example of such a structure: @tech{𝐂𝐚𝐭}. In @tech{𝐂𝐚𝐭},
 @tech{categories} serve as @tech{0-cells}, @tech{functors} act as @tech{1-cells},
