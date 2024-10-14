@@ -1028,7 +1028,7 @@ that if @math{a ≅ b}, then any property, specifically any @tech{commutative di
 involving @math{a}, also holds for @math{b}. In essence, we can substitute @math{b}
 for @math{a} in any @tech{commutative diagram} without affecting the
 @tech[#:key "commutative"]{commutativity} of the @tech{diagram}. This property
-makes @tech{isomorphisms} a weak concept of @tech{identity morphisms}.
+makes @tech{isomorphism} a weak notation of @tech{identity}.
 
 Examples in @tech{𝐏𝐚𝐢𝐫}:
 
