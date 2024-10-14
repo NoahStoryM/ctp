@@ -1002,8 +1002,10 @@ a categorical version of the @tech{axiom of choice}.
 
 @subsection{Isomorphism}
 
-For @tech{morphisms} @math{f : a → b : 𝒞} and @math{g : b → a : 𝒞}, if @math{g∘f = id_a}
-and @math{f∘g = id_b}, then @math{f} and @math{g} are both @deftech{isomorphism}s
+In a @tech{category} @math{𝒞}, @tech{isomorphism} is a weaker version of
+@tech{identity}. For @tech{morphisms} @math{f : a → b : 𝒞} and @math{g : b → a : 𝒞},
+if @math{id_a = g∘f} and @math{f∘g = id_b}, then @math{f} and @math{g} are both
+@deftech{isomorphism}s
 (often abbreviated as @deftech{iso}, or called be @deftech{isic} or @deftech{invertible}).
 
 The following @tech{diagram} is @tech{commutative}:
@@ -1027,8 +1029,7 @@ connect can be interchanged in any context within the @tech{category}. This mean
 that if @math{a ≅ b}, then any property, specifically any @tech{commutative diagram}
 involving @math{a}, also holds for @math{b}. In essence, we can substitute @math{b}
 for @math{a} in any @tech{commutative diagram} without affecting the
-@tech[#:key "commutative"]{commutativity} of the @tech{diagram}. This property
-makes @tech{isomorphism} a weaker version of @tech{identity}.
+@tech[#:key "commutative"]{commutativity} of the @tech{diagram}.
 
 Examples in @tech{𝐏𝐚𝐢𝐫}:
 

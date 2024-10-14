@@ -427,3 +427,25 @@ Just as a @tech{one-object category} @math{𝒞} can be viewed as a @tech{monoid
 @math{𝐂^v} is equipped with the @tech{horizontal composition} @math{∘}, which
 acts as the @tech{tensor product}, and the @tech{identity} @tech{1-cell}
 @math{id^b@_{∗}}, which serves as the @tech{tensor unit}.
+
+@subsection{Equivalence}
+
+In a @tech{2-category} @math{𝐂}, @tech{equivalence} is a weaker version of
+@tech{isomorphism}. For @tech{1-cells} @math{F: 𝒞 → 𝒟 : 𝐂} and @math{G: 𝒟 → 𝒞 : 𝐂},
+if @math{id@_{𝒞} ≅ G∘F} and @math{F∘G ≅ id@_{𝒟}}, then @math{F} and @math{G} are
+both @deftech{equivalence}s.
+
+@image["scribblings/natural transformation/images/eqv.svg"]{[picture] eqv.svg}
+
+In this case, @math{G} is a @deftech{pseudo-inverse} of @math{F} and @math{F} is
+a @tech{pseudo-inverse} of @math{G}. @math{𝒞} and @math{𝒟} are
+@deftech{equivalent} to each other (@math{𝒞 @deftech{≃} 𝒟}) if there exists an
+@tech{equivalence} between them.
+
+@bold{Exercise}: Prove that @tech{≃} is an @tech{equivalence relation} over
+@math{𝐂_0}.
+
+@bold{Exercise}: Prove that every @tech{0-cell} is @tech{equivalent} to itself.
+
+@bold{Exercise}: Prove that the @tech{pseudo-inverse} of an @tech{equivalence} is
+not unique.
