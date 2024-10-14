@@ -323,6 +323,15 @@ which satisfy the @tech{interchange law}. Additionally, @math{𝐂} can be descr
 in terms of three @tech{1-categories}: the @tech{base category} @math{𝐂^b}, the
 @tech{horizontal category} @math{𝐂^h}, and the @tech{vertical category} @math{𝐂^v}.
 
+In a general @tech{2-category}, we may not know the specific internal structure
+of the @tech{1-cells}. However, we can draw inspiration from the concept of
+@tech{global elements}. In @tech{𝐂𝐚𝐭}, any @tech{category} @math{𝒞} is
+@tech{isomorphic} to @math{𝒞^1}. This observation motivates us to @racket[define]
+a similar concept in any @tech{2-category} that contains a @tech{terminal object}
+@tech{1}. Specifically, we @racket[define] the @tech{1-cells} @math{1 → 𝒞} as the
+@deftech{global object}s of @math{𝒞}, and the @tech{2-cells} between them as the
+@deftech{global morphism}s of @math{𝒞}.
+
 @subsection{String Diagram}
 
 Traditional @tech{diagrams} represent @tech{0-cells} as @tech{nodes},
