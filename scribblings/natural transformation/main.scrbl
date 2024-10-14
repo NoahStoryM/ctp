@@ -362,6 +362,6 @@ This compressed representation is not limited to @tech{𝐂𝐚𝐭@^{b}} but ca
 extended to other @tech{categories}:
 
 @itemlist[
-  @item{@tech{0-cell} is represented as a line segment.}
-  @item{@tech{1-cell} is represented as a point that splits a line segment.}
+  @item{@tech{Object} is represented as a line segment.}
+  @item{@tech{Morphism} is represented as a point that splits a line segment.}
 ]

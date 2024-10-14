@@ -39,11 +39,10 @@ and
 @hyperlink["https://ncatlab.org/nlab/show/large+category"]{Large Category}.
 }
 
-A @deftech{category} (@deftech{cat}) @math{𝒞} is defined by two
-@tech{collections}: @math{𝒞_0} of @deftech{object}s (@deftech{0-cell}s)
-and @math{𝒞_1} of @deftech{morphism}s (@deftech{1-cell}s). Think of @math{𝒞} as
-a @deftech{directed graph}, where @tech{objects} are @deftech{node}s, and
-@tech{morphisms} are @deftech{arrow}s connecting these @tech{nodes}.
+A @deftech{category} (@deftech{cat}) @math{𝒞} is defined by two @tech{collections}:
+@math{𝒞_0} of @deftech{object}s and @math{𝒞_1} of @deftech{morphism}s. Think of
+@math{𝒞} as a @deftech{directed graph}, where @tech{objects} are @deftech{node}s,
+and @tech{morphisms} are @deftech{arrow}s connecting these @tech{nodes}.
 
 For a @tech{morphism} @math{f} from an @tech{object} @math{a} to an @tech{object}
 @math{b} in a @tech{category} @math{𝒞}, denoted by @math{f : a @deftech{→} b : 𝒞},
@@ -129,11 +128,11 @@ Racket programming environment, providing concrete examples.
 
 A @deftech{discrete category} is a @tech{category} where the only @tech{morphisms}
 are the @tech{identity morphisms}. In other words, every @tech{object} is only
-connected to itself via its @tech{identity morphism}. This means that a
+connected to itself via its @tech{identity morphism}. Since a @deftech{set} is
+defined by a @tech{collection} of @deftech{element}s, this means that a
 @tech{discrete category} can be viewed as the @tech{category} version of a
-@deftech{set}: the @tech{objects} of the @tech{discrete category} correspond to
-the @deftech{element}s of the @tech{set}. A @tech{function} between two
-@tech{sets} can be viewed as a @tech{functor} between two @tech{discrete categories}.
+@tech{set}: the @tech{objects} of the @tech{discrete category} correspond to the
+@tech{elements} of the @tech{set}.
 
 Beyond @tech{sets}, there are a few related terms that are commonly used:
 

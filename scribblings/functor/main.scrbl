@@ -72,6 +72,9 @@ a @tech{covariant functor} from @math{𝒞@^{op}} to @math{𝒟}. See more in
         @image["scribblings/functor/images/F-3.svg"]{[picture] F-3.svg}}
   ]
 
+@bold{Exercise}: Show that a @tech{function} between two @tech{sets} can be
+viewed as a @tech{functor} between two @tech{discrete categories}.
+
 We can describe @math{𝒞} with the following @tech{diagram}:
 
 @image["scribblings/functor/images/cat.svg"]{[picture] cat.svg}
