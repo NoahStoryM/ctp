@@ -410,3 +410,20 @@ compress it for simplicity. Specifically:
 
 This compressed representation is not limited to @math{𝐂^b} but can also be
 extended to other @tech{1-categories}.
+
+@subsection{Strict Monoidal Category}
+
+A @deftech{strict monoidal category} @math{(𝒞, ⊗, I)} is a @tech{category}
+@math{𝒞} equipped with a @deftech{tensor product} @deftech{⊗} and a
+@deftech{tensor unit} @math{I}. The @tech{tensor product} is a @tech{functor}
+@math{⊗ : 𝒞×𝒞 → 𝒞}, and the @tech{tensor unit} is a @deftech{unit object}
+@math{I : 𝒞}, such that for any @tech{objects} @math{A, B, C : 𝒞},
+@math{(A⊗B)⊗C = A⊗(B⊗C)} and @math{A = A⊗I = I⊗A}.
+
+Just as a @tech{one-object category} @math{𝒞} can be viewed as a @tech{monoid}
+(@tech{monoidal set}) @math{(𝒞_1, ∘, id@_{∗})}, we extend this idea to view a
+@deftech{one-object 2-category} @math{𝐂} as a @tech{strict monoidal category}
+@math{(𝐂^v, ∘, id^b@_{∗})}. In this context, the @tech{vertical category}
+@math{𝐂^v} is equipped with the @tech{horizontal composition} @math{∘}, which
+acts as the @tech{tensor product}, and the @tech{identity} @tech{1-cell}
+@math{id^b@_{∗}}, which serves as the @tech{tensor unit}.
