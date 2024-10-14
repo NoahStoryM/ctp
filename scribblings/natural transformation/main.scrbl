@@ -342,9 +342,9 @@ In contrast, @deftech{string diagrams} provide a more intuitive and geometrical
 representation:
 
 @itemlist[
-  @item{@tech{0-cell} is represented as a plane.}
-  @item{@tech{1-cell} is represented as a line segment that splits a plane.}
-  @item{@tech{2-cell} is represented as a point that splits a line segment.}
+  @item{@tech{0-cell} is represented by a portion of a plane.}
+  @item{@tech{1-cell} is represented by a @deftech{string} separating the plane in two.}
+  @item{@tech{2-cell} is represented by an intersection of @tech{strings}.}
 ]
 
 @tech{String diagrams} are a powerful tool for visualizing relationships between
@@ -404,8 +404,8 @@ If there are no @tech{2-cells} in a @tech{string diagram}, we can further
 compress it for simplicity. Specifically:
 
 @itemlist[
-  @item{@tech{0-cell} is represented as a line segment.}
-  @item{@tech{1-cell} is represented as a point that splits a line segment.}
+  @item{@tech{0-cell} is represented by a line segment.}
+  @item{@tech{1-cell} is represented by a point separating the line in two.}
 ]
 
 This compressed representation is not limited to @math{𝐂^b} but can also be

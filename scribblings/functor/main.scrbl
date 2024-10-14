@@ -823,8 +823,8 @@ where @tech{elements} are @tech{arrows} pointing from the only @tech{node} to
 itself.
 }
 
-An @tech{FSM} can be represented as a tuple @math{(A, S, s_0, φ)}. In contrast,
-a @tech{TFSM} @math{ℳ} can be represented as a tuple @math{(𝒢, S, s_0, φ)},
+An @tech{FSM} can be represented by a tuple @math{(A, S, s_0, φ)}. In contrast,
+a @tech{TFSM} @math{ℳ} can be represented by a tuple @math{(𝒢, S, s_0, φ)},
 where:
 
 @itemlist[
