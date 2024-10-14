@@ -437,10 +437,11 @@ both @deftech{equivalence}s (often called be @deftech{weakly invertible}).
 
 @image["scribblings/natural transformation/images/eqv.svg"]{[picture] eqv.svg}
 
-In this case, @math{G} is a @deftech{pseudo-inverse} of @math{F} and @math{F} is
-a @tech{pseudo-inverse} of @math{G}. @math{𝒞} and @math{𝒟} are
-@deftech{equivalent} to each other (@math{𝒞 @deftech{≃} 𝒟}) if there exists an
-@tech{equivalence} between them.
+In this case, both @math{F} and @math{G} are @tech{inverses} up to
+@tech{invertible} @tech{2-cells}. @math{G} is a @deftech{pseudo-inverse} of
+@math{F}, and @math{F} is a @tech{pseudo-inverse} of @math{G}. @math{𝒞} and
+@math{𝒟} are @deftech{equivalent} to each other (@math{𝒞 @deftech{≃} 𝒟}) if
+there exists an @tech{equivalence} between them.
 
 @bold{Exercise}: Prove that @tech{≃} is an @tech{equivalence relation} over
 @math{𝐂_0}.
