@@ -362,9 +362,9 @@ we'll explore several important @tech{categories} of @tech{structured sets}.
 
 @subsection{Category of Monoids}
 
-A @deftech{monoid homomorphism} @math{f : (S, ∘, s) → (T, ·, t)} is a
+A @deftech{monoid homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
 @tech{function} that preserves the @tech{monoid} structure:
-@math{∀x, y ∈ S, f(x∘y) = f(x)·f(y)}, and @math{f(s) = t}.
+@math{∀x, y ∈ S, f(x∘y) = f(x)∙f(y)}, and @math{f(s) = t}.
 
 The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where
 @tech{objects} are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
@@ -373,7 +373,7 @@ as @deftech{𝐎𝐨𝐜}.
 
 @subsection{Category of Groups}
 
-A @deftech{group homomorphism} @math{f : (S, ∘, s) → (T, ·, t)} is a
+A @deftech{group homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
 @tech{monoid homomorphism} that preserves the @tech{group} structure:
 @math{∀x ∈ S, f(x@^{–1}) = f(x)@^{–1}}.
 

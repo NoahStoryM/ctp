@@ -139,10 +139,10 @@ it naturally suggests that two @tech{natural transformations} that share a commo
 
 Consider two @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟} and
 @math{β : G ⇒ H : 𝒞 → 𝒟}. The @deftech{vertical composition}
-@math{β·α : F ⇒ H : 𝒞 → 𝒟} is a new @tech{natural transformation} that, for each
-@tech{morphism} @math{f : a → b : 𝒞}, maps it to @math{β·α(f) : F(a) → H(b) : 𝒟}.
+@math{β∙α : F ⇒ H : 𝒞 → 𝒟} is a new @tech{natural transformation} that, for each
+@tech{morphism} @math{f : a → b : 𝒞}, maps it to @math{β∙α(f) : F(a) → H(b) : 𝒟}.
 
-@bold{Exercise}: Prove @math{α = α·F = G·α}.
+@bold{Exercise}: Prove @math{α = α∙F = G∙α}.
 
 @image["scribblings/natural transformation/images/N-3.svg"]{[picture] N-3.svg}
 @image["scribblings/natural transformation/images/N-3_1.svg"]{[picture] N-3_1.svg}
@@ -183,7 +183,7 @@ We can @tech[#:key "vertical composition"]{vertically compose}
 and @math{β} with @math{δ}. The @tech{IL} states that the @tech{horizontal composition}
 of two @tech{vertical compositions} is equal to the @tech{vertical composition}
 of two @tech{horizontal compositions}. More precisely, the @tech{IL} can be
-written as: @math{(δ·γ)∘(β·α) = (δ∘β)·(γ∘α)}.
+written as: @math{(δ∙γ)∘(β∙α) = (δ∘β)∙(γ∘α)}.
 
 @image["scribblings/natural transformation/images/IL.svg"]{[picture] IL.svg}
 
@@ -191,13 +191,13 @@ Here are some important @tech{commutative squares} that arise:
 
 @itemlist[
   #:style 'ordered
-  @item{@math{(δβ)·(γα)(f) : KF(f) ⇒ MH(f)}
+  @item{@math{(δβ)∙(γα)(f) : KF(f) ⇒ MH(f)}
         @image["scribblings/natural transformation/images/N-4_0.svg"]{[picture] N-4_0.svg}}
-  @item{@math{(δ·γ)(β·α)(f) : KF(f) ⇒ MH(f)}
+  @item{@math{(δ∙γ)(β∙α)(f) : KF(f) ⇒ MH(f)}
         @image["scribblings/natural transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
-  @item{@math{(δ·γ)(β·α)(f) : K(β·α)(f) ⇒ M(β·α)(f)}
+  @item{@math{(δ∙γ)(β∙α)(f) : K(β∙α)(f) ⇒ M(β∙α)(f)}
         @image["scribblings/natural transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
-  @item{@math{(δ·γ)(β·α)(f) : (δ·γ)F(f) ⇒ (δ·γ)H(f)}
+  @item{@math{(δ∙γ)(β∙α)(f) : (δ∙γ)F(f) ⇒ (δ∙γ)H(f)}
         @image["scribblings/natural transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
   ]
 
@@ -278,9 +278,9 @@ as the @tech{identity morphism}.
 
 In Racket, to distinguish between operations in the @tech{horizontal category}
 and @tech{vertical category}, we introduce the notions of @deftech{src},
-@deftech{tgt}, and @deftech{·} to denote the @tech{domain}, @tech{codomain}, and
+@deftech{tgt}, and @deftech{∙} to denote the @tech{domain}, @tech{codomain}, and
 @tech{compose} operators in @math{𝒟@^{𝒞}}. Additionally, we stipulate that
-@racket[(∘)] and @racket[(·)] must return the same value.
+@racket[(∘)] and @racket[(∙)] must return the same value.
 
 @section{2-Category}
 
