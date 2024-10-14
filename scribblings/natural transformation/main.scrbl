@@ -433,7 +433,7 @@ acts as the @tech{tensor product}, and the @tech{identity} @tech{1-cell}
 In a @tech{2-category} @math{𝐂}, @tech{equivalence} is a weaker version of
 @tech{isomorphism}. For @tech{1-cells} @math{F: 𝒞 → 𝒟 : 𝐂} and @math{G: 𝒟 → 𝒞 : 𝐂},
 if @math{id@_{𝒞} ≅ G∘F} and @math{F∘G ≅ id@_{𝒟}}, then @math{F} and @math{G} are
-both @deftech{equivalence}s.
+both @deftech{equivalence}s (often called be @deftech{weakly invertible}).
 
 @image["scribblings/natural transformation/images/eqv.svg"]{[picture] eqv.svg}
 
