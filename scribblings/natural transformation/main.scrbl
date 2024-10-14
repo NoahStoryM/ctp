@@ -304,7 +304,7 @@ in a deeper and more systematic way, paving the way for powerful abstractions in
 We already have an example of such a structure: @tech{𝐂𝐚𝐭}. In @tech{𝐂𝐚𝐭},
 @tech{categories} serve as @tech{0-cells}, @tech{functors} act as @tech{1-cells},
 and @tech{natural transformations} provide the additional layer of abstraction
-as @tech{2-cells}. This makes @tech{𝐂𝐚𝐭} a natural candidate for understanding
+as @tech{2-cells}. This makes @tech{𝐂𝐚𝐭} a natural reference for understanding
 the concept of a @tech{2-category}.
 
 To formalize this idea, we look at how @tech{𝐂𝐚𝐭} operates. There are two distinct
