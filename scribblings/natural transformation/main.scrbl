@@ -292,7 +292,7 @@ A @tech{set} (@deftech{0-category}) is defined by a @tech{collection} of
 special case of @tech{morphisms}.
 
 This natural progression leads us to consider whether we can extend our
-abstraction to include @deftech{2-morphism} (@deftech{2-cell}s). In other words,
+abstraction to include @deftech{2-morphism}s (@deftech{2-cell}s). In other words,
 we can think about constructing a @deftech{2-category}, which is defined by not
 only @tech{0-cells} and @tech{1-cells} but also @tech{2-cells}. Just as in a
 @tech{1-category}, @tech{0-cells} are a special case of @tech{1-cells}, in a
