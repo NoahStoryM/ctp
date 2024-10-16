@@ -265,7 +265,8 @@ In this @tech{category}, every @tech{functor} @math{F : 𝒞 → 𝒟} can be vi
 the @tech{identity} @tech{natural transformation} @math{id_F : F ⇒ F}, which acts
 as the @tech{identity morphism}.
 
-@bold{Exercise}: Prove the @tech{exponential laws}:
+@bold{Exercise}: For @tech{objects} @math{𝒜}, @math{ℬ}, and @math{𝒞} in @tech{𝐂𝐚𝐭}.
+Prove the @tech{exponential laws}:
 
 @itemlist[
   @item{@math{𝒜^0 ≅ 1@^{𝒜} ≅ 1}}

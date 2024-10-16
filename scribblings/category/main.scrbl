@@ -1169,6 +1169,17 @@ The following @tech{diagrams} are @tech{commutative}:
 @image["scribblings/category/images/0→1_1.svg"]{[picture] 0→1_1.svg}
 @image["scribblings/category/images/0→1_2.svg"]{[picture] 0→1_2.svg}
 
+@bold{Exercise}: For @tech{objects} @math{A}, @math{B}, and @math{C} in @tech{𝐒𝐞𝐭}.
+Prove the @tech{exponential laws}:
+
+@itemlist[
+  @item{@math{A^0 ≅ 1@^{A} ≅ 1}}
+  @item{@math{A^1 ≅ A}}
+  @item{@math{A@^{C}×B@^{C} ≅ (A×B)@^{C}}}
+  @item{@math{C@^{A×B} ≅ (C@^{B})@^{A}}}
+  @item{@math{C@^{A+B} ≅ C@^{A}×C@^{B}}}
+]
+
 @bold{Exercise}: Think about the relationships between @math{0/𝒞}, @math{𝒞/1},
 and @math{𝒞}.
 
@@ -1180,11 +1191,11 @@ in a way that remains consistent across different @tech{categories}. Although
 @tech{objects}, we can still interpret @tech{elements} of an @tech{object}
 through special @tech{morphisms}.
 
-Consider @tech{𝐒𝐞𝐭} as an example. Any @tech{set} @math{A} is @tech{isomorphic} to
-@math{Hom@_{𝐒𝐞𝐭}(1, A)}, where @tech{1} is a @tech{singleton set} @tech{{∗}}.
-Therefore we can regard the @tech{elements} of @math{A} as the @tech{elements} of
-@math{Hom@_{𝐒𝐞𝐭}(1, A)}. In this view, an @tech{element} @math{x} of @math{A}
-corresponds to a @tech{morphism} @math{x : 1 → A}:
+Consider @tech{𝐒𝐞𝐭} as an example. Any @tech{object} @math{A} is @tech{isomorphic}
+to @math{A^1}, where @tech{1} is a @tech{singleton set} @tech{{∗}}. Therefore we
+can regard the @tech{elements} of @math{A} as the @tech{elements} of @math{A^1}.
+In this view, an @tech{element} @math{x} of @math{A} corresponds to a
+@tech{morphism} @math{x : 1 → A}:
 
 @image["scribblings/category/images/global-elem_1.svg"]{[picture] global-elem_1.svg}
 @image["scribblings/category/images/global-elem_2.svg"]{[picture] global-elem_2.svg}
@@ -1206,11 +1217,11 @@ These @tech{morphisms} are called @deftech{global element}s (@deftech{global poi
 
 By describing properties of a @tech{category} in a generalized way, we can extend
 them to other @tech{categories}. In this example, by describing the @tech{elements}
-of a @tech{set} @math{A} as the @tech{elements} of @math{Hom@_{𝐒𝐞𝐭}(1, A)}, we can
-then discuss the @tech{elements} of any @tech{object} in any @tech{category} that
-has a @tech{terminal object}. This abstraction allows us to apply familiar
-concepts beyond @tech{𝐒𝐞𝐭}, providing a consistent way to explore structures in
-various @tech{categories}.
+of a @tech{set} @math{A} as the @tech{elements} of @math{A^1}, we can then discuss
+the @tech{elements} of any @tech{object} in any @tech{category} that has a
+@tech{terminal object}. This abstraction allows us to apply familiar concepts
+beyond @tech{𝐒𝐞𝐭}, providing a consistent way to explore structures in various
+@tech{categories}.
 
 While in @tech{𝐒𝐞𝐭}, the @tech{morphisms} from @tech{1} to @math{A} are enough to
 fully capture the structure of @math{A}, this is not always true in other
