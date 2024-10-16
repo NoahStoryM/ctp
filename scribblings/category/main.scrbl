@@ -154,7 +154,7 @@ A @deftech{monoid} (@deftech{monoidal set}) @math{(S, ∘, s)} is a @tech{set}
 @math{S} equipped with an @tech{associative} binary operation @math{∘} and an
 @deftech{identity element} @math{s}.
 
-A @deftech{one-object category} (@deftech{OOC}) can be viewed as a @tech{monoid}.
+A @tech{monoid} can be viewed as a @deftech{one-object category} (@deftech{OOC}).
 In @tech{OOC}, there is only a single @tech{object}, usually denoted by @deftech{∗},
 and @tech{morphisms} are defined within the context of @tech{∗}.
 
@@ -164,6 +164,32 @@ The @tech{monoid} structure becomes evident when we consider the @tech{identity 
 as the @tech{monoid} @tech{identity element} and the @tech{composition} operation
 as the @tech{monoid} operation. Thus, @tech{OOCs} provide a categorical perspective
 on @tech{monoids}.
+
+@subsection{Thin Category}
+
+A @deftech{preordered set} (@deftech{proset}) @math{(S, ≤)} is a @tech{set}
+@math{S} equipped with a @tech{binary relation} @math{≤} over @math{S} that is
+@tech{reflexive} and @tech{transitive}. @math{≤} is called a @deftech{preorder}
+on @math{S}.
+
+A @tech{proset} can be viewed as a @deftech{thin category} in which any
+@tech{parallel} @tech{morphisms} are @tech{equal}.
+
+@image["scribblings/category/images/a≤b.svg"]{[picture] a≤b.svg}
+
+The @tech{proset} structure becomes evident when we consider the @tech{objects}
+as the @tech{elements} of @math{S}, and a @tech{morphism} from @math{a} to
+@math{b} exists iff @math{a ≤ b}. There is exactly one such @tech{morphism} for
+any comparable pair @math{a} and @math{b}.
+
+A @deftech{partially ordered set} (@deftech{ordered set}, or @deftech{poset})
+is a special @tech{preordered set} @math{(S, ≤)}, in which @math{≤} is
+@tech{antisymmetric}. @math{≤} is called a @deftech{partial order} on @math{S}.
+
+The @tech{poset} can be viewd as a special @tech{thin category}, where for any
+@tech{objects} @math{a} and @math{b}, if there are @tech{morphisms} @math{a → b}
+and @math{b → a}, then @math{a = b}, and these @tech{morphisms} are the same
+@tech{identity morphism}.
 
 @subsection{Cartesian Product}
 
@@ -445,27 +471,10 @@ The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}
 
 @racketfile{code/category/𝐏𝐚𝐢𝐫.rkt}
 
-A @deftech{preordered set} (@deftech{proset}) @math{(S, ≤)} is a @tech{set}
-@math{S} equipped with a @tech{binary relation} @math{≤} over @math{S} that is
-@tech{reflexive} and @tech{transitive}. @math{≤} is called a @deftech{preorder}
-on @math{S}.
+@bold{Exercise}: Prove that a @tech{thin category} is a @tech{subcategory} of
+@tech{𝐏𝐚𝐢𝐫}.
 
-The @deftech{preorder category} associated with a @tech{proset} has @tech{objects}
-as the @tech{elements} of @math{S}, and a @tech{morphism} from @math{a} to @math{b}
-exists iff @math{a ≤ b}. There is exactly one such @tech{morphism} for any
-comparable pair @math{a} and @math{b}. Such a @tech{category} is a @tech{subcategory}
-of @tech{𝐏𝐚𝐢𝐫}.
-
-A @deftech{partially ordered set} (@deftech{ordered set}, or @deftech{poset})
-is a special @tech{preordered set} @math{(S, ≤)}, in which @math{≤} is
-@tech{antisymmetric}. @math{≤} is called a @deftech{partial order} on @math{S}.
-
-The @deftech{order category} associated with a @tech{poset}, is a special
-@tech{preorder category}, where for any @tech{objects} @math{a} and @math{b}, if
-there are @tech{morphisms} @math{a → b} and @math{b → a}, then @math{a = b},
-and these @tech{morphisms} are the same @tech{identity morphism}.
-
-@bold{Exercise}: Implement the @tech{order category} of a @tech{poset}.
+@bold{Exercise}: Implement a @tech{poset} as a @tech{thin category}.
 
 @subsubsection{Category of Matrices}
 
