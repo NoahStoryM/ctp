@@ -600,6 +600,12 @@ with the @tech{morphisms} grouped into
         @math{[g]∘[f] = [g∘f] : [a] → [c]} in @math{𝒞/∼}.}
 ]
 
+@margin-note{
+An @deftech{identity class} is a @tech{congruence class} under @tech{=}.
+}
+
+@bold{Exercise}: Prove that @tech{=} is a @tech{congruence relation} on @math{𝒞}.
+
 @bold{Exercise}: Think about the relationships between @math{𝒞} and @math{𝒞/=}.
 
 @margin-note{
