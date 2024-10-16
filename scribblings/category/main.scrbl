@@ -213,8 +213,9 @@ we use the term @deftech{hom class} instead of @tech{hom set}.
 }
 
 For @tech{objects} @math{a : 𝒞} and @math{x : 𝒞}, the @deftech{hom set}, denoted
-by @math{Hom@_{𝒞}(a, x)}, is the @tech{set} of all @tech{morphisms} from @math{a}
-to @math{x}: @math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
+by @math{Hom@_{𝒞}(a, x)} or @math{𝒞(a, x)}, is the @tech{set} of all
+@tech{morphisms} from @math{a} to @math{x}:
+@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
 
 For @tech{morphisms} @math{f : a → x : 𝒞}, @math{i : b → a : 𝒞} and
 @math{j : x → y : 𝒞}, we can @racket[define] a @tech{function}
