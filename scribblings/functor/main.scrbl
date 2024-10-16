@@ -392,7 +392,7 @@ structure: @math{∀x, y ∈ S, x ≤ y ⇒ f(x) ⋜ f(y)}.
 
 The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where
 @tech{objects} are @tech{prosets} and @tech{morphisms} are @tech{monotone functions}.
-@tech{𝐏𝐫𝐨𝐬} is @tech{equivalent} to the @tech{category} of @tech{preorder categories}.
+@tech{𝐏𝐫𝐨𝐬} is @tech{equivalent} to the @tech{category} of @tech{thin categories}.
 
 @subsection{Category of Posets}
 
