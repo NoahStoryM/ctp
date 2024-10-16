@@ -180,6 +180,15 @@ Prove @math{𝒞 ≅ 0+𝒞 ≅ 𝒞+0}.
 @bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
 some @tech{subcategories} of @math{𝒞+𝒟}.
 
+@bold{Exercise}: Prove that if there is a @tech{functor} from @math{𝒞} to
+@tech{0}, then @math{𝒞 ≅ 0}.
+
+@bold{Exercise}: Prove @math{0 ≅ 0×𝒞 ≅ 𝒞×0}.
+
+@bold{Exercise}: For @tech{objects} @math{𝒜}, @math{ℬ}, and @math{𝒞} in @tech{𝐂𝐚𝐭}.
+Prove the @tech{distributive laws}: @math{𝒜×(ℬ+𝒞) ≅ 𝒜×ℬ+𝒜×𝒞} and
+@math{(𝒜+ℬ)×𝒞 ≅ 𝒜×𝒞+ℬ×𝒞}.
+
 In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
 @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functors} as
 @tech{procedures}. Note that since the task of comparing @tech{procedure}

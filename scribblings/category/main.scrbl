@@ -1089,6 +1089,10 @@ and iff @math{f} is both @tech{split monic} and @tech{epic}.
 @bold{Exercise}: For @tech{objects} @math{A} and @math{B} in @tech{𝐒𝐞𝐭}.
 Prove @math{A×B ≅ B×A} and @math{A+B ≅ B+A}.
 
+@bold{Exercise}: For @tech{objects} @math{A}, @math{B}, and @math{C} in @tech{𝐒𝐞𝐭}.
+Prove the @tech{distributive laws}: @math{A×(B+C) ≅ A×B+A×C} and
+@math{(A+B)×C ≅ A×C+B×C}.
+
 @subsubsection{Automorphism}
 
 An @deftech{automorphism} is an @tech{invertible} @tech{endomorphism}.
@@ -1145,6 +1149,11 @@ in @math{𝒞}, then @math{a ≅ b}.
 
 @bold{Exercise}: For an @tech{object} @math{A} in @tech{𝐒𝐞𝐭}.
 Prove @math{A ≅ 0+A ≅ A+0}.
+
+@bold{Exercise}: Prove that if there is a @tech{function} from @math{A} to
+@tech{0}, then @math{A ≅ 0}.
+
+@bold{Exercise}: Prove @math{0 ≅ 0×A ≅ A×0}.
 
 Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{category}
 @math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism}
