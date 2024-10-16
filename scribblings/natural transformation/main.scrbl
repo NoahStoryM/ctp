@@ -316,12 +316,13 @@ We can describe @tech{𝐂𝐚𝐭} in terms of three interrelated @tech{categor
 and the @tech{vertical category} @tech{𝐂𝐚𝐭@^{v}}.
 
 Using these properties, we @racket[define] a @tech{2-category} @math{𝐂} as a
-structure consisting of three @tech{collections}: @math{𝐂_n} of @deftech{n-cells}
-for @math{n = 0, 1, 2}. In @math{𝐂}, there are two ways to @tech{compose}
-@tech{2-cells}: @tech{horizontal composition} and @tech{vertical composition},
-which satisfy the @tech{interchange law}. Additionally, @math{𝐂} can be described
-in terms of three @tech{1-categories}: the @tech{base category} @math{𝐂^b}, the
-@tech{horizontal category} @math{𝐂^h}, and the @tech{vertical category} @math{𝐂^v}.
+structure consisting of three @tech{collections}: @math{𝐂_i} of
+@deftech{i-morphisms} (@deftech{i-cells}) for @math{i = 0, 1, 2}. In @math{𝐂},
+there are two ways to @tech{compose} @tech{2-cells}: @tech{horizontal composition}
+and @tech{vertical composition}, which satisfy the @tech{interchange law}.
+Additionally, @math{𝐂} can be described in terms of three @tech{1-categories}:
+the @tech{base category} @math{𝐂^b}, the @tech{horizontal category} @math{𝐂^h},
+and the @tech{vertical category} @math{𝐂^v}.
 
 In a general @tech{2-category}, we may not know the specific internal structure
 of the @tech{1-cells}. However, we can draw inspiration from the concept of
