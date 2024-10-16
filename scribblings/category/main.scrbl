@@ -212,10 +212,13 @@ If the @tech{morphisms} from @math{a} to @math{x} do not constitute a @tech{set}
 we use the term @deftech{hom class} instead of @tech{hom set}.
 }
 
-For @tech{objects} @math{a : 𝒞} and @math{x : 𝒞}, the @deftech{hom set}, denoted
-by @math{Hom@_{𝒞}(a, x)} or @math{𝒞(a, x)}, is the @tech{set} of all
-@tech{morphisms} from @math{a} to @math{x}:
-@math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
+For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set}
+(@deftech{external hom}) of them, denoted by @math{Hom@_{𝒞}(a, x)} or
+@math{𝒞(a, x)}, is the @tech{set} of all @tech{morphisms} from @math{a} to
+@math{x}: @math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
+If @math{𝒞(a, x)} is an @tech{object} in @math{𝒞}, it is called the
+@deftech{internal hom} @math{[a, x]} or @math{[a → x]}
+(@deftech{exponential set} @math{x^a}).
 
 For @tech{morphisms} @math{f : a → x : 𝒞}, @math{i : b → a : 𝒞} and
 @math{j : x → y : 𝒞}, we can @racket[define] a @tech{function}

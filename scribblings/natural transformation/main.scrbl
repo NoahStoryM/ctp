@@ -257,7 +257,7 @@ In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} serves as the @tech{com
 operation for @tech{morphisms}. This perspective helps us understand why
 @tech{functors} can be viewed as a special case of @tech{natural transformations}.
 
-Consider a @deftech{functor category} @math{𝐂𝐚𝐭(𝒞, 𝒟)}
+Consider a @deftech{functor category} @math{[𝒞 → 𝒟]}
 (@deftech{exponential category} @math{𝒟@^{𝒞}}), which has all the @tech{functors}
 from @math{𝒞} to @math{𝒟} as @tech{objects}, and all the
 @tech{natural transformations} between those @tech{functors} as @tech{morphisms}.
@@ -276,7 +276,7 @@ as the @tech{identity morphism}.
 ]
 
 @bold{Exercise}: Think about what structure an @deftech{endofunctor category}
-@math{𝐂𝐚𝐭(𝒞, 𝒞)} exhibits when considering @tech{horizontal composition}.
+@math{[𝒞 → 𝒞]} exhibits when considering @tech{horizontal composition}.
 
 In Racket, to distinguish between operations in the @tech{horizontal category}
 and @tech{vertical category}, we introduce the notions of @deftech{src},
