@@ -248,8 +248,9 @@ The @deftech{vertical category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂
 provides a perspective that focuses on the relationships between @tech{functors}
 through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objects} are
 @tech{functors} between @tech{categories} and @tech{morphisms} are
-@tech{natural transformations} between @tech{functors}. An @tech{isomorphism} in
-@tech{𝐂𝐚𝐭@^{v}} is called a @deftech{natural isomorphism}.
+@tech{natural transformations} between @tech{functors}. An @tech{isomorphism}
+@math{α : F ⇒ G} in @tech{𝐂𝐚𝐭@^{v}} is called a @deftech{natural isomorphism},
+and @math{F} and @math{G} are @deftech{naturally isomorphic} to each other.
 
 @image["scribblings/natural transformation/images/𝐂𝐚𝐭^v.svg"]{[picture] 𝐂𝐚𝐭^v.svg}
 
