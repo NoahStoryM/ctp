@@ -1043,6 +1043,13 @@ An @deftech{isomorphism class} is an @tech{equivalence class} under @tech{≅}.
 @bold{Exercise}: Prove that @tech{≅} is an @tech{equivalence relation} over
 @math{𝒞_0}.
 
+@bold{Exercise}: Prove that every @tech{object} is @tech{isomorphic} to itself.
+
+@bold{Exercise}: Prove that for an @tech{isomorphism} @math{f}, @math{f = (f@^{–1})@^{–1}}.
+
+@bold{Exercise}: Prove that for @tech{isomorphisms} @math{f} and @math{g},
+if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{–1}∘g@^{–1}}.
+
 @tech{Isomorphisms} are crucial because they imply that the @tech{objects} they
 connect can be interchanged in any context within the @tech{category}. This means
 that if @math{a ≅ b}, then any property, specifically any @tech{commutative diagram}
@@ -1066,13 +1073,6 @@ Examples in @tech{𝐏𝐚𝐢𝐫}:
 (= b (∘ f g))
 ]
 
-@bold{Exercise}: Prove that every @tech{object} is @tech{isomorphic} to itself.
-
-@bold{Exercise}: Prove that for an @tech{isomorphism} @math{f}, @math{f = (f@^{–1})@^{–1}}.
-
-@bold{Exercise}: Prove that for @tech{isomorphisms} @math{f} and @math{g},
-if @math{(f, g)} is a @tech{composable pair}, then @math{(g∘f)@^{–1} = f@^{–1}∘g@^{–1}}.
-
 @bold{Exercise}: Prove that a @tech{morphism} @math{f : a → b : 𝒞} is @tech{invertible}
 iff for any @tech{object} @math{c : 𝒞}, @math{Hom@_{𝒞}(c, f)} is @tech{bijective},
 and iff @math{f} is both @tech{monic} and @tech{split epic}.
@@ -1083,6 +1083,9 @@ and iff @math{f} is both @tech{split monic} and @tech{epic}.
 
 @bold{Exercise}: Prove that a @tech{function} is @tech{bijective} iff it is
 @tech{invertible} in @tech{𝐒𝐞𝐭}, without using the @tech{AC}.
+
+@bold{Exercise}: For @tech{objects} @math{A} and @math{B} in @tech{𝐒𝐞𝐭}.
+Prove @math{A×B ≅ B×A} and @math{A+B ≅ B+A}.
 
 @subsubsection{Automorphism}
 
@@ -1127,10 +1130,6 @@ A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
 
 @subsection{Initial Object and Terminal Object}
 
-@margin-note{
-@tech{0} serves as the @tech{identity element} for @tech{+}.
-}
-
 An @deftech{@deftech{initial} object} @deftech{0} in a @tech{category} @math{𝒞}
 is an @tech{object} from which there exists exactly one @tech{morphism} to every
 other @tech{object} @math{a} in @math{𝒞}, usually denoted by
@@ -1142,9 +1141,8 @@ in @math{𝒞}, then @math{a ≅ b}.
 @bold{Exercise}: Prove that the @deftech{empty set} @deftech{{}} is the unique
 @tech{initial object} in @tech{𝐒𝐞𝐭}.
 
-@margin-note{
-@tech{1} serves as the @tech{identity element} for @tech{×}.
-}
+@bold{Exercise}: For an @tech{object} @math{A} in @tech{𝐒𝐞𝐭}.
+Prove @math{A ≅ 0+A ≅ A+0}.
 
 Conversely, a @deftech{@deftech{terminal} object} @deftech{1} in a @tech{category}
 @math{𝒞} is an @tech{object} to which there exists exactly one @tech{morphism}
@@ -1156,6 +1154,9 @@ in @math{𝒞}, then @math{a ≅ b}.
 
 @bold{Exercise}: Prove that any @deftech{singleton set} @deftech{{∗}} is a
 @tech{terminal object} in @tech{𝐒𝐞𝐭}.
+
+@bold{Exercise}: For an @tech{object} @math{A} in @tech{𝐒𝐞𝐭}.
+Prove @math{A ≅ 1×A ≅ A×1}.
 
 @bold{Exercise}: Prove that an @tech{initial object} in @math{𝒞} is also a
 @tech{terminal object} in @math{𝒞^op}.
