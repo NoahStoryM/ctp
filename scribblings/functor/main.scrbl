@@ -112,7 +112,7 @@ where the @tech{domain} is called the @deftech{indexing category} of the
 @tech{diagram}.
 
 @bold{Exercise}: Show that a @tech{diagram} is @deftech{commutative} iff its
-@tech{indexing category} is a @tech{preorder category}.
+@tech{indexing category} is a @tech{thin category}.
 
 A @tech{functor} @math{F : 𝒞 → 𝒟} @deftech{preserve}s a property @math{P} of
 @tech{morphisms} in @math{𝒞} if whenever @math{f} has @math{P}, so does @math{F(f)}.
