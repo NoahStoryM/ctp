@@ -34,9 +34,9 @@ connections or processes but as entities in their own right.
 This tutorial does not distinguish @deftech{@deftech{small} category} and
 @deftech{@deftech{large} category}. For more information on @tech{small} and
 @tech{large} @tech{category}, please refer to
-@hyperlink["https://ncatlab.org/nlab/show/small+category"]{Small Category}
+@hyperlink["https://ncatlab.org/nlab/show/small category"]{Small Category}
 and
-@hyperlink["https://ncatlab.org/nlab/show/large+category"]{Large Category}.
+@hyperlink["https://ncatlab.org/nlab/show/large category"]{Large Category}.
 }
 
 A @deftech{category} @math{𝒞} is defined by two @tech{collections}: @math{𝒞_0}
@@ -74,7 +74,7 @@ they adhere to the @deftech{composition rules}:
         @margin-note{
         Note that a @deftech{composable pair} consists of not only a pair of
         @tech{morphisms}, but also the @tech{domains} and @tech{codomains} of them.
-        See more in @hyperlink["https://ncatlab.org/nlab/show/composable+pair"]{nLab}.
+        See more in @hyperlink["https://ncatlab.org/nlab/show/composable pair"]{nLab}.
         }
 
         For @tech{composable pairs} @math{(f, g)} and @math{(g, h)} in @math{𝒞},
