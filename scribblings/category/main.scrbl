@@ -1215,8 +1215,9 @@ a non-@tech{surjective} @tech{morphism}. Prove that a @tech{morphism} @math{g} i
 This approach generalizes the concept of @tech{elements} beyond @tech{sets}. In
 any @tech{category} @math{𝒞} with a @tech{terminal object} @tech{1}, we can
 @racket[define] the @tech{elements} of an @tech{object} @math{A} as the
-@tech{elements} of @math{Hom@_{𝒞}(1, A)}, i.e., the @tech{morphisms} @math{1 → A}.
-These @tech{morphisms} are called @deftech{global element}s (@deftech{global point}s).
+@tech{elements} of @math{Hom@_{𝒞}(1, A)}, i.e., the @tech{morphisms} from
+@tech{1} to @math{A}. These @tech{morphisms} are called @deftech{global element}s
+(@deftech{global point}s).
 
 By describing properties of a @tech{category} in a generalized way, we can extend
 them to other @tech{categories}. In this example, by describing the @tech{elements}

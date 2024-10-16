@@ -334,9 +334,9 @@ of the @tech{1-cells}. However, we can draw inspiration from the concept of
 @tech{isomorphic} to @math{𝒞^1}. This observation motivates us to @racket[define]
 a similar concept in any @tech{2-category} @math{𝐂} that contains a
 @tech{terminal object} @tech{1}. Specifically, for any @tech{0-cell} @math{𝒞 : 𝐂},
-we @racket[define] the @tech{1-cells} @math{1 → 𝒞} as the @deftech{global object}s
-of @math{𝒞}, and the @tech{2-cells} between them as the @deftech{global morphism}s
-of @math{𝒞}.
+we @racket[define] the @tech{1-cells} from @tech{1} to @math{𝒞} as the
+@deftech{global object}s of @math{𝒞}, and the @tech{2-cells} between them as the
+@deftech{global morphism}s of @math{𝒞}.
 
 @subsection{String Diagram}
 
