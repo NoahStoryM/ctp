@@ -248,13 +248,15 @@ The @deftech{vertical category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂
 provides a perspective that focuses on the relationships between @tech{functors}
 through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objects} are
 @tech{functors} between @tech{categories} and @tech{morphisms} are
-@tech{natural transformations} between @tech{functors}.
+@tech{natural transformations} between @tech{functors}. Specifically, an
+@tech{isomorphism} in @tech{𝐂𝐚𝐭@^{v}} is called a @deftech{natural isomorphism}.
 
 @image["scribblings/natural transformation/images/𝐂𝐚𝐭^v.svg"]{[picture] 𝐂𝐚𝐭^v.svg}
 
 In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} serves as the @tech{composition}
 operation for @tech{morphisms}. This perspective helps us understand why
 @tech{functors} can be viewed as a special case of @tech{natural transformations}.
+
 Consider a @deftech{functor category} @math{[𝒞, 𝒟]}
 (@deftech{exponential category} @math{𝒟@^{𝒞}}), which has all the @tech{functors}
 from @math{𝒞} to @math{𝒟} as @tech{objects}, and all the
@@ -439,7 +441,7 @@ both @deftech{equivalence}s (often called be @deftech{weakly invertible}).
 @image["scribblings/natural transformation/images/eqv.svg"]{[picture] eqv.svg}
 
 In this case, both @math{F} and @math{G} are @tech{inverses} up to
-@tech{invertible} @tech{2-cells} @math{η : id@_{𝒞} ⇒ G∘F} and
+@tech{invertible} @tech{morphisms} @math{η : id@_{𝒞} ⇒ G∘F} and
 @math{ϵ : F∘G ⇒ id@_{𝒟}} in @math{𝐂^v}. @math{G} is a @deftech{pseudo-inverse}
 of @math{F}, and @math{F} is a @tech{pseudo-inverse} of @math{G}. @math{𝒞} and
 @math{𝒟} are @deftech{equivalent} to each other (@math{𝒞 @deftech{≃} 𝒟}) if
