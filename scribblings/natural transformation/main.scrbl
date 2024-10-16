@@ -351,7 +351,7 @@ representation:
 ]
 
 @tech{String diagrams} are a powerful tool for visualizing relationships between
-@tech{n-cells} within a @tech{2-category} @math{𝐂}. Below, we illustrate a
+@tech{i-cells} within a @tech{2-category} @math{𝐂}. Below, we illustrate a
 @tech{2-cell} @math{α : F ⇒ G : 𝒞 → 𝒟 : 𝐂}, using both a traditional
 @tech{diagram} and a corresponding @tech{string diagram}:
 
