@@ -248,8 +248,8 @@ The @deftech{vertical category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂
 provides a perspective that focuses on the relationships between @tech{functors}
 through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objects} are
 @tech{functors} between @tech{categories} and @tech{morphisms} are
-@tech{natural transformations} between @tech{functors}. Specifically, an
-@tech{isomorphism} in @tech{𝐂𝐚𝐭@^{v}} is called a @deftech{natural isomorphism}.
+@tech{natural transformations} between @tech{functors}. An @tech{isomorphism} in
+@tech{𝐂𝐚𝐭@^{v}} is called a @deftech{natural isomorphism}.
 
 @image["scribblings/natural transformation/images/𝐂𝐚𝐭^v.svg"]{[picture] 𝐂𝐚𝐭^v.svg}
 
@@ -324,7 +324,8 @@ there are two ways to @tech{compose} @tech{2-cells}: @tech{horizontal compositio
 and @tech{vertical composition}, which satisfy the @tech{interchange law}.
 Additionally, @math{𝐂} can be described in terms of three @tech{1-categories}:
 the @tech{base category} @math{𝐂^b}, the @tech{horizontal category} @math{𝐂^h},
-and the @tech{vertical category} @math{𝐂^v}.
+and the @tech{vertical category} @math{𝐂^v}. An @tech{isomorphism} in @math{𝐂^v}
+is called a @deftech{2-isomorphism}.
 
 In a general @tech{2-category}, we may not know the specific internal structure
 of the @tech{1-cells}. However, we can draw inspiration from the concept of
@@ -441,11 +442,11 @@ both @deftech{equivalence}s (often called be @deftech{weakly invertible}).
 @image["scribblings/natural transformation/images/eqv.svg"]{[picture] eqv.svg}
 
 In this case, both @math{F} and @math{G} are @tech{inverses} up to
-@tech{invertible} @tech{morphisms} @math{η : id@_{𝒞} ⇒ G∘F} and
-@math{ϵ : F∘G ⇒ id@_{𝒟}} in @math{𝐂^v}. @math{G} is a @deftech{pseudo-inverse}
-of @math{F}, and @math{F} is a @tech{pseudo-inverse} of @math{G}. @math{𝒞} and
-@math{𝒟} are @deftech{equivalent} to each other (@math{𝒞 @deftech{≃} 𝒟}) if
-there exists an @tech{equivalence} between them.
+@tech{2-isomorphisms} @math{η : id@_{𝒞} ⇒ G∘F} and @math{ϵ : F∘G ⇒ id@_{𝒟}}.
+@math{G} is a @deftech{pseudo-inverse} of @math{F}, and @math{F} is a
+@tech{pseudo-inverse} of @math{G}. @math{𝒞} and @math{𝒟} are @deftech{equivalent}
+to each other (@math{𝒞 @deftech{≃} 𝒟}) if there exists an @tech{equivalence}
+between them.
 
 @bold{Exercise}: Prove that @tech{≃} is an @tech{equivalence relation} over
 @math{𝐂_0}.
