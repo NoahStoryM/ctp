@@ -2,7 +2,7 @@
 
 (require racket/match racket/function racket/set)
 (require "FSM.rkt" "../../exercises/functor/FSM.rkt")
-(provide ℳ 𝒢0 𝒢1 S s φ φ*)
+(provide ℳ 𝒢0 𝒢1 S s φ φ* make-path)
 
 (module+ test (require rackunit))
 
