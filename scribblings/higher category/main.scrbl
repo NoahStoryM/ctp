@@ -40,6 +40,11 @@ We can describe @tech{𝐂𝐚𝐭} in terms of three interrelated @tech{categor
 @tech{base category} @tech{𝐂𝐚𝐭@^{b}}, the @tech{horizontal category} @tech{𝐂𝐚𝐭@^{h}},
 and the @tech{vertical category} @tech{𝐂𝐚𝐭@^{v}}.
 
+@margin-note{
+Note that @math{𝒞_2} of a @tech{1-category} @math{𝒞} is the @tech{collection} of
+@tech{composable pairs}.
+}
+
 Using these properties, we @racket[define] a @deftech{2-category} @math{𝐂} as a
 structure consisting of three @tech{collections}: @math{𝐂_i} of
 @deftech{i-morphism}s (@deftech{i-cell}s) for @math{i = 0, 1, 2}. In @math{𝐂},
