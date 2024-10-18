@@ -14,7 +14,8 @@ In addition to this tutorial, you may find the following resources helpful for
 further exploration of @tech{category theory}:
 
 @itemlist[
-  @item{@italic{Category Theory for Computing Science} by @italic{Michael Barr} and @italic{Charles Wells}}
+  @item{@italic{Category Theory for Computing Science} by @italic{Michael Barr} & @italic{Charles Wells}}
+  @item{@italic{Computational Category Theory} by @italic{D.E. Rydeheard} & @italic{R.M. Burstall}}
   @item{@italic{Category Theory in Context} by @italic{Emily Riehl}}
   @item{@italic{Category Theory} by @italic{Steve Awodey}}
   @item{@italic{Categories for the Working Mathematician} by @italic{Saunders Mac Lane}}
