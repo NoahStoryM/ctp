@@ -38,6 +38,24 @@
 (define-type 𝒢0 (∪ S0 S1 S2))
 (define-type 𝒢1 (List Char 𝒢0 𝒢0))
 
+(: F𝒢1 (Listof 𝒢1))
+(define F𝒢1
+  '([#\nul S0 S0]
+    [#\nul S1 S1]
+    [#\nul S2 S2]
+
+    [#\1 S0 S1]
+    [#\2 S0 S2]
+
+    [#\q S1 S0]
+    [#\q S2 S0]
+
+    [#\x S1 S1]
+    [#\x S2 S2]
+
+    [#\y S1 S1]
+    [#\y S2 S2]))
+
 (: φ (case→ (→ 𝒢0 𝐒𝐞𝐭) (→ 𝒢1 →𝐒𝐞𝐭)))
 (define (φ g)
   (match g
@@ -65,11 +83,11 @@
 (define (φ* g*) (apply ∘𝒮 (map φ g*)))
 
 (: make-path (→ (× String 𝒢0) (Listof 𝒢1)))
-(define (make-path str s)
-  (for/fold ([g* '()] [n0 s] #:result g*)
+(define (make-path str S)
+  (for/fold ([g* '()] [n0 S] #:result g*)
             ([a (in-list (string->list str))])
     (let/cc return
-      (for ([g : 𝒢1 (in-list ℳ)])
+      (for ([g : 𝒢1 (in-list F𝒢1)])
         (match g
           [`(,(? (curry eq? a))
              ,(? (curry eq? n0))
@@ -77,13 +95,13 @@
            (return (cons g g*) n1)]
           [_ (void)]))
       (raise-arguments-error
-       'make-path "invalid string or state"
+       'make-path "invalid string or state space"
        "string" str
-       "state" s))))
+       "state space" S))))
 
 (module+ test
-  (define m (make-path "1yyq"  's0))
-  (define n (make-path "2xyyq" 'r0))
+  (define m (make-path "1yyq"  'S0))
+  (define n (make-path "2xyyq" 'S0))
   (check-eq?
    ((φ* (∘ℒ n m)) s)
    ((∘𝒮 (φ* n) (φ* m)) s)))
