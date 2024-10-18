@@ -7,6 +7,8 @@
 
 @title[#:tag "_Higher_Category_"]{Higher Category}
 
+@local-table-of-contents[]
+
 @section{2-Category}
 
 A @tech{set} (@deftech{0-category}) is defined by a @tech{collection} of
