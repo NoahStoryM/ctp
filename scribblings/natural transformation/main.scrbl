@@ -286,6 +286,11 @@ and @tech{vertical category}, we introduce the notions of @deftech{src},
 @tech{compose} operators in @math{𝒟@^{𝒞}}. Additionally, we stipulate that
 @racket[(∘)] and @racket[(∙)] must return the same value.
 
+@bold{Exercise}: Try to @racket[define] @racket[make-vertical-compose] so that
+we can @racket[define] the @tech{compose} operator in @math{𝒟@^{𝒞}} like this:
+
+@racketblock[(define ∙ (make-vertical-compose 𝒞 𝒟))]
+
 @section{Yoneda Lemma}
 
 The @deftech{Yoneda Lemma} is a fundamental result in @tech{category theory},
