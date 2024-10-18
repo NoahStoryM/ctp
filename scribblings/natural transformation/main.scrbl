@@ -288,9 +288,9 @@ and @tech{vertical category}, we introduce the notions of @deftech{src},
 
 @section{Yoneda Lemma}
 
-The @tech{Yoneda Lemma} is a fundamental result in @tech{category theory},
-establishing a one-to-one correspondence between each @tech{element} of @math{F(S)},
-where @math{S : 𝒞} and @math{F : 𝒞 → 𝐒𝐞𝐭}, and each @tech{variable element} of
+The @deftech{Yoneda Lemma} is a fundamental result in @tech{category theory},
+establishing a one-to-one correspondence between @tech{elements} of @math{F(S)},
+where @math{S : 𝒞} and @math{F : 𝒞 → 𝐒𝐞𝐭}, and @tech{variable elements} of
 @math{F}, parametrized by @math{Hom@_{𝒞}(S, -)}. Specifically, an @tech{element}
 @math{s ∈ F(S)} uniquely corresponds to a @tech{natural transformation}
 @math{σ : Hom@_{𝒞}(S, -) ⇒ F}.
