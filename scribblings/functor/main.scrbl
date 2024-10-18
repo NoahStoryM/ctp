@@ -501,10 +501,10 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞�
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: a 𝒞)
-(: Hom𝒞|(a, -)| (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 a y)))))
-(define (Hom𝒞|(a, -)| j)
-  (define Hom𝒞|(a, j)| (λ (f) (∘𝒞 j f)))
-  Hom𝒞|(a, j)|)
+(: |(→𝒞 a _)| (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 a y)))))
+(define (|(→𝒞 a _)| j)
+  (define |(→𝒞 a j)| (λ (f) (∘𝒞 j f)))
+  |(→𝒞 a j)|)
 ]
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
@@ -515,10 +515,10 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞�
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: b 𝒞) (: a 𝒞) (: i (→𝒞 b a))
-(: Hom𝒞|(i, -)| (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b y)))))
-(define (Hom𝒞|(i, -)| j)
-  (define Hom𝒞|(i, j)| (λ (f) (∘𝒞 j f i)))
-  Hom𝒞|(i, j)|)
+(: |(→𝒞 i _)| (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 b y)))))
+(define (|(→𝒞 i _)| j)
+  (define |(→𝒞 i j)| (λ (f) (∘𝒞 j f i)))
+  |(→𝒞 i j)|)
 ]
 
 @subsubsection{Contravariant Hom Functor}
@@ -530,10 +530,10 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x) : 𝒞@^{op} →
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: x 𝒞)
-(: Hom𝒞|(-, x)| (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b x)))))
-(define (Hom𝒞|(-, x)| i)
-  (define Hom𝒞|(i, x)| (λ (f) (∘𝒞 f i)))
-  Hom𝒞|(i, x)|)
+(: |(→𝒞 _ x)| (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b x)))))
+(define (|(→𝒞 _ x)| i)
+  (define |(→𝒞 i x)| (λ (f) (∘𝒞 f i)))
+  |(→𝒞 i x)|)
 ]
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, x) = id@_{Hom@_{𝒞}(a, x)}}.
@@ -544,10 +544,10 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x) : 𝒞@^{op} →
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: x 𝒞) (: y 𝒞) (: j (→𝒞 x y))
-(: Hom𝒞|(-, j)| (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b y)))))
-(define (Hom𝒞|(-, j)| i)
-  (define Hom𝒞|(i, j)| (λ (f) (∘𝒞 j f i)))
-  Hom𝒞|(i, j)|)
+(: |(→𝒞 _ j)| (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b y)))))
+(define (|(→𝒞 _ j)| i)
+  (define |(→𝒞 i j)| (λ (f) (∘𝒞 j f i)))
+  |(→𝒞 i j)|)
 ]
 
 @subsubsection{Two-Variable Hom Functor}
@@ -559,8 +559,10 @@ takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭)
-(: Hom𝒞 (∀ ([a : 𝒞] [b : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→𝐒𝐞𝐭 (→𝒞 a x) (→𝒞 b y)))))
-(define (Hom𝒞 i j) (λ (f) (∘𝒞 j f i)))
+(: |(→𝒞 _ _)| (∀ ([a : 𝒞] [b : 𝒞] [x : 𝒞] [y : 𝒞]) (→ (× (→𝒞 b a) (→𝒞 x y)) (→ (→𝒞 a x) (→𝒞 b y)))))
+(define (|(→𝒞 _ _)| i j)
+  (define |(→𝒞 i j)| (λ (f) (∘𝒞 j f i)))
+  |(→𝒞 i j)|)
 ]
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
