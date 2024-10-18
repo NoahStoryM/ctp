@@ -208,7 +208,7 @@ Here are some important @tech{commutative squares} that arise:
 In the previous @seclink["_Functor_"]{chapter}, we introduced what we referred to
 as @tech{𝐂𝐚𝐭}, which consists of @tech{categories} as @tech{objects} and
 @tech{functors} as @tech{morphisms}. Strictly speaking, this was actually the
-@deftech{base category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{b}}.
+@tech{base category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{b}}.
 
 @image["scribblings/natural transformation/images/𝐂𝐚𝐭^b.svg"]{[picture] 𝐂𝐚𝐭^b.svg}
 
@@ -227,7 +227,7 @@ with each other.
 
 @subsubsection{Horizontal Category}
 
-The @deftech{horizontal category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{h}},
+The @tech{horizontal category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{h}},
 can be viewed as an extension of @tech{𝐂𝐚𝐭@^{b}}. In @tech{𝐂𝐚𝐭@^{b}},
 @tech{objects} are @tech{categories} and @tech{morphisms} are @tech{functors}
 between @tech{categories}. In @tech{𝐂𝐚𝐭@^{h}}, the @tech{objects} remain the same
@@ -244,7 +244,7 @@ kinds of @tech{functions} between @tech{categories}.
 
 @subsubsection{Vertical Category}
 
-The @deftech{vertical category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{v}},
+The @tech{vertical category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{v}},
 provides a perspective that focuses on the relationships between @tech{functors}
 through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objects} are
 @tech{functors} between @tech{categories} and @tech{morphisms} are
