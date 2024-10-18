@@ -776,7 +776,7 @@ rather than a @tech{function}, so @math{φ@^{*}} is a @tech{monoid action} in
 
 Here is a Racket example for the @tech{FSM} @math{ℳ_1}
 @math{(A_1 = {x, y}, S_1 = {s_1, b_1}, s_1, φ_1)}, which expects the last
-@tech{letter} to be @math{x} (@math{b} means "bad"):
+@tech{letter} to be @math{x} (@math{s} means "start" and @math{b} means "bad"):
 
 @image["scribblings/functor/images/ℳ_1.svg"]{[picture] ℳ_1.svg}
 
@@ -864,7 +864,8 @@ where:
 
 We can use a @tech{state diagram} and a @tech{state table} to illustrate a
 @tech{TFSM} @math{ℳ}, which can be viewed as a combination of multiple @tech{FSMs}
-@math{ℳ_1} and @math{ℳ_2}:
+@math{ℳ_1} and @math{ℳ_2}
+(@math{q} means "quit", @math{a} means "accept", and @math{r} means "reject"):
 
 @image["scribblings/functor/images/ℳ.svg"]{[picture] ℳ.svg}
 
