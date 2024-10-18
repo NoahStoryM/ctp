@@ -2,7 +2,7 @@
 
 (require racket/match racket/function racket/set)
 (require "FSM.rkt" "../../exercises/functor/FSM.rkt")
-(provide ℳ 𝒢0 𝒢1 S s φ φ* make-path)
+(provide ℳ 𝒢0 𝒢1 →F𝒢 S s φ φ* make-path)
 
 (module+ test (require rackunit))
 
@@ -38,8 +38,8 @@
 (define-type 𝒢0 (∪ S0 S1 S2))
 (define-type 𝒢1 (List Char 𝒢0 𝒢0))
 
-(: F𝒢1 (Listof 𝒢1))
-(define F𝒢1
+(: →F𝒢 (Listof 𝒢1))
+(define →F𝒢
   '([#\nul S0 S0]
     [#\nul S1 S1]
     [#\nul S2 S2]
@@ -82,12 +82,12 @@
 (: φ* (∀ ([a : F𝒢] [b : F𝒢]) (→ (→F𝒢 a b) (→𝐒𝐞𝐭 (φ* a) (φ* b)))))
 (define (φ* g*) (apply ∘𝒮 (map φ g*)))
 
-(: make-path (→ (× String 𝒢0) (Listof 𝒢1)))
+(: make-path (→ (× String 𝒢0) →F𝒢))
 (define (make-path str S)
   (for/fold ([g* '()] [n0 S] #:result g*)
             ([a (in-list (string->list str))])
     (let/cc return
-      (for ([g : 𝒢1 (in-list F𝒢1)])
+      (for ([g : 𝒢1 (in-list →F𝒢)])
         (match g
           [`(,(? (curry eq? a))
              ,(? (curry eq? n0))
