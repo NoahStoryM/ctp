@@ -170,6 +170,12 @@ Just as a @tech{one-object category} @math{𝒞} can be viewed as a @tech{monoid
 acts as the @tech{tensor product}, and the @tech{identity} @tech{1-cell}
 @math{id^b@_{∗}}, which serves as the @tech{tensor unit}.
 
+@subsubsection{Strict Symmetric Monoidal Category}
+
+A @deftech{strict symmetric monoidal category} @math{(𝒞, ⊗, I)} is a
+@tech{strict monoidal category} that @tech{⊗} is @tech{symmetric}: for any
+@tech{objects} @math{A, B : 𝒞}, @math{A⊗B = B⊗A}.
+
 @subsection{Equivalence}
 
 In a @tech{2-category} @math{𝐂}, @tech{equivalence} is a weaker version of
