@@ -285,3 +285,20 @@ and @tech{vertical category}, we introduce the notions of @deftech{src},
 @deftech{tgt}, and @deftech{∙} to denote the @tech{domain}, @tech{codomain}, and
 @tech{compose} operators in @math{𝒟@^{𝒞}}. Additionally, we stipulate that
 @racket[(∘)] and @racket[(∙)] must return the same value.
+
+@section{Yoneda Lemma}
+
+The @tech{Yoneda Lemma} is a fundamental result in @tech{category theory},
+establishing a one-to-one correspondence between each @tech{element} of @math{F(S)},
+where @math{S : 𝒞} and @math{F : 𝒞 → 𝐒𝐞𝐭}, and each @tech{variable element} of
+@math{F}, parametrized by @math{Hom@_{𝒞}(S, -)}. Specifically, an @tech{element}
+@math{s ∈ F(S)} uniquely corresponds to a @tech{natural transformation}
+@math{σ : Hom@_{𝒞}(S, -) ⇒ F}.
+
+To better understand this, let's revisit the @seclink["Typed_Finite_State_Machine"].
+We'll use @math{𝒞} to denote the @tech{path category} of @math{𝒢}, use
+@math{F : 𝒞 → 𝐒𝐞𝐭} to denote the @tech{typed action} @math{φ*}, and
+@racket[define] two @tech{procedures}, @racket[s->σ] and @racket[σ->s], to
+illustrate this correspondence:
+
+@racketfile{code/natural transformation/s<->σ.rkt}
