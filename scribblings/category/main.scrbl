@@ -197,7 +197,7 @@ and @math{b → a}, then @math{a = b}, and these @tech{morphisms} are the same
 Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{Cartesian product}
 of them, denoted by @math{A_0@deftech{×}A_1} or @math{@deftech{∏}@_{i=0, 1}A_i},
 is the @tech{set} of all @deftech{ordered list}s:
-@math{∏@_{i=0, 1}A_i = A_0×A_1 := {(a_0, a_1) | a_0 ∈ A_0, a_1 ∈ A_1}}.
+@math{∏@_{i=0, 1}A_i = A_0×A_1 ≔ {(a_0, a_1) | a_0 ∈ A_0, a_1 ∈ A_1}}.
 Such a @tech{set} is called a @deftech{product set}.
 
 @subsection{Disjoint Union}
@@ -205,7 +205,7 @@ Such a @tech{set} is called a @deftech{product set}.
 Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{disjoint union}
 (@deftech{tagged union}) of them, denoted by @math{A_0@deftech{+}A_1} or
 @math{@deftech{∐}@_{i=0, 1}A_i}, is the @tech{set} of all @deftech{tagged pair}s:
-@math{∐@_{i=0, 1}A_i = A_0+A_1 := ∪@_{i=0, 1}{(a, i) | a ∈ A_i}}.
+@math{∐@_{i=0, 1}A_i = A_0+A_1 ≔ ∪@_{i=0, 1}{(a, i) | a ∈ A_i}}.
 Such a @tech{set} is called a @deftech{sum set}.
 
 @subsection{Hom Set}
@@ -218,7 +218,7 @@ we use the term @deftech{hom class} instead of @tech{hom set}.
 For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set}
 (@deftech{external hom}) of them, denoted by @math{Hom@_{𝒞}(a, x)} or
 @math{𝒞(a, x)}, is the @tech{set} of all @tech{morphisms} from @math{a} to
-@math{x}: @math{Hom@_{𝒞}(a, x) := {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
+@math{x}: @math{Hom@_{𝒞}(a, x) ≔ {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
 If @math{𝒞(a, x)} is an @tech{object} in @math{𝒞}, it is called the
 @deftech{internal hom} @math{[a, x]} or @math{[a → x]}
 (@deftech{exponential set} @math{x^a}).
@@ -226,7 +226,7 @@ If @math{𝒞(a, x)} is an @tech{object} in @math{𝒞}, it is called the
 For @tech{morphisms} @math{f : a → x : 𝒞}, @math{i : b → a : 𝒞} and
 @math{j : x → y : 𝒞}, we can @racket[define] a @tech{function}
 @math{Hom@_{𝒞}(i, j) : Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
-@math{Hom@_{𝒞}(i, j)(f) := j∘f∘i}.
+@math{Hom@_{𝒞}(i, j)(f) ≔ j∘f∘i}.
 
 @image["scribblings/category/images/hom_1.svg"]{[picture] hom_1.svg}
 
@@ -234,11 +234,11 @@ Additionally, we can @racket[define] two other @tech{functions}:
 
 @itemlist[
   #:style 'ordered
-  @item{@math{Hom@_{𝒞}(a, j) := Hom@_{𝒞}(id_a, j)}, where
+  @item{@math{Hom@_{𝒞}(a, j) ≔ Hom@_{𝒞}(id_a, j)}, where
         @math{Hom@_{𝒞}(a, j)(f) = j∘f}.
 
         @image["scribblings/category/images/hom_2.svg"]{[picture] hom_2.svg}}
-  @item{@math{Hom@_{𝒞}(i, x) := Hom@_{𝒞}(i, id_x)}, where
+  @item{@math{Hom@_{𝒞}(i, x) ≔ Hom@_{𝒞}(i, id_x)}, where
         @math{Hom@_{𝒞}(i, x)(f) = f∘i}.
 
         @image["scribblings/category/images/hom_3.svg"]{[picture] hom_3.svg}}
@@ -302,7 +302,7 @@ an @tech{equivalence relation} @math{∼}.
 For example, given a @tech{setoid} @math{(S, ∼)} and an @tech{element} @math{x ∈ S},
 the @tech{equivalence class} of @math{x} under @math{∼} is the @tech{set} of all
 @tech{elements} in @math{S} that are related to @math{x}. This is denoted by
-@math{[x]}, where @math{[x] := {y ∈ S | x ∼ y}}. Every @tech{element} of @math{S}
+@math{[x]}, where @math{[x] ≔ {y ∈ S | x ∼ y}}. Every @tech{element} of @math{S}
 belongs to exactly one @tech{equivalence class}.
 
 @image["scribblings/category/images/eq-cls.svg"]{[picture] eq-cls.svg}
@@ -394,13 +394,13 @@ characteristics.
 
 For a @tech{class} @math{𝒞} of @tech{morphisms},
 the @deftech{right weak orthogonal class} (@deftech{right Quillen negation}) is
-denoted by @math{𝒞@^{⧄}}, where @math{𝒞@^{⧄} := {g | f⧄g ∀f ∈ 𝒞}}, and
+denoted by @math{𝒞@^{⧄}}, where @math{𝒞@^{⧄} ≔ {g | f⧄g ∀f ∈ 𝒞}}, and
 the @deftech{left weak orthogonal class} (@deftech{left Quillen negation}) is
-denoted by @math{@^{⧄}𝒞}, where @math{@^{⧄}𝒞 := {f | f⧄g ∀g ∈ 𝒞}}. Similarly,
+denoted by @math{@^{⧄}𝒞}, where @math{@^{⧄}𝒞 ≔ {f | f⧄g ∀g ∈ 𝒞}}. Similarly,
 the @deftech{right orthogonal class} is denoted by @math{𝒞@^{⊥}} or @math{𝒞@^{↓}},
-where @math{𝒞@^{⊥} := {g | f⊥g ∀f ∈ 𝒞}}, and
+where @math{𝒞@^{⊥} ≔ {g | f⊥g ∀f ∈ 𝒞}}, and
 the @deftech{left orthogonal class} is denoted by @math{@^{⊥}𝒞} or @math{𝒞@^{↑}},
-where @math{@^{⊥}𝒞 := {f | f⊥g ∀g ∈ 𝒞}}.
+where @math{@^{⊥}𝒞 ≔ {f | f⊥g ∀g ∈ 𝒞}}.
 
 @bold{Exercise}: Prove @math{𝒞@^{↓↑↓} = 𝒞@^{↓}} and @math{𝒞@^{↑↓↑} = 𝒞@^{↑}}.
 
@@ -1309,8 +1309,8 @@ the other. A @deftech{subobject} of @math{c} is an @tech{equivalence class} of
 @tech{monomorphisms}. Show that @math{𝒞_c} is a @tech{proset}, and a
 @tech{subobject} of @math{c} is an @tech{isomorphism class} of @math{𝒞_c}.
 
-The following @tech{diagram} shows how to view a @tech{subset} @math{a := {1, 2, 3}}
-of @math{c := {1, 2, 3, 4, 5, 6}} as the @tech{subobject} @math{[i]} in @tech{𝐒𝐞𝐭}:
+The following @tech{diagram} shows how to view a @tech{subset} @math{a ≔ {1, 2, 3}}
+of @math{c ≔ {1, 2, 3, 4, 5, 6}} as the @tech{subobject} @math{[i]} in @tech{𝐒𝐞𝐭}:
 
 @image["scribblings/category/images/subobj.svg"]{[picture] subobj.svg}
 
@@ -1345,7 +1345,7 @@ the other. A @deftech{quotient object} (@deftech{cosubobject}) of @math{c} is an
 @tech{quotient object} of @math{c} is an @tech{isomorphism class} of @math{𝒞^c}.
 
 The following @tech{diagram} shows how to view a @tech{quotient set}
-@math{b := {{1, 4}, {2, 5}, {3, 6}}} of @math{c := {1, 2, 3, 4, 5, 6}} as the
+@math{b ≔ {{1, 4}, {2, 5}, {3, 6}}} of @math{c ≔ {1, 2, 3, 4, 5, 6}} as the
 @tech{quotient object} @math{[p]} in @tech{𝐒𝐞𝐭}:
 
 @image["scribblings/category/images/cosubobj.svg"]{[picture] cosubobj.svg}
@@ -1437,13 +1437,13 @@ unique up to @tech{isomorphism}:
 @tech{WFS} @math{(ℳ, ℰ)} in @math{𝒞@^{op}}.
 
 @margin-note{
-@math{e⧄ℳ := ∀m ∈ ℳ, e⧄m}.
+@math{e⧄ℳ ≔ ∀m ∈ ℳ, e⧄m}.
 }
 
 @bold{Exercise}: Prove @math{∀e ∈ 𝒞_1, e⧄ℳ ⇒ e ∈ ℰ}.
 
 @margin-note{
-@math{ℰ⧄m := ∀e ∈ ℰ, e⧄m}.
+@math{ℰ⧄m ≔ ∀e ∈ ℰ, e⧄m}.
 }
 
 @bold{Exercise}: Prove @math{∀m ∈ 𝒞_1, ℰ⧄m ⇒ m ∈ ℳ}.

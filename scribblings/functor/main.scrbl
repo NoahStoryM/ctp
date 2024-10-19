@@ -454,7 +454,7 @@ For a @tech{function} @math{f : a → b}, let @math{a_0} be a @tech{subset} of
 
 The @deftech{direct image} (@deftech{existential image}) of @math{a_0}, denoted
 by @math{f@_{∗}(a_0)}, is the @tech{subset} of @math{b}:
-@math{f@_{∗}(a_0) := {f(x) | x ∈ a_0}}.
+@math{f@_{∗}(a_0) ≔ {f(x) | x ∈ a_0}}.
 
 The @deftech{direct image functor} (@deftech{existential image functor})
 @math{𝒫@_{∗}} takes @math{f} to @math{f@_{∗}}: @math{𝒫@_{∗}(f) = f@_{∗}}.
@@ -467,7 +467,7 @@ The @deftech{direct image functor} (@deftech{existential image functor})
 
 The @deftech{preimage} (@deftech{inverse image}) of @math{b_0}, denoted by
 @math{f@^{∗}(b_0)}, is the @tech{subset} of @math{a}:
-@math{f@^{∗}(b_0) := {x ∈ a | f(x) ∈ b_0}}.
+@math{f@^{∗}(b_0) ≔ {x ∈ a | f(x) ∈ b_0}}.
 
 The @deftech{preimage functor} (@deftech{inverse image functor}) @math{𝒫@^{∗}}
 takes @math{f} to @math{f@^{∗}}: @math{𝒫@^{∗}(f) = f@^{∗}}.
@@ -479,7 +479,7 @@ takes @math{f} to @math{f@^{∗}}: @math{𝒫@^{∗}(f) = f@^{∗}}.
 @subsubsection{Universal Image Functor}
 
 The @deftech{universal image} of @math{a_0}, denoted by @math{f@_{!}(a_0)}, is
-the @tech{subset} of @math{b}: @math{f@_{!}(a_0) := {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
+the @tech{subset} of @math{b}: @math{f@_{!}(a_0) ≔ {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
 
 The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f@_{!}}:
 @math{𝒫@_{!}(f) = f@_{!}}.
@@ -906,6 +906,8 @@ Similar to @tech{FSMs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{type
 @math{φ* : F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @deftech{path category} of @math{𝒢},
 where @tech{objects} are @tech{nodes} and @tech{morphisms} are @deftech{paths}
 (a sequence of @tech{arrows} connected end to end).
+
+@bold{Exercise}: Try to @racket[define] @math{F}.
 
 Here is how to implement @math{ℳ} in Racket:
 
