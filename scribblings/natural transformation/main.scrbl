@@ -307,16 +307,15 @@ represent the @tech{typed action} @math{φ*}.
 
 In this context, think of the @tech{run function} @math{ρ}, which takes an input
 sequence @math{w} and returns a @tech{final state} after processing the sequence
-starting from an @tech{initial state} @math{s_0}: @math{ρ(w) = F(w)(s_0)}.
+starting from the @tech{initial state} @math{s_0}: @math{ρ(w) = F(w)(s_0)}.
 According to the @tech{Yoneda Lemma}, we see that each @tech{component} of the
 @tech{natural transformation} @math{σ} can be understood as such a
 @tech{run function} starting from @math{s}.
 
-To illustrate this correspondence, we'll use @racket{Racket} code to
-@racket[define] two @tech{procedures}, @racket[s->σ] and @racket[σ->s], which
-demonstrate how an @tech{element} @math{s} of @math{F(S)} can be transformed into
-a @tech{natural transformation} @math{σ}, and vice versa, providing a concrete
-way to visualize the one-to-one correspondence described by the
-@tech{Yoneda Lemma}.
+To illustrate this correspondence, we'll use Racket code to @racket[define] two
+@tech{procedures}, @racket[s->σ] and @racket[σ->s], which demonstrate how an
+@tech{element} @math{s} of @math{F(S)} can be transformed into a
+@tech{natural transformation} @math{σ}, and vice versa, providing a concrete way
+to visualize the one-to-one correspondence described by the @tech{Yoneda Lemma}.
 
 @racketfile{code/natural transformation/s<->σ.rkt}
