@@ -1,7 +1,7 @@
 #lang typed/racket/base/no-check
 
 (require racket/match racket/function)
-(provide ℳ2 A2 S2 s2 φ2 φ2* Fφ2*)
+(provide ℳ2 A2 S2 s2 φ2 φ2* ρ2 Fφ2*)
 
 (module+ test (require rackunit))
 
@@ -42,14 +42,14 @@
     ['() s]
     [`(,a . ,w) (φ2 a (φ2* w s))]))
 
-(: run (→ String S2))
-(define (run str) (φ2* (reverse (string->list str)) s2))
+(: ρ2 (→ A2* S2))
+(define (ρ2 a*) (φ2* a* s2))
 
 (module+ test
-  (check-eq? 'b2 (run "yy"))
-  (check-eq? 'o2 (run "xy"))
-  (check-eq? 'b2 (run "yx"))
-  (check-eq? 'o2 (run "xx")))
+  (check-eq? 'b2 (ρ2 '(#\y #\y)))
+  (check-eq? 'o2 (ρ2 '(#\y #\x)))
+  (check-eq? 'b2 (ρ2 '(#\x #\y)))
+  (check-eq? 'o2 (ρ2 '(#\x #\x))))
 
 (: ∗ ℒ) (define ∗ (∘ℒ))
 (: Fφ2* (→ #;A* (→ℒ ∗ ∗) (→𝒮 S2 S2)))

@@ -739,7 +739,7 @@ a @deftech{state table}, or a tuple @math{(A, S, s_0, φ)}:
   @item{@math{S} (@deftech{state space}):
         The finite @tech{set} of all @deftech{state}s that @math{ℳ} can be in.}
   @item{@math{s_0} (@deftech{start state}):
-        The initial @tech{state} of @math{ℳ}.}
+        The @deftech{initial state} of @math{ℳ}.}
   @item{@math{φ} (@deftech{transition function}):
         An @tech{action} of @math{A} on @math{S} that defines the @tech{state}
         @deftech{transition} of @math{ℳ}.}
@@ -773,6 +773,12 @@ rather than a @tech{function}, so @math{φ@^{*}} is a @tech{monoid action} in
 
 @bold{Exercise}: Prove that @math{φ@^{*}} is a @tech{monoid action} of
 @math{A@^{*}} on @math{S} in @tech{𝐒𝐞𝐭}.
+
+In addition to the @tech{monoid action} @math{φ@^{*}}, a @tech{FSM} @math{ℳ}
+often employ a @deftech{run function} @math{ρ : A@^{*} → S}, which takes a
+sequence from @math{A@^{*}} and returns a @deftech{final state} of @math{ℳ}
+after processing the entire sequence, starting from the @tech{initial state}
+@math{s_0}: @math{∀w ∈ A@^{*}, ρ(w) = φ@^{*}(w, s_0)}.
 
 Here is a Racket example for the @tech{FSM} @math{ℳ_1}
 @math{(A_1 = {x, y}, S_1 = {s_1, b_1}, s_1, φ_1)}, which expects the last
