@@ -64,9 +64,10 @@ they adhere to the @deftech{composition rules}:
   #:style 'ordered
   @item{Existence of @deftech{composition}
 
-        For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, the @deftech{composite}
-        @math{g∘f} is defined if @math{cod@_{𝒞}(f) = dom@_{𝒞}(g)}. When @math{g∘f}
-        is defined, @math{dom@_{𝒞}(g∘f) = dom@_{𝒞}(f)} and @math{cod@_{𝒞}(g∘f) = cod@_{𝒞}(g)}.
+        For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, the
+        @deftech{composite} @math{g∘f} (@math{f@deftech{⨾}g}) is defined if
+        @math{cod@_{𝒞}(f) = dom@_{𝒞}(g)}. When @math{g∘f} is defined,
+        @math{dom@_{𝒞}(g∘f) = dom@_{𝒞}(f)} and @math{cod@_{𝒞}(g∘f) = cod@_{𝒞}(g)}.
 
         @image["scribblings/category/images/C-1.svg"]{[picture] C-1.svg}}
   @item{@tech[#:key "associative"]{Associativity} of @tech{composition}
