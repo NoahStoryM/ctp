@@ -46,7 +46,7 @@
 (define (ρ2 a*) (φ2* a* s2))
 
 (module+ test
-  (check-eq? s1 (ρ1 '()))
+  (check-eq? s2 (ρ2 '()))
 
   (check-eq? 'b2 (ρ2 '(#\y #\y)))
   (check-eq? 'o2 (ρ2 '(#\y #\x)))
