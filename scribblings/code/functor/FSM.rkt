@@ -8,12 +8,12 @@
 (: #;𝐒𝐞𝐭  𝒮 𝐂𝐚𝐭) (define (𝒮 m) m) (define ∘𝒮 compose)
 (: #;𝐋𝐢𝐬𝐭 ℒ 𝐂𝐚𝐭) (define (ℒ m) m) (define ∘ℒ append)
 
-(: ℳ1 (Listof (List A1 S1 S1)))
+(: ℳ1 (Listof (Immutable-Vector A1 S1 S1)))
 (define ℳ1
-  '([#\x s1 s1]
-    [#\y s1 b1]
-    [#\y b1 b1]
-    [#\x b1 s1]))
+  '(#[#\x s1 s1]
+    #[#\y s1 b1]
+    #[#\y b1 b1]
+    #[#\x b1 s1]))
 
 (: A1 𝒮) (define-type A1 (∪ #\x #\y))
 (: S1 𝒮) (define-type S1 (∪ 's1 'b1))
@@ -21,11 +21,11 @@
 (: φ1 (→ (× A1 S1) S1))
 (define (φ1 a s)
   (or
-   (for/or ([i : (List A1 S1 S1) (in-list ℳ1)])
+   (for/or ([i : (Immutable-Vector A1 S1 S1) (in-list ℳ1)])
      (match i
-       [`(,(? (curry eq? a))
-          ,(? (curry eq? s))
-          ,s)
+       [`#(,(? (curry eq? a))
+           ,(? (curry eq? s))
+           ,s)
         s]
        [_ #f]))
    (raise-arguments-error
