@@ -44,6 +44,8 @@
 (define (ρ1 a*) (φ1* a* s1))
 
 (module+ test
+  (check-eq? s1 (ρ1 '()))
+
   (check-eq? 'b1 (ρ1 '(#\y #\y)))
   (check-eq? 'b1 (ρ1 '(#\y #\x)))
   (check-eq? 's1 (ρ1 '(#\x #\y)))
