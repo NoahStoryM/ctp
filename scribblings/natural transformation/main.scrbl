@@ -308,9 +308,10 @@ represent the @tech{typed action} @math{φ*}.
 In this context, think of the @tech{run function} @math{ρ}, which takes an input
 sequence @math{w} and returns a @tech{final state} after processing the sequence
 starting from the @tech{initial state} @math{s_0}: @math{ρ(w) = F(w)(s_0)}.
-According to the @tech{Yoneda Lemma}, we see that each @tech{component} of the
-@tech{natural transformation} @math{σ} can be understood as such a
-@tech{run function} starting from @math{s}.
+According to the @tech{Yoneda Lemma}, we see that each @tech{component} of a
+@tech{natural transformation} @math{σ : Hom@_{𝒞}(S, -) ⇒ F} at @math{A} can be
+understood as such a @tech{run function} @math{ρ ≔ σ(A)} starting from a
+@tech{state} @math{s ∈ F(S)}: @math{∀w ∈ Hom@_{𝒞}(S, A), ρ(w) = F(w)(s)}.
 
 To illustrate this correspondence, we'll use Racket code to @racket[define] two
 @tech{procedures}, @racket[s->σ] and @racket[σ->s], which demonstrate how an
