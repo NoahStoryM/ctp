@@ -776,7 +776,7 @@ rather than a @tech{function}, so @math{φ@^{*}} is a @tech{monoid action} in
 
 Here is a Racket example for the @tech{FSM} @math{ℳ_1}
 @math{(A_1 = {x, y}, S_1 = {s_1, b_1}, s_1, φ_1)}, which expects the last
-@tech{letter} to be @math{x} (@math{s} means "start" and @math{b} means "bad"):
+@tech{letter} to be not @math{y} (@math{s} means "start" and @math{b} means "bad"):
 
 @image["scribblings/functor/images/ℳ_1.svg"]{[picture] ℳ_1.svg}
 
