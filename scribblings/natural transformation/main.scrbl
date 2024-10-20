@@ -343,6 +343,8 @@ where @math{S : 𝒞} and @math{F : 𝒞 → 𝐒𝐞𝐭}, and @tech{variable e
 @math{s ∈ F(S)} uniquely corresponds to a @tech{natural transformation}
 @math{σ : Hom@_{𝒞}(S, -) ⇒ F}.
 
+@image["scribblings/natural transformation/images/run.svg"]{[picture] run.svg}
+
 To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TFSM}
 @math{ℳ} defined in @seclink["Typed_Finite_State_Machine"]. We'll denote the
 @tech{path category} @math{F(𝒢)} by @math{𝒞}, and let @math{F : 𝒞 → 𝐒𝐞𝐭}
