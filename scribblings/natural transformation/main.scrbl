@@ -51,6 +51,8 @@ The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 @math{Hom@_{𝒞}(i, -)} is a @tech{natural transformation} from
 @math{Hom@_{𝒞}(a, -)} to @math{Hom@_{𝒞}(b, -)}.
 
+@image["scribblings/natural transformation/images/Hom_1.svg"]{[picture] Hom_1.svg}
+
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: b 𝒞) (: a 𝒞) (: i (→𝒞 b a))
 (: |(→𝒞 i _)| (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 b y)))))
@@ -62,6 +64,8 @@ The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 @bold{Exercise}: For a @tech{morphism} @math{j : x → y : 𝒞}. Prove that
 @math{Hom@_{𝒞}(-, j)} is a @tech{natural transformation} from
 @math{Hom@_{𝒞}(-, x)} to @math{Hom@_{𝒞}(-, y)}.
+
+@image["scribblings/natural transformation/images/Hom_2.svg"]{[picture] Hom_2.svg}
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: x 𝒞) (: y 𝒞) (: j (→𝒞 x y))
