@@ -1,7 +1,14 @@
 #lang scribble/manual
 
 @(require (for-label ctp
-                     (only-meta-in 0 (except-in typed/racket/base/no-check =))
+                     (only-meta-in 0
+                                   (except-in typed/racket/base/no-check
+                                              =
+                                              require/typed
+                                              require/typed/provide)
+                                   (only-in typed/racket/base
+                                            require/typed
+                                            require/typed/provide))
                      rackunit)
           "../ctp-utils.rkt")
 
