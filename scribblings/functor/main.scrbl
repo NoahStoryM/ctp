@@ -893,7 +893,17 @@ Similar to @tech{FSMs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{type
 where @tech{objects} are @tech{nodes} and @tech{morphisms} are @deftech{paths}
 (a sequence of @tech{arrows} connected end to end).
 
-@bold{Exercise}: Try to @racket[define] @math{F}.
+@bold{Exercise}: View a @tech{graph} as a @tech/refer{vector} of @tech{nodes} and
+@tech{arrows}, where each @tech{arrow} is represented by a three-element
+@tech/refer{vector}, consisting of a @tech/refer{character}
+(as the name of the @tech{arrow}), a @tech{source} @tech{node}, and a @tech{target}
+@tech{node}, and each @tech{node} is represented as the @tech{arrow} from itself
+to itself, with the name @racket[#\nul]. Try to @racket[define] the @tech{procedure}
+@racket[F] that constructs the @tech{path category} of @math{𝒢}.
+
+@bold{Exercise}: Try to @racket[define] the @tech{procedure} @racket[make-path],
+which takes a @tech{graph}, a @tech{source} @tech{node} and a @tech/refer{string},
+and returns the corresponding @tech{path}.
 
 Here is how to implement @math{ℳ} in Racket:
 

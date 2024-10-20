@@ -10,11 +10,16 @@
 
 (: ℳ2 (Listof (Immutable-Vector A2 S2 S2)))
 (define ℳ2
-  '(#[#\x s2 o2]
-    #[#\y s2 b2]
+  '(#[#\nul s2 s2]
+    #[#\nul b2 b2]
+    #[#\nul o2 o2]
+
+    #[#\x s2 o2]
     #[#\x b2 b2]
-    #[#\y b2 b2]
     #[#\x o2 o2]
+
+    #[#\y s2 b2]
+    #[#\y b2 b2]
     #[#\y o2 o2]))
 
 (: A2 𝒮) (define-type A2 (∪ #\x #\y))
@@ -25,9 +30,9 @@
   (or
    (for/or ([i : (Immutable-Vector A2 S2 S2) (in-list ℳ2)])
      (match i
-       [`#(,(? (curry eq? a))
+       [`#[,(? (curry eq? a))
            ,(? (curry eq? s))
-           ,s)
+           ,s]
         s]
        [_ #f]))
    (raise-arguments-error
@@ -46,7 +51,7 @@
 (define (ρ2 a*) (φ2* a* s2))
 
 (module+ test
-  (check-eq? s2 (ρ2 '()))
+  (check-eq? s2 (ρ2 '(#\nul)))
 
   (check-eq? 'b2 (ρ2 '(#\y #\y)))
   (check-eq? 'o2 (ρ2 '(#\y #\x)))

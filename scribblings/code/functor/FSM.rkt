@@ -10,10 +10,14 @@
 
 (: ℳ1 (Listof (Immutable-Vector A1 S1 S1)))
 (define ℳ1
-  '(#[#\x s1 s1]
+  '(#[#\nul s1 s1]
+    #[#\nul b1 b1]
+
+    #[#\x s1 s1]
+    #[#\x b1 s1]
+
     #[#\y s1 b1]
-    #[#\y b1 b1]
-    #[#\x b1 s1]))
+    #[#\y b1 b1]))
 
 (: A1 𝒮) (define-type A1 (∪ #\x #\y))
 (: S1 𝒮) (define-type S1 (∪ 's1 'b1))
@@ -23,9 +27,9 @@
   (or
    (for/or ([i : (Immutable-Vector A1 S1 S1) (in-list ℳ1)])
      (match i
-       [`#(,(? (curry eq? a))
+       [`#[,(? (curry eq? a))
            ,(? (curry eq? s))
-           ,s)
+           ,s]
         s]
        [_ #f]))
    (raise-arguments-error
@@ -44,7 +48,7 @@
 (define (ρ1 a*) (φ1* a* s1))
 
 (module+ test
-  (check-eq? s1 (ρ1 '()))
+  (check-eq? s1 (ρ1 '(#\nul)))
 
   (check-eq? 'b1 (ρ1 '(#\y #\y)))
   (check-eq? 'b1 (ρ1 '(#\y #\x)))
