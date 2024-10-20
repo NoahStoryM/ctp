@@ -317,7 +317,22 @@ we can @racket[define] the @tech{compose} operator in @math{𝒟@^{𝒞}} like t
 
 @section{Yoneda Lemma}
 
-The @deftech{Yoneda Lemma} is a fundamental result in @tech{category theory},
+From a philosophical perspective, one could say that the essence of an entity is
+defined by the totality of its relationships with other entities. In
+@tech{category theory}, this concept extends to @tech{morphisms}, which can also
+be considered as fundamental "entities" within a @tech{category}. We can express
+this idea by considering the relationships between a @tech{morphism}
+@math{f : a → b} in a @tech{category} @math{𝒞} and other @tech{morphisms} in
+@math{𝒞}. Specifically, we use the @tech{natural transformations}
+@math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(b, -) ⇒ Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭} and
+@math{Hom@_{𝒞}(-, f) : Hom@_{𝒞}(-, a) ⇒ Hom@_{𝒞}(-, b) : 𝒞@^{op} → 𝐒𝐞𝐭}
+to describe how @math{f} interacts with other @tech{morphisms} in @math{𝒞}.
+This naturally leads us to explore the connection between @math{f},
+@math{Hom@_{𝒞}(f, -)}, and @math{Hom@_{𝒞}(-, f)}. The @tech{Yoneda Lemma}
+answers this question by establishing that these three perspectives are, in fact,
+in one-to-one correspondence with each other.
+
+The @deftech{Yoneda Lemma} is a cornerstone of @tech{category theory},
 establishing a one-to-one correspondence between @tech{elements} of @math{F(S)},
 where @math{S : 𝒞} and @math{F : 𝒞 → 𝐒𝐞𝐭}, and @tech{variable elements} of
 @math{F}, parametrized by @math{Hom@_{𝒞}(S, -)}. Specifically, an @tech{element}
