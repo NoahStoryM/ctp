@@ -8,6 +8,9 @@
 (: #;𝐒𝐞𝐭  𝒮 𝐂𝐚𝐭) (define (𝒮 m) m) (define ∘𝒮 compose)
 (: #;𝐋𝐢𝐬𝐭 ℒ 𝐂𝐚𝐭) (define (ℒ m) m) (define ∘ℒ append)
 
+(define-type A1 (∪ #\x #\y))
+(define-type S1 (∪ 's1 'b1))
+
 (: ℳ1 (Listof (Immutable-Vector A1 S1 S1)))
 (define ℳ1
   '(#[#\nul s1 s1]
@@ -19,8 +22,6 @@
     #[#\y s1 b1]
     #[#\y b1 b1]))
 
-(: A1 𝒮) (define-type A1 (∪ #\x #\y))
-(: S1 𝒮) (define-type S1 (∪ 's1 'b1))
 (: s1 S1) (define s1 's1)
 (: φ1 (→ (× A1 S1) S1))
 (define (φ1 a s)
@@ -55,7 +56,7 @@
   (check-eq? 's1 (ρ1 '(#\x #\y)))
   (check-eq? 's1 (ρ1 '(#\x #\x))))
 
-(: ∗ ℒ) (define ∗ (∘ℒ))
+(define-type ∗ Null)
 (: Fφ1* (→ #;A* (→ℒ ∗ ∗) (→𝒮 S1 S1)))
 (define Fφ1* (curry φ1*))
 

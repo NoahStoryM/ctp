@@ -12,6 +12,11 @@
 (: #;𝐒𝐞𝐭  𝒮 𝐂𝐚𝐭) (define (𝒮 m) m) (define ∘𝒮 compose)
 (: #;𝐋𝐢𝐬𝐭 ℒ 𝐂𝐚𝐭) (define (ℒ m) m) (define ∘ℒ append)
 
+(define-type S0 (∪ 's0 'a0 'r0))
+(define-type S  (∪ S0 S1 S2))
+(define-type 𝒢0 S)
+(define-type 𝒢1 (Immutable-Vector Char 𝒢0 𝒢0))
+
 (: ℳ (Listof 𝒢1))
 (define ℳ
   (append
@@ -35,13 +40,6 @@
      #[#\q o2 a0])
    ℳ1 ℳ2))
 
-(define S0 (set 's0 'a0 'r0))
-(define S1 (set 's1 'b1))
-(define S2 (set 's2 'b2 'o2))
-(define S  (set-union S0 S1 S2))
-
-(define-type 𝒢0 (∪ S0 S1 S2))
-(define-type 𝒢1 (Immutable-Vector Char 𝒢0 𝒢0))
 (: 𝒢 (Immutable-Vectorof 𝒢1))
 (define 𝒢
   '#(#[#\nul S0 S0]
@@ -60,12 +58,7 @@
      #[#\y S1 S1]
      #[#\y S2 S2]))
 
-(define-type F𝒢0 𝒢0)
-(define-type F𝒢1 (Listof 𝒢1))
-(define F𝒢 (F 𝒢))
-
 (: s 𝒢0) (define s 's0)
-
 (: φ (case→ (→ 𝒢0 𝐒𝐞𝐭) (→ 𝒢1 →𝐒𝐞𝐭)))
 (define (φ g)
   (match g
@@ -89,6 +82,7 @@
          "character" a
          "state" s)))]))
 
+(define F𝒢 (F 𝒢))
 (: φ* (∀ ([a : F𝒢] [b : F𝒢]) (→ (→F𝒢 a b) (→𝐒𝐞𝐭 (φ* a) (φ* b)))))
 (define (φ* g*) (apply ∘𝒮 (map φ g*)))
 
