@@ -494,8 +494,8 @@ The @tech{hom sets} form the basis for the concept of @deftech{hom functor}s.
 
 @subsubsection{Covariant Hom Functor}
 
-The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭} takes
-@math{j} to @math{Hom@_{𝒞}(a, j)}.
+The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭}
+takes a @tech{morphism} @math{j : x → y : 𝒞} to @math{Hom@_{𝒞}(a, j)}.
 
 @image["scribblings/functor/images/Hom_1.svg"]{[picture] Hom_1.svg}
 
@@ -511,20 +511,10 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞�
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(a, j)∘Hom@_{𝒞}(a, g) = Hom@_{𝒞}(a, j∘g)}.
 
-@bold{Exercise}: Prove that @math{Hom@_{𝒞}(i, -)} is @bold{not} a @tech{functor}.
-
-@racketblock[
-(: 𝒞 𝐂𝐚𝐭) (: b 𝒞) (: a 𝒞) (: i (→𝒞 b a))
-(: |(→𝒞 i _)| (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 b y)))))
-(define (|(→𝒞 i _)| j)
-  (define |(→𝒞 i j)| (λ (f) (∘𝒞 j f i)))
-  |(→𝒞 i j)|)
-]
-
 @subsubsection{Contravariant Hom Functor}
 
-The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭} takes
-@math{i} to @math{Hom@_{𝒞}(i, x)}.
+The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭}
+takes a @tech{morphism} @math{i : b → a : 𝒞} to @math{Hom@_{𝒞}(i, x)}.
 
 @image["scribblings/functor/images/Hom_2.svg"]{[picture] Hom_2.svg}
 
@@ -540,20 +530,10 @@ The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x) : 𝒞@^{op} →
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(i, x)∘Hom@_{𝒞}(f, x) = Hom@_{𝒞}(f∘i, x)}.
 
-@bold{Exercise}: Prove that @math{Hom@_{𝒞}(-, j)} is @bold{not} a @tech{functor}.
-
-@racketblock[
-(: 𝒞 𝐂𝐚𝐭) (: x 𝒞) (: y 𝒞) (: j (→𝒞 x y))
-(: |(→𝒞 _ j)| (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b y)))))
-(define (|(→𝒞 _ j)| i)
-  (define |(→𝒞 i j)| (λ (f) (∘𝒞 j f i)))
-  |(→𝒞 i j)|)
-]
-
 @subsubsection{Two-Variable Hom Functor}
 
 The @deftech{two-variable hom functor} @math{Hom@_{𝒞}(-, -) : 𝒞@^{op}×𝒞 → 𝐒𝐞𝐭}
-takes @math{i×j} to @math{Hom@_{𝒞}(i, j)}.
+takes @math{(i, j) : (b, x) → (a, y) : 𝒞×𝒞} to @math{Hom@_{𝒞}(i, j)}.
 
 @image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
 

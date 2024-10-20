@@ -47,6 +47,30 @@ In a sense, @math{α(f)} can be considered a @tech{commutative square}.
 The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 @math{𝒞} is the @deftech{component} of @math{α} at @math{a}.
 
+@bold{Exercise}: For a @tech{morphism} @math{i : b → a : 𝒞}. Prove that
+@math{Hom@_{𝒞}(i, -)} is a @tech{natural transformation} from
+@math{Hom@_{𝒞}(a, -)} to @math{Hom@_{𝒞}(b, -)}.
+
+@racketblock[
+(: 𝒞 𝐂𝐚𝐭) (: b 𝒞) (: a 𝒞) (: i (→𝒞 b a))
+(: |(→𝒞 i _)| (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 b y)))))
+(define (|(→𝒞 i _)| j)
+  (define |(→𝒞 i j)| (λ (f) (∘𝒞 j f i)))
+  |(→𝒞 i j)|)
+]
+
+@bold{Exercise}: For a @tech{morphism} @math{j : x → y : 𝒞}. Prove that
+@math{Hom@_{𝒞}(-, j)} is a @tech{natural transformation} from
+@math{Hom@_{𝒞}(-, x)} to @math{Hom@_{𝒞}(-, y)}.
+
+@racketblock[
+(: 𝒞 𝐂𝐚𝐭) (: x 𝒞) (: y 𝒞) (: j (→𝒞 x y))
+(: |(→𝒞 _ j)| (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b y)))))
+(define (|(→𝒞 _ j)| i)
+  (define |(→𝒞 i j)| (λ (f) (∘𝒞 j f i)))
+  |(→𝒞 i j)|)
+]
+
 To verify the properties of @tech{natural transformations}, we'll @racket[define]
 some @tech{check} @tech{procedures} to automate the testing of the
 @tech{naturality} a @tech{natural transformation} has:
