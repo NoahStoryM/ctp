@@ -331,7 +331,7 @@ this idea by considering the relationships between a @tech{morphism}
 @math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(x, -) ⇒ Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭} and
 @math{Hom@_{𝒞}(-, f) : Hom@_{𝒞}(-, a) ⇒ Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭}
 to describe how @math{f} interacts with other @tech{morphisms} in @math{𝒞}.
-This naturally leads us to explore the connection between @math{f},
+This naturally leads us to wonder about the connection between @math{f},
 @math{Hom@_{𝒞}(f, -)}, and @math{Hom@_{𝒞}(-, f)}. The @tech{Yoneda Lemma}
 answers this question by establishing that these three perspectives are, in fact,
 in one-to-one correspondence with each other.
