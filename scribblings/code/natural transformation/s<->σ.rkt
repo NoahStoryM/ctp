@@ -8,8 +8,7 @@
 
 (define-values (dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞) (𝒞))
 
-(: S0 𝒞)
-(define S0 (make-path 𝒢 'S0 ""))
+(: S0 𝒞) (define S0 (make-path 𝒢 'S0 ""))
 
 (: |(→𝒞 S0 _)| (∀ ([X : 𝒞] [Y : 𝒞]) (→ (→𝒞 X Y) (→ (→𝒞 S0 X) (→𝒞 S0 Y)))))
 (define (|(→𝒞 S0 _)| j)
