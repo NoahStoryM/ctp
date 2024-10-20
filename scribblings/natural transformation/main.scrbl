@@ -355,9 +355,9 @@ sequence @math{w} and returns a @tech{final state} after processing the sequence
 starting from the @tech{initial state} @math{s_0}: @math{ρ(w) = F(w)(s_0)}.
 According to the @tech{Yoneda Lemma}, we see that each @tech{component} of a
 @tech{natural transformation} @math{σ : Hom@_{𝒞}(S, -) ⇒ F} at an @tech{object}
-@math{X : 𝒞} can be understood as such a @tech{run function} @math{ρ ≔ σ(X)},
+@math{T : 𝒞} can be understood as such a @tech{run function} @math{ρ ≔ σ(T)},
 starting from a @tech{state} @math{s ∈ F(S)}:
-@math{∀w ∈ Hom@_{𝒞}(S, X), ρ(w) = F(w)(s)}.
+@math{∀w ∈ Hom@_{𝒞}(S, T), ρ(w) = F(w)(s)}.
 
 To illustrate this correspondence, we'll use Racket code to @racket[define] two
 @tech{procedures}, @racket[s->σ] and @racket[σ->s], which demonstrate how an

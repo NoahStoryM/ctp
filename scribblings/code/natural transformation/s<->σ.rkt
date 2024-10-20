@@ -36,6 +36,6 @@
     (define σ (s->σ s))
     (check-eq? s (σ->s σ))
     (for ([w (in-list (list (make-path 𝒢 'S0 "1xyxyxx")))])
-      (define X (cod𝒞 w))
-      (define ρ (σ X))
+      (define T (cod𝒞 w))
+      (define ρ (σ T))
       (check-eq? (ρ w) ((F w) s)))))
