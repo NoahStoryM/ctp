@@ -322,10 +322,10 @@ defined by the totality of its relationships with other entities. In
 @tech{category theory}, this concept extends to @tech{morphisms}, which can also
 be considered as fundamental "entities" within a @tech{category}. We can express
 this idea by considering the relationships between a @tech{morphism}
-@math{f : a → b} in a @tech{category} @math{𝒞} and other @tech{morphisms} in
+@math{f : a → x} in a @tech{category} @math{𝒞} and other @tech{morphisms} in
 @math{𝒞}. Specifically, we use the @tech{natural transformations}
-@math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(b, -) ⇒ Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭} and
-@math{Hom@_{𝒞}(-, f) : Hom@_{𝒞}(-, a) ⇒ Hom@_{𝒞}(-, b) : 𝒞@^{op} → 𝐒𝐞𝐭}
+@math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(x, -) ⇒ Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭} and
+@math{Hom@_{𝒞}(-, f) : Hom@_{𝒞}(-, a) ⇒ Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭}
 to describe how @math{f} interacts with other @tech{morphisms} in @math{𝒞}.
 This naturally leads us to explore the connection between @math{f},
 @math{Hom@_{𝒞}(f, -)}, and @math{Hom@_{𝒞}(-, f)}. The @tech{Yoneda Lemma}
