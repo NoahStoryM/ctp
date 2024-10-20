@@ -34,7 +34,7 @@
 (module+ test
   (for ([s (in-list '(s0 a0 r0))])
     (define σ (s->σ s))
-    (define (ρ f) ((F f) s))
-    (for ([f (in-list (list (make-path 𝒢 'S0 "1xyxyxx")))])
-      (define X (cod𝒞 f))
-      (check-eq? ((σ X) f) (ρ f)))))
+    (for ([w (in-list (list (make-path 𝒢 'S0 "1xyxyxx")))])
+      (define X (cod𝒞 w))
+      (define ρ (σ X))
+      (check-eq? (ρ w) ((F w) s)))))
