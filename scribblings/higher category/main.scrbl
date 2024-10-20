@@ -101,7 +101,7 @@ By default, @tech{string diagrams} are read from right to left and from bottom
 to top.
 }
 
-@image["scribblings/natural transformation/images/α.svg"]{[picture] α.svg}
+@image["scribblings/higher category/images/α.svg"]{[picture] α.svg}
 
 We also use special notations in @tech{string diagrams}:
 
@@ -119,19 +119,19 @@ visually distinct representations of the same structures.
 The first one shows a @tech{2-cell} @math{α : G∘F ⇒ id@_{𝒞}}, where
 @math{F : 𝒞 → 𝒟 : 𝐂} and @math{G : 𝒟 → 𝒞 : 𝐂}:
 
-@image["scribblings/natural transformation/images/α_0.svg"]{[picture] α_0.svg}
-@image["scribblings/natural transformation/images/α_1.svg"]{[picture] α_1.svg}
-@image["scribblings/natural transformation/images/α_2.svg"]{[picture] α_2.svg}
-@image["scribblings/natural transformation/images/α_3.svg"]{[picture] α_3.svg}
+@image["scribblings/higher category/images/α_0.svg"]{[picture] α_0.svg}
+@image["scribblings/higher category/images/α_1.svg"]{[picture] α_1.svg}
+@image["scribblings/higher category/images/α_2.svg"]{[picture] α_2.svg}
+@image["scribblings/higher category/images/α_3.svg"]{[picture] α_3.svg}
 
 The second one shows two @tech{2-cells} @math{α : G∘F ⇒ id@_{𝒞}} and
 @math{β : id@_{𝒟} ⇒ H∘G}, where @math{F : 𝒞 → 𝒟 : 𝐂}, @math{G : 𝒟 → 𝒞 : 𝐂},
 and @math{H : 𝒞 → 𝒟 : 𝐂}:
 
-@image["scribblings/natural transformation/images/β&α_0.svg"]{[picture] β&α_0.svg}
-@image["scribblings/natural transformation/images/β&α_1.svg"]{[picture] β&α_1.svg}
-@image["scribblings/natural transformation/images/β&α_2.svg"]{[picture] β&α_2.svg}
-@image["scribblings/natural transformation/images/β&α_3.svg"]{[picture] β&α_3.svg}
+@image["scribblings/higher category/images/β&α_0.svg"]{[picture] β&α_0.svg}
+@image["scribblings/higher category/images/β&α_1.svg"]{[picture] β&α_1.svg}
+@image["scribblings/higher category/images/β&α_2.svg"]{[picture] β&α_2.svg}
+@image["scribblings/higher category/images/β&α_3.svg"]{[picture] β&α_3.svg}
 
 The advantage of using @tech{string diagrams} lies in their simplicity when
 representing complex structures in a @tech{2-category}. Instead of working with
@@ -142,7 +142,7 @@ part of the structure interacts with the others.
 @bold{Exercise}: The following is a @tech{string diagram}, try to draw the
 corresponding @tech{diagram}.
 
-@image["scribblings/natural transformation/images/str-diag.svg"]{[picture] str-diag.svg}
+@image["scribblings/higher category/images/str-diag.svg"]{[picture] str-diag.svg}
 
 If there are no @tech{2-cells} in a @tech{string diagram}, we can further
 compress it for simplicity. Specifically:
@@ -185,7 +185,7 @@ In a @tech{2-category} @math{𝐂}, @tech{equivalence} is a weaker version of
 if @math{id@_{𝒞} ≅ G∘F} and @math{F∘G ≅ id@_{𝒟}}, then @math{F} and @math{G} are
 both @deftech{equivalence}s (often called be @deftech{weakly invertible}).
 
-@image["scribblings/natural transformation/images/eqv.svg"]{[picture] eqv.svg}
+@image["scribblings/higher category/images/eqv.svg"]{[picture] eqv.svg}
 
 In this case, both @math{F} and @math{G} are @tech{inverses} up to
 @tech{2-isomorphisms} @math{η : id@_{𝒞} ⇒ G∘F} and @math{ϵ : F∘G ⇒ id@_{𝒟}}.
