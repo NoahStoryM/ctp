@@ -1,7 +1,9 @@
 #lang typed/racket/base/no-check
 
-(require (only-in "../functor/TFSM.rkt" 𝒢 [F𝒢 𝒞] [φ* F])
-         "../../exercises/functor/make-path.rkt")
+(require "../../exercises/functor/make-path.rkt"
+         (only-in "../functor/TFSM.rkt" 𝒢 [F𝒢 𝒞]))
+(require/typed "../functor/TFSM.rkt"
+  [(φ* F) (∀ ([X : 𝒞] [Y : 𝒞]) (→ (→𝒞 X Y) (→ (F X) (F Y))))])
 (provide s->σ σ->s)
 
 (module+ test (require rackunit))
@@ -14,8 +16,6 @@
 (define (|(→𝒞 S0 _)| j)
   (define |(→𝒞 S0 j)| (λ (f) (∘𝒞 j f)))
   |(→𝒞 S0 j)|)
-
-(: F (∀ ([X : 𝒞] [Y : 𝒞]) (→ (→𝒞 X Y) (→ (F X) (F Y)))))
 
 (: s->σ (→ (F S0) (⇒ |(→𝒞 S0 _)| F)))
 (define (s->σ s)
