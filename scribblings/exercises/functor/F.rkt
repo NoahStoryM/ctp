@@ -25,7 +25,7 @@
   (define (? p)
     (match p
       [`(#[,(? name?) ,_ ,_]) #t]
-      [`(#[,(? name?) ,n1 ,_] #[,(? name?) ,_ ,n1] . _) (? (cdr p))]
+      [`(#[,(? name?) ,n1 ,_] #[,(? name?) ,_ ,n1] . ,_) (? (cdr p))]
       [_ #f]))
   (define =
     (case-λ
