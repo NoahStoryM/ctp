@@ -289,6 +289,10 @@ and @math{F} and @math{G} are @deftech{naturally isomorphic} to each other.
 
 @image["scribblings/natural transformation/images/𝐂𝐚𝐭^v.svg"]{[picture] 𝐂𝐚𝐭^v.svg}
 
+@bold{Exercise}: Prove that a @tech{natural transformation} @math{α : F ⇒ G : 𝒞 → 𝒟}
+is a @tech{natural isomorphism} iff each @tech{component} of @math{α} is an
+@tech{isomorphism} in @math{𝒟}.
+
 In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} serves as the @tech{composition}
 operation for @tech{morphisms}. This perspective helps us understand why
 @tech{functors} can be viewed as a special case of @tech{natural transformations}.
