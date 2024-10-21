@@ -103,10 +103,6 @@ The following example illustrates how to implement @tech{functors} in Racket:
 
 @racketfile{code/functor/𝐒𝐞𝐭→𝐑𝐞𝐥.rkt}
 
-@bold{Exercise}: Prove that @tech{functors} @math{F : 𝒞 → 𝒟} and @math{G : 𝒟 → ℰ}
-can be @tech[#:key "compose"]{composed}: @math{G∘F(f) = G(F(f))}, and that this
-@tech{composition} is @tech{associative}.
-
 @bold{Exercise}: Show that a @deftech{diagram} can be defined as a @tech{functor},
 where the @tech{domain} is called the @deftech{indexing category} of the
 @tech{diagram}.
@@ -154,10 +150,18 @@ Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
 
 @subsection{Category of Categories}
 
-The @tech{category} of @tech{categories}, denoted as @tech{𝐂𝐚𝐭}, forms a
-higher-level structure where @tech{objects} are @tech{categories} and @tech{morphisms}
-are @tech{functors} between them. An @deftech{endofunctor} is an @tech{endomorphism}
-in @tech{𝐂𝐚𝐭}, and an @deftech{autofunctor} is an @tech{automorphism} in @tech{𝐂𝐚𝐭}.
+Since @tech{functors} are defined as a kind of @tech{function}, it is natural to
+@racket[define] the @tech{composition} of @tech{functors} in the same way as the
+@tech{composition} of @tech{functions}: @math{G∘F(f) = G(F(f))}. This allows us
+to treat @tech{functors} as @tech{morphisms}, leading to the construction of the
+@tech{category} of @tech{categories}, denoted as @tech{𝐂𝐚𝐭}, which forms a
+higher-level structure.
+
+@bold{Exercise}: Prove that the @tech{composition} of @tech{functors} is
+@tech{associative}.
+
+An @deftech{endofunctor} is an @tech{endomorphism} in @tech{𝐂𝐚𝐭}, while an
+@deftech{autofunctor} is an @tech{automorphism} in @tech{𝐂𝐚𝐭}.
 
 @bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is a
 @tech{fully faithful} @tech{functor}.

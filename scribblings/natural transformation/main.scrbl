@@ -103,15 +103,13 @@ insight into their algebraic properties.
 
 @subsubsection{Horizontal Composition}
 
-Just as @tech{functors} can be @tech[#:key "compose"]{composed}, so can
-@tech{natural transformations}. In fact, a key insight is that @tech{functors}
-themselves can be viewed as special types of @tech{natural transformations}.
 Given that @tech{natural transformations} are defined as mappings of
 @tech{morphisms}, it is natural to consider whether and how they can be
 @tech[#:key "compose"]{composed}, similar to the @tech{composition} of
-@tech{functions} or @tech{functors}. This leads us to @racket[define] a type of
-@tech{composition} for @tech{natural transformations}, known as
-@tech{horizontal composition}.
+@tech{functors}. In fact, a key insight is that @tech{functors} themselves can
+be viewed as special types of @tech{natural transformations}. This leads us to
+@racket[define] a type of @tech{composition} for @tech{natural transformations},
+known as @tech{horizontal composition}.
 
 Consider two @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟} and
 @math{β : H ⇒ K : 𝒟 → ℰ}. The @deftech{horizontal composition}
