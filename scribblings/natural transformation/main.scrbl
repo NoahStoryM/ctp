@@ -331,9 +331,9 @@ we can @racket[define] the @tech{compose} operator in @math{𝒟@^{𝒞}} like t
 @section{Yoneda Lemma}
 
 From a philosophical perspective, one could say that the essence of an entity is
-defined by the totality of its relationships with other entities. In
-@tech{category theory}, this concept extends to @tech{morphisms}, which can also
-be considered as fundamental "entities" within a @tech{category}.
+the totality of its relationships with other entities. In @tech{category theory},
+this concept extends to @tech{morphisms}, which can also be considered fundamental
+"entities" within a @tech{category}.
 
 We can express this idea by considering the relationships between a @tech{morphism}
 @math{f : a → x} in a @tech{category} @math{𝒞} and other @tech{morphisms} in
