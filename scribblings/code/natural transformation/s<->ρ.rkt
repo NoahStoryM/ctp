@@ -4,7 +4,7 @@
          (only-in "../functor/TFSM.rkt" 𝒢 [F𝒢 𝒞]))
 (require/typed "../functor/TFSM.rkt"
   [(φ* F) (∀ ([X : 𝒞] [Y : 𝒞]) (→ (→𝒞 X Y) (→ (F X) (F Y))))])
-(provide s->σ σ->s)
+(provide s->ρ ρ->s)
 
 (module+ test (require rackunit))
 
@@ -17,25 +17,21 @@
   (define |(→𝒞 S0 j)| (λ (f) (∘𝒞 j f)))
   |(→𝒞 S0 j)|)
 
-(: s->σ (→ (F S0) (⇒ |(→𝒞 S0 _)| F)))
-(define (s->σ s)
-  (: σ (∀ ([X : 𝒞] [Y : 𝒞]) (→ (→𝒞 X Y) (→ (→𝒞 S0 X) (F Y)))))
-  (define (σ j)
-    (define (ρ f) ((F (∘𝒞 j f)) s))
-    ρ)
-  σ)
+(: s->ρ (→ (F S0) (⇒ |(→𝒞 S0 _)| F)))
+(define (s->ρ s)
+  (: ρ (∀ ([X : 𝒞] [Y : 𝒞]) (→ (→𝒞 X Y) (→ (→𝒞 S0 X) (F Y)))))
+  (define (ρ j) (λ (f) ((F (∘𝒞 j f)) s)))
+  ρ)
 
-(: σ->s (→ (⇒ |(→𝒞 S0 _)| F) (F S0)))
-(define (σ->s σ)
-  (define ρ (σ S0))
-  (define s (ρ S0))
+(: ρ->s (→ (⇒ |(→𝒞 S0 _)| F) (F S0)))
+(define (ρ->s ρ)
+  (define s ((ρ S0) S0))
   s)
 
 (module+ test
   (for ([s (in-list '(s0 a0 r0))])
-    (define σ (s->σ s))
-    (check-eq? s (σ->s σ))
+    (define ρ (s->ρ s))
+    (check-eq? s (ρ->s ρ))
     (for ([w (in-list (list (make-path 𝒢 'S0 "1xyxyxx")))])
       (define T (cod𝒞 w))
-      (define ρ (σ T))
-      (check-eq? (ρ w) ((F w) s)))))
+      (check-eq? ((ρ T) w) ((F w) s)))))

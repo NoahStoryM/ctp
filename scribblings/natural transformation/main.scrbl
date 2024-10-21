@@ -352,7 +352,7 @@ establishing a one-to-one correspondence between @tech{elements} of @math{F(S)},
 where @math{S : 𝒞} and @math{F : 𝒞 → 𝐒𝐞𝐭}, and @tech{variable elements} of
 @math{F}, parametrized by @math{Hom@_{𝒞}(S, -)}. Specifically, an @tech{element}
 @math{s ∈ F(S)} uniquely corresponds to a @tech{natural transformation}
-@math{σ : Hom@_{𝒞}(S, -) ⇒ F}.
+@math{ρ : Hom@_{𝒞}(S, -) ⇒ F}.
 
 @image["scribblings/natural transformation/images/run.svg"]{[picture] run.svg}
 
@@ -361,19 +361,18 @@ To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TFSM}
 @tech{path category} @math{F(𝒢)} by @math{𝒞}, and let @math{F : 𝒞 → 𝐒𝐞𝐭}
 represent the @tech{typed action} @math{φ*}.
 
-In this context, think of the @tech{run function} @math{ρ}, which takes an input
-sequence @math{w} and returns a @tech{final state} after processing the sequence,
-starting from the @tech{initial state} @math{s_0}: @math{ρ(w) = F(w)(s_0)}.
+In this context, think of the @tech{run function}, which takes an input sequence
+@math{w} and returns a @tech{final state} @math{F(w)(s_0)} after processing
+@math{w}, starting from the @tech{initial state} @math{s_0}.
 According to the @tech{Yoneda Lemma}, we see that each @tech{component} of a
-@tech{natural transformation} @math{σ : Hom@_{𝒞}(S, -) ⇒ F} at an @tech{object}
-@math{T : 𝒞} can be understood as such a @tech{run function} @math{ρ ≔ σ(T)},
-starting from a @tech{state} @math{s ∈ F(S)}:
-@math{∀w ∈ Hom@_{𝒞}(S, T), ρ(w) = F(w)(s)}.
+@tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} at an @tech{object}
+@math{T : 𝒞} can be understood as such a @tech{run function}, starting from a
+@tech{state} @math{s ∈ F(S)}: @math{∀w ∈ Hom@_{𝒞}(S, T), ρ(T)(w) = F(w)(s)}.
 
 To illustrate this correspondence, we'll use Racket code to @racket[define] two
-@tech{procedures}, @racket[s->σ] and @racket[σ->s], which demonstrate how an
+@tech{procedures}, @racket[s->ρ] and @racket[ρ->s], which demonstrate how an
 @tech{element} @math{s} of @math{F(S)} can be transformed into a
-@tech{natural transformation} @math{σ}, and vice versa, providing a concrete way
+@tech{natural transformation} @math{ρ}, and vice versa, providing a concrete way
 to visualize the one-to-one correspondence described by the @tech{Yoneda Lemma}.
 
-@racketfile{code/natural transformation/s<->σ.rkt}
+@racketfile{code/natural transformation/s<->ρ.rkt}
