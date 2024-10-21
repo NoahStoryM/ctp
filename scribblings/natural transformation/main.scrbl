@@ -335,13 +335,15 @@ we can @racket[define] the @tech{compose} operator in @math{𝒟@^{𝒞}} like t
 From a philosophical perspective, one could say that the essence of an entity is
 defined by the totality of its relationships with other entities. In
 @tech{category theory}, this concept extends to @tech{morphisms}, which can also
-be considered as fundamental "entities" within a @tech{category}. We can express
-this idea by considering the relationships between a @tech{morphism}
+be considered as fundamental "entities" within a @tech{category}.
+
+We can express this idea by considering the relationships between a @tech{morphism}
 @math{f : a → x} in a @tech{category} @math{𝒞} and other @tech{morphisms} in
 @math{𝒞}. Specifically, we use the @tech{natural transformations}
 @math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(x, -) ⇒ Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭} and
 @math{Hom@_{𝒞}(-, f) : Hom@_{𝒞}(-, a) ⇒ Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭}
 to describe how @math{f} interacts with other @tech{morphisms} in @math{𝒞}.
+
 This naturally leads us to wonder about the connection between @math{f},
 @math{Hom@_{𝒞}(f, -)}, and @math{Hom@_{𝒞}(-, f)}. The @tech{Yoneda Lemma}
 answers this question by establishing that these three perspectives are, in fact,
@@ -359,11 +361,11 @@ where @math{S : 𝒞} and @math{F : 𝒞 → 𝐒𝐞𝐭}, and @tech{variable e
 To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TFSM}
 @math{ℳ} defined in @seclink["Typed_Finite_State_Machine"]. We'll denote the
 @tech{path category} @math{F(𝒢)} by @math{𝒞}, and let @math{F : 𝒞 → 𝐒𝐞𝐭}
-represent the @tech{typed action} @math{φ*}.
+represent the @tech{typed action} @math{φ*}. In this context, think of the
+@tech{run function}, which takes an input sequence @math{w} and returns a
+@tech{final state} @math{F(w)(s_0)} after processing @math{w}, starting from the
+@tech{initial state} @math{s_0}.
 
-In this context, think of the @tech{run function}, which takes an input sequence
-@math{w} and returns a @tech{final state} @math{F(w)(s_0)} after processing
-@math{w}, starting from the @tech{initial state} @math{s_0}.
 According to the @tech{Yoneda Lemma}, we see that each @tech{component} of a
 @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} at an @tech{object}
 @math{T : 𝒞} can be understood as such a @tech{run function}, starting from a
