@@ -459,15 +459,17 @@ theoretical importance due to the @tech{Yoneda Lemma}, a fundamental result in
 @subsection{Powerset Functor}
 
 The @deftech{powerset} of a @tech{set} @math{s}, denoted by @math{𝒫(s)}, is the
-@tech{set} of all @tech{subsets} of @math{s}.
+@tech{set} of all @tech{subsets} of @math{s}. This concept is central to several
+@tech{powerset functors}, which map @tech{sets} to their corresponding
+@tech{powersets}.
 
 @racketfile{code/function/𝒫.rkt}
 
 @image["scribblings/functor/images/f.svg"]{[picture] f.svg}
 
-For a @tech{function} @math{f : a → b}, let @math{a_0} be a @tech{subset} of
-@math{a} and @math{b_0} be a @tech{subset} of @math{b}. There are different
-@deftech{powerset functor}s, all of which map a @tech{set} @math{s} to @math{𝒫(s)}.
+Given a @tech{function} @math{f : a → b}, where @math{a_0} is a @tech{subset} of
+@math{a} and @math{b_0} is a @tech{subset} of @math{b}, we can @racket[define]
+several @deftech{powerset functor}s that map a @tech{set} @math{s} to @math{𝒫(s)}.
 
 @subsubsection{Direct Image Functor}
 
@@ -509,12 +511,17 @@ The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f
 
 @subsection{Hom Functor}
 
-The @tech{hom sets} form the basis for the concept of @deftech{hom functor}s.
+The @deftech{hom functor} is a key construction in @tech{category theory}. It
+provides a way to associate a @tech{set} of @tech{morphisms} to each pair of
+@tech{objects} in a @tech{category}. @tech{Hom functors} play a central role in
+studying how @tech{objects} within a @tech{category} are related to each other
+via @tech{morphisms}, and they are foundational to concepts like the
+@tech{Yoneda Lemma}.
 
 @subsubsection{Covariant Hom Functor}
 
-The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭}
-takes a @tech{morphism} @math{j : x → y : 𝒞} to @math{Hom@_{𝒞}(a, j)}.
+The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭} maps a
+@tech{morphism} @math{j : x → y : 𝒞} to @math{Hom@_{𝒞}(a, j)}.
 
 @image["scribblings/functor/images/Hom_1.svg"]{[picture] Hom_1.svg}
 
@@ -533,7 +540,7 @@ takes a @tech{morphism} @math{j : x → y : 𝒞} to @math{Hom@_{𝒞}(a, j)}.
 @subsubsection{Contravariant Hom Functor}
 
 The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭}
-takes a @tech{morphism} @math{i : b → a : 𝒞} to @math{Hom@_{𝒞}(i, x)}.
+maps a @tech{morphism} @math{i : b → a : 𝒞} to @math{Hom@_{𝒞}(i, x)}.
 
 @image["scribblings/functor/images/Hom_2.svg"]{[picture] Hom_2.svg}
 
@@ -552,7 +559,7 @@ takes a @tech{morphism} @math{i : b → a : 𝒞} to @math{Hom@_{𝒞}(i, x)}.
 @subsubsection{Two-Variable Hom Functor}
 
 The @deftech{two-variable hom functor} @math{Hom@_{𝒞}(-, -) : 𝒞@^{op}×𝒞 → 𝐒𝐞𝐭}
-takes @math{(i, j) : (b, x) → (a, y) : 𝒞×𝒞} to @math{Hom@_{𝒞}(i, j)}.
+maps @math{(i, j) : (b, x) → (a, y) : 𝒞×𝒞} to @math{Hom@_{𝒞}(i, j)}.
 
 @image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
 
