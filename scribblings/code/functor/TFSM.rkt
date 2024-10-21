@@ -83,6 +83,23 @@
          "state" s)))]))
 
 (define F𝒢 (F 𝒢))
+(module+ test
+  (require "../category/check.rkt")
+
+  ;; Objects
+  (define S0 (make-path 𝒢 'S0 ""))
+  (define S1 (make-path 𝒢 'S1 ""))
+  (define S2 (make-path 𝒢 'S2 ""))
+  (define S3 (make-path 𝒢 'S3 ""))
+
+  ;; Morphisms
+  (define f (make-path 𝒢 'S0 "1yxy"))
+  (define g (make-path 𝒢 'S1 "xq2y"))
+  (define h (make-path 𝒢 'S2 "xxyq"))
+
+  (define check-F𝒢 (check-cat F𝒢))
+  (check-F𝒢 S0 S1 S2 S3 f g h))
+
 (: φ* (∀ ([a : F𝒢] [b : F𝒢]) (→ (→F𝒢 a b) (→𝐒𝐞𝐭 (φ* a) (φ* b)))))
 (define (φ* g*) (apply ∘𝒮 (map φ g*)))
 
@@ -90,11 +107,6 @@
 (define (ρ g*) ((φ* g*) s))
 
 (module+ test
-  (define S0 (make-path 𝒢 'S0 ""))
   (check-eq? s (ρ S0))
-
-  (define m (make-path 𝒢 'S0 "1yxyq"))
-  (define n (make-path 𝒢 'S0 "2xyyq"))
-  (check-eq?
-   ((φ* (∘ℒ n m)) s)
-   ((∘𝒮 (φ* n) (φ* m)) s)))
+  (check-eq? ((φ* (∘ℒ g f)) s)
+             ((∘𝒮 (φ* g) (φ* f)) s)))
