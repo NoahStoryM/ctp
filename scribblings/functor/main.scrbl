@@ -119,9 +119,6 @@ A @tech{functor} @math{F : 𝒞 → 𝒟} @deftech{preserve}s a property @math{P
 Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
 @tech{morphisms} in @math{𝒟} if whenever @math{F(f)} has @math{P}, so does @math{f}.
 
-@bold{Exercise}: Prove that every @tech{functor} @tech{preserves}
-@tech{commutative diagrams}.
-
 @math{F} may have additional properties:
 
 @itemlist[
@@ -138,6 +135,9 @@ Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
         induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
         is @tech{bijective}.}
 ]
+
+@bold{Exercise}: Prove that every @tech{functor} @tech{preserves}
+@tech{commutative diagrams}.
 
 @bold{Exercise}: Prove that every @tech{faithful} @tech{functor} @tech{reflects}
 @tech{commutative diagrams}.
