@@ -437,9 +437,24 @@ The @tech{category} of @deftech{graph}, denoted as @deftech{𝐆𝐫𝐟}, where
 @section{𝐒𝐞𝐭-Valued Functor}
 
 A @deftech{𝐒𝐞𝐭-valued functor} on @math{𝒞} is a @tech{functor} from @math{𝒞} to
-@tech{𝐒𝐞𝐭}. @tech{𝐒𝐞𝐭-valued functors} have theoretical importance due to the
-@tech{Yoneda Lemma}, a fundamental result in @tech{category theory} that will be
-introduced in detail in the next @seclink["_Natural_Transformation_"]{chapter}.
+@tech{𝐒𝐞𝐭}. Such @tech{functors} map @tech{objects} in @math{𝒞} to @tech{sets},
+and @tech{morphisms} in @math{𝒞} to @tech{functions} between these @tech{sets}.
+These @tech{functors} are central to many areas of @tech{category theory}.
+
+@margin-note{
+More generally, given any @tech{category} @math{𝒟}, a @math{𝒟}-valued
+@tech{presheaf} on @math{𝒞} is a @tech{functor} from @math{𝒞@^{op}} to @math{𝒟}.
+}
+
+One important type of @tech{𝐒𝐞𝐭-valued functor} is the @deftech{presheaf}, which
+is a @tech{functor} from @math{𝒞@^{op}} to @tech{𝐒𝐞𝐭}. The name @tech{presheaf}
+comes from @deftech{topology}, but the concept applies to arbitrary
+@tech{categories}.
+
+@tech{𝐒𝐞𝐭-valued functors}, including @tech[#:key "presheaf"]{presheaves}, have
+theoretical importance due to the @tech{Yoneda Lemma}, a fundamental result in
+@tech{category theory} that will be introduced in detail in the next
+@seclink["_Natural_Transformation_"]{chapter}.
 
 @subsection{Powerset Functor}
 
