@@ -378,7 +378,7 @@ to visualize the one-to-one correspondence described by the @tech{Yoneda Lemma}.
 
 This correspondence also holds for @tech{contravariant hom functors}. There is a
 one-to-one correspondence between @tech{elements} of @math{G(T)}, where
-@math{T : 𝒞@^{op}}and @math{G : 𝒞@^{op} → 𝐒𝐞𝐭}, and @tech{variable elements} of
+@math{T : 𝒞@^{op}} and @math{G : 𝒞@^{op} → 𝐒𝐞𝐭}, and @tech{variable elements} of
 @math{G}, parametrized by @math{Hom@_{𝒞}(-, T)}. Specifically, an @tech{element}
 @math{t ∈ G(T)} uniquely corresponds to a @tech{natural transformation}
 @math{ρ : Hom@_{𝒞}(-, T) ⇒ G}.
