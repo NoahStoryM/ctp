@@ -353,7 +353,7 @@ The @deftech{Yoneda Lemma} sets up a one-to-one correspondence between
 Specifically, an @tech{element} @math{s ∈ F(S)} uniquely corresponds to a
 @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F}.
 
-@image["scribblings/natural transformation/images/run.svg"]{[picture] run.svg}
+@image["scribblings/natural transformation/images/run_1.svg"]{[picture] run_1.svg}
 
 To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TFSM}
 @math{ℳ} defined in @seclink["Typed_Finite_State_Machine"]. We'll denote the
@@ -375,3 +375,15 @@ To illustrate this correspondence, we'll use Racket code to @racket[define] two
 to visualize the one-to-one correspondence described by the @tech{Yoneda Lemma}.
 
 @racketfile{code/natural transformation/s<->ρ.rkt}
+
+This correspondence also holds for @tech{contravariant hom functors}. There is a
+one-to-one correspondence between @tech{elements} of @math{G(T)}, where
+@math{T : 𝒞@^{op}}and @math{G : 𝒞@^{op} → 𝐒𝐞𝐭}, and @tech{variable elements} of
+@math{G}, parametrized by @math{Hom@_{𝒞}(-, T)}. Specifically, an @tech{element}
+@math{t ∈ G(T)} uniquely corresponds to a @tech{natural transformation}
+@math{ρ : Hom@_{𝒞}(-, T) ⇒ G}.
+
+@image["scribblings/natural transformation/images/run_2.svg"]{[picture] run_2.svg}
+
+@bold{Exercise}: Try to @racket[define] two @tech{procedures} using Racket code:
+@racket[t->ρ] and @racket[ρ->t].
