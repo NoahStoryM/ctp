@@ -343,16 +343,16 @@ We can express this idea by considering the relationships between a @tech{morphi
 to describe how @math{f} interacts with other @tech{morphisms} in @math{𝒞}.
 
 This naturally leads us to wonder about the connection between @math{f},
-@math{Hom@_{𝒞}(f, -)}, and @math{Hom@_{𝒞}(-, f)}. The @tech{Yoneda Lemma}
-answers this question by establishing that these three perspectives are, in fact,
-in one-to-one correspondence with each other.
+@math{Hom@_{𝒞}(f, -)}, and @math{Hom@_{𝒞}(-, f)}. The @tech{Yoneda Lemma},
+a cornerstone of @tech{category theory}, answers this question by establishing
+that these three perspectives are, in fact, in one-to-one correspondence with
+each other.
 
-The @deftech{Yoneda Lemma} is a cornerstone of @tech{category theory},
-establishing a one-to-one correspondence between @tech{elements} of @math{F(S)},
-where @math{S : 𝒞} and @math{F : 𝒞 → 𝐒𝐞𝐭}, and @tech{variable elements} of
-@math{F}, parametrized by @math{Hom@_{𝒞}(S, -)}. Specifically, an @tech{element}
-@math{s ∈ F(S)} uniquely corresponds to a @tech{natural transformation}
-@math{ρ : Hom@_{𝒞}(S, -) ⇒ F}.
+The @deftech{Yoneda Lemma} establishes a one-to-one correspondence between
+@tech{elements} of @math{F(S)}, where @math{S : 𝒞} and @math{F : 𝒞 → 𝐒𝐞𝐭}, and
+@tech{variable elements} of @math{F}, parametrized by @math{Hom@_{𝒞}(S, -)}.
+Specifically, an @tech{element} @math{s ∈ F(S)} uniquely corresponds to a
+@tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F}.
 
 @image["scribblings/natural transformation/images/run.svg"]{[picture] run.svg}
 
