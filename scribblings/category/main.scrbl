@@ -1105,9 +1105,9 @@ The following @tech{diagrams} are @tech{commutative}:
 
 @subsubsection{Representative Subcategory}
 
-A @deftech{@deftech{representative} subcategory} is a @tech{subcategory} @math{𝒟}
-of a @tech{category} @math{𝒞} that every @tech{object} of @math{𝒞} is
-@tech{isomorphic} to some @tech{object} of @math{𝒟}.
+A @deftech{representative subcategory} is a @tech{subcategory} @math{𝒟} of a
+@tech{category} @math{𝒞} that every @tech{object} of @math{𝒞} is @tech{isomorphic}
+to some @tech{object} of @math{𝒟}.
 
 @subsubsection{Replete Subcategory}
 

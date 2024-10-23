@@ -243,12 +243,20 @@ For instance, in the @secref{Category_of_Sets}, @tech{morphisms} of @tech{𝐒�
 defined as @racket[hash] tables, but essentially they are mappings and might be
 defined as @tech{procedures} in later sections.
 
+@subsection{Representative Functor}
+
+A @deftech{@deftech{representative} functor} @math{F : 𝒞 → 𝒟} is a @tech{functor}
+that @math{∀d ∈ 𝒟_0, ∃c ∈ 𝒞_0, F(c) ≅ d}.
+
 @subsection{Inclusion Functor}
 
 The @deftech{inclusion functor} @math{I : 𝒟 → 𝒞} is a @tech{functor} which sends
 each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
 @bold{Exercise}: Prove @math{𝒟 ⊆ 𝒞}.
+
+@bold{Exercise}: Prove that if @math{I} is @tech{representative}, then @math{𝒟}
+is a @tech{representative subcategory} of @math{𝒞}.
 
 @bold{Exercise}: Prove that every @tech{inclusion functor} is a
 @tech{faithful} @tech{functor}.
