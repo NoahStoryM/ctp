@@ -396,6 +396,10 @@ The definition of the @tech{Yoneda Lemma} can be generalized by replacing the
 @deftech{representable functor} and we say that @math{S} @deftech{represent}s
 this @tech{functor}.
 
+@bold{Exercise}: For a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭}. Prove that if
+@tech{objects} @math{a} and @math{x} in @math{𝒞} both @tech{represent} @math{F},
+then @math{a ≅ x}.
+
 An important corollary of the @tech{Yoneda Lemma} is that
 @tech{natural transformations} between @tech{hom functors} from a @tech{category}
 @math{𝒞} can only be of the "Hom form" because they correspond exactly to
@@ -407,6 +411,9 @@ According to the @tech{Yoneda Lemma}, an @tech{element} @math{f ∈ Hom@_{𝒞}(
 which is also a @tech{morphism} in @math{𝒞}, uniquely corresponds to the
 @tech{natural transformation} @math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(x, -) ⇒ Hom@_{𝒞}(a, -)}.
 
+@bold{Exercise}: Prove that @math{Hom@_{𝒞}(f, -)} is a @tech{natural isomorphism}
+iff @math{f} is an @tech{isomorphism} in @math{𝒞}.
+
 This shows that any @tech{natural transformation} between @tech{hom functors}
 is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 @tech{Yoneda Lemma} establishes a one-to-one correspondence between a
@@ -414,3 +421,6 @@ is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 
 @bold{Exercise}: Show the one-to-one correspondence between @math{f} and
 @math{Hom@_{𝒞}(-, f)}.
+
+@bold{Exercise}: Prove that @math{Hom@_{𝒞}(-, f)} is a @tech{natural isomorphism}
+iff @math{f} is an @tech{isomorphism} in @math{𝒞}.
