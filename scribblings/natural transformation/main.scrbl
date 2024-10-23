@@ -389,3 +389,22 @@ one-to-one correspondence between @tech{elements} of @math{G(T)}, where
 
 @bold{Exercise}: Try to @racket[define] two @tech{procedures} using Racket code:
 @racket[t->ρ] and @racket[ρ->t].
+
+An important corollary of the @tech{Yoneda Lemma} is that
+@tech{natural transformations} between @tech{hom functors} from a @tech{category}
+@math{𝒞} can only be of the "Hom form" because they correspond exactly to
+@tech{morphisms} in @math{𝒞}.
+
+To illustrate this, consider two @tech{hom functors} @math{Hom@_{𝒞}(x, −)} and
+@math{Hom@_{𝒞}(a, −)}, where @math{a} and @math{x} are @tech{objects} in @math{𝒞}.
+According to the @tech{Yoneda Lemma}, an @tech{element} @math{f ∈ Hom@_{𝒞}(a, x)},
+which is also a @tech{morphism} in @math{𝒞}, uniquely corresponds to the
+@tech{natural transformation} @math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(x, -) ⇒ Hom@_{𝒞}(a, -)}.
+
+This shows that any @tech{natural transformation} between @tech{hom functors}
+is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
+@tech{Yoneda Lemma} establishes a one-to-one correspondence between a
+@tech{morphism} @math{f} and a @tech{natural transformation} @math{Hom@_{𝒞}(f, -)}.
+
+@bold{Exercise}: Show the one-to-one correspondence between @math{f} and
+@math{Hom@_{𝒞}(, f)}.
