@@ -427,7 +427,7 @@ is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 @subsection{Yoneda Embedding}
 
 Building on the correspondence established by the @tech{Yoneda Lemma}, we can
-@racket[define] a @tech{functor} @math{Y : 𝒞^{op} → [𝒞 → 𝐒𝐞𝐭]} that maps each
+@racket[define] a @tech{functor} @math{Y : 𝒞@^{op} → [𝒞 → 𝐒𝐞𝐭]} that maps each
 @tech{object} @math{a : 𝒞} to the @tech{hom functor} @math{Hom@_{𝒞}{a, -}}, and
 each @tech{morphism} @math{i : b → a : 𝒞} to the @tech{natural transformation}
 @math{Hom@_{𝒞}(i, -) : Hom@_{𝒞}(a, -) ⇒ Hom@_{𝒞}(b, -)}. This @tech{functor} is
@@ -437,7 +437,6 @@ known as the @deftech{Yoneda embedding} for @math{𝒞}.
 (: Y (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 b y)))))))
 (define Y (curry |(→𝒞 _ _)|))
 ]
-
 
 @bold{Exercise}: Prove that @math{Y} is an @tech{embedding}.
 
