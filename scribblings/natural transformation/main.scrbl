@@ -420,5 +420,5 @@ is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 @math{Hom@_{𝒞}(-, f)}.
 
 @bold{Exercise}: Prove that @math{f} is an @tech{isomorphism} in @math{𝒞} iff
-@math{Hom@_{𝒞}(-, f)} is a @tech{natural isomorphism}, and iff
-@math{Hom@_{𝒞}(f, -)} is a @tech{natural isomorphism}.
+@math{Hom@_{𝒞}(f, -)} is a @tech{natural isomorphism}, and iff
+@math{Hom@_{𝒞}(-, f)} is a @tech{natural isomorphism}.
