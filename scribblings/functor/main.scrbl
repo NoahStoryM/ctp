@@ -131,7 +131,8 @@ Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
         is @tech{bijective}.}
 ]
 
-If a @tech{functor} is @tech{fully faithful}, it is called an @deftech{embedding}.
+If a @tech{functor} is @tech{fully faithful}, and @tech{injective} on @tech{objects},
+it is called an @deftech{embedding}.
 
 @bold{Exercise}: Prove that every @tech{functor} @tech{preserves}
 @tech{commutative diagrams}.
@@ -145,7 +146,7 @@ If a @tech{functor} is @tech{fully faithful}, it is called an @deftech{embedding
 @bold{Exercise}: Prove that every @tech{faithful} @tech{functor} @tech{reflects}
 @tech{epimorphisms}.
 
-@bold{Exercise}: Let @math{F : 𝒞 → 𝒟} be an @tech{embedding}. Prove that if
+@bold{Exercise}: Let @math{F : 𝒞 → 𝒟} be @tech{fully faithful}. Prove that if
 @math{F(a) = F(b)}, then @math{a ≅ b} and
 @math{Hom@_{𝒞}(a, a) ≅ Hom@_{𝒞}(a, b) ≅ Hom@_{𝒞}(b, a) ≅ Hom@_{𝒞}(b, b)}.
 
@@ -264,7 +265,7 @@ is a @tech{representative subcategory} of @math{𝒞}.
 @tech{faithful} @tech{functor}.
 
 @bold{Exercise}: Prove that every @tech{inclusion functor} from a
-@tech{full subcategory} is an @tech{embedding}.
+@tech{full subcategory} is @tech{fully faithful}.
 
 @subsection{Projection Functor}
 
