@@ -411,9 +411,6 @@ According to the @tech{Yoneda Lemma}, an @tech{element} @math{f ∈ Hom@_{𝒞}(
 which is also a @tech{morphism} in @math{𝒞}, uniquely corresponds to the
 @tech{natural transformation} @math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(x, -) ⇒ Hom@_{𝒞}(a, -)}.
 
-@bold{Exercise}: Prove that @math{Hom@_{𝒞}(f, -)} is a @tech{natural isomorphism}
-iff @math{f} is an @tech{isomorphism} in @math{𝒞}.
-
 This shows that any @tech{natural transformation} between @tech{hom functors}
 is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 @tech{Yoneda Lemma} establishes a one-to-one correspondence between a
@@ -422,5 +419,6 @@ is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 @bold{Exercise}: Show the one-to-one correspondence between @math{f} and
 @math{Hom@_{𝒞}(-, f)}.
 
-@bold{Exercise}: Prove that @math{Hom@_{𝒞}(-, f)} is a @tech{natural isomorphism}
-iff @math{f} is an @tech{isomorphism} in @math{𝒞}.
+@bold{Exercise}: Prove that @math{f} is an @tech{isomorphism} in @math{𝒞} iff
+@math{Hom@_{𝒞}(-, f)} is a @tech{natural isomorphism}, and iff
+@math{Hom@_{𝒞}(f, -)} is a @tech{natural isomorphism}.
