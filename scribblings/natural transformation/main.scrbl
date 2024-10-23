@@ -413,4 +413,4 @@ is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 @tech{morphism} @math{f} and a @tech{natural transformation} @math{Hom@_{𝒞}(f, -)}.
 
 @bold{Exercise}: Show the one-to-one correspondence between @math{f} and
-@math{Hom@_{𝒞}(, f)}.
+@math{Hom@_{𝒞}(-, f)}.
