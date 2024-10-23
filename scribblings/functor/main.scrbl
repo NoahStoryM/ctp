@@ -537,9 +537,7 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞�
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: a 𝒞)
 (: |(→𝒞 a _)| (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 a y)))))
-(define (|(→𝒞 a _)| j)
-  (define |(→𝒞 a j)| (λ (f) (∘𝒞 j f)))
-  |(→𝒞 a j)|)
+(define |(→𝒞 a _)| (curry ∘𝒞))
 ]
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
@@ -556,9 +554,7 @@ maps a @tech{morphism} @math{i : b → a : 𝒞} to @math{Hom@_{𝒞}(i, x)}.
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: x 𝒞)
 (: |(→𝒞 _ x)| (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b x)))))
-(define (|(→𝒞 _ x)| i)
-  (define |(→𝒞 i x)| (λ (f) (∘𝒞 f i)))
-  |(→𝒞 i x)|)
+(define |(→𝒞 _ x)| (curryr ∘𝒞))
 ]
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, x) = id@_{Hom@_{𝒞}(a, x)}}.
@@ -604,12 +600,10 @@ and @code{choose-id}.
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: 𝒮 𝐂𝐚𝐭)
 
-(: H (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (→𝒮 (H b) (H c)))))
-(define (H g)
-  (define (Hg f) (∘𝒞 g f))
-  Hg)
+(: H (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒞 b c) (∀ ([a : 𝒞]) (→ (→𝒞 a b) (→𝒞 a c))))))
+(define H (curry ∘𝒞))
 
-(: G (∀ ([b : 𝒞] [c : 𝒞]) (→ (→𝒮 (H b) (H c)) (→𝒞 b c))))
+(: G (∀ ([b : 𝒞] [c : 𝒞]) (→ (∀ ([a : 𝒞]) (→ (→𝒞 a b) (→𝒞 a c))) (→𝒞 b c))))
 (define (G Hg)
   (define Hb (dom𝒮 Hg))
   (define b (choose-id Hb))
@@ -618,6 +612,9 @@ and @code{choose-id}.
 ]
 
 @bold{Exercise}: Prove @math{H = G@^{–1}} and @math{G = H@^{–1}}.
+
+@bold{Exercise}: Think about the relationships between @math{H} and
+@tech{covariant hom functor}.
 
 @math{H} is equal to the @tech{composite} of the @tech{slice functor} @math{𝒞/-}
 and the @tech{forgetful functor} @math{U : 𝐂𝐚𝐭 → 𝒮}:
@@ -643,12 +640,10 @@ attention to its @tech{opposite category} @math{𝒞^op}:
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: 𝒮 𝐂𝐚𝐭)
 
-(: H (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (→𝒮 (H b) (H a)))))
-(define (H f)
-  (define (Hf g) (∘𝒞 g f))
-  Hf)
+(: H (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒞 a b) (∀ ([c : 𝒞]) (→ (→𝒞 b c) (→𝒞 a c))))))
+(define H (curryr ∘𝒞))
 
-(: G (∀ ([b : 𝒞] [a : 𝒞]) (→ (→𝒮 (H b) (H a)) (→𝒞 a b))))
+(: G (∀ ([b : 𝒞] [a : 𝒞]) (→ (∀ ([c : 𝒞]) (→ (→𝒞 b c) (→𝒞 a c))) (→𝒞 a b))))
 (define (G Hf)
   (define Hb (dom𝒮 Hf))
   (define b (choose-id Hb))
@@ -657,6 +652,9 @@ attention to its @tech{opposite category} @math{𝒞^op}:
 ]
 
 @bold{Exercise}: Prove @math{H = G@^{–1}} and @math{G = H@^{–1}}.
+
+@bold{Exercise}: Think about the relationships between @math{H} and
+@tech{contravariant hom functor}.
 
 @math{H} is equal to the @tech{composite} of the @tech{coslice functor} @math{-/𝒞}
 and the @tech{forgetful functor} @math{U : 𝐂𝐚𝐭 → 𝒮}:
