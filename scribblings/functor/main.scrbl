@@ -117,7 +117,7 @@ Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
 @math{F} may have additional properties:
 
 @itemlist[
-  @item{@deftech{Faithful} (@deftech{Embedding}):
+  @item{@deftech{Faithful}
         for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
         induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
         is @tech{injective}.}
@@ -125,11 +125,13 @@ Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
         for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
         induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
         is @tech{surjective}.}
-  @item{@deftech{Fully Faithful} (@deftech{Fully Embedding}):
+  @item{@deftech{Fully Faithful}
         for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
         induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
         is @tech{bijective}.}
 ]
+
+If a @tech{functor} is @tech{fully faithful}, it is called an @deftech{embedding}.
 
 @bold{Exercise}: Prove that every @tech{functor} @tech{preserves}
 @tech{commutative diagrams}.
@@ -143,8 +145,8 @@ Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
 @bold{Exercise}: Prove that every @tech{faithful} @tech{functor} @tech{reflects}
 @tech{epimorphisms}.
 
-@bold{Exercise}: Let @math{F : 𝒞 → 𝒟} be a @tech{fully faithful} @tech{functor}.
-Prove that if @math{F(a) = F(b)}, then @math{a ≅ b} and
+@bold{Exercise}: Let @math{F : 𝒞 → 𝒟} be an @tech{embedding}. Prove that if
+@math{F(a) = F(b)}, then @math{a ≅ b} and
 @math{Hom@_{𝒞}(a, a) ≅ Hom@_{𝒞}(a, b) ≅ Hom@_{𝒞}(b, a) ≅ Hom@_{𝒞}(b, b)}.
 
 @subsection{Category of Categories}
@@ -162,8 +164,8 @@ higher-level structure.
 An @deftech{endofunctor} is an @tech{endomorphism} in @tech{𝐂𝐚𝐭}, while an
 @deftech{autofunctor} is an @tech{automorphism} in @tech{𝐂𝐚𝐭}.
 
-@bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is a
-@tech{fully faithful} @tech{functor}.
+@bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is an
+@tech{embedding}.
 
 @bold{Exercise}: For @tech{objects} @math{𝒞} and @math{𝒟} in @tech{𝐂𝐚𝐭}.
 Prove @math{𝒞×𝒟 ≅ 𝒟×𝒞}.
@@ -262,7 +264,7 @@ is a @tech{representative subcategory} of @math{𝒞}.
 @tech{faithful} @tech{functor}.
 
 @bold{Exercise}: Prove that every @tech{inclusion functor} from a
-@tech{full subcategory} is a @tech{fully faithful} @tech{functor}.
+@tech{full subcategory} is an @tech{embedding}.
 
 @subsection{Projection Functor}
 
