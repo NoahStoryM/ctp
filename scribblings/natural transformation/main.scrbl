@@ -390,6 +390,12 @@ one-to-one correspondence between @tech{elements} of @math{G(T)}, where
 @bold{Exercise}: Try to @racket[define] two @tech{procedures} using Racket code:
 @racket[t->ρ] and @racket[ρ->t].
 
+The definition of the @tech{Yoneda Lemma} can be generalized by replacing the
+@tech{hom functor} @math{Hom@_{𝒞}(S, -)} with any @tech{functor} that is
+@tech{naturally isomorphic} to it. Such a @tech{functor} is called a
+@deftech{representable functor} and we say that @math{S} @deftech{represent}s
+this @tech{functor}.
+
 An important corollary of the @tech{Yoneda Lemma} is that
 @tech{natural transformations} between @tech{hom functors} from a @tech{category}
 @math{𝒞} can only be of the "Hom form" because they correspond exactly to
