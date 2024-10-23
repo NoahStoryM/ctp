@@ -17,11 +17,11 @@ In this @seclink["_Functor_"]{chapter}, we introduce the concept of @tech{functo
 @tech{objects} and @tech{morphisms} between @tech{categories} while preserving
 the structural relationships between them.
 
-To make the explanation clearer and demonstrate how @tech{functors} can be applied
-in programming, we will use Typed Racket syntax. In particular, we will opt for
+To clarify the explanation and show how @tech{functors} apply to programming,
+we will use Typed Racket syntax. Specifically, we will opt for
 @code{#lang typed/racket/base/no-check} instead of @code{#lang racket/base}.
-This choice allows us to incorporate type annotations, enhancing code clarity
-and making the functorial properties easier to illustrate and understand.
+This choice allows us to incorporate type annotations for improved code clarity
+and better illustration of functorial properties.
 
 @local-table-of-contents[]
 
