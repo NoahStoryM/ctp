@@ -13,16 +13,15 @@
 @title[#:tag "_Functor_"]{Functor}
 
 In this @seclink["_Functor_"]{chapter}, we introduce the concept of @tech{functors}.
-@tech{Functors} play a crucial role in @tech{category theory} by mapping
+@tech{Functors} are fundamental in @tech{category theory}, as they map both
 @tech{objects} and @tech{morphisms} between @tech{categories} while preserving
-their structural properties.
+the structural relationships between them.
 
-To enhance readability and provide a clear understanding of how @tech{functors}
-can be applied in programming, we'll use the syntax of Typed Racket.
-Specifically, we'll use @code{#lang typed/racket/base/no-check} instead of
-@code{#lang racket/base}. This choice allows us to leverage the benefits of
-Typed Racket, such as type annotations, which improve code clarity and help
-illustrate the functorial properties more effectively.
+To make the explanation clearer and demonstrate how @tech{functors} can be applied
+in programming, we will use Typed Racket syntax. In particular, we will opt for
+@code{#lang typed/racket/base/no-check} instead of @code{#lang racket/base}.
+This choice allows us to incorporate type annotations, enhancing code clarity
+and making the functorial properties easier to illustrate and understand.
 
 @local-table-of-contents[]
 
