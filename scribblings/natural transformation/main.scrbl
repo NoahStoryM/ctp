@@ -405,6 +405,8 @@ The definition of the @tech{Yoneda Lemma} can be generalized by replacing the
 @tech{objects} @math{a} and @math{x} in @math{𝒞} both @tech{represent} @math{F},
 then @math{a ≅ x}.
 
+@subsection{Yoneda Embedding}
+
 An important corollary of the @tech{Yoneda Lemma} is that
 @tech{natural transformations} between @tech{hom functors} from a @tech{category}
 @math{𝒞} can only be of the "Hom form" because they correspond exactly to
@@ -427,8 +429,6 @@ is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 @bold{Exercise}: Prove that @math{f} is an @tech{isomorphism} in @math{𝒞} iff
 @math{Hom@_{𝒞}(f, -)} is a @tech{natural isomorphism}, and iff
 @math{Hom@_{𝒞}(-, f)} is a @tech{natural isomorphism}.
-
-@subsection{Yoneda Embedding}
 
 Building on the correspondence established by the @tech{Yoneda Lemma}, we can
 @racket[define] a @tech{functor} @math{Y : 𝒞@^{op} → [𝒞 → 𝐒𝐞𝐭]} that maps each
