@@ -485,15 +485,22 @@ A @deftech{universal element} of a @tech{functor} @math{F : 𝒞 → 𝐒𝐞�
 @tech{element} @math{s ∈ F(S)} for some @tech{object} @math{S : 𝒞} such that,
 for any other @tech{object} @math{T : 𝒞} and @tech{element} @math{t ∈ F(T)},
 there exists a unique @tech{morphism} @math{w : S → T : 𝒞} for which
-@math{t = F(w)(s)}.
+@math{t = F(w)(s)}. This reflects the general form of a @tech{universal property},
+which is typically described as follows:
+@math{∀T ∈ 𝒞_0, ∃!w ∈ Hom@_{𝒞}(S, T), t = F(w)(s)}.
 
-This reflects the general form of a @tech{universal property}, which is typically
-described as follows: @math{∀T ∈ 𝒞_0, ∃!w ∈ Hom@_{𝒞}(S, T), t = F(w)(s)}.
+@bold{Exercise}: Prove that @math{F} is a @tech{representable functor} iff there
+exists a @tech{universal element} of @math{F}.
 
 @bold{Exercise}: Prove that @math{s} is a @tech{universal element} of @math{F}
 iff the @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} corresponding
-to @math{s} is a @tech{natural isomorphism}, i.e., each @tech{component} at an
-@tech{object} @math{T : 𝒞} is a @tech{bijection}: @math{ρ@^{–1}(T)(t) = w}.
+to @math{s} is a @tech{natural isomorphism}, i.e., each @tech{component} of
+@math{ρ} at an @tech{object} @math{T : 𝒞} is a @tech{bijection}:
+@math{ρ@^{–1}(T)(t) = w}.
+
+@bold{Exercise}: Prove that if @math{s ∈ F(S)} and @math{t ∈ F(T)} both are
+@tech{universal elements} of @math{F}, then there is a unique @tech{isomorphism}
+between @math{S} and @math{T} in @math{𝒞}.
 
 This "universality" reflects the idea that the @tech{element} @math{s}
 encapsulates a general solution to which all other @tech{elements} can be
@@ -501,6 +508,16 @@ uniquely related. This concept mirrors the @deftech{universal property} seen in
 @tech{initial objects}, where there exists a unique @tech{morphism} from an
 @tech{initial object} to any other @tech{object} in the same @tech{category}.
 
-@bold{Exercise}: Prove that if @math{s ∈ F(S)} and @math{t ∈ F(T)} both are
-@tech{universal elements} of @math{F}, then there is a unique @tech{isomorphism}
-between @math{S} and @math{T} in @math{𝒞}.
+In fact, any @tech{universal property} can be viewed as an instance of an
+@tech{initial object} in some @tech{category}. For example, @tech{universal elements}
+of a @tech{representable functor} @math{F : 𝒞 → 𝐒𝐞𝐭} can be seen as
+@tech{initial objects} in the @tech{category} of @tech{elements} of @math{F},
+denoted by @math{∫@^{T:𝒞}F(T)} or @math{∫@^{𝒞}F}, where the @tech{objects} are
+all @tech{pointed sets} @math{(F(T), t)} and the @tech{morphisms} are the
+@tech{homomorphisms} between them.
+
+@bold{Exercise}: Prove that @math{F} is a @tech{representable functor} iff there
+exists an @tech{initial object} in @math{∫@^{𝒞}F}.
+
+@bold{Exercise}: For a @tech{category} @math{𝒞} and an @tech{object} @math{a : 𝒞}.
+Prove @math{∫@^{x:𝒞}Hom@_{𝒞}(a, x) ≅ a/𝒞}.
