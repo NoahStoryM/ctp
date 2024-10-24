@@ -468,3 +468,36 @@ Moreover, any @tech{representable functors} @tech{naturally isomorphic} to
 @math{Hom@_{𝒞}(-, b)} can also be used to represent @math{b}.
 
 @subsection{Universal Element}
+
+In our earlier discussion of the @tech{Yoneda Lemma}, we highlighted how
+@tech{category theory} views a @tech{morphism} in terms of its relationships with
+other @tech{morphisms}. This was illustrated by the one-to-one correspondence
+between @math{f}, @math{Hom@_{𝒞}(f, -)}, and @math{Hom@_{𝒞}(-, f)}.
+
+The @tech{Yoneda Lemma} showed that this correspondence holds when we substitute
+@math{F} for a @tech{hom functor}. But what if @math{F} is a more general
+@tech{representable functor}? This naturally leads to the question: What special
+property does the @tech{element} corresponding to a @tech{natural transformation}
+have in such cases? The answer is the @tech{universal property}, which is captured
+by the concept of a @tech{universal element}.
+
+A @deftech{universal element} of a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭} is an
+@tech{element} @math{s ∈ F(S)} for some @tech{object} @math{S : 𝒞} such that,
+for any other @tech{object} @math{T : 𝒞} and @tech{element} @math{t ∈ F(T)},
+there exists a unique @tech{morphism} @math{w : S → T : 𝒞} for which
+@math{t = F(w)(s)}.
+
+@bold{Exercise}: Prove that @math{s} is a @tech{universal element} of @math{F}
+iff the @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} corresponding
+to @math{s} is a @tech{natural isomorphism}, i.e., each @tech{component} at an
+@tech{object} @math{T : 𝒞} is a @tech{bijection}: @math{ρ@^{–1}(T)(t) = w}.
+
+This "universality" reflects the idea that the @tech{element} @math{s}
+encapsulates a general solution to which all other @tech{elements} can be
+uniquely related. This concept mirrors the @deftech{universal property} seen in
+@tech{initial objects}, where there exists a unique @tech{morphism} from an
+@tech{initial object} to any other @tech{object} in the same @tech{category}.
+
+@bold{Exercise}: Prove that if @math{s ∈ F(S)} and @math{t ∈ F(T)} both are
+@tech{universal elements} of @math{F}, then there is a unique @tech{isomorphism}
+between @math{S} and @math{T}.
