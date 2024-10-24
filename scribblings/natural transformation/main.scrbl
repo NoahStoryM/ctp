@@ -456,4 +456,15 @@ each @tech{object} @math{x : 𝒞} to the @tech{contravariant hom functor}
 
 @bold{Exercise}: Prove that @math{J} is an @tech{embedding}.
 
+In @seclink["Cayley_s_Theorem"], we explored the categorical version of
+@tech{Cayley's theorem}, which provides a way to represent an @tech{object}
+@math{b : 𝒞} via the @tech{functor} @math{H}, such that
+@math{H(b) = ∐@_{a∈𝒞_0}Hom@_{𝒞}(a, b)}.
+
+Building on this idea, the @tech{Yoneda embedding} generalizes
+@tech{Cayley's theorem}. The @tech{functor} @math{J} represents an @tech{object}
+@math{b : 𝒞} as a @tech{hom functor}, such that @math{J(b) = Hom@_{𝒞}(-, b)}.
+Moreover, any @tech{representable functors} @tech{naturally isomorphic} to
+@math{Hom@_{𝒞}(-, b)} can also be used to represent @math{b}.
+
 @subsection{Universal Element}
