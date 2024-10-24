@@ -487,6 +487,9 @@ for any other @tech{object} @math{T : 𝒞} and @tech{element} @math{t ∈ F(T)}
 there exists a unique @tech{morphism} @math{w : S → T : 𝒞} for which
 @math{t = F(w)(s)}.
 
+This reflects the general form of a @tech{universal property}, which is typically
+described as follows: @math{∀T ∈ 𝒞_0, ∃!w ∈ Hom@_{𝒞}(S, T), t = F(w)(s)}.
+
 @bold{Exercise}: Prove that @math{s} is a @tech{universal element} of @math{F}
 iff the @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} corresponding
 to @math{s} is a @tech{natural isomorphism}, i.e., each @tech{component} at an
