@@ -500,4 +500,4 @@ uniquely related. This concept mirrors the @deftech{universal property} seen in
 
 @bold{Exercise}: Prove that if @math{s ∈ F(S)} and @math{t ∈ F(T)} both are
 @tech{universal elements} of @math{F}, then there is a unique @tech{isomorphism}
-between @math{S} and @math{T}.
+between @math{S} and @math{T} in @math{𝒞}.
