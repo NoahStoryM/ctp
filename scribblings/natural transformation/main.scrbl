@@ -509,12 +509,12 @@ uniquely related. This concept mirrors the @deftech{universal property} seen in
 @tech{initial object} to any other @tech{object} in the same @tech{category}.
 
 In fact, any @tech{universal property} can be viewed as an instance of an
-@tech{initial object} in some @tech{category}. For example, @tech{universal elements}
-of a @tech{representable functor} @math{F : 𝒞 → 𝐒𝐞𝐭} can be seen as
-@tech{initial objects} in the @tech{category} of @tech{elements} of @math{F},
-denoted by @math{∫@^{T:𝒞}F(T)} or @math{∫@^{𝒞}F}, where the @tech{objects} are
-all @tech{pointed sets} @math{(F(T), t)} and the @tech{morphisms} are the
-@tech{homomorphisms} between them.
+@tech{initial object} in some @tech{category} (usually the @tech{comma category}).
+For example, @tech{universal elements} of a @tech{representable functor}
+@math{F : 𝒞 → 𝐒𝐞𝐭} can be seen as @tech{initial objects} in the @tech{category}
+of @tech{elements} of @math{F}, denoted by @math{∫@^{T:𝒞}F(T)} or @math{∫@^{𝒞}F},
+where the @tech{objects} are all @tech{pointed sets} @math{(F(T), t)} and the
+@tech{morphisms} are the @tech{homomorphisms} between them.
 
 @bold{Exercise}: Prove that @math{F} is a @tech{representable functor} iff there
 exists an @tech{initial object} in @math{∫@^{𝒞}F}.
