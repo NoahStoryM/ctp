@@ -246,10 +246,20 @@ For instance, in the @secref{Category_of_Sets}, @tech{morphisms} of @tech{𝐒�
 defined as @racket[hash] tables, but essentially they are mappings and might be
 defined as @tech{procedures} in later sections.
 
-@subsection{Representative Functor}
+@subsection{Essentially Injective Functor}
 
-A @deftech{@deftech{representative} functor} @math{F : 𝒞 → 𝒟} is a @tech{functor}
-that @math{∀d ∈ 𝒟_0, ∃c ∈ 𝒞_0, F(c) ≅ d}.
+A @tech{functor} @math{F : 𝒞 → 𝒟} is @deftech{essentially injective} if it is
+@tech{injective} on @tech{objects} up to @tech{isomorphism}:
+@math{∀a, b ∈ 𝒞_0, F(a) ≅ F(b) ⇒ a ≅ b}.
+
+@bold{Exercise}: Prove that a @tech{functor} is @tech{essentially injective} iff
+it is @tech{injective} on @tech[#:key "isomorphism class"]{isomorphism classes}.
+
+@subsection{Essentially Surjective Functor}
+
+A @tech{functor} @math{F : 𝒞 → 𝒟} is @deftech{essentially surjective} if it is
+@tech{surjective} on @tech{objects} up to @tech{isomorphism}:
+@math{∀d ∈ 𝒟_0, ∃c ∈ 𝒞_0, F(c) ≅ d}.
 
 @subsection{Inclusion Functor}
 
@@ -258,7 +268,7 @@ each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
 @bold{Exercise}: Prove @math{𝒟 ⊆ 𝒞}.
 
-@bold{Exercise}: Prove that if @math{I} is @tech{representative}, then @math{𝒟}
+@bold{Exercise}: Prove that if @math{I} is @tech{essentially surjective}, then @math{𝒟}
 is a @tech{representative subcategory} of @math{𝒞}.
 
 @bold{Exercise}: Prove that every @tech{inclusion functor} is a
