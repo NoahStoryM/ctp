@@ -477,7 +477,7 @@ between @math{f}, @math{Hom@_{𝒞}(f, -)}, and @math{Hom@_{𝒞}(-, f)}.
 The @tech{Yoneda Lemma} showed that this correspondence holds when we substitute
 @math{F} for a @tech{hom functor}. But what if @math{F} is a more general
 @tech{representable functor}? This naturally leads to the question: What special
-property does the @tech{element} corresponding to a @tech{natural transformation}
+property does the @tech{element} corresponding to the @tech{natural isomorphism}
 have in such cases? The answer is the @tech{universal property}, which is captured
 by the concept of a @tech{universal element}.
 
