@@ -391,11 +391,15 @@ one-to-one correspondence between @tech{elements} of @math{G(T)}, where
 @bold{Exercise}: Try to @racket[define] two @tech{procedures} using Racket code:
 @racket[t->ρ] and @racket[ρ->t].
 
+@margin-note{
+@tech{Forgetful functors} to @tech{𝐒𝐞𝐭} are very often @tech{representable}.
+}
+
 The definition of the @tech{Yoneda Lemma} can be generalized by replacing the
 @tech{hom functor} @math{Hom@_{𝒞}(S, -)} with any @tech{functor} that is
 @tech{naturally isomorphic} to it. Such a @tech{functor} is called a
-@deftech{representable functor} and we say that @math{S} @deftech{represent}s
-this @tech{functor}.
+@deftech{@deftech{representable} functor} and we say that @math{S}
+@deftech{represent}s this @tech{functor}.
 
 @bold{Exercise}: For a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭}. Prove that if
 @tech{objects} @math{a} and @math{x} in @math{𝒞} both @tech{represent} @math{F},
