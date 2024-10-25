@@ -442,22 +442,22 @@ Let's see how these abstractions can be applied to create and manipulate
 
 @subsubsection{Category of Natural Numbers}
 
+The @tech{category} of natural @tech/refer{numbers}, denoted as @deftech{𝐍𝐚𝐭},
+is an example of @tech{OOC}. In @tech{𝐍𝐚𝐭}, @tech{morphisms} are natural
+@tech/refer{numbers}, and the @tech{identity morphism} of the single @tech{object}
+@tech{∗} is @code{0}:
+
 @margin-note{
 Remember that @tech{objects} serve as @tech{identity morphisms}.
 }
-
-The @tech{category} of natural @tech/refer{numbers}, denoted as @deftech{𝐍𝐚𝐭},
-is an example of @tech{OOC}. In @tech{𝐍𝐚𝐭}, @tech{morphisms} are natural
-@tech/refer{numbers}, and the single @tech{object}, represented by @tech{∗}, is
-@code{0}:
 
 @racketfile{code/category/𝐍𝐚𝐭.rkt}
 
 @subsubsection{Category of Lists}
 
 The @tech{category} of @tech/refer{lists}, denoted as @deftech{𝐋𝐢𝐬𝐭}, is also an
-@tech{OOC}. In @tech{𝐋𝐢𝐬𝐭}, the single @tech{object} @tech{∗} is @racket[null],
-and the @tech{morphisms} are @tech/refer{lists}:
+@tech{OOC}. In @tech{𝐋𝐢𝐬𝐭}, @tech{morphisms} are @tech/refer{lists}, and the
+@tech{identity morphism} of the single @tech{object} @tech{∗} is @racket[null]:
 
 @racketfile{code/category/𝐋𝐢𝐬𝐭.rkt}
 
