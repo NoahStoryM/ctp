@@ -434,6 +434,11 @@ The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, wh
 The @tech{category} of @tech{posets}, denoted as @deftech{𝐏𝐨𝐬}, is a
 @tech{full subcategory} of @tech{𝐏𝐫𝐨𝐬} where @tech{objects} are @tech{posets}.
 
+@subsection{Category of Tosets}
+
+The @tech{category} of @tech{tosets}, denoted as @deftech{𝐓𝐨𝐬}, is a
+@tech{full subcategory} of @tech{𝐏𝐨𝐬} where @tech{objects} are @tech{tosets}.
+
 @subsection{Category of Graphs}
 
 @margin-note{

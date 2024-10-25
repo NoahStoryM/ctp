@@ -276,6 +276,8 @@ Here're some properties that a @tech{binary relation} @math{△} over a @tech{se
         @math{△} is @deftech{reflexive} if: @math{∀x ∈ S, x △ x}.}
   @item{@deftech{Transitivity}:
         @math{△} is @deftech{transitive} if: @math{∀x, y, z ∈ S, x △ y ∧ y △ z ⇒ x △ z}.}
+  @item{@deftech{Totality}
+        @math{△} is @deftech{total} if: @math{∀x, y ∈ S, x △ y ∨ y △ x}.}
 ]
 
 A @deftech{function} @math{f : S → T} can be viewed as the @tech{binary relation}:
