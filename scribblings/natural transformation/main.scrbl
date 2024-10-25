@@ -370,6 +370,7 @@ According to the @tech{Yoneda Lemma}, we see that each @tech{component} of a
 @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} at an @tech{object}
 @math{T : 𝒞} can be understood as a @tech{run function} starting from a
 @tech{state} @math{s ∈ F(S)}: @math{∀w ∈ Hom@_{𝒞}(S, T), ρ(T)(w) = F(w)(s)}.
+Here, @math{F(T)} can be interpreted as the @tech{set} of @tech{final states}.
 
 To illustrate this correspondence, we'll use Racket code to @racket[define] two
 @tech{procedures}: @racket[s->ρ] and @racket[ρ->s]. They demonstrate how an
