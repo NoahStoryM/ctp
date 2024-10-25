@@ -938,7 +938,7 @@ called the @deftech{empty path} at @math{a}.
 }
 
 Similar to @tech{FSMs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{typed action}
-@math{φ* : F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @deftech{path category} of @math{𝒢},
+@math{φ@^{*} : F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @deftech{path category} of @math{𝒢},
 where @tech{objects} are @tech{nodes} and @tech{morphisms} are @deftech{paths}
 (a sequence of @tech{arrows} connected end to end).
 

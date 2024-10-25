@@ -361,7 +361,7 @@ Specifically, an @tech{element} @math{s ∈ F(S)} uniquely corresponds to a
 To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TFSM}
 @math{ℳ} defined in @seclink["Typed_Finite_State_Machine"]. We'll denote the
 @tech{path category} of the @tech{typed alphabet} @math{𝒢} as @math{𝒞}, and let
-@math{F : 𝒞 → 𝐒𝐞𝐭} represent the @tech{typed action} @math{φ*}. In this context,
+@math{F : 𝒞 → 𝐒𝐞𝐭} represent the @tech{typed action} @math{φ@^{*}}. In this context,
 consider the @tech{run function}, which takes an input sequence @math{w} and
 returns a @tech{final state} @math{F(w)(s_0)} after processing @math{w}, starting
 from the @tech{initial state} @math{s_0}.
