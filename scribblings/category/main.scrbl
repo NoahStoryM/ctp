@@ -198,7 +198,7 @@ Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{Cartesian product}
 of them, denoted by @math{A_0@deftech{×}A_1} or @math{@deftech{∏}@_{i=0, 1}A_i},
 is the @tech{set} of all @deftech{ordered list}s:
 @math{∏@_{i=0, 1}A_i = A_0×A_1 ≔ {(a_0, a_1) | a_0 ∈ A_0, a_1 ∈ A_1}}.
-Such a @tech{set} is called a @deftech{product set}.
+This @tech{set} is called a @deftech{product set}.
 
 @subsection{Disjoint Union}
 
@@ -206,7 +206,13 @@ Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{disjoint union}
 (@deftech{tagged union}) of them, denoted by @math{A_0@deftech{+}A_1} or
 @math{@deftech{∐}@_{i=0, 1}A_i}, is the @tech{set} of all @deftech{tagged pair}s:
 @math{∐@_{i=0, 1}A_i = A_0+A_1 ≔ ∪@_{i=0, 1}{(a, i) | a ∈ A_i}}.
-Such a @tech{set} is called a @deftech{sum set}.
+This @tech{set} is called a @deftech{sum set}.
+
+If @math{A_0∩A_1 = {}}, then @math{A_0∪A_1} can also be viewed as the
+@tech{disjoint union} of @math{A_0} and @math{A_1}. A @tech{tagged union} is just
+one way to implement a @tech{disjoint union}, using natural numbers as
+@deftech{tag}s to distinguish identical @tech{elements} from different
+@tech{sets}.
 
 @subsection{Hom Set}
 
