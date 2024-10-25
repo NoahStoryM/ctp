@@ -110,9 +110,10 @@ where the @tech{domain} is called the @deftech{indexing category} of the
 @tech{indexing category} is a @tech{thin category}.
 
 A @tech{functor} @math{F : 𝒞 → 𝒟} @deftech{preserve}s a property @math{P} of
-@tech{morphisms} in @math{𝒞} if whenever @math{f} has @math{P}, so does @math{F(f)}.
-Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
-@tech{morphisms} in @math{𝒟} if whenever @math{F(f)} has @math{P}, so does @math{f}.
+@tech{morphisms} in @math{𝒞} if whenever @math{f} has @math{P}, so does
+@math{F(f)}. Conversely, a @tech{functor} @deftech{reflect}s a property @math{P}
+of @tech{morphisms} in @math{𝒟} if whenever @math{F(f)} has @math{P}, so does
+@math{f}.
 
 @math{F} may have additional properties:
 
@@ -131,8 +132,8 @@ Conversely, a @tech{functor} @deftech{reflect}s a property @math{P} of
         is @tech{bijective}.}
 ]
 
-If a @tech{functor} is @tech{fully faithful}, and @tech{injective} on @tech{objects},
-it is called an @deftech{embedding}.
+If a @tech{functor} is @tech{fully faithful}, and @tech{injective} on
+@tech{objects}, it is called an @deftech{embedding}.
 
 @bold{Exercise}: Prove that every @tech{functor} @tech{preserves}
 @tech{commutative diagrams}.
@@ -268,8 +269,8 @@ each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
 @bold{Exercise}: Prove @math{𝒟 ⊆ 𝒞}.
 
-@bold{Exercise}: Prove that if @math{I} is @tech{essentially surjective}, then @math{𝒟}
-is a @tech{representative subcategory} of @math{𝒞}.
+@bold{Exercise}: Prove that if @math{I} is @tech{essentially surjective}, then
+@math{𝒟} is a @tech{representative subcategory} of @math{𝒞}.
 
 @bold{Exercise}: Prove that every @tech{inclusion functor} is a
 @tech{faithful} @tech{functor}.
@@ -297,9 +298,9 @@ is a type of @tech{functor} that forgets some or all of the structure of the
 @tech{category}.
 
 For example, if we forget @tech{morphisms} in a @tech{category}, then we get a
-@tech{set}. Extending this idea, we get a @tech{forgetful functor} @math{U : 𝐂𝐚𝐭 → 𝐒𝐞𝐭},
-which forgets @math{𝒞_1} and @math{F_1}, but preserves @math{𝒞_0} and @math{F_0}:
-@math{U_0(𝒞) = 𝒞_0} and @math{U_1(F) = F_0}.
+@tech{set}. Extending this idea, we get a @tech{forgetful functor}
+@math{U : 𝐂𝐚𝐭 → 𝐒𝐞𝐭}, which forgets @math{𝒞_1} and @math{F_1}, but preserves
+@math{𝒞_0} and @math{F_0}: @math{U_0(𝒞) = 𝒞_0} and @math{U_1(F) = F_0}.
 
 @image["scribblings/functor/images/U.svg"]{[picture] U.svg}
 
@@ -310,11 +311,11 @@ Here's how we can @racket[define] @math{U} in Racket:
 (define (U F) (λ (a) (F a)))
 ]
 
-@bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐌𝐨𝐧}
-to @tech{𝐒𝐞𝐭@_{∗}}.
+@bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from
+@tech{𝐌𝐨𝐧} to @tech{𝐒𝐞𝐭@_{∗}}.
 
-@bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from @tech{𝐒𝐞𝐭@_{∗}}
-to @tech{𝐒𝐞𝐭}.
+@bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from
+@tech{𝐒𝐞𝐭@_{∗}} to @tech{𝐒𝐞𝐭}.
 
 @subsection{Composition Functor}
 
@@ -332,8 +333,8 @@ where @math{ℳ} is @tech{𝐌𝐚𝐭𝐫} and @math{g : b → c} is a @tech{mo
 
 @subsection{(Co)Slice Functor}
 
-For a @tech{category} @math{𝒞}, the @deftech{slice functor} @math{𝒞/-} maps each
-@tech{morphism} @math{g : b → c : 𝒞} to the @tech{composition functor}
+For a @tech{category} @math{𝒞}, the @deftech{slice functor} @math{𝒞/-} maps
+each @tech{morphism} @math{g : b → c : 𝒞} to the @tech{composition functor}
 @math{𝒞/g : 𝒞/b → 𝒞/c}.
 
 @image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
@@ -352,8 +353,8 @@ For a @tech{category} @math{𝒞}, the @deftech{slice functor} @math{𝒞/-} map
 
 @bold{Exercise}: Prove @math{𝒞/g∘f = 𝒞/g∘𝒞/f}.
 
-For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} maps each
-@tech{morphism} @math{f : a → b : 𝒞} to the @tech{composition functor}
+For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} maps
+each @tech{morphism} @math{f : a → b : 𝒞} to the @tech{composition functor}
 @math{f/𝒞 : b/𝒞 → a/𝒞}.
 
 @image["scribblings/functor/images/-÷𝒞.svg"]{[picture] -÷𝒞.svg}
@@ -389,11 +390,11 @@ general. A @deftech{concrete category} is a @tech{category} @math{𝒞} equipped
 with a @tech{faithful} @tech{functor} @math{U : 𝒞 → 𝐒𝐞𝐭}. A @tech{category} is
 said to be @deftech{concretizable} iff it admits such a @tech{functor}.
 
-@tech{Structured sets} and their @tech{homomorphisms} form fundamental
-@tech{categories} that encapsulate various algebraic structures. These
-@tech{categories} allow us to study and generalize properties and operations
-across different mathematical systems. In this @seclink["Categories_of_Structured_Sets"]{section},
-we'll explore several important @tech{categories} of @tech{structured sets}.
+@tech{Structured sets} and their @tech{homomorphisms} form fundamental @tech{categories}
+that encapsulate various algebraic structures. These @tech{categories} allow us
+to study and generalize properties and operations across different mathematical
+systems. In this @seclink["Categories_of_Structured_Sets"]{section}, we'll
+explore several important @tech{categories} of @tech{structured sets}.
 
 @subsection{Category of Monoids}
 
@@ -402,9 +403,9 @@ A @deftech{monoid homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
 @math{∀x, y ∈ S, f(x∘y) = f(x)∙f(y)}, and @math{f(s) = t}.
 
 The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where
-@tech{objects} are @tech{monoids} and @tech{morphisms} are @tech{monoid homomorphisms}.
-@tech{𝐌𝐨𝐧} is @tech{equivalent} to the @tech{category} of @tech{OOCs}, denoted
-as @deftech{𝐎𝐨𝐜}.
+@tech{objects} are @tech{monoids} and @tech{morphisms} are
+@tech{monoid homomorphisms}. @tech{𝐌𝐨𝐧} is @tech{equivalent} to the
+@tech{category} of @tech{OOCs}, denoted as @deftech{𝐎𝐨𝐜}.
 
 @subsection{Category of Groups}
 
@@ -413,9 +414,9 @@ A @deftech{group homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
 @math{∀x ∈ S, f(x@^{–1}) = f(x)@^{–1}}.
 
 The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where
-@tech{objects} are @tech{groups} and @tech{morphisms} are @tech{group homomorphisms}.
-@tech{𝐆𝐫𝐩} is @tech{equivalent} to the @tech{category} of @tech{OOGs}, denoted
-as @deftech{𝐎𝐨𝐠}.
+@tech{objects} are @tech{groups} and @tech{morphisms} are
+@tech{group homomorphisms}. @tech{𝐆𝐫𝐩} is @tech{equivalent} to the
+@tech{category} of @tech{OOGs}, denoted as @deftech{𝐎𝐨𝐠}.
 
 @subsection{Category of Prosets}
 
@@ -426,8 +427,9 @@ A @deftech{@deftech{monotone} function}
 structure: @math{∀x, y ∈ S, x ≤ y ⇒ f(x) ⋜ f(y)}.
 
 The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where
-@tech{objects} are @tech{prosets} and @tech{morphisms} are @tech{monotone functions}.
-@tech{𝐏𝐫𝐨𝐬} is @tech{equivalent} to the @tech{category} of @tech{thin categories}.
+@tech{objects} are @tech{prosets} and @tech{morphisms} are
+@tech{monotone functions}. @tech{𝐏𝐫𝐨𝐬} is @tech{equivalent} to the
+@tech{category} of @tech{thin categories}.
 
 @subsection{Category of Posets}
 
@@ -734,11 +736,12 @@ this way.
 
 @subsubsection{Monoid Actions as Functors}
 
-To further explore the connection between @tech{monoid actions} and @tech{functors},
-we can @racket[curry] @math{α} and obtain a @tech{function} @math{F@_{α1}: M → [S → S]},
-where @math{F@_{α1}(m)(s) = α(m, s) = ms}. Next, we can view @math{M} as an @tech{OOC}
-@math{C(M)}, and then @racket[define] a @tech{𝐒𝐞𝐭-valued functor} @math{F@_{α}: C(M) → 𝐒𝐞𝐭},
-where @math{F@_{α}(∗) = S} and @math{F@_{α}(m) = F@_{α1}(m) = α(m, -)}.
+To further explore the connection between @tech{monoid actions} and
+@tech{functors}, we can @racket[curry] @math{α} and obtain a @tech{function}
+@math{F@_{α1}: M → [S → S]}, where @math{F@_{α1}(m)(s) = α(m, s) = ms}. Next,
+we can view @math{M} as an @tech{OOC} @math{C(M)}, and then @racket[define] a
+@tech{𝐒𝐞𝐭-valued functor} @math{F@_{α}: C(M) → 𝐒𝐞𝐭}, where @math{F@_{α}(∗) = S}
+and @math{F@_{α}(m) = F@_{α1}(m) = α(m, -)}.
 
 @image["scribblings/functor/images/act.svg"]{[picture] act.svg}
 
@@ -755,8 +758,8 @@ A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{cate
 
 A @deftech{finite state machine} (@deftech{FSM}) @math{ℳ} is a mathematical model
 used to design algorithms and systems that can be in one of a finite number of
-@tech{states} at any given time. @math{ℳ} can be described as a @deftech{state diagram},
-a @deftech{state table}, or a tuple @math{(A, S, s_0, φ)}:
+@tech{states} at any given time. @math{ℳ} can be described as a
+@deftech{state diagram}, a @deftech{state table}, or a tuple @math{(A, S, s_0, φ)}:
 
 @itemlist[
   @item{@math{A} (@deftech{alphabet}):
@@ -771,9 +774,9 @@ a @deftech{state table}, or a tuple @math{(A, S, s_0, φ)}:
         @deftech{transition} of @math{ℳ}.}
   ]
 
-The @deftech{Kleene star} (@deftech{Kleene closure}) @math{A@^{*}} of a @tech{set}
-@math{A} is the @tech{set} of all possible finite-length sequences of @tech{elements}
-of @math{A}.
+The @deftech{Kleene star} (@deftech{Kleene closure}) @math{A@^{*}} of a
+@tech{set} @math{A} is the @tech{set} of all possible finite-length sequences of
+@tech{elements} of @math{A}.
 
 @bold{Exercise}: Think about the relationship between @tech{Kleene star} and
 @tech{monoid}.
@@ -869,8 +872,8 @@ typed, meaning that only certain @tech{transitions} are valid. This introduces a
 layer of flexibility and specificity in modeling @tech{state} @tech{transitions},
 where not every @tech{state} needs to handle every possible input @tech{letter}.
 In some contexts, certain @tech{states} might only handle a @tech{subset} of the
-@tech{alphabet}, and any undefined @tech{transition} might signify an @racket[error]
-or a special condition that needs separate handling.
+@tech{alphabet}, and any undefined @tech{transition} might signify an
+@racket[error] or a special condition that needs separate handling.
 
 @margin-note{
 In a certain sense, a @tech{set} can be viewed as a @deftech{one-node digraph},
@@ -939,13 +942,13 @@ Similar to @tech{FSMs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{type
 where @tech{objects} are @tech{nodes} and @tech{morphisms} are @deftech{paths}
 (a sequence of @tech{arrows} connected end to end).
 
-@bold{Exercise}: View a @tech{digraph} as a @tech/refer{vector} of @tech{nodes} and
-@tech{arrows}, where each @tech{arrow} is represented by a three-element
+@bold{Exercise}: View a @tech{digraph} as a @tech/refer{vector} of @tech{nodes}
+and @tech{arrows}, where each @tech{arrow} is represented by a three-element
 @tech/refer{vector}, consisting of a @tech/refer{character}
-(as the name of the @tech{arrow}), a @tech{source} @tech{node}, and a @tech{target}
-@tech{node}, and each @tech{node} is represented as the @tech{arrow} from itself
-to itself, with the name @racket[#\nul]. Try to @racket[define] the @tech{procedure}
-@racket[F] that constructs the @tech{path category} of @math{𝒢}.
+(as the name of the @tech{arrow}), a @tech{source} @tech{node}, and a
+@tech{target} @tech{node}, and each @tech{node} is represented as the @tech{arrow}
+from itself to itself, with the name @racket[#\nul]. Try to @racket[define] the
+@tech{procedure} @racket[F] that constructs the @tech{path category} of @math{𝒢}.
 
 @bold{Exercise}: Try to @racket[define] the @tech{procedure} @racket[make-path],
 which takes a @tech{digraph}, a @tech{source} @tech{node} and a @tech/refer{string},
