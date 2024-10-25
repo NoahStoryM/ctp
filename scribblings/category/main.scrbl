@@ -41,8 +41,9 @@ and
 
 A @deftech{category} @math{𝒞} is defined by two @tech{collections}: @math{𝒞_0}
 of @deftech{object}s and @math{𝒞_1} of @deftech{morphism}s. Think of @math{𝒞} as
-a @deftech{directed graph}, where @tech{objects} are @deftech{node}s, and
-@tech{morphisms} are @deftech{arrow}s connecting these @tech{nodes}.
+a @deftech{directed graph} (@deftech{digraph}), where @tech{objects} are
+@deftech{node}s, and @tech{morphisms} are @deftech{arrow}s connecting these
+@tech{nodes}.
 
 For a @tech{morphism} @math{f} from an @tech{object} @math{a} to an @tech{object}
 @math{b} in a @tech{category} @math{𝒞}, denoted by @math{f : a @deftech{→} b : 𝒞},
@@ -564,11 +565,11 @@ denoted as @deftech{opposite category} @math{𝒞^op}.
 
 @image["scribblings/category/images/op-cat.svg"]{[picture] op-cat.svg}
 
-A @tech{category} @math{𝒞} can be viewed as a @tech{directed graph} that adheres
-to the @tech{composition rules}. If we reverse all the @tech{arrows} in the
-@tech{directed graph}, the resulting new @tech{directed graph} still adheres to
-the @tech{composition rules}, so this new @tech{directed graph} is also a
-@tech{category} @math{𝒞^op}.
+A @tech{category} @math{𝒞} can be viewed as a @tech{digraph} that adheres to the
+@tech{composition rules}. If we reverse all the @tech{arrows} in the
+@tech{digraph}, the resulting new @tech{digraph} still adheres to the
+@tech{composition rules}, so this new @tech{digraph} is also a @tech{category}
+@math{𝒞^op}.
 
 @bold{Exercise}: Prove @math{(𝒞^op)^op = 𝒞}.
 
@@ -742,8 +743,8 @@ Then, we get some new @tech{commutative squares} by @tech{composition}:
 @image["scribblings/category/images/arr-cat_2.svg"]{[picture] arr-cat_2.svg}
 
 Finally, using @tech{nodes} to represent @tech{morphisms}, and using @tech{arrows}
-to represent @tech{commutative squares}, we get a @tech{directed graph} that obeys
-the @tech{composition rules}, which is the @tech{arrow category} @math{𝒞@^{→}}:
+to represent @tech{commutative squares}, we get a @tech{digraph} that obeys the
+@tech{composition rules}, which is the @tech{arrow category} @math{𝒞@^{→}}:
 
 @margin-note{
 Although we name @tech{arrows} using pairs here, note that they are not pairs,
@@ -793,8 +794,8 @@ Then, we get some new @tech{commutative triangles} by @tech{composition}:
 
 Finally, using @tech{nodes} to represent @tech{morphisms} end to @math{c_1}, and
 using @tech{arrows} to represent @tech{commutative triangles} end to @math{c_1},
-we get a @tech{directed graph} that obeys the @tech{composition rules}, which is
-the @tech{slice category} @math{𝒞/c_1}:
+we get a @tech{digraph} that obeys the @tech{composition rules}, which is the
+@tech{slice category} @math{𝒞/c_1}:
 
 @margin-note{
 Although we name @tech{arrows} using @tech{morphisms} in @math{𝒞} here, note that
@@ -837,8 +838,8 @@ Then, we get some new @tech{commutative triangles} by @tech{composition}:
 
 Finally, using @tech{nodes} to represent @tech{morphisms} start from @math{c_0},
 and using @tech{arrows} to represent @tech{commutative triangles} start from @math{c_0},
-we get a @tech{directed graph} that obeys the @tech{composition rules}, which is
-the @tech{coslice category} @math{c_0/𝒞}:
+we get a @tech{digraph} that obeys the @tech{composition rules}, which is the
+@tech{coslice category} @math{c_0/𝒞}:
 
 @margin-note{
 Although we name @tech{arrows} using @tech{morphisms} in @math{𝒞} here, note that

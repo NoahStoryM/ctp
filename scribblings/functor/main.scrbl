@@ -439,25 +439,22 @@ The @tech{category} of @tech{posets}, denoted as @deftech{𝐏𝐨𝐬}, is a
 The @tech{category} of @tech{tosets}, denoted as @deftech{𝐓𝐨𝐬}, is a
 @tech{full subcategory} of @tech{𝐏𝐨𝐬} where @tech{objects} are @tech{tosets}.
 
-@subsection{Category of Graphs}
+@subsection{Category of Digraphs}
 
-@margin-note{
-In this context, @tech{graphs} are assumed to be @tech{directed graphs} by default.
-}
-
-Similar to @tech{categories}, we can describe a @tech{graph} @math{𝒢} with
+Similar to @tech{categories}, we can describe a @tech{digraph} @math{𝒢} with
 the following @tech{diagram}:
 
 @image["scribblings/functor/images/grf.svg"]{[picture] grf.svg}
 
-A @deftech{graph homomorphism} @math{φ : 𝒢 → ℋ} is like a @tech{functor} that
+A @deftech{digraph homomorphism} @math{φ : 𝒢 → ℋ} is like a @tech{functor} that
 only preserves @tech{sources} and @tech{targets}. We can describe @math{φ} with
 the following @tech{diagram}:
 
 @image["scribblings/functor/images/grf-hom.svg"]{[picture] grf-hom.svg}
 
-The @tech{category} of @deftech{graph}, denoted as @deftech{𝐆𝐫𝐟}, where
-@tech{objects} are @tech{graphs} and @tech{morphisms} are @tech{graph homomorphisms}.
+The @tech{category} of @tech{digraph}, denoted as @deftech{𝐃𝐠𝐫}, where
+@tech{objects} are @tech{digraphs} and @tech{morphisms} are
+@tech{digraph homomorphisms}.
 
 @section{𝐒𝐞𝐭-Valued Functor}
 
@@ -876,7 +873,7 @@ In some contexts, certain @tech{states} might only handle a @tech{subset} of the
 or a special condition that needs separate handling.
 
 @margin-note{
-In a certain sense, a @tech{set} can be viewed as a @deftech{one-node graph},
+In a certain sense, a @tech{set} can be viewed as a @deftech{one-node digraph},
 where @tech{elements} are @tech{arrows} pointing from the only @tech{node} to
 itself.
 }
@@ -887,14 +884,14 @@ where:
 
 @itemlist[
   @item{@math{𝒢} (@deftech{typed alphabet}):
-        A @tech{graph} whose @tech{arrows} are @tech{letters} and @tech{nodes}
+        A @tech{digraph} whose @tech{arrows} are @tech{letters} and @tech{nodes}
         are types.}
   @item{@math{S} (@tech{state space}):
         The finite @tech{set} of all @tech{states} that @math{ℳ} can be in.}
   @item{@math{s_0} (@tech{start state}):
         The initial @tech{state} of @math{ℳ}.}
   @item{@math{φ} (@deftech{typed transition function}):
-        A @tech{graph homomorphism} from @math{𝒢} to @tech{𝐒𝐞𝐭}.}
+        A @tech{digraph homomorphism} from @math{𝒢} to @tech{𝐒𝐞𝐭}.}
   ]
 
 We can use a @tech{state diagram} and a @tech{state table} to illustrate a
@@ -942,7 +939,7 @@ Similar to @tech{FSMs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{type
 where @tech{objects} are @tech{nodes} and @tech{morphisms} are @deftech{paths}
 (a sequence of @tech{arrows} connected end to end).
 
-@bold{Exercise}: View a @tech{graph} as a @tech/refer{vector} of @tech{nodes} and
+@bold{Exercise}: View a @tech{digraph} as a @tech/refer{vector} of @tech{nodes} and
 @tech{arrows}, where each @tech{arrow} is represented by a three-element
 @tech/refer{vector}, consisting of a @tech/refer{character}
 (as the name of the @tech{arrow}), a @tech{source} @tech{node}, and a @tech{target}
@@ -951,7 +948,7 @@ to itself, with the name @racket[#\nul]. Try to @racket[define] the @tech{proced
 @racket[F] that constructs the @tech{path category} of @math{𝒢}.
 
 @bold{Exercise}: Try to @racket[define] the @tech{procedure} @racket[make-path],
-which takes a @tech{graph}, a @tech{source} @tech{node} and a @tech/refer{string},
+which takes a @tech{digraph}, a @tech{source} @tech{node} and a @tech/refer{string},
 and returns the corresponding @tech{path}.
 
 Here is how to implement @math{ℳ} in Racket:
