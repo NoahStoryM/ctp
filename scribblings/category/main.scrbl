@@ -210,8 +210,8 @@ This @tech{set} is called a @deftech{sum set}.
 
 If @math{A_0∩A_1 = {}}, then @math{A_0∪A_1} can also be viewed as the
 @tech{disjoint union} of @math{A_0} and @math{A_1}. A @tech{tagged union} is just
-one way to implement a @tech{disjoint union}, using natural numbers as
-@deftech{tag}s to distinguish identical @tech{elements} from different
+one way to implement a @tech{disjoint union}, using natural @tech/refer{numbers}
+as @deftech{tag}s to distinguish identical @tech{elements} from different
 @tech{sets}.
 
 @subsection{Hom Set}
