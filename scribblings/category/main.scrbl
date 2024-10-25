@@ -188,9 +188,17 @@ is a special @tech{preordered set} @math{(S, ≤)}, in which @math{≤} is
 @tech{antisymmetric}. @math{≤} is called a @deftech{partial order} on @math{S}.
 
 The @tech{poset} can be viewd as a special @tech{thin category}, where for any
-@tech{objects} @math{a} and @math{b}, if there are @tech{morphisms} @math{a → b}
-and @math{b → a}, then @math{a = b}, and these @tech{morphisms} are the same
+@tech{objects} @math{a} and @math{b}, if there are @tech{morphisms} @math{a ≤ b}
+and @math{b ≤ a}, then @math{a = b}, and these @tech{morphisms} are the same
 @tech{identity morphism}.
+
+A @deftech{totally ordered set} (@deftech{toset}) is a special @tech{ordered set}
+@math{(S, ≤)}, in which @math{≤} is @tech{total}. @math{≤} is called a
+@deftech{total order} on @math{S}.
+
+The @tech{toset} can be viewd as a special @tech{thin category}, where for any
+@tech{objects} @math{a} and @math{b}, there must be exactly one @tech{morphism}
+between them: @math{a ≤ b} or @math{b ≤ a}.
 
 @subsection{Cartesian Product}
 
@@ -489,7 +497,10 @@ The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}
 @bold{Exercise}: Prove that a @tech{thin category} is a @tech{subcategory} of
 @tech{𝐏𝐚𝐢𝐫}.
 
-@bold{Exercise}: Implement a @tech{poset} as a @tech{thin category}.
+@bold{Exercise}: Implement the @tech{toset} @deftech{ℕ} as a @tech{thin category},
+where @tech{objects} are natural @tech/refer{numbers}.
+
+@image["scribblings/category/images/ℕ.svg"]{[picture] ℕ.svg}
 
 @subsubsection{Category of Matrices}
 
