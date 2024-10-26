@@ -78,10 +78,6 @@ a @tech{covariant functor} from @math{𝒞@^{op}} to @math{𝒟}. See more in
 @bold{Exercise}: Show that a @tech{function} between two @tech{sets} can be
 viewed as a @tech{functor} between two @tech{discrete categories}.
 
-We can describe @math{𝒞} with the following @tech{diagram}:
-
-@image["scribblings/functor/images/cat.svg"]{[picture] cat.svg}
-
 A @tech{functor} @math{F : 𝒞 → 𝒟} is like a @tech{digraph homomorphism} that
 also preserves @tech{composable pairs} and @tech{identity morphisms}.
 To illustrate @math{F}, consider a @tech{function} @math{F_2 : 𝒞_2 → 𝒟_2}.

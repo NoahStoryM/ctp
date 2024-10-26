@@ -48,7 +48,7 @@ For a @tech{morphism} @math{f} from an @tech{object} @math{a} to an @tech{object
 its @deftech{domain} (@deftech{source}) is @math{a}, and its @deftech{codomain}
 (@deftech{target}) is @math{b}: @math{dom@_{𝒞}(f) = a} and @math{cod@_{𝒞}(f) = b}.
 
-@image["scribblings/category/images/cat.svg"]{[picture] cat.svg}
+@image["scribblings/category/images/f.svg"]{[picture] f.svg}
 
 Our approach to @tech{category theory} places @tech{morphisms} at the core,
 viewing a @tech{category} not just as a network of @tech{objects} linked by
@@ -95,6 +95,11 @@ they adhere to the @deftech{composition rules}:
 
         @image["scribblings/category/images/C-4.svg"]{[picture] C-4.svg}}
   ]
+
+Let @math{𝒞_2} be the @tech{collection} of @tech{composable pairs} in @math{𝒞}.
+We can describe @math{𝒞} with the following @tech{diagram}:
+
+@image["scribblings/category/images/cat.svg"]{[picture] cat.svg}
 
 @margin-note{
 In traditional @tech{category theory}, @tech{categories} are often named after
@@ -580,10 +585,6 @@ We can @racket[define] @deftech{†} in Racket to implement the
 
 Given @tech{categories} @math{𝒞} and @math{𝒟}, @math{𝒟} is a @deftech{subcategory}
 of @math{𝒞}, denoted by @math{𝒟 ⊆ 𝒞}, if:
-
-@margin-note{
-@math{𝒞_2} is the @tech{collection} of @tech{composable pairs} in @math{𝒞}.
-}
 
 @itemlist[
   #:style 'ordered
