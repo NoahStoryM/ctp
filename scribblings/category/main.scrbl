@@ -465,8 +465,7 @@ A @deftech{group homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
 
 The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where
 @tech{objects} are @tech{groups} and @tech{morphisms} are
-@tech{group homomorphisms}. @tech{𝐆𝐫𝐩} is @tech{equivalent} to the
-@tech{category} of @tech{OOGs}, denoted as @deftech{𝐎𝐨𝐠}.
+@tech{group homomorphisms}.
 
 @subsection{Category of Prosets}
 
@@ -1222,13 +1221,13 @@ A @deftech{replete subcategory} is a @tech{subcategory} that includes all
 @subsection{Groupoid}
 
 @margin-note{
-@tech{Categories} are sometimes called @deftech{monoidoid}s.
+@tech{Categories} are sometimes refered to as @deftech{monoidoid}s.
 }
 
-A @deftech{groupoid} is a @tech{category} in which all @tech{morphisms} are
-@tech{isomorphisms}.
-
-A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
+A @deftech{groupoid} is a @tech{category} in which every @tech{morphisms} is an
+@tech{isomorphism}. A @deftech{one-object groupoid} (@deftech{OOG}) can be
+viewed as a @tech{group}, and the @tech{category} of @tech{OOGs}, denoted as
+@deftech{𝐎𝐨𝐠}, is @tech{equivalent} to @tech{𝐆𝐫𝐩}.
 
 @subsection{Initial Object and Terminal Object}
 
