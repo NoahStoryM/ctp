@@ -21,14 +21,12 @@ Racket programming language as our exploration tool.
 
 @local-table-of-contents[]
 
-@section{Basic Definitions}
+@section{Category}
 
 In the abstract world of mathematics, @tech{category theory} offers a unified
 framework for analyzing and synthesizing concepts across different fields.
 Central to our exploration are @tech{morphisms}, which we consider not merely as
 connections or processes but as entities in their own right.
-
-@subsection{Category}
 
 @margin-note{
 This tutorial does not distinguish @deftech{@deftech{small} category} and
