@@ -424,6 +424,85 @@ where @math{@^{⊥}𝒞 ≔ {f | f⊥g ∀g ∈ 𝒞}}.
 A @deftech{commutative cube} is a @tech{commutative diagram} that has the shape
 of a cube.
 
+@section{Categories of Structured Sets}
+
+A @deftech{structured set} is a @tech{set}, known as @deftech{underlying set},
+equipped with some additional structure (e.g., @tech{monoids}), and the
+@deftech{homomorphisms} between them (e.g., @tech{monoid homomorphisms}) are
+@tech{functions} that preserve that structure.
+
+@margin-note{
+many @tech{categories} of @tech{structured sets} are examples of
+@tech{concrete categories}
+}
+
+@tech{Structured sets} and their @tech{homomorphisms} form fundamental @tech{categories}
+that encapsulate various algebraic structures. These @tech{categories} allow us
+to study and generalize properties and operations across different mathematical
+systems. In this @seclink["Categories_of_Structured_Sets"]{section}, we'll
+explore several important @tech{categories} of @tech{structured sets}.
+
+@subsection{Category of Monoids}
+
+A @deftech{monoid homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
+@tech{function} that preserves the @tech{monoid} structure:
+@math{∀x, y ∈ S, f(x∘y) = f(x)∙f(y)}, and @math{f(s) = t}.
+
+The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where
+@tech{objects} are @tech{monoids} and @tech{morphisms} are
+@tech{monoid homomorphisms}. @tech{𝐌𝐨𝐧} is @tech{equivalent} to the
+@tech{category} of @tech{OOCs}, denoted as @deftech{𝐎𝐨𝐜}.
+
+@subsection{Category of Groups}
+
+A @deftech{group homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
+@tech{monoid homomorphism} that preserves the @tech{group} structure:
+@math{∀x ∈ S, f(x@^{–1}) = f(x)@^{–1}}.
+
+The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where
+@tech{objects} are @tech{groups} and @tech{morphisms} are
+@tech{group homomorphisms}. @tech{𝐆𝐫𝐩} is @tech{equivalent} to the
+@tech{category} of @tech{OOGs}, denoted as @deftech{𝐎𝐨𝐠}.
+
+@subsection{Category of Prosets}
+
+A @deftech{@deftech{monotone} function}
+(@deftech{@deftech{monotonic} function}, @deftech{@deftech{isotone} function},
+ @deftech{@deftech{isotonic} function}, or @deftech{order homomorphism})
+@math{f : (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
+structure: @math{∀x, y ∈ S, x ≤ y ⇒ f(x) ⋜ f(y)}.
+
+The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where
+@tech{objects} are @tech{prosets} and @tech{morphisms} are
+@tech{monotone functions}. @tech{𝐏𝐫𝐨𝐬} is @tech{equivalent} to the
+@tech{category} of @tech{thin categories}.
+
+@subsection{Category of Posets}
+
+The @tech{category} of @tech{posets}, denoted as @deftech{𝐏𝐨𝐬}, is a
+@tech{full subcategory} of @tech{𝐏𝐫𝐨𝐬} where @tech{objects} are @tech{posets}.
+
+@subsection{Category of Tosets}
+
+The @tech{category} of @tech{tosets}, denoted as @deftech{𝐓𝐨𝐬}, is a
+@tech{full subcategory} of @tech{𝐏𝐨𝐬} where @tech{objects} are @tech{tosets}.
+
+@subsection{Category of Digraphs}
+
+Similar to @tech{categories}, we can describe a @tech{digraph} @math{𝒢} with
+the following @tech{diagram}:
+
+@image["scribblings/category/images/grf.svg"]{[picture] grf.svg}
+
+We can describe a @deftech{digraph homomorphism} @math{φ : 𝒢 → ℋ} with the
+following @tech{diagram}:
+
+@image["scribblings/category/images/grf-hom.svg"]{[picture] grf-hom.svg}
+
+The @tech{category} of @tech{digraph}, denoted as @deftech{𝐃𝐠𝐫}, where
+@tech{objects} are @tech{digraphs} and @tech{morphisms} are
+@tech{digraph homomorphisms}.
+
 @section{Mapping Category to Programming}
 
 In this @seclink["Mapping_Category_to_Programming"]{section}, we'll explore how

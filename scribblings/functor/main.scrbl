@@ -27,6 +27,10 @@ and better illustration of functorial properties.
 
 @section{Functor}
 
+@margin-note{
+@tech{Functors} are sometimes called @deftech{category homomorphism}s.
+}
+
 Just as @tech{functions} map @tech{elements} between @tech{sets}, @tech{functors}
 provide a way to map @tech{objects} and @tech{morphisms} between @tech{categories}.
 This mapping preserves the structural aspects of @tech{categories}.
@@ -78,9 +82,10 @@ We can describe @math{𝒞} with the following @tech{diagram}:
 
 @image["scribblings/functor/images/cat.svg"]{[picture] cat.svg}
 
-To illustrate the @tech{functor} @math{F}, consider a @tech{function}
-@math{F_2 : 𝒞_2 → 𝒟_2}. This allows us to describe @math{F} with the following
-@tech{diagram}:
+A @tech{functor} @math{F : 𝒞 → 𝒟} is like a @tech{digraph homomorphism} that
+also preserves @tech{composable pairs} and @tech{identity morphisms}.
+To illustrate @math{F}, consider a @tech{function} @math{F_2 : 𝒞_2 → 𝒟_2}.
+This allows us to describe @math{F} with the following @tech{diagram}:
 
 @image["scribblings/functor/images/functor.svg"]{[picture] functor.svg}
 
@@ -373,91 +378,6 @@ each @tech{morphism} @math{f : a → b : 𝒞} to the @tech{composition functor}
 
 @bold{Exercise}: Prove @math{g∘f/𝒞 = f/𝒞∘g/𝒞}.
 
-@section{Categories of Structured Sets}
-
-@margin-note{
-@tech{Functors} are sometimes called @deftech{category homomorphism}s.
-}
-
-A @deftech{structured set} is a @tech{set}, known as @deftech{underlying set},
-equipped with some additional structure (e.g., @tech{monoids}), and the
-@deftech{homomorphisms} between them (e.g., @tech{monoid homomorphisms}) are
-@tech{functions} that preserve that structure.
-
-Although many @tech{categories} of @tech{structured sets} are examples of
-@tech{concrete categories}, the concept of a @tech{concrete category} is more
-general. A @deftech{concrete category} is a @tech{category} @math{𝒞} equipped
-with a @tech{faithful} @tech{functor} @math{U : 𝒞 → 𝐒𝐞𝐭}. A @tech{category} is
-said to be @deftech{concretizable} iff it admits such a @tech{functor}.
-
-@tech{Structured sets} and their @tech{homomorphisms} form fundamental @tech{categories}
-that encapsulate various algebraic structures. These @tech{categories} allow us
-to study and generalize properties and operations across different mathematical
-systems. In this @seclink["Categories_of_Structured_Sets"]{section}, we'll
-explore several important @tech{categories} of @tech{structured sets}.
-
-@subsection{Category of Monoids}
-
-A @deftech{monoid homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
-@tech{function} that preserves the @tech{monoid} structure:
-@math{∀x, y ∈ S, f(x∘y) = f(x)∙f(y)}, and @math{f(s) = t}.
-
-The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where
-@tech{objects} are @tech{monoids} and @tech{morphisms} are
-@tech{monoid homomorphisms}. @tech{𝐌𝐨𝐧} is @tech{equivalent} to the
-@tech{category} of @tech{OOCs}, denoted as @deftech{𝐎𝐨𝐜}.
-
-@subsection{Category of Groups}
-
-A @deftech{group homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
-@tech{monoid homomorphism} that preserves the @tech{group} structure:
-@math{∀x ∈ S, f(x@^{–1}) = f(x)@^{–1}}.
-
-The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where
-@tech{objects} are @tech{groups} and @tech{morphisms} are
-@tech{group homomorphisms}. @tech{𝐆𝐫𝐩} is @tech{equivalent} to the
-@tech{category} of @tech{OOGs}, denoted as @deftech{𝐎𝐨𝐠}.
-
-@subsection{Category of Prosets}
-
-A @deftech{@deftech{monotone} function}
-(@deftech{@deftech{monotonic} function}, @deftech{@deftech{isotone} function},
- @deftech{@deftech{isotonic} function}, or @deftech{order homomorphism})
-@math{f : (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
-structure: @math{∀x, y ∈ S, x ≤ y ⇒ f(x) ⋜ f(y)}.
-
-The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where
-@tech{objects} are @tech{prosets} and @tech{morphisms} are
-@tech{monotone functions}. @tech{𝐏𝐫𝐨𝐬} is @tech{equivalent} to the
-@tech{category} of @tech{thin categories}.
-
-@subsection{Category of Posets}
-
-The @tech{category} of @tech{posets}, denoted as @deftech{𝐏𝐨𝐬}, is a
-@tech{full subcategory} of @tech{𝐏𝐫𝐨𝐬} where @tech{objects} are @tech{posets}.
-
-@subsection{Category of Tosets}
-
-The @tech{category} of @tech{tosets}, denoted as @deftech{𝐓𝐨𝐬}, is a
-@tech{full subcategory} of @tech{𝐏𝐨𝐬} where @tech{objects} are @tech{tosets}.
-
-@subsection{Category of Digraphs}
-
-Similar to @tech{categories}, we can describe a @tech{digraph} @math{𝒢} with
-the following @tech{diagram}:
-
-@image["scribblings/functor/images/grf.svg"]{[picture] grf.svg}
-
-A @deftech{digraph homomorphism} @math{φ : 𝒢 → ℋ} is like a @tech{functor} that
-only preserves @tech{sources} and @tech{targets}. We can describe @math{φ} with
-the following @tech{diagram}:
-
-@image["scribblings/functor/images/grf-hom.svg"]{[picture] grf-hom.svg}
-
-The @tech{category} of @tech{digraph}, denoted as @deftech{𝐃𝐠𝐫}, where
-@tech{objects} are @tech{digraphs} and @tech{morphisms} are
-@tech{digraph homomorphisms}.
-
 @section{𝐒𝐞𝐭-Valued Functor}
 
 A @deftech{𝐒𝐞𝐭-valued functor} on @math{𝒞} is a @tech{functor} from @math{𝒞} to
@@ -479,6 +399,11 @@ comes from @deftech{topology}, but the concept applies to arbitrary
 theoretical importance due to the @tech{Yoneda Lemma}, a fundamental result in
 @tech{category theory} that will be introduced in detail in the next
 @seclink["_Natural_Transformation_"]{chapter}.
+
+A related concept is that of a @deftech{concrete category}, which is a
+@tech{category} equipped with a @tech{faithful} @tech{𝐒𝐞𝐭-valued functor}.
+A @tech{category} is called @deftech{concretizable} iff it admits such a
+@tech{functor}.
 
 @subsection{Powerset Functor}
 
