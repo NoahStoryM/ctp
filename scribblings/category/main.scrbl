@@ -455,6 +455,10 @@ The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where
 
 @subsection{Category of Groups}
 
+A @deftech{group} @math{(S, ∘, s)} is a @tech{monoid} in which every
+@tech{element} @math{x} has a unique @tech{inverse} @math{x@^{–1}}:
+@math{x∘x@^{–1} = x@^{–1}∘x = s = s@^{–1}}.
+
 A @deftech{group homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
 @tech{monoid homomorphism} that preserves the @tech{group} structure:
 @math{∀x ∈ S, f(x@^{–1}) = f(x)@^{–1}}.
@@ -1223,12 +1227,6 @@ A @deftech{replete subcategory} is a @tech{subcategory} that includes all
 
 A @deftech{groupoid} is a @tech{category} in which all @tech{morphisms} are
 @tech{isomorphisms}.
-
-@subsubsection{One-Object Groupoid}
-
-A @deftech{group} @math{(S, ∘, s)} is a @tech{monoid} in which every
-@tech{element} @math{x} has a unique @tech{inverse} @math{x@^{–1}}:
-@math{x∘x@^{–1} = x@^{–1}∘x = s = s@^{–1}}.
 
 A @deftech{one-object groupoid} (@deftech{OOG}) can be viewed as a @tech{group}.
 
