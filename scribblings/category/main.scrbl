@@ -954,7 +954,7 @@ For convenience, if @math{n} is a @tech{node} in @math{𝒢}, then
 A @deftech{digraph homomorphism} @math{φ : 𝒢 → ℋ} is a structure-preserving map
 between two @tech{digraphs}, consisting of two @tech{functions} @math{φ_0 : 𝒢_0 → ℋ_0}
 and @math{φ_1 : 𝒢_1 → ℋ_1}. For an @tech{arrow} @math{a : m → n : 𝒢}, there must
-exist a corresponding an @tech{arrow} @math{φ(a) : φ(m) → φ(n) : ℋ}.
+exist a corresponding @tech{arrow} @math{φ(a) : φ(m) → φ(n) : ℋ}.
 
 The following @tech{diagram} illustrates a @tech{digraph homomorphism}:
 

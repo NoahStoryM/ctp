@@ -59,7 +59,7 @@ a @tech{covariant functor} from @math{𝒞@^{op}} to @math{𝒟}. See more in
   @item{Preservation of @tech{domains} and @tech{codomains}
 
         For any @tech{morphism} @math{f : a → b : 𝒞}, there must exist a
-        corresponding a @tech{morphism} @math{F(f) : F(a) → F(b) : 𝒟}.
+        corresponding @tech{morphism} @math{F(f) : F(a) → F(b) : 𝒟}.
 
         @image["scribblings/functor/images/F-1.svg"]{[picture] F-1.svg}}
   @item{Preservation of @tech{identity morphisms}
