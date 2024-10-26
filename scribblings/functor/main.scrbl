@@ -36,8 +36,9 @@ provide a way to map @tech{objects} and @tech{morphisms} between @tech{categorie
 This mapping preserves the structural aspects of @tech{categories}.
 
 @margin-note{
-For convenience, if @math{a} is an @tech{object} in @math{𝒞}, @math{F(a) = F_0(a)};
-if @math{f} is a @tech{morphism} in @math{𝒞}, @math{F(f) = F_1(f)}.
+For convenience, if @math{a} is an @tech{object} in @math{𝒞}, then
+@math{F(a) = F_0(a)}; if @math{f} is a @tech{morphism} in @math{𝒞}, then
+@math{F(f) = F_1(f)}.
 }
 
 Similar to how a @tech{category} @math{𝒞} is defined by two @tech{collections}
@@ -57,8 +58,8 @@ a @tech{covariant functor} from @math{𝒞@^{op}} to @math{𝒟}. See more in
   #:style 'ordered
   @item{Preservation of @tech{domains} and @tech{codomains}
 
-        For any @tech{morphism} @math{f : a → b : 𝒞}, there is a @tech{morphism}
-        @math{F(f) : F(a) → F(b) : 𝒟}.
+        For any @tech{morphism} @math{f : a → b : 𝒞}, there must exist a
+        corresponding a @tech{morphism} @math{F(f) : F(a) → F(b) : 𝒟}.
 
         @image["scribblings/functor/images/F-1.svg"]{[picture] F-1.svg}}
   @item{Preservation of @tech{identity morphisms}

@@ -39,9 +39,8 @@ and
 
 A @deftech{category} @math{𝒞} is defined by two @tech{collections}: @math{𝒞_0}
 of @deftech{object}s and @math{𝒞_1} of @deftech{morphism}s. Think of @math{𝒞} as
-a @deftech{directed graph} (@deftech{digraph}), where @tech{objects} are
-@deftech{node}s, and @tech{morphisms} are @deftech{arrow}s connecting these
-@tech{nodes}.
+a @tech{digraph}, where @tech{objects} are @tech{nodes}, and @tech{morphisms} are
+@tech{arrows} connecting these @tech{nodes}.
 
 For a @tech{morphism} @math{f} from an @tech{object} @math{a} to an @tech{object}
 @math{b} in a @tech{category} @math{𝒞}, denoted by @math{f : a @deftech{→} b : 𝒞},
@@ -935,19 +934,36 @@ The @tech{category} of @tech{tosets}, denoted as @deftech{𝐓𝐨𝐬}, is a
 
 @subsection{Category of Digraphs}
 
-Similar to @tech{categories}, we can describe a @tech{digraph} @math{𝒢} with
-the following @tech{diagram}:
+A @deftech{graph} @math{𝒢} is defined by two @tech{collections}: @math{𝒢_0} of
+@deftech[#:key "vertex"]{vertices} (@deftech{node}s) and @math{𝒢_1} of
+@deftech{edge}s.
+
+A @deftech{digraph} (@deftech{directed graph}) is a type of @deftech{graph} in
+which each @deftech{directed edge} (@deftech{arrow}s) has a specific direction
+from one @tech{vertex} to another. The following @tech{diagram} represents a
+@tech{digraph} @math{𝒢}:
 
 @image["scribblings/category/images/grf.svg"]{[picture] grf.svg}
 
-We can describe a @deftech{digraph homomorphism} @math{φ : 𝒢 → ℋ} with the
-following @tech{diagram}:
+@margin-note{
+For convenience, if @math{n} is a @tech{node} in @math{𝒢}, then
+@math{φ(n) = φ_0(n)}; if @math{a} is an @tech{arrow} in @math{𝒢}, then
+@math{φ(a) = φ_1(a)}.
+}
+
+A @deftech{digraph homomorphism} @math{φ : 𝒢 → ℋ} is a structure-preserving map
+between two @tech{digraphs}, consisting of two @tech{functions} @math{φ_0 : 𝒢_0 → ℋ_0}
+and @math{φ_1 : 𝒢_1 → ℋ_1}. For an @tech{arrow} @math{a : m → n : 𝒢}, there must
+exist a corresponding an @tech{arrow} @math{φ(a) : φ(m) → φ(n) : ℋ}.
+
+The following @tech{diagram} illustrates a @tech{digraph homomorphism}:
 
 @image["scribblings/category/images/grf-hom.svg"]{[picture] grf-hom.svg}
 
-The @tech{category} of @tech{digraph}, denoted as @deftech{𝐃𝐠𝐫}, where
-@tech{objects} are @tech{digraphs} and @tech{morphisms} are
-@tech{digraph homomorphisms}.
+The @tech{category} of @tech{digraphs}, denoted as @deftech{𝐃𝐠𝐫}, has
+@tech{digraphs} as @tech{objects} and @tech{digraph homomorphisms} as
+@tech{morphisms}, encapsulating the structure-preserving mappings between
+@tech{digraphs}.
 
 @section{Categorical Definitions}
 
