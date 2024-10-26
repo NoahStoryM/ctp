@@ -1261,6 +1261,8 @@ in @math{𝒞}, then @math{a ≅ b}.
 @bold{Exercise}: Prove that any @deftech{singleton set} @deftech{{∗}} is a
 @tech{terminal object} in @tech{𝐒𝐞𝐭}.
 
+@bold{Exercise}: Prove that @tech{𝐏𝐚𝐢𝐫} is a @tech{terminal object} in @tech{𝐏𝐫𝐨𝐬}.
+
 @bold{Exercise}: For an @tech{object} @math{A} in @tech{𝐒𝐞𝐭}.
 Prove @math{A ≅ 1×A ≅ A×1}.
 
