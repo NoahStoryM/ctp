@@ -385,6 +385,8 @@ A @deftech{rooted @deftech{tree}} is a @tech{digraph} in which the corresponding
 @tech{free category} contains an @tech{initial object} or @tech{terminal object},
 called the @deftech{root}.
 
+@image["scribblings/functor/images/tree.svg"]{[picture] tree.svg}
+
 @bold{Exercise}: Prove that the @tech{root} of a @tech{tree} is unique.
 
 @tech{Trees} are often used to represent hierarchical structures, where each
