@@ -404,6 +404,8 @@ A @deftech{rooted @deftech{forest}} is a @tech{disjoint union} of
 The @tech{category} of @tech{forests}, denoted by @deftech{𝐅𝐬𝐭}, has @tech{forests}
 as @tech{objects} and @deftech{forest homomorphisms} as @tech{morphisms}.
 
+@bold{Exercise}: Prove that @tech{ℕ} is a @tech{terminal object} in @tech{𝐅𝐬𝐭}.
+
 @subsection{Composition Functor}
 
 For @tech{morphism} @math{f : a → b : 𝒞} and @math{g : b → c : 𝒞}, there are two
