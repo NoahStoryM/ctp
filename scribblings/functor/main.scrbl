@@ -368,6 +368,10 @@ The @deftech{free category} (@deftech{path category}) of a @tech{digraph}
 The @deftech{free category functor} @math{F : 𝐃𝐢𝐠 → 𝐂𝐚𝐭} maps each @tech{digraph}
 to its corresponding @tech{free category}.
 
+Since @tech{𝐌𝐨𝐧} can be viewed as @tech{𝐎𝐨𝐜}, any @tech{set} can be seen as a
+@tech{digraph} with a single @tech{node}, where each @tech{element} of the
+@tech{set} corresponds to an @tech{arrow} within the @tech{digraph}.
+
 @bold{Exercise}: Try to implement @math{F_0} that constructs the
 @tech{free category} of @math{𝒢}.
 
@@ -845,12 +849,6 @@ where not every @tech{state} needs to handle every possible input @tech{letter}.
 In some contexts, certain @tech{states} might only handle a @tech{subset} of the
 @tech{alphabet}, and any undefined @tech{transition} might signify an
 @racket[error] or a special condition that needs separate handling.
-
-@margin-note{
-In a certain sense, a @tech{set} can be viewed as a @deftech{one-node digraph},
-where @tech{elements} are @tech{arrows} pointing from the only @tech{node} to
-itself.
-}
 
 An @tech{FSM} can be represented by a tuple @math{(A, S, s_0, φ)}. In contrast,
 a @tech{TFSM} @math{ℳ} can be represented by a tuple @math{(𝒢, S, s_0, φ)},
