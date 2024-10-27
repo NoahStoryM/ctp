@@ -542,6 +542,14 @@ The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f
 
 @racketfile{code/functor/𝒫_!.rkt}
 
+@subsection{Category of Elements of a Functor}
+
+Given a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭}, the @tech{category} of @tech{elements}
+of @math{F}, denoted by @math{∫@^{S:𝒞}F(S)} or @math{∫@^{𝒞}F}, is a
+@tech{category} in which each @tech{object} represents an @tech{element}
+@math{s} drawn from some @math{F(S)}. Such an @tech{object} can be viewed as a
+@tech{pointed set} @math{(F(S), s)}.
+
 @subsection{Hom Functor}
 
 The @deftech{hom functor} is a key construction in @tech{category theory}. It
@@ -931,6 +939,8 @@ respectively:
 Similar to @tech{FSMs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{typed action}
 @math{φ@^{*} : F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @tech{free category} of @math{𝒢}.
 
+@bold{Exercise}: Prove that @math{∫@^{F(𝒢)}φ@^{*}} is @tech{isomorphic} to
+the @tech{free category} of the @tech{state diagram} of @math{ℳ}.
 
 Here is how to implement @math{ℳ} in Racket:
 

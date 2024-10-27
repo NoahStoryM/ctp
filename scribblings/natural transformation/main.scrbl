@@ -512,13 +512,14 @@ uniquely related. This concept mirrors the @deftech{universal property} seen in
 In fact, any @tech{universal property} can be viewed as an instance of an
 @tech{initial object} in some @tech{category} (usually the @tech{comma category}).
 For example, @tech{universal elements} of a @tech{representable functor}
-@math{F : 𝒞 → 𝐒𝐞𝐭} can be seen as @tech{initial objects} in the @tech{category}
-of @tech{elements} of @math{F}, denoted by @math{∫@^{T:𝒞}F(T)} or @math{∫@^{𝒞}F},
-where the @tech{objects} are all @tech{pointed sets} @math{(F(T), t)} and the
-@tech{morphisms} are the @tech{homomorphisms} between them.
+@math{F : 𝒞 → 𝐒𝐞𝐭} can be seen as @tech{initial objects} in @math{∫@^{T:𝒞}F(T)}.
 
 @bold{Exercise}: Prove that @math{F} is a @tech{representable functor} iff there
 exists an @tech{initial object} in @math{∫@^{𝒞}F}.
+
+@bold{Exercise}: Prove that the @tech{state diagram} of a @tech{TFSM} is a
+@tech{tree} whose @tech{root} is the @tech{initial state} @math{s_0} iff
+@math{s_0} is a @tech{universal element} of the @tech{typed action}.
 
 @bold{Exercise}: For a @tech{category} @math{𝒞} and an @tech{object} @math{a : 𝒞}.
 Prove @math{∫@^{x:𝒞}Hom@_{𝒞}(a, x) ≅ a/𝒞}.
