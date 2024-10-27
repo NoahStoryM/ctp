@@ -546,9 +546,31 @@ The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f
 
 Given a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭}, the @tech{category} of @tech{elements}
 of @math{F}, denoted by @math{∫@^{S:𝒞}F(S)} or @math{∫@^{𝒞}F}, is a
-@tech{category} in which each @tech{object} represents an @tech{element}
-@math{s} drawn from some @math{F(S)}. Such an @tech{object} can be viewed as a
+@tech{category} where each @tech{object} represents an @tech{element}
+@math{s} drawn from some @math{F(S)}. Each such @tech{object} can be viewed as a
 @tech{pointed set} @math{(F(S), s)}.
+
+This construction allows us to study the internal structure of a
+@tech{𝐒𝐞𝐭-valued functor} by examining its individual @tech{elements} and the
+relationships between them. One useful example of this is viewing a
+@tech{rooted forest} as a @tech{presheaf} on @tech{ℕ}.
+
+A @tech{rooted forest} can be interpreted as a @tech{presheaf}
+@math{F : ℕ@^{op} → 𝐒𝐞𝐭}, where each @tech{set} @math{F(n)} represents a
+@deftech{layer} of @tech{nodes} in the @tech{forest}. Specifically, @math{F(n)}
+consists of all @tech{nodes} in the @tech{forest} such that the length of the
+@tech{path} from each @tech{node} to the @tech{root} is exactly @math{n}.
+
+A @tech{rooted tree} is a special case of a @tech{forest} for which @math{F(0)}
+is a @tech{singleton set}.
+
+The following @tech{diagram} shows how we can interpret @math{∫@^{ℕ@^{op}}F} as
+the @tech{free category} of a @tech{forest}:
+
+@image["scribblings/functor/images/el-tree.svg"]{[picture] el-tree.svg}
+
+Moreover, a @deftech{planar forest} can be viewed as a @tech{functor}
+@math{F : ℕ@^{op} → 𝐓𝐨𝐬}, where each @tech{layer} is a @tech{toset}.
 
 @subsection{Hom Functor}
 
