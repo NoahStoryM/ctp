@@ -319,6 +319,40 @@ Here's how we can @racket[define] @math{U} in Racket:
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from
 @tech{𝐒𝐞𝐭@_{∗}} to @tech{𝐒𝐞𝐭}.
 
+@subsection{Free Monoid Functor}
+
+The @deftech{Kleene star} (@deftech{Kleene closure}) @math{A@^{*}} of a @tech{set}
+@math{A} is the @tech{set} of all possible finite-length @deftech{sequence}s of
+@tech{elements} of @math{A}. In Racket, we typically represent the
+@tech{Kleene star} as a @tech/refer{list}:
+
+@racketblock[
+(define-type A* (Listof A))
+]
+
+The @deftech{free monoid} on @math{A} is defined as the tuple
+@math{(A@^{*}, ∘, ())}, where @math{()} is the @deftech{empty sequence}, and
+@math{∘} is the operation that takes two @tech{sequences} and returns their
+concatenation.
+
+In Racket, @math{()} and @math{∘} are commonly represented by @racket[null] and
+@racket[append], respectively. Since all @tech{free monoids} share the same
+@math{∘} and @math{()}, it is common to refer to a @tech{free monoid} simply by
+its @tech{underlying set}, the @tech{Kleene star}.
+
+@margin-note{
+Since all @tech{free monoids} share the same @math{∘} and @math{()}, we use
+@tech{Kleene stars} to represent @tech{free monoids}.
+}
+
+The @deftech{free monoid functor} @math{F : 𝐒𝐞𝐭 → 𝐌𝐨𝐧} maps any @tech{set} to its
+corresponding @tech{free monoid}. Here is a Racket example:
+
+@racketblock[
+(: F (∀ (A B) (→ (→ A B) (→ A* B*))))
+(define F (curry map))
+]
+
 @subsection{Composition Functor}
 
 For @tech{morphism} @math{f : a → b : 𝒞} and @math{g : b → c : 𝒞}, there are two
