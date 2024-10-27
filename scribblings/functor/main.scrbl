@@ -379,7 +379,29 @@ Since @tech{𝐌𝐨𝐧} can be viewed as @tech{𝐎𝐨𝐜}, any @tech{set} c
 @tech{digraph} with a single @tech{node}, where each @tech{element} of the
 @tech{set} corresponds to an @tech{arrow} within the @tech{digraph}.
 
+@subsubsection{Category of Trees}
 
+A @deftech{rooted @deftech{tree}} is a @tech{digraph} in which the corresponding
+@tech{free category} contains an @tech{initial object} or @tech{terminal object},
+called the @deftech{root}.
+
+@bold{Exercise}: Prove that the @tech{root} of a @tech{tree} is unique.
+
+@tech{Trees} are often used to represent hierarchical structures, where each
+@tech{node} has exactly one incoming or outgoing @tech{path}
+(except for the @tech{root}, which only has an @tech{empty path}).
+
+The @tech{category} of @tech{trees}, denoted by @deftech{𝐓𝐫𝐞𝐞}, has @tech{trees}
+as @tech{objects} and @deftech{tree homomorphisms} as @tech{morphisms}
+
+@subsubsection{Category of Forests}
+
+A @deftech{rooted @deftech{forest}} is a @tech{disjoint union} of
+@tech{rooted trees}. In particular, The @deftech{rooted @deftech{subtree}}s of a
+@tech{rooted tree} can themselves be viewed as a @tech{rooted forest}.
+
+The @tech{category} of @tech{forests}, denoted by @deftech{𝐅𝐬𝐭}, has @tech{forests}
+as @tech{objects} and @deftech{forest homomorphisms} as @tech{morphisms}.
 
 @subsection{Composition Functor}
 
