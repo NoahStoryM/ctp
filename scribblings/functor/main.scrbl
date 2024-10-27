@@ -365,19 +365,21 @@ The @deftech{free category} (@deftech{path category}) of a @tech{digraph}
 @math{𝒢}, and @tech{morphisms} are @deftech{paths} — @tech{sequences} of
 @tech{arrows} in @math{𝒢} that connect end to end.
 
+@bold{Exercise}: Try to @racket[define] the @tech{procedure} @racket[make-path],
+which takes a @tech{digraph}, a @tech{source} @tech{node} and a @tech/refer{string},
+and returns the corresponding @tech{path}.
+
 The @deftech{free category functor} @math{F : 𝐃𝐢𝐠 → 𝐂𝐚𝐭} maps each @tech{digraph}
 to its corresponding @tech{free category}.
+
+@bold{Exercise}: Try to implement @math{F_0} that constructs the
+@tech{free category} of @math{𝒢}.
 
 Since @tech{𝐌𝐨𝐧} can be viewed as @tech{𝐎𝐨𝐜}, any @tech{set} can be seen as a
 @tech{digraph} with a single @tech{node}, where each @tech{element} of the
 @tech{set} corresponds to an @tech{arrow} within the @tech{digraph}.
 
-@bold{Exercise}: Try to implement @math{F_0} that constructs the
-@tech{free category} of @math{𝒢}.
 
-@bold{Exercise}: Try to @racket[define] the @tech{procedure} @racket[make-path],
-which takes a @tech{digraph}, a @tech{source} @tech{node} and a @tech/refer{string},
-and returns the corresponding @tech{path}.
 
 @subsection{Composition Functor}
 
