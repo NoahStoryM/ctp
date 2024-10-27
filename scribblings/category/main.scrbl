@@ -938,10 +938,10 @@ A @deftech{graph} @math{𝒢} is defined by two @tech{collections}: @math{𝒢_0
 @deftech[#:key "vertex"]{vertices} (@deftech{node}s) and @math{𝒢_1} of
 @deftech{edge}s.
 
-A @deftech{digraph} (@deftech{directed graph}) is a type of @deftech{graph} in
-which each @deftech{directed edge} (@deftech{arrow}s) has a specific direction
-from one @tech{vertex} to another. The following @tech{diagram} represents a
-@tech{digraph} @math{𝒢}:
+A @deftech{digraph} (@deftech{directed graph}) is a type of @tech{graph} in which
+each @deftech{directed edge} (@deftech{arrow}s) has a specific direction from one
+@tech{vertex} to another. The following @tech{diagram} represents a @tech{digraph}
+@math{𝒢}:
 
 @image["scribblings/category/images/grf.svg"]{[picture] grf.svg}
 
