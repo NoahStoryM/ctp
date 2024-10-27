@@ -353,6 +353,28 @@ corresponding @tech{free monoid}. Here is a Racket example:
 (define F (curry map))
 ]
 
+@subsection{Free Category Functor}
+
+@margin-note{
+For each @tech{node} @math{a}, there is a unique @tech{path} of length @math{0},
+called the @deftech{empty path} at @math{a}.
+}
+
+The @deftech{free category} (@deftech{path category}) of a @tech{digraph}
+@math{𝒢} is a @tech{category} in which @tech{objects} are the @tech{nodes} of
+@math{𝒢}, and @tech{morphisms} are @deftech{paths} — @tech{sequences} of
+@tech{arrows} in @math{𝒢} that connect end to end.
+
+The @deftech{free category functor} @math{F : 𝐃𝐢𝐠 → 𝐂𝐚𝐭} maps each @tech{digraph}
+to its corresponding @tech{free category}.
+
+@bold{Exercise}: Try to implement @math{F_0} that constructs the
+@tech{free category} of @math{𝒢}.
+
+@bold{Exercise}: Try to @racket[define] the @tech{procedure} @racket[make-path],
+which takes a @tech{digraph}, a @tech{source} @tech{node} and a @tech/refer{string},
+and returns the corresponding @tech{path}.
+
 @subsection{Composition Functor}
 
 For @tech{morphism} @math{f : a → b : 𝒞} and @math{g : b → c : 𝒞}, there are two
@@ -730,13 +752,6 @@ used to design algorithms and systems that can be in one of a finite number of
         @deftech{transition} of @math{ℳ}.}
   ]
 
-The @deftech{Kleene star} (@deftech{Kleene closure}) @math{A@^{*}} of a
-@tech{set} @math{A} is the @tech{set} of all possible finite-length sequences of
-@tech{elements} of @math{A}.
-
-@bold{Exercise}: Think about the relationship between @tech{Kleene star} and
-@tech{monoid}.
-
 @math{φ : A×S → S} takes an input @tech{letter} and the current @tech{state} as
 arguments and returns the next @tech{state}. By currying @math{φ}, we can view
 any @tech{element} in @math{A} as a @tech{transition}. Similarly, we'd like to
@@ -888,27 +903,9 @@ respectively:
 
 @image["scribblings/functor/images/𝒢.svg"]{[picture] 𝒢.svg}
 
-@margin-note{
-For each @tech{node} @math{a}, there is a unique @tech{path} of length @math{0},
-called the @deftech{empty path} at @math{a}.
-}
-
 Similar to @tech{FSMs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{typed action}
-@math{φ@^{*} : F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @deftech{path category} of @math{𝒢},
-where @tech{objects} are @tech{nodes} and @tech{morphisms} are @deftech{paths}
-(a sequence of @tech{arrows} connected end to end).
+@math{φ@^{*} : F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @tech{free category} of @math{𝒢}.
 
-@bold{Exercise}: View a @tech{digraph} as a @tech/refer{vector} of @tech{nodes}
-and @tech{arrows}, where each @tech{arrow} is represented by a three-element
-@tech/refer{vector}, consisting of a @tech/refer{character}
-(as the name of the @tech{arrow}), a @tech{source} @tech{node}, and a
-@tech{target} @tech{node}, and each @tech{node} is represented as the @tech{arrow}
-from itself to itself, with the name @racket[#\nul]. Try to @racket[define] the
-@tech{procedure} @racket[F] that constructs the @tech{path category} of @math{𝒢}.
-
-@bold{Exercise}: Try to @racket[define] the @tech{procedure} @racket[make-path],
-which takes a @tech{digraph}, a @tech{source} @tech{node} and a @tech/refer{string},
-and returns the corresponding @tech{path}.
 
 Here is how to implement @math{ℳ} in Racket:
 
