@@ -202,6 +202,8 @@ between them.
 @bold{Exercise}: Prove that the @tech{pseudo-inverse} of an @tech{equivalence} is
 not unique.
 
+@bold{Exercise}: Prove that @tech{𝐓𝐫𝐞𝐞} is @tech{equivalent} to @tech{𝐅𝐬𝐭}.
+
 @subsection{Bicategory}
 
 @subsection{Monoidal Category}
