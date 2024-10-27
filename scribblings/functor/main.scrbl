@@ -397,8 +397,7 @@ as @tech{objects} and @deftech{tree homomorphisms} as @tech{morphisms}
 @subsubsection{Category of Forests}
 
 A @deftech{rooted @deftech{forest}} is a @tech{disjoint union} of
-@tech{rooted trees}. In particular, The @deftech{rooted @deftech{subtree}}s of a
-@tech{rooted tree} can themselves be viewed as a @tech{rooted forest}.
+@tech{rooted trees}.
 
 The @tech{category} of @tech{forests}, denoted by @deftech{𝐅𝐬𝐭}, has @tech{forests}
 as @tech{objects} and @deftech{forest homomorphisms} as @tech{morphisms}.
