@@ -1,8 +1,8 @@
 #lang typed/racket/base/no-check
 
 (require "../../exercises/functor/make-path.rkt"
-         (only-in "../functor/TFSM.rkt" 𝒢 [F𝒢 𝒞]))
-(require/typed "../functor/TFSM.rkt"
+         (only-in "../functor/TDFA.rkt" 𝒢 [F𝒢 𝒞]))
+(require/typed "../functor/TDFA.rkt"
   [(φ* F) (∀ ([X : 𝒞] [Y : 𝒞]) (→ (→𝒞 X Y) (→ (F X) (F Y))))])
 
 (module+ test (require rackunit))

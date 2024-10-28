@@ -358,7 +358,7 @@ Specifically, an @tech{element} @math{s ∈ F(S)} uniquely corresponds to a
 
 @image["scribblings/natural transformation/images/run_1.svg"]{[picture] run_1.svg}
 
-To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TFSM}
+To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TDFA}
 @math{ℳ} defined in @seclink["Typed_Finite_State_Machine"]. We'll denote the
 @tech{path category} of the @tech{typed alphabet} @math{𝒢} as @math{𝒞}, and let
 @math{F : 𝒞 → 𝐒𝐞𝐭} represent the @tech{typed action} @math{φ@^{*}}. In this context,
@@ -530,7 +530,7 @@ For example, @tech{universal elements} of a @tech{representable functor}
 @bold{Exercise}: Prove that @math{F} is a @tech{representable functor} iff there
 exists an @tech{initial object} in @math{∫@^{𝒞}F}.
 
-@bold{Exercise}: Prove that the @tech{state diagram} of a @tech{TFSM} is a
+@bold{Exercise}: Prove that the @tech{state diagram} of a @tech{TDFA} is a
 @tech{tree} whose @tech{root} is the @tech{start state} @math{s_0} iff
 @math{s_0} is a @tech{universal element} of the @tech{typed action}.
 

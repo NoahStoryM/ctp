@@ -797,11 +797,11 @@ In this way, we can @racket[define] an @tech{action} of the @tech{monoid}
 A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{category}
 @math{𝒟} is just a @tech{functor} from @math{𝒞} to @math{𝒟}.
 
-@subsubsection{Finite State Machine}
+@subsubsection{Deterministic Finite Automaton}
 
-A @deftech{finite state machine} (@deftech{FSM}) @math{ℳ} is a mathematical model
-used to design algorithms and systems that can be in one of a finite number of
-@tech{states} at any given time. @math{ℳ} can be described as a
+A @deftech{deterministic finite automaton} (@deftech{DFA}) @math{ℳ} is a
+mathematical model used to design algorithms and systems that can be in one of a
+finite number of @tech{states} at any given time. @math{ℳ} can be described as a
 @deftech{state diagram}, a @deftech{state table}, or a tuple @math{(A, S, s_0, φ)}:
 
 @itemlist[
@@ -830,8 +830,8 @@ find a way to represent a sequence of @tech{transitions}. We @racket[define] the
 ]
 
 @margin-note{
-In this context, @tech{FSMs} are assumed to be @deftech{deterministic} by default.
-If an @tech{FSM} is @deftech{nondeterministic}, its @math{φ} is a @tech{relation}
+In this context, @tech{DFAs} are assumed to be @deftech{deterministic} by default.
+If a @tech{DFA} is @deftech{nondeterministic}, its @math{φ} is a @tech{relation}
 rather than a @tech{function}, so @math{φ@^{*}} is a @tech{monoid action} in
 @tech{𝐑𝐞𝐥} rather than in @tech{𝐒𝐞𝐭}.
 }
@@ -839,13 +839,13 @@ rather than a @tech{function}, so @math{φ@^{*}} is a @tech{monoid action} in
 @bold{Exercise}: Prove that @math{φ@^{*}} is a @tech{monoid action} of
 @math{A@^{*}} on @math{S} in @tech{𝐒𝐞𝐭}.
 
-In addition to the @tech{monoid action} @math{φ@^{*}}, a @tech{FSM} @math{ℳ}
+In addition to the @tech{monoid action} @math{φ@^{*}}, a @tech{DFA} @math{ℳ}
 often employ a @deftech{run function} @math{ρ : A@^{*} → S}, which takes a
 sequence from @math{A@^{*}} and returns a @deftech{final state} of @math{ℳ}
 after processing the entire sequence, starting from the @tech{start state}
 @math{s_0}: @math{∀w ∈ A@^{*}, ρ(w) = φ@^{*}(w, s_0)}.
 
-Here is a Racket example for the @tech{FSM} @math{ℳ_1}
+Here is a Racket example for the @tech{DFA} @math{ℳ_1}
 @math{(A_1 = {x, y}, S_1 = {s_1, b_1}, s_1, φ_1)}, which expects the last
 @tech{letter} to be not @math{y} (@math{s} means "start" and @math{b} means "bad"):
 
@@ -860,9 +860,9 @@ Here is a Racket example for the @tech{FSM} @math{ℳ_1}
 ]]
 }
 
-@racketfile{code/functor/FSM.rkt}
+@racketfile{code/functor/DFA.rkt}
 
-@bold{Exercise}: Try to implement another Racket example for the @tech{FSM}
+@bold{Exercise}: Try to implement another Racket example for the @tech{DFA}
 @math{ℳ_2} @math{(A_2 = {x, y}, S_2 = {s_2, b_2, o_2}, s_2, φ_2)}, which expects
 the first @tech{letter} to be @math{x} (@math{o} means "ok"):
 
@@ -896,23 +896,23 @@ in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t
 
 @image["scribblings/functor/images/typed-act.svg"]{[picture] typed-act.svg}
 
-@subsubsection{Typed Finite State Machine}
+@subsubsection{Typed Deterministic Finite Automaton}
 
-@tech{FSMs} are typically characterized by their complete @tech{state tables},
+@tech{DFAs} are typically characterized by their complete @tech{state tables},
 meaning that for every @tech{state} and every input @tech{letter}, there is a
 defined @tech{transition} to a @tech{state}.
 
-In a @deftech{typed finite state machine} (@deftech{TFSM}), its @tech{state table}
-does not need to be complete. Instead, its @tech{alphabet} and @tech{states} are
-typed, meaning that only certain @tech{transitions} are valid. This introduces a
-layer of flexibility and specificity in modeling @tech{state} @tech{transitions},
-where not every @tech{state} needs to handle every possible input @tech{letter}.
-In some contexts, certain @tech{states} might only handle a @tech{subset} of the
-@tech{alphabet}, and any undefined @tech{transition} might signify an
-@racket[error] or a special condition that needs separate handling.
+In a @deftech{typed deterministic finite automaton} (@deftech{TDFA}), its
+@tech{state table} does not need to be complete. Instead, its @tech{alphabet} and
+@tech{states} are typed, meaning that only certain @tech{transitions} are valid.
+This introduces a layer of flexibility and specificity in modeling @tech{state}
+@tech{transitions},where not every @tech{state} needs to handle every possible
+input @tech{letter}. In some contexts, certain @tech{states} might only handle a
+@tech{subset} of the @tech{alphabet}, and any undefined @tech{transition} might
+signify an @racket[error] or a special condition that needs separate handling.
 
-An @tech{FSM} can be represented by a tuple @math{(A, S, s_0, φ)}. In contrast,
-a @tech{TFSM} @math{ℳ} can be represented by a tuple @math{(𝒢, S, s_0, φ)},
+A @tech{DFA} can be represented by a tuple @math{(A, S, s_0, φ)}. In contrast,
+a @tech{TDFA} @math{ℳ} can be represented by a tuple @math{(𝒢, S, s_0, φ)},
 where:
 
 @itemlist[
@@ -928,7 +928,7 @@ where:
   ]
 
 We can use a @tech{state diagram} and a @tech{state table} to illustrate a
-@tech{TFSM} @math{ℳ}, which can be viewed as a combination of multiple @tech{FSMs}
+@tech{TDFA} @math{ℳ}, which can be viewed as a combination of multiple @tech{DFAs}
 @math{ℳ_1} and @math{ℳ_2}
 (@math{q} means "quit", @math{a} means "accept", and @math{r} means "reject"):
 
@@ -962,7 +962,7 @@ respectively:
 
 @image["scribblings/functor/images/𝒢.svg"]{[picture] 𝒢.svg}
 
-Similar to @tech{FSMs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{typed action}
+Similar to @tech{DFAs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{typed action}
 @math{φ@^{*} : F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @tech{free category} of @math{𝒢}.
 
 @bold{Exercise}: Prove that @math{∫@^{F(𝒢)}φ@^{*}} is @tech{isomorphic} to
@@ -970,4 +970,4 @@ the @tech{free category} of the @tech{state diagram} of @math{ℳ}.
 
 Here is how to implement @math{ℳ} in Racket:
 
-@racketfile{code/functor/TFSM.rkt}
+@racketfile{code/functor/TDFA.rkt}

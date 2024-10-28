@@ -1,8 +1,8 @@
 #lang typed/racket/base/no-check
 
 (require racket/match racket/function racket/set)
-(require "FSM.rkt"
-         "../../exercises/functor/FSM.rkt"
+(require "DFA.rkt"
+         "../../exercises/functor/DFA.rkt"
          "../../exercises/functor/F.rkt"
          "../../exercises/functor/make-path.rkt")
 (provide ℳ 𝒢0 𝒢1 𝒢 F𝒢 S s φ φ* ρ)
