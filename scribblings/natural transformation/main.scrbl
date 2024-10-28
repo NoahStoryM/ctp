@@ -362,9 +362,9 @@ To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TDFA}
 @math{ℳ} defined in @seclink["Typed_Finite_State_Machine"]. We'll denote the
 @tech{path category} of the @tech{typed alphabet} @math{𝒢} as @math{𝒞}, and let
 @math{F : 𝒞 → 𝐒𝐞𝐭} represent the @tech{typed action} @math{φ@^{*}}. In this context,
-consider the @tech{run function}, which takes an input sequence @math{w} and
-returns a @tech{final state} @math{F(w)(s_0)} after processing @math{w}, starting
-from the @tech{start state} @math{s_0}.
+consider the @tech{run function}, which takes an input @tech{sequence} @math{w}
+and returns a @tech{final state} @math{F(w)(s_0)} after processing @math{w},
+starting from the @tech{start state} @math{s_0}.
 
 According to the @tech{Yoneda Lemma}, we see that each @tech{component} of a
 @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} at an @tech{object}

@@ -820,8 +820,8 @@ finite number of @tech{states} at any given time. @math{ℳ} can be described as
 @math{φ : A×S → S} takes an input @tech{letter} and the current @tech{state} as
 arguments and returns the next @tech{state}. By currying @math{φ}, we can view
 any @tech{element} in @math{A} as a @tech{transition}. Similarly, we'd like to
-find a way to represent a sequence of @tech{transitions}. We @racket[define] the
-@tech{function} @math{φ@^{*}: A@^{*}×S → S}:
+find a way to represent a @tech{sequence} of @tech{transitions}. We @racket[define]
+the @tech{function} @math{φ@^{*}: A@^{*}×S → S}:
 
 @itemlist[
   #:style 'ordered
@@ -829,20 +829,13 @@ find a way to represent a sequence of @tech{transitions}. We @racket[define] the
   @item{@math{∀s ∈ S, ∀w ∈ A@^{*}, ∀a ∈ A, φ@^{*}((a)w, s) = φ(a, φ@^{*}(w, s))}}
 ]
 
-@margin-note{
-In this context, @tech{DFAs} are assumed to be @deftech{deterministic} by default.
-If a @tech{DFA} is @deftech{nondeterministic}, its @math{φ} is a @tech{relation}
-rather than a @tech{function}, so @math{φ@^{*}} is a @tech{monoid action} in
-@tech{𝐑𝐞𝐥} rather than in @tech{𝐒𝐞𝐭}.
-}
-
 @bold{Exercise}: Prove that @math{φ@^{*}} is a @tech{monoid action} of
 @math{A@^{*}} on @math{S} in @tech{𝐒𝐞𝐭}.
 
 In addition to the @tech{monoid action} @math{φ@^{*}}, a @tech{DFA} @math{ℳ}
 often employ a @deftech{run function} @math{ρ : A@^{*} → S}, which takes a
-sequence from @math{A@^{*}} and returns a @deftech{final state} of @math{ℳ}
-after processing the entire sequence, starting from the @tech{start state}
+@tech{sequence} from @math{A@^{*}} and returns a @deftech{final state} of @math{ℳ}
+after processing the entire @tech{sequence}, starting from the @tech{start state}
 @math{s_0}: @math{∀w ∈ A@^{*}, ρ(w) = φ@^{*}(w, s_0)}.
 
 Here is a Racket example for the @tech{DFA} @math{ℳ_1}
