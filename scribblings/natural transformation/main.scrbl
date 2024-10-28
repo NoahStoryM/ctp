@@ -490,8 +490,9 @@ there exists a unique @tech{morphism} @math{w : S → T : 𝒞} for which
 which is typically described as follows:
 @math{∀T ∈ 𝒞_0, ∃!w ∈ Hom@_{𝒞}(S, T), t = F(w)(s)}.
 
-@bold{Exercise}: Prove that @math{F} is a @tech{representable functor} iff there
-exists a @tech{universal element} of @math{F}.
+@bold{Exercise}: Prove that an @tech{object} @math{S : 𝒞} @tech{represents}
+a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭} iff there exists a @tech{universal element}
+@math{s ∈ F(S)}.
 
 @bold{Exercise}: Prove that @math{s} is a @tech{universal element} of @math{F}
 iff the @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} corresponding
