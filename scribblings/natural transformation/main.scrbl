@@ -419,7 +419,7 @@ For example, if we let @math{F} be a @tech{hom functor}, then the @tech{elements
 of @math{F(S)} are precisely the @tech{morphisms} in @math{𝒞} that start from or
 end to @math{S}. An important corollary of the @tech{Yoneda Lemma} is that any
 @tech{natural transformation} between @tech{hom functors} in a @tech{category}
-@math{𝒞} must be a @deftech{hom natural transformation} because it corresponds
+@math{𝒞} must be a @tech{hom natural transformation} because it corresponds
 exactly to a @tech{morphism} in @math{𝒞}.
 
 To illustrate this, consider two @tech{hom functors} @math{Hom@_{𝒞}(x, −)} and
@@ -432,7 +432,7 @@ which is also a @tech{morphism} in @math{𝒞}, uniquely corresponds to the
 This shows that any @tech{natural transformation} between @tech{hom functors}
 is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 @tech{Yoneda Lemma} establishes a one-to-one correspondence between a
-@tech{morphism} @math{f} and a @tech{hom natural transformation}
+@tech{morphism} @math{f} and a @deftech{hom natural transformation}
 @math{Hom@_{𝒞}(f, -)}.
 
 @bold{Exercise}: Show the one-to-one correspondence between @math{f} and
