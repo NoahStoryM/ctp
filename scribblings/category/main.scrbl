@@ -241,13 +241,13 @@ If @math{𝒞(a, x)} is an @tech{object} in @math{𝒞}, it is called the
 (@deftech{exponential set} @math{x^a}).
 
 For @tech{morphisms} @math{f : a → x : 𝒞}, @math{i : b → a : 𝒞} and
-@math{j : x → y : 𝒞}, we can @racket[define] a @tech{function}
+@math{j : x → y : 𝒞}, we can @racket[define] a @deftech{hom function}
 @math{Hom@_{𝒞}(i, j) : Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
 @math{Hom@_{𝒞}(i, j)(f) ≔ j∘f∘i}.
 
 @image["scribblings/category/images/hom_1.svg"]{[picture] hom_1.svg}
 
-Additionally, we can @racket[define] two other @tech{functions}:
+Additionally, we can @racket[define] two other @tech{hom functions}:
 
 @itemlist[
   #:style 'ordered
