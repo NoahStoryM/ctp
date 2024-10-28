@@ -408,8 +408,17 @@ then @math{a ≅ x}.
 
 @subsection{Yoneda Embedding}
 
-An important corollary of the @tech{Yoneda Lemma} is that any
-@tech{natural transformation} between @tech{hom functors} from a @tech{category}
+The @tech{Yoneda Lemma} establishes a powerful correspondence: a
+@tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} uniquely corresponds
+to an @tech{element} @math{s ∈ F(S)}. By carefully selecting @tech{functor}
+@math{F}, we can choose to study specific entities within the corresponding
+@tech{set} @math{F(S)} and examine the relationship between these entities and
+@tech{natural transformations}.
+
+For example, if we let @math{F} be a @tech{hom functor}, then the @tech{elements}
+of @math{F(S)} are precisely the @tech{morphisms} in @math{𝒞} that start from or
+end to @math{S}. An important corollary of the @tech{Yoneda Lemma} is that any
+@tech{natural transformation} between @tech{hom functors} in a @tech{category}
 @math{𝒞} must be a @deftech{hom natural transformation} because it corresponds
 exactly to a @tech{morphism} in @math{𝒞}.
 
