@@ -44,12 +44,15 @@ transform you into a @tech{category} theorist. Instead, we will focus on mapping
 these abstract concepts into programming constructs, providing a foundation that
 you, the reader, can build upon and apply in your work.
 
-Why study @tech{category theory} as a programmer? The answer lies in the power of
-abstraction and generalization that @tech{category theory} offers. It allows us
-to see beyond the specifics of a particular programming language, problem, or
-system, revealing the underlying structures that are common across different
-domains. This tutorial aims to open the door to this broader perspective,
-enriching your approach to programming.
+Why study @tech{category theory} as a programmer? The answer lies in the
+abstraction and generalization capabilities provided by @tech{category theory}.
+It allows us to see beyond the specifics of a particular programming language,
+problem, or system, revealing the underlying structures that are common across
+different domains. By identifying connections between a system and the constructs
+of @tech{category theory}, you can leverage existing categorical results and
+structures to expand and improve the system, applying well-established theories
+and techniques to refine and extend your design. This tutorial aims to open the
+door to this broader perspective, enriching your approach to programming.
 
 As you embark on this journey, keep in mind that the true value of understanding
 @tech{category theory} in the context of programming is not merely in acquiring
