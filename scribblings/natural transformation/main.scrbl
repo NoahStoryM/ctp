@@ -364,7 +364,7 @@ To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TFSM}
 @math{F : 𝒞 → 𝐒𝐞𝐭} represent the @tech{typed action} @math{φ@^{*}}. In this context,
 consider the @tech{run function}, which takes an input sequence @math{w} and
 returns a @tech{final state} @math{F(w)(s_0)} after processing @math{w}, starting
-from the @tech{initial state} @math{s_0}.
+from the @tech{start state} @math{s_0}.
 
 According to the @tech{Yoneda Lemma}, we see that each @tech{component} of a
 @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} at an @tech{object}
@@ -531,7 +531,7 @@ For example, @tech{universal elements} of a @tech{representable functor}
 exists an @tech{initial object} in @math{∫@^{𝒞}F}.
 
 @bold{Exercise}: Prove that the @tech{state diagram} of a @tech{TFSM} is a
-@tech{tree} whose @tech{root} is the @tech{initial state} @math{s_0} iff
+@tech{tree} whose @tech{root} is the @tech{start state} @math{s_0} iff
 @math{s_0} is a @tech{universal element} of the @tech{typed action}.
 
 @bold{Exercise}: For a @tech{category} @math{𝒞} and an @tech{object} @math{a : 𝒞}.

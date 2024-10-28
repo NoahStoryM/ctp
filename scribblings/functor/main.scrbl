@@ -842,7 +842,7 @@ rather than a @tech{function}, so @math{φ@^{*}} is a @tech{monoid action} in
 In addition to the @tech{monoid action} @math{φ@^{*}}, a @tech{FSM} @math{ℳ}
 often employ a @deftech{run function} @math{ρ : A@^{*} → S}, which takes a
 sequence from @math{A@^{*}} and returns a @deftech{final state} of @math{ℳ}
-after processing the entire sequence, starting from the @tech{initial state}
+after processing the entire sequence, starting from the @tech{start state}
 @math{s_0}: @math{∀w ∈ A@^{*}, ρ(w) = φ@^{*}(w, s_0)}.
 
 Here is a Racket example for the @tech{FSM} @math{ℳ_1}
@@ -922,7 +922,7 @@ where:
   @item{@math{S} (@tech{state space}):
         The finite @tech{set} of all @tech{states} that @math{ℳ} can be in.}
   @item{@math{s_0} (@tech{start state}):
-        The initial @tech{state} of @math{ℳ}.}
+        The @tech{initial state} of @math{ℳ}.}
   @item{@math{φ} (@deftech{typed transition function}):
         A @tech{digraph homomorphism} from @math{𝒢} to @tech{𝐒𝐞𝐭}.}
   ]
