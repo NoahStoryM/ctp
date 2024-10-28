@@ -417,12 +417,14 @@ To illustrate this, consider two @tech{hom functors} @math{Hom@_{𝒞}(x, −)} 
 @math{Hom@_{𝒞}(a, −)}, where @math{a} and @math{x} are @tech{objects} in @math{𝒞}.
 According to the @tech{Yoneda Lemma}, an @tech{element} @math{f ∈ Hom@_{𝒞}(a, x)},
 which is also a @tech{morphism} in @math{𝒞}, uniquely corresponds to the
-@tech{natural transformation} @math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(x, -) ⇒ Hom@_{𝒞}(a, -)}.
+@tech{hom natural transformation}
+@math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(x, -) ⇒ Hom@_{𝒞}(a, -)}.
 
 This shows that any @tech{natural transformation} between @tech{hom functors}
 is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 @tech{Yoneda Lemma} establishes a one-to-one correspondence between a
-@tech{morphism} @math{f} and a @tech{natural transformation} @math{Hom@_{𝒞}(f, -)}.
+@tech{morphism} @math{f} and a @tech{hom natural transformation}
+@math{Hom@_{𝒞}(f, -)}.
 
 @bold{Exercise}: Show the one-to-one correspondence between @math{f} and
 @math{Hom@_{𝒞}(-, f)}.
@@ -434,7 +436,7 @@ is directly determined by a @tech{morphism} in @math{𝒞}. Thus, the
 Building on the correspondence established by the @tech{Yoneda Lemma}, we can
 @racket[define] a @tech{functor} @math{Y : 𝒞@^{op} → [𝒞 → 𝐒𝐞𝐭]} that maps each
 @tech{object} @math{a : 𝒞} to the @tech{covariant hom functor} @math{Hom@_{𝒞}(a, -)},
-and each @tech{morphism} @math{i : b → a : 𝒞} to the @tech{natural transformation}
+and each @tech{morphism} @math{i : b → a : 𝒞} to the @tech{hom natural transformation}
 @math{Hom@_{𝒞}(i, -) : Hom@_{𝒞}(a, -) ⇒ Hom@_{𝒞}(b, -)}. This @tech{functor} is
 known as the @deftech{Yoneda embedding} for @math{𝒞}.
 
@@ -448,7 +450,8 @@ known as the @deftech{Yoneda embedding} for @math{𝒞}.
 Here is another @tech{Yoneda embedding} @math{J : 𝒞 → [𝒞@^{op} → 𝐒𝐞𝐭]} that maps
 each @tech{object} @math{x : 𝒞} to the @tech{contravariant hom functor}
 @math{Hom@_{𝒞}(-, x)}, and each @tech{morphism} @math{j : x → y : 𝒞} to the
-@tech{natural transformation} @math{Hom@_{𝒞}(-, j) : Hom@_{𝒞}(-, x) ⇒ Hom@_{𝒞}(-, y)}.
+@tech{hom natural transformation}
+@math{Hom@_{𝒞}(-, j) : Hom@_{𝒞}(-, x) ⇒ Hom@_{𝒞}(-, y)}.
 
 @racketblock[
 (: J (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b y)))))))
