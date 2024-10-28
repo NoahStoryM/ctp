@@ -945,12 +945,11 @@ each @deftech{directed edge} (@deftech{arrow}s) has a specific direction from on
 
 @image["scribblings/category/images/grf.svg"]{[picture] grf.svg}
 
-A @tech{digraph} can be viewd as a @tech/refer{vector} of @tech{nodes} and
+A @tech{digraph} can be viewed as a @tech/refer{vector} of @tech{nodes} and
 @tech{arrows}, where each @tech{arrow} is represented by a three-element
-@tech/refer{vector} containing a @tech/refer{character}
-(representing the name of the @tech{arrow}), a @tech{source} @tech{node}, and a
+@tech/refer{vector} containing a name, a @tech{source} @tech{node}, and a
 @tech{target} @tech{node}. Additionally, each @tech{node} can be represented by
-an @tech{arrow} from itself to itself, with the name @racket[#\nul].
+an @tech{arrow} from itself to itself, with a specific name.
 
 @margin-note{
 For convenience, if @math{n} is a @tech{node} in @math{𝒢}, then
