@@ -498,7 +498,7 @@ a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭} iff there exists a @tech{unive
 iff the @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} corresponding
 to @math{s} is a @tech{natural isomorphism}, i.e., each @tech{component} of
 @math{ρ} at an @tech{object} @math{T : 𝒞} is a @tech{bijection}:
-@math{ρ@^{–1}(T)(t) = w}.
+@math{ρ(T)@^{–1}(t) = w}.
 
 @bold{Exercise}: Prove that if @math{s ∈ F(S)} and @math{t ∈ F(T)} both are
 @tech{universal elements} of @math{F}, then there is a unique @tech{isomorphism}
