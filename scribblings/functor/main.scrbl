@@ -493,59 +493,6 @@ A related concept is that of a @deftech{concrete category}, which is a
 A @tech{category} is called @deftech{concretizable} iff it admits such a
 @tech{functor}.
 
-@subsection{Powerset Functor}
-
-The @deftech{powerset} of a @tech{set} @math{s}, denoted by @math{𝒫(s)}, is the
-@tech{set} of all @tech{subsets} of @math{s}. This concept is central to several
-@tech{powerset functors}, which map @tech{sets} to their corresponding
-@tech{powersets}.
-
-@racketfile{code/function/𝒫.rkt}
-
-@image["scribblings/functor/images/f.svg"]{[picture] f.svg}
-
-Given a @tech{function} @math{f : a → b}, where @math{a_0} is a @tech{subset} of
-@math{a} and @math{b_0} is a @tech{subset} of @math{b}, we can @racket[define]
-several @deftech{powerset functor}s that map a @tech{set} @math{s} to @math{𝒫(s)}.
-
-@subsubsection{Direct Image Functor}
-
-The @deftech{direct image} (@deftech{existential image}) of @math{a_0}, denoted
-by @math{f@_{∗}(a_0)}, is the @tech{subset} of @math{b}:
-@math{f@_{∗}(a_0) ≔ {f(x) | x ∈ a_0}}.
-
-The @deftech{direct image functor} (@deftech{existential image functor})
-@math{𝒫@_{∗}} takes @math{f} to @math{f@_{∗}}: @math{𝒫@_{∗}(f) = f@_{∗}}.
-
-@image["scribblings/functor/images/f_∗.svg"]{[picture] f_∗.svg}
-
-@racketfile{code/functor/𝒫_∗.rkt}
-
-@subsubsection{Preimage Functor}
-
-The @deftech{preimage} (@deftech{inverse image}) of @math{b_0}, denoted by
-@math{f@^{∗}(b_0)}, is the @tech{subset} of @math{a}:
-@math{f@^{∗}(b_0) ≔ {x ∈ a | f(x) ∈ b_0}}.
-
-The @deftech{preimage functor} (@deftech{inverse image functor}) @math{𝒫@^{∗}}
-takes @math{f} to @math{f@^{∗}}: @math{𝒫@^{∗}(f) = f@^{∗}}.
-
-@image["scribblings/functor/images/f^∗.svg"]{[picture] f^∗.svg}
-
-@racketfile{code/functor/𝒫^∗.rkt}
-
-@subsubsection{Universal Image Functor}
-
-The @deftech{universal image} of @math{a_0}, denoted by @math{f@_{!}(a_0)}, is
-the @tech{subset} of @math{b}: @math{f@_{!}(a_0) ≔ {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
-
-The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f@_{!}}:
-@math{𝒫@_{!}(f) = f@_{!}}.
-
-@image["scribblings/functor/images/f_!.svg"]{[picture] f_!.svg}
-
-@racketfile{code/functor/𝒫_!.rkt}
-
 @subsection{Category of Elements of a Functor}
 
 Given a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭}, the @tech{category} of @tech{elements}
@@ -575,6 +522,59 @@ the @tech{free category} of a @tech{forest}:
 
 Moreover, a @deftech{planar forest} can be viewed as a @tech{functor}
 @math{F : ℕ@^{op} → 𝐓𝐨𝐬}, where each @tech{layer} is a @tech{toset}.
+
+@subsection{Powerset Functor}
+
+The @deftech{powerset} of a @tech{set} @math{s}, denoted by @math{𝒫(s)}, is the
+@tech{set} of all @tech{subsets} of @math{s}. This concept is central to several
+@tech{powerset functors}, which map @tech{sets} to their corresponding
+@tech{powersets}.
+
+@racketfile{code/function/𝒫.rkt}
+
+Given a @tech{function} @math{f : a → b}, where @math{a_0} is a @tech{subset} of
+@math{a} and @math{b_0} is a @tech{subset} of @math{b}, we can @racket[define]
+several @deftech{powerset functor}s that map a @tech{set} @math{s} to @math{𝒫(s)}.
+
+@image["scribblings/functor/images/f.svg"]{[picture] f.svg}
+
+@subsubsection{Direct Image Functor}
+
+The @deftech{direct image} (@deftech{existential image}) of @math{a_0}, denoted
+by @math{f@_{∗}(a_0)}, is the @tech{subset} of @math{b}:
+@math{f@_{∗}(a_0) ≔ {f(x) | x ∈ a_0}}.
+
+@image["scribblings/functor/images/f_∗.svg"]{[picture] f_∗.svg}
+
+The @deftech{direct image functor} (@deftech{existential image functor})
+@math{𝒫@_{∗}} takes @math{f} to @math{f@_{∗}}: @math{𝒫@_{∗}(f) = f@_{∗}}.
+
+@racketfile{code/functor/𝒫_∗.rkt}
+
+@subsubsection{Preimage Functor}
+
+The @deftech{preimage} (@deftech{inverse image}) of @math{b_0}, denoted by
+@math{f@^{∗}(b_0)}, is the @tech{subset} of @math{a}:
+@math{f@^{∗}(b_0) ≔ {x ∈ a | f(x) ∈ b_0}}.
+
+@image["scribblings/functor/images/f^∗.svg"]{[picture] f^∗.svg}
+
+The @deftech{preimage functor} (@deftech{inverse image functor}) @math{𝒫@^{∗}}
+takes @math{f} to @math{f@^{∗}}: @math{𝒫@^{∗}(f) = f@^{∗}}.
+
+@racketfile{code/functor/𝒫^∗.rkt}
+
+@subsubsection{Universal Image Functor}
+
+The @deftech{universal image} of @math{a_0}, denoted by @math{f@_{!}(a_0)}, is
+the @tech{subset} of @math{b}: @math{f@_{!}(a_0) ≔ {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
+
+@image["scribblings/functor/images/f_!.svg"]{[picture] f_!.svg}
+
+The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f@_{!}}:
+@math{𝒫@_{!}(f) = f@_{!}}.
+
+@racketfile{code/functor/𝒫_!.rkt}
 
 @subsection{Hom Functor}
 
