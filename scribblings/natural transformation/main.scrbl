@@ -58,7 +58,7 @@ The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 @math{𝒞} is the @deftech{component} of @math{α} at @math{a}.
 
 @bold{Exercise}: For a @tech{morphism} @math{i : b → a : 𝒞}. Prove that
-@math{Hom@_{𝒞}(i, -)} is a @tech{natural transformation} from
+@math{Hom@_{𝒞}(i, -)} is a @tech{hom natural transformation} from
 @math{Hom@_{𝒞}(a, -)} to @math{Hom@_{𝒞}(b, -)}.
 
 @image["scribblings/natural transformation/images/Hom_1.svg"]{[picture] Hom_1.svg}
@@ -72,7 +72,7 @@ The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 ]
 
 @bold{Exercise}: For a @tech{morphism} @math{j : x → y : 𝒞}. Prove that
-@math{Hom@_{𝒞}(-, j)} is a @tech{natural transformation} from
+@math{Hom@_{𝒞}(-, j)} is a @tech{hom natural transformation} from
 @math{Hom@_{𝒞}(-, x)} to @math{Hom@_{𝒞}(-, y)}.
 
 @image["scribblings/natural transformation/images/Hom_2.svg"]{[picture] Hom_2.svg}
@@ -408,10 +408,10 @@ then @math{a ≅ x}.
 
 @subsection{Yoneda Embedding}
 
-An important corollary of the @tech{Yoneda Lemma} is that
-@tech{natural transformations} between @tech{hom functors} from a @tech{category}
-@math{𝒞} can only be of the "Hom form" because they correspond exactly to
-@tech{morphisms} in @math{𝒞}.
+An important corollary of the @tech{Yoneda Lemma} is that any
+@tech{natural transformation} between @tech{hom functors} from a @tech{category}
+@math{𝒞} must be a @deftech{hom natural transformation} because it corresponds
+exactly to a @tech{morphism} in @math{𝒞}.
 
 To illustrate this, consider two @tech{hom functors} @math{Hom@_{𝒞}(x, −)} and
 @math{Hom@_{𝒞}(a, −)}, where @math{a} and @math{x} are @tech{objects} in @math{𝒞}.
