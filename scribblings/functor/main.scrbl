@@ -365,6 +365,10 @@ The @deftech{free category} (@deftech{path category}) of a @tech{digraph}
 @math{𝒢}, and @tech{morphisms} are @deftech{paths} — @tech{sequences} of
 @tech{arrows} in @math{𝒢} that connect end to end.
 
+Additionally, every @tech{category} has an @deftech{underlying digraph} that is
+derived by ignoring @tech{composition} and @tech{identity morphisms}, retaining
+only the @tech{nodes} and basic @tech{arrows} connecting them.
+
 @bold{Exercise}: Try to @racket[define] the @tech{procedure} @racket[make-path],
 which takes a @tech{digraph}, a @tech{source} @tech{node} and a @tech/refer{string},
 and returns the corresponding @tech{path}.
