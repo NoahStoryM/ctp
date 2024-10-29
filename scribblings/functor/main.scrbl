@@ -826,10 +826,11 @@ provide a framework for designing algorithms and predicting system behavior.
 
 @subsection{Deterministic Finite Automaton}
 
-A @deftech{deterministic finite automaton} (@deftech{DFA}) @math{ℳ} is a
-mathematical model used to design algorithms and systems that can be in one of a
-finite number of @tech{states} at any given time. @math{ℳ} can be described as a
-@deftech{state diagram}, a @deftech{state table}, or a tuple @math{(A, S, s_0, φ)}:
+A @deftech{deterministic finite automaton} (@deftech{DFA}) @math{ℳ} is a specific
+type of @tech{FA} with well-defined, predictable behavior, where each input
+uniquely determines the next @tech{state}. @math{ℳ} can be represented as
+a @deftech{state diagram}, a @deftech{state table}, or as a tuple
+@math{(A, S, s_0, φ)}:
 
 @itemlist[
   @item{@math{A} (@deftech{alphabet}):
@@ -839,7 +840,7 @@ finite number of @tech{states} at any given time. @math{ℳ} can be described as
         The finite @tech{set} of all @deftech{state}s that @math{ℳ} can be in.}
   @item{@math{s_0} (@deftech{start state}):
         The @deftech{initial state} of @math{ℳ}.}
-  @item{@math{φ} (@deftech{transition function}):
+  @item{@math{φ} (@deftech{transition function} or @deftech{next state function}):
         An @tech{action} of @math{A} on @math{S} that defines the @tech{state}
         @deftech{transition} of @math{ℳ}.}
   ]
