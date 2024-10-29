@@ -797,7 +797,27 @@ In this way, we can @racket[define] an @tech{action} of the @tech{monoid}
 A @deftech{category action} of the @tech{category} @math{𝒞} in the @tech{category}
 @math{𝒟} is just a @tech{functor} from @math{𝒞} to @math{𝒟}.
 
-@subsubsection{Deterministic Finite Automaton}
+@subsubsection{𝐒𝐞𝐭-Valued Functors as Typed Actions}
+
+We've shown that @tech{monoid actions} can be viewed as @tech{functors} from
+an @tech{OOC} to @tech{𝐒𝐞𝐭}. Can we view any @tech{𝐒𝐞𝐭-valued functor} as an
+@tech{action} that generalizes @tech{monoid actions}? Indeed, we can! Such an
+@tech{action} is called a @deftech{typed action}.
+
+A @tech{typed action} of @math{M} on @math{S} involves a type @tech{set} @math{T}
+and a @tech{function} @math{type : S → T}. This can be seen as @math{S} being
+divided into @tech{subsets} according to their types, and the @tech{elements} of
+@math{M} acting on these @tech{subsets}.
+
+For a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭}, we can view it as a @tech{typed action}
+in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t)}, where
+@math{F(t) = {s ∈ S | type(s) = t}}.
+
+@image["scribblings/functor/images/typed-act.svg"]{[picture] typed-act.svg}
+
+@section{Finite Automaton}
+
+@subsection{Deterministic Finite Automaton}
 
 A @deftech{deterministic finite automaton} (@deftech{DFA}) @math{ℳ} is a
 mathematical model used to design algorithms and systems that can be in one of a
@@ -871,25 +891,7 @@ the first @tech{letter} to be @math{x} (@math{o} means "ok"):
 ]]
 }
 
-@subsubsection{𝐒𝐞𝐭-Valued Functors as Typed Actions}
-
-We've shown that @tech{monoid actions} can be viewed as @tech{functors} from
-an @tech{OOC} to @tech{𝐒𝐞𝐭}. Can we view any @tech{𝐒𝐞𝐭-valued functor} as an
-@tech{action} that generalizes @tech{monoid actions}? Indeed, we can! Such an
-@tech{action} is called a @deftech{typed action}.
-
-A @tech{typed action} of @math{M} on @math{S} involves a type @tech{set} @math{T}
-and a @tech{function} @math{type : S → T}. This can be seen as @math{S} being
-divided into @tech{subsets} according to their types, and the @tech{elements} of
-@math{M} acting on these @tech{subsets}.
-
-For a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭}, we can view it as a @tech{typed action}
-in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t)}, where
-@math{F(t) = {s ∈ S | type(s) = t}}.
-
-@image["scribblings/functor/images/typed-act.svg"]{[picture] typed-act.svg}
-
-@subsubsection{Typed Deterministic Finite Automaton}
+@subsection{Typed Deterministic Finite Automaton}
 
 @tech{DFAs} are typically characterized by their complete @tech{state tables},
 meaning that for every @tech{state} and every input @tech{letter}, there is a
@@ -964,3 +966,13 @@ the @tech{free category} of the @tech{state diagram} of @math{ℳ}.
 Here is how to implement @math{ℳ} in Racket:
 
 @racketfile{code/functor/TDFA.rkt}
+
+@subsection{Nondeterministic Finite Automaton}
+
+@subsection{Typed Nondeterministic Finite Automaton}
+
+@subsection{Regular Expression}
+
+@subsection{Generalized Nondeterministic Finite Automaton}
+
+@subsection{Typed Generalized Nondeterministic Finite Automaton}
