@@ -977,10 +977,24 @@ Here is how to implement @math{ℳ} in Racket:
 
 @subsection{Nondeterministic Finite Automaton}
 
-@subsection{Typed Nondeterministic Finite Automaton}
+In a @deftech{nondeterministic finite automaton} (@deftech{NFA}), the
+@tech{state table} offers greater flexibility compared to a @tech{DFA} by allowing
+each cell to contain a @tech{set} of @tech{states}. Unlike in a @tech{DFA} or
+@tech{TDFA}, where a given @tech{state} and input determine a unique next
+@tech{state} (or none at all), an @tech{NFA} permits multiple possible
+@tech{states} for a single input.
+
+From a @tech{category theory} perspective, the difference between @tech{DFAs} and
+@tech{NFAs} lies in treating @math{φ} as a @tech{relation} rather than
+a @tech{function}. This distinction means @math{φ@^{*}} operates as
+a @tech{monoid action} in @tech{𝐑𝐞𝐥} rather than in @tech{𝐒𝐞𝐭}.
+
+A @tech{relation} can be represented as a @tech{function} whose @tech{codomain}
+is a @tech{powerset}, such as @math{φ : A × S → 𝒫(S)}. In this sense, the
+@deftech{transition relation} @math{φ} is effectively a @tech{function} that
+takes an input and a @tech{state}, and returns a @tech{set} of possible next
+@tech{states}.
 
 @subsection{Regular Expression}
 
 @subsection{Generalized Nondeterministic Finite Automaton}
-
-@subsection{Typed Generalized Nondeterministic Finite Automaton}
