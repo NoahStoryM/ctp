@@ -817,6 +817,13 @@ in this way: @math{T = 𝒞_0}, @math{M = 𝒞_1}, and @math{S = ∐@_{t∈T}F(t
 
 @section{Finite Automaton}
 
+A @deftech{finite automaton} (@deftech{FA}) is a powerful mathematical model used
+to represent and analyze systems that transition between discrete @tech{states}
+based on inputs. This model plays a critical role in fields such as language
+processing, control systems, and computational theory. By abstracting systems as
+a finite number of @tech{states} and @tech{transitions}, @tech{FAs} provide a
+framework for designing algorithms and predicting system behavior.
+
 @subsection{Deterministic Finite Automaton}
 
 A @deftech{deterministic finite automaton} (@deftech{DFA}) @math{ℳ} is a
