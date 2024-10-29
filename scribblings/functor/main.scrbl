@@ -893,9 +893,9 @@ the first @tech{letter} to be @math{x} (@math{o} means "ok"):
 @tabular[#:sep @hspace[1]
 @list[
   @list[@bold{@math{S_2} \ @math{A_2}} @bold{@math{x}} @bold{@math{y}}]
-  @list[@bold{@math{s}} @math{o} @math{b}]
-  @list[@bold{@math{b}} @math{b} @math{b}]
-  @list[@bold{@math{o}} @math{o} @math{o}]
+  @list[@bold{@math{s_2}} @math{o_2} @math{b_2}]
+  @list[@bold{@math{b_2}} @math{b_2} @math{b_2}]
+  @list[@bold{@math{o_2}} @math{o_2} @math{o_2}]
 ]]
 }
 
