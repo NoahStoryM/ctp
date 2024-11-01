@@ -1510,7 +1510,7 @@ which @math{ℰ} consists of all @tech{morphisms} and @math{ℳ} consists of all
 which @math{ℰ} consists of all @tech{isomorphisms} and @math{ℳ} consists of all
 @tech{morphisms}.
 
-This definition of @math{OFS} explains how different @tech{factorizations} of a
+This definition of @tech{OFS} explains how different @tech{factorizations} of a
 @tech{morphism} relate to each other, ensuring that there exists a unique
 @tech{morphism} between any two ways of factoring the same @tech{morphism}.
 However, there is an equally important alternative definition that focuses on the
