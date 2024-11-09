@@ -6,8 +6,11 @@
 
 Welcome to @secref{_CTP_}, a journey into the conceptual world where mathematics
 meets software development. This tutorial is designed for Racket programmers who
-are curious about the underlying structures and principles that shape our understanding
-of both mathematical and computational systems.
+are curious about the mathematical ideas underlying computational systems. It
+offers insights into how familiar programming concepts can be reinterpreted
+through the lens of @tech{category theory}, and even goes further to directly
+borrow from @tech{category theory}, using programming language constructs to
+describe these abstract concepts.
 
 @margin-note{
 In addition to this tutorial, you may find the following resources helpful for
