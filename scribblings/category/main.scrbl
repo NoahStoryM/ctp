@@ -23,10 +23,10 @@ Racket programming language as our exploration tool.
 
 @section{Category}
 
-In the abstract world of mathematics, @tech{category theory} offers a unified
-framework for analyzing and synthesizing concepts across different fields.
-Central to our exploration are @tech{morphisms}, which we consider not merely as
-connections or processes but as entities in their own right.
+In the abstract landscape of mathematics, @tech{category theory} provides a
+unified framework that allows us to analyze and integrate concepts across diverse
+fields. At the core of this exploration are @tech{morphisms}, which we treat not
+just as connections or processes, but as fundamental entities in their own right.
 
 @margin-note{
 This tutorial does not distinguish @deftech{@deftech{small} category} and
@@ -40,12 +40,11 @@ and
 A @deftech{category} @math{𝒞} is defined by two @tech{collections}: @math{𝒞_0}
 of @deftech{object}s and @math{𝒞_1} of @deftech{morphism}s. Think of @math{𝒞} as
 a @tech{digraph}, where @tech{objects} are @tech{nodes}, and @tech{morphisms} are
-@tech{arrows} connecting these @tech{nodes}.
-
-For a @tech{morphism} @math{f} from an @tech{object} @math{a} to an @tech{object}
-@math{b} in a @tech{category} @math{𝒞}, denoted by @math{f : a @deftech{→} b : 𝒞},
-its @deftech{domain} (@deftech{source}) is @math{a}, and its @deftech{codomain}
-(@deftech{target}) is @math{b}: @math{dom@_{𝒞}(f) = a} and @math{cod@_{𝒞}(f) = b}.
+@tech{arrows} connecting these @tech{nodes}. For a @tech{morphism} @math{f} from
+an @tech{object} @math{a} to an @tech{object} @math{b} in a @tech{category}
+@math{𝒞}, denoted by @math{f : a @deftech{→} b : 𝒞}, its @deftech{domain}
+(@deftech{source}) is @math{a}, and its @deftech{codomain} (@deftech{target})
+is @math{b}: @math{dom@_{𝒞}(f) = a} and @math{cod@_{𝒞}(f) = b}.
 
 @image["scribblings/category/images/f.svg"]{[picture] f.svg}
 
@@ -63,9 +62,11 @@ they adhere to the @deftech{composition rules}:
   @item{Existence of @deftech{composition}
 
         For @tech{morphisms} @math{f} and @math{g} in @math{𝒞}, the
-        @deftech{composite} @math{g∘f} (@math{f@deftech{⨾}g}) is defined if
-        @math{cod@_{𝒞}(f) = dom@_{𝒞}(g)}. When @math{g∘f} is defined,
-        @math{dom@_{𝒞}(g∘f) = dom@_{𝒞}(f)} and @math{cod@_{𝒞}(g∘f) = cod@_{𝒞}(g)}.
+        @deftech{composite} @math{g∘f} is defined when @math{cod@_{𝒞}(f) = dom@_{𝒞}(g)},
+        and in such cases, we have @math{dom@_{𝒞}(g∘f) = dom@_{𝒞}(f)} and
+        @math{cod@_{𝒞}(g∘f) = cod@_{𝒞}(g)}. This @tech{composition} can also be
+        written as @math{f@deftech{⨾}g} to highlight the flow from @math{f} to
+        @math{g}.
 
         @image["scribblings/category/images/C-1.svg"]{[picture] C-1.svg}}
   @item{@tech[#:key "associative"]{Associativity} of @tech{composition}
@@ -164,10 +165,11 @@ and @tech{morphisms} are defined within the context of @tech{∗}.
 
 @image["scribblings/category/images/ooc.svg"]{[picture] ooc.svg}
 
-The @tech{monoid} structure becomes evident when we consider the @tech{identity morphism}
-as the @tech{monoid} @tech{identity element} and the @tech{composition} operation
-as the @tech{monoid} operation. Thus, @tech{OOCs} provide a categorical perspective
-on @tech{monoids}.
+The @tech{monoid} structure becomes evident when we consider the @tech{collection}
+of all @tech{morphisms} within the @tech{OOC} as the @tech{set} @math{S}, the
+@tech{identity morphism} @math{id@_{∗}} as the @tech{monoid} @tech{identity element}
+@math{s}, and the @tech{composition} operation as the @tech{monoid} operation @math{∘}.
+Thus, @tech{OOCs} provide a categorical perspective on @tech{monoids}.
 
 @subsection{Thin Category}
 
@@ -187,7 +189,7 @@ as the @tech{elements} of @math{S}, and a @tech{morphism} from @math{a} to
 any comparable pair @math{a} and @math{b}.
 
 A @deftech{partially ordered set} (@deftech{ordered set}, or @deftech{poset})
-is a special @tech{preordered set} @math{(S, ≤)}, in which @math{≤} is
+@math{(S, ≤)} is a special @tech{preordered set}, in which @math{≤} is
 @tech{antisymmetric}. @math{≤} is called a @deftech{partial order} on @math{S}.
 
 The @tech{poset} can be viewd as a special @tech{thin category}, where for any
@@ -195,8 +197,8 @@ The @tech{poset} can be viewd as a special @tech{thin category}, where for any
 and @math{b ≤ a}, then @math{a = b}, and these @tech{morphisms} are the same
 @tech{identity morphism}.
 
-A @deftech{totally ordered set} (@deftech{toset}) is a special @tech{ordered set}
-@math{(S, ≤)}, in which @math{≤} is @tech{total}. @math{≤} is called a
+A @deftech{totally ordered set} (@deftech{toset}) @math{(S, ≤)} is a special
+@tech{ordered set}, in which @math{≤} is @tech{total}. @math{≤} is called a
 @deftech{total order} on @math{S}.
 
 The @tech{toset} can be viewd as a special @tech{thin category}, where for any
@@ -275,20 +277,20 @@ The @deftech{diagonal relation} (@deftech{equality relation}) over a @tech{set}
 @math{S}, denoted by @math{Δ_S}, is the @tech{binary relation} over @math{S}:
 @math{{(x, x) | x ∈ S}}.
 
-Here're some properties that a @tech{binary relation} @math{△} over a @tech{set}
+Here're some properties that a @tech{binary relation} @math{∼} over a @tech{set}
 @math{S} may have:
 
 @itemlist[
   @item{@deftech{Symmetry}:
-        @math{△} is @deftech{symmetric} if: @math{∀x, y ∈ S, x △ y ⇒ y △ x}.}
+        @math{∼} is @deftech{symmetric} if: @math{∀x, y ∈ S, x ∼ y ⇒ y ∼ x}.}
   @item{@deftech{Antisymmetry}:
-        @math{△} is @deftech{antisymmetric} if: @math{∀x, y ∈ S, x △ y ∧ y △ x ⇒ x = y}.}
+        @math{∼} is @deftech{antisymmetric} if: @math{∀x, y ∈ S, x ∼ y ∧ y ∼ x ⇒ x = y}.}
   @item{@deftech{Reflexivity}:
-        @math{△} is @deftech{reflexive} if: @math{∀x ∈ S, x △ x}.}
+        @math{∼} is @deftech{reflexive} if: @math{∀x ∈ S, x ∼ x}.}
   @item{@deftech{Transitivity}:
-        @math{△} is @deftech{transitive} if: @math{∀x, y, z ∈ S, x △ y ∧ y △ z ⇒ x △ z}.}
+        @math{∼} is @deftech{transitive} if: @math{∀x, y, z ∈ S, x ∼ y ∧ y ∼ z ⇒ x ∼ z}.}
   @item{@deftech{Totality}
-        @math{△} is @deftech{total} if: @math{∀x, y ∈ S, x △ y ∨ y △ x}.}
+        @math{∼} is @deftech{total} if: @math{∀x, y ∈ S, x ∼ y ∨ y ∼ x}.}
 ]
 
 A @deftech{function} @math{f : S → T} can be viewed as the @tech{binary relation}:
@@ -302,7 +304,7 @@ may have additional properties:
         @math{T}. Formally, @math{∀x, y ∈ S, f(x) = f(y) ⇒ x = y}.}
   @item{@deftech{Surjective}: @math{f} is a @deftech{surjection} if every
         @tech{element} of @math{T} is the @tech{image} of some @tech{element} in
-        @math{S}; formally, @math{∀y ∈ T, ∃x ∈ S, f(x) = y}.}
+        @math{S}. Formally, @math{∀y ∈ T, ∃x ∈ S, y = f(x)}.}
   @item{@deftech{Bijective}: @math{f} is a @deftech{bijection} if it is both
         @tech{injective} and @tech{surjective}, establishing a one-to-one
         correspondence between @math{S} and @math{T}.}
@@ -344,6 +346,8 @@ satisfies the following properties:
 
         @image["scribblings/category/images/congruence_1.svg"]{[picture] congruence_1.svg}}
 ]
+
+@bold{Exercise}: Prove @math{∀a, b ∈ 𝒞_0, id_a ∼ id_b ⇒ a ∼ b}.
 
 @bold{Exercise}: Show that we can replace the second properties with:
 @math{∀f_1, f_2 ∈ Hom@_{𝒞}(a, b), ∀g_1, g_2 ∈ Hom@_{𝒞}(b, c),
@@ -643,9 +647,8 @@ An @deftech{identity class} is a @tech{congruence class} under @tech{=}.
 @bold{Exercise}: Think about the relationships between @math{𝒞} and @math{𝒞/=}.
 
 @margin-note{
-In Racket, a @tech{relation} is often represented by a @tech{procedure} that
-returns @racket[#t] if its arguments belong to the @tech{relation}, and
-@racket[#f] otherwise.
+In Racket, a @tech{relation} is often represented by a @tech{predicate} that
+determines whether its arguments satisfy the @tech{relation}.
 }
 
 We can @racket[define] @deftech{÷} in Racket to implement the
@@ -875,7 +878,7 @@ equipped with some additional structure (e.g., @tech{monoids}), and the
 
 @margin-note{
 many @tech{categories} of @tech{structured sets} are examples of
-@tech{concrete categories}
+@tech{concrete categories}.
 }
 
 @tech{Structured sets} and their @tech{homomorphisms} form fundamental @tech{categories}
@@ -939,7 +942,7 @@ A @deftech{graph} @math{𝒢} is defined by two @tech{collections}: @math{𝒢_0
 @deftech{edge}s.
 
 A @deftech{digraph} (@deftech{directed graph}) is a type of @tech{graph} in which
-each @deftech{directed edge} (@deftech{arrow}s) has a specific direction from one
+each @deftech{directed edge} (@deftech{arrow}) has a specific direction from one
 @tech{vertex} to another. The following @tech{diagram} represents a @tech{digraph}
 @math{𝒢}:
 
@@ -966,10 +969,9 @@ The following @tech{diagram} illustrates a @tech{digraph homomorphism}:
 
 @image["scribblings/category/images/grf-hom.svg"]{[picture] grf-hom.svg}
 
-The @tech{category} of @tech{digraphs}, denoted as @deftech{𝐃𝐠𝐫}, has
-@tech{digraphs} as @tech{objects} and @tech{digraph homomorphisms} as
-@tech{morphisms}, encapsulating the structure-preserving mappings between
-@tech{digraphs}.
+The @tech{category} of @tech{digraphs}, denoted as @deftech{𝐃𝐠𝐫}, where
+@tech{objects} are @tech{digraphs} and @tech{morphisms} are
+@tech{digraph homomorphisms}.
 
 @section{Categorical Definitions}
 

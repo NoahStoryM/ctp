@@ -57,7 +57,7 @@ structures to expand and improve the system, applying well-established theories
 and techniques to refine and extend your design. This tutorial aims to open the
 door to this broader perspective, enriching your approach to programming.
 
-As you embark on this journey, keep in mind that the true value of understanding
+As you embark on this journey, keep in mind that the real value of understanding
 @tech{category theory} in the context of programming is not merely in acquiring
 new knowledge but in developing a new way of thinking about problems or systems.
 We encourage you to approach the material with an open mind and to explore how
