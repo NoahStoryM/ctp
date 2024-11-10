@@ -40,17 +40,16 @@ mathematical concepts through practical programming constructs.
 
 @section{Natural Transformation}
 
+@margin-note{
+In a sense, @math{α(f)} can be considered the @tech{commutative square}.
+}
+
 A @deftech{natural transformation} @math{α} between @tech{parallel}
 @tech{functors} @math{F} and @math{G} from @math{𝒞} to @math{𝒟}, denoted by
-@math{α : F @deftech{⇒} G : 𝒞 → 𝒟}, is a way to map each @tech{morphism}
-@math{f : a → b : 𝒞} to a corresponding @tech{morphism}
-@math{α(f) : F(a) → G(b) : 𝒟}. This mapping must adhere
-@deftech{@deftech{naturality} condition} that the following @tech{diagram} is
-@tech{commutative}:
-
-@margin-note{
-In a sense, @math{α(f)} can be considered a @tech{commutative square}.
-}
+@math{α : F @deftech{⇒} G : 𝒞 → 𝒟}, maps each @tech{morphism} @math{f : a → b : 𝒞}
+to a corresponding @tech{morphism} @math{α(f) : F(a) → G(b) : 𝒟}. This mapping
+must adhere @deftech{@deftech{naturality} condition} that the following
+@tech{diagram} is @tech{commutative}:
 
 @image["scribblings/natural transformation/images/N-1.svg"]{[picture] N-1.svg}
 
@@ -85,7 +84,7 @@ The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
   |(→𝒞 i j)|)
 ]
 
-To verify the properties of @tech{natural transformations}, we'll @racket[define]
+To verify the properties of @tech{natural transformations}, we @racket[define]
 some @tech{check} @tech{procedures} to automate the testing of the
 @tech{naturality} a @tech{natural transformation} has:
 
@@ -192,34 +191,38 @@ Consider two @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟} 
 
 @subsubsection{Interchange Law}
 
-The @deftech{interchange law} (@deftech{IL}) explains how @tech{horizontal composition}
-and @tech{vertical composition} of @tech{natural transformations} interact with
+The @tech{Interchange Law} explains how @tech{horizontal composition} and
+@tech{vertical composition} of @tech{natural transformations} interact with
 each other.
 
 To understand how the @tech{IL} works, recall that applying a @tech{natural transformation}
 to a @tech{morphism} often results in a @tech{morphism} which is the diagonal of
-a @tech{commutative square}. When dealing with adjacent @tech{natural transformations},
-there are multiple ways to @tech{compose} them, ultimately produce the same
-@tech{commutative diagram}. This is precisely what the @tech{IL} states.
+a @tech{commutative square}. All @tech{composition} of @tech{natural transformations}
+with the same @tech{domain} and @tech{codomain} ultimately produce the same
+@tech{commutative squares}, so that they are equal. This is precisely what the
+@tech{IL} states.
 
-Consider the @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟},
-@math{β : G ⇒ H : 𝒞 → 𝒟}, @math{γ : K ⇒ L : 𝒟 → ℰ}, and @math{δ : L ⇒ M : 𝒟 → ℰ}.
-The @tech{commutative diagram} below illustrates the relationships between them:
+Consider the @tech{natural transformations} @math{α_0 : F ⇒ G : 𝒞 → 𝒟},
+@math{α_1 : G ⇒ H : 𝒞 → 𝒟}, @math{β_0 : K ⇒ L : 𝒟 → ℰ}, and
+@math{β_1 : L ⇒ M : 𝒟 → ℰ}. The @tech{commutative diagram} below illustrates the
+relationships between them:
 
 @image["scribblings/natural transformation/images/N-4.svg"]{[picture] N-4.svg}
 
 @margin-note{
 In some @tech{category theory} texts, @math{∘} denotes @tech{vertical composition}
-and @math{∗} denotes @tech{horizontal composition}: @math{(δ∘γ)∗(β∘α) = (δ∗β)∘(γ∗α)}.
+and @math{∗} denotes @tech{horizontal composition}:
+@math{(β_1∘β_0)∗(α_1∘α_0) = (β_1∗α_1)∘(β_0∗α_0)}.
 }
 
 We can @tech[#:key "vertical composition"]{vertically compose}
-@math{α} with @math{β}, and @math{γ} with @math{δ}, as well as
-@tech[#:key "horizontal composition"]{horizontally compose} @math{α} with @math{γ},
-and @math{β} with @math{δ}. The @tech{IL} states that the @tech{horizontal composition}
-of two @tech{vertical compositions} is equal to the @tech{vertical composition}
-of two @tech{horizontal compositions}. More precisely, the @tech{IL} can be
-written as: @math{(δ∙γ)∘(β∙α) = (δ∘β)∙(γ∘α)}.
+@math{α_0} with @math{α_1}, and @math{β_0} with @math{β_1}, as well as
+@tech[#:key "horizontal composition"]{horizontally compose} @math{α_0} with
+@math{β_0}, and @math{α_1} with @math{β_1}. The @tech{IL} states that the
+@tech{horizontal composition} of two @tech{vertical compositions} is equal to the
+@tech{vertical composition} of two @tech{horizontal compositions}. More precisely,
+the @deftech{interchange law} (@deftech{IL}) can be written as:
+@math{(β_1∙β_0)∘(α_1∙α_0) = (β_1∘α_1)∙(β_0∘α_0)}.
 
 @image["scribblings/natural transformation/images/IL.svg"]{[picture] IL.svg}
 
@@ -227,13 +230,13 @@ Here are some important @tech{commutative squares} that arise:
 
 @itemlist[
   #:style 'ordered
-  @item{@math{(δβ)∙(γα)(f) : KF(f) ⇒ MH(f)}
+  @item{@math{(β_1∘α_1)∙(β_0∘α_0)(f) : KF(f) ⇒ MH(f)}
         @image["scribblings/natural transformation/images/N-4_0.svg"]{[picture] N-4_0.svg}}
-  @item{@math{(δ∙γ)(β∙α)(f) : KF(f) ⇒ MH(f)}
+  @item{@math{(β_1∙β_0)∘(α_1∙α_0)(f) : KF(f) ⇒ MH(f)}
         @image["scribblings/natural transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
-  @item{@math{(δ∙γ)(β∙α)(f) : K(β∙α)(f) ⇒ M(β∙α)(f)}
+  @item{@math{(β_1∙β_0)∘(α_1∙α_0)(f) : K(α_1∙α_0)(f) ⇒ M(α_1∙α_0)(f)}
         @image["scribblings/natural transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
-  @item{@math{(δ∙γ)(β∙α)(f) : (δ∙γ)F(f) ⇒ (δ∙γ)H(f)}
+  @item{@math{(β_1∙β_0)∘(α_1∙α_0)(f) : (β_1∙β_0)F(f) ⇒ (β_1∙β_0)H(f)}
         @image["scribblings/natural transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
   ]
 
@@ -359,8 +362,8 @@ Specifically, an @tech{element} @math{s ∈ F(S)} uniquely corresponds to a
 @image["scribblings/natural transformation/images/run_1.svg"]{[picture] run_1.svg}
 
 To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TDFA}
-@math{ℳ} defined in @seclink["Typed_Deterministic_Finite_Automaton"]. We'll
-denote the @tech{path category} of the @tech{typed alphabet} @math{𝒢} as @math{𝒞},
+@math{ℳ} defined in @seclink["Typed_Deterministic_Finite_Automaton"]. We denote
+the @tech{path category} of the @tech{typed alphabet} @math{𝒢} as @math{𝒞},
 and let @math{F : 𝒞 → 𝐒𝐞𝐭} represent the @tech{typed action} @math{φ@^{*}}.
 In this context, consider the @tech{run function}, which takes an input
 @tech{sequence} @math{w} and returns a @tech{final state} @math{F(w)(s_0)} after
@@ -372,7 +375,7 @@ According to the @tech{Yoneda Lemma}, we see that each @tech{component} of a
 @tech{state} @math{s ∈ F(S)}: @math{∀w ∈ Hom@_{𝒞}(S, T), ρ(T)(w) = F(w)(s)}.
 Here, @math{F(T)} can be interpreted as the @tech{set} of @tech{final states}.
 
-To illustrate this correspondence, we'll use Racket code to @racket[define] two
+To illustrate this correspondence, we use Racket code to @racket[define] two
 @tech{procedures}: @racket[s->ρ] and @racket[ρ->s]. They demonstrate how an
 @tech{element} @math{s} of @math{F(S)} can be transformed into a
 @tech{natural transformation} @math{ρ}, and vice versa, providing a concrete way
