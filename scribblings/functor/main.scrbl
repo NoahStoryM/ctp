@@ -81,8 +81,8 @@ viewed as a @tech{functor} between two @tech{discrete categories}.
 
 A @tech{functor} @math{F : 𝒞 → 𝒟} is like a @tech{digraph homomorphism} that
 also preserves @tech{composable pairs} and @tech{identity morphisms}.
-To illustrate @math{F}, consider a @tech{function} @math{F_2 : 𝒞_2 → 𝒟_2}.
-This allows us to describe @math{F} with the following @tech{diagram}:
+To illustrate @math{F}, let's consider a @tech{function} @math{F_2 : 𝒞_2 → 𝒟_2}.
+Using @math{F_2}, we can describe @math{F} with the following @tech{diagram}:
 
 @image["scribblings/functor/images/functor.svg"]{[picture] functor.svg}
 
@@ -94,9 +94,9 @@ We can see that each similarly labeled square in the @tech{diagram} is a
 @tech{commutative square}. Additionally, the @tech{commutative squares} show the
 properties of @tech{functors}.
 
-To verify the properties of @tech{functors}, we'll @racket[define] some
-@tech{check} @tech{procedures} to automate the testing of essential properties
-a @tech{functor} preserves:
+To verify the properties of @tech{functors}, we @racket[define] some @tech{check}
+@tech{procedures} to automate the testing of essential properties a @tech{functor}
+preserves:
 
 @racketfile{code/functor/check.rkt}
 
@@ -171,32 +171,27 @@ An @deftech{endofunctor} is an @tech{endomorphism} in @tech{𝐂𝐚𝐭}, while
 @bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is an
 @tech{embedding}.
 
-@bold{Exercise}: For @tech{objects} @math{𝒞} and @math{𝒟} in @tech{𝐂𝐚𝐭}.
-Prove @math{𝒞×𝒟 ≅ 𝒟×𝒞}.
+In @tech{𝐂𝐚𝐭}, a @tech{terminal object} @tech{1} is a @tech{discrete category}
+with exactly one @tech{object}, and the @tech{initial object} @tech{0} is the
+@tech{category} with no @tech{objects} and no @tech{morphisms}.
 
-@bold{Exercise}: Think about what @tech{1} is in @tech{𝐂𝐚𝐭}.
-Prove @math{𝒞 ≅ 1×𝒞 ≅ 𝒞×1}.
+@bold{Exercise}: Prove @math{𝒞 ≅ 1×𝒞 ≅ 𝒞×1 ≅ 0+𝒞 ≅ 𝒞+0}.
 
-@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
-some @tech{quotient categories} of @math{𝒞×𝒟}.
-
-@bold{Exercise}: For @tech{objects} @math{𝒞} and @math{𝒟} in @tech{𝐂𝐚𝐭}.
-Prove @math{𝒞+𝒟 ≅ 𝒟+𝒞}.
-
-@bold{Exercise}: Think about what @tech{0} is in @tech{𝐂𝐚𝐭}.
-Prove @math{𝒞 ≅ 0+𝒞 ≅ 𝒞+0}.
-
-@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
-some @tech{subcategories} of @math{𝒞+𝒟}.
+@bold{Exercise}: Prove @math{0 ≅ 0×𝒞 ≅ 𝒞×0}.
 
 @bold{Exercise}: Prove that if there is a @tech{functor} from @math{𝒞} to
 @tech{0}, then @math{𝒞 ≅ 0}.
 
-@bold{Exercise}: Prove @math{0 ≅ 0×𝒞 ≅ 𝒞×0}.
+@bold{Exercise}: For @tech{objects} @math{𝒞} and @math{𝒟} in @tech{𝐂𝐚𝐭}.
+Prove @math{𝒞×𝒟 ≅ 𝒟×𝒞} and @math{𝒞+𝒟 ≅ 𝒟+𝒞}.
 
 @bold{Exercise}: For @tech{objects} @math{𝒜}, @math{ℬ}, and @math{𝒞} in @tech{𝐂𝐚𝐭}.
 Prove the @tech{distributive laws}: @math{𝒜×(ℬ+𝒞) ≅ 𝒜×ℬ+𝒜×𝒞} and
 @math{(𝒜+ℬ)×𝒞 ≅ 𝒜×𝒞+ℬ×𝒞}.
+
+@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
+some @tech{quotient categories} of @math{𝒞×𝒟} and some @tech{subcategories} of
+@math{𝒞+𝒟}.
 
 In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
 @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functors} as
@@ -306,13 +301,6 @@ For example, if we forget @tech{morphisms} in a @tech{category}, then we get a
 
 @image["scribblings/functor/images/U.svg"]{[picture] U.svg}
 
-Here's how we can @racket[define] @math{U} in Racket:
-
-@racketblock[
-(: U (∀ ([𝒜 : 𝐂𝐚𝐭] [ℬ : 𝐂𝐚𝐭]) (→ (→𝐂𝐚𝐭 𝒜 ℬ) (→𝐒𝐞𝐭 (U 𝒜) (U ℬ)))))
-(define (U F) (λ (a) (F a)))
-]
-
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from
 @tech{𝐌𝐨𝐧} to @tech{𝐒𝐞𝐭@_{∗}}.
 
@@ -323,30 +311,24 @@ Here's how we can @racket[define] @math{U} in Racket:
 
 The @deftech{Kleene star} (@deftech{Kleene closure}) @math{A@^{*}} of a @tech{set}
 @math{A} is the @tech{set} of all possible finite-length @deftech{sequence}s of
-@tech{elements} of @math{A}. In Racket, we typically represent the
-@tech{Kleene star} as a @tech/refer{list}:
+@tech{elements} of @math{A}. The @deftech{free monoid} on @math{A} is defined as
+the tuple @math{(A@^{*}, ∘, ())}, where @math{()} is the @deftech{empty sequence},
+and @math{∘} is the operation that concatenates two @tech{sequences}.
+
+The @deftech{free monoid functor} @math{F : 𝐒𝐞𝐭 → 𝐌𝐨𝐧} maps any @tech{set} to its
+corresponding @tech{free monoid}. All @tech{free monoids} obtained through @math{F}
+share the same @math{∘} and @math{()}, so we commonly use @tech{Kleene stars} to
+represent them.
+
+In Racket, we can represent the @tech{Kleene star} as a @tech/refer{list}:
 
 @racketblock[
 (define-type A* (Listof A))
 ]
 
-The @deftech{free monoid} on @math{A} is defined as the tuple
-@math{(A@^{*}, ∘, ())}, where @math{()} is the @deftech{empty sequence}, and
-@math{∘} is the operation that takes two @tech{sequences} and returns their
-concatenation.
-
-In Racket, @math{()} and @math{∘} are commonly represented by @racket[null] and
-@racket[append], respectively. Since all @tech{free monoids} share the same
-@math{∘} and @math{()}, it is common to refer to a @tech{free monoid} simply by
-its @tech{underlying set}, the @tech{Kleene star}.
-
-@margin-note{
-Since all @tech{free monoids} share the same @math{∘} and @math{()}, we use
-@tech{Kleene stars} to represent @tech{free monoids}.
-}
-
-The @deftech{free monoid functor} @math{F : 𝐒𝐞𝐭 → 𝐌𝐨𝐧} maps any @tech{set} to its
-corresponding @tech{free monoid}. Here is a Racket example:
+Here, @math{∘} and @math{()} can be represented by @racket[append] and @racket[null],
+respectively. Below is an example of defining the @tech{free monoid functor}
+@math{F} in Racket:
 
 @racketblock[
 (: F (∀ (A B) (→ (→ A B) (→ A* B*))))
@@ -362,36 +344,42 @@ called the @deftech{empty path} at @math{a}.
 
 The @deftech{free category} (@deftech{path category}) of a @tech{digraph}
 @math{𝒢} is a @tech{category} in which @tech{objects} are the @tech{nodes} of
-@math{𝒢}, and @tech{morphisms} are @deftech{paths} — @tech{sequences} of
-@tech{arrows} in @math{𝒢} that connect end to end.
+@math{𝒢}, and @tech{morphisms} are @deftech{paths} — that is, @tech{sequences}
+of @tech{arrows} in @math{𝒢}, each connecting one node to the next in sequence.
 
-Additionally, every @tech{category} has an @deftech{underlying digraph} that is
-derived by ignoring @tech{composition} and @tech{identity morphisms}, retaining
-only the @tech{nodes} and basic @tech{arrows} connecting them.
+In any @tech{category}, we can derive an @deftech{underlying digraph} by
+abstracting away the @tech{composition} and @tech{identity morphisms}, focusing
+only on the @tech{nodes} and the direct @tech{arrows} that connect them. This
+transformation can be formally captured by a @tech{forgetful functor} from
+@tech{𝐂𝐚𝐭} to @tech{𝐃𝐠𝐫}, which forgets the @tech{category} structure and retains
+only the basic @tech{digraph} structure.
 
 @bold{Exercise}: Try to @racket[define] the @tech{procedure} @racket[make-path],
-which takes a @tech{digraph}, a @tech{source} @tech{node} and a @tech/refer{string},
-and returns the corresponding @tech{path}.
+which takes a @tech{digraph}, a @tech{source} @tech{node}, and a @tech{Kleene star}
+of @tech{arrow} names, and returns the corresponding @tech{path}.
 
-The @deftech{free category functor} @math{F : 𝐃𝐢𝐠 → 𝐂𝐚𝐭} maps each @tech{digraph}
+The @deftech{free category functor} @math{F : 𝐃𝐠𝐫 → 𝐂𝐚𝐭} maps each @tech{digraph}
 to its corresponding @tech{free category}.
 
 @bold{Exercise}: Try to implement @math{F_0} that constructs the
-@tech{free category} of @math{𝒢}.
+@tech{free category} for a given @tech{digraph} @math{𝒢}.
 
-Since @tech{𝐌𝐨𝐧} can be viewed as @tech{𝐎𝐨𝐜}, any @tech{set} can be seen as a
-@tech{digraph} with a single @tech{node}, where each @tech{element} of the
-@tech{set} corresponds to an @tech{arrow} within the @tech{digraph}.
+Since @tech{𝐌𝐨𝐧} can be viewed as @tech{𝐎𝐨𝐜}, any @tech{set} can also be viewed
+as a @tech{digraph} with a single @tech{node}. In this view, each @tech{element}
+of the @tech{set} corresponds to an @tech{arrow} within this single @tech{node}
+@tech{digraph}. This analogy follows from the fact that we can derive the
+@tech{underlying set} of a @tech{monoid} through a @tech{forgetful functor}, just
+as we can derive an @tech{underlying digraph} from an @tech{OOC}.
 
 @subsubsection{Category of Trees}
 
 A @deftech{rooted @deftech{tree}} is a @tech{digraph} in which the corresponding
 @tech{free category} contains an @tech{initial object} or @tech{terminal object},
-called the @deftech{root}.
+referred to as the @deftech{root}.
 
 @image["scribblings/functor/images/tree.svg"]{[picture] tree.svg}
 
-@bold{Exercise}: Prove that the @tech{root} of a @tech{tree} is unique.
+@bold{Exercise}: Prove that a @tech{tree} is has a unique @tech{root}.
 
 @tech{Trees} are often used to represent hierarchical structures, where each
 @tech{node} has exactly one incoming or outgoing @tech{path}
@@ -415,7 +403,7 @@ as @tech{objects} and @deftech{forest homomorphisms} as @tech{morphisms}.
 For @tech{morphism} @math{f : a → b : 𝒞} and @math{g : b → c : 𝒞}, there are two
 kinds of @deftech{composition functor}s: @math{f/𝒞 : b/𝒞 → a/𝒞} and
 @math{𝒞/g : 𝒞/b → 𝒞/c}. @math{f/𝒞} maps an @tech{object} @math{g} in @math{b/𝒞}
-to the @tech{object} @math{g∘f} in @math{a/𝒞}, while @math{𝒞/g} maps an
+to the @tech{object} @math{g∘f} in @math{a/𝒞}, and @math{𝒞/g} maps an
 @tech{object} @math{f} in @math{𝒞/b} to the @tech{object} @math{g∘f} in @math{𝒞/c}.
 
 @bold{Exercise}: Implement a @tech{composition functor} @math{f/ℳ : b/ℳ → a/ℳ},
@@ -579,8 +567,8 @@ The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f
 @subsection{Hom Functor}
 
 The @deftech{hom functor} is a key construction in @tech{category theory}. It
-provides a way to associate a @tech{set} of @tech{morphisms} to each pair of
-@tech{objects} in a @tech{category}. @tech{Hom functors} play a central role in
+provides a way to associate each pair of @tech{objects} in a @tech{category} to
+a @tech{set} of @tech{morphisms}. @tech{Hom functors} play a central role in
 studying how @tech{objects} within a @tech{category} are related to each other
 via @tech{morphisms}, and they are foundational to concepts like the
 @tech{Yoneda Lemma}.
@@ -641,18 +629,18 @@ maps @math{(i, j) : (b, x) → (a, y) : 𝒞×𝒞} to @math{Hom@_{𝒞}(i, j)}.
 
 @subsection{Cayley's Theorem}
 
-@deftech{Cayley's theorem} in the context of @tech{category theory} states that
+In the context of @tech{category theory}, @deftech{Cayley's Theorem} asserts that
 every @tech{small category} @math{𝒞} is @tech{isomorphic} to a @tech{subcategory}
-@math{𝒮} of @math{𝐒𝐞𝐭}. @math{𝒮} is called the @deftech{Cayley's representation}
-of @math{𝒞}.
+@math{𝒮} of @tech{𝐒𝐞𝐭}. This subcategory @math{𝒮} is known as the
+@deftech{Cayley's representation} of @math{𝒞}.
 
-To demonstrate this, we'll @racket[define] @tech{isomorphisms} @math{H : 𝒞 → 𝒮}
+To demonstrate this, we @racket[define] @tech{isomorphisms} @math{H : 𝒞 → 𝒮}
 and @math{G : 𝒮 → 𝒞}:
 
 @margin-note{
-The definition of @math{G} is pseudocode. Since we treat @tech{sets} and
-@tech{functions} as @tech{procedures} here, we cannot @racket[define] @code{dom𝒮}
-and @code{choose-id}.
+Note that the definition of @math{G} is pseudocode. Because @tech{sets} and
+@tech{functions} are treated as @tech{procedures} here, we cannot @racket[define]
+@code{dom𝒮} and @code{choose-id}.
 }
 
 @racketblock[
@@ -692,8 +680,8 @@ and the @tech{forgetful functor} @math{U : 𝐂𝐚𝐭 → 𝒮}:
 
 @bold{Exercise}: Prove @math{H = U∘𝒞/-}.
 
-Having explored the @tech{Cayley's representation} of @math{𝒞}, we now turn our
-attention to its @tech{opposite category} @math{𝒞^op}:
+Next, we @racket[apply] @tech{Cayley's representation} to
+the @tech{opposite category} @math{𝒞^{op}}:
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: 𝒮 𝐂𝐚𝐭)

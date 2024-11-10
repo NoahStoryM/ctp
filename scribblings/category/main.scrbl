@@ -295,8 +295,9 @@ Here're some properties that a @tech{binary relation} @math{∼} over a @tech{se
 
 A @deftech{function} @math{f : S → T} can be viewed as the @tech{binary relation}:
 @math{{(x, f(x)) | x ∈ S}}. The @deftech{image} of @math{f}, denoted by
-@math{im(f)}, is the @tech{subset} of @math{T}: @math{{f(x) | x ∈ S}}. @math{f}
-may have additional properties:
+@math{im(f)}, is the @tech{subset} of @math{T}: @math{{f(x) | x ∈ S}}.
+
+@math{f} may have additional properties:
 
 @itemlist[
   @item{@deftech{Injective}: @math{f} is an @deftech{injection} if it maps
@@ -446,7 +447,7 @@ to abstract over @tech{categories}.
 We stipulate that @code{(∘)} returns @tech{∗}, @code{(∘ m)} returns @code{m},
 and @code{(= m)} returns @code{#t} in Racket.
 
-To verify the properties of @tech{categories}, we'll @racket[define] some
+To verify the properties of @tech{categories}, we @racket[define] some
 @deftech{check} @tech{procedures} to automate the testing of essential properties
 within a @tech{category}:
 
