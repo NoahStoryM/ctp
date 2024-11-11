@@ -969,7 +969,7 @@ Here is how to implement @math{ℳ} in Racket:
 A @deftech{nondeterministic finite automaton} (@deftech{NFA}) provides greater
 flexibility than a @tech{DFA} by allowing each cell in its @tech{state table}
 to contain a @tech{set} of possible @tech{states}. Unlike in a @tech{DFA} or
-@tech{TDFA}, where a specific @tech{state} and input determine a unique
+@tech{TDFA}, where a given @tech{state} and @tech{letter} determine a unique
 @tech{next state} (or none at all), an @tech{NFA} allows multiple possible
 @tech{states} for the same input.
 
@@ -981,7 +981,7 @@ as a @tech{monoid action} in @tech{𝐑𝐞𝐥} rather than in @tech{𝐒𝐞�
 For an @tech{NFA}, the @tech{transition relation} @math{φ} can be represented as
 a @tech{function} with a @tech{codomain} of @tech{powersets} (i.e., @math{φ : A×S → 𝒫(S)}).
 This functional view works because we focus on the @tech{set} of all possible
-@tech{next states} for a given @tech{state} and input.
+@tech{next states} for a given @tech{state} and @tech{letter}.
 
 Using John McCarthy's @racket[amb] operator, we can represent this @tech{function}
 as a @tech{procedure} that returns multiple ambiguous results, capturing all
