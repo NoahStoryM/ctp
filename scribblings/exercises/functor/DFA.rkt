@@ -54,10 +54,10 @@
 (module+ test
   (check-eq? (ρ2 '()) s2)
 
-  (check-eq? (ρ2 '(#\y #\y) 'b2))
-  (check-eq? (ρ2 '(#\y #\x) 'o2))
-  (check-eq? (ρ2 '(#\x #\y) 'b2))
-  (check-eq? (ρ2 '(#\x #\x) 'o2)))
+  (check-eq? (ρ2 '(#\y #\y)) 'b2)
+  (check-eq? (ρ2 '(#\y #\x)) 'o2)
+  (check-eq? (ρ2 '(#\x #\y)) 'b2)
+  (check-eq? (ρ2 '(#\x #\x)) 'o2))
 
 (define-type ∗ Null)
 (: Fφ2* (→ #;A* (→ℒ ∗ ∗) (→𝒮 S2 S2)))
