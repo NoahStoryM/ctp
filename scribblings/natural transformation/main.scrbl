@@ -501,8 +501,8 @@ A @deftech{universal element} of a @tech{functor} @math{F : 𝒞 → 𝐒𝐞�
 @tech{element} @math{s ∈ F(S)} for some @tech{object} @math{S : 𝒞} such that,
 for any other @tech{object} @math{T : 𝒞} and @tech{element} @math{t ∈ F(T)},
 there exists a unique @tech{morphism} @math{w : S → T : 𝒞} for which
-@math{t = F(w)(s)}. This reflects the general form of a @tech{universal property},
-which is typically described as follows:
+@math{t = F(w)(s)}. This reflects the general form of a
+@deftech{universal property}, which is typically described as follows:
 @math{∀T ∈ 𝒞_0, ∃!w ∈ Hom@_{𝒞}(S, T), t = F(w)(s)}.
 
 @bold{Exercise}: Prove that an @tech{object} @math{S : 𝒞} @tech{represents}
@@ -519,12 +519,9 @@ to @math{s} is a @tech{natural isomorphism}, i.e., each @tech{component} of
 @tech{universal elements} of @math{F}, then there is a unique @tech{isomorphism}
 between @math{S} and @math{T} in @math{𝒞}.
 
-This "universality" reflects the idea that the @tech{element} @math{s}
-encapsulates a general solution to which all other @tech{elements} can be
-uniquely related. This concept mirrors the @deftech{universal property} seen in
-@tech{initial objects}, where there exists a unique @tech{morphism} from an
-@tech{initial object} to any other @tech{object} in the same @tech{category}.
-
+The concept of @tech{universal elements} mirrors the @tech{universal property}
+seen in @tech{initial objects}, where there exists a unique @tech{morphism} from
+an @tech{initial object} to any other @tech{object} in the same @tech{category}.
 In fact, any @tech{universal property} can be viewed as an instance of an
 @tech{initial object} in some @tech{category} (usually the @tech{comma category}).
 For example, @tech{universal elements} of a @tech{representable functor}
