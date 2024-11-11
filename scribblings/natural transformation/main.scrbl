@@ -494,8 +494,8 @@ The @tech{Yoneda Lemma} showed that this correspondence holds when we substitute
 @math{F} for a @tech{hom functor}. But what if @math{F} is a more general
 @tech{representable functor}? This naturally leads to the question: What special
 property does the @tech{element} corresponding to the @tech{natural isomorphism}
-have in such cases? The answer is the @tech{universal property}, which is captured
-by the concept of a @tech{universal element}.
+have in such cases? The answer is the @tech{universal property}, which is
+reflected by the concept of a @tech{universal element}.
 
 A @deftech{universal element} of a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭} is an
 @tech{element} @math{s ∈ F(S)} for some @tech{object} @math{S : 𝒞} such that,
@@ -520,8 +520,11 @@ to @math{s} is a @tech{natural isomorphism}, i.e., each @tech{component} of
 between @math{S} and @math{T} in @math{𝒞}.
 
 The concept of @tech{universal elements} mirrors the @tech{universal property}
-seen in @tech{initial objects}, where there exists a unique @tech{morphism} from
-an @tech{initial object} to any other @tech{object} in the same @tech{category}.
+seen in @tech{initial objects}, where there exists a unique @tech{morphism}
+@math{f} from an @tech{initial object} @tech{0} to any other @tech{object}
+@math{a} in the same @tech{category} @math{𝒞}:
+@math{∀a ∈ 𝒞_0, ∃!f ∈ 𝒞_1, dom@_{𝒞}(f) = 0 ∧ cod@_{𝒞}(f) = a}.
+
 In fact, any @tech{universal property} can be viewed as an instance of an
 @tech{initial object} in some @tech{category} (usually the @tech{comma category}).
 For example, @tech{universal elements} of a @tech{representable functor}
