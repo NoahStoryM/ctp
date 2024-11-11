@@ -990,7 +990,7 @@ nature of @tech{NFAs}, where each input may lead to several potential @tech{stat
 
 The following is a Racket example for the @tech{NFA} @math{ℳ_3}
 @math{(A_3 = {x, y}, S_3 = {s_3, b_3, o_3}, s_3, φ_3)},
-which expects a @tech{sequence} containing @math{x...xy...y}.
+which expects a @tech{sequence} like @math{x...xy...y}.
 
 @image["scribblings/functor/images/ℳ_3.svg"]{[picture] ℳ_3.svg}
 
@@ -998,9 +998,9 @@ which expects a @tech{sequence} containing @math{x...xy...y}.
 @tabular[#:sep @hspace[1]
 @list[
   @list[@bold{@math{S_3} \ @math{A_3}} @bold{@math{x}} @bold{@math{y}}]
-  @list[@bold{@math{s_3}} @math{{s_3, b_3}} @math{{s_3}}]
+  @list[@bold{@math{s_3}} @math{{s_3, b_3}} @math{{}}]
   @list[@bold{@math{b_3}} @math{{}} @math{{o_3}}]
-  @list[@bold{@math{o_3}} @math{{o_3}} @math{{o_3}}]
+  @list[@bold{@math{o_3}} @math{{}} @math{{o_3}}]
 ]]
 }
 
