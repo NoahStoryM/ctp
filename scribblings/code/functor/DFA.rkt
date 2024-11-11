@@ -26,7 +26,7 @@
 (: φ1 (→ (× A1 S1) S1))
 (define (φ1 a s)
   (or
-   (for/or ([i : (Immutable-Vector A1 S1 S1) (in-list ℳ1)])
+   (for/or ([i (in-list ℳ1)])
      (match i
        [`#[,(? (curry eq? a))
            ,(? (curry eq? s))
@@ -49,12 +49,12 @@
 (define (ρ1 a*) (φ1* a* s1))
 
 (module+ test
-  (check-eq? s1 (ρ1 '(#\nul)))
+  (check-eq? (ρ1 '()) s1)
 
-  (check-eq? 'b1 (ρ1 '(#\y #\y)))
-  (check-eq? 'b1 (ρ1 '(#\y #\x)))
-  (check-eq? 's1 (ρ1 '(#\x #\y)))
-  (check-eq? 's1 (ρ1 '(#\x #\x))))
+  (check-eq? (ρ1 '(#\y #\y)) 'b1)
+  (check-eq? (ρ1 '(#\y #\x)) 'b1)
+  (check-eq? (ρ1 '(#\x #\y)) 's1)
+  (check-eq? (ρ1 '(#\x #\x)) 's1))
 
 (define-type ∗ Null)
 (: Fφ1* (→ #;A* (→ℒ ∗ ∗) (→𝒮 S1 S1)))
@@ -66,6 +66,5 @@
          [j (in-list str*)])
     (define m (reverse (string->list i)))
     (define n (reverse (string->list j)))
-    (check-eq?
-     ((Fφ1* (∘ℒ n m)) s1)
-     ((∘𝒮 (Fφ1* n) (Fφ1* m)) s1))))
+    (check-eq? ((Fφ1* (∘ℒ n m)) s1)
+               ((∘𝒮 (Fφ1* n) (Fφ1* m)) s1))))

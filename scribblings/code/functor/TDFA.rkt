@@ -107,6 +107,6 @@
 (define (ρ g*) ((φ* g*) s))
 
 (module+ test
-  (check-eq? s (ρ S0))
+  (check-eq? (ρ S0) s)
   (check-eq? ((φ* (∘ℒ g f)) s)
              ((∘𝒮 (φ* g) (φ* f)) s)))

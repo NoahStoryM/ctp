@@ -29,7 +29,7 @@
 (: φ2 (→ (× A2 S2) S2))
 (define (φ2 a s)
   (or
-   (for/or ([i : (Immutable-Vector A2 S2 S2) (in-list ℳ2)])
+   (for/or ([i (in-list ℳ2)])
      (match i
        [`#[,(? (curry eq? a))
            ,(? (curry eq? s))
@@ -52,12 +52,12 @@
 (define (ρ2 a*) (φ2* a* s2))
 
 (module+ test
-  (check-eq? s2 (ρ2 '(#\nul)))
+  (check-eq? (ρ2 '()) s2)
 
-  (check-eq? 'b2 (ρ2 '(#\y #\y)))
-  (check-eq? 'o2 (ρ2 '(#\y #\x)))
-  (check-eq? 'b2 (ρ2 '(#\x #\y)))
-  (check-eq? 'o2 (ρ2 '(#\x #\x))))
+  (check-eq? (ρ2 '(#\y #\y) 'b2))
+  (check-eq? (ρ2 '(#\y #\x) 'o2))
+  (check-eq? (ρ2 '(#\x #\y) 'b2))
+  (check-eq? (ρ2 '(#\x #\x) 'o2)))
 
 (define-type ∗ Null)
 (: Fφ2* (→ #;A* (→ℒ ∗ ∗) (→𝒮 S2 S2)))
@@ -69,6 +69,5 @@
          [j (in-list str*)])
     (define m (reverse (string->list i)))
     (define n (reverse (string->list j)))
-    (check-eq?
-     ((Fφ2* (∘ℒ n m)) s2)
-     ((∘𝒮 (Fφ2* n) (Fφ2* m)) s2))))
+    (check-eq? ((Fφ2* (∘ℒ n m)) s2)
+               ((∘𝒮 (Fφ2* n) (Fφ2* m)) s2))))
