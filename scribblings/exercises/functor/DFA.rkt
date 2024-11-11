@@ -33,8 +33,8 @@
      (match i
        [`#[,(? (curry eq? a))
            ,(? (curry eq? s))
-           ,s]
-        s]
+           ,t]
+        t]
        [_ #f]))
    (raise-arguments-error
     'φ2 "invalid character or state"

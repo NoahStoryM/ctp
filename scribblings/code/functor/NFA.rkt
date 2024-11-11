@@ -30,8 +30,8 @@
     (match i
       [`#[,(? (curry eq? a))
           ,(? (curry eq? s))
-          ,s]
-       (amb s)]
+          ,t]
+       t]
       [_ (amb)])))
 
 (define-type A3* (Listof A3))
