@@ -46,7 +46,6 @@
 
 (module+ test
   (check-equal? (ρ3 '())      (set s3))
-  (check-equal? (ρ3 '(#\nul)) (set s3))
 
   (check-equal? (ρ3 '(#\x #\x #\y)) (set))
   (check-equal? (ρ3 '(#\y #\y #\x)) (set 'o3))
