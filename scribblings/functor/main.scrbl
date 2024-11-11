@@ -7,7 +7,8 @@
                      racket/match
                      racket/promise
                      rackunit
-                     math/matrix)
+                     math/matrix
+                     amb)
           "../ctp-utils.rkt")
 
 @title[#:tag "_Functor_"]{Functor}
@@ -828,7 +829,7 @@ a @deftech{state diagram}, a @deftech{state table}, or as a tuple
         The finite @tech{set} of all @deftech{state}s that @math{ℳ} can be in.}
   @item{@math{s_0} (@deftech{start state}):
         The @deftech{initial state} of @math{ℳ}.}
-  @item{@math{φ} (@deftech{transition function} or @deftech{next state function}):
+  @item{@math{φ} (@deftech{transition function} or @deftech{@deftech{next state} function}):
         An @tech{action} of @math{A} on @math{S} that defines the @tech{state}
         @deftech{transition} of @math{ℳ}.}
   ]
@@ -965,24 +966,85 @@ Here is how to implement @math{ℳ} in Racket:
 
 @subsection{Nondeterministic Finite Automaton}
 
-In a @deftech{nondeterministic finite automaton} (@deftech{NFA}), the
-@tech{state table} offers greater flexibility compared to a @tech{DFA} by allowing
-each cell to contain a @tech{set} of @tech{states}. Unlike in a @tech{DFA} or
-@tech{TDFA}, where a given @tech{state} and input determine a unique next
-@tech{state} (or none at all), an @tech{NFA} permits multiple possible
-@tech{states} for a single input.
+A @deftech{nondeterministic finite automaton} (@deftech{NFA}) provides greater
+flexibility than a @tech{DFA} by allowing each cell in its @tech{state table}
+to contain a @tech{set} of possible @tech{states}. Unlike in a @tech{DFA} or
+@tech{TDFA}, where a specific @tech{state} and input determine a unique
+@tech{next state} (or none at all), an @tech{NFA} allows multiple possible
+@tech{states} for the same input.
 
-From a @tech{category theory} perspective, the difference between @tech{DFAs} and
-@tech{NFAs} lies in treating @math{φ} as a @tech{relation} rather than
-a @tech{function}. This distinction means @math{φ@^{*}} operates as
-a @tech{monoid action} in @tech{𝐑𝐞𝐥} rather than in @tech{𝐒𝐞𝐭}.
+From a @tech{category theory} perspective, the key difference between @tech{DFAs}
+and @tech{NFAs} lies in representing @math{φ} as a @deftech{transition relation}
+rather than a @tech{function}. This distinction means @math{φ@^{*}} operates
+as a @tech{monoid action} in @tech{𝐑𝐞𝐥} rather than in @tech{𝐒𝐞𝐭}.
 
-A @tech{relation} can be represented as a @tech{function} whose @tech{codomain}
-is a @tech{powerset}, such as @math{φ : A × S → 𝒫(S)}. In this sense, the
-@deftech{transition relation} @math{φ} is effectively a @tech{function} that
-takes an input and a @tech{state}, and returns a @tech{set} of possible next
-@tech{states}.
+For an @tech{NFA}, the @tech{transition relation} @math{φ} can be represented as
+a @tech{function} with a @tech{codomain} of @tech{powersets} (i.e., @math{φ : A×S → 𝒫(S)}).
+This functional view works because we focus on the @tech{set} of all possible
+@tech{next states} for a given @tech{state} and input.
+
+Using John McCarthy's @racket[amb] operator, we can represent this @tech{function}
+as a @tech{procedure} that returns multiple ambiguous results, capturing all
+possible @tech{next states} for each input. This aligns with the nondeterministic
+nature of @tech{NFAs}, where each input may lead to several potential @tech{states}.
+
+The following is a Racket example for the @tech{NFA} @math{ℳ_3}
+@math{(A_3 = {x, y}, S_3 = {s_3, b_3, o_3}, s_3, φ_3)},
+which expects a @tech{sequence} containing @math{x...xy...y}.
+
+@image["scribblings/functor/images/ℳ_3.svg"]{[picture] ℳ_3.svg}
+
+@centered{
+@tabular[#:sep @hspace[1]
+@list[
+  @list[@bold{@math{S_3} \ @math{A_3}} @bold{@math{x}} @bold{@math{y}}]
+  @list[@bold{@math{s_3}} @math{{s_3, b_3}} @math{{s_3}}]
+  @list[@bold{@math{b_3}} @math{{}} @math{{o_3}}]
+  @list[@bold{@math{o_3}} @math{{o_3}} @math{{o_3}}]
+]]
+}
+
+@racketfile{code/functor/NFA.rkt}
 
 @subsection{Regular Expression}
 
+A @deftech{regular expression} (@deftech{RE}) is a symbolic notation used to
+describe specific patterns within @tech/refer{strings}, forming what is known as
+a @tech{regular language}. @tech{Regular expressions} allow for the construction
+of complex search patterns using a combination of simpler expressions, along with
+operators such as @tech{concatenation}, @tech{alternation}, and the
+@tech{Kleene star}.
+
+Formally, given @tech{regular expressions} @math{R} and @math{S}, the following
+operations over them are defined to produce @tech{regular expressions}:
+
+@itemlist[
+  @item{@deftech{Concatenation} @math{RS}: Denotes the set of strings that can be formed
+        by concatenating any string from @math{R} with any string from @math{S} (in that order).}
+  @item{@deftech{Alternation} @math{R|S}: Represents the set union of the strings described by @math{R}
+        and @math{S}. This is commonly used to specify choices between patterns.}
+  @item{@tech{Kleene star} @math{R@^{*}}: Denotes the smallest superset of @math{R} that includes
+        @math{ε} and is closed under concatenation. It represents all possible sequences of
+        strings in @math{R}, including the empty sequence.}
+]
+
+The @deftech{regular languages} are precisely those that can be described by
+@tech{REs}. This correspondence means that any language recognized by a
+@tech{finite automaton} (either a @tech{DFA} or @tech{NFA}) can also be described
+by a regular expression, and vice versa.
+
+@bold{Theorem}: DFAs and NFAs recognize exactly the set of regular languages.
+
+This equivalence enables us to convert any @tech{NFA} into a @tech{DFA} using the
+@deftech{subset construction} (or @deftech{powerset construction}), whereby each
+state in the resulting @tech{DFA} corresponds to a subset of states in the
+original @tech{NFA}. This deterministic model maintains the same language
+recognition capability.
+
+@bold{Exercise}: Convert the following NFA to an equivalent DFA using subset construction.
+
 @subsection{Generalized Nondeterministic Finite Automaton}
+
+A @deftech{generalized nondeterministic finite automaton} (@deftech{GNFA}) builds
+on the @tech{NFA} structure by allowing inputs to be @tech{regular expressions}
+rather than @tech{letters}.
