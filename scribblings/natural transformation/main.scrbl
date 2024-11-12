@@ -483,6 +483,28 @@ Building on this idea, the @tech{Yoneda embedding} generalizes
 Moreover, any @tech{representable functors} @tech{naturally isomorphic} to
 @math{Hom@_{𝒞}(-, b)} can also be used to represent @math{b}.
 
+The @tech{Yoneda embedding} has interesting connections to programming paradigms,
+such as @deftech{Continuation-Passing Style} (@deftech{CPS}). Specifically, when
+applied to @math{𝐒𝐞𝐭}, the @tech{Yoneda embedding} @math{J} maps a @tech{set}
+@math{x} to the @tech{endofunctor} @math{Hom@_{𝐒𝐞𝐭}(-, x)}, which encapsulates
+computations that use @tech{functions} as @deftech{continuation}s to produce
+results in @math{x}.
+
+To illustrate this, consider a result type @math{x}. In Typed Racket, the type of
+@math{J(x)} can be expressed as: @racket[(∀ (a b) (→ (→ b a) (→ (→ a x) (→ b x))))].
+By uncurrying it, we obtain a @tech{procedure} @math{cps} of type
+@racket[(∀ (a b) (→ (→ b a) (→ b (→ a x) x)))].
+
+This type signature shows that @math{cps} maps a @tech{procedure} @math{i} of type
+@racket[(→ b a)] to a @tech{procedure} @math{cps(i)} of type @racket[(→ b (→ a x) x)].
+In other words, instead of returning a result of type @math{a} directly like @math{i},
+@math{cps(i)} requires an additional argument to indicate the @tech{continuation}
+of type @racket[(→ a x)] that specifies what to do with the result once it is
+produced. In many programming languages, the keyword @deftech{return} serves as a
+form of @tech{continuation}, directing where to proceed after a result is obtained.
+
+@bold{Exercise}: Try to @racket[define] @math{cps}.
+
 @subsection{Universal Element}
 
 In our earlier discussion of the @tech{Yoneda Lemma}, we highlighted how
