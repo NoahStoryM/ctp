@@ -345,11 +345,11 @@ can we use a similar structure to investigate @tech{functors} with different
 As a @tech{function} that maps @tech{morphisms}, a @tech{natural transformation}
 @math{α : F ⇒ G : 𝒞 → 𝒟} establishes a relationship between @math{F} and @math{G}
 through the @tech{naturality condition}. Specifically, for each @tech{morphism}
-@math{f : a → b : 𝒞}, @math{α(f) : F(a) → G(b) : 𝒟} corresponds uniquely to a
-@tech{commutative square}. In this sense, studying the relationship between
-@math{F} and @math{G} via @math{α} essentially constructs an @tech{arrow category},
-where @tech{objects} are the @tech{components} of @math{α}, and @tech{morphisms}
-are the @tech{commutative squares} that satisfy the @tech{naturality condition}.
+@math{f} in @math{𝒞}, @math{α(f)} corresponds uniquely to a @tech{commutative square}.
+In this sense, studying the relationship between @math{F} and @math{G} via @math{α}
+essentially constructs an @tech{arrow category}, where @tech{objects} are the
+@tech{components} of @math{α}, and @tech{morphisms} are the @tech{commutative squares}
+that satisfy the @tech{naturality condition}.
 
 Inspired by this approach, we can investigate the relationship between two
 @tech{functors} @math{F: 𝒞 → ℰ} and @math{G: 𝒟 → ℰ} by constructing an
