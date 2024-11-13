@@ -334,6 +334,50 @@ we can @racket[define] the @tech{compose} operator in @math{𝒟@^{𝒞}} like t
 
 @racketblock[(define ∙ (make-vertical-compose 𝒞 𝒟))]
 
+@section{Comma Category}
+
+In previous content, we examined how @tech{natural transformations} provide a
+framework for studying relationships between two @tech{functors} with the same
+@tech{domain} and @tech{codomain}. Now, we consider a more general question:
+can we use a similar structure to investigate @tech{functors} with different
+@tech{domains} but the same @tech{codomain}?
+
+As a @tech{function} that maps @tech{morphisms}, a @tech{natural transformation}
+@math{α : F ⇒ G : 𝒞 → 𝒟} establishes a relationship between @math{F} and @math{G}
+through the @tech{naturality condition}. Specifically, for each @tech{morphism}
+@math{f : a → b : 𝒞}, @math{α(f) : F(a) → G(b) : 𝒟} corresponds uniquely to a
+@tech{commutative square}. In this sense, studying the relationship between
+@math{F} and @math{G} via @math{α} essentially constructs an @tech{arrow category},
+where @tech{objects} are the @tech{components} of @math{α}, and @tech{morphisms}
+are the @tech{commutative squares} that satisfy the @tech{naturality condition}.
+
+Inspired by this approach, we can investigate the relationship between two
+@tech{functors} @math{F: 𝒞 → ℰ} and @math{G: 𝒟 → ℰ} by constructing an
+@tech{arrow category} that represents the interactions between @math{F} and
+@math{G}. In such a @tech{category}, @tech{objects} are triples @math{(a, x, α)},
+where @math{a} is an @tech{object} in @math{𝒞}, @math{x} is an @tech{object} in
+@math{𝒟}, and @math{α : F(a) → G(x)} is a @tech{morphism} in @math{ℰ}. The
+@tech{morphisms} in this @tech{category} are pairs @math{(i, j)}, where
+@math{i : a → b} is a @tech{morphism} in @math{𝒞} and @math{j : x → y} is a
+@tech{morphism} in @math{𝒟}, such that the following @tech{diagram} is
+@tech{commutative}:
+
+@image["scribblings/natural transformation/images/comma_1.svg"]{[picture] comma_1.svg}
+
+This @tech{category} is called a @deftech{comma category} of @math{F} and
+@math{G}, denoted by @math{F/G} (@math{F↓G}).
+
+@bold{Exercise}: Try using @tech{comma category} to @racket[define]
+@tech{arrow category} and (@tech[#:key "coslice category"]{co})@tech{slice category}.
+
+To explore the relationships between @math{F/G}, @math{𝒞}, @math{𝒟}, and @math{ℰ},
+we introduce two @tech{forgetful functors} @math{H@_{𝒞} : F/G → 𝒞} and
+@math{H@_{𝒟} : F/G → 𝒟}. @math{H@_{𝒞}} maps @math{(a, x, α)} to @math{a} and
+@math{(i, j)} to @math{i}, while @math{H@_{𝒟}} maps @math{(a, x, α)} to @math{x}
+and @math{(i, j)} to @math{j}. Furthermore, these @tech{functors} are connected
+by a @tech{natural transformation} @math{θ : F∘H@_{𝒞} ⇒ G∘H@_{𝒟}}, which maps
+@math{(a, x, α)} to @math{α}.
+
 @section{Yoneda Lemma}
 
 Philosophically speaking, one might say that the essence of an entity lies in the
