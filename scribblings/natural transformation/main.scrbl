@@ -378,6 +378,8 @@ and @math{(i, j)} to @math{j}. Furthermore, these @tech{functors} are connected
 by a @tech{natural transformation} @math{θ : F∘H@_{𝒞} ⇒ G∘H@_{𝒟}}, which maps
 @math{(a, x, α)} to @math{α}.
 
+@image["scribblings/natural transformation/images/comma_2.svg"]{[picture] comma_2.svg}
+
 @section{Yoneda Lemma}
 
 Philosophically speaking, one might say that the essence of an entity lies in the
