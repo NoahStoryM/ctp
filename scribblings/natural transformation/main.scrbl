@@ -492,8 +492,12 @@ results in @math{x}.
 
 To illustrate this, consider a result type @math{x}. In Typed Racket, the type of
 @math{J(x)} can be expressed as: @racket[(∀ (a b) (→ (→ b a) (→ (→ a x) (→ b x))))].
-By uncurrying it, we obtain a @tech{procedure} @math{cps} of type
-@racket[(∀ (a b) (→ (→ b a) (→ b (→ a x) x)))].
+By uncurrying it, we obtain a @tech{procedure} @math{cps}.
+
+@racketblock[
+(: cps (∀ (a b) (→ (→ b a) (→ b (→ a x) x))))
+(define (cps i) (λ (m k) (k (i m))))
+]
 
 This type signature shows that @math{cps} maps a @tech{procedure} @math{i} of type
 @racket[(→ b a)] to a @tech{procedure} @math{cps(i)} of type @racket[(→ b (→ a x) x)].
@@ -502,8 +506,6 @@ In other words, instead of returning a result of type @math{a} directly like @ma
 of type @racket[(→ a x)] that specifies what to do with the result once it is
 produced. In many programming languages, the keyword @deftech{return} serves as a
 form of @tech{continuation}, directing where to proceed after a result is obtained.
-
-@bold{Exercise}: Try to @racket[define] @math{cps}.
 
 @subsection{Universal Element}
 
