@@ -2,7 +2,7 @@
 
 (define license 'MIT)
 (define collection "ctp")
-(define version "0.0")
+(define version "0.2")
 
 (define pkg-desc "Category Theory in Programming")
 
