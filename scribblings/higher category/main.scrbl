@@ -36,8 +36,8 @@ the concept of a @tech{2-category}.
 
 To formalize this idea, we look at how @tech{𝐂𝐚𝐭} operates. There are two distinct
 @tech{composition} operations for @tech{natural transformations} within @tech{𝐂𝐚𝐭}:
-@tech{horizontal composition} and @tech{vertical composition}. These two forms of
-@tech{composition} interact systematically, governed by the @tech{interchange law}.
+@tech{horizontal composition} and @tech{vertical composition}. The interaction
+between these two forms of @tech{composition} follows the @tech{interchange law}.
 We can describe @tech{𝐂𝐚𝐭} in terms of three interrelated @tech{categories}: the
 @tech{base category} @tech{𝐂𝐚𝐭@^{b}}, the @tech{horizontal category} @tech{𝐂𝐚𝐭@^{h}},
 and the @tech{vertical category} @tech{𝐂𝐚𝐭@^{v}}.
