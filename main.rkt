@@ -8,8 +8,9 @@
 (define (cod _) ×)
 (define (src _) ×)
 (define (tgt _) ×)
+(define (⨾ . proc*) (apply compose proc*))
 (define ∘ (procedure-rename compose    '∘))
-(define · (procedure-rename compose    '·))
+(define ∙ (procedure-rename compose    '∙))
 (define ? (procedure-rename procedure? '?))
 (define =
   (case-λ

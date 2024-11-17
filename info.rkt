@@ -2,7 +2,7 @@
 
 (define license 'MIT)
 (define collection "ctp")
-(define version "0.0")
+(define version "0.3")
 
 (define pkg-desc "Category Theory in Programming")
 
@@ -14,7 +14,8 @@
     "racket-doc"
     "typed-racket-doc"
     "math-lib"
-    "math-doc"))
+    "math-doc"
+    "amb"))
 
 (define scribblings '(("scribblings/ctp.scrbl" (multi-page) (getting-started))))
 
