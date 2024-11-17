@@ -51,8 +51,8 @@
   (values dom cod ∘ ? =))
 
 (module+ test
-  (require (file "../../code/category/check.rkt")
-           (file "../../code/category/𝐏𝐚𝐢𝐫.rkt"))
+  (require "../../code/category/check.rkt"
+           "../../code/category/Pair.rkt")
   (define Arr_𝐏𝐚𝐢𝐫 (compose Arr 𝐏𝐚𝐢𝐫))
 
   ;; Objects in 𝒫

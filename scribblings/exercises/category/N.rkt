@@ -1,8 +1,8 @@
 #lang racket/base
 
 (require racket/match)
-(require (file "../../code/category/𝐏𝐚𝐢𝐫.rkt")
-         (file "../../code/category/⊆.rkt"))
+(require "../../code/category/Pair.rkt"
+         "../../code/category/sub.rkt")
 
 (define ?
   (match-λ

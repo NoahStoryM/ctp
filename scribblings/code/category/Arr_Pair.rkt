@@ -1,7 +1,7 @@
 #lang racket/base
 
 (require racket/match)
-(require (file "𝐏𝐚𝐢𝐫.rkt"))
+(require "Pair.rkt")
 
 (define-values (dom𝒫 cod𝒫 ∘𝒫 ?𝒫 =𝒫) (𝐏𝐚𝐢𝐫))
 

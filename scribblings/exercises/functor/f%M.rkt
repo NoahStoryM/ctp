@@ -1,16 +1,16 @@
 #lang typed/racket/base/no-check
 
-(require (file "../../code/category/𝐌𝐚𝐭𝐫.rkt")
-         (file "../../code/functor/SliF†.rkt"))
+(require "../../code/category/Matr.rkt"
+         "../../code/functor/coSliF.rkt")
 
 (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
 (define -/ℳ (SliF† ∘ℳ))
 
 (module+ test
   (require math/matrix
-           (file "../../code/category/check.rkt")
-           (file "../../code/functor/check.rkt")
-           (file "../category/Sli†.rkt"))
+           "../../code/category/check.rkt"
+           "../../code/functor/check.rkt"
+           "../category/coSli.rkt")
   (define (rand m n) (random 1 9))
 
   ;; Objects in ℳ

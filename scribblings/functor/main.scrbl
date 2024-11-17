@@ -103,7 +103,7 @@ preserves:
 
 The following example illustrates how to implement @tech{functors} in Racket:
 
-@racketfile{code/functor/𝐒𝐞𝐭→𝐑𝐞𝐥.rkt}
+@racketfile{code/functor/Set->Rel.rkt}
 
 @bold{Exercise}: Show that a @deftech{diagram} can be defined as a @tech{functor},
 where the @tech{domain} is called the @deftech{indexing category} of the
@@ -286,7 +286,7 @@ is a @tech{functor} that @math{∀a ∈ 𝒞_0, P(a) = [a]} and @math{∀f ∈ �
 Prove that there is a unique @tech{functor} @math{F′ : 𝒞/∼ → 𝒟} for which
 @math{F′∘P = F}.
 
-@image["scribblings/functor/images/F′.svg"]{[picture] F′.svg}
+@image["scribblings/functor/images/F~.svg"]{[picture] F~.svg}
 
 @subsection{Forgetful Functor}
 
@@ -419,7 +419,7 @@ For a @tech{category} @math{𝒞}, the @deftech{slice functor} @math{𝒞/-} map
 each @tech{morphism} @math{g : b → c : 𝒞} to the @tech{composition functor}
 @math{𝒞/g : 𝒞/b → 𝒞/c}.
 
-@image["scribblings/functor/images/𝒞÷-.svg"]{[picture] 𝒞÷-.svg}
+@image["scribblings/functor/images/C%-.svg"]{[picture] C%-.svg}
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭)
@@ -439,7 +439,7 @@ For a @tech{category} @math{𝒞}, the @deftech{coslice functor} @math{-/𝒞} m
 each @tech{morphism} @math{f : a → b : 𝒞} to the @tech{composition functor}
 @math{f/𝒞 : b/𝒞 → a/𝒞}.
 
-@image["scribblings/functor/images/-÷𝒞.svg"]{[picture] -÷𝒞.svg}
+@image["scribblings/functor/images/-%C.svg"]{[picture] -%C.svg}
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭)
@@ -519,7 +519,7 @@ The @deftech{powerset} of a @tech{set} @math{s}, denoted by @math{𝒫(s)}, is t
 @tech{powerset functors}, which map @tech{sets} to their corresponding
 @tech{powersets}.
 
-@racketfile{code/function/𝒫.rkt}
+@racketfile{code/function/P.rkt}
 
 Given a @tech{function} @math{f : a → b}, where @math{a_0} is a @tech{subset} of
 @math{a} and @math{b_0} is a @tech{subset} of @math{b}, we can @racket[define]
@@ -533,12 +533,12 @@ The @deftech{direct image} (@deftech{existential image}) of @math{a_0}, denoted
 by @math{f@_{∗}(a_0)}, is the @tech{subset} of @math{b}:
 @math{f@_{∗}(a_0) ≔ {f(x) | x ∈ a_0}}.
 
-@image["scribblings/functor/images/f_∗.svg"]{[picture] f_∗.svg}
+@image["scribblings/functor/images/f_*.svg"]{[picture] f_*.svg}
 
 The @deftech{direct image functor} (@deftech{existential image functor})
 @math{𝒫@_{∗}} takes @math{f} to @math{f@_{∗}}: @math{𝒫@_{∗}(f) = f@_{∗}}.
 
-@racketfile{code/functor/𝒫_∗.rkt}
+@racketfile{code/functor/P_*.rkt}
 
 @subsubsection{Preimage Functor}
 
@@ -546,12 +546,12 @@ The @deftech{preimage} (@deftech{inverse image}) of @math{b_0}, denoted by
 @math{f@^{∗}(b_0)}, is the @tech{subset} of @math{a}:
 @math{f@^{∗}(b_0) ≔ {x ∈ a | f(x) ∈ b_0}}.
 
-@image["scribblings/functor/images/f^∗.svg"]{[picture] f^∗.svg}
+@image["scribblings/functor/images/f^*.svg"]{[picture] f^*.svg}
 
 The @deftech{preimage functor} (@deftech{inverse image functor}) @math{𝒫@^{∗}}
 takes @math{f} to @math{f@^{∗}}: @math{𝒫@^{∗}(f) = f@^{∗}}.
 
-@racketfile{code/functor/𝒫^∗.rkt}
+@racketfile{code/functor/P^*.rkt}
 
 @subsubsection{Universal Image Functor}
 
@@ -563,7 +563,7 @@ the @tech{subset} of @math{b}: @math{f@_{!}(a_0) ≔ {y ∈ b | f@^{∗}({y}) �
 The @deftech{universal image functor} @math{𝒫@_{!}} takes @math{f} to @math{f@_{!}}:
 @math{𝒫@_{!}(f) = f@_{!}}.
 
-@racketfile{code/functor/𝒫_!.rkt}
+@racketfile{code/functor/P_!.rkt}
 
 @subsection{Hom Functor}
 
@@ -859,7 +859,7 @@ Here is a Racket example for the @tech{DFA} @math{ℳ_1}
 @math{(A_1 = {x, y}, S_1 = {s_1, b_1}, s_1, φ_1)}, which expects the last
 @tech{letter} to be not @math{y} (@math{s} means "start" and @math{b} means "bad"):
 
-@image["scribblings/functor/images/ℳ_1.svg"]{[picture] ℳ_1.svg}
+@image["scribblings/functor/images/M_1.svg"]{[picture] M_1.svg}
 
 @centered{
 @tabular[#:sep @hspace[1]
@@ -876,7 +876,7 @@ Here is a Racket example for the @tech{DFA} @math{ℳ_1}
 @math{ℳ_2} @math{(A_2 = {x, y}, S_2 = {s_2, b_2, o_2}, s_2, φ_2)}, which expects
 the first @tech{letter} to be @math{x} (@math{o} means "ok"):
 
-@image["scribblings/functor/images/ℳ_2.svg"]{[picture] ℳ_2.svg}
+@image["scribblings/functor/images/M_2.svg"]{[picture] M_2.svg}
 
 @centered{
 @tabular[#:sep @hspace[1]
@@ -924,7 +924,7 @@ We can use a @tech{state diagram} and a @tech{state table} to illustrate a
 @math{ℳ_1} and @math{ℳ_2}
 (@math{q} means "quit", @math{a} means "accept", and @math{r} means "reject"):
 
-@image["scribblings/functor/images/ℳ.svg"]{[picture] ℳ.svg}
+@image["scribblings/functor/images/M.svg"]{[picture] M.svg}
 
 @centered{
 @tabular[#:sep @hspace[1]
@@ -952,7 +952,7 @@ Let @math{S_0 = {s_0, a_0, r_0}}, @math{S_1 = {s_1, b_1}} and
 and @math{S_2} are the @tech{state spaces} of @math{ℳ_1} and @math{ℳ_2}
 respectively:
 
-@image["scribblings/functor/images/𝒢.svg"]{[picture] 𝒢.svg}
+@image["scribblings/functor/images/G.svg"]{[picture] G.svg}
 
 Similar to @tech{DFAs}, @math{φ : 𝒢 → 𝐒𝐞𝐭} generates a @tech{typed action}
 @math{φ@^{*} : F(𝒢) → 𝐒𝐞𝐭}. @math{F(𝒢)} is the @tech{free category} of @math{𝒢}.
@@ -992,7 +992,7 @@ The following is a Racket example for the @tech{NFA} @math{ℳ_3}
 @math{(A_3 = {x, y}, S_3 = {s_3, b_3, o_3}, s_3, φ_3)},
 which expects a @tech{sequence} like @math{x...xy...y}.
 
-@image["scribblings/functor/images/ℳ_3.svg"]{[picture] ℳ_3.svg}
+@image["scribblings/functor/images/M_3.svg"]{[picture] M_3.svg}
 
 @centered{
 @tabular[#:sep @hspace[1]

@@ -1,8 +1,8 @@
 #lang typed/racket/base/no-check
 
 (require racket/hash racket/set racket/promise)
-(require (file "../category/𝐒𝐞𝐭.rkt")
-         (file "../function/𝒫.rkt"))
+(require "../category/Set.rkt"
+         "../function/P.rkt")
 
 (: 𝒫^∗ (∀ ([b : 𝒮] [a : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫 b) (𝒫 a)))))
 (provide 𝒫^∗)
@@ -26,7 +26,7 @@
   f^∗)
 
 (module+ test
-  (require "check.rkt" (file "../category/†.rkt"))
+  (require "check.rkt" "../category/dual.rkt")
 
   ;; Objects
   (: a 𝒮) (define a (function (lazy a) (lazy a) #hash([x0 . x0] [x1 . x1])))

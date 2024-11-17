@@ -44,9 +44,9 @@
 
 (module+ test
   (require math/matrix)
-  (require (file "../../code/category/check.rkt")
-           (file "../../code/category/𝐌𝐚𝐭𝐫.rkt")
-           (file "../../code/category/𝐏𝐚𝐢𝐫.rkt"))
+  (require "../../code/category/check.rkt"
+           "../../code/category/Matr.rkt"
+           "../../code/category/Pair.rkt")
   (define (rand m n) (random 1 9))
 
   (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))

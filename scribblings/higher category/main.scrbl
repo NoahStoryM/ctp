@@ -101,7 +101,7 @@ By default, @tech{string diagrams} are read from right to left and from bottom
 to top.
 }
 
-@image["scribblings/higher category/images/α.svg"]{[picture] α.svg}
+@image["scribblings/higher category/images/alpha.svg"]{[picture] alpha.svg}
 
 We also use special notations in @tech{string diagrams}:
 
@@ -119,19 +119,19 @@ visually distinct representations of the same structures.
 The first one shows a @tech{2-cell} @math{α : G∘F ⇒ id@_{𝒞}}, where
 @math{F : 𝒞 → 𝒟 : 𝐂} and @math{G : 𝒟 → 𝒞 : 𝐂}:
 
-@image["scribblings/higher category/images/α_0.svg"]{[picture] α_0.svg}
-@image["scribblings/higher category/images/α_1.svg"]{[picture] α_1.svg}
-@image["scribblings/higher category/images/α_2.svg"]{[picture] α_2.svg}
-@image["scribblings/higher category/images/α_3.svg"]{[picture] α_3.svg}
+@image["scribblings/higher category/images/alpha_0.svg"]{[picture] alpha_0.svg}
+@image["scribblings/higher category/images/alpha_1.svg"]{[picture] alpha_1.svg}
+@image["scribblings/higher category/images/alpha_2.svg"]{[picture] alpha_2.svg}
+@image["scribblings/higher category/images/alpha_3.svg"]{[picture] alpha_3.svg}
 
 The second one shows two @tech{2-cells} @math{α : G∘F ⇒ id@_{𝒞}} and
 @math{β : id@_{𝒟} ⇒ H∘G}, where @math{F : 𝒞 → 𝒟 : 𝐂}, @math{G : 𝒟 → 𝒞 : 𝐂},
 and @math{H : 𝒞 → 𝒟 : 𝐂}:
 
-@image["scribblings/higher category/images/β&α_0.svg"]{[picture] β&α_0.svg}
-@image["scribblings/higher category/images/β&α_1.svg"]{[picture] β&α_1.svg}
-@image["scribblings/higher category/images/β&α_2.svg"]{[picture] β&α_2.svg}
-@image["scribblings/higher category/images/β&α_3.svg"]{[picture] β&α_3.svg}
+@image["scribblings/higher category/images/beta&alpha_0.svg"]{[picture] beta&alpha_0.svg}
+@image["scribblings/higher category/images/beta&alpha_1.svg"]{[picture] beta&alpha_1.svg}
+@image["scribblings/higher category/images/beta&alpha_2.svg"]{[picture] beta&alpha_2.svg}
+@image["scribblings/higher category/images/beta&alpha_3.svg"]{[picture] beta&alpha_3.svg}
 
 The advantage of using @tech{string diagrams} lies in their simplicity when
 representing complex structures in a @tech{2-category}. Instead of working with

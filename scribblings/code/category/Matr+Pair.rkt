@@ -1,7 +1,7 @@
 #lang racket/base
 
 (require math/matrix racket/match)
-(require (file "𝐌𝐚𝐭𝐫.rkt") (file "𝐏𝐚𝐢𝐫.rkt"))
+(require "Matr.rkt" "Pair.rkt")
 
 (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
 (define-values (dom𝒫 cod𝒫 ∘𝒫 ?𝒫 =𝒫) (𝐏𝐚𝐢𝐫))

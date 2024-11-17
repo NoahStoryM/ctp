@@ -1,7 +1,7 @@
 #lang typed/racket/base/no-check
 
 (require racket/hash racket/set racket/promise)
-(require (file "../category/𝐒𝐞𝐭.rkt"))
+(require "../category/Set.rkt")
 
 (provide (all-defined-out))
 

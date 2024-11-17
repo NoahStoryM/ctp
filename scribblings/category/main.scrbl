@@ -181,7 +181,7 @@ on @math{S}.
 A @tech{proset} can be viewed as a @deftech{thin category} in which any
 @tech{parallel} @tech{morphisms} are @tech{equal}.
 
-@image["scribblings/category/images/a≤b.svg"]{[picture] a≤b.svg}
+@image["scribblings/category/images/a<=b.svg"]{[picture] a<=b.svg}
 
 The @tech{proset} structure becomes evident when we consider the @tech{objects}
 as the @tech{elements} of @math{S}, and a @tech{morphism} from @math{a} to
@@ -469,7 +469,7 @@ is an example of @tech{OOC}. In @tech{𝐍𝐚𝐭}, @tech{morphisms} are natura
 Remember that @tech{objects} serve as @tech{identity morphisms}.
 }
 
-@racketfile{code/category/𝐍𝐚𝐭.rkt}
+@racketfile{code/category/Nat.rkt}
 
 @subsubsection{Category of Lists}
 
@@ -477,7 +477,7 @@ The @tech{category} of @tech/refer{lists}, denoted as @deftech{𝐋𝐢𝐬𝐭}
 @tech{OOC}. In @tech{𝐋𝐢𝐬𝐭}, @tech{morphisms} are @tech/refer{lists}, and the
 @tech{identity morphism} of the single @tech{object} @tech{∗} is @racket[null]:
 
-@racketfile{code/category/𝐋𝐢𝐬𝐭.rkt}
+@racketfile{code/category/List.rkt}
 
 @subsubsection{Category of Strings}
 
@@ -493,14 +493,14 @@ The @tech{category} of @tech{relations}, denoted as @deftech{𝐑𝐞𝐥}, wher
 @tech{morphisms} are @tech{binary relations}, and @tech{identity morphisms} are
 @tech{diagonal relations}:
 
-@racketfile{code/category/𝐑𝐞𝐥.rkt}
+@racketfile{code/category/Rel.rkt}
 
 @subsubsection{Category of Pairs}
 
 The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}, where
 @tech{morphisms} are @tech/refer{pairs}:
 
-@racketfile{code/category/𝐏𝐚𝐢𝐫.rkt}
+@racketfile{code/category/Pair.rkt}
 
 @bold{Exercise}: Prove that a @tech{thin category} is a @tech{subcategory} of
 @tech{𝐏𝐚𝐢𝐫}.
@@ -508,7 +508,7 @@ The @tech{category} of @tech/refer{pairs}, denoted as @deftech{𝐏𝐚𝐢𝐫}
 @bold{Exercise}: Implement the @tech{toset} @deftech{ℕ} as a @tech{thin category},
 where @tech{objects} are natural @tech/refer{numbers}.
 
-@image["scribblings/category/images/ℕ.svg"]{[picture] ℕ.svg}
+@image["scribblings/category/images/N.svg"]{[picture] N.svg}
 
 @subsubsection{Category of Matrices}
 
@@ -518,14 +518,14 @@ In @tech{𝐌𝐚𝐭𝐫}, each @math{m×n} @tech/math{matrix} is considered a 
 its @tech{domain} is the n-order identity @tech/math{matrix}, and its @tech{codomain}
 is the m-order identity @tech/math{matrix}:
 
-@racketfile{code/category/𝐌𝐚𝐭𝐫.rkt}
+@racketfile{code/category/Matr.rkt}
 
 @subsubsection{Category of Sets}
 
 The @tech{category} of @tech{sets}, denoted as @deftech{𝐒𝐞𝐭}, where @tech{morphisms}
 are @tech{functions}:
 
-@racketfile{code/category/𝐒𝐞𝐭.rkt}
+@racketfile{code/category/Set.rkt}
 
 @subsubsection{Category of Procedures}
 
@@ -556,7 +556,7 @@ such as @code{(∘ car +)}, but such a @tech{procedure} will only @racket[raise]
 @racket[exn] when applied. Therefore, @tech{𝐏𝐫𝐨𝐜} can be regarded as an @tech{OOC},
 where @tech{∗} is @racket[values].
 
-@;; @racketfile{code/category/𝐏𝐫𝐨𝐜.rkt}
+@;; @racketfile{code/category/Proc.rkt}
 
 @subsection{Constructions on Categories}
 
@@ -583,7 +583,7 @@ A @tech{category} @math{𝒞} can be viewed as a @tech{digraph} that adheres to 
 We can @racket[define] @deftech{†} in Racket to implement the
 @tech{opposite category} @math{𝒞^op}:
 
-@racketfile{code/category/†.rkt}
+@racketfile{code/category/dual.rkt}
 
 @subsubsection{Subcategory}
 
@@ -603,7 +603,7 @@ of @math{𝒞}, denoted by @math{𝒟 ⊆ 𝒞}, if:
 We can @racket[define] @deftech{⊆} in Racket to implement the @tech{subcategory}
 @math{𝒟} of @math{𝒞}:
 
-@racketfile{code/category/⊆.rkt}
+@racketfile{code/category/sub.rkt}
 
 A @deftech{subset} can be viewed as a @tech{subcategory} of a @tech{discrete category},
 and a @deftech{submonoid} can be viewed as a @tech{subcategory} of an @tech{OOC}.
@@ -655,7 +655,7 @@ determines whether its arguments satisfy the @tech{relation}.
 We can @racket[define] @deftech{÷} in Racket to implement the
 @tech{quotient category} @math{𝒞/∼}:
 
-@racketfile{code/category/÷.rkt}
+@racketfile{code/category/%.rkt}
 
 A @deftech{quotient set} can be viewed as a @tech{quotient category} of a
 @tech{discrete category}.
@@ -682,7 +682,7 @@ and @math{𝒟}, respectively. Each @tech{object} and @tech{morphism} in the
 To see this concept in action, let's use Racket to implement it. In the following
 example, we construct the @tech{product category} @math{𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫}:
 
-@racketfile{code/category/𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫.rkt}
+@racketfile{code/category/Matr*Pair.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{dom×}, @deftech{cod×},
 @deftech{∘×}, @deftech{?×} and @deftech{=×} so that we can @racket[define] the
@@ -710,7 +710,7 @@ and @math{𝒟} as its own.
 To see this concept in action, let's use Racket to implement it. In the following
 example, we construct the @tech{sum category} @math{𝐌𝐚𝐭𝐫+𝐏𝐚𝐢𝐫}:
 
-@racketfile{code/category/𝐌𝐚𝐭𝐫+𝐏𝐚𝐢𝐫.rkt}
+@racketfile{code/category/Matr+Pair.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{dom+}, @deftech{cod+},
 @deftech{∘+}, @deftech{?+} and @deftech{=+} so that we can @racket[define] the
@@ -761,7 +761,7 @@ but @tech{commutative squares}.
 In the following code, we create an @tech{arrow category} to which @tech{𝐏𝐚𝐢𝐫}
 gives rise:
 
-@racketfile{code/category/Arr_𝐏𝐚𝐢𝐫.rkt}
+@racketfile{code/category/Arr_Pair.rkt}
 
 @bold{Exercise}: Try to @racket[define] @deftech{Arr} so that we can
 @racket[define] the @tech{arrow category} @math{𝒫@^{→}} like this:
@@ -1301,8 +1301,8 @@ A @tech{category} with a @tech{null object} is called a @deftech{pointed categor
 
 The following @tech{diagrams} are @tech{commutative}:
 
-@image["scribblings/category/images/0→1_1.svg"]{[picture] 0→1_1.svg}
-@image["scribblings/category/images/0→1_2.svg"]{[picture] 0→1_2.svg}
+@image["scribblings/category/images/0->1_1.svg"]{[picture] 0->1_1.svg}
+@image["scribblings/category/images/0->1_2.svg"]{[picture] 0->1_2.svg}
 
 @bold{Exercise}: For @tech{objects} @math{A}, @math{B}, and @math{C} in @tech{𝐒𝐞𝐭}.
 Prove the @tech{exponential laws}:
@@ -1538,7 +1538,7 @@ relationship between the two @tech[#:key "class"]{classes}:
 
 The following @tech{diagram} is @tech{commutative}:
 
-@image["scribblings/category/images/ℰ⊥ℳ.svg"]{[picture] ℰ⊥ℳ.svg}
+@image["scribblings/category/images/E_orth_M.svg"]{[picture] E_orth_M.svg}
 
 @bold{Exercise}: Prove that these two definitions are @tech{equivalent}.
 

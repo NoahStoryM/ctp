@@ -1,7 +1,7 @@
 #lang typed/racket/base/no-check
 
-(require (file "../category/𝐒𝐞𝐭.rkt")
-         (file "../category/𝐑𝐞𝐥.rkt"))
+(require "../category/Set.rkt"
+         "../category/Rel.rkt")
 
 (: 𝒮 𝐂𝐚𝐭)
 (: dom𝒮 (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) a)))

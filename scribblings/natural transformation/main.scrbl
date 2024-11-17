@@ -93,7 +93,7 @@ some @tech{check} @tech{procedures} to automate the testing of the
 The following example illustrates how to implement @tech{natural transformations}
 in Racket:
 
-@racketfile{code/natural transformation/𝐒𝐞𝐭⇒𝐑𝐞𝐥.rkt}
+@racketfile{code/natural transformation/Set=>Rel.rkt}
 
 @subsection{Composition}
 
@@ -249,7 +249,7 @@ as @tech{𝐂𝐚𝐭}, which consists of @tech{categories} as @tech{objects} an
 @tech{functors} as @tech{morphisms}. Strictly speaking, this was actually the
 @tech{base category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{b}}.
 
-@image["scribblings/natural transformation/images/𝐂𝐚𝐭^b.svg"]{[picture] 𝐂𝐚𝐭^b.svg}
+@image["scribblings/natural transformation/images/Cat^b.svg"]{[picture] Cat^b.svg}
 
 With the introduction of @tech{natural transformations}, we can now see that
 @tech{functors} are actually a special case of @tech{natural transformations}.
@@ -273,7 +273,7 @@ between @tech{categories}. In @tech{𝐂𝐚𝐭@^{h}}, the @tech{objects} remai
 but the @tech{morphisms} are generalized to include all @tech{natural transformations}
 between @tech{functors}.
 
-@image["scribblings/natural transformation/images/𝐂𝐚𝐭^h.svg"]{[picture] 𝐂𝐚𝐭^h.svg}
+@image["scribblings/natural transformation/images/Cat^h.svg"]{[picture] Cat^h.svg}
 
 In @tech{𝐂𝐚𝐭@^{h}}, @tech{horizontal composition} serves as the @tech{composition}
 operation for @tech{morphisms}. This perspective allows us to see that
@@ -291,7 +291,7 @@ through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objec
 @math{α : F ⇒ G} in @tech{𝐂𝐚𝐭@^{v}} is called a @deftech{natural isomorphism},
 and @math{F} and @math{G} are @deftech{naturally isomorphic} to each other.
 
-@image["scribblings/natural transformation/images/𝐂𝐚𝐭^v.svg"]{[picture] 𝐂𝐚𝐭^v.svg}
+@image["scribblings/natural transformation/images/Cat^v.svg"]{[picture] Cat^v.svg}
 
 @bold{Exercise}: Prove that a @tech{natural transformation} @math{α : F ⇒ G : 𝒞 → 𝒟}
 is a @tech{natural isomorphism} iff each @tech{component} of @math{α} is an
@@ -427,7 +427,7 @@ To illustrate this correspondence, we use Racket code to @racket[define] two
 @tech{natural transformation} @math{ρ}, and vice versa, providing a concrete way
 to visualize the one-to-one correspondence described by the @tech{Yoneda Lemma}.
 
-@racketfile{code/natural transformation/s<->ρ.rkt}
+@racketfile{code/natural transformation/s<->run.rkt}
 
 This correspondence also holds for @tech{contravariant hom functors}. There is a
 one-to-one correspondence between @tech{elements} of @math{G(T)}, where

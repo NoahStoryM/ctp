@@ -1,9 +1,9 @@
 #lang typed/racket/base/no-check
 
 (require racket/hash racket/set racket/promise)
-(require (file "𝒫^∗.rkt")
-         (file "../category/𝐒𝐞𝐭.rkt")
-         (file "../function/𝒫.rkt"))
+(require (file "P^*.rkt")
+         "../category/Set.rkt"
+         "../function/P.rkt")
 
 (: 𝒫_! (∀ ([a : 𝒮] [b : 𝒮]) (→ (→𝒮 a b) (→𝒮 (𝒫 a) (𝒫 b)))))
 (provide 𝒫_!)
