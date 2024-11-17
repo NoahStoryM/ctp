@@ -6,7 +6,7 @@
 
 (define pkg-desc "Category Theory in Programming")
 
-(define deps '("base" "amb" "typed-racket-lib"))
+(define deps '("base" "typed-racket-lib"))
 (define build-deps
   '("scribble-lib"
     "rackunit-lib"
