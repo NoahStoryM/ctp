@@ -37,8 +37,9 @@ new ways of thinking, problem-solving, and system design.
 In the following chapters, we will explore the core concepts of @tech{category theory}
 — @tech{objects}, @tech{morphisms}, @tech{categories}, @tech{functors},
 @tech{natural transformations}, @tech{Yoneda Lemma}, @tech{higher categories},
-(@tech[#:key "colimit"]{co})@tech{limits}, @tech{Cartesion closed categories} &
-@tech{typed lambda}, @tech{Curry–Howard–Lambek corresponding}, @tech{adjunctions},
+(@tech[#:key "colimit"]{co})@tech{limits}, @tech{sketches},
+@tech{Cartesion closed categories} & @tech{typed lambda},
+@tech{Curry–Howard–Lambek corresponding}, @tech{adjunctions},
 (@tech[#:key "comonad"]{co})@tech{monads}, @tech{kan-extension},
 @tech[#:key "topos"]{toposes}, and more —
 and how these can be represented and utilized within the Racket programming
