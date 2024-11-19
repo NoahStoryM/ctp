@@ -40,7 +40,7 @@ In the following chapters, we will explore the core concepts of @tech{category t
 (@tech[#:key "colimit"]{co})@tech{limits}, @tech{sketches},
 @tech{Cartesion closed categories} & @tech{typed lambda},
 @tech{Curry–Howard–Lambek corresponding}, @tech{adjunctions},
-(@tech[#:key "comonad"]{co})@tech{monads}, @tech{kan-extension},
+(@tech[#:key "comonad"]{co})@tech{monads}, @tech{kan-extensions},
 @tech[#:key "topos"]{toposes}, and more —
 and how these can be represented and utilized within the Racket programming
 language. The goal is not to exhaustively cover @tech{category theory} or to

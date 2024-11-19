@@ -831,4 +831,4 @@ not unique.
 
 @;; @subsection{Bicategory}
 
-@;; @subsection{Monoidal Category}
+@;; @subsubsection{Monoidal Category}
