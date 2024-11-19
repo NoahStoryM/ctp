@@ -373,8 +373,8 @@ and @tech{codomain} are the same one, the @tech{diagram} is a
 
 @subsubsection{Commutative Triangle}
 
-A @deftech{commutative triangle} is a @tech{commutative diagram} that has the shape
-of a triangle.
+A @deftech{commutative triangle} is a @tech{commutative diagram} that has the
+@tech{shape} of a triangle.
 
 The equation @math{h = g∘f} can be pictured as a @tech{commutative triangle}
 like this:
@@ -386,8 +386,8 @@ and @math{b}.
 
 @subsubsection{Commutative Square}
 
-A @deftech{commutative square} is a @tech{commutative diagram} that has the shape
-of a square.
+A @deftech{commutative square} is a @tech{commutative diagram} that has the
+@tech{shape} of a square.
 
 The equation @math{k∘f = g∘h} can be pictured as a @tech{commutative square}
 like this:
@@ -430,8 +430,8 @@ where @math{@^{⊥}𝒞 ≔ {f | f⊥g ∀g ∈ 𝒞}}.
 
 @subsubsection{Commutative Cube}
 
-A @deftech{commutative cube} is a @tech{commutative diagram} that has the shape
-of a cube.
+A @deftech{commutative cube} is a @tech{commutative diagram} that has the
+@tech{shape} of a cube.
 
 @section{Mapping Category to Programming}
 

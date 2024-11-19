@@ -105,13 +105,6 @@ The following example illustrates how to implement @tech{functors} in Racket:
 
 @racketfile{code/functor/Set->Rel.rkt}
 
-@bold{Exercise}: Show that a @deftech{diagram} can be defined as a @tech{functor},
-where the @tech{domain} is called the @deftech{indexing category} of the
-@tech{diagram}.
-
-@bold{Exercise}: Show that a @tech{diagram} is @deftech{commutative} iff its
-@tech{indexing category} is a @tech{thin category}.
-
 A @tech{functor} @math{F : 𝒞 → 𝒟} @deftech{preserve}s a property @math{P} of
 @tech{morphisms} in @math{𝒞} if whenever @math{f} has @math{P}, so does
 @math{F(f)}. Conversely, a @tech{functor} @deftech{reflect}s a property @math{P}
@@ -137,12 +130,6 @@ of @tech{morphisms} in @math{𝒟} if whenever @math{F(f)} has @math{P}, so does
 
 If a @tech{functor} is @tech{fully faithful}, and @tech{injective} on
 @tech{objects}, it is called an @deftech{embedding}.
-
-@bold{Exercise}: Prove that every @tech{functor} @tech{preserves}
-@tech{commutative diagrams}.
-
-@bold{Exercise}: Prove that every @tech{faithful} @tech{functor} @tech{reflects}
-@tech{commutative diagrams}.
 
 @bold{Exercise}: Prove that every @tech{faithful} @tech{functor} @tech{reflects}
 @tech{monomorphisms}.
@@ -460,6 +447,31 @@ each @tech{morphism} @math{f : a → b : 𝒞} to the @tech{composition functor}
 ]
 
 @bold{Exercise}: Prove @math{g∘f/𝒞 = f/𝒞∘g/𝒞}.
+
+@section{Diagram}
+
+In @secref{Commutative_Diagram}, we introduced the informal idea of a
+@tech{diagram} as a @tech{collection} of @tech{objects} connected by
+@tech{morphisms}, where a @tech{commutative diagram} ensures that all @tech{paths}
+between the same pair of @tech{objects} result in the same @tech{morphism}. Now,
+we formalize this concept.
+
+Let @math{𝒞} be a @tech{category}, and let @math{𝒮} be a @tech{small category}.
+A @deftech{diagram} @math{D} of @deftech{shape} @math{𝒮} in @math{𝒞} is a
+@tech{functor} @math{D : 𝒮 → 𝒞}. If @math{𝒮} is a @tech{thin category}, then
+the @tech{diagram} @deftech{commute}s, i.e., it is @deftech{commutative}.
+
+@bold{Exercise}: Prove that every @tech{functor} @tech{preserves}
+@tech{commutative diagrams}.
+
+@bold{Exercise}: Prove that every @tech{faithful} @tech{functor} @tech{reflects}
+@tech{commutative diagrams}.
+
+Let @math{𝒮} be a @tech{digraph}. A @deftech{free diagram} @math{D} is a
+@tech{diagram} of @tech{shape} @math{F(𝒮)}, where @math{F(𝒮)} is the
+@tech{free category} of @math{𝒮}. @tech[#:key "equivalent"]{Equivalently},
+@math{D} can be viewed as a @deftech{graph homomorphism} from @math{𝒮} to
+@math{U(𝒞)}, where @math{U(𝒞)} is the @tech{underlying digraph} of @math{𝒞}.
 
 @section{𝐒𝐞𝐭-Valued Functor}
 
