@@ -83,7 +83,7 @@ mappings between @tech{2-categories}. Just as @deftech{1-functors} map between
 @tech{2-categories}, preserving the richer structure.
 
 To @racket[define] a @tech{2-functor}, we note that a @tech{2-category} @math{𝐂}
-consists of three @tech{collections}: @math{𝐂_0} @math{𝐂_1} and @math{𝐂_2}.
+consists of three @tech{collections}: @math{𝐂_0}, @math{𝐂_1} and @math{𝐂_2}.
 Consequently, a @deftech{2-functor} @math{F : 𝐂 → 𝐃} consists of three @tech{functions}:
 @math{F_0 : 𝐂_0 → 𝐃_0}, @math{F_1 : 𝐂_1 → 𝐃_1}, and @math{F_2 : 𝐂_2 → 𝐃_2}.
 Additionally, @math{F} can be described in terms of three @tech{1-functors}:
