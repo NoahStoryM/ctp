@@ -77,6 +77,28 @@ we @racket[define] the @tech{1-cells} from @tech{1} to @math{𝒞} as the
 @deftech{global object}s of @math{𝒞}, and the @tech{2-cells} between them as the
 @deftech{global morphism}s of @math{𝒞}.
 
+Having introduced the concept of @tech{2-categories}, we naturally consider the
+mappings between @tech{2-categories}. Just as @deftech{1-functors} map between
+@tech{1-categories} by preserving their structure, @tech{2-functors} map between
+@tech{2-categories}, preserving the richer structure.
+
+To @racket[define] a @tech{2-functor}, we note that a @tech{2-category} @math{𝐂}
+consists of three @tech{collections}: @math{𝐂_0} @math{𝐂_1} and @math{𝐂_2}.
+Consequently, a @deftech{2-functor} @math{F : 𝐂 → 𝐃} consists of three @tech{functions}:
+@math{F_0 : 𝐂_0 → 𝐃_0}, @math{F_1 : 𝐂_1 → 𝐃_1}, and @math{F_2 : 𝐂_2 → 𝐃_2}.
+Additionally, @math{F} can be described in terms of three @tech{1-functors}:
+
+@itemlist[
+  @item{The @deftech{base functor} @math{F^b : 𝐂^b → 𝐃^b}:
+        @math{F^b_0 = F_0} and @math{F^b_1 = F_1}.}
+  @item{The @deftech{horizontal functor} @math{F^h : 𝐂^h → 𝐃^h}:
+            @math{F^h_0 = F_0} and @math{F^h_1 = F_2}.}
+  @item{The @deftech{vertical functor} @math{F^v : 𝐂^v → 𝐃^v}:
+        @math{F^v_0 = F_1} and @math{F^v_1 = F_2}.}
+]
+
+@bold{Exercise}: Prove that @math{F^h} and @math{F^v} are also @math{F^b}.
+
 @subsection{String Diagram}
 
 Traditional @tech{diagrams} represent @tech{0-cells} as @tech{nodes},
@@ -204,6 +226,14 @@ not unique.
 
 @bold{Exercise}: Prove that @tech{𝐓𝐫𝐞𝐞} is @tech{equivalent} to @tech{𝐅𝐬𝐭}.
 
-@subsection{Bicategory}
+@;; @subsection{Bicategory}
 
-@subsection{Monoidal Category}
+@;; @subsection{Monoidal Category}
+
+@;; @section{Higher Category}
+
+@;; @subsection{n-Equivalence}
+
+@;; @subsection{(n, r)-Category}
+
+@;; @subsection{n-Category}
