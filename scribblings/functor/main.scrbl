@@ -245,6 +245,12 @@ For instance, in the @secref{Category_of_Sets}, @tech{morphisms} of @tech{𝐒�
 defined as @racket[hash] tables, but essentially they are mappings and might be
 defined as @tech{procedures} in later sections.
 
+@subsection{Constant Functor}
+
+A @deftech{constant functor} @math{Δd : 𝒞 → 𝒟} is a @tech{functor} that sends
+each @tech{object} in @math{𝒞} to a fixed @tech{object} @math{d} in @math{𝒟} and
+each @tech{morphism} in @math{𝒞} to @math{id_d} in @math{𝒟}.
+
 @subsection{Essentially Injective Functor}
 
 A @tech{functor} @math{F : 𝒞 → 𝒟} is @deftech{essentially injective} if it is
@@ -262,7 +268,7 @@ A @tech{functor} @math{F : 𝒞 → 𝒟} is @deftech{essentially surjective} if
 
 @subsection{Inclusion Functor}
 
-The @deftech{inclusion functor} @math{I : 𝒟 → 𝒞} is a @tech{functor} which sends
+The @deftech{inclusion functor} @math{I : 𝒟 → 𝒞} is a @tech{functor} that sends
 each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
 @bold{Exercise}: Prove @math{𝒟 ⊆ 𝒞}.
