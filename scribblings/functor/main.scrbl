@@ -682,7 +682,7 @@ and the @tech{forgetful functor} @math{U : 𝐂𝐚𝐭 → 𝒮}:
 @bold{Exercise}: Prove @math{H = U∘𝒞/-}.
 
 Next, we @racket[apply] @tech{Cayley's representation} to
-the @tech{opposite category} @math{𝒞^{op}}:
+the @tech{opposite category} @math{𝒞@^{op}}:
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: 𝒮 𝐂𝐚𝐭)
