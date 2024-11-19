@@ -831,4 +831,15 @@ not unique.
 
 @;; @subsection{Bicategory}
 
+@;; Classically, @tech{2-category} meant @deftech{strict 2-category} and
+@;; @tech{bicategory} meant @deftech{weak 2-category}.
+
 @;; @subsubsection{Monoidal Category}
+
+@;; @section{Enriched Category}
+
+@;; @subsection{Enrich Over}
+
+@;; @subsubsection{Poset-Enriched Category}
+
+@;; @subsection{Weakly Enrich Over}
