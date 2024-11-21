@@ -17,7 +17,7 @@
     "math-doc"
     "amb"))
 
-(define scribblings '(("scribblings/ctp.scrbl" (multi-page) (getting-started))))
+(define scribblings '(("scribblings/ctp.scrbl" (multi-page))))
 
 (define clean '("compiled" "private/compiled"))
 (define test-omit-paths '(#px"^((?!/code/|/exercises/).)*$"))
