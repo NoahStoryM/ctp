@@ -1,6 +1,6 @@
 #lang scribble/manual
 
-@title[#:tag "_CTP_"]{Category Theory in Programming}
+@title[#:tag "_CTP_"]{@italic{Category Theory in Programming}}
 @author[@author+email["Noah Ma" "noahstorym@gmail.com"]]
 
 
