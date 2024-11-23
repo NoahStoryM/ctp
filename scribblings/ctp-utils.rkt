@@ -38,8 +38,8 @@
 (define-tech tech/refer '(lib "scribblings/reference/reference.scrbl"))
 (define-tech tech/math  '(lib "math/scribblings/math.scrbl"))
 
-(define ^ (compose superscript math))
-(define _ (compose subscript   math))
+(define ^ (compose1 superscript math))
+(define _ (compose1 subscript   math))
 
 (define-syntax deftech@
   (syntax-parser
