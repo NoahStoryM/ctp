@@ -746,6 +746,7 @@ The first one shows a @tech{2-cell} @math{α : G∘F ⇒ id@_{𝒞}}, where
 @image["scribblings/natural transformation/images/alpha_1.svg"]{[picture] alpha_1.svg}
 @image["scribblings/natural transformation/images/alpha_2.svg"]{[picture] alpha_2.svg}
 @image["scribblings/natural transformation/images/alpha_3.svg"]{[picture] alpha_3.svg}
+@image["scribblings/natural transformation/images/alpha_4.svg"]{[picture] alpha_4.svg}
 
 The second one shows two @tech{2-cells} @math{α : G∘F ⇒ id@_{𝒞}} and
 @math{β : id@_{𝒟} ⇒ H∘G}, where @math{F : 𝒞 → 𝒟 : 𝐂}, @math{G : 𝒟 → 𝒞 : 𝐂},
@@ -755,6 +756,7 @@ and @math{H : 𝒞 → 𝒟 : 𝐂}:
 @image["scribblings/natural transformation/images/beta&alpha_1.svg"]{[picture] beta&alpha_1.svg}
 @image["scribblings/natural transformation/images/beta&alpha_2.svg"]{[picture] beta&alpha_2.svg}
 @image["scribblings/natural transformation/images/beta&alpha_3.svg"]{[picture] beta&alpha_3.svg}
+@image["scribblings/natural transformation/images/beta&alpha_4.svg"]{[picture] beta&alpha_4.svg}
 
 The advantage of using @tech{string diagrams} lies in their simplicity when
 representing complex structures in a @tech{2-category}. Instead of working with
