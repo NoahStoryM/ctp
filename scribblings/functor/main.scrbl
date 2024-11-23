@@ -20,9 +20,9 @@ the structural relationships between them.
 
 To clarify the explanation and show how @tech{functors} apply to programming,
 we will use Typed Racket syntax. Specifically, we will opt for
-@code{#lang typed/racket/base/no-check} instead of @code{#lang racket/base}.
-This choice allows us to incorporate type annotations for improved code clarity
-and better illustration of functorial properties.
+@code{#lang typed/racket/no-check} instead of @code{#lang racket}. This choice
+allows us to incorporate type annotations for improved code clarity and better
+illustration of functorial properties.
 
 @local-table-of-contents[]
 
