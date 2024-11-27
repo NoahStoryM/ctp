@@ -624,11 +624,8 @@ This natural progression leads us to consider whether we can extend our
 abstraction to include @deftech{2-morphism}s (@deftech{2-cell}s). In other words,
 we can think about constructing a @tech{2-category}, which is defined by not
 only @tech{0-cells} and @tech{1-cells} but also @tech{2-cells}. Just as in a
-@tech{1-category}, @tech{0-cells} are a special case of @tech{1-cells}, in a
-@tech{2-category}, @tech{1-cells} are a special case of @tech{2-cells}. This
-layered structure allows us to study the relationships between @tech{morphisms}
-in a deeper and more systematic way, paving the way for powerful abstractions in
-@tech{category theory}.
+@tech{1-category}, each @tech{0-cell} is an @deftech{identity 1-cell}, in a
+@tech{2-category}, each @tech{1-cell} is an @deftech{identity 2-cell}.
 
 We already have an example of such a structure: @tech{𝐂𝐚𝐭}. In @tech{𝐂𝐚𝐭},
 @tech{categories} serve as @tech{0-cells}, @tech{functors} act as @tech{1-cells},
