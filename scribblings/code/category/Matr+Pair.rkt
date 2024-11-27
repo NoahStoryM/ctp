@@ -1,6 +1,6 @@
 #lang racket/base
 
-(require math/matrix racket/match)
+(require math/matrix racket/case racket/match)
 (require "Matr.rkt" "Pair.rkt")
 
 (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
@@ -24,7 +24,7 @@
     [`(,p . 1) (cons (apply ∘𝒫 v*) 1)]))
 (define (? t)
   (and (pair? t)
-       (case (cdr t)
+       (case/eqv (cdr t)
          [(0) (?ℳ (car t))]
          [(1) (?𝒫 (car t))]
          [else #f])))

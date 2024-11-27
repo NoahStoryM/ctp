@@ -1,5 +1,7 @@
 #lang racket/base
 
+(require racket/case)
+
 (provide (struct-out composition))
 (struct composition (procedure* body)
   #:constructor-name make-composition
@@ -24,7 +26,7 @@
            [else (list m)])))
      (define procedure* (apply append procedure**))
      (define body (apply compose procedure*))
-     (case (length procedure*)
+     (case/eqv (length procedure*)
        [(0 1) body]
        [else (make-composition procedure* body)])]))
 (define (? m) (procedure? m))
