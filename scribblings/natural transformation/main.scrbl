@@ -538,7 +538,7 @@ results in @math{x}.
 
 To illustrate this, consider a result type @math{x}. In Typed Racket, the type of
 @math{J(x)} can be expressed as: @racket[(∀ (a b) (→ (→ b a) (→ (→ a x) (→ b x))))].
-By uncurrying it, we obtain a @tech{procedure} @math{cps}.
+By uncurrying it, we obtain a @tech{procedure} @math{cps}:
 
 @racketblock[
 (: cps (∀ (a b) (→ (→ b a) (→ b (→ a x) x))))
