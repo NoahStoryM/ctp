@@ -48,8 +48,9 @@ A @deftech{natural transformation} @math{α} between @tech{parallel}
 @tech{functors} @math{F} and @math{G} from @math{𝒞} to @math{𝒟}, denoted by
 @math{α : F @deftech{⇒} G : 𝒞 → 𝒟}, maps each @tech{morphism} @math{f : a → b : 𝒞}
 to a corresponding @tech{morphism} @math{α(f) : F(a) → G(b) : 𝒟}. This mapping
-must adhere @deftech{@deftech{naturality} condition} that the following
-@tech{diagram} is @tech{commutative}:
+must adhere to the @deftech{@deftech{naturality} condition}, expressed as
+@math{α(f) = α(b)∘F(f) = G(f)∘α(a)}, ensuring that the following @tech{diagram}
+is @tech{commutative}:
 
 @image["scribblings/natural transformation/images/N-1.svg"]{[picture] N-1.svg}
 
