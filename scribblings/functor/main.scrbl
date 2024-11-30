@@ -48,13 +48,6 @@ denoted by @math{F : 𝒞 → 𝒟}, is also defined by two @tech{functions}
 @math{F_0 : 𝒞_0 → 𝒟_0} and @math{F_1 : 𝒞_1 → 𝒟_1}. These @tech{functions} must
 satisfy the following properties:
 
-@margin-note{
-The @tech{functors} discussed in this tutorial default to the @deftech{covariant functor}s.
-A @deftech{contravariant functor} from @math{𝒞} to @math{𝒟} can be considered as
-a @tech{covariant functor} from @math{𝒞@^{op}} to @math{𝒟}. See more in
-@hyperlink["https://ncatlab.org/nlab/show/contravariant+functor"]{nLab}.
-}
-
 @itemlist[
   #:style 'ordered
   @item{Preservation of @tech{domains} and @tech{codomains}
@@ -104,6 +97,17 @@ preserves:
 The following example illustrates how to implement @tech{functors} in Racket:
 
 @racketfile{code/functor/Set->Rel.rkt}
+
+@margin-note{
+See more in @hyperlink["https://ncatlab.org/nlab/show/contravariant+functor"]{nLab}.
+}
+
+The @tech{functors} discussed in this tutorial default to the @deftech{covariant functor}s.
+A @deftech{contravariant functor} from @math{𝒞} to @math{𝒟} can be considered as
+a @tech{covariant functor} from @math{𝒞@^{op}} to @math{𝒟}. For example,
+@racket[matrix-transpose] is a classical example of a @tech{contravariant functor}:
+
+@racketfile{code/functor/transpose.rkt}
 
 A @tech{functor} @math{F : 𝒞 → 𝒟} @deftech{preserve}s a property @math{P} of
 @tech{morphisms} in @math{𝒞} if whenever @math{f} has @math{P}, so does
