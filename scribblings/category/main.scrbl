@@ -282,15 +282,15 @@ Here're some properties that a @tech{binary relation} @math{∼} over a @tech{se
 
 @itemlist[
   @item{@deftech{Symmetry}:
-        @math{∼} is @deftech{symmetric} if: @math{∀x, y ∈ S, x ∼ y ⇒ y ∼ x}.}
+        @math{∼} is @deftech{symmetric} if @math{∀x, y ∈ S, x ∼ y ⇒ y ∼ x}.}
   @item{@deftech{Antisymmetry}:
-        @math{∼} is @deftech{antisymmetric} if: @math{∀x, y ∈ S, x ∼ y ∧ y ∼ x ⇒ x = y}.}
+        @math{∼} is @deftech{antisymmetric} if @math{∀x, y ∈ S, x ∼ y ∧ y ∼ x ⇒ x = y}.}
   @item{@deftech{Reflexivity}:
-        @math{∼} is @deftech{reflexive} if: @math{∀x ∈ S, x ∼ x}.}
+        @math{∼} is @deftech{reflexive} if @math{∀x ∈ S, x ∼ x}.}
   @item{@deftech{Transitivity}:
-        @math{∼} is @deftech{transitive} if: @math{∀x, y, z ∈ S, x ∼ y ∧ y ∼ z ⇒ x ∼ z}.}
-  @item{@deftech{Totality}
-        @math{∼} is @deftech{total} if: @math{∀x, y ∈ S, x ∼ y ∨ y ∼ x}.}
+        @math{∼} is @deftech{transitive} if @math{∀x, y, z ∈ S, x ∼ y ∧ y ∼ z ⇒ x ∼ z}.}
+  @item{@deftech{Totality}:
+        @math{∼} is @deftech{total} if @math{∀x, y ∈ S, x ∼ y ∨ y ∼ x}.}
 ]
 
 A @deftech{function} @math{f : S → T} can be viewed as the @tech{binary relation}:
