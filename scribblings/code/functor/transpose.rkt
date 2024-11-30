@@ -4,6 +4,7 @@
          "../category/dual.rkt"
          math/matrix)
 
+(: T (∀ ([b : ℳ] [a : ℳ]) (→ (→ℳ a b) (→ℳ (T b) (T a)))))
 (define T matrix-transpose)
 
 (module+ test
