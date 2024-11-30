@@ -168,7 +168,7 @@ with exactly one @tech{object}, and the @tech{initial object} @tech{0} is the
 @bold{Exercise}: Prove @math{0 ≅ 0×𝒞 ≅ 𝒞×0}.
 
 @bold{Exercise}: Prove that if there is a @tech{functor} from @math{𝒞} to
-@tech{0}, then @math{𝒞 ≅ 0}.
+@tech{0}, then @math{𝒞 = 0}.
 
 @bold{Exercise}: For @tech{objects} @math{𝒞} and @math{𝒟} in @tech{𝐂𝐚𝐭}.
 Prove @math{𝒞×𝒟 ≅ 𝒟×𝒞} and @math{𝒞+𝒟 ≅ 𝒟+𝒞}.

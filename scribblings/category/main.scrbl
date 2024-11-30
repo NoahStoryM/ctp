@@ -308,7 +308,7 @@ A @deftech{function} @math{f : S → T} can be viewed as the @tech{binary relati
         @math{S}. Formally, @math{∀y ∈ T, ∃x ∈ S, y = f(x)}.}
   @item{@deftech{Bijective}: @math{f} is a @deftech{bijection} if it is both
         @tech{injective} and @tech{surjective}, establishing a one-to-one
-        correspondence between @math{S} and @math{T}.}
+        correspondence between the @tech{elements} of @math{S} and @math{T}.}
 ]
 
 @subsubsection{Equivalence Relation}
