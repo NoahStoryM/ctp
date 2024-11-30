@@ -27,6 +27,7 @@
 
 (module+ test
   (require "check.rkt" "../category/dual.rkt")
+  (define ∘ compose)
 
   ;; Objects
   (: a 𝒮) (define a (function (lazy a) (lazy a) #hash([x0 . x0] [x1 . x1])))
@@ -37,6 +38,6 @@
   (: f (→𝒮 a b)) (define f (function (lazy a) (lazy b) #hash([x0 . y0] [x1 . y0])))
   (: g (→𝒮 b c)) (define g (function (lazy b) (lazy c) #hash([y0 . z0] [y1 . z0])))
 
-  (define check-𝐒𝐞𝐭†→𝐒𝐞𝐭 (check-ftr (compose † 𝐒𝐞𝐭) 𝐒𝐞𝐭))
+  (define check-𝐒𝐞𝐭†→𝐒𝐞𝐭 (check-ftr (∘ † 𝐒𝐞𝐭) 𝐒𝐞𝐭))
   (define check-𝒫^∗ (check-𝐒𝐞𝐭†→𝐒𝐞𝐭 𝒫^∗))
   (check-𝒫^∗ c b a g f))

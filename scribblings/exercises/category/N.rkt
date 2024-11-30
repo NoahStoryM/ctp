@@ -12,8 +12,9 @@
      #t]
     [_ #f]))
 
+(define ∘ compose)
+(define ℕ (∘ (⊆ ?) 𝐏𝐚𝐢𝐫))
 (provide ℕ)
-(define ℕ (compose (⊆ ?) 𝐏𝐚𝐢𝐫))
 
 (module+ test
   (require "../../code/category/check.rkt")

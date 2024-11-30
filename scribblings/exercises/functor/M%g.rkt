@@ -12,6 +12,7 @@
            "../../code/functor/check.rkt"
            "../category/Sli.rkt")
   (define (rand m n) (random 1 9))
+  (define ∘ compose)
 
   ;; Objects in ℳ
   (define a1 (identity-matrix 1))
@@ -43,8 +44,8 @@
   (define g `((,q1) (,r1 ,g1)))
   (define h `((,r1) (,s1 ,h1)))
 
-  (define ℳ/b (compose (Sli b1) 𝐌𝐚𝐭𝐫))
-  (define ℳ/c (compose (Sli c1) 𝐌𝐚𝐭𝐫))
+  (define ℳ/b (∘ (Sli b1) 𝐌𝐚𝐭𝐫))
+  (define ℳ/c (∘ (Sli c1) 𝐌𝐚𝐭𝐫))
   (define ℳ/g (ℳ/- g1))
 
   (define check-ℳ/b (check-cat ℳ/b))

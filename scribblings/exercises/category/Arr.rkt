@@ -53,7 +53,8 @@
 (module+ test
   (require "../../code/category/check.rkt"
            "../../code/category/Pair.rkt")
-  (define Arr_𝐏𝐚𝐢𝐫 (compose Arr 𝐏𝐚𝐢𝐫))
+  (define ∘ compose)
+  (define Arr_𝐏𝐚𝐢𝐫 (∘ Arr 𝐏𝐚𝐢𝐫))
 
   ;; Objects in 𝒫
   (define a~ '(a . a))

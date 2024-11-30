@@ -80,6 +80,7 @@
   (require "../../code/category/check.rkt"
            "../../code/category/Matr.rkt")
   (define (rand m n) (random 1 9))
+  (define ∘ compose)
   (define-values (domℳ codℳ ∘ℳ ?ℳ =ℳ) (𝐌𝐚𝐭𝐫))
 
   ;; Objects in ℳ
@@ -98,7 +99,7 @@
 
   ;; m/ℳ
   (define m (identity-matrix 5))
-  (define m/ℳ (compose (Sli† m) 𝐌𝐚𝐭𝐫))
+  (define m/ℳ (∘ (Sli† m) 𝐌𝐚𝐭𝐫))
 
   (define p0 (build-matrix 1 5 rand))
   (define q0 (∘ℳ f0 p0))
