@@ -137,11 +137,8 @@ readability.
 @tech{natural transformations} ensures that the resulting @tech{diagram} is
 @tech{commutative}.
 
-The @tech{horizontal composition} involves more than just combining
-@tech{natural transformations} at a high level; it reveals the structure within
-the @tech[#:key "compose"]{composed} @tech{natural transformation}. For @math{βα},
-its type is @math{HF ⇒ KG}, where @math{HF} and @math{KG} are @tech{functors}
-from @math{𝒞} to @math{ℰ}. Additionally, there are three important
+For @math{βα}, its type is @math{HF ⇒ KG}, where @math{HF} and @math{KG} are
+@tech{functors} from @math{𝒞} to @math{ℰ}. Additionally, there are three important
 @tech{commutative squares} associated with @math{βα}:
 
 @itemlist[
