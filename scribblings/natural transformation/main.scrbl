@@ -274,7 +274,7 @@ between @tech{functors}.
 @image["scribblings/natural transformation/images/Cat^h.svg"]{[picture] Cat^h.svg}
 
 In @tech{𝐂𝐚𝐭@^{h}}, @tech{horizontal composition} serves as the @tech{composition}
-operation for @tech{morphisms}. This perspective allows us to see that
+operation for @tech{morphisms} in it. This perspective allows us to see that
 @tech{horizontal composition} essentially works like the @tech{composition} of
 @tech{functions}: both @tech{functors} and @tech{natural transformations} are
 kinds of @tech{functions} between @tech{categories}.
@@ -300,7 +300,7 @@ a @tech{morphism} @math{f : a → b : 𝒞}. Prove @math{F(f) = α@^{–1}(b)∘
 and @math{G(f) = α(b)∘F(f)∘α@^{–1}(a)}.
 
 In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} serves as the @tech{composition}
-operation for @tech{morphisms}. This perspective helps us understand why
+operation for @tech{morphisms} in it. This perspective helps us understand why
 @tech{functors} can be viewed as a special case of @tech{natural transformations}.
 
 Consider a @deftech{functor category} @math{[𝒞 → 𝒟]}
