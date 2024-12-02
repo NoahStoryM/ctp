@@ -1165,6 +1165,9 @@ and @math{f} is the @tech{inverse} of @math{g}, denoted by @math{g@^{–1}}.
 @math{a} and @math{b} are @deftech{isomorphic} to each other (@math{a @deftech{≅} b})
 if there exists an @tech{isomorphism} between them.
 
+@bold{Exercise}: Prove that if @math{f} and @math{g} are @tech{identities}, then
+@math{a = b}.
+
 @margin-note{
 An @deftech{isomorphism class} is an @tech{equivalence class} under @tech{≅}.
 }
@@ -1173,8 +1176,6 @@ An @deftech{isomorphism class} is an @tech{equivalence class} under @tech{≅}.
 @math{𝒞_0}.
 
 @bold{Exercise}: Prove that every @tech{object} is @tech{isomorphic} to itself.
-
-@bold{Exercise}: Prove that every @tech{identity} is an @tech{isomorphism}.
 
 @bold{Exercise}: Prove that for an @tech{isomorphism} @math{f}, @math{f = (f@^{–1})@^{–1}}.
 
