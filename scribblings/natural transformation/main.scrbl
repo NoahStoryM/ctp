@@ -821,6 +821,9 @@ In this case, both @math{F} and @math{G} are @tech{inverses} up to
 to each other (@math{𝒞 @deftech{≃} 𝒟}) if there exists an @tech{equivalence}
 between them.
 
+@bold{Exercise}: Prove that if @math{η} and @math{ϵ} are @tech{identities}, then
+@math{𝒞 ≅ 𝒟}.
+
 @bold{Exercise}: Prove that @tech{≃} is an @tech{equivalence relation} over
 @math{𝐂_0}.
 
