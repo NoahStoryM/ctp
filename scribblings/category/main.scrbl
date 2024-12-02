@@ -1174,6 +1174,8 @@ An @deftech{isomorphism class} is an @tech{equivalence class} under @tech{≅}.
 
 @bold{Exercise}: Prove that every @tech{object} is @tech{isomorphic} to itself.
 
+@bold{Exercise}: Prove that every @tech{identity} is an @tech{isomorphism}.
+
 @bold{Exercise}: Prove that for an @tech{isomorphism} @math{f}, @math{f = (f@^{–1})@^{–1}}.
 
 @bold{Exercise}: Prove that for @tech{isomorphisms} @math{f} and @math{g},
