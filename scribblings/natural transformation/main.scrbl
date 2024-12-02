@@ -781,8 +781,11 @@ A @deftech{strict monoidal category} @math{(𝒞, ⊗, I)} is a @tech{category}
 @math{𝒞} equipped with a @deftech{tensor product} @deftech{⊗} and a
 @deftech{tensor unit} @math{I}. The @tech{tensor product} is a @tech{functor}
 @math{⊗ : 𝒞×𝒞 → 𝒞}, and the @tech{tensor unit} is a @deftech{unit object}
-@math{I : 𝒞}, such that for any @tech{objects} @math{A, B, C : 𝒞},
-@math{(A⊗B)⊗C = A⊗(B⊗C)} and @math{A = A⊗I = I⊗A}.
+@math{I : 𝒞}, such that for every @tech{morphisms} @math{f, g, h} in @math{𝒞},
+@math{(f⊗g)⊗h = f⊗(g⊗h)} and @math{f = f⊗id_I = id_I⊗f}.
+
+@bold{Exercise}: Prove the @tech{interchange law}:
+@math{(g_0⊗g_1)∘(f_0⊗f_1) = (g_0∘f_0)⊗(g_1∘f_1)}.
 
 Just as a @tech{one-object category} @math{𝒞} can be viewed as a @tech{monoid}
 (@tech{monoidal set}) @math{(𝒞_1, ∘, id@_{∗})}, we extend this idea to view a
@@ -795,8 +798,8 @@ acts as the @tech{tensor product}, and the @tech{identity} @tech{1-cell}
 @subsubsection{Strict Symmetric Monoidal Category}
 
 A @deftech{strict symmetric monoidal category} @math{(𝒞, ⊗, I)} is a
-@tech{strict monoidal category} that @tech{⊗} is @tech{symmetric}: for any
-@tech{objects} @math{A, B : 𝒞}, @math{A⊗B = B⊗A}.
+@tech{strict monoidal category} that @tech{⊗} is @tech{symmetric}: for every
+@tech{morphisms} @math{f, g} in @math{𝒞}, @math{f⊗g = g⊗f}.
 
 @;; @subsection{Rewrite System}
 
