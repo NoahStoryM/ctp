@@ -717,6 +717,9 @@ Just as a @tech{one-object category} @math{𝒞} can be viewed as a @tech{monoid
 acts as the @tech{tensor product}, and the @tech{identity} @tech{1-cell}
 @math{id^b@_{∗}}, which serves as the @tech{tensor unit}.
 
+@bold{Exercise}: Show that every @tech{endofunctor category} is a
+@tech{strict monoidal category}.
+
 @subsubsection{Strict Symmetric Monoidal Category}
 
 A @deftech{strict symmetric monoidal category} @math{(𝒞, ⊗, I)} is a
