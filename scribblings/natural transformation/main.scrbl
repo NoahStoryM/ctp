@@ -695,6 +695,34 @@ Additionally, @math{F} can be described in terms of three @tech{1-functors}:
 
 @bold{Exercise}: Prove that @math{F^h} and @math{F^v} are also @math{F^b}.
 
+@subsection{Strict Monoidal Category}
+
+A @deftech{strict monoidal category} @math{(𝒞, ⊗, I)} is a @tech{category}
+@math{𝒞} equipped with a @deftech{tensor product} @deftech{⊗} and a
+@deftech{tensor unit} @math{I}. The @tech{tensor product} is a @tech{functor}
+@math{⊗ : 𝒞×𝒞 → 𝒞}, and the @tech{tensor unit} is a @deftech{unit object}
+@math{I : 𝒞}, such that for every @tech{morphisms} @math{f, g, h} in @math{𝒞},
+@math{(f⊗g)⊗h = f⊗(g⊗h)} and @math{f = f⊗id_I = id_I⊗f}.
+
+@image["scribblings/natural transformation/images/mon-cat.svg"]{[picture] mon-cat.svg}
+
+@bold{Exercise}: Prove the @tech{interchange law}:
+@math{(g_0⊗g_1)∘(f_0⊗f_1) = (g_0∘f_0)⊗(g_1∘f_1)}.
+
+Just as a @tech{one-object category} @math{𝒞} can be viewed as a @tech{monoid}
+(@tech{monoidal set}) @math{(𝒞_1, ∘, id@_{∗})}, we extend this idea to view a
+@deftech{one-object 2-category} @math{𝐂} as a @tech{strict monoidal category}
+@math{(𝐂^v, ∘, id^b@_{∗})}. In this context, the @tech{vertical category}
+@math{𝐂^v} is equipped with the @tech{horizontal composition} @math{∘}, which
+acts as the @tech{tensor product}, and the @tech{identity} @tech{1-cell}
+@math{id^b@_{∗}}, which serves as the @tech{tensor unit}.
+
+@subsubsection{Strict Symmetric Monoidal Category}
+
+A @deftech{strict symmetric monoidal category} @math{(𝒞, ⊗, I)} is a
+@tech{strict monoidal category} that @tech{⊗} is @tech{symmetric}: for every
+@tech{morphisms} @math{f, g} in @math{𝒞}, @math{f⊗g = g⊗f}.
+
 @subsection{String Diagram}
 
 Traditional @tech{diagrams} represent @tech{0-cells} as @tech{nodes},
@@ -774,34 +802,6 @@ compress it for simplicity. Specifically:
 
 This compressed representation is not limited to @math{𝐂^b} but can also be
 extended to other @tech{1-categories}.
-
-@subsection{Strict Monoidal Category}
-
-A @deftech{strict monoidal category} @math{(𝒞, ⊗, I)} is a @tech{category}
-@math{𝒞} equipped with a @deftech{tensor product} @deftech{⊗} and a
-@deftech{tensor unit} @math{I}. The @tech{tensor product} is a @tech{functor}
-@math{⊗ : 𝒞×𝒞 → 𝒞}, and the @tech{tensor unit} is a @deftech{unit object}
-@math{I : 𝒞}, such that for every @tech{morphisms} @math{f, g, h} in @math{𝒞},
-@math{(f⊗g)⊗h = f⊗(g⊗h)} and @math{f = f⊗id_I = id_I⊗f}.
-
-@image["scribblings/natural transformation/images/mon-cat.svg"]{[picture] mon-cat.svg}
-
-@bold{Exercise}: Prove the @tech{interchange law}:
-@math{(g_0⊗g_1)∘(f_0⊗f_1) = (g_0∘f_0)⊗(g_1∘f_1)}.
-
-Just as a @tech{one-object category} @math{𝒞} can be viewed as a @tech{monoid}
-(@tech{monoidal set}) @math{(𝒞_1, ∘, id@_{∗})}, we extend this idea to view a
-@deftech{one-object 2-category} @math{𝐂} as a @tech{strict monoidal category}
-@math{(𝐂^v, ∘, id^b@_{∗})}. In this context, the @tech{vertical category}
-@math{𝐂^v} is equipped with the @tech{horizontal composition} @math{∘}, which
-acts as the @tech{tensor product}, and the @tech{identity} @tech{1-cell}
-@math{id^b@_{∗}}, which serves as the @tech{tensor unit}.
-
-@subsubsection{Strict Symmetric Monoidal Category}
-
-A @deftech{strict symmetric monoidal category} @math{(𝒞, ⊗, I)} is a
-@tech{strict monoidal category} that @tech{⊗} is @tech{symmetric}: for every
-@tech{morphisms} @math{f, g} in @math{𝒞}, @math{f⊗g = g⊗f}.
 
 @subsection{Equivalence}
 
