@@ -803,8 +803,6 @@ A @deftech{strict symmetric monoidal category} @math{(𝒞, ⊗, I)} is a
 @tech{strict monoidal category} that @tech{⊗} is @tech{symmetric}: for every
 @tech{morphisms} @math{f, g} in @math{𝒞}, @math{f⊗g = g⊗f}.
 
-@;; @subsection{Rewrite System}
-
 @subsection{Equivalence}
 
 In a @tech{2-category} @math{𝐂}, @tech{equivalence} is a weaker version of
@@ -834,17 +832,6 @@ not unique.
 
 @bold{Exercise}: Prove that @tech{𝐓𝐫𝐞𝐞} is @tech{equivalent} to @tech{𝐅𝐬𝐭}.
 
-@;; @subsection{Bicategory}
-
-@;; Classically, @tech{2-category} meant @deftech{strict 2-category} and
-@;; @tech{bicategory} meant @deftech{weak 2-category}.
-
-@;; @subsubsection{Monoidal Category}
-
 @;; @section{Enriched Category}
 
 @;; @subsection{Enrich Over}
-
-@;; @subsubsection{Poset-Enriched Category}
-
-@;; @subsection{Weakly Enrich Over}
