@@ -157,34 +157,6 @@ higher-level structure.
 @bold{Exercise}: Prove that the @tech{composition} of @tech{functors} is
 @tech{associative}.
 
-An @deftech{endofunctor} is an @tech{endomorphism} in @tech{𝐂𝐚𝐭}, while an
-@deftech{autofunctor} is an @tech{automorphism} in @tech{𝐂𝐚𝐭}.
-
-@bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is an
-@tech{embedding}.
-
-In @tech{𝐂𝐚𝐭}, a @tech{terminal object} @tech{1} is a @tech{discrete category}
-with exactly one @tech{object}, and the @tech{initial object} @tech{0} is the
-@tech{category} with no @tech{objects} and no @tech{morphisms}.
-
-@bold{Exercise}: Prove @math{𝒞 ≅ 1×𝒞 ≅ 𝒞×1 ≅ 0+𝒞 ≅ 𝒞+0}.
-
-@bold{Exercise}: Prove @math{0 ≅ 0×𝒞 ≅ 𝒞×0}.
-
-@bold{Exercise}: Prove that if there is a @tech{functor} from @math{𝒞} to
-@tech{0}, then @math{𝒞 = 0}.
-
-@bold{Exercise}: For @tech{objects} @math{𝒞} and @math{𝒟} in @tech{𝐂𝐚𝐭}.
-Prove @math{𝒞×𝒟 ≅ 𝒟×𝒞} and @math{𝒞+𝒟 ≅ 𝒟+𝒞}.
-
-@bold{Exercise}: For @tech{objects} @math{𝒜}, @math{ℬ}, and @math{𝒞} in @tech{𝐂𝐚𝐭}.
-Prove the @tech{distributive laws}: @math{𝒜×(ℬ+𝒞) ≅ 𝒜×ℬ+𝒜×𝒞} and
-@math{(𝒜+ℬ)×𝒞 ≅ 𝒜×𝒞+ℬ×𝒞}.
-
-@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
-some @tech{quotient categories} of @math{𝒞×𝒟} and some @tech{subcategories} of
-@math{𝒞+𝒟}.
-
 In practical implementations using Racket, we'll employ @tech{𝐏𝐫𝐨𝐜} to symbolize
 @tech{𝐂𝐚𝐭}. This is because, in Racket, we implement @tech{functors} as
 @tech{procedures}. Note that since the task of comparing @tech{procedure}
@@ -235,6 +207,42 @@ their definitions might differ from the Racket code in the previous sections.
 For instance, in the @secref{Category_of_Sets}, @tech{morphisms} of @tech{𝐒𝐞𝐭} are
 defined as @racket[hash] tables, but essentially they are mappings and might be
 defined as @tech{procedures} in later sections.
+
+@subsubsection{Isomorphism of Categories}
+
+In @tech{𝐒𝐞𝐭}, an @tech{isomorphism} is a @tech{function} that establishes a
+one-to-one correspondence between @tech{elements} of two @tech{sets}. Similarly,
+in @tech{𝐂𝐚𝐭}, an @tech{isomorphism} is a @tech{functor} that establishes a
+one-to-one correspondence between @tech{objects} and @tech{morphisms} in two
+@tech{categories}.
+
+An @deftech{endofunctor} is an @tech{endomorphism} in @tech{𝐂𝐚𝐭}, while an
+@deftech{autofunctor} is an @tech{automorphism} in @tech{𝐂𝐚𝐭}.
+
+@bold{Exercise}: Prove that every @tech{invertible} @tech{functor} is an
+@tech{embedding}.
+
+In @tech{𝐂𝐚𝐭}, a @tech{terminal object} @tech{1} is a @tech{discrete category}
+with exactly one @tech{object}, and the @tech{initial object} @tech{0} is the
+@tech{category} with no @tech{objects} and no @tech{morphisms}.
+
+@bold{Exercise}: Prove @math{𝒞 ≅ 1×𝒞 ≅ 𝒞×1 ≅ 0+𝒞 ≅ 𝒞+0}.
+
+@bold{Exercise}: Prove @math{0 ≅ 0×𝒞 ≅ 𝒞×0}.
+
+@bold{Exercise}: Prove that if there is a @tech{functor} from @math{𝒞} to
+@tech{0}, then @math{𝒞 = 0}.
+
+@bold{Exercise}: For @tech{objects} @math{𝒞} and @math{𝒟} in @tech{𝐂𝐚𝐭}.
+Prove @math{𝒞×𝒟 ≅ 𝒟×𝒞} and @math{𝒞+𝒟 ≅ 𝒟+𝒞}.
+
+@bold{Exercise}: For @tech{objects} @math{𝒜}, @math{ℬ}, and @math{𝒞} in @tech{𝐂𝐚𝐭}.
+Prove the @tech{distributive laws}: @math{𝒜×(ℬ+𝒞) ≅ 𝒜×ℬ+𝒜×𝒞} and
+@math{(𝒜+ℬ)×𝒞 ≅ 𝒜×𝒞+ℬ×𝒞}.
+
+@bold{Exercise}: Show that both @math{𝒞} and @math{𝒟} are @tech{isomorphic} to
+some @tech{quotient categories} of @math{𝒞×𝒟} and some @tech{subcategories} of
+@math{𝒞+𝒟}.
 
 @subsection{Constant Functor}
 
