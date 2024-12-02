@@ -784,6 +784,8 @@ A @deftech{strict monoidal category} @math{(𝒞, ⊗, I)} is a @tech{category}
 @math{I : 𝒞}, such that for every @tech{morphisms} @math{f, g, h} in @math{𝒞},
 @math{(f⊗g)⊗h = f⊗(g⊗h)} and @math{f = f⊗id_I = id_I⊗f}.
 
+@image["scribblings/natural transformation/images/mon-cat.svg"]{[picture] mon-cat.svg}
+
 @bold{Exercise}: Prove the @tech{interchange law}:
 @math{(g_0⊗g_1)∘(f_0⊗f_1) = (g_0∘f_0)⊗(g_1∘f_1)}.
 
