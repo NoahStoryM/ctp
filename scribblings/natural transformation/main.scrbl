@@ -817,7 +817,8 @@ In a @tech{2-category} @math{𝐂}, @tech{equivalence} is a weaker version of
 if @math{id@_{𝒞} ≅ G∘F} and @math{F∘G ≅ id@_{𝒟}}, then @math{F} and @math{G} are
 both @deftech{equivalence}s (often called be @deftech{weakly invertible}).
 
-@image["scribblings/natural transformation/images/eqv.svg"]{[picture] eqv.svg}
+@image["scribblings/natural transformation/images/eqv_1.svg"]{[picture] eqv_1.svg}
+@image["scribblings/natural transformation/images/eqv_2.svg"]{[picture] eqv_2.svg}
 
 In this case, both @math{F} and @math{G} are @tech{inverses} up to
 @tech{2-isomorphisms} @math{η : id@_{𝒞} ⇒ G∘F} and @math{ϵ : F∘G ⇒ id@_{𝒟}}.
