@@ -201,7 +201,7 @@ with the same @tech{domain} and @tech{codomain} ultimately produce the same
 @tech{IL} states.
 
 Consider the @tech{natural transformations} @math{α_0 : F ⇒ G : 𝒞 → 𝒟},
-@math{α_1 : G ⇒ H : 𝒞 → 𝒟}, @math{β_0 : K ⇒ L : 𝒟 → ℰ}, and
+@math{β_0 : G ⇒ H : 𝒞 → 𝒟}, @math{α_1 : K ⇒ L : 𝒟 → ℰ}, and
 @math{β_1 : L ⇒ M : 𝒟 → ℰ}. The @tech{commutative diagram} below illustrates the
 relationships between them:
 
@@ -210,17 +210,17 @@ relationships between them:
 @margin-note{
 In some @tech{category theory} texts, @math{∘} denotes @tech{vertical composition}
 and @math{∗} denotes @tech{horizontal composition}:
-@math{(β_1∘β_0)∗(α_1∘α_0) = (β_1∗α_1)∘(β_0∗α_0)}.
+@math{(β_1∗β_0)∘(α_1∗α_0) = (β_1∘α_1)∗(β_0∘α_0)}.
 }
 
 We can @tech[#:key "vertical composition"]{vertically compose}
-@math{α_0} with @math{α_1}, and @math{β_0} with @math{β_1}, as well as
+@math{α_0} with @math{β_0}, and @math{α_1} with @math{β_1}, as well as
 @tech[#:key "horizontal composition"]{horizontally compose} @math{α_0} with
-@math{β_0}, and @math{α_1} with @math{β_1}. The @tech{IL} states that the
+@math{α_1}, and @math{β_0} with @math{β_1}. The @tech{IL} states that the
 @tech{horizontal composition} of two @tech{vertical compositions} is equal to the
 @tech{vertical composition} of two @tech{horizontal compositions}. More precisely,
 the @deftech{interchange law} (@deftech{IL}) can be written as:
-@math{(β_1∙β_0)∘(α_1∙α_0) = (β_1∘α_1)∙(β_0∘α_0)}.
+@math{(β_1∘β_0)∙(α_1∘α_0) = (β_1∙α_1)∘(β_0∙α_0)}.
 
 @image["scribblings/natural transformation/images/IL.svg"]{[picture] IL.svg}
 
@@ -228,13 +228,13 @@ Here are some important @tech{commutative squares} that arise:
 
 @itemlist[
   #:style 'ordered
-  @item{@math{(β_1∘α_1)∙(β_0∘α_0)(f) : KF(f) ⇒ MH(f)}
+  @item{@math{(β_1∘β_0)∙(α_1∘α_0)(f) : KF(f) ⇒ MH(f)}
         @image["scribblings/natural transformation/images/N-4_0.svg"]{[picture] N-4_0.svg}}
-  @item{@math{(β_1∙β_0)∘(α_1∙α_0)(f) : KF(f) ⇒ MH(f)}
+  @item{@math{(β_1∙α_1)∘(β_0∙α_0)(f) : KF(f) ⇒ MH(f)}
         @image["scribblings/natural transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
-  @item{@math{(β_1∙β_0)∘(α_1∙α_0)(f) : K(α_1∙α_0)(f) ⇒ M(α_1∙α_0)(f)}
+  @item{@math{(β_1∙α_1)∘(β_0∙α_0)(f) : K(β_0∙α_0)(f) ⇒ M(β_0∙α_0)(f)}
         @image["scribblings/natural transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
-  @item{@math{(β_1∙β_0)∘(α_1∙α_0)(f) : (β_1∙β_0)F(f) ⇒ (β_1∙β_0)H(f)}
+  @item{@math{(β_1∙α_1)∘(β_0∙α_0)(f) : (β_1∙α_1)F(f) ⇒ (β_1∙α_1)H(f)}
         @image["scribblings/natural transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
   ]
 
