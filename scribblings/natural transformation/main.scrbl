@@ -295,6 +295,10 @@ and @math{F} and @math{G} are @deftech{naturally isomorphic} to each other.
 is a @tech{natural isomorphism} iff each @tech{component} of @math{α} is an
 @tech{isomorphism} in @math{𝒟}.
 
+@bold{Exercise}: For a @tech{natural isomorphism} @math{α : F ⇒ G : 𝒞 → 𝒟} and
+a @tech{morphism} @math{f : a → b : 𝒞}. Prove @math{F(f) = α@^{–1}(b)∘G(f)∘α(a)}
+and @math{G(f) = α(b)∘F(f)∘α@^{–1}(a)}.
+
 In @tech{𝐂𝐚𝐭@^{v}}, @tech{vertical composition} serves as the @tech{composition}
 operation for @tech{morphisms}. This perspective helps us understand why
 @tech{functors} can be viewed as a special case of @tech{natural transformations}.
