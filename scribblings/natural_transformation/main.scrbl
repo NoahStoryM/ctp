@@ -1,16 +1,18 @@
 #lang scribble/manual
 
-@(require (for-label ctp
-                     (only-meta-in 0
-                                   (except-in typed/racket/base/no-check
-                                              =
-                                              require/typed
-                                              require/typed/provide)
-                                   (only-in typed/racket/base
-                                            require/typed
-                                            require/typed/provide)
-                                   racket/function)
-                     rackunit)
+@(module for-label typed/racket/base/no-check
+   (require ctp
+            (only-in typed/racket/base
+                     require/typed
+                     require/typed/provide)
+            racket/function
+            rackunit)
+   (provide (all-from-out ctp
+                          typed/racket/base/no-check
+                          typed/racket/base
+                          racket/function
+                          rackunit)))
+@(require (for-label (only-meta-in 0 'for-label))
           "../ctp-utils.rkt")
 
 @title[#:tag "_Natural_Transformation_"]{Natural Transformation}
@@ -52,7 +54,7 @@ must adhere to the @deftech{@deftech{naturality} condition}, expressed as
 @math{α(f) = α(b)∘F(f) = G(f)∘α(a)}, ensuring that the following @tech{diagram}
 is @tech{commutative}:
 
-@image["scribblings/natural transformation/images/N-1.svg"]{[picture] N-1.svg}
+@image["scribblings/natural_transformation/images/N-1.svg"]{[picture] N-1.svg}
 
 The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 @math{𝒞} is the @deftech{component} of @math{α} at @math{a}.
@@ -61,7 +63,7 @@ The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 @math{Hom@_{𝒞}(i, -)} is a @tech{hom natural transformation} from
 @math{Hom@_{𝒞}(a, -)} to @math{Hom@_{𝒞}(b, -)}.
 
-@image["scribblings/natural transformation/images/Hom_1.svg"]{[picture] Hom_1.svg}
+@image["scribblings/natural_transformation/images/Hom_1.svg"]{[picture] Hom_1.svg}
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: b 𝒞) (: a 𝒞) (: i (→𝒞 b a))
@@ -75,7 +77,7 @@ The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 @math{Hom@_{𝒞}(-, j)} is a @tech{hom natural transformation} from
 @math{Hom@_{𝒞}(-, x)} to @math{Hom@_{𝒞}(-, y)}.
 
-@image["scribblings/natural transformation/images/Hom_2.svg"]{[picture] Hom_2.svg}
+@image["scribblings/natural_transformation/images/Hom_2.svg"]{[picture] Hom_2.svg}
 
 @racketblock[
 (: 𝒞 𝐂𝐚𝐭) (: x 𝒞) (: y 𝒞) (: j (→𝒞 x y))
@@ -89,12 +91,12 @@ To verify the properties of @tech{natural transformations}, we @racket[define]
 some @tech{check} @tech{procedures} to automate the testing of the
 @tech{naturality} a @tech{natural transformation} has:
 
-@racketfile{code/natural transformation/check.rkt}
+@racketfile{code/natural_transformation/check.rkt}
 
 The following example illustrates how to implement @tech{natural transformations}
 in Racket:
 
-@racketfile{code/natural transformation/Set=>Rel.rkt}
+@racketfile{code/natural_transformation/Set=>Rel.rkt}
 
 @subsection{Composition}
 
@@ -131,7 +133,7 @@ it easier to reason about complex structures involving multiple @tech{functors}
 and @tech{natural transformations}, reducing visual clutter and improving
 readability.
 
-@image["scribblings/natural transformation/images/N-2.svg"]{[picture] N-2.svg}
+@image["scribblings/natural_transformation/images/N-2.svg"]{[picture] N-2.svg}
 
 @bold{Exercise}: Prove that the @tech{horizontal composition} of
 @tech{natural transformations} ensures that the resulting @tech{diagram} is
@@ -143,9 +145,9 @@ For @math{βα}, its type is @math{HF ⇒ KG}, where @math{HF} and @math{KG} are
 
 @itemlist[
   #:style 'ordered
-  @item{@math{βα(f) : HF(f) ⇒ KG(f)} @image["scribblings/natural transformation/images/N-2_1.svg"]{[picture] N-2_1.svg}}
-  @item{@math{βα(f) : Hα(f) ⇒ Kα(f)} @image["scribblings/natural transformation/images/N-2_2.svg"]{[picture] N-2_2.svg}}
-  @item{@math{βα(f) : βF(f) ⇒ βG(f)} @image["scribblings/natural transformation/images/N-2_3.svg"]{[picture] N-2_3.svg}}
+  @item{@math{βα(f) : HF(f) ⇒ KG(f)} @image["scribblings/natural_transformation/images/N-2_1.svg"]{[picture] N-2_1.svg}}
+  @item{@math{βα(f) : Hα(f) ⇒ Kα(f)} @image["scribblings/natural_transformation/images/N-2_2.svg"]{[picture] N-2_2.svg}}
+  @item{@math{βα(f) : βF(f) ⇒ βG(f)} @image["scribblings/natural_transformation/images/N-2_3.svg"]{[picture] N-2_3.svg}}
   ]
 
 Note that @math{Hα}, @math{Kα}, @math{βF}, and @math{βG} are all
@@ -156,7 +158,7 @@ this cube whose face diagonals coincide with this body diagonal. Each of these
 faces also has a cube edge that starts from @math{HF(a)}, which uniquely
 identifies them among all the cube's faces:
 
-@image["scribblings/natural transformation/images/N-2_4.svg"]{[picture] N-2_4.svg}
+@image["scribblings/natural_transformation/images/N-2_4.svg"]{[picture] N-2_4.svg}
 
 @bold{Exercise}: Prove that @tech{horizontal composition} is @tech{associative}.
 
@@ -177,9 +179,9 @@ Consider two @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟} 
 
 @bold{Exercise}: Prove @math{α = α∙F = G∙α}.
 
-@image["scribblings/natural transformation/images/N-3.svg"]{[picture] N-3.svg}
-@image["scribblings/natural transformation/images/N-3_1.svg"]{[picture] N-3_1.svg}
-@image["scribblings/natural transformation/images/N-3_2.svg"]{[picture] N-3_2.svg}
+@image["scribblings/natural_transformation/images/N-3.svg"]{[picture] N-3.svg}
+@image["scribblings/natural_transformation/images/N-3_1.svg"]{[picture] N-3_1.svg}
+@image["scribblings/natural_transformation/images/N-3_2.svg"]{[picture] N-3_2.svg}
 
 @bold{Exercise}: Prove that the @tech{vertical composition} of
 @tech{natural transformations} ensures that the resulting @tech{diagram} is
@@ -205,7 +207,7 @@ Consider the @tech{natural transformations} @math{α_0 : F ⇒ G : 𝒞 → 𝒟
 @math{β_1 : L ⇒ M : 𝒟 → ℰ}. The @tech{commutative diagram} below illustrates the
 relationships between them:
 
-@image["scribblings/natural transformation/images/N-4.svg"]{[picture] N-4.svg}
+@image["scribblings/natural_transformation/images/N-4.svg"]{[picture] N-4.svg}
 
 @margin-note{
 In some @tech{category theory} texts, @math{∘} denotes @tech{vertical composition}
@@ -222,23 +224,23 @@ We can @tech[#:key "vertical composition"]{vertically compose}
 the @deftech{interchange law} (@deftech{IL}) can be written as:
 @math{(β_1∘β_0)∙(α_1∘α_0) = (β_1∙α_1)∘(β_0∙α_0)}.
 
-@image["scribblings/natural transformation/images/IL.svg"]{[picture] IL.svg}
+@image["scribblings/natural_transformation/images/IL.svg"]{[picture] IL.svg}
 
 Here are some important @tech{commutative squares} that arise:
 
 @itemlist[
   #:style 'ordered
   @item{@math{(β_1∘β_0)∙(α_1∘α_0)(f) : KF(f) ⇒ MH(f)}
-        @image["scribblings/natural transformation/images/N-4_0.svg"]{[picture] N-4_0.svg}}
+        @image["scribblings/natural_transformation/images/N-4_0.svg"]{[picture] N-4_0.svg}}
   @item{@math{(β_1∙α_1)∘(β_0∙α_0)(f) : KF(f) ⇒ MH(f)}
-        @image["scribblings/natural transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
+        @image["scribblings/natural_transformation/images/N-4_1.svg"]{[picture] N-4_1.svg}}
   @item{@math{(β_1∙α_1)∘(β_0∙α_0)(f) : K(β_0∙α_0)(f) ⇒ M(β_0∙α_0)(f)}
-        @image["scribblings/natural transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
+        @image["scribblings/natural_transformation/images/N-4_2.svg"]{[picture] N-4_2.svg}}
   @item{@math{(β_1∙α_1)∘(β_0∙α_0)(f) : (β_1∙α_1)F(f) ⇒ (β_1∙α_1)H(f)}
-        @image["scribblings/natural transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
+        @image["scribblings/natural_transformation/images/N-4_3.svg"]{[picture] N-4_3.svg}}
   ]
 
-@image["scribblings/natural transformation/images/N-4_4.svg"]{[picture] N-4_4.svg}
+@image["scribblings/natural_transformation/images/N-4_4.svg"]{[picture] N-4_4.svg}
 
 @subsection{Structure of 𝐂𝐚𝐭}
 
@@ -247,7 +249,7 @@ as @tech{𝐂𝐚𝐭}, which consists of @tech{categories} as @tech{objects} an
 @tech{functors} as @tech{morphisms}. Strictly speaking, this was actually the
 @tech{base category} of @tech{𝐂𝐚𝐭}, denoted by @deftech{𝐂𝐚𝐭@^{b}}.
 
-@image["scribblings/natural transformation/images/Cat^b.svg"]{[picture] Cat^b.svg}
+@image["scribblings/natural_transformation/images/Cat^b.svg"]{[picture] Cat^b.svg}
 
 With the introduction of @tech{natural transformations}, we can now see that
 @tech{functors} are actually a special case of @tech{natural transformations}.
@@ -271,7 +273,7 @@ between @tech{categories}. In @tech{𝐂𝐚𝐭@^{h}}, the @tech{objects} remai
 but the @tech{morphisms} are generalized to include all @tech{natural transformations}
 between @tech{functors}.
 
-@image["scribblings/natural transformation/images/Cat^h.svg"]{[picture] Cat^h.svg}
+@image["scribblings/natural_transformation/images/Cat^h.svg"]{[picture] Cat^h.svg}
 
 In @tech{𝐂𝐚𝐭@^{h}}, @tech{horizontal composition} serves as the @tech{composition}
 operation for @tech{morphisms} in it. This perspective allows us to see that
@@ -289,7 +291,7 @@ through @tech{natural transformations}. In @tech{𝐂𝐚𝐭@^{v}}, @tech{objec
 @math{α : F ⇒ G} in @tech{𝐂𝐚𝐭@^{v}} is called a @deftech{natural isomorphism},
 and @math{F} and @math{G} are @deftech{naturally isomorphic} to each other.
 
-@image["scribblings/natural transformation/images/Cat^v.svg"]{[picture] Cat^v.svg}
+@image["scribblings/natural_transformation/images/Cat^v.svg"]{[picture] Cat^v.svg}
 
 @bold{Exercise}: Prove that a @tech{natural transformation} @math{α : F ⇒ G : 𝒞 → 𝒟}
 is a @tech{natural isomorphism} iff each @tech{component} of @math{α} is an
@@ -364,7 +366,7 @@ where @math{a} is an @tech{object} in @math{𝒞}, @math{x} is an @tech{object} 
 @tech{morphism} in @math{𝒟}, such that the following @tech{diagram} is
 @tech{commutative}:
 
-@image["scribblings/natural transformation/images/comma_1.svg"]{[picture] comma_1.svg}
+@image["scribblings/natural_transformation/images/comma_1.svg"]{[picture] comma_1.svg}
 
 This @tech{category} is called a @deftech{comma category} of @math{F} and
 @math{G}, denoted by @math{F/G} (@math{F↓G}).
@@ -380,7 +382,7 @@ and @math{(i, j)} to @math{j}. Furthermore, these @tech{functors} are connected
 by a @tech{natural transformation} @math{θ : F∘H@_{𝒞} ⇒ G∘H@_{𝒟}}, which maps
 @math{(a, x, α)} to @math{α}.
 
-@image["scribblings/natural transformation/images/comma_2.svg"]{[picture] comma_2.svg}
+@image["scribblings/natural_transformation/images/comma_2.svg"]{[picture] comma_2.svg}
 
 @section{Yoneda Lemma}
 
@@ -407,7 +409,7 @@ The @deftech{Yoneda Lemma} sets up a one-to-one correspondence between
 Specifically, an @tech{element} @math{s ∈ F(S)} uniquely corresponds to a
 @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F}.
 
-@image["scribblings/natural transformation/images/run_1.svg"]{[picture] run_1.svg}
+@image["scribblings/natural_transformation/images/run_1.svg"]{[picture] run_1.svg}
 
 To better understand the @tech{Yoneda Lemma}, let's revisit the @tech{TDFA}
 @math{ℳ} defined in @seclink["Typed_Deterministic_Finite_Automaton"]. We denote
@@ -429,7 +431,7 @@ To illustrate this correspondence, we use Racket code to @racket[define] two
 @tech{natural transformation} @math{ρ}, and vice versa, providing a concrete way
 to visualize the one-to-one correspondence described by the @tech{Yoneda Lemma}.
 
-@racketfile{code/natural transformation/s<->run.rkt}
+@racketfile{code/natural_transformation/s<->run.rkt}
 
 This correspondence also holds for @tech{contravariant hom functors}. There is a
 one-to-one correspondence between @tech{elements} of @math{G(T)}, where
@@ -438,7 +440,7 @@ one-to-one correspondence between @tech{elements} of @math{G(T)}, where
 @math{t ∈ G(T)} uniquely corresponds to a @tech{natural transformation}
 @math{ρ : Hom@_{𝒞}(-, T) ⇒ G}.
 
-@image["scribblings/natural transformation/images/run_2.svg"]{[picture] run_2.svg}
+@image["scribblings/natural_transformation/images/run_2.svg"]{[picture] run_2.svg}
 
 @bold{Exercise}: Try to @racket[define] two @tech{procedures} using Racket code:
 @racket[t->ρ] and @racket[ρ->t].
@@ -708,7 +710,7 @@ A @deftech{strict monoidal category} @math{(𝒞, ⊗, I)} is a @tech{category}
 @math{I : 𝒞}, such that for all @tech{morphisms} @math{f, g, h} in @math{𝒞},
 @math{(f⊗g)⊗h = f⊗(g⊗h)} and @math{f = f⊗id_I = id_I⊗f}.
 
-@image["scribblings/natural transformation/images/mon-cat.svg"]{[picture] mon-cat.svg}
+@image["scribblings/natural_transformation/images/mon-cat.svg"]{[picture] mon-cat.svg}
 
 @bold{Exercise}: Prove the @tech{interchange law}:
 @math{(g_0⊗g_1)∘(f_0⊗f_1) = (g_0∘f_0)⊗(g_1∘f_1)}.
@@ -754,7 +756,7 @@ By default, @tech{string diagrams} are read from right to left and from bottom
 to top.
 }
 
-@image["scribblings/natural transformation/images/alpha.svg"]{[picture] alpha.svg}
+@image["scribblings/natural_transformation/images/alpha.svg"]{[picture] alpha.svg}
 
 We also use special notations in @tech{string diagrams}:
 
@@ -772,21 +774,21 @@ visually distinct representations of the same structures.
 The first one shows a @tech{2-cell} @math{α : G∘F ⇒ id@_{𝒞}}, where
 @math{F : 𝒞 → 𝒟 : 𝐂} and @math{G : 𝒟 → 𝒞 : 𝐂}:
 
-@image["scribblings/natural transformation/images/alpha_0.svg"]{[picture] alpha_0.svg}
-@image["scribblings/natural transformation/images/alpha_1.svg"]{[picture] alpha_1.svg}
-@image["scribblings/natural transformation/images/alpha_2.svg"]{[picture] alpha_2.svg}
-@image["scribblings/natural transformation/images/alpha_3.svg"]{[picture] alpha_3.svg}
-@image["scribblings/natural transformation/images/alpha_4.svg"]{[picture] alpha_4.svg}
+@image["scribblings/natural_transformation/images/alpha_0.svg"]{[picture] alpha_0.svg}
+@image["scribblings/natural_transformation/images/alpha_1.svg"]{[picture] alpha_1.svg}
+@image["scribblings/natural_transformation/images/alpha_2.svg"]{[picture] alpha_2.svg}
+@image["scribblings/natural_transformation/images/alpha_3.svg"]{[picture] alpha_3.svg}
+@image["scribblings/natural_transformation/images/alpha_4.svg"]{[picture] alpha_4.svg}
 
 The second one shows two @tech{2-cells} @math{α : G∘F ⇒ id@_{𝒞}} and
 @math{β : id@_{𝒟} ⇒ H∘G}, where @math{F : 𝒞 → 𝒟 : 𝐂}, @math{G : 𝒟 → 𝒞 : 𝐂},
 and @math{H : 𝒞 → 𝒟 : 𝐂}:
 
-@image["scribblings/natural transformation/images/beta&alpha_0.svg"]{[picture] beta&alpha_0.svg}
-@image["scribblings/natural transformation/images/beta&alpha_1.svg"]{[picture] beta&alpha_1.svg}
-@image["scribblings/natural transformation/images/beta&alpha_2.svg"]{[picture] beta&alpha_2.svg}
-@image["scribblings/natural transformation/images/beta&alpha_3.svg"]{[picture] beta&alpha_3.svg}
-@image["scribblings/natural transformation/images/beta&alpha_4.svg"]{[picture] beta&alpha_4.svg}
+@image["scribblings/natural_transformation/images/beta&alpha_0.svg"]{[picture] beta&alpha_0.svg}
+@image["scribblings/natural_transformation/images/beta&alpha_1.svg"]{[picture] beta&alpha_1.svg}
+@image["scribblings/natural_transformation/images/beta&alpha_2.svg"]{[picture] beta&alpha_2.svg}
+@image["scribblings/natural_transformation/images/beta&alpha_3.svg"]{[picture] beta&alpha_3.svg}
+@image["scribblings/natural_transformation/images/beta&alpha_4.svg"]{[picture] beta&alpha_4.svg}
 
 The advantage of using @tech{string diagrams} lies in their simplicity when
 representing complex structures in a @tech{2-category}. Instead of working with
@@ -797,7 +799,7 @@ part of the structure interacts with the others.
 @bold{Exercise}: The following is a @tech{string diagram}, try to draw the
 corresponding @tech{diagram}.
 
-@image["scribblings/natural transformation/images/str-diag.svg"]{[picture] str-diag.svg}
+@image["scribblings/natural_transformation/images/str-diag.svg"]{[picture] str-diag.svg}
 
 If there are no @tech{2-cells} in a @tech{string diagram}, we can further
 compress it for simplicity. Specifically:
@@ -817,8 +819,8 @@ In a @tech{2-category} @math{𝐂}, @tech{equivalence} is a weaker version of
 if @math{id@_{𝒞} ≅ G∘F} and @math{F∘G ≅ id@_{𝒟}}, then @math{F} and @math{G} are
 both @deftech{equivalence}s (often called be @deftech{weakly invertible}).
 
-@image["scribblings/natural transformation/images/eqv_1.svg"]{[picture] eqv_1.svg}
-@image["scribblings/natural transformation/images/eqv_2.svg"]{[picture] eqv_2.svg}
+@image["scribblings/natural_transformation/images/eqv_1.svg"]{[picture] eqv_1.svg}
+@image["scribblings/natural_transformation/images/eqv_2.svg"]{[picture] eqv_2.svg}
 
 In this case, both @math{F} and @math{G} are @tech{inverses} up to
 @tech{2-isomorphisms} @math{η : id@_{𝒞} ⇒ G∘F} and @math{ϵ : F∘G ⇒ id@_{𝒟}}.

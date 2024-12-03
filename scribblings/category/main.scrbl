@@ -1,14 +1,22 @@
 #lang scribble/manual
 
-@(require (for-label ctp
-                     (except-in racket/base =)
-                     racket/hash
-                     racket/match
-                     racket/promise
-                     racket/set
-                     rackunit
-                     math/matrix)
-          "../ctp-utils.rkt")
+@(module for-label racket/base
+   (require ctp
+            racket/hash
+            racket/match
+            racket/promise
+            racket/set
+            rackunit
+            math/matrix)
+   (provide (all-from-out ctp
+                          racket/base
+                          racket/hash
+                          racket/match
+                          racket/promise
+                          racket/set
+                          rackunit
+                          math/matrix)))
+@(require (for-label 'for-label) "../ctp-utils.rkt")
 
 @title[#:tag "_Category_"]{Category}
 

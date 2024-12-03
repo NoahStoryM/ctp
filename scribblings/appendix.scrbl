@@ -1,6 +1,9 @@
 #lang scribble/manual
 
-@(require (for-label ctp (except-in racket/base =) racket/contract))
+@(module for-label racket/base
+   (require ctp racket/contract)
+   (provide (all-from-out ctp racket/base racket/contract)))
+@(require (for-label 'for-label))
 
 @title{Appendix}
 @defmodule[ctp]

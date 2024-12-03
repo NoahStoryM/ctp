@@ -1,14 +1,24 @@
 #lang scribble/manual
 
-@(require (for-label ctp
-                     (only-meta-in 0 (except-in typed/racket/no-check =))
-                     racket/function
-                     racket/hash
-                     racket/match
-                     racket/promise
-                     rackunit
-                     math/matrix
-                     amb)
+@(module for-label typed/racket/no-check
+   (require ctp
+            racket/function
+            racket/hash
+            racket/match
+            racket/promise
+            rackunit
+            math/matrix
+            amb)
+   (provide (all-from-out ctp
+                          typed/racket/no-check
+                          racket/function
+                          racket/hash
+                          racket/match
+                          racket/promise
+                          rackunit
+                          math/matrix
+                          amb)))
+@(require (for-label (only-meta-in 0 'for-label))
           "../ctp-utils.rkt")
 
 @title[#:tag "_Functor_"]{Functor}
