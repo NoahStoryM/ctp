@@ -6,11 +6,15 @@
                      require/typed
                      require/typed/provide)
             racket/function
+            math/array
+            math/matrix
             rackunit)
    (provide (all-from-out ctp
                           typed/racket/base/no-check
                           typed/racket/base
                           racket/function
+                          math/array
+                          math/matrix
                           rackunit)))
 @(require (for-label (only-meta-in 0 'for-label))
           "../ctp-utils.rkt")
@@ -725,6 +729,10 @@ acts as the @tech{tensor product}, and the @tech{identity} @tech{1-cell}
 
 @bold{Exercise}: Show that every @tech{endofunctor category} is a
 @tech{strict monoidal category}.
+
+The following is an example of a @tech{strict monoidal category}:
+
+@racketfile{code/natural_transformation/Matr.rkt}
 
 @subsubsection{Strict Symmetric Monoidal Category}
 
