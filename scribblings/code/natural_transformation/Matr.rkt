@@ -1,6 +1,9 @@
 #lang typed/racket/base/no-check
 
 (require math/array math/matrix)
+(require "../category/Matr.rkt")
+
+(provide ⊗ (all-from-out "../category/Matr.rkt"))
 
 (: I (Matrix Nothing))
 (define I #;(identity-matrix 0) (array #[]))
@@ -11,8 +14,7 @@
     (if (null? m*) I (block-diagonal-matrix m*))))
 
 (module+ test
-  (require "../category/Matr.rkt"
-           "../category/check.rkt"
+  (require "../category/check.rkt"
            rackunit)
   (define-values (dom cod ∘ ? =) (𝐌𝐚𝐭𝐫))
   (define (rand m n) (random 1 9))
