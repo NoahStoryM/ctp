@@ -719,20 +719,27 @@ A @deftech{strict monoidal category} @math{(𝒞, ⊗, I)} is a @tech{category}
 @bold{Exercise}: Prove the @tech{interchange law}:
 @math{(g_0⊗g_1)∘(f_0⊗f_1) = (g_0∘f_0)⊗(g_1∘f_1)}.
 
-Just as a @tech{one-object category} @math{𝒞} can be viewed as a @tech{monoid}
-(@tech{monoidal set}) @math{(𝒞_1, ∘, id@_{∗})}, we extend this idea to view a
-@deftech{one-object 2-category} @math{𝐂} as a @tech{strict monoidal category}
-@math{(𝐂^v, ∘, id^b@_{∗})}. In this context, the @tech{vertical category}
-@math{𝐂^v} is equipped with the @tech{horizontal composition} @math{∘}, which
-acts as the @tech{tensor product}, and the @tech{identity} @tech{1-cell}
-@math{id^b@_{∗}}, which serves as the @tech{tensor unit}.
-
-@bold{Exercise}: Show that every @tech{endofunctor category} is a
-@tech{strict monoidal category}.
-
 The following is an example of a @tech{strict monoidal category}:
 
 @racketfile{code/natural_transformation/Matr.rkt}
+
+If @math{𝒞} is a @tech{discrete category}, i.e., a @tech{set}, then the
+@tech{strict monoidal category} @math{(𝒞, ⊗, I)} reduces to a @deftech{monoidal set}.
+In this case, @math{⊗} becomes an @tech{associative binary operation} and @math{I}
+becomes the @tech{identity element} of @math{𝒞}. This structure corresponds
+exactly to what we call a @tech{monoid}. Hence, @tech{monoidal set} and
+@tech{monoid} are the same concept.
+
+Just as a @tech{one-object category} @math{𝒞} can be viewed as a @tech{monoid}
+@math{(𝒞_1, ∘, id@_{∗})}, we extend this idea to view a @deftech{one-object 2-category}
+@math{𝐂} as a @tech{strict monoidal category} @math{(𝐂^v, ∘, id^b@_{∗})}.
+In this context, the @tech{vertical category} @math{𝐂^v} is equipped with the
+@tech{horizontal composition} @math{∘}, which acts as the @tech{tensor product},
+and the @tech{identity} @tech{1-cell} @math{id^b@_{∗}}, which serves as the
+@tech{tensor unit}.
+
+@bold{Exercise}: Show that every @tech{endofunctor category} is a
+@tech{strict monoidal category}.
 
 @subsubsection{Strict Symmetric Monoidal Category}
 

@@ -163,9 +163,9 @@ Beyond @tech{sets}, there are a few related terms that are commonly used:
 
 @subsection{One-Object Category}
 
-A @deftech{monoid} (@deftech{monoidal set}) @math{(S, ∘, s)} is a @tech{set}
-@math{S} equipped with an @tech{associative} binary operation @math{∘} and an
-@deftech{identity element} @math{s}.
+A @deftech{monoid} @math{(S, ∘, s)} is a @tech{set} @math{S} equipped with an
+@deftech{associative binary operation} @math{∘} and an @deftech{identity element}
+@math{s}.
 
 A @tech{monoid} can be viewed as a @deftech{one-object category} (@deftech{OOC}).
 In @tech{OOC}, there is only a single @tech{object}, usually denoted by @deftech{∗},
