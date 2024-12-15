@@ -379,14 +379,27 @@ This @tech{category} is called a @deftech{comma category} of @math{F} and
 @tech{arrow category} and (@tech[#:key "coslice category"]{co})@tech{slice category}.
 
 To explore the relationships between @math{F/G}, @math{𝒞}, @math{𝒟}, and @math{ℰ},
-we introduce two @tech{forgetful functors} @math{H@_{𝒞} : F/G → 𝒞} and
-@math{H@_{𝒟} : F/G → 𝒟}. @math{H@_{𝒞}} maps @math{(a, x, α)} to @math{a} and
-@math{(i, j)} to @math{i}, while @math{H@_{𝒟}} maps @math{(a, x, α)} to @math{x}
+we introduce two @tech{forgetful functors} @math{H_F : F/G → 𝒞} and
+@math{H_G : F/G → 𝒟}. @math{H_F} maps @math{(a, x, α)} to @math{a} and
+@math{(i, j)} to @math{i}, while @math{H_G} maps @math{(a, x, α)} to @math{x}
 and @math{(i, j)} to @math{j}. Furthermore, these @tech{functors} are connected
-by a @tech{natural transformation} @math{θ : F∘H@_{𝒞} ⇒ G∘H@_{𝒟}}, which maps
+by a @tech{natural transformation} @math{θ : F∘H_F ⇒ G∘H_G}, which maps
 @math{(a, x, α)} to @math{α}.
 
 @image["scribblings/natural_transformation/images/comma_2.svg"]{[picture] comma_2.svg}
+
+Building on the earlier motivation, we saw that @tech{comma categories} can
+be used to study relationships between two @tech{functors} with the same
+@tech{codomain}. Since @tech{natural transformations} describe relationships
+between @tech{functors} with the same @tech{domain} and @tech{codomain}, it is
+natural to explore their connection with @tech{comma categories}.
+
+Given a @tech{natural transformation} @math{α : F ⇒ G : 𝒞 → 𝒟}, we can construct
+a @tech{functor} @math{A : 𝒞 → F/G} such that @math{H_F∘A = H_G∘A = id@_{𝒞}}.
+Conversely, given such a @tech{functor} @math{A}, we can construct a
+@tech{natural transformation} @math{α}.
+
+@image["scribblings/natural_transformation/images/ntf-as-ftr.svg"]{[picture] ntf-as-ftr.svg}
 
 @section{Yoneda Lemma}
 
