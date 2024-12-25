@@ -22,7 +22,7 @@
 @title[#:tag "_Natural_Transformation_"]{Natural Transformation}
 
 In this @seclink["_Natural_Transformation_"]{chapter}, we extend our exploration
-of @tech{category theory} by introducing the concept of @tech{natural transformation}.
+of @tech{category theory} by introducing the concept of @tech{natural transformations}.
 @tech{Natural transformations} offer a formal framework for understanding how
 @tech{functors} between two @tech{categories} correspond and interact with each
 other.
@@ -651,7 +651,7 @@ We already have an example of such a structure: @tech{𝐂𝐚𝐭}. In @tech{�
 @tech{categories} serve as @tech{0-cells}, @tech{functors} act as @tech{1-cells},
 and @tech{natural transformations} provide the additional layer of abstraction
 as @tech{2-cells}. This makes @tech{𝐂𝐚𝐭} a natural reference for understanding
-the concept of a @tech{2-category}.
+the concept of @tech{2-categories}.
 
 To formalize this idea, we look at how @tech{𝐂𝐚𝐭} operates. There are two distinct
 @tech{composition} operations for @tech{natural transformations} within @tech{𝐂𝐚𝐭}:
