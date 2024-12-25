@@ -716,8 +716,6 @@ Additionally, @math{F} can be described in terms of three @tech{1-functors}:
         @math{F^v_0 = F_1} and @math{F^v_1 = F_2}.}
 ]
 
-@bold{Exercise}: Prove that @math{F^h} and @math{F^v} are also @math{F^b}.
-
 @subsection{Strict Monoidal Category}
 
 A @deftech{strict monoidal category} @math{(𝒞, ⊗, I)} is a @tech{category}
