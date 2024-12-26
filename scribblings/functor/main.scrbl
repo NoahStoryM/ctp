@@ -260,6 +260,11 @@ A @deftech{constant functor} @math{Δd : 𝒞 → 𝒟} is a @tech{functor} that
 each @tech{object} in @math{𝒞} to a fixed @tech{object} @math{d} in @math{𝒟} and
 each @tech{morphism} in @math{𝒞} to @math{id_d} in @math{𝒟}.
 
+@subsection{Opposite Functor}
+
+For a @tech{functor} @math{F : 𝒞 → 𝒟}, there is an @deftech{opposite functor}
+@math{F^op : 𝒞^op → 𝒟^op} such that @math{F^op_0 = F_0} and @math{F^op_1 = F_1}.
+
 @subsection{Essentially Injective Functor}
 
 A @tech{functor} @math{F : 𝒞 → 𝒟} is @deftech{essentially injective} if it is

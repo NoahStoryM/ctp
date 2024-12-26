@@ -58,10 +58,16 @@ must adhere to the @deftech{@deftech{naturality} condition}, expressed as
 @math{α(f) = α(b)∘F(f) = G(f)∘α(a)}, ensuring that the following @tech{diagram}
 is @tech{commutative}:
 
-@image["scribblings/natural_transformation/images/N-1.svg"]{[picture] N-1.svg}
+@image["scribblings/natural_transformation/images/N-0.svg"]{[picture] N-0.svg}
 
 The @tech{morphism} @math{α(a)} in @math{𝒟} for an @tech{object} @math{a} in
 @math{𝒞} is the @deftech{component} of @math{α} at @math{a}.
+
+For a @tech{natural transformation} @math{α}, there is an
+@deftech{opposite natural transformation} @math{α^op : G^op ⇒ F^op : 𝒞^op → 𝒟^op}
+such that the following @tech{diagram} is @tech{commutative}:
+
+@image["scribblings/natural_transformation/images/N-1.svg"]{[picture] N-1.svg}
 
 @bold{Exercise}: For a @tech{morphism} @math{i : b → a : 𝒞}. Prove that
 @math{Hom@_{𝒞}(i, -)} is a @tech{hom natural transformation} from
