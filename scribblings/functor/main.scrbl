@@ -234,6 +234,8 @@ in @tech{𝐂𝐚𝐭}, an @tech{isomorphism} is a @tech{functor} that establish
 one-to-one correspondence between @tech{objects} and @tech{morphisms} in two
 @tech{categories}.
 
+@image["scribblings/functor/images/iso.svg"]{[picture] iso.svg}
+
 An @deftech{endofunctor} is an @tech{endomorphism} in @tech{𝐂𝐚𝐭}, while an
 @deftech{autofunctor} is an @tech{automorphism} in @tech{𝐂𝐚𝐭}.
 
