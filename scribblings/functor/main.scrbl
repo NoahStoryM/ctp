@@ -131,19 +131,27 @@ of @tech{morphisms} in @math{𝒟} if whenever @math{F(f)} has @math{P}, so does
   @item{@deftech{Faithful}:
         for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
         induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
-        is @tech{injective}.}
+        is @tech{injective}.
+
+        @image["scribblings/functor/images/faithful.svg"]{[picture] faithful.svg}}
   @item{@deftech{Full}:
         for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
         induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
-        is @tech{surjective}.}
+        is @tech{surjective}.
+
+        @image["scribblings/functor/images/full.svg"]{[picture] full.svg}}
   @item{@deftech{Fully Faithful}:
         for every pair of @tech{objects} @math{a} and @math{b} in @math{𝒞}, the
         induced mapping from @math{Hom@_{𝒞}(a, b)} to @math{Hom@_{𝒟}(F(a), F(b))}
-        is @tech{bijective}.}
+        is @tech{bijective}.
+
+        @image["scribblings/functor/images/fully-faithful.svg"]{[picture] fully-faithful.svg}}
 ]
 
 If a @tech{functor} is @tech{fully faithful}, and @tech{injective} on
 @tech{objects}, it is called an @deftech{embedding}.
+
+@image["scribblings/functor/images/embedding.svg"]{[picture] embedding.svg}
 
 @bold{Exercise}: Prove that every @tech{faithful} @tech{functor} @tech{reflects}
 @tech{monomorphisms}.
