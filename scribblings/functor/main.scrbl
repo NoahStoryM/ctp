@@ -295,6 +295,8 @@ A @tech{functor} @math{F : 𝒞 → 𝒟} is @deftech{essentially surjective} if
 The @deftech{inclusion functor} @math{I : 𝒟 → 𝒞} is a @tech{functor} that sends
 each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 
+@image["scribblings/functor/images/inc.svg"]{[picture] inc.svg}
+
 @bold{Exercise}: Prove @math{𝒟 ⊆ 𝒞}.
 
 @bold{Exercise}: Prove that if @math{I} is @tech{essentially surjective}, then
