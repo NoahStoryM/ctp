@@ -232,7 +232,8 @@ In @tech{𝐒𝐞𝐭}, an @tech{isomorphism} is a @tech{function} that establis
 one-to-one correspondence between @tech{elements} of two @tech{sets}. Similarly,
 in @tech{𝐂𝐚𝐭}, an @tech{isomorphism} is a @tech{functor} that establishes a
 one-to-one correspondence between @tech{objects} and @tech{morphisms} in two
-@tech{categories}.
+@tech{categories}, i.e., an @tech{embedding} that is @tech{surjective} on
+@tech{objects}.
 
 @image["scribblings/functor/images/iso.svg"]{[picture] iso.svg}
 
