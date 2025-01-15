@@ -743,7 +743,7 @@ example, we construct the @tech{sum category} @math{𝐌𝐚𝐭𝐫+𝐏𝐚�
 @subsubsection{Arrow Category}
 
 Given a @tech{category} @math{𝒞}, the @deftech{arrow category}, denoted by
-@math{𝒞@^{→}}, is constructed by takeing its @tech{morphisms} as @tech{objects}
+@math{𝒞@^{→}}, is constructed by taking its @tech{morphisms} as @tech{objects}
 and @tech{commutative squares} as @tech{morphisms}.
 
 For example, here are three @tech{commutative squares} in @math{𝒞}:
@@ -791,11 +791,11 @@ A @deftech{slice category} (@deftech{over category}), denoted by @math{𝒞/c},
 is a construction that allows us to study a @tech{category} @math{𝒞} through the
 lens of a fixed @tech{object} @math{c} in it. Intuitively, @math{𝒞/c} consists of
 all the @tech{objects} and @tech{morphisms} in @math{𝒞} that are "over" @math{c}.
-@math{𝒞/c} is constructed by takeing @math{𝒞}'s @tech{morphisms} end to @math{c}
-as @tech{objects}, and @tech{commutative triangles} end to @math{c} as
-@tech{morphisms}.
+@math{𝒞/c} is constructed by taking @math{𝒞}'s @tech{morphisms} that end to
+@math{c} as @tech{objects}, and @tech{commutative triangles} that end to @math{c}
+as @tech{morphisms}.
 
-For example, here are three @tech{commutative triangles} end to @math{c_1}
+For example, here are three @tech{commutative triangles} that end to @math{c_1}
 in @math{𝒞}:
 
 @image["scribblings/category/images/over-cat_1.svg"]{[picture] over-cat_1.svg}
@@ -808,14 +808,15 @@ Then, we get some new @tech{commutative triangles} by @tech{composition}:
 
 @image["scribblings/category/images/over-cat_2.svg"]{[picture] over-cat_2.svg}
 
-Finally, using @tech{nodes} to represent @tech{morphisms} end to @math{c_1}, and
-using @tech{arrows} to represent @tech{commutative triangles} end to @math{c_1},
-we get a @tech{digraph} that obeys the @tech{composition rules}, which is the
-@tech{slice category} @math{𝒞/c_1}:
+Finally, using @tech{nodes} to represent @tech{morphisms} that end to @math{c_1},
+and using @tech{arrows} to represent @tech{commutative triangles} that end to
+@math{c_1}, we get a @tech{digraph} that obeys the @tech{composition rules},
+which is the @tech{slice category} @math{𝒞/c_1}:
 
 @margin-note{
 Although we name @tech{arrows} using @tech{morphisms} in @math{𝒞} here, note that
-they are not @tech{morphisms}, but @tech{commutative triangles} end to @math{c_1}.
+they are not @tech{morphisms}, but @tech{commutative triangles} that end to
+@math{c_1}.
 }
 
 @image["scribblings/category/images/over-cat_3.svg"]{[picture] over-cat_3.svg}
@@ -835,12 +836,12 @@ the @tech{slice category} @math{ℳ/m} like this:
 The @tech{dual} notion of a @tech{slice category} @math{𝒞/c} is a @deftech{coslice category}
 (@deftech{under category}), denoted by @math{c/𝒞}, which consists of all the
 @tech{objects} and @tech{morphisms} in @math{𝒞} that are "under" @math{c}.
-@math{c/𝒞} is constructed by takeing @math{𝒞}'s @tech{morphisms} start from
-@math{c} as @tech{objects}, and @tech{commutative triangles} start from @math{c}
-as @tech{morphisms}.
+@math{c/𝒞} is constructed by taking @math{𝒞}'s @tech{morphisms} that start from
+@math{c} as @tech{objects}, and @tech{commutative triangles} that start from
+@math{c} as @tech{morphisms}.
 
-For example, here are three @tech{commutative triangles} start from @math{c_0}
-in @math{𝒞}:
+For example, here are three @tech{commutative triangles} that start from
+@math{c_0} in @math{𝒞}:
 
 @image["scribblings/category/images/under-cat_1.svg"]{[picture] under-cat_1.svg}
 
@@ -852,14 +853,15 @@ Then, we get some new @tech{commutative triangles} by @tech{composition}:
 
 @image["scribblings/category/images/under-cat_2.svg"]{[picture] under-cat_2.svg}
 
-Finally, using @tech{nodes} to represent @tech{morphisms} start from @math{c_0},
-and using @tech{arrows} to represent @tech{commutative triangles} start from @math{c_0},
-we get a @tech{digraph} that obeys the @tech{composition rules}, which is the
-@tech{coslice category} @math{c_0/𝒞}:
+Finally, using @tech{nodes} to represent @tech{morphisms} that start from
+@math{c_0}, and using @tech{arrows} to represent @tech{commutative triangles}
+that start from @math{c_0}, we get a @tech{digraph} that obeys the
+@tech{composition rules}, which is the @tech{coslice category} @math{c_0/𝒞}:
 
 @margin-note{
 Although we name @tech{arrows} using @tech{morphisms} in @math{𝒞} here, note that
-they are not @tech{morphisms}, but @tech{commutative triangles} start from @math{c_0}.
+they are not @tech{morphisms}, but @tech{commutative triangles} that start from
+@math{c_0}.
 }
 
 @image["scribblings/category/images/under-cat_3.svg"]{[picture] under-cat_3.svg}
