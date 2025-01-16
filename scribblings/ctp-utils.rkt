@@ -3,6 +3,7 @@
 (require scribble/manual
          (for-syntax racket/base
                      syntax/parse
+                     syntax/location
                      (only-in racket/file file->string)))
 
 (provide (except-out (all-defined-out) main))
@@ -10,8 +11,13 @@
 (define-syntax (racketfile stx)
   (syntax-parse stx
     [(_ file-name:str)
-     #:with file-str (file->string (syntax-e #'file-name))
-     #:with ctx      (syntax/loc stx #'file-name)
+     #:with ctx (syntax/loc stx #'file-name)
+     #:with file-str
+     (file->string
+      (build-path
+       (syntax-source-directory stx)
+       'up
+       (syntax-e #'file-name)))
      (syntax/loc stx
        (filebox file-name (typeset-code #:indent 0 #:context ctx 'file-str)))]))
 
