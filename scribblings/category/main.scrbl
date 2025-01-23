@@ -251,13 +251,13 @@ If @math{𝒞(a, x)} is an @tech{object} in @math{𝒞}, it is called the
 (@deftech{exponential set} @math{x^a}).
 
 For @tech{morphisms} @math{f : a → x : 𝒞}, @math{i : b → a : 𝒞} and
-@math{j : x → y : 𝒞}, we can @racket[define] a @deftech{hom function}
+@math{j : x → y : 𝒞}, we can define a @deftech{hom function}
 @math{Hom@_{𝒞}(i, j) : Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
 @math{Hom@_{𝒞}(i, j)(f) ≔ j∘f∘i}.
 
 @image["scribblings/category/images/hom_1.svg"]{[picture] hom_1.svg}
 
-Additionally, we can @racket[define] two other @tech{hom functions}:
+Additionally, we can define two other @tech{hom functions}:
 
 @itemlist[
   #:style 'ordered
@@ -1365,10 +1365,9 @@ a non-@tech{surjective} @tech{morphism}. Prove that a @tech{morphism} @math{g} i
 
 This approach generalizes the concept of @tech{elements} beyond @tech{sets}. In
 any @tech{category} @math{𝒞} with a @tech{terminal object} @tech{1}, we can
-@racket[define] the @tech{elements} of an @tech{object} @math{A} as the
-@tech{elements} of @math{Hom@_{𝒞}(1, A)}, i.e., the @tech{morphisms} from
-@tech{1} to @math{A}. These @tech{morphisms} are called @deftech{global element}s
-(@deftech{global point}s).
+define the @tech{elements} of an @tech{object} @math{A} as the @tech{elements} of
+@math{Hom@_{𝒞}(1, A)}, i.e., the @tech{morphisms} from @tech{1} to @math{A}.
+These @tech{morphisms} are called @deftech{global element}s (@deftech{global point}s).
 
 By describing properties of a @tech{category} in a generalized way, we can extend
 them to other @tech{categories}. In this example, by describing the @tech{elements}

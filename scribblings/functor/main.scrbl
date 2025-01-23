@@ -216,9 +216,9 @@ or just use it as pseudocode.
 @;; ]
 
 Although we have given specific @secref{Category_Examples}, these examples are
-just one way to implement the corresponding concepts. We can @racket[define]
-these concepts in other ways as well. These different implementations of the same
-concept can be seen as @tech{equivalent} @tech{objects} in @tech{𝐂𝐚𝐭}.
+just one way to implement the corresponding concepts. We can define these concepts
+in other ways as well. These different implementations of the same concept can be
+seen as @tech{equivalent} @tech{objects} in @tech{𝐂𝐚𝐭}.
 
 Therefore, in the following sections, when we discuss specific @tech{categories},
 their definitions might differ from the Racket code in the previous sections.
@@ -895,8 +895,8 @@ a @deftech{state diagram}, a @deftech{state table}, or as a tuple
 @math{φ : A×S → S} takes an input @tech{letter} and the current @tech{state} as
 arguments and returns the next @tech{state}. By currying @math{φ}, we can view
 any @tech{element} in @math{A} as a @tech{transition}. Similarly, we'd like to
-find a way to represent a @tech{sequence} of @tech{transitions}. We @racket[define]
-the @tech{function} @math{φ@^{*}: A@^{*}×S → S}:
+find a way to represent a @tech{sequence} of @tech{transitions}. We define the
+@tech{function} @math{φ@^{*}: A@^{*}×S → S}:
 
 @itemlist[
   #:style 'ordered

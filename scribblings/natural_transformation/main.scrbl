@@ -123,8 +123,8 @@ Given that @tech{natural transformations} are defined as mappings of
 @tech[#:key "compose"]{composed}, similar to the @tech{composition} of
 @tech{functors}. In fact, a key insight is that @tech{functors} themselves can
 be viewed as special types of @tech{natural transformations}. This leads us to
-@racket[define] a type of @tech{composition} for @tech{natural transformations},
-known as @tech{horizontal composition}.
+define a type of @tech{composition} for @tech{natural transformations}, known as
+@tech{horizontal composition}.
 
 Consider two @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟} and
 @math{β : H ⇒ K : 𝒟 → ℰ}. The @deftech{horizontal composition}
@@ -178,9 +178,8 @@ Since two adjacent @tech{commutative squares} can themselves be
 @tech[#:key "compose"]{composed} to form a larger @tech{commutative square},
 it naturally suggests that two @tech{natural transformations} that share a common
 @tech{functor} can also be @tech[#:key "compose"]{composed} to form a new
-@tech{natural transformation}. This leads us to @racket[define] a type of
-@tech{composition} for @tech{natural transformations}, known as
-@tech{vertical composition}.
+@tech{natural transformation}. This leads us to define a type of @tech{composition}
+for @tech{natural transformations}, known as @tech{vertical composition}.
 
 Consider two @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟} and
 @math{β : G ⇒ H : 𝒞 → 𝒟}. The @deftech{vertical composition}
@@ -672,11 +671,11 @@ Note that @math{𝒞_2} of a @tech{1-category} @math{𝒞} is the @tech{collecti
 @tech{composable pairs}.
 }
 
-Using these properties, we @racket[define] a @deftech{2-category} @math{𝐂} as a
-structure consisting of three @tech{collections}: @math{𝐂_i} of
-@deftech{i-morphism}s (@deftech{i-cell}s) for @math{i = 0, 1, 2}. In @math{𝐂},
-there are two ways to @tech{compose} @tech{2-cells}: @tech{horizontal composition}
-and @tech{vertical composition}, which satisfy the @tech{interchange law}.
+Using these properties, we define a @deftech{2-category} @math{𝐂} as a structure
+consisting of three @tech{collections}: @math{𝐂_i} of @deftech{i-morphism}s
+(@deftech{i-cell}s) for @math{i = 0, 1, 2}. In @math{𝐂}, there are two ways to
+@tech{compose} @tech{2-cells}: @tech{horizontal composition} and
+@tech{vertical composition}, which satisfy the @tech{interchange law}.
 Additionally, @math{𝐂} can be described in terms of three @tech{1-categories}:
 
 @itemlist[
@@ -695,21 +694,21 @@ each other.
 In a general @tech{2-category}, we may not know the specific internal structure
 of the @tech{1-cells}. However, we can draw inspiration from the concept of
 @tech{global elements}. In @tech{𝐂𝐚𝐭}, any @tech{category} @math{𝒞} is
-@tech{isomorphic} to @math{𝒞^1}. This observation motivates us to @racket[define]
-a similar concept in any @tech{2-category} @math{𝐂} that contains a
-@tech{terminal object} @tech{1}. Specifically, for any @tech{0-cell} @math{𝒞 : 𝐂},
-we @racket[define] the @tech{1-cells} from @tech{1} to @math{𝒞} as the
-@deftech{global object}s of @math{𝒞}, and the @tech{2-cells} between them as the
-@deftech{global morphism}s of @math{𝒞}.
+@tech{isomorphic} to @math{𝒞^1}. This observation motivates us to define a similar
+concept in any @tech{2-category} @math{𝐂} that contains a @tech{terminal object}
+@tech{1}. Specifically, for any @tech{0-cell} @math{𝒞 : 𝐂}, we define the
+@tech{1-cells} from @tech{1} to @math{𝒞} as the @deftech{global object}s of
+@math{𝒞}, and the @tech{2-cells} between them as the @deftech{global morphism}s
+of @math{𝒞}.
 
 Having introduced the concept of @tech{2-categories}, we naturally consider the
 mappings between @tech{2-categories}. Just as @deftech{1-functors} map between
 @tech{1-categories} by preserving their structure, @tech{2-functors} map between
 @tech{2-categories}, preserving the richer structure.
 
-To @racket[define] a @tech{2-functor}, we note that a @tech{2-category} @math{𝐂}
-consists of three @tech{collections}: @math{𝐂_0}, @math{𝐂_1} and @math{𝐂_2}.
-Consequently, a @deftech{2-functor} @math{F : 𝐂 → 𝐃} consists of three @tech{functions}:
+To define a @tech{2-functor}, we note that a @tech{2-category} @math{𝐂} consists
+of three @tech{collections}: @math{𝐂_0}, @math{𝐂_1} and @math{𝐂_2}. Consequently,
+a @deftech{2-functor} @math{F : 𝐂 → 𝐃} consists of three @tech{functions}:
 @math{F_0 : 𝐂_0 → 𝐃_0}, @math{F_1 : 𝐂_1 → 𝐃_1}, and @math{F_2 : 𝐂_2 → 𝐃_2}.
 Additionally, @math{F} can be described in terms of three @tech{1-functors}:
 
