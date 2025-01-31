@@ -881,8 +881,9 @@ A @deftech{skeleton} of a @tech{category} @math{𝒞} is a @tech{full subcategor
 denoted by @math{sk@_{𝒞}}, where any two @tech{isomorphic} @tech{objects} are
 @tech{equal}. A @tech{category} is called a @deftech{@deftech{skeletal} category}
 if all its @tech{isomorphisms} are @tech{automorphisms}. More strictly, a
-@tech{category} is called a @deftech{@deftech{gaunt} category} if all its
-@tech{isomorphisms} are @tech{identities}.
+@tech{category} is called a @deftech{@deftech{gaunt} category}
+(@deftech{@deftech{stiff} category}) if all its @tech{isomorphisms} are
+@tech{identities}.
 
 @image["scribblings/natural_transformation/images/skel.svg"]{[picture] skel.svg}
 
