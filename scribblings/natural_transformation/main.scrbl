@@ -871,8 +871,61 @@ between them.
 @bold{Exercise}: Prove that the @tech{pseudo-inverse} of an @tech{equivalence} is
 not unique.
 
-@bold{Exercise}: Prove that @tech{𝐓𝐫𝐞𝐞} is @tech{equivalent} to @tech{𝐅𝐬𝐭}.
+@subsubsection{Equivalence of Categories}
 
-@;; @section{Enriched Category}
+In a @tech{category}, we often focus on its "essential structure" by treating
+@tech{isomorphic} @tech{objects} as the same. To formalize this idea, we
+introduce the concept of a @tech{skeleton}.
 
-@;; @subsection{Enrich Over}
+A @deftech{skeleton} of a @tech{category} @math{𝒞} is a @tech{full subcategory},
+denoted by @math{sk@_{𝒞}}, where @tech{isomorphic} @tech{objects} are @tech{equal}.
+A @tech{category} is called @deftech{skeletal} if it is its own @tech{skeleton}.
+
+@image["scribblings/natural_transformation/images/skel.svg"]{[picture] skel.svg}
+
+A @tech{skeleton} @math{sk@_{𝒞}} comes with a @tech{functor} @math{S : 𝒞 → sk@_{𝒞}},
+which is @tech{fully faithful}, and @tech{surjective} on @tech{objects}. This
+means that @math{S} preserves the structure of @math{𝒞} while collapsing
+@tech{isomorphic} @tech{objects} into a single entity. Conversely, by involving
+the @tech{axiom of choice}, we can define an @tech{inclusion functor}
+@math{I : sk@_{𝒞} → 𝒞}.
+
+@bold{Exercise}: Prove @math{S∘I = id@_{sk@_{𝒞}}} and @math{I∘S ≅ id@_{𝒞}}.
+
+By constructing a @tech{skeleton} @math{sk@_{𝒞}}, we capture the
+"essential structure" of @math{𝒞}. A natural question arises: if
+@math{sk@_{𝒞} ≅ sk@_{𝒟}}, what is the relationship between @math{𝒞} and @math{𝒟}?
+This relationship is precisely @tech{equivalence}: since @math{𝒞 ≃ sk@_{𝒞}},
+@math{𝒟 ≃ sk@_{𝒟}}, and @math{sk@_{𝒞} ≅ sk@_{𝒟}}, it follows by
+@tech{transitivity} that @math{𝒞 ≃ 𝒟}.
+
+Conversely, we can also show that if @math{𝒞 ≃ 𝒟}, then their @tech{skeletons}
+are @tech{isomorphic} to each other. Assume we have @tech{functors}
+@math{S : 𝒞 → sk@_{𝒞}} and @math{T : 𝒟 → sk@_{𝒟}}, as well as the
+@tech{inclusion functors} @math{I : sk@_{𝒞} → 𝒞} and @math{J : sk@_{𝒟} → 𝒟},
+and @tech{equivalences} @math{F : 𝒞 → 𝒟} and @math{G : 𝒟 → 𝒞}. We can then
+construct @tech{functors} @math{TFI : sk@_{𝒞} → sk@_{𝒟}} and
+@math{SGJ : sk@_{𝒟} → sk@_{𝒞}}.
+
+@image["scribblings/natural_transformation/images/eqv-es.svg"]{[picture] eqv-es.svg}
+
+These satisfy: @math{id@_{sk@_{𝒞}} = SI ≅ SGFI ≅ SGJ∘TFI} and
+@math{TFI∘SGJ ≅ TFGJ ≅ TJ = id@_{sk@_{𝒟}}}. Thus, @math{sk@_{𝒞} ≃ sk@_{𝒟}}.
+Moreover, by definition, all @tech{objects} in @math{sk@_{𝒞}} and @math{sk@_{𝒟}}
+are only @tech{isomorphic} to themselves, so @math{sk@_{𝒞} ≅ sk@_{𝒟}}.
+
+@margin-note{
+This proof relies on the @tech{axiom of choice}. To avoid this assumption,
+@math{F} can be required to be @deftech{split essentially surjective}.
+For further details, see
+@hyperlink["https://ncatlab.org/nlab/show/split essentially surjective"]{nLab}.
+}
+
+@bold{Exercise}: Prove that a @tech{functor} @math{F} is @tech{weakly invertible}
+iff it is @tech{fully faithful} and @tech{essentially surjective}.
+
+@image["scribblings/natural_transformation/images/eqv.svg"]{[picture] eqv.svg}
+
+@;; @;; @section{Enriched Category}
+@;;
+@;; @;; @subsection{Enrich Over}
