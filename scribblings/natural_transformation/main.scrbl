@@ -878,8 +878,11 @@ In a @tech{category}, we often focus on its "essential structure" by treating
 introduce the concept of a @tech{skeleton}.
 
 A @deftech{skeleton} of a @tech{category} @math{𝒞} is a @tech{full subcategory},
-denoted by @math{sk@_{𝒞}}, where @tech{isomorphic} @tech{objects} are @tech{equal}.
-A @tech{category} is called @deftech{skeletal} if it is its own @tech{skeleton}.
+denoted by @math{sk@_{𝒞}}, where any two @tech{isomorphic} @tech{objects} are
+@tech{equal}. A @tech{category} is called a @deftech{@deftech{skeletal} category}
+if all its @tech{isomorphisms} are @tech{automorphisms}. More strictly, a
+@tech{category} is called a @deftech{@deftech{gaunt} category} if all its
+@tech{isomorphisms} are @tech{identities}.
 
 @image["scribblings/natural_transformation/images/skel.svg"]{[picture] skel.svg}
 
