@@ -919,7 +919,7 @@ Moreover, by definition, all @tech{objects} in @math{sk@_{𝒞}} and @math{sk@_{
 are only @tech{isomorphic} to themselves, so @math{sk@_{𝒞} ≅ sk@_{𝒟}}.
 
 @margin-note{
-This proof relies on the @tech{axiom of choice}. To avoid this assumption,
+This proposition relies on the @tech{axiom of choice}. To avoid this assumption,
 @math{F} can be required to be @deftech{split essentially surjective}.
 For further details, see
 @hyperlink["https://ncatlab.org/nlab/show/split essentially surjective"]{nLab}.
