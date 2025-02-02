@@ -913,8 +913,8 @@ construct @tech{functors} @math{TFI : sk@_{𝒞} → sk@_{𝒟}} and
 
 @image["scribblings/natural_transformation/images/eqv-es.svg"]{[picture] eqv-es.svg}
 
-These satisfy: @math{id@_{sk@_{𝒞}} = SI ≅ SGFI ≅ SGJ∘TFI} and
-@math{TFI∘SGJ ≅ TFGJ ≅ TJ = id@_{sk@_{𝒟}}}. Thus, @math{sk@_{𝒞} ≃ sk@_{𝒟}}.
+These satisfy: @math{id@_{sk@_{𝒞}} = SI ≅ SGFI ≅ SGJTFI = SGJ∘TFI} and
+@math{TFI∘SGJ = TFISGJ ≅ TFGJ ≅ TJ = id@_{sk@_{𝒟}}}. Thus, @math{sk@_{𝒞} ≃ sk@_{𝒟}}.
 Moreover, by definition, all @tech{objects} in @math{sk@_{𝒞}} and @math{sk@_{𝒟}}
 are only @tech{isomorphic} to themselves, so @math{sk@_{𝒞} ≅ sk@_{𝒟}}.
 
@@ -930,6 +930,6 @@ iff it is @tech{fully faithful} and @tech{essentially surjective}.
 
 @image["scribblings/natural_transformation/images/eqv.svg"]{[picture] eqv.svg}
 
-@;; @;; @section{Enriched Category}
+@;; @section{Enriched Category}
 @;;
-@;; @;; @subsection{Enrich Over}
+@;; @subsection{Enrich Over}
