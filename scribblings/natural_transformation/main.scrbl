@@ -900,7 +900,7 @@ By constructing a @tech{skeleton} @math{sk@_{𝒞}}, we capture the
 "essential structure" of @math{𝒞}. A natural question arises: if
 @math{sk@_{𝒞} ≅ sk@_{𝒟}}, what is the relationship between @math{𝒞} and @math{𝒟}?
 This relationship is precisely @tech{equivalence}: since @math{𝒞 ≃ sk@_{𝒞}},
-@math{𝒟 ≃ sk@_{𝒟}}, and @math{sk@_{𝒞} ≅ sk@_{𝒟}}, it follows by
+@math{sk@_{𝒞} ≅ sk@_{𝒟}}, and @math{sk@_{𝒟} ≃ 𝒟}, it follows by
 @tech{transitivity} that @math{𝒞 ≃ 𝒟}.
 
 Conversely, we can also show that if @math{𝒞 ≃ 𝒟}, then their @tech{skeletons}
@@ -930,6 +930,14 @@ iff it is @tech{fully faithful} and @tech{essentially surjective}.
 
 @image["scribblings/natural_transformation/images/eqv.svg"]{[picture] eqv.svg}
 
+@;; @section{Bicategory}
+@;;
+@;; @subsection{Monoidal Category}
+@;;
+@;; @subsubsection{Symmetric Monoidal Category}
+@;;
+@;; @subsubsection{Monoid Object}
+@;;
 @;; @section{Enriched Category}
 @;;
 @;; @subsection{Enrich Over}
