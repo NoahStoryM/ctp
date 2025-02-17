@@ -741,7 +741,7 @@ The following is an example of a @tech{strict monoidal category}:
 
 If @math{𝒞} is a @tech{discrete category}, i.e., a @tech{set}, then the
 @tech{strict monoidal category} @math{(𝒞, ⊗, I)} reduces to a @deftech{monoidal set}.
-In this case, @math{⊗} becomes an @tech{associative binary operation} and @math{I}
+In this case, @tech{⊗} becomes an @tech{associative binary operation} and @math{I}
 becomes the @tech{identity element} of @math{𝒞}. This structure corresponds
 exactly to what we call a @tech{monoid}. Hence, @tech{monoidal set} and
 @tech{monoid} are the same concept.
