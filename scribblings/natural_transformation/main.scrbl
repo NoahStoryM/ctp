@@ -702,7 +702,7 @@ concept in any @tech{2-category} @math{𝐂} that contains a @tech{terminal obje
 of @math{𝒞}.
 
 Having introduced the concept of @tech{2-categories}, we naturally consider the
-mappings between @tech{2-categories}. Just as @deftech{1-functors} map between
+mappings between @tech{2-categories}. Just as @deftech{1-functor}s map between
 @tech{1-categories} by preserving their structure, @tech{2-functors} map between
 @tech{2-categories}, preserving the richer structure.
 
