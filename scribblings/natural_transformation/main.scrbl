@@ -691,6 +691,16 @@ An @tech{isomorphism} @math{α : F ⇒ G} in @math{𝐂^v} is called a
 @deftech{2-isomorphism}, and @math{F} and @math{G} are @deftech{2-isomorphic} to
 each other.
 
+In a @tech{category} @math{𝒞}, the @tech{morphisms} from @math{a} to @math{x}
+form a @tech{hom set} @math{𝒞(a, x)}. This structure naturally extends in a
+@tech{2-category} @math{𝐂}: the @tech{1-cells} from @math{𝒜} to @math{𝒳} and
+their corresponding @tech{2-cells} form a @deftech{hom category} @math{𝐂(𝒜, 𝒳)},
+where the @tech{composition} of @tech{morphisms} is precisely the
+@tech{vertical composition} of @tech{2-cells} in @math{𝐂}.
+
+@bold{Exercise}: Show that every @tech{functor category} @math{[𝒞 → 𝒟]} is the
+@tech{hom category} @math{𝐂𝐚𝐭(𝒞, 𝒟)}.
+
 In a general @tech{2-category}, we may not know the specific internal structure
 of the @tech{1-cells}. However, we can draw inspiration from the concept of
 @tech{global elements}. In @tech{𝐂𝐚𝐭}, any @tech{category} @math{𝒞} is
