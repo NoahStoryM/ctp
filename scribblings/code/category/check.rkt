@@ -6,13 +6,8 @@
 (define (check-cat 𝒞)
   (define-values (dom𝒞 cod𝒞 ∘𝒞 ?𝒞 =𝒞) (𝒞))
   (λ (a b c d f g h)
-    (check-pred ?𝒞 a)
-    (check-pred ?𝒞 b)
-    (check-pred ?𝒞 c)
-    (check-pred ?𝒞 d)
-    (check-pred ?𝒞 f)
-    (check-pred ?𝒞 g)
-    (check-pred ?𝒞 h)
+    (check-pred ?𝒞 a) (check-pred ?𝒞 b) (check-pred ?𝒞 c) (check-pred ?𝒞 d)
+    (check-pred ?𝒞 f) (check-pred ?𝒞 g) (check-pred ?𝒞 h)
 
     ;; Existence of composition
     (check-true (=𝒞 b (cod𝒞 f) (dom𝒞 g)))

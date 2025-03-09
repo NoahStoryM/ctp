@@ -13,9 +13,9 @@
     "rackunit-doc"
     "racket-doc"
     "typed-racket-doc"
+    "typed-amb"
     "math-lib"
-    "math-doc"
-    "amb"))
+    "math-doc"))
 
 (define scribblings '(("scribblings/ctp.scrbl" (multi-page) (teaching -30))))
 

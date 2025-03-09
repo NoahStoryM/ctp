@@ -1408,8 +1408,8 @@ distinguished @tech{element} @math{s}, often called the @deftech{base point}. A
 is a @tech{function} @math{f : S → T} that preserves the @tech{base point},
 meaning @math{f(s) = t}.
 
-The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭@_{∗}}, can
-be viewed as the @tech{coslice category} @math{1/𝐒𝐞𝐭}, where the @tech{base point}
+The @tech{category} of @tech{pointed sets}, denoted as @deftech{𝐒𝐞𝐭⁎}, can be
+viewed as the @tech{coslice category} @math{1/𝐒𝐞𝐭}, where the @tech{base point}
 @math{s} of @math{S} corresponds to the @tech{global element} @math{s : 1 → S : 𝐒𝐞𝐭}.
 
 Similarly, if a @tech{terminal object} @tech{1} exists within a @tech{category}

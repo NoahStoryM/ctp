@@ -10,7 +10,7 @@
 (define ∘
   (case-λ
     [(m) m]
-    [(m1 m2) (match* (m2 m1) [(`(,a . ,b) `(,b . ,c)) `(,a . ,c)])]
+    [(m1 m2) (match* (m2 m1) [(`(,a . ,_) `(,_ . ,b)) `(,a . ,b)])]
     [(m1 m2 . m*) (apply ∘ (∘ m1 m2) m*)]))
 (define (? m) (pair? m))
 (define =

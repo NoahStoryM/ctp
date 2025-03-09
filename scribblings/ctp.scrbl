@@ -36,7 +36,7 @@ new ways of thinking, problem-solving, and system design.
 
 In the following chapters, we will explore the core concepts of @tech{category theory}
 — @tech{objects}, @tech{morphisms}, @tech{categories}, @tech{functors},
-@tech{natural transformations}, @tech{Yoneda Lemma}, @tech{2-categories},
+@tech{natural transformations}, @tech{Yoneda Lemma}, @tech{higher categories},
 (@tech[#:key "colimit"]{co})@tech{limits}, @tech{sketches},
 @tech{Cartesion closed categories} & @tech{typed lambda},
 @tech{Curry–Howard–Lambek corresponding}, @tech{adjunctions},
@@ -78,6 +78,7 @@ Let the journey begin.
 @include-section[(file "category/main.scrbl")]
 @include-section[(file "functor/main.scrbl")]
 @include-section[(file "natural_transformation/main.scrbl")]
+@include-section[(file "higher_category/main.scrbl")]
 @;; include-section[(file "co-limit/main.scrbl")]
 @;; include-section[(file "ccc&λ/main.scrbl")]
 @;; include-section[(file "adjunction/main.scrbl")]

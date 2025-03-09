@@ -336,10 +336,10 @@ For example, if we forget @tech{morphisms} in a @tech{category}, then we get a
 @image["scribblings/functor/images/U.svg"]{[picture] U.svg}
 
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from
-@tech{𝐌𝐨𝐧} to @tech{𝐒𝐞𝐭@_{∗}}.
+@tech{𝐌𝐨𝐧} to @tech{𝐒𝐞𝐭⁎}.
 
 @bold{Exercise}: Try to @racket[define] a @tech{forgetful functor} from
-@tech{𝐒𝐞𝐭@_{∗}} to @tech{𝐒𝐞𝐭}.
+@tech{𝐒𝐞𝐭⁎} to @tech{𝐒𝐞𝐭}.
 
 @subsection{Free Monoid Functor}
 

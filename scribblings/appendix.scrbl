@@ -16,6 +16,30 @@ See @tech{dom}.
 See @tech{cod}.
 }
 
+@defproc[(domᵇ [m morphism/c]) morphism/c]{
+See @tech{domᵇ}.
+}
+
+@defproc[(codᵇ [m morphism/c]) morphism/c]{
+See @tech{codᵇ}.
+}
+
+@defproc[(domʰ [m morphism/c]) morphism/c]{
+See @tech{domʰ}.
+}
+
+@defproc[(codʰ [m morphism/c]) morphism/c]{
+See @tech{codʰ}.
+}
+
+@defproc[(domᵛ [m morphism/c]) morphism/c]{
+See @tech{domᵛ}.
+}
+
+@defproc[(codᵛ [m morphism/c]) morphism/c]{
+See @tech{codᵛ}.
+}
+
 @defproc[(∘ [m morphism/c] ...) morphism/c]{
 See @tech{∘}.
 }
@@ -24,16 +48,12 @@ See @tech{∘}.
 See @tech{⨾}.
 }
 
-@defproc[(src [m morphism/c]) morphism/c]{
-See @tech{src}.
-}
-
-@defproc[(tgt [m morphism/c]) morphism/c]{
-See @tech{tgt}.
-}
-
 @defproc[(∙ [m morphism/c] ...) morphism/c]{
 See @tech{∙}.
+}
+
+@defproc[(⊗ [m morphism/c] ...) morphism/c]{
+See @tech{⊗}.
 }
 
 @defproc[(? [v any/c]) boolean?]{

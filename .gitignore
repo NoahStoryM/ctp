@@ -1,6 +1,8 @@
-# compiled
+.DS_Store
 compiled/
 doc/
-
-# draft
+*~
+*.bak
+\#*
+.\#*
 draft.*

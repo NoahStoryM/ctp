@@ -4,13 +4,18 @@
 
 (provide (all-defined-out))
 
-(define (dom _) ×)
-(define (cod _) ×)
-(define (src _) ×)
-(define (tgt _) ×)
+(define (dom  _) ×)
+(define (cod  _) ×)
+(define (domᵇ _) ×)
+(define (codᵇ _) ×)
+(define (domʰ _) ×)
+(define (codʰ _) ×)
+(define (domᵛ _) ×)
+(define (codᵛ _) ×)
 (define (⨾ . proc*) (apply compose proc*))
 (define ∘ (procedure-rename compose    '∘))
 (define ∙ (procedure-rename compose    '∙))
+(define ⊗ (procedure-rename compose    '⊗))
 (define ? (procedure-rename procedure? '?))
 (define =
   (case-λ
