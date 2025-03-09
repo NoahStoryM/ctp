@@ -218,18 +218,22 @@ between them: @math{a ≤ b} or @math{b ≤ a}.
 Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{Cartesian product}
 of them, denoted by @math{A_0@deftech{×}A_1} or @math{@deftech{∏}@_{i=0, 1}A_i},
 is the @tech{set} of all @deftech{ordered list}s:
-@math{∏@_{i=0, 1}A_i = A_0×A_1 ≔ {(a_0, a_1) | a_0 ∈ A_0, a_1 ∈ A_1}}.
-This @tech{set} is called a @deftech{product set}.
+
+@centered{@math{∏@_{i=0, 1}A_i = A_0×A_1 ≔ {(a_0, a_1) | a_0 ∈ A_0, a_1 ∈ A_1}}}
+
+called the @deftech{product set}.
 
 @subsection{Disjoint Union}
 
 Given two @tech{sets} @math{A_0} and @math{A_1}, the @deftech{disjoint union}
 (@deftech{tagged union}) of them, denoted by @math{A_0@deftech{+}A_1} or
 @math{@deftech{∐}@_{i=0, 1}A_i}, is the @tech{set} of all @deftech{tagged pair}s:
-@math{∐@_{i=0, 1}A_i = A_0+A_1 ≔ ∪@_{i=0, 1}{(a, i) | a ∈ A_i}}.
-This @tech{set} is called a @deftech{sum set}.
 
-If @math{A_0∩A_1 = {}}, then @math{A_0∪A_1} can also be viewed as the
+@centered{@math{∐@_{i=0, 1}A_i = A_0+A_1 ≔ ∪@_{i=0, 1}{(a, i) | a ∈ A_i}}}
+
+called the @deftech{sum set}.
+
+If @math{A_0∩A_1} is @tech{{}}, then @math{A_0∪A_1} can also be viewed as the
 @tech{disjoint union} of @math{A_0} and @math{A_1}. A @tech{tagged union} is just
 one way to implement a @tech{disjoint union}, using natural @tech/refer{numbers}
 as @deftech{tag}s to distinguish identical @tech{elements} from different
@@ -245,15 +249,20 @@ we use the term @deftech{hom class} instead of @tech{hom set}.
 For @tech{objects} @math{a} and @math{x} in @math{𝒞}, the @deftech{hom set}
 (@deftech{external hom}) of them, denoted by @math{Hom@_{𝒞}(a, x)} or
 @math{𝒞(a, x)}, is the @tech{set} of all @tech{morphisms} from @math{a} to
-@math{x}: @math{Hom@_{𝒞}(a, x) ≔ {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}.
-If @math{𝒞(a, x)} is an @tech{object} in @math{𝒞}, it is called the
+@math{x}:
+
+@centered{@math{Hom@_{𝒞}(a, x) ≔ {f ∈ 𝒞_1 | dom@_{𝒞}(f) = a ∧ cod@_{𝒞}(f) = x}}}
+
+If @math{𝒞(a, x)} is also an @tech{object} in @math{𝒞}, it is called the
 @deftech{internal hom} @math{[a, x]} or @math{[a → x]}
 (@deftech{exponential set} @math{x^a}).
 
 For @tech{morphisms} @math{f : a → x : 𝒞}, @math{i : b → a : 𝒞} and
 @math{j : x → y : 𝒞}, we can define a @deftech{hom function}
-@math{Hom@_{𝒞}(i, j) : Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}, where
-@math{Hom@_{𝒞}(i, j)(f) ≔ j∘f∘i}.
+
+@centered{@math{Hom@_{𝒞}(i, j) : Hom@_{𝒞}(a, x) → Hom@_{𝒞}(b, y)}}
+
+where @math{Hom@_{𝒞}(i, j)(f) ≔ j∘f∘i}.
 
 @image["scribblings/category/images/hom_1.svg"]{[picture] hom_1.svg}
 
@@ -365,8 +374,9 @@ satisfies the following properties:
 @bold{Exercise}: Prove @math{∀a, b ∈ 𝒞_0, id_a ∼ id_b ⇒ a ∼ b}.
 
 @bold{Exercise}: Show that we can replace the second properties with:
-@math{∀f_1, f_2 ∈ Hom@_{𝒞}(a, b), ∀g_1, g_2 ∈ Hom@_{𝒞}(b, c),
-      f_1 ∼ f_2 ∧ g_1 ∼ g_2 ⇒ g_1∘f_1 ∼ g_2∘f_2}.
+
+@centered{@math{∀f_1, f_2 ∈ Hom@_{𝒞}(a, b), ∀g_1, g_2 ∈ Hom@_{𝒞}(b, c),
+                f_1 ∼ f_2 ∧ g_1 ∼ g_2 ⇒ g_1∘f_1 ∼ g_2∘f_2}}
 
 @image["scribblings/category/images/congruence_2.svg"]{[picture] congruence_2.svg}
 
@@ -908,7 +918,12 @@ explore several important @tech{categories} of @tech{structured sets}.
 
 A @deftech{monoid homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
 @tech{function} that preserves the @tech{monoid} structure:
-@math{∀x, y ∈ S, f(x∘y) = f(x)∙f(y)}, and @math{f(s) = t}.
+
+@centered{@math{∀x, y ∈ S, f(x∘y) = f(x)∙f(y)}}
+
+and
+
+@centered{@math{f(s) = t}}
 
 The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where
 @tech{objects} are @tech{monoids} and @tech{morphisms} are
@@ -919,11 +934,13 @@ The @tech{category} of @tech{monoids}, denoted as @deftech{𝐌𝐨𝐧}, where
 
 A @deftech{group} @math{(S, ∘, s)} is a @tech{monoid} in which every
 @tech{element} @math{x} has a unique @tech{inverse} @math{x@^{–1}}:
-@math{x∘x@^{–1} = x@^{–1}∘x = s = s@^{–1}}.
+
+@centered{@math{x∘x@^{–1} = x@^{–1}∘x = s = s@^{–1}}}
 
 A @deftech{group homomorphism} @math{f : (S, ∘, s) → (T, ∙, t)} is a
 @tech{monoid homomorphism} that preserves the @tech{group} structure:
-@math{∀x ∈ S, f(x@^{–1}) = f(x)@^{–1}}.
+
+@centered{@math{∀x ∈ S, f(x@^{–1}) = f(x)@^{–1}}}
 
 The @tech{category} of @tech{groups}, denoted as @deftech{𝐆𝐫𝐩}, where
 @tech{objects} are @tech{groups} and @tech{morphisms} are
@@ -935,7 +952,9 @@ A @deftech{@deftech{monotone} function}
 (@deftech{@deftech{monotonic} function}, @deftech{@deftech{isotone} function},
  @deftech{@deftech{isotonic} function}, or @deftech{order homomorphism})
 @math{f : (S, ≤)  → (T, ⋜)} is a @tech{function} that preserves the @tech{proset}
-structure: @math{∀x, y ∈ S, x ≤ y ⇒ f(x) ⋜ f(y)}.
+structure:
+
+@centered{@math{∀x, y ∈ S, x ≤ y ⇒ f(x) ⋜ f(y)}}
 
 The @tech{category} of @tech{prosets}, denoted as @deftech{𝐏𝐫𝐨𝐬}, where
 @tech{objects} are @tech{prosets} and @tech{morphisms} are
@@ -1027,10 +1046,13 @@ The following @tech{diagram} is @tech{commutative}:
 
 A @deftech{monomorphism} (often abbreviated as @deftech{mono}, or called be @deftech{monic})
 @math{m} in a @tech{category} @math{𝒞} is defined as a @deftech{left cancellable}
-@tech{morphism}: @math{∀(a, m), (b, m) ∈ 𝒞_2, m∘a = m∘b ⇒ a = b}. Such a condition
-ensures that no two different @tech{morphisms}, when @tech[#:key "compose"]{composed}
-with @math{m} on the right, result in the same @tech{morphism}, thereby establishing
-the @tech{injective} nature of @math{m}.
+@tech{morphism}:
+
+@centered{@math{∀(a, m), (b, m) ∈ 𝒞_2, m∘a = m∘b ⇒ a = b}}
+
+Such a condition ensures that no two different @tech{morphisms}, when
+@tech[#:key "compose"]{composed} with @math{m} on the right, result in the same
+@tech{morphism}, thereby establishing the @tech{injective} nature of @math{m}.
 
 @image["scribblings/category/images/mono.svg"]{[picture] mono.svg}
 
@@ -1051,10 +1073,13 @@ is also a @tech{monomorphism}.
 
 Conversely, an @deftech{epimorphism} (often abbreviated as @deftech{epi}, or called be @deftech{epic})
 @math{e} in a @tech{category} @math{𝒞} is defined as a @deftech{right cancellable}
-@tech{morphism}: @math{∀(e, x), (e, y) ∈ 𝒞_2, x∘e = y∘e ⇒ x = y}. Such a condition
-ensures that @math{e} reaches all possible endpoints in the @tech{target}
-@tech{object} without duplication, thereby establishing the @tech{surjective}
-nature of @math{e}.
+@tech{morphism}:
+
+@centered{@math{∀(e, x), (e, y) ∈ 𝒞_2, x∘e = y∘e ⇒ x = y}}
+
+Such a condition ensures that @math{e} reaches all possible endpoints in the
+@tech{target} @tech{object} without duplication, thereby establishing the
+@tech{surjective} nature of @math{e}.
 
 @image["scribblings/category/images/epi.svg"]{[picture] epi.svg}
 

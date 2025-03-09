@@ -55,8 +55,10 @@ A @deftech{natural transformation} @math{α} between @tech{parallel}
 @math{α : F @deftech{⇒} G : 𝒞 → 𝒟}, maps each @tech{morphism} @math{f : a → b : 𝒞}
 to a corresponding @tech{morphism} @math{α(f) : F(a) → G(b) : 𝒟}. This mapping
 must adhere to the @deftech{@deftech{naturality} condition}, expressed as
-@math{α(f) = α(b)∘F(f) = G(f)∘α(a)}, ensuring that the following @tech{diagram}
-is @tech{commutative}:
+
+@centered{@math{α(f) = α(b)∘F(f) = G(f)∘α(a)}}
+
+ensuring that the following @tech{diagram} is @tech{commutative}:
 
 @image["scribblings/natural_transformation/images/N-0.svg"]{[picture] N-0.svg}
 
@@ -128,9 +130,13 @@ define a type of @tech{composition} for @tech{natural transformations}, known as
 
 Consider two @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟} and
 @math{β : H ⇒ K : 𝒟 → ℰ}. The @deftech{horizontal composition}
-@math{β∘α : H∘F ⇒ K∘G : 𝒞 → ℰ} is a new @tech{natural transformation} that, for
-each @tech{morphism} @math{f : a → b : 𝒞}, maps it to
-@math{β∘α(f) = β(α(f)) : H∘F(a) → K∘G(b) : ℰ}.
+
+@centered{@math{β∘α : H∘F ⇒ K∘G : 𝒞 → ℰ}}
+
+is a new @tech{natural transformation} that, for each @tech{morphism}
+@math{f : a → b : 𝒞}, maps it to
+
+@centered{@math{β∘α(f) = β(α(f)) : H∘F(a) → K∘G(b) : ℰ}}
 
 @bold{Exercise}: Prove @math{α = α∘id@_{𝒞} = id@_{𝒟}∘α}.
 
@@ -183,8 +189,13 @@ for @tech{natural transformations}, known as @tech{vertical composition}.
 
 Consider two @tech{natural transformations} @math{α : F ⇒ G : 𝒞 → 𝒟} and
 @math{β : G ⇒ H : 𝒞 → 𝒟}. The @deftech{vertical composition}
-@math{β∙α : F ⇒ H : 𝒞 → 𝒟} is a new @tech{natural transformation} that, for each
-@tech{morphism} @math{f : a → b : 𝒞}, maps it to @math{β∙α(f) : F(a) → H(b) : 𝒟}.
+
+@centered{@math{β∙α : F ⇒ H : 𝒞 → 𝒟}}
+
+is a new @tech{natural transformation} that, for each @tech{morphism}
+@math{f : a → b : 𝒞}, maps it to
+
+@centered{@math{β∙α(f) : F(a) → H(b) : 𝒟}}
 
 @bold{Exercise}: Prove @math{α = α∙F = G∙α}.
 
@@ -221,7 +232,8 @@ relationships between them:
 @margin-note{
 In some @tech{category theory} texts, @math{∘} denotes @tech{vertical composition}
 and @math{∗} denotes @tech{horizontal composition}:
-@math{(β_1∗β_0)∘(α_1∗α_0) = (β_1∘α_1)∗(β_0∘α_0)}.
+
+@centered{@math{(β_1∗β_0)∘(α_1∗α_0) = (β_1∘α_1)∗(β_0∘α_0)}}
 }
 
 We can @tech[#:key "vertical composition"]{vertically compose}
@@ -231,7 +243,8 @@ We can @tech[#:key "vertical composition"]{vertically compose}
 @tech{horizontal composition} of two @tech{vertical compositions} is equal to the
 @tech{vertical composition} of two @tech{horizontal compositions}. More precisely,
 the @deftech{interchange law} (@deftech{IL}) can be written as:
-@math{(β_1∘β_0)∙(α_1∘α_0) = (β_1∙α_1)∘(β_0∙α_0)}.
+
+@centered{@math{(β_1∘β_0)∙(α_1∘α_0) = (β_1∙α_1)∘(β_0∙α_0)}}
 
 @image["scribblings/natural_transformation/images/IL.svg"]{[picture] IL.svg}
 
@@ -420,8 +433,13 @@ within a @tech{category}.
 We can express this concept by examining the relationships between a @tech{morphism}
 @math{f : a → x} in a @tech{category} @math{𝒞} and other @tech{morphisms} in
 @math{𝒞}. Specifically, we use the @tech{natural transformations}
-@math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(x, -) ⇒ Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭} and
-@math{Hom@_{𝒞}(-, f) : Hom@_{𝒞}(-, a) ⇒ Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭}
+
+@centered{@math{Hom@_{𝒞}(f, -) : Hom@_{𝒞}(x, -) ⇒ Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭}}
+
+and
+
+@centered{@math{Hom@_{𝒞}(-, f) : Hom@_{𝒞}(-, a) ⇒ Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭}}
+
 to describe how @math{f} interacts with other @tech{morphisms} in @math{𝒞}.
 
 This naturally leads us to ask about the connection between @math{f},
@@ -448,7 +466,10 @@ processing @math{w}, starting from the @tech{start state} @math{s_0}.
 According to the @tech{Yoneda Lemma}, we see that each @tech{component} of a
 @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} at an @tech{object}
 @math{T : 𝒞} can be understood as a @tech{run function} starting from a
-@tech{state} @math{s ∈ F(S)}: @math{∀w ∈ Hom@_{𝒞}(S, T), ρ(T)(w) = F(w)(s)}.
+@tech{state} @math{s ∈ F(S)}:
+
+@centered{@math{∀w ∈ Hom@_{𝒞}(S, T), ρ(T)(w) = F(w)(s)}}
+
 Here, @math{F(T)} can be interpreted as the @tech{set} of @tech{final states}.
 
 To illustrate this correspondence, we use Racket code to @racket[define] two
@@ -603,7 +624,8 @@ for any other @tech{object} @math{T : 𝒞} and @tech{element} @math{t ∈ F(T)}
 there exists a unique @tech{morphism} @math{w : S → T : 𝒞} for which
 @math{t = F(w)(s)}. This reflects the general form of a
 @deftech{universal property}, which is typically described as follows:
-@math{∀T ∈ 𝒞_0, ∃!w ∈ Hom@_{𝒞}(S, T), t = F(w)(s)}.
+
+@centered{@math{∀T ∈ 𝒞_0, ∃!w ∈ Hom@_{𝒞}(S, T), t = F(w)(s)}}
 
 @bold{Exercise}: Prove that an @tech{object} @math{S : 𝒞} @tech{represents}
 a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭} iff there exists a @tech{universal element}
@@ -613,7 +635,8 @@ a @tech{functor} @math{F : 𝒞 → 𝐒𝐞𝐭} iff there exists a @tech{unive
 iff the @tech{natural transformation} @math{ρ : Hom@_{𝒞}(S, -) ⇒ F} corresponding
 to @math{s} is a @tech{natural isomorphism}, i.e., each @tech{component} of
 @math{ρ} at an @tech{object} @math{T : 𝒞} is a @tech{bijection}:
-@math{ρ(T)@^{–1}(t) = w}.
+
+@centered{@math{ρ(T)@^{–1}(t) = w}}
 
 @bold{Exercise}: Prove that if @math{s ∈ F(S)} and @math{t ∈ F(T)} both are
 @tech{universal elements} of @math{F}, then there is a unique @tech{isomorphism}
@@ -623,7 +646,8 @@ The concept of @tech{universal elements} mirrors the @tech{universal property}
 seen in @tech{initial objects}, where there exists a unique @tech{morphism}
 @math{f} from an @tech{initial object} @tech{0} to any other @tech{object}
 @math{a} in the same @tech{category} @math{𝒞}:
-@math{∀a ∈ 𝒞_0, ∃!f ∈ 𝒞_1, dom@_{𝒞}(f) = 0 ∧ cod@_{𝒞}(f) = a}.
+
+@centered{@math{∀a ∈ 𝒞_0, ∃!f ∈ 𝒞_1, dom@_{𝒞}(f) = 0 ∧ cod@_{𝒞}(f) = a}}
 
 In fact, any @tech{universal property} can be viewed as an instance of an
 @tech{initial object} in some @tech{category} (usually the @tech{comma category}).

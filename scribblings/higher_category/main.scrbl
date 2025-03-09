@@ -145,7 +145,12 @@ A @deftech{strict monoidal category} @math{(𝒞, ⊗, I)} is a @tech{category}
 @deftech{tensor unit} @math{I}. The @tech{tensor product} is a @tech{functor}
 @math{⊗ : 𝒞×𝒞 → 𝒞}, and the @tech{tensor unit} is a @deftech{unit object}
 @math{I : 𝒞}, such that for all @tech{morphisms} @math{f, g, h} in @math{𝒞},
-@math{(f⊗g)⊗h = f⊗(g⊗h)} and @math{f = f⊗id_I = id_I⊗f}.
+
+@centered{@math{(f⊗g)⊗h = f⊗(g⊗h)}}
+
+and
+
+@centered{@math{f = f⊗id_I = id_I⊗f}}
 
 @image["scribblings/higher_category/images/mon-cat.svg"]{[picture] mon-cat.svg}
 

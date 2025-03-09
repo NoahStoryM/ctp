@@ -280,7 +280,8 @@ For a @tech{functor} @math{F : 𝒞 → 𝒟}, there is an @deftech{opposite fun
 
 A @tech{functor} @math{F : 𝒞 → 𝒟} is @deftech{essentially injective} if it is
 @tech{injective} on @tech{objects} up to @tech{isomorphism}:
-@math{∀a, b ∈ 𝒞_0, F(a) ≅ F(b) ⇒ a ≅ b}.
+
+@centered{@math{∀a, b ∈ 𝒞_0, F(a) ≅ F(b) ⇒ a ≅ b}}
 
 @bold{Exercise}: Prove that a @tech{functor} is @tech{essentially injective} iff
 it is @tech{injective} on @tech[#:key "isomorphism class"]{isomorphism classes}.
@@ -289,7 +290,8 @@ it is @tech{injective} on @tech[#:key "isomorphism class"]{isomorphism classes}.
 
 A @tech{functor} @math{F : 𝒞 → 𝒟} is @deftech{essentially surjective} if it is
 @tech{surjective} on @tech{objects} up to @tech{isomorphism}:
-@math{∀d ∈ 𝒟_0, ∃c ∈ 𝒞_0, F(c) ≅ d}.
+
+@centered{@math{∀d ∈ 𝒟_0, ∃c ∈ 𝒞_0, F(c) ≅ d}}
 
 @subsection{Inclusion Functor}
 
@@ -312,10 +314,19 @@ each @tech{object} and each @tech{morphism} in @math{𝒟} to @math{𝒞}.
 @subsection{Projection Functor}
 
 The @deftech{projection functor} (@deftech{quotient functor}) @math{P : 𝒞 → 𝒞/∼}
-is a @tech{functor} that @math{∀a ∈ 𝒞_0, P(a) = [a]} and @math{∀f ∈ 𝒞_1, P(f) = [f]}.
+is a @tech{functor} that
+
+@centered{@math{∀a ∈ 𝒞_0, P(a) = [a]}}
+
+and
+
+@centered{@math{∀f ∈ 𝒞_1, P(f) = [f]}}
 
 @bold{Exercise}: For a @tech{functor} @math{F : 𝒞 → 𝒟} and a
-@tech{congruence relation} @math{∼} that @math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}.
+@tech{congruence relation} @math{∼} that
+
+@centered{@math{∀f, g ∈ 𝒞_1, f ∼ g ⇒ F(f) = F(g)}}
+
 Prove that there is a unique @tech{functor} @math{F′ : 𝒞/∼ → 𝒟} for which
 @math{F′∘P = F}.
 
@@ -589,7 +600,8 @@ several @deftech{powerset functor}s that map a @tech{set} @math{s} to @math{𝒫
 
 The @deftech{direct image} (@deftech{existential image}) of @math{a_0}, denoted
 by @math{f@_{∗}(a_0)}, is the @tech{subset} of @math{b}:
-@math{f@_{∗}(a_0) ≔ {f(x) | x ∈ a_0}}.
+
+@centered{@math{f@_{∗}(a_0) ≔ {f(x) | x ∈ a_0}}}
 
 @image["scribblings/functor/images/f_*.svg"]{[picture] f_*.svg}
 
@@ -602,7 +614,8 @@ The @deftech{direct image functor} (@deftech{existential image functor})
 
 The @deftech{preimage} (@deftech{inverse image}) of @math{b_0}, denoted by
 @math{f@^{∗}(b_0)}, is the @tech{subset} of @math{a}:
-@math{f@^{∗}(b_0) ≔ {x ∈ a | f(x) ∈ b_0}}.
+
+@centered{@math{f@^{∗}(b_0) ≔ {x ∈ a | f(x) ∈ b_0}}}
 
 @image["scribblings/functor/images/f^*.svg"]{[picture] f^*.svg}
 
@@ -614,7 +627,9 @@ takes @math{f} to @math{f@^{∗}}: @math{𝒫@^{∗}(f) = f@^{∗}}.
 @subsubsection{Universal Image Functor}
 
 The @deftech{universal image} of @math{a_0}, denoted by @math{f@_{!}(a_0)}, is
-the @tech{subset} of @math{b}: @math{f@_{!}(a_0) ≔ {y ∈ b | f@^{∗}({y}) ⊆ a_0}}.
+the @tech{subset} of @math{b}:
+
+@centered{@math{f@_{!}(a_0) ≔ {y ∈ b | f@^{∗}({y}) ⊆ a_0}}}
 
 @image["scribblings/functor/images/f_!.svg"]{[picture] f_!.svg}
 
@@ -634,8 +649,11 @@ via @tech{morphisms}, and they are foundational to concepts like the
 
 @subsubsection{Covariant Hom Functor}
 
-The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭} maps a
-@tech{morphism} @math{j : x → y : 𝒞} to @math{Hom@_{𝒞}(a, j)}.
+The @deftech{covariant hom functor}
+
+@centered{@math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞𝐭}}
+
+maps a @tech{morphism} @math{j : x → y : 𝒞} to @math{Hom@_{𝒞}(a, j)}.
 
 @image["scribblings/functor/images/Hom_1.svg"]{[picture] Hom_1.svg}
 
@@ -651,7 +669,10 @@ The @deftech{covariant hom functor} @math{Hom@_{𝒞}(a, -) : 𝒞 → 𝐒𝐞�
 
 @subsubsection{Contravariant Hom Functor}
 
-The @deftech{contravariant hom functor} @math{Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭}
+The @deftech{contravariant hom functor}
+
+@centered{@math{Hom@_{𝒞}(-, x) : 𝒞@^{op} → 𝐒𝐞𝐭}}
+
 maps a @tech{morphism} @math{i : b → a : 𝒞} to @math{Hom@_{𝒞}(i, x)}.
 
 @image["scribblings/functor/images/Hom_2.svg"]{[picture] Hom_2.svg}
@@ -668,7 +689,10 @@ maps a @tech{morphism} @math{i : b → a : 𝒞} to @math{Hom@_{𝒞}(i, x)}.
 
 @subsubsection{Two-Variable Hom Functor}
 
-The @deftech{two-variable hom functor} @math{Hom@_{𝒞}(-, -) : 𝒞@^{op}×𝒞 → 𝐒𝐞𝐭}
+The @deftech{two-variable hom functor}
+
+@centered{@math{Hom@_{𝒞}(-, -) : 𝒞@^{op}×𝒞 → 𝐒𝐞𝐭}}
+
 maps @math{(i, j) : (b, x) → (a, y) : 𝒞×𝒞} to @math{Hom@_{𝒞}(i, j)}.
 
 @image["scribblings/functor/images/Hom_3.svg"]{[picture] Hom_3.svg}
@@ -911,7 +935,9 @@ In addition to the @tech{monoid action} @math{φ@^{*}}, a @tech{DFA} @math{ℳ}
 often employ a @deftech{run function} @math{ρ : A@^{*} → S}, which takes a
 @tech{sequence} from @math{A@^{*}} and returns a @deftech{final state} of @math{ℳ}
 after processing the entire @tech{sequence}, starting from the @tech{start state}
-@math{s_0}: @math{∀w ∈ A@^{*}, ρ(w) = φ@^{*}(w, s_0)}.
+@math{s_0}:
+
+@centered{@math{∀w ∈ A@^{*}, ρ(w) = φ@^{*}(w, s_0)}}
 
 Here is a Racket example for the @tech{DFA} @math{ℳ_1}
 @math{(A_1 = {x, y}, S_1 = {s_1, b_1}, s_1, φ_1)}, which expects the last
