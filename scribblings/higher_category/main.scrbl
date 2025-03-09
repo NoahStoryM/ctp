@@ -437,7 +437,7 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         @centered{@math{r_xy : c_xxy∘(id@_{𝐁(x, y)}×id_x) ⇒ id@_{𝐁(x, y)}
                              : 𝐁(x, y) → 𝐁(x, y)}}
 
-        called the @deftech{left unitor} and the @deftech{right unitor} respectively.}
+        called the @deftech{left unitor} and the @deftech{right unitor}, respectively.}
 ]
 
 @;; To ensure the compatibility of the above data, they are required to satisfy the
