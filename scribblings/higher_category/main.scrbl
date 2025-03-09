@@ -420,8 +420,11 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         For each quadruple of @tech{0-cells} @math{w, x, y, z} in @math{𝐁}, there
         is a @tech{natural isomorphism}
 
-        @centered{@math{a_wxyz : c_wxz∘(c_xyz×id@_{𝐁(w, x)}) ⇒ c_wyz∘(id@_{𝐁(y, z)}×c_wxy)
-                               : 𝐁(y, z) × 𝐁(x, y) × 𝐁(w, x) → 𝐁(w, z)}}
+        @centered{@math{a_wxyz : c_wxz∘(c_xyz×id@_{𝐁(w, x)}) ⇒ c_wyz∘(id@_{𝐁(y, z)}×c_wxy)}}
+
+        between @tech{functors}
+
+        @centered{@math{𝐁(y, z) × 𝐁(x, y) × 𝐁(w, x) → 𝐁(w, z)}}
 
         called the @tech{associator}.}
   @item{@deftech{Unitor}s
@@ -429,13 +432,15 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         For each pair of @tech{0-cells} @math{x, y} in @math{𝐁}, there are
         @tech{natural isomorphisms}
 
-        @centered{@math{l_xy : c_xyy∘(id_y×id@_{𝐁(x, y)}) ⇒ id@_{𝐁(x, y)}
-                             : 𝐁(x, y) → 𝐁(x, y)}}
+        @centered{@math{l_xy : c_xyy∘(id_y×id@_{𝐁(x, y)}) ⇒ id@_{𝐁(x, y)}}}
 
         and
 
-        @centered{@math{r_xy : c_xxy∘(id@_{𝐁(x, y)}×id_x) ⇒ id@_{𝐁(x, y)}
-                             : 𝐁(x, y) → 𝐁(x, y)}}
+        @centered{@math{r_xy : c_xxy∘(id@_{𝐁(x, y)}×id_x) ⇒ id@_{𝐁(x, y)}}}
+
+        between @tech{functors}
+
+        @centered{@math{𝐁(x, y) → 𝐁(x, y)}}
 
         called the @deftech{left unitor} and the @deftech{right unitor}, respectively.}
 ]
