@@ -399,11 +399,12 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         (@tech{identity morphisms} are called @tech{identity 2-cells}), denoted
         as @math{𝐁_2}. The @tech{vertical composition} of @tech{2-cells} is given
         by the @tech{composition} within each @tech{hom category}.}
-  @margin-note{
-  In practice, the @tech{identity 1-cell} at @math{x} is often denoted
-  simply as @math{id_x}, omitting explicit reference to the @tech{functor}.
-  }
-  @item{@tech{Identity 1-cells}
+  @item{@margin-note{
+        In practice, the @tech{identity 1-cell} at @math{x} is often denoted
+        simply as @math{id_x}, omitting explicit reference to the @tech{functor}.
+        }
+
+        @tech{Identity 1-cells}
 
         For each @tech{0-cell} @math{x} in @math{𝐁}, there is an associated
         @tech{identity 1-cell}. Specifically, there is a @tech{functor} of type
