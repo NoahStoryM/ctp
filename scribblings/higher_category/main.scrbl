@@ -406,12 +406,12 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
   @item{@tech{Identity 1-cells}
 
         For each @tech{0-cell} @math{x} in @math{𝐁}, there is an associated
-        @tech{identity 1-cell}. Specifically, there is a @tech{functor}
+        @tech{identity 1-cell}. Specifically, there is a @tech{functor} of type
 
-        @centered{@math{id_x : 1 → 𝐁(x, x)}}
+        @centered{@math{1 → 𝐁(x, x)}}
 
-        that maps @tech{∗} to the @tech{identity 1-cell}
-        at @math{x}.}
+        that maps @tech{∗} to the @tech{identity 1-cell} at @math{x}.
+        By convention, this @tech{functor} is named @math{x}.}
   @item{@tech{Horizontal Composition}
 
         For each triple of @tech{0-cells} @math{x, y, z} in @math{𝐁}, there is a
@@ -427,7 +427,7 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
 
         @centered{@math{a_wxyz : c_wxz∘(c_xyz×id@_{𝐁(w, x)}) ⇒ c_wyz∘(id@_{𝐁(y, z)}×c_wxy)}}
 
-        between @tech{functors}
+        between @tech{functors} of type
 
         @centered{@math{𝐁(y, z) × 𝐁(x, y) × 𝐁(w, x) → 𝐁(w, z)}}
 
@@ -437,13 +437,13 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         For each pair of @tech{0-cells} @math{x, y} in @math{𝐁}, there are
         @tech{natural isomorphisms}
 
-        @centered{@math{l_xy : c_xyy∘(id_y×id@_{𝐁(x, y)}) ⇒ id@_{𝐁(x, y)}}}
+        @centered{@math{l_xy : c_xyy∘(y×id@_{𝐁(x, y)}) ⇒ id@_{𝐁(x, y)}}}
 
         and
 
-        @centered{@math{r_xy : c_xxy∘(id@_{𝐁(x, y)}×id_x) ⇒ id@_{𝐁(x, y)}}}
+        @centered{@math{r_xy : c_xxy∘(id@_{𝐁(x, y)}×x) ⇒ id@_{𝐁(x, y)}}}
 
-        between @tech{functors}
+        between @tech{functors} of type
 
         @centered{@math{𝐁(x, y) → 𝐁(x, y)}}
 
