@@ -211,21 +211,16 @@ is a new @tech{natural transformation} that, for each @tech{morphism}
 
 @subsubsection{Interchange Law}
 
-The @tech{Interchange Law} asserts that for @tech{natural transformations} with
-matching @tech{domains} and @tech{codomains}, all valid @tech{composition}
-@tech{paths} — whether combining @tech{horizontal composition} first or
-@tech{vertical composition} first — produce the same result.
+The @tech{Interchange Law} states that if @tech{natural transformations} can be
+@tech[#:key "compose"]{composed} both @tech[#:key "horizontal composition"]{horizontally}
+and @tech[#:key "vertical composition"]{vertically}, then the @tech{natural transformations}
+with identical @tech{domains} and @tech{codomains} yielded by distinct @tech{composition}
+sequences must be @tech{equal}.
 
-Concretely, suppose we have @tech{natural transformations} that admit both types
-of @tech{composition}. @tech{IL} states that if two distinct @tech{composition}
-orders yield @tech{natural transformations} with identical @tech{domains} and
-@tech{codomains}, they must be equal.
-
-To see why, observe that each @tech{composition} order corresponds to assembling
-smaller @tech{commutative squares} (from the @tech{naturality condition}) into a
-larger @tech{diagram}. Since all @tech{paths} in the final @tech{diagram} must be
-@tech{commutative}, the diagonals induced by different @tech{composition} orders
-are forced to coincide.
+To see why, observe that each @tech{composition} sequence builds a larger
+@tech{commutative square} by combining smaller squares from the
+@tech{naturality condition}. Since all @tech{composite} squares must be
+@tech{commutative}, the diagonals of these larger squares are forced to coincide,
 
 Consider the @tech{natural transformations} @math{α_0 : F ⇒ G : 𝒞 → 𝒟},
 @math{β_0 : G ⇒ H : 𝒞 → 𝒟}, @math{α_1 : K ⇒ L : 𝒟 → ℰ}, and
