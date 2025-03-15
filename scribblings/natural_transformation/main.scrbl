@@ -211,16 +211,21 @@ is a new @tech{natural transformation} that, for each @tech{morphism}
 
 @subsubsection{Interchange Law}
 
-The @tech{Interchange Law} explains how @tech{horizontal composition} and
-@tech{vertical composition} of @tech{natural transformations} interact with
-each other.
+The @tech{Interchange Law} asserts that for @tech{natural transformations} with
+matching @tech{domains} and @tech{codomains}, all valid @tech{composition}
+@tech{paths} — whether combining @tech{horizontal composition} first or
+@tech{vertical composition} first — produce the same result.
 
-To understand how the @tech{IL} works, recall that applying a @tech{natural transformation}
-to a @tech{morphism} often results in a @tech{morphism} which is the diagonal of
-a @tech{commutative square}. All @tech{composition} of @tech{natural transformations}
-with the same @tech{domain} and @tech{codomain} ultimately produce the same
-@tech{commutative squares}, so that they are equal. This is precisely what the
-@tech{IL} states.
+Concretely, suppose we have @tech{natural transformations} that admit both types
+of @tech{composition}. @tech{IL} states that if two distinct @tech{composition}
+orders yield @tech{natural transformations} with identical @tech{domains} and
+@tech{codomains}, they must be equal.
+
+To see why, observe that each @tech{composition} order corresponds to assembling
+smaller @tech{commutative squares} (from the @tech{naturality condition}) into a
+larger @tech{diagram}. Since all @tech{paths} in the final @tech{diagram} must be
+@tech{commutative}, the diagonals induced by different @tech{composition} orders
+are forced to coincide.
 
 Consider the @tech{natural transformations} @math{α_0 : F ⇒ G : 𝒞 → 𝒟},
 @math{β_0 : G ⇒ H : 𝒞 → 𝒟}, @math{α_1 : K ⇒ L : 𝒟 → ℰ}, and
