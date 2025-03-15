@@ -707,8 +707,7 @@ maps @math{(i, j) : (b, x) → (a, y) : 𝒞×𝒞} to @math{Hom@_{𝒞}(i, j)}.
 
 @bold{Exercise}: Prove @math{Hom@_{𝒞}(id_a, id_x) = id@_{Hom@_{𝒞}(a, x)}}.
 
-@bold{Exercise}: Prove the @tech{interchange law}:
-@math{Hom@_{𝒞}(i, j)∘Hom@_{𝒞}(f, g) = Hom@_{𝒞}(f∘i, j∘g)}.
+@bold{Exercise}: Prove @math{Hom@_{𝒞}(i, j)∘Hom@_{𝒞}(f, g) = Hom@_{𝒞}(f∘i, j∘g)}.
 
 @subsection{Cayley's Theorem}
 

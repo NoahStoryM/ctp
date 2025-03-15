@@ -696,12 +696,10 @@ The @tech{objects} and @tech{morphisms} of @math{𝒞×𝒟} are defined as the
 and @math{𝒟}, respectively. Each @tech{object} and @tech{morphism} in the
 @tech{product category} corresponds to an @tech{element} in the
 @tech{Cartesian product} of @tech{objects} and @tech{morphisms} from the original
-@tech{categories}.
+@tech{categories}. The @tech{composition} of @tech{morphisms} in @math{𝒞×𝒟} is
+defined componentwise by @tech{composition} in @math{𝒞} and @math{𝒟}.
 
 @image["scribblings/category/images/prod-cat.svg"]{[picture] prod-cat.svg}
-
-@bold{Exercise}: Prove the @tech{interchange law}:
-@math{(g_0, g_1)∘(f_0, f_1) = (g_0∘f_0, g_1∘f_1)}.
 
 To see this concept in action, let's use Racket to implement it. In the following
 example, we construct the @tech{product category} @math{𝐌𝐚𝐭𝐫×𝐏𝐚𝐢𝐫}:
@@ -778,9 +776,6 @@ but @tech{commutative squares}.
 }
 
 @image["scribblings/category/images/arr-cat_3.svg"]{[picture] arr-cat_3.svg}
-
-@bold{Exercise}: Prove the @tech{interchange law}:
-@math{(k, l)∘(i, j) = (k∘i, l∘j)}.
 
 In the following code, we create an @tech{arrow category} to which @tech{𝐏𝐚𝐢𝐫}
 gives rise:
