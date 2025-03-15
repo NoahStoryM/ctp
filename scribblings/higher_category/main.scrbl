@@ -396,63 +396,71 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         The @tech{collection} of @tech{0-cells} is denoted as @math{𝐁_0}.}
   @item{@tech{Hom Categories}
 
-        For each pair of @tech{0-cells} of @math{x, y} in @math{𝐁}, there exists
-        a @tech{hom category} @math{𝐁(x, y)}. The @tech{objects} in each
+        For each pair of @tech{0-cells} of @math{v, w} in @math{𝐁}, there exists
+        a @tech{hom category} @math{𝐁(v, w)}. The @tech{objects} in each
         @tech{hom category} are called @tech{1-cells}, denoted as @math{𝐁_1},
         and the @tech{morphisms} are called @tech{2-cells}
         (@tech{identity morphisms} are called @tech{identity 2-cells}), denoted
         as @math{𝐁_2}. The @tech{vertical composition} of @tech{2-cells} is given
         by the @tech{composition} within each @tech{hom category}.}
   @item{@margin-note{
-        In practice, the @tech{identity 1-cell} at @math{x} is often denoted
-        simply as @math{id_x}, omitting explicit reference to the @tech{functor}.
+        In practice, the @tech{identity 1-cell} at @math{v} is often denoted
+        simply as @math{id_v}, omitting explicit reference to the @tech{functor}.
         }
 
         @tech{Identity 1-cells}
 
-        For each @tech{0-cell} @math{x} in @math{𝐁}, there is an associated
+        For each @tech{0-cell} @math{v} in @math{𝐁}, there is an associated
         @tech{identity 1-cell}. Specifically, there is a @tech{functor} of type
 
-        @centered{@math{1 → 𝐁(x, x)}}
+        @centered{@math{1 → 𝐁(v, v)}}
 
-        that maps @tech{∗} to the @tech{identity 1-cell} at @math{x}.
-        By convention, this @tech{functor} is named @math{x}.}
+        that maps @tech{∗} to the @tech{identity 1-cell} at @math{v}.
+        By convention, this @tech{functor} is named @math{v}.
+
+        @image["scribblings/higher_category/images/BC-3.svg"]{[picture] BC-3.svg}}
   @item{@tech{Horizontal Composition}
 
-        For each triple of @tech{0-cells} @math{x, y, z} in @math{𝐁}, there is a
+        For each triple of @tech{0-cells} @math{v, w, x} in @math{𝐁}, there is a
         @tech{functor}
 
-        @centered{@math{c_xyz : 𝐁(y, z) × 𝐁(x, y) → 𝐁(x, z)}}
+        @centered{@math{c_vwx : 𝐁(w, x)×𝐁(v, w) → 𝐁(v, x)}}
 
-        called the @tech{horizontal composition}.}
+        called the @tech{horizontal composition}.
+
+        @image["scribblings/higher_category/images/BC-4.svg"]{[picture] BC-4.svg}}
   @item{@deftech{Associator}
 
-        For each quadruple of @tech{0-cells} @math{w, x, y, z} in @math{𝐁}, there
+        For each quadruple of @tech{0-cells} @math{v, w, x, y} in @math{𝐁}, there
         is a @tech{natural isomorphism}
 
-        @centered{@math{a_wxyz : c_wxz∘(c_xyz×id@_{𝐁(w, x)}) ⇒ c_wyz∘(id@_{𝐁(y, z)}×c_wxy)}}
+        @centered{@math{a_vwxy : c_vwy∘(c_wxy×id@_{𝐁(v, w)}) ⇒ c_vxy∘(id@_{𝐁(x, y)}×c_vwx)}}
 
         between @tech{functors} of type
 
-        @centered{@math{𝐁(y, z) × 𝐁(x, y) × 𝐁(w, x) → 𝐁(w, z)}}
+        @centered{@math{𝐁(x, y)×𝐁(w, x)×𝐁(v, w) → 𝐁(v, y)}}
 
-        called the @tech{associator}.}
+        called the @tech{associator}.
+
+        @image["scribblings/higher_category/images/BC-5.svg"]{[picture] BC-5.svg}}
   @item{@deftech{Unitor}s
 
-        For each pair of @tech{0-cells} @math{x, y} in @math{𝐁}, there are
+        For each pair of @tech{0-cells} @math{v, w} in @math{𝐁}, there are
         @tech{natural isomorphisms}
 
-        @centered{@math{l_xy : c_xyy∘(y×id@_{𝐁(x, y)}) ⇒ id@_{𝐁(x, y)}}}
+        @centered{@math{l_vw : c_vww∘(w×id@_{𝐁(v, w)}) ⇒ id@_{𝐁(v, w)}}}
 
         and
 
-        @centered{@math{r_xy : c_xxy∘(id@_{𝐁(x, y)}×x) ⇒ id@_{𝐁(x, y)}}}
+        @centered{@math{r_vw : c_vvw∘(id@_{𝐁(v, w)}×v) ⇒ id@_{𝐁(v, w)}}}
 
         between @tech{functors} of type
 
-        @centered{@math{𝐁(x, y) → 𝐁(x, y)}}
+        @centered{@math{𝐁(v, w) → 𝐁(v, w)}}
 
-        called the @deftech{left unitor} and the @deftech{right unitor}, respectively.}
+        called the @deftech{left unitor} and the @deftech{right unitor}, respectively.
+
+        @image["scribblings/higher_category/images/BC-6.svg"]{[picture] BC-6.svg}}
 ]
 
 @;; To ensure the compatibility of the above data, they are required to satisfy the
