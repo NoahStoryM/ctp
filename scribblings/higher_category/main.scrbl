@@ -463,6 +463,7 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         @image["scribblings/higher_category/images/BC-6.svg"]{[picture] BC-6.svg}}
 ]
 
+@;; TODO Coherence Theorem
 @;; To ensure the compatibility of the above data, they are required to satisfy the
 @;; following two axioms:
 @;;
@@ -475,6 +476,12 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
 @;;
 @;;         }
 @;; ]
+
+@;; TODO
+@;; A @tech{2-category} is just a @tech{bicategory} whose @tech{associator} and
+@;; @tech{unitor}s are @tech{identities}.
+@;; @bold{Exercise}: Show that the @tech{IL} of @tech{product category} and @math{c}
+@;; as a @tech{functor} ensure the @tech{IL} of the @tech{bicategory} @math{𝐁}.
 
 @;; @subsection{Monoidal Category}
 @;;
