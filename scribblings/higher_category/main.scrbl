@@ -424,7 +424,7 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         For each triple of @tech{0-cells} @math{v, w, x} in @math{𝐁}, there is a
         @tech{functor}
 
-        @centered{@math{c_vwx : 𝐁(w, x)×𝐁(v, w) → 𝐁(v, x)}}
+        @centered{@math{∘_vwx : 𝐁(w, x)×𝐁(v, w) → 𝐁(v, x)}}
 
         called the @tech{horizontal composition}.
 
@@ -434,7 +434,7 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         For each quadruple of @tech{0-cells} @math{v, w, x, y} in @math{𝐁}, there
         is a @tech{natural isomorphism}
 
-        @centered{@math{a_vwxy : c_vwy∘(c_wxy×id@_{𝐁(v, w)}) ⇒ c_vxy∘(id@_{𝐁(x, y)}×c_vwx)}}
+        @centered{@math{α_vwxy : ∘_vwy∘(∘_wxy×id@_{𝐁(v, w)}) ⇒ ∘_vxy∘(id@_{𝐁(x, y)}×∘_vwx)}}
 
         between @tech{functors} of type
 
@@ -448,11 +448,11 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         For each pair of @tech{0-cells} @math{v, w} in @math{𝐁}, there are
         @tech{natural isomorphisms}
 
-        @centered{@math{l_vw : c_vww∘(w×id@_{𝐁(v, w)}) ⇒ id@_{𝐁(v, w)}}}
+        @centered{@math{λ_vw : ∘_vww∘(w×id@_{𝐁(v, w)}) ⇒ id@_{𝐁(v, w)}}}
 
         and
 
-        @centered{@math{r_vw : c_vvw∘(id@_{𝐁(v, w)}×v) ⇒ id@_{𝐁(v, w)}}}
+        @centered{@math{ρ_vw : ∘_vvw∘(id@_{𝐁(v, w)}×v) ⇒ id@_{𝐁(v, w)}}}
 
         between @tech{functors} of type
 
