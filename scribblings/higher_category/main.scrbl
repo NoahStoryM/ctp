@@ -364,8 +364,10 @@ We apply this idea to the definition of a @tech{category}. In a @tech{category},
 the @tech{composition} of @tech{morphisms} must satisfy the following lows:
 
 @itemlist[
-  @item{@math{(h∘g)∘f = h∘(g∘f)}}
-  @item{@math{f = f∘id_a = id_b∘f}}
+  @item{@math{(h∘g)∘f = h∘(g∘f)}
+        @image["scribblings/higher_category/images/1-C-3.svg"]{[picture] 1-C-3.svg}}
+  @item{@math{f = f∘id_v = id_w∘f}
+        @image["scribblings/higher_category/images/1-C-4.svg"]{[picture] 1-C-4.svg}}
 ]
 
 @margin-note{
@@ -379,8 +381,10 @@ leading to a @tech{bicategory}, where the @tech{horizontal composition} of
 @tech{1-cells} must satisfy the following laws:
 
 @itemlist[
-  @item{@math{(h∘g)∘f ≅ h∘(g∘f)}}
-  @item{@math{f ≅ f∘id_a ≅ id_b∘f}}
+  @item{@math{(h∘g)∘f ≅ h∘(g∘f)}
+        @image["scribblings/higher_category/images/biC-3.svg"]{[picture] biC-3.svg}}
+  @item{@math{f ≅ f∘id_v ≅ id_w∘f}
+        @image["scribblings/higher_category/images/biC-4.svg"]{[picture] biC-4.svg}}
 ]
 
 To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
