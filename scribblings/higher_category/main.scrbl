@@ -366,7 +366,7 @@ the @tech{composition} of @tech{morphisms} must satisfy the following lows:
 @itemlist[
   @item{@math{(h∘g)∘f = h∘(g∘f)}
         @image["scribblings/higher_category/images/1-C-3.svg"]{[picture] 1-C-3.svg}}
-  @item{@math{f = f∘id_v = id_w∘f}
+  @item{@math{f = f∘id_a = id_b∘f}
         @image["scribblings/higher_category/images/1-C-4.svg"]{[picture] 1-C-4.svg}}
 ]
 
@@ -383,7 +383,7 @@ leading to a @tech{bicategory}, where the @tech{horizontal composition} of
 @itemlist[
   @item{@math{(h∘g)∘f ≅ h∘(g∘f)}
         @image["scribblings/higher_category/images/biC-3.svg"]{[picture] biC-3.svg}}
-  @item{@math{f ≅ f∘id_v ≅ id_w∘f}
+  @item{@math{f ≅ f∘id_a ≅ id_b∘f}
         @image["scribblings/higher_category/images/biC-4.svg"]{[picture] biC-4.svg}}
 ]
 
@@ -396,67 +396,67 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         The @tech{collection} of @tech{0-cells} is denoted as @math{𝐁_0}.}
   @item{@tech{Hom Categories}
 
-        For each pair of @tech{0-cells} of @math{v, w} in @math{𝐁}, there exists
-        a @tech{hom category} @math{𝐁(v, w)}. The @tech{objects} in each
+        For each pair of @tech{0-cells} of @math{a, b} in @math{𝐁}, there exists
+        a @tech{hom category} @math{𝐁(a, b)}. The @tech{objects} in each
         @tech{hom category} are called @tech{1-cells}, denoted as @math{𝐁_1},
         and the @tech{morphisms} are called @tech{2-cells}
         (@tech{identity morphisms} are called @tech{identity 2-cells}), denoted
         as @math{𝐁_2}. The @tech{vertical composition} of @tech{2-cells} is given
         by the @tech{composition} within each @tech{hom category}.}
   @item{@margin-note{
-        In practice, the @tech{identity 1-cell} at @math{v} is often denoted
-        simply as @math{id_v}, omitting explicit reference to the @tech{functor}.
+        In practice, the @tech{identity 1-cell} at @math{a} is often denoted
+        simply as @math{id_a}, omitting explicit reference to the @tech{functor}.
         }
 
         @tech{Identity 1-cells}
 
-        For each @tech{0-cell} @math{v} in @math{𝐁}, there is an associated
+        For each @tech{0-cell} @math{a} in @math{𝐁}, there is an associated
         @tech{identity 1-cell}. Specifically, there is a @tech{functor} of type
 
-        @centered{@math{1 → 𝐁(v, v)}}
+        @centered{@math{1 → 𝐁(a, a)}}
 
-        that maps @tech{∗} to the @tech{identity 1-cell} at @math{v}.
-        By convention, this @tech{functor} is named @math{v}.
+        that maps @tech{∗} to the @tech{identity 1-cell} at @math{a}.
+        By convention, this @tech{functor} is named @math{a}.
 
         @image["scribblings/higher_category/images/BC-3.svg"]{[picture] BC-3.svg}}
   @item{@tech{Horizontal Composition}
 
-        For each triple of @tech{0-cells} @math{v, w, x} in @math{𝐁}, there is a
+        For each triple of @tech{0-cells} @math{a, b, c} in @math{𝐁}, there is a
         @tech{functor}
 
-        @centered{@math{∘_vwx : 𝐁(w, x)×𝐁(v, w) → 𝐁(v, x)}}
+        @centered{@math{∘_abc : 𝐁(b, c)×𝐁(a, b) → 𝐁(a, c)}}
 
         called the @tech{horizontal composition}.
 
         @image["scribblings/higher_category/images/BC-4.svg"]{[picture] BC-4.svg}}
   @item{@deftech{Associator}
 
-        For each quadruple of @tech{0-cells} @math{v, w, x, y} in @math{𝐁}, there
+        For each quadruple of @tech{0-cells} @math{a, b, c, d} in @math{𝐁}, there
         is a @tech{natural isomorphism}
 
-        @centered{@math{α_vwxy : ∘_vwy∘(∘_wxy×id@_{𝐁(v, w)}) ⇒ ∘_vxy∘(id@_{𝐁(x, y)}×∘_vwx)}}
+        @centered{@math{α_abcd : ∘_abd∘(∘_bcd×id@_{𝐁(a, b)}) ⇒ ∘_acd∘(id@_{𝐁(c, d)}×∘_abc)}}
 
         between @tech{functors} of type
 
-        @centered{@math{𝐁(x, y)×𝐁(w, x)×𝐁(v, w) → 𝐁(v, y)}}
+        @centered{@math{𝐁(c, d)×𝐁(b, c)×𝐁(a, b) → 𝐁(a, d)}}
 
         called the @tech{associator}.
 
         @image["scribblings/higher_category/images/BC-5.svg"]{[picture] BC-5.svg}}
   @item{@deftech{Unitor}s
 
-        For each pair of @tech{0-cells} @math{v, w} in @math{𝐁}, there are
+        For each pair of @tech{0-cells} @math{a, b} in @math{𝐁}, there are
         @tech{natural isomorphisms}
 
-        @centered{@math{λ_vw : ∘_vww∘(w×id@_{𝐁(v, w)}) ⇒ id@_{𝐁(v, w)}}}
+        @centered{@math{λ_ab : ∘_abb∘(b×id@_{𝐁(a, b)}) ⇒ id@_{𝐁(a, b)}}}
 
         and
 
-        @centered{@math{ρ_vw : ∘_vvw∘(id@_{𝐁(v, w)}×v) ⇒ id@_{𝐁(v, w)}}}
+        @centered{@math{ρ_ab : ∘_aab∘(id@_{𝐁(a, b)}×a) ⇒ id@_{𝐁(a, b)}}}
 
         between @tech{functors} of type
 
-        @centered{@math{𝐁(v, w) → 𝐁(v, w)}}
+        @centered{@math{𝐁(a, b) → 𝐁(a, b)}}
 
         called the @deftech{left unitor} and the @deftech{right unitor}, respectively.
 
