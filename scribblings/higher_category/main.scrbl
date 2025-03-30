@@ -463,19 +463,37 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
         @image["scribblings/higher_category/images/BC-6.svg"]{[picture] BC-6.svg}}
 ]
 
-@;; TODO Coherence Theorem
-@;; To ensure the compatibility of the above data, they are required to satisfy the
-@;; following two axioms:
-@;;
+To ensure the @deftech{coherence} of these @tech{natural isomorphisms}, a
+@tech{bicategory} must satisfy the following axioms, which guarantee that all
+@deftech{formal diagrams} — @tech{diagrams} involving only
+@tech{associators}, @tech{unitors}, their @tech{inverses}, @tech{identities},
+@tech{horizontal composition} and @tech{vertical composition} —
+are @tech{commutative}:
+
 @;; @itemlist[
 @;;   #:style 'ordered
-@;;   @item{@deftech{Unity Axiom}
-@;;
-@;;         }
 @;;   @item{@deftech{Pentagon Axiom}
-@;;
-@;;         }
+@;;         @;; TODO
+@;;         @image["scribblings/higher_category/images/pentagon-axiom_1.svg"]{[picture] pentagon-axiom_1.svg}}
+@;;   @item{@deftech{Unity Axiom}
+@;;         @;; TODO
+@;;         @image["scribblings/higher_category/images/unity-axiom_1.svg"]{[picture] unity-axiom_1.svg}}
 @;; ]
+
+@;; @;; TODO
+@;; @;; 介绍二叉树表示
+@;; @image["scribblings/higher_category/images/hgf_0.svg"]{[picture] hgf_0.svg}
+
+@;; @;; TODO
+@;; @;; a 的语义是旋转二叉树
+@;; @image["scribblings/higher_category/images/hgf.svg"]{[picture] hgf.svg}
+
+@;; @;; l 和 r 的语义是消除 id
+@;; @image["scribblings/higher_category/images/f.svg"]{[picture] f.svg}
+
+@;; @;; TODO
+@;; @image["scribblings/higher_category/images/pentagon-axiom_2.svg"]{[picture] pentagon-axiom_2.svg}
+@;; @image["scribblings/higher_category/images/unity-axiom_2.svg"]{[picture] unity-axiom_2.svg}
 
 @;; TODO
 @;; A @tech{2-category} is just a @tech{bicategory} whose @tech{associator} and
