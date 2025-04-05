@@ -2,7 +2,7 @@
 
 (require racket/file racket/string)
 
-(define color-table
+(define color-table0
   #hash(
         ["rgb(255,0,0)"     . "rgb(208,2,27)"]    ; red
         ["rgb(255,128,0)"   . "rgb(245,166,35)"]  ; orange
@@ -17,7 +17,7 @@
         ["rgb(255,0,255)"   . "rgb(189,16,224)"]  ; fuchsia
         ["rgb(255,0,128)"   . "rgb(215,21,133)"]  ; rose
         ["rgb(128,128,128)" . "rgb(155,155,155)"] ; gray
-        ["rgb(1,1,1)"       . "rgb(74,74,74)"]    ; black
+        ["rgb(0,0,0)"       . "rgb(74,74,74)"]    ; black
 
         ["rgb(255, 0, 0)"     . "rgb(208, 2, 27)"]    ; red
         ["rgb(255, 128, 0)"   . "rgb(245, 166, 35)"]  ; orange
@@ -32,23 +32,32 @@
         ["rgb(255, 0, 255)"   . "rgb(189, 16, 224)"]  ; fuchsia
         ["rgb(255, 0, 128)"   . "rgb(215, 21, 133)"]  ; rose
         ["rgb(128, 128, 128)" . "rgb(155, 155, 155)"] ; gray
-        ["rgb(1, 1, 1)"       . "rgb(74, 74, 74)"]    ; black
+        ["rgb(0, 0, 0)"       . "rgb(74, 74, 74)"]    ; black
         ))
+(define color-table1 (for/hash ([(k v) (in-hash color-table0)]) (values v k)))
 
-(define (get-paths dn fn)
+(define (get-paths0 dn fn)
   (define in-path  (build-path "images" dn fn))
   (define out-path (build-path "scribblings" dn "images" fn))
   (values in-path out-path))
+(define (get-paths1 dn fn)
+  (define path  (build-path "images" dn fn))
+  (values path path))
 
-(define (update-colors! dn fn)
-  (define-values (in-path out-path) (get-paths dn fn))
-  (define str
-    (for/fold ([str (file->string in-path)])
-              ([(from to) (in-hash color-table)])
-      (string-replace str from to)))
-  (call-with-output-file out-path
-    #:exists 'truncate/replace
-    (λ (out) (write-string str out))))
+(define-values (update-colors0! update-colors1!)
+  (let ()
+    (define ((make-update-colors! get-paths color-table) dn fn)
+      (define-values (in-path out-path) (get-paths dn fn))
+      (define str
+        (for/fold ([str (file->string in-path)])
+                  ([(from to) (in-hash color-table)])
+          (string-replace str from to)))
+      (call-with-output-file out-path
+        #:exists 'truncate/replace
+        (λ (out) (write-string str out))))
+    (values (make-update-colors! get-paths0 color-table0)
+            (make-update-colors! get-paths1 color-table1))))
+
 
 (define (main [argv (current-command-line-arguments)])
   (for* ([d (in-directory "images")]
@@ -61,6 +70,7 @@
     (displayln "\n**********************************************************************")
     (displayln (format "dn : ~a" dn))
     (displayln (format "fn : ~a" fn))
-    (update-colors! dn fn))
+    (update-colors1! dn fn)
+    (update-colors0! dn fn))
   (values))
 (module+ main (call-with-values main exit))
