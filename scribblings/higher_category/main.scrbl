@@ -509,9 +509,19 @@ In the @tech{binary tree} representation:
         @image["scribblings/higher_category/images/f.svg"]{[picture] f.svg}}
 ]
 
-@;; TODO
-@image["scribblings/higher_category/images/pentagon-axiom_2.svg"]{[picture] pentagon-axiom_2.svg}
-@image["scribblings/higher_category/images/unity-axiom_2.svg"]{[picture] unity-axiom_2.svg}
+The two axioms are minimal conditions ensuring all @tech{formal diagrams} are
+@tech{commutative}:
+
+@itemlist[
+  @item{The @tech{pentagon axiom} guarantees that different @tech{paths} of
+        @tech{tree rotations} yield identical @tech{binary tree} transformation:
+
+        @image["scribblings/higher_category/images/pentagon-axiom_2.svg"]{[picture] pentagon-axiom_2.svg}}
+  @item{The @tech{triangle axiom} ensures the @tech{left unitor} and
+        @tech{right unitor} produce identical elimination of @tech{identity 1-cells}:
+
+        @image["scribblings/higher_category/images/unity-axiom_2.svg"]{[picture] unity-axiom_2.svg}}
+]
 
 @;; TODO
 @;; A @tech{2-category} is just a @tech{bicategory} whose @tech{associator} and
