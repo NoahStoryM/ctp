@@ -470,30 +470,21 @@ To ensure the @deftech{coherence} of these @tech{natural isomorphisms}, a
 @tech{horizontal composition} and @tech{vertical composition} —
 are @tech{commutative}:
 
-@;; @itemlist[
-@;;   #:style 'ordered
-@;;   @item{@deftech{Pentagon Axiom}
-@;;         @;; TODO
-@;;         @image["scribblings/higher_category/images/pentagon-axiom_1.svg"]{[picture] pentagon-axiom_1.svg}}
-@;;   @item{@deftech{Unity Axiom}
-@;;         @;; TODO
-@;;         @image["scribblings/higher_category/images/unity-axiom_1.svg"]{[picture] unity-axiom_1.svg}}
-@;; ]
+@itemlist[
+  #:style 'ordered
+  @item{@deftech{Pentagon Axiom}
 
-@;; @;; TODO
-@;; @;; 介绍二叉树表示
-@;; @image["scribblings/higher_category/images/hgf_0.svg"]{[picture] hgf_0.svg}
+        For any five composable @tech{1-cells}, the pentagon @tech{formal diagram}
+        is @tech{commutative}:
 
-@;; @;; TODO
-@;; @;; a 的语义是旋转二叉树
-@;; @image["scribblings/higher_category/images/hgf.svg"]{[picture] hgf.svg}
+        @image["scribblings/higher_category/images/pentagon-axiom_1.svg"]{[picture] pentagon-axiom_1.svg}}
+  @item{@deftech{Triangle Axiom} (@deftech{Unity Axiom})
 
-@;; @;; l 和 r 的语义是消除 id
-@;; @image["scribblings/higher_category/images/f.svg"]{[picture] f.svg}
+        For any two composable @tech{1-cells}, the triangle @tech{formal diagram}
+        is @tech{commutative}:
 
-@;; @;; TODO
-@;; @image["scribblings/higher_category/images/pentagon-axiom_2.svg"]{[picture] pentagon-axiom_2.svg}
-@;; @image["scribblings/higher_category/images/unity-axiom_2.svg"]{[picture] unity-axiom_2.svg}
+        @image["scribblings/higher_category/images/unity-axiom_1.svg"]{[picture] unity-axiom_1.svg}}
+]
 
 @;; TODO
 @;; A @tech{2-category} is just a @tech{bicategory} whose @tech{associator} and
