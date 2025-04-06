@@ -464,7 +464,7 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
 ]
 
 To ensure the @deftech{coherence} of these @tech{natural isomorphisms}, a
-@tech{bicategory} must satisfy the following axioms, which guarantee that all
+@tech{bicategory} must satisfy the following two axioms, which guarantee that all
 @deftech{formal diagrams} — @tech{diagrams} involving only
 @tech{associators}, @tech{unitors}, their @tech{inverses}, @tech{identities},
 @tech{horizontal composition} and @tech{vertical composition} —
