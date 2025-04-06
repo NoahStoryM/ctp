@@ -419,7 +419,7 @@ as we can derive an @tech{underlying digraph} from an @tech{OOC}.
 @subsubsection{Category of Trees}
 
 A @deftech{rooted @deftech{tree}} is a @tech{digraph} in which the corresponding
-@tech{free category} contains an @tech{initial object} or @tech{terminal object},
+@tech{free category} contains an @tech{initial object} (or @tech{terminal object}),
 referred to as the @deftech{root}.
 
 @image["scribblings/functor/images/tree.svg"]{[picture] tree.svg}
@@ -427,7 +427,7 @@ referred to as the @deftech{root}.
 @bold{Exercise}: Prove that a @tech{tree} is has a unique @tech{root}.
 
 @tech{Trees} are often used to represent hierarchical structures, where each
-@tech{node} has exactly one incoming or outgoing @tech{path}
+@tech{node} has exactly one incoming (or outgoing) @tech{path}
 (except for the @tech{root}, which only has an @tech{empty path}).
 
 The @tech{category} of @tech{trees}, denoted by @deftech{𝐓𝐫𝐞𝐞}, has @tech{trees}

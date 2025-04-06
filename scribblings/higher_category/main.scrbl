@@ -486,6 +486,33 @@ are @tech{commutative}:
         @image["scribblings/higher_category/images/unity-axiom_1.svg"]{[picture] unity-axiom_1.svg}}
 ]
 
+These two axioms can be intuitively understood through @tech{string diagrams},
+where @tech{horizontal composition} of @tech{1-cells} naturally forms
+@deftech{binary tree}s, much like how LISP code inherently represents syntax
+@tech{trees}.
+
+Just as LISP represents @racket[(list 'h 'g 'f)] through
+@racket[(cons 'h (cons 'g (cons 'f null)))], a @tech{bicategory} represents
+@tech{composite} @tech{1-cells} as right-nested @tech{binary trees}:
+
+@image["scribblings/higher_category/images/hgf_0.svg"]{[picture] hgf_0.svg}
+
+In the @tech{binary tree} representation:
+
+@itemlist[
+  @item{An @tech{associator} performs a @deftech{tree ratation}
+        (rearranging one @tech{node} while preserving leaf order):
+
+        @image["scribblings/higher_category/images/hgf.svg"]{[picture] hgf.svg}}
+  @item{@tech{Unitors} eliminate @tech{identity 1-cells}:
+
+        @image["scribblings/higher_category/images/f.svg"]{[picture] f.svg}}
+]
+
+@;; TODO
+@image["scribblings/higher_category/images/pentagon-axiom_2.svg"]{[picture] pentagon-axiom_2.svg}
+@image["scribblings/higher_category/images/unity-axiom_2.svg"]{[picture] unity-axiom_2.svg}
+
 @;; TODO
 @;; A @tech{2-category} is just a @tech{bicategory} whose @tech{associator} and
 @;; @tech{unitor}s are @tech{identities}.
