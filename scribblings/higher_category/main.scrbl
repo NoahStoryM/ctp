@@ -500,7 +500,7 @@ Just as LISP represents @racket[(list 'h 'g 'f)] through
 In the @tech{binary tree} representation:
 
 @itemlist[
-  @item{An @tech{associator} performs a @deftech{tree ratation}
+  @item{An @tech{associator} performs a @deftech{tree rotation}
         (rearranging one @tech{node} while preserving leaf order):
 
         @image["scribblings/higher_category/images/hgf.svg"]{[picture] hgf.svg}}
