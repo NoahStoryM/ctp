@@ -142,7 +142,7 @@ Additionally, @math{F} can be described in terms of three @tech{1-functors}:
 
 A @deftech{strict monoidal category} @math{(𝒞, ⊗, I)} is a @tech{category}
 @math{𝒞} equipped with a @deftech{tensor product} @deftech{⊗} and a
-@deftech{tensor unit} @math{I}. The @tech{tensor product} is a @tech{functor}
+@deftech{tensor unit} @math{I}. The @tech{tensor product} is a @tech{bifunctor}
 @math{⊗ : 𝒞×𝒞 → 𝒞}, and the @tech{tensor unit} is a @deftech{unit object}
 @math{I : 𝒞}, such that for all @tech{morphisms} @math{f, g, h} in @math{𝒞},
 
@@ -422,7 +422,7 @@ To formally define a @deftech{bicategory} @math{𝐁}, we proceed as follows:
   @item{@tech{Horizontal Composition}
 
         For each triple of @tech{0-cells} @math{a, b, c} in @math{𝐁}, there is a
-        @tech{functor}
+        @tech{bifunctor}
 
         @centered{@math{∘_abc : 𝐁(b, c)×𝐁(a, b) → 𝐁(a, c)}}
 

@@ -276,6 +276,11 @@ each @tech{morphism} in @math{𝒞} to @math{id_d} in @math{𝒟}.
 For a @tech{functor} @math{F : 𝒞 → 𝒟}, there is an @deftech{opposite functor}
 @math{F^op : 𝒞^op → 𝒟^op} such that @math{F^op_0 = F_0} and @math{F^op_1 = F_1}.
 
+@subsection{Binary Functor}
+
+A @deftech{binary functor} (@deftech{bifunctor}) is a @tech{functor} whose
+@tech{domain} is a @tech{product category}.
+
 @subsection{Essentially Injective Functor}
 
 A @tech{functor} @math{F : 𝒞 → 𝒟} is @deftech{essentially injective} if it is
