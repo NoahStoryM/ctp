@@ -523,11 +523,17 @@ The two axioms are minimal conditions ensuring all @tech{formal diagrams} are
         @image["scribblings/higher_category/images/unity-axiom_2.svg"]{[picture] unity-axiom_2.svg}}
 ]
 
-@;; TODO
-@;; A @tech{2-category} is just a @tech{bicategory} whose @tech{associator} and
-@;; @tech{unitor}s are @tech{identities}.
-@;; @bold{Exercise}: Show that the @tech{IL} of @tech{product category} and @math{c}
-@;; as a @tech{functor} ensure the @tech{IL} of the @tech{bicategory} @math{𝐁}.
+@margin-note{
+In a @tech{strict 2-category}, the @tech{pentagon axiom} and @tech{triangle axiom}
+collapse to @tech[#:key "equal"]{equalities}.
+}
+
+A @tech{bicategory} can be seen as a @tech{weak 2-category} where
+@tech{associators} and @tech{unitors} are @tech{natural isomorphisms}. To recover
+a @tech{strict 2-category}, we simply replace these @tech{natural isomorphisms}
+with @tech{identities}. Although @tech{bicategories} do not explicitly require
+the @tech{interchange law}, it emerges automatically when
+@tech{horizontal composition} is defined as a @tech{bifunctor}.
 
 @;; @subsection{Monoidal Category}
 @;;

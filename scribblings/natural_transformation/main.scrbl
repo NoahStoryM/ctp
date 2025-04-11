@@ -211,7 +211,7 @@ is a new @tech{natural transformation} that, for each @tech{morphism}
 
 @subsubsection{Interchange Law}
 
-The @tech{Interchange Law} states that if @tech{natural transformations} can be
+The @tech{interchange law} states that if @tech{natural transformations} can be
 @tech[#:key "compose"]{composed} both @tech[#:key "horizontal composition"]{horizontally}
 and @tech[#:key "vertical composition"]{vertically}, then the @tech{natural transformations}
 with identical @tech{domains} and @tech{codomains} yielded by distinct @tech{composition}
