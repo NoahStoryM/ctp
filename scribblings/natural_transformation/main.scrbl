@@ -47,7 +47,7 @@ mathematical concepts through practical programming constructs.
 @section{Natural Transformation}
 
 @margin-note{
-In a sense, @math{α(f)} can be considered the @tech{commutative square}.
+In a sense, @math{α(f)} can be considered a @tech{commutative square}.
 }
 
 A @deftech{natural transformation} @math{α} between @tech{parallel}
