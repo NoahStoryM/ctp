@@ -1067,7 +1067,7 @@ rather than a @tech{function}. This distinction means @math{φ@^{*}} operates
 as a @tech{monoid action} in @tech{𝐑𝐞𝐥} rather than in @tech{𝐒𝐞𝐭}.
 
 For an @tech{NFA}, the @tech{transition relation} @math{φ} can be represented as
-a @tech{function} with a @tech{codomain} of @tech{powersets} (i.e., @math{φ : A×S → 𝒫(S)}).
+a @tech{function} whose @tech{codomain} is a @tech{powerset} (i.e., @math{φ : A×S → 𝒫(S)}).
 This functional view works because we focus on the @tech{set} of all possible
 @tech{next states} for a given @tech{state} and @tech{letter}.
 
