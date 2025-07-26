@@ -549,6 +549,8 @@ and each @tech{morphism} @math{i : b → a : 𝒞} to the @tech{hom natural tran
 @math{Hom@_{𝒞}(i, -) : Hom@_{𝒞}(a, -) ⇒ Hom@_{𝒞}(b, -)}. This @tech{functor} is
 known as the @deftech{Yoneda embedding} for @math{𝒞}.
 
+@image["scribblings/natural_transformation/images/Y.svg"]{[picture] Y.svg}
+
 @racketblock[
 (: Y (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (→ (→𝒞 a x) (→𝒞 b y)))))))
 (define Y (curry |(→𝒞 _ _)|))
@@ -561,6 +563,8 @@ each @tech{object} @math{x : 𝒞} to the @tech{contravariant hom functor}
 @math{Hom@_{𝒞}(-, x)}, and each @tech{morphism} @math{j : x → y : 𝒞} to the
 @tech{hom natural transformation}
 @math{Hom@_{𝒞}(-, j) : Hom@_{𝒞}(-, x) ⇒ Hom@_{𝒞}(-, y)}.
+
+@image["scribblings/natural_transformation/images/J.svg"]{[picture] J.svg}
 
 @racketblock[
 (: J (∀ ([x : 𝒞] [y : 𝒞]) (→ (→𝒞 x y) (∀ ([a : 𝒞] [b : 𝒞]) (→ (→𝒞 b a) (→ (→𝒞 a x) (→𝒞 b y)))))))
