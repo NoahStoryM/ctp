@@ -515,12 +515,12 @@ to an @tech{element} @math{s ∈ F(S)}. By carefully selecting @tech{functor}
 @tech{set} @math{F(S)} and examine the relationship between these entities and
 @tech{natural transformations}.
 
-For example, if we let @math{F} be a @tech{hom functor}, then the @tech{elements}
-of @math{F(S)} are precisely the @tech{morphisms} in @math{𝒞} that start from or
-end to @math{S}. An important corollary of the @tech{Yoneda Lemma} is that any
-@tech{natural transformation} between @tech{hom functors} in a @tech{category}
-@math{𝒞} must be a @tech{hom natural transformation} because it corresponds
-exactly to a @tech{morphism} in @math{𝒞}.
+For example, if we let @math{F} be a @tech{hom functor}, then @math{F(S)} is a
+@tech{hom set} and the @tech{elements} of it are precisely the @tech{morphisms}
+in @math{𝒞} that start from or end to @math{S}. An important corollary of the
+@tech{Yoneda Lemma} is that any @tech{natural transformation} between
+@tech{hom functors} must be a @tech{hom natural transformation} because it
+corresponds exactly to a @tech{morphism}.
 
 To illustrate this, consider two @tech{hom functors} @math{Hom@_{𝒞}(x, −)} and
 @math{Hom@_{𝒞}(a, −)}, where @math{a} and @math{x} are @tech{objects} in @math{𝒞}.
