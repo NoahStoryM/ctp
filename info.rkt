@@ -15,7 +15,8 @@
     "typed-racket-doc"
     "typed-amb"
     "math-lib"
-    "math-doc"))
+    "math-doc"
+    "variant"))
 
 (define scribblings '(("scribblings/ctp.scrbl" (multi-page) (teaching -30))))
 
