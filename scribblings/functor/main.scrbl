@@ -1063,15 +1063,12 @@ to contain a @tech{set} of possible @tech{states}. Unlike in a @tech{DFA} or
 
 From a @tech{category theory} perspective, the key difference between @tech{DFAs}
 and @tech{NFAs} lies in representing @math{φ} as a @deftech{transition relation}
-rather than a @tech{function}. This distinction means @math{φ@^{*}} operates
-as a @tech{monoid action} in @tech{𝐑𝐞𝐥} rather than in @tech{𝐒𝐞𝐭}.
+rather than a @tech{transition function}. This distinction means @math{φ@^{*}}
+operates as a @tech{monoid action} in @tech{𝐑𝐞𝐥} rather than in @tech{𝐒𝐞𝐭}.
 
-For an @tech{NFA}, the @tech{transition relation} @math{φ} can be represented as
-a @tech{function} whose @tech{codomain} is a @tech{powerset} (i.e., @math{φ : A×S → 𝒫(S)}).
-This functional view works because we focus on the @tech{set} of all possible
-@tech{next states} for a given @tech{state} and @tech{letter}.
-
-Using John McCarthy's @racket[amb] operator, we can represent this @tech{function}
+A @tech{transition relation} can be viewed as a @deftech{next states function} whose
+@tech{codomain} is the @tech{powerset} of @tech{states} (i.e., @math{φ : A×S → 𝒫(S)}).
+Using John McCarthy's @racket[amb] operator, we can represent a @tech{next states function}
 as a @tech{procedure} that returns multiple ambiguous results, capturing all
 possible @tech{next states} for each input. This aligns with the nondeterministic
 nature of @tech{NFAs}, where each input may lead to several potential @tech{states}.
